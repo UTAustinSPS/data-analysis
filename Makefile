@@ -3,9 +3,9 @@
 
 # You can set these variables from the command line.
 COURSEID = devcourse
-APPNAME = runestone
+APPNAME = courselib
 LOGLEVEL = 10
-COURSEURL = http://127.0.0.1:8000
+COURSEURL = http://interactivepython.org
 LOGINREQ = true
 #
 #
