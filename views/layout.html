@@ -18,6 +18,15 @@ Released   : 20081122
   {{response.files.append(URL(request.application,'static','plugin_layouts/layouts/Abrasive/style.css'))}}
   {{response.files.append(URL('static','plugin_layouts/superfish.js'))}}
   {{include 'web2py_ajax.html'}}
+      <script type="text/javascript">
+    var eBookConfig = {}
+    var portPart = ''
+    eBookConfig.host = 'http://{{=request.env.http_host}}'
+    eBookConfig.app = eBookConfig.host+'/{{=request.application}}'
+    eBookConfig.ajaxURL = eBookConfig.app+'/ajax/'
+    eBookConfig.logLevel = 10
+    eBookConfig.loginRequired = true
+    </script>
   <style>
 ul.web2py-menu-vertical { width: 150px; position: relative; top:1em; left:1em;  z-index:30; border:0; margin:0; padding: 0; list-style: none; text-decoration: none;}
 ul.web2py-menu-vertical li { margin:0; padding:0; border:0; width: 150px; background: black; text-align:left;}
