@@ -436,6 +436,14 @@ function gotUser(data, status, whatever) {
     logBookEvent({'event':'page', 'act':'view', 'div_id':window.location.pathname})
 }
 
+function timedRefresh() {
+	timeoutPeriod = 4500000;  // 75 minutes
+	//setTimeout("location.reload(true);",timeoutPeriod);
+	$(document).bind("idle.idleTimer",function(){location.reload(true)});
+	$.idleTimer(timeoutPeriod);
+}
+// (<body onload="JavaScript:timedRefresh(5000);">
+
 function shouldLogin() {
     var sli = true;
 
@@ -470,3 +478,4 @@ if (typeof addingEditors == 'undefined') {
     $(document).ready(createEditors);
 }
 $(document).ready(addUserToFooter)
+$(document).ready(timedRefresh)
