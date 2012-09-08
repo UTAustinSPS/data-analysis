@@ -46,19 +46,21 @@ def saveprog():
     acid = request.vars.acid
     code = request.vars.code
 
-    # codetbl = db.code
-    # query = codetbl.sid==auth.user.username and codetbl.acid==acid
-    # result = db(query)
+    response.headers['content-type'] = 'application/json'
 
-    print 'inserting new', acid
-    db.code.insert(sid=auth.user.username,
-                   acid=acid,code=code,
-                   timestamp=datetime.datetime.now(),
-                   course_id=auth.user.course_id)
+    try:
+        db.code.insert(sid=auth.user.username,
+            acid=acid,code=code,
+            timestamp=datetime.datetime.now(),
+            course_id=auth.user.course_id)
+    except Exception as e:
+        if not auth.user:
+            return json.dumps(["ERROR: auth.user is not defined.  Copy your code to the clipboard and reload or logout/login"])
+        else:
+            return json.dumps(["ERROR: " + str(e) + "Please copy this error and use the Report a Problem link"])
 
-    return acid
-#    response.headers.add_header('content-type','application/json')
-#    response.out.write(simplejson.dumps([acid]))
+    return json.dumps([acid])
+
 
 
 def getprog():
@@ -88,7 +90,6 @@ def getprog():
         if not result.isempty():
             res['acid'] = acid
             r = result.select(orderby=~codetbl.timestamp).first().code
-            print r
             res['source'] = r
             if sid:
                 res['sid'] = sid
