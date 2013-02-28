@@ -29,7 +29,7 @@ class Schooler(Turtle):
             self.newHead = self.heading()
         else:
             self.newHead = minangle+self.heading()
-            
+
     def inFrontOf(self,other):
         head = self.towards(other) - self.heading()
         if cos(radians(head)) > 0:
@@ -114,7 +114,7 @@ class Obstacle(Turtle):
         Obstacle.obstacles.append(self)
 
 
-class LeaderFish(ObstacleFish):
+class LeaderFish(Schooler):
     def __init__(self):
         super(LeaderFish,self).__init__()
         self.color('red','red')
@@ -136,8 +136,9 @@ def main():
     t.hideturtle()
     t.tracer(15)
 
+    leader = random.randrange(swarmSize)
     for i in range(swarmSize):
-        if random.randrange(100) == 0:
+        if i == leader:
             LeaderFish()
         else:
             ObstacleFish()
