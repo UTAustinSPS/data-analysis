@@ -23,7 +23,7 @@ If you want to run a full blown server -- so you can save activecode assignments
 
 After you install web2py go to the applications folder and check out this repository.  This will be installed as a web2py application automatically.
 
-Cloneing The Runestone Project and its submodules
+Cloning The Runestone Project and its submodules
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This project consists of the main repository, plus *submodules* for codelens, parsons-problems, and skulpt.  In order to get all of the source you need you will need to do the following:
@@ -113,6 +113,25 @@ How to Contribute
 #. test
 #. Make a Pull Request.  This will notify me that I should look at your changes and merge them into the main repository.
 #. Repeat!
+
+
+More Documentation
+------------------
+
+I have begun a project to document the `Runestone Interactive <http://docs.runestoneinteractive.org/build/html/index.html>`_ tools
+
+* All of the runestone interactive extensions to sphinx:
+
+    * Activecode -- Interactive Python in the browser
+    * Codelens  -- Step through code examples and see variables change
+    * mchoicemf  -- multiple choice questions with feedback
+    * mchoicema  -- multiple choice question with multiple answers and multiple feedback
+    * fillintheblank  -- fill in the blank questiosn with regular expression matching answers
+    * parsonsproblem  -- drag and drop blocks of code to complete a simple programming assignment
+    * datafile -- create datafiles for activecode
+
+* How to write your own extension for runestone interactive
+
 
 Browser Notes
 -------------
