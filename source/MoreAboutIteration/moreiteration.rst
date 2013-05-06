@@ -209,7 +209,7 @@ we need the extra power that we get from the ``while`` loop.
    :answer_a: n starts at 10 and is incremented by 1 each time through the loop, so it will always be positive
    :answer_b: answer starts at 1 and is incremented by n each time, so it will always be positive
    :answer_c: You cannot compare n to 0 in while loop.  You must compare it to another variable.
-   :answer_d: In the while loop body, we must set n False, and this code does not do that.
+   :answer_d: In the while loop body, we must set n to False, and this code does not do that.  
    :correct: a
    :feedback_a: The loop will run as long as n is positive.  In this case, we can see that n will never become non-positive.
    :feedback_b: While it is true that answer will always be positive, answer is not considered in the loop condition.
@@ -222,7 +222,7 @@ we need the extra power that we get from the ``while`` loop.
      answer = 1
      while ( n > 0 ):
        answer = answer + n
-	   n = n + 1
+       n = n + 1
      print answer
      </pre>
 
@@ -899,11 +899,11 @@ pixel at column 45, row 55, has RGB values of 165, 161, and 158.  Try a few othe
    :answer_b: 183 179 170
    :answer_c: 165 161 158
    :answer_d: 201 104 115
-   :correct: a
-   :feedback_a: Yes, the RGB values are 149 132 122 at row 100 and column 30.
-   :feedback_b: These are the values for the pixel at row 30, column 100.  Get the values for row 100 and column 30 with p = img.getPixel(100,30).
-   :feedback_c: These are the values from the original example (row 45, column 55). Get the values for row 100 and column 30 with p = img.getPixel(100,30).
-   :feedback_d: These are simply made-up values that may or may not appear in the image.  Get the values for row 100 and column 30 with p = img.getPixel(100,30).
+   :correct: b
+   :feedback_a: These are the values for the pixel at row 30, column 100.  Get the values for row 100 and column 30 with p = img.getPixel(100,30).
+   :feedback_b: Yes, the RGB values are 183 179 170 at row 100 and column 30.
+   :feedback_c: These are the values from the original example (row 45, column 55). Get the values for row 100 and column 30 with p = img.getPixel(30,100).
+   :feedback_d: These are simply made-up values that may or may not appear in the image.  Get the values for row 100 and column 30 with p = img.getPixel(30,100).
 
    In the example in ActiveCode box 10, what are the RGB values of the pixel at row 100, column 30?
 
@@ -1039,7 +1039,7 @@ Finally, we need to insert the new pixel into the empty image in the same locati
 
 
 
-You have just passed a very important point in your study of Python programming.  Even though there is much more that we will do, you have learned all of the basic building blocks that are necessary to solve many interesting problems.  From and algorithm point of view, you can now implement selection and iteration.  You can also solve problems by breaking them down into smaller parts, writing functions for those parts, and then calling the functions to complete the implementation.
+You have just passed a very important point in your study of Python programming.  Even though there is much more that we will do, you have learned all of the basic building blocks that are necessary to solve many interesting problems.  From an algorithm point of view, you can now implement selection and iteration.  You can also solve problems by breaking them down into smaller parts, writing functions for those parts, and then calling the functions to complete the implementation.
 What remains is to focus on ways that we can better represent our problems in terms of the data that we manipulate.  We will now turn our attention to studying the main data collections provided by Python.
 
 **Check your understanding**
@@ -1197,6 +1197,7 @@ Glossary
         A variable used as part of the terminating condition of a loop.
 
 
+    
 
     nested loop
         A loop inside the body of another loop.
@@ -1212,6 +1213,7 @@ Glossary
 
 
 
+     
     tab
         A special character that causes the cursor to move to the next tab stop
         on the current line.

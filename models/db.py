@@ -11,7 +11,7 @@
 
 if not request.env.web2py_runtime_gae:
     ## if NOT running on Google App Engine use SQLite or other DB
-    db = DAL(settings.database_uri,fake_migrate_all=False)    
+    db = DAL(settings.database_uri,fake_migrate_all=False)
 else:
     ## connect to Google BigTable (optional 'google:datastore://namespace')
     db = DAL('google:datastore')
@@ -43,6 +43,17 @@ from gluon.tools import Auth, Crud, Service, PluginManager, prettydate
 auth = Auth(db, hmac_key=Auth.get_or_create_key())
 crud, service, plugins = Crud(db), Service(), PluginManager()
 
+## Enable captcha's :-(
+from gluon.tools import Recaptcha
+auth.settings.captcha = Recaptcha(request,
+   '6Lfb_t4SAAAAAB9pG_o1CwrMB40YPsdBsD8GsvlD',
+   '6Lfb_t4SAAAAAGvAHwmkahQ6s44478AL5Cf-fI-x',
+   options="theme:'blackglass'")
+
+auth.settings.login_captcha = False
+auth.settings.retrieve_password_captcha	= False
+#auth.settings.retrieve_username_captcha	= False
+
 ## create all tables needed by auth if not custom tables
 db.define_table('courses',
   Field('course_id','string'),
@@ -50,6 +61,7 @@ db.define_table('courses',
   )
 if db(db.courses.id > 0).isempty():
     db.courses.insert(course_id='devcourse')
+
 
 ########################################
 db.define_table('auth_user',
@@ -60,6 +72,7 @@ db.define_table('auth_user',
     Field('last_name', type='string',
           label=T('Last Name')),
     Field('email', type='string',
+          requires=IS_EMAIL(banned='^.*shoeonlineblog\.com$'),
           label=T('Email')),
     Field('password', type='password',
           readable=False,
