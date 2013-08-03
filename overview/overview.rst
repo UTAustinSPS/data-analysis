@@ -7,8 +7,16 @@
     the license is included in the section entitled "GNU Free Documentation
     License".
 
+
 ..  shortname:: Overview
 ..  description:: This is an overview chapter for the web site.
+
+.. setup for automatic question numbering.
+
+.. qnum::
+   :start: 1
+   :prefix: sc-1-
+
 
 An Overview of Runestone Interactive
 ====================================
@@ -34,6 +42,7 @@ on the video shown below, you will hear us talk about the tools that will be des
 
     http://media.interactivepython.org/thinkcsVideos/activecodelens.mov
     http://media.interactivepython.org/thinkcsVideos/activecodelens.webm
+
 
 ActiveCode Windows
 ------------------
@@ -190,12 +199,15 @@ correct number as well as the feedback for each.
 
    Which colors might be found in a rainbow? (choose all that are correct)
 
+
 Another type of question allows you as the instructor to ask for a value.  You can test for the value using Pythons regular expressions.  For example:
 
 .. fillintheblank:: baseconvert1
    :correct: \\b31\\b
+   :blankid: baseconvert1_ans1
 
-   What is value of 25 expressed as an octal number (base 8) ___
+   What is value of 25 expressed as an octal number (base 8) :textfield:`baseconvert1_ans1::mini`
+
 
 And finally here is a way of giving your students some simple programming problems where the code is already there for them but not indented or in the correct order.  Use drag-and-drop to get everthing right.
 
@@ -208,6 +220,7 @@ And finally here is a way of giving your students some simple programming proble
    x = 0
    for i in range(10)
       x = x + 1
+
 
 
 Here is a different sort of codelens visualization.  Some codelens blocks can have
@@ -246,8 +259,143 @@ next line executed.
         print 'x is even'
         y = y - x
 
+Unit Tests for Code
+-------------------
+
+Its nice to be able to have students solve a particular problem by writing some code, its even better if you can give them some feedback and provide some tests for them.  Much of the ``unittest`` module from Python is available in the ``unittestgui`` module for activecode.  Take a look:
+
+.. activecode:: units1
+
+   def add(a,b):
+      return 4
+
+   import unittestgui
+
+   class myTests(unittestgui.unittest):
+
+       def testOne(self):
+           self.assertEqual(add(2,2),4,"A feedback string when the test fails")
+           self.assertAlmostEqual(add(2.0,3.0),5.0,"Your function failed on inputs of 2.0 and 3.0")
+
+   myTests().main()
+
+Before you go on, fix the add function in the activecode box.  The full complement of assertXXX functions is available.  You can see the list `Here <http://docs.python.org/2/library/unittest.html#assert-methods>`_.  Now, for an introductory course exposing the inner workings of the unittest class may lead to more confusion that anything.  But, you can still get the benefit of the unittest module with activecode by placing it in the hidden code at the end.  You can hide the code by placing it after a line that contains ``====``.  The source code for the above example with the unit tests hidden would look like this:
+
+.. sourcecode:: rst
+
+    .. activecode:: units1
+
+       def add(a,b):
+          return 4
+
+       ====
+       import unittestgui
+
+       class myTests(unittestgui.unittest):
+
+           def testOne(self):
+               self.assertEqual(add(2,2),4,"A feedback string when the test fails")
+               self.assertAlmostEqual(add(2.0,3.0),5.0,"Your function failed on inputs of 2.0 and 3.0")
+
+       myTests().main()
+
+**Check Your Understanding**
+
+Fix the following code so that it always correctly adds two numbers.
+
+.. activecode:: units2
+
+   def add(a,b):
+      return 4
+
+   ====
+   import unittestgui
+
+   class myTests(unittestgui.unittest):
+
+       def testOne(self):
+           self.assertEqual(add(2,2),4,"A feedback string when the test fails")
+           self.assertAlmostEqual(add(2.0,3.0),5.0,"Your function failed on inputs of 2.0 and 3.0")
+
+   myTests().main()
+
+
+
+
+Disqus Comment Box
+------------------
+
+A comment box allowing users to add comments and start discussions can be added. A comment box can be added at the page level, but also for an individual section or question, allowing discussion of that particular content.
+
+.. disqus::
+    :shortname: interactivepython
+    :identifier: discussion1
+
+
+Tabbed Question
+---------------
+
+Any of the existing question types can be placed in a tabbed exhibit-style question. This may be used to provide an possible answer or a Disqus discussion box specifically related to a certain question.
+
+.. tabbed:: exercise1
+
+    .. tab:: Question 1
+        
+        Write a program that prints "Hello, world".
+            
+        .. activecode:: helloworld
+
+            print("Hello, world")
+
+    .. tab:: Discussion
+        
+        .. disqus::
+            :shortname: interactivepython
+            :identifier: helloworlddiscussion
+
+
 
 We are working on additional question types as well.  Give us your feedback on our `Facebook page <http://www.facebook.com/RunestoneInteractive>`_.
+
+Polls
+-----
+.. poll:: pollid1
+   :scale: 10
+   :allowcomment:
+
+    On a scale from 1 to 10, how important do you think it is to have a polling directive in the Runestone Tools?
+
+
+Reveals
+-------
+.. reveal:: revealid1
+    :showtitle: Reveal Content
+    :hidetitle: Hide Content
+
+    This content starts out hidden. It's visibility can be toggled by using the Show/Hide button.
+
+    The reveal block can also contain other directives (ActiveCode, Disqus block, etc):
+
+    .. activecode:: ac11
+
+        print ("Hello, world")
+
+
+DOM Access
+----------
+
+Python programs written in activecode windows can now import the ``document`` module. This document module
+allows access to basic elements of the web page, including the new text entry box called
+**text1** :textfield:`text1:example input:medium` like this one.  Try running the program, then change
+the value in the text entry box and run it again.
+
+.. activecode:: tftest1
+
+   import document
+
+   t = document.getElementById('text1')
+   print('value = ', t.value)
+
 
 
 What To Do Now
@@ -259,5 +407,5 @@ site and choosing the courseware examples that we have already created.  The fir
 of computer science and helps you learn Python programming.  The second course, **Problem Solving with Algorithms and Data Structures Using Python**, is a thorough introduction to data structures and algorithms using Python.  Topics include stacks,
 queues, trees, graphs, and recursion.
 
-We hope you will find these tools and materials useful.  If you want to get more involved, feel free to download the tools and write your own courseware.  Everything you need can be found in the current `github repository <http://github.com/bnmnetp/runestone>`_.
+We hope you will find these tools and materials useful.  If you want to get more involved, feel free to download the tools and write your own courseware.  Everything you need can be found in the current `GitHub repository <http://github.com/bnmnetp/runestone>`_.
 

@@ -10,6 +10,10 @@
 ..  shortname:: Selection
 ..  description:: This module introduces the selection control structures (if, ifelse, elif)
 
+.. qnum::
+   :prefix: sel-
+   :start: 1
+
 Decisions and Selection
 =======================
 
@@ -104,10 +108,6 @@ if ``a == 7`` then ``7 == a``. But in Python, the statement ``a = 7``
 is legal and ``7 = a`` is not. (Can you explain why?)
 
 
-.. admonition:: Scratch Editor
-
-    .. actex:: scratch_6_1
-
 **Check your understanding**
 
 .. mchoicema:: test_question6_1_1
@@ -159,9 +159,6 @@ is true if ``x > y`` is false, that is, if ``x`` is less than or equal to
 
 	There is a very common mistake that occurs when programmers try to write boolean expressions.  For example, what if we have a variable ``number`` and we want to check to see if its value is 5,6, or 7.  In words we might say: "number equal to 5 or 6 or 7".  However, if we translate this into Python, ``number == 5 or 6 or 7``, it will not be correct.  The ``or`` operator must join the results of three equality checks.  The correct way to write this is ``number == 5 or number == 6 or number == 7``.  This may seem like a lot of typing but it is absolutely necessary.  You cannot take a shortcut.
 
-.. admonition:: Scratch Editor
-
-    .. actex:: scratch_6_2
 
 **Check your understanding**
 
@@ -177,6 +174,8 @@ is true if ``x > y`` is false, that is, if ``x`` is less than or equal to
    :feedback_d: Yes, with an and keyword both expressions must be true so the number must be greater than 0 an less than 5 for this expression to be true.
 
    What is the correct Python expression for checking to see if a number stored in a variable x is between 0 and 5.
+
+
 
 Precedence of Operators
 -----------------------
@@ -198,9 +197,13 @@ Level     Category        Operators
 =======   ==============  ===============
 
 
-.. admonition:: Scratch Editor
 
-    .. actex:: scratch_6_3
+.. note::
+
+  This workspace is provided for your convenience.  You can use this activecode window to try out anything you like.
+
+  .. activecode:: scratch_06_01
+
 
 **Check your understanding**
 
@@ -241,8 +244,8 @@ Conditional Execution: Binary Selection
 
 In order to write useful programs, we almost always need the ability to check
 conditions and change the behavior of the program accordingly. **Selection statements**, sometimes
-also referred to as **conditional statements** give us this ability. The simplest form of selection is the **if**
-statement.  This is sometimes referred to as **binary selection** since there are two possible paths of execution.
+also referred to as **conditional statements**, give us this ability. The simplest form of selection is the **if statement**.  
+This is sometimes referred to as **binary selection** since there are two possible paths of execution.
 
 .. activecode:: ch05_4
 
@@ -295,9 +298,7 @@ There is no limit on the number of statements that can appear under the two clau
     * `Approximating Pi with Simulation <../Labs/montepi.html>`_ In this guided lab exercise we will work
       through a problem solving exercise related to approximating the value of pi using random numbers.
 
-.. admonition:: Scratch Editor
 
-    .. actex:: scratch_6_4
 
 **Check your understanding**
 
@@ -315,9 +316,9 @@ There is no limit on the number of statements that can appear under the two clau
    How many statements can appear in each block (the if and the else) in a conditional statement?
 
 .. mchoicemf:: test_question6_4_2
-   :answer_a: Output a
-   :answer_b: Output b
-   :answer_c: Output c
+   :answer_a: TRUE
+   :answer_b: FALSE
+   :answer_c: TRUE on one line and FALSE on the next
    :answer_d: Nothing will be printed
    :correct: b
    :feedback_a: TRUE is printed by the if-block, which only executes if the conditional (in this case, 4+5 == 10) is true.  In this case 5+4 is not equal to 10.
@@ -326,25 +327,14 @@ There is no limit on the number of statements that can appear under the two clau
    :feedback_d: Python will always execute either the if-block (if the condition is true) or the else-block (if the condition is false).  It would never skip over both blocks.
 
    What does the following code print (choose from output a, b, c or nothing).
-   <pre>
-   if (4 + 5 == 10):
-       print("TRUE")
-   else:
-       print("FALSE")
-   </pre>
-   a.
-   <pre>
-   TRUE
-   </pre>
-   b.
-   <pre>
-   FALSE
-   </pre>
-   c.
-   <pre>
-   TRUE
-   FALSE
-   </pre>
+
+   .. code-block:: python
+
+     if (4 + 5 == 10):
+         print("TRUE")
+     else:
+         print("FALSE")
+
 
 .. mchoicemf:: test_question6_4_3
    :answer_a: Output a
@@ -358,33 +348,31 @@ There is no limit on the number of statements that can appear under the two clau
    :feedback_d: To print these three lines, Python would have to execute both blocks in the if-else statement, which it can never do.
 
    What does the following code print?
-   <pre>
-   if (4 + 5 == 10):
-       print("TRUE")
-   else:
-       print("FALSE")
-   print("TRUE")
-   </pre>
-    a.
-   <pre>
-   TRUE
-   </pre>
-   b.
-   <pre>
-   TRUE
-   FALSE
-   </pre>
-   c.
-   <pre>
-   FALSE
-   TRUE
-   </pre>
-   d.
-   <pre>
-   TRUE
-   FALSE
-   TRUE
-   </pre>
+
+   .. code-block:: python
+
+     if (4 + 5 == 10):
+         print("TRUE")
+     else:
+         print("FALSE")
+     print("TRUE")
+
+   ::
+
+      a. TRUE
+
+      b.
+         TRUE
+         FALSE
+
+      c.
+         FALSE
+         TRUE
+      d.
+         TRUE
+         FALSE
+         TRUE
+
 
 
 .. index:: alternative execution, branch, wrapping code in a function
@@ -409,7 +397,7 @@ Omitting the `else` Clause: Unary Selection
 Another form of the ``if`` statement is one in which the ``else`` clause is omitted entirely.
 This creates what is sometimes called **unary selection**.
 In this case, when the condition evaluates to ``True``, the statements are
-executed, otherwise the flow of execution continues to the statement after the ``if``.
+executed.  Otherwise the flow of execution continues to the statement after the body of the ``if``.
 
 
 .. activecode:: ch05_unaryselection
@@ -420,12 +408,8 @@ executed, otherwise the flow of execution continues to the statement after the `
     print("This is always printed")
 
 
-What would be printed if the value of `` x`` is negative?  Try it.
+What would be printed if the value of ``x`` is negative?  Try it.
 
-
-.. admonition:: Scratch Editor
-
-    .. actex:: scratch_6_5
 
 **Check your understanding**
 
@@ -441,43 +425,45 @@ What would be printed if the value of `` x`` is negative?  Try it.
    :feedback_d: It is valid to have an if-block without a corresponding else-block (though you cannot have an else-block without a corresponding if-block).
 
    What does the following code print?
-   <pre>
-   x = -10
-   if x < 0:
-       print("The negative number ",  x, " is not valid here.")
-   print("This is always printed")
-   </pre>
-   a.
-   <pre>
-   This is always printed
-   </pre>
-   b.
-   <pre>
-   The negative number -10 is not valid here
-   This is always printed
-   </pre>
-   c.
-   <pre>
-   The negative number -10 is not valid here
-   </pre>
+
+   .. code-block:: python
+     
+     x = -10
+     if x < 0:
+         print("The negative number ",  x, " is not valid here.")
+     print("This is always printed")
+
+   ::
+
+     a.
+     This is always printed
+
+     b.
+     The negative number -10 is not valid here
+     This is always printed
+
+     c.
+     The negative number -10 is not valid here
+
 
 .. mchoicemf:: test_question6_5_2
    :answer_a: No
    :answer_b: Yes
    :correct: b
-   :feedback_a: Every else-block must have exactly one corresponding if-block.  If you want to chain if-else statements together, you must use the else if construct, described in section 6.7.
+   :feedback_a: Every else-block must have exactly one corresponding if-block.  If you want to chain if-else statements together, you must use the else if construct, described in the chained conditionals section.
    :feedback_b: This will cause an error because the second else-block is not attached to a corresponding if-block.
 
    Will the following code cause an error?
-   <pre>
-   x = -10
-   if x < 0:
-       print("The negative number ",  x, " is not valid here.")
-   else:
-       print(x, " is a positive number")
-   else:
-       print("This is always printed")
-   </pre>
+
+   .. code-block:: python
+
+     x = -10
+     if x < 0:
+         print("The negative number ",  x, " is not valid here.")
+     else:
+         print(x, " is a positive number")
+     else:
+         print("This is always printed")
 
 .. index::
     single: nested conditionals
@@ -504,7 +490,7 @@ The second branch (the else from the outer) contains another ``if`` statement, w
 has two branches of its own. Those two branches could contain
 conditional statements as well.
 
-The flow of control can be seen in this flowchart illustration.
+The flow of control for this example can be seen in this flowchart illustration.
 
 .. image:: Figures/flowchart_nested_conditional.png
 
@@ -549,10 +535,6 @@ If you are still a bit unsure, here is the same selection as part of a codelens 
             print("x and y must be equal")
 
 
-.. admonition:: Scratch Editor
-
-    .. actex:: scratch_6_6
-
 **Check your understanding**
 
 .. mchoicemf:: test_question6_6_1
@@ -563,16 +545,18 @@ If you are still a bit unsure, here is the same selection as part of a codelens 
    :feedback_b: This is a legal nested if-else statement.  The inner if-else statement is contained completely within the body of the outer else-block.
 
    Will the following code cause an error?
-   <pre>
-   x = -10
-   if x < 0:
-       print("The negative number ",  x, " is not valid here.")
-   else:
-       if x > 0:
-           print(x, " is a positive number")
-       else:
-           print(x," is 0")
-   </pre>
+
+   .. code-block:: python
+
+     x = -10
+     if x < 0:
+         print("The negative number ",  x, " is not valid here.")
+     else:
+         if x > 0:
+             print(x, " is a positive number")
+         else:
+             print(x," is 0")
+
 
 .. index::
     single: chained conditional
@@ -623,9 +607,14 @@ Here is the same program using ``elif``.
         print("x and y must be equal")
 
 
-.. admonition:: Scratch Editor
 
-    .. actex:: scratch_6_7
+
+.. note::
+
+  This workspace is provided for your convenience.  You can use this activecode window to try out anything you like.
+
+  .. activecode:: scratch_06_02
+
 
 **Check your understanding**
 
@@ -638,49 +627,59 @@ Here is the same program using ``elif``.
    :correct: b
    :feedback_a: You can not use a Boolean expression after an else.
    :feedback_b: Yes, II will give the same result.
-   :feedback_c: No, III will Not give the same result.  The first if statement will be true, but the second will be false, so the else part will execute.
+   :feedback_c: No, III will not give the same result.  The first if statement will be true, but the second will be false, so the else part will execute.
    :feedback_d: No, Although II is correct III will not give the same result.  Try it.
    :feedback_e: No, in I you can not have a Boolean expression after an else.
 
    Which of I, II, and III below gives the same result as the following nested if?
-   <pre>
-   # nested if-else statement
-   x = -10
-   if x < 0:
-       print("The negative number ",  x, " is not valid here.")
-   else:
-       if x > 0:
-           print(x, " is a positive number")
-       else:
-           print(x, " is 0")
-   </pre>
-   I.
-   <pre>
-   if x < 0:
-       print("The negative number ",  x, " is not valid here.")
-   else (x > 0):
-       print(x, " is a positive number")
-   else:
-       print(x, " is 0")
-   </pre>
-   II.
-     <pre>
-   if x < 0:
-       print("The negative number ",  x, " is not valid here.")
-   elif (x > 0):
-       print(x, " is a positive number")
-   else:
-       print(x, " is 0")
-   </pre>
-   III.
-     <pre>
-   if x < 0:
-       print("The negative number ",  x, " is not valid here.")
-   if (x > 0):
-       print(x, " is a positive number")
-   else:
-       print(x, " is 0")
-   </pre>
+
+   .. code-block:: python
+
+     # nested if-else statement
+     x = -10
+     if x < 0:
+         print("The negative number ",  x, " is not valid here.")
+     else:
+         if x > 0:
+             print(x, " is a positive number")
+         else:
+             print(x, " is 0")
+
+
+   .. code-block:: python
+
+     I.
+     
+     if x < 0:
+         print("The negative number ",  x, " is not valid here.")
+     else (x > 0):
+         print(x, " is a positive number")
+     else:
+         print(x, " is 0")
+
+
+   .. code-block:: python
+
+     II.
+     
+     if x < 0:
+         print("The negative number ",  x, " is not valid here.")
+     elif (x > 0):
+         print(x, " is a positive number")
+     else:
+         print(x, " is 0")
+
+   .. code-block:: python
+
+     III.
+     
+     if x < 0:
+         print("The negative number ",  x, " is not valid here.")
+     if (x > 0):
+         print(x, " is a positive number")
+     else:
+         print(x, " is 0")
+
 
 .. mchoicemf:: test_question6_7_2
    :answer_a: a
@@ -692,21 +691,24 @@ Here is the same program using ``elif``.
    :feedback_c: Since the first two Boolean expressions are false the else will be executed.
 
    What will the following code print if x = 3, y = 5, and z = 2?
-   <pre>
-   if x < y and x < z:
-       print ("a")
-   elif y < x and y < z:
-       print ("b")
-   else:
-       print ("c")
-   </pre>
+
+   .. code-block:: python
+
+     if x < y and x < z:
+         print ("a")
+     elif y < x and y < z:
+         print ("b")
+     else:
+         print ("c")
+
 
 
 Boolean Functions
 -----------------
 
-Functions can return boolean values, which is often convenient for hiding
-complicated tests inside functions. For example:
+We have already seen that boolean values result from the evaluation of boolean expressions.  Since the result of any
+expression evaluation can be returned by a function (using the ``return`` statement),
+functions can return boolean values.  This turns out to be a very convenient way to hide the details of complicated tests. For example:
 
 .. activecode:: ch06_boolfun1
 
@@ -746,7 +748,8 @@ Boolean functions are often used in conditional statements:
 
 It might be tempting to write something like
 ``if isDivisible(x, y) == True:``
-but the extra comparison is  not necessary.  The following example shows the ``isDivisible`` function at work.  Try it
+but the extra comparison is  not necessary.  The following example shows the ``isDivisible`` function at work.  Notice how
+descriptive the code is when we move the testing details into a boolean function.  Try it
 with a few other actual parameters to see what is printed.
 
 .. activecode:: ch06_boolfun2
@@ -764,7 +767,8 @@ with a few other actual parameters to see what is printed.
     else:
         print("Those values are no good")
 
-Here is the same program in codelens.
+Here is the same program in codelens.  When we evaluate the ``if`` statement in the main part of the program, the evaluation of
+the boolean expression causes a call to the ``isDivisible`` function.  This is very easy to see in codelens.
 
 .. codelens:: ch06_boolcodelens
     :showoutput:
@@ -783,9 +787,6 @@ Here is the same program in codelens.
         print("Those values are no good")
 
 
-.. admonition:: Scratch Editor
-
-    .. actex:: scratch_6_8
 
 **Check your understanding**
 
@@ -808,9 +809,18 @@ Here is the same program in codelens.
    :feedback_b: x +y < z is a valid Boolean expression, which will evaluate to True or False.  It is perfectly legal to return True or False from a function, and to have the statement to be evaluated in the same line as the return keyword.
 
    Is the following statement legal in Python (assuming x, y and z are defined to be numbers)?
-   <pre>
-   return x + y < z
-   </pre>
+
+   .. code-block:: python
+
+     return x + y < z
+
+
+
+.. note::
+
+   This workspace is provided for your convenience.  You can use this activecode window to try out anything you like.
+
+   .. activecode:: scratch_06_03
 
 
 
@@ -878,15 +888,34 @@ Glossary
 
 Exercises
 ---------
+#.
 
-#.  What do these expressions evaluate to?
+    .. tabbed:: q1
 
-    #.  ``3 == 3``
-    #.  ``3 != 3``
-    #.  ``3 >= 4``
-    #.  ``not (3 < 4)``
+        .. tab:: Question
 
-        .. actex:: ex_6_1
+            What do these expressions evaluate to?
+        
+            #.  ``3 == 3``
+            #.  ``3 != 3``
+            #.  ``3 >= 4``
+            #.  ``not (3 < 4)``
+        
+                .. actex:: ex_6_1
+        
+
+        .. tab:: Answer
+            
+            #. True
+            #. False
+            #. False
+            #. False
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_eb4a097382404ffe81300aac5744e3fe
 
 
 #.  Give the **logical opposites** of these conditions.  You are not allowed to use the ``not`` operator.
@@ -894,48 +923,146 @@ Exercises
     #.  ``a > b``
     #.  ``a >= b``
     #.  ``a >= 18  and  day == 3``
-    #.  ``a >= 18  and  day != 3``
+    #.  ``a >= 18  or  day != 3``
 
         .. actex:: ex_6_2
 
-#.  Write a function which is given an exam mark, and it returns a string --- the grade for that mark --- according to this
-    scheme:
+#.
 
-    .. table::
+    .. tabbed:: q3
 
-       =======   =====
-       Mark      Grade
-       =======   =====
-       >= 90     A
-       [80-90)   B
-       [70-80)   C
-       [60-70)   D
-       < 60      F
-       =======   =====
+        .. tab:: Question
 
-    The square and round brackets denote closed and open intervals.
-    A closed interval includes the number, and open interval excludes it.   So 79.99999 gets grade C , but 80 gets grade B.
+            Write a function which is given an exam mark, and it returns a string --- the grade for that mark --- according to this
+            scheme:
+        
+            .. table::
+        
+               =======   =====
+               Mark      Grade
+               =======   =====
+               >= 90     A
+               [80-90)   B
+               [70-80)   C
+               [60-70)   D
+               < 60      F
+               =======   =====
+        
+            The square and round brackets denote closed and open intervals.
+            A closed interval includes the number, and open interval excludes it.   So 79.99999 gets grade C , but 80 gets grade B.
+        
+            Test your function by printing the mark and the grade for a number of different marks.
+        
+            .. actex:: ex_6_3
 
-    Let ``xs = [83, 75, 74.9, 70, 69.9, 65, 60, 59.9, 55, 50, 49.9, 45, 44.9, 40, 39.9, 2, 0]``
+        .. tab:: Answer
+            
+            .. activecode:: q3_question
 
-    Test your function by printing the mark and the grade for all the elements in this list.
+                def grade(mark):
+                    if mark >= 90:
+                        return "A"
+                    else:
+                        if mark >= 80:
+                            return "B"
+                        else:
+                            if mark >= 70:
+                                return "C"
+                            else:
+                                if mark >= 60:
+                                    return "D"
+                                else:
+                                    return "F"
 
-    .. actex:: ex_6_3
+                mark = 83
+                print( "Mark:", str(mark), "Grade:", grade(mark))
 
-#.  Modify the turtle bar chart program so that the bar for any value
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_b9e6fd14629949e59da1a4ae827c0032
+
+
+#.  Modify the turtle bar chart program from the previous chapter so that the bar for any value
     of 200 or more is filled with red, values between [100 and 200) are filled yellow,
     and bars representing values less than 100 are filled green.
 
     .. actex:: ex_6_4
 
-#.  In the turtle bar chart program, what do you expect to happen if one or more
-    of the data values in the list is negative?   Try it out.  Change the
-    program so that when it prints the text value for the negative bars, it puts
-    the text below the bottom of the bar.
+#.
 
-    .. actex:: ex_6_5
+    .. tabbed:: q5
 
-#.  Write a function ``findHypot`` which, given the length of two sides of a right-angled triangle, returns
+        .. tab:: Question
+
+            In the turtle bar chart program, what do you expect to happen if one or more
+            of the data values in the list is negative?   Go back and try it out.  Change the
+            program so that when it prints the text value for the negative bars, it puts
+            the text above the base of the bar (on the 0 axis).
+        
+            .. actex:: ex_6_5
+
+        .. tab:: Answer
+            
+            .. activecode:: answer_ex_6_5
+
+                    import turtle
+
+                    def drawBar(t, height):
+                      """ Get turtle t to draw one bar, of height. """
+                      t.begin_fill()               # start filling this shape
+                      if height < 0:
+                          t.write(str(height))
+                      t.left(90)
+                      t.forward(height)
+                      if height >=0:
+                          t.write(str(height))
+                      t.right(90)
+                      t.forward(40)
+                      t.right(90)
+                      t.forward(height)
+                      t.left(90)
+                      t.end_fill()                 # stop filling this shape
+
+
+
+                    xs = [48,-50,200,240,160,260,220]  # here is the data
+                    maxheight = max(xs)
+                    minheight = min(xs)
+                    numbars = len(xs)
+                    border = 10
+
+                    tess = turtle.Turtle()           # create tess and set some attributes
+                    tess.color("blue")
+                    tess.fillcolor("red")
+                    tess.pensize(3)
+
+                    wn = turtle.Screen()             # Set up the window and its attributes
+                    wn.bgcolor("lightgreen")
+                    if minheight >0:
+                        lly = 0
+                    else:
+                        lly = minheight-border
+    
+                    wn.setworldcoordinates(0-border,lly,40*numbars+border,maxheight+border)
+
+
+                    for a in xs:
+                      drawBar(tess, a)
+
+                    wn.exitonclick()
+
+
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_0118bd02de23462bafdb51beb4c85e44
+
+
+#.  Write a function ``findHypot``.  The function will be given the length of two sides of a right-angled triangle and it should return
     the length of the hypotenuse.  (Hint:  ``x ** 0.5`` will return the square root, or use ``sqrt`` from the math module)
 
     .. actex:: ex_6_6
@@ -950,22 +1077,51 @@ Exercises
         testEqual(findHypot(21.0,72.0), 75.0)
         testEqual(findHypot(1,1.73205), 1.999999)
 
-#. Write a function called ``is_even(n)`` that takes an integer as an argument
-   and returns ``True`` if the argument is an **even number** and ``False`` if
-   it is **odd**.
+#.
 
+    .. tabbed:: q7
 
-   .. actex:: ex_6_7
+        .. tab:: Question
 
-       from test import testEqual
+           Write a function called ``is_even(n)`` that takes an integer as an argument
+           and returns ``True`` if the argument is an **even number** and ``False`` if
+           it is **odd**.
+        
+           .. actex:: ex_6_7
+        
+               from test import testEqual
+        
+               def is_even(n):
+                   # your code here
+        
+               testEqual(is_even(10), True)
+               testEqual(is_even(5), False)
+               testEqual(is_even(1), False)
+               testEqual(is_even(0), True)
 
-       def is_even(n):
-           # your code here
+        .. tab:: Answer
+            
+            .. activecode:: q7_answer
 
-       testEqual(is_even(10), True)
-       testEqual(is_even(5), False)
-       testEqual(is_even(1), False)
-       testEqual(is_even(0), True)
+                from test import testEqual
+
+                def is_even(n):
+                    if n % 2 == 0:
+                        return True
+                    else:
+                        return False
+
+                testEqual(is_even(10), True)
+                testEqual(is_even(5), False)
+                testEqual(is_even(1), False)
+                testEqual(is_even(0), True)
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_7ae92646976d4953ac8a163f338b4358
+
 
 #. Now write the function ``is_odd(n)`` that returns ``True`` when ``n`` is odd
    and ``False`` otherwise.
@@ -982,20 +1138,56 @@ Exercises
        testEqual(is_odd(1), True)
        testEqual(is_odd(0), False)
 
-#. Modify ``is_odd`` so that it uses a call to ``is_even`` to determine if its
-   argument is an odd integer.
+#.
 
-   .. actex:: ex_6_9
+    .. tabbed:: q9
 
-       from test import testEqual
+        .. tab:: Question
 
-       def is_odd(n):
-           # your code here
+           Modify ``is_odd`` so that it uses a call to ``is_even`` to determine if its
+           argument is an odd integer.
+        
+           .. actex:: ex_6_9
+        
+               from test import testEqual
+        
+               def is_odd(n):
+                   # your code here
+        
+               testEqual(is_odd(10), False)
+               testEqual(is_odd(5), True)
+               testEqual(is_odd(1), True)
+               testEqual(is_odd(0), False)
+        
 
-       testEqual(is_odd(10), False)
-       testEqual(is_odd(5), True)
-       testEqual(is_odd(1), True)
-       testEqual(is_odd(0), False)
+        .. tab:: Answer
+            
+            .. activecode:: q9_answer
+
+                from test import testEqual
+
+                def is_even(n):
+                    if n % 2 == 0:
+                        return True
+                    else:
+                        return False
+
+                def is_odd(n):
+                    if is_even(n):
+                        return False
+                    else:
+                        return True
+
+                testEqual(is_odd(10), False)
+                testEqual(is_odd(5), True)
+                testEqual(is_odd(1), True)
+                testEqual(is_odd(0), False)
+
+        .. tab:: Discussion
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_9125792d0c264b65b4d9d72d25485ceb
 
 
 #.  Write a function ``is_rightangled`` which, given the length of three sides of a triangle,
@@ -1010,7 +1202,7 @@ Exercises
 
     .. sourcecode:: python
 
-      if  abs(x-y) < 0.000001:      # if x is approximately equal to y
+      if  abs(x-y) < 0.001:      # if x is approximately equal to y
           ...
 
 
@@ -1028,21 +1220,66 @@ Exercises
         testEqual(is_rightangled(4.1,8.2,9.168), False)
         testEqual(is_rightangled(0.5,0.4,0.64031), True)
 
-#.  Extend the above program so that the sides can be given to the function in any order.
+#.
 
-    .. actex:: ex_6_11
+    .. tabbed:: q11
 
-        from test import testEqual
+        .. tab:: Question
 
-        def is_rightangled(a,b,c):
-            # your code here
+            Extend the above program so that the sides can be given to the function in any order.
+        
+            .. actex:: ex_6_11
+        
+                from test import testEqual
+        
+                def is_rightangled(a,b,c):
+                    # your code here
+        
+                testEqual(is_rightangled(1.5,2.0,2.5), True)
+                testEqual(is_rightangled(16.0,4.0,8.0), False)
+                testEqual(is_rightangled(4.1,9.1678787077,8.2), True)
+                testEqual(is_rightangled(9.16787,4.1,8.2), True)
+                testEqual(is_rightangled(4.1,8.2,9.168), False)
+                testEqual(is_rightangled(0.5,0.64031,0.4), True)
 
-        testEqual(is_rightangled(1.5,2.0,2.5), True)
-        testEqual(is_rightangled(16.0,4.0,8.0, False)
-        testEqual(is_rightangled(4.1,9.1678787077,8.2), True)
-        testEqual(is_rightangled(9.16787,4.1,8.2), True)
-        testEqual(is_rightangled(4.1,8.2,9.168), False)
-        testEqual(is_rightangled(0.5,0.64031,0.4), True)
+        .. tab:: Answer
+            
+            .. activecode:: q11_answer
+
+                from test import testEqual
+
+                def is_rightangled(a,b,c):
+                    is_rightangled = False
+
+                    largest = a
+                    if b > largest:
+                        # largest = b
+                        if abs((a**2) + (c**2) - (b**2)) < 0.001:
+                            is_rightangled = True
+                    if c > largest:
+                        # largest = c
+                        if abs((a**2) + (b**2) - (c**2)) < 0.001:
+                            is_rightangled = True
+                    else:
+                        # largest = a
+                        if abs((c**2) + (b**2) - (a**2)) < 0.001:
+                            is_rightangled = True
+
+                    return is_rightangled
+
+                testEqual(is_rightangled(1.5,2.0,2.5), True)
+                testEqual(is_rightangled(4.0,8.0,16.0), False)
+                testEqual(is_rightangled(4.1,8.2,9.1678787077), True)
+                testEqual(is_rightangled(4.1,8.2,9.16787), True)
+                testEqual(is_rightangled(4.1,8.2,9.168), False)
+                testEqual(is_rightangled(0.5,0.4,0.64031), True)
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_b25992fa70fc4e7581d84315df38d796
+
 
 #.  A year is a **leap year** if it is divisible by 4 unless it is a century that is not divisible by 400.
     Write a function that takes a year as a parameter and returns ``True`` if the year is a leap year, ``False`` otherwise.
@@ -1062,17 +1299,64 @@ Exercises
         testEqual(isLeap(2000), True)
         testEqual(isLeap(2056), True)
 
-#.  Implement the Date of Easter program as described in class.
+#.
 
-    .. actex:: ex_6_13
+    .. tabbed:: q13
 
+        .. tab:: Question
 
-.. admonition:: Scratch Editor
+            Implement the calculator for the date of Easter.
+            
+            The following algorithm computes the date for Easter Sunday for any year between 1900 to 2099.
+            
+            Ask the user to enter a year.
+            Compute the following:
+            
+            
+            
+                1. a = year % 19
+                #. b = year % 4
+                #. c = year % 7
+                #. d = (19 * a + 24) % 30
+                #. e = (2 * b + 4 * c + 6 * d + 5) % 7
+                #. dateofeaster = 22 + d + e
+            
+            
+            Special note: The algorithm can give a date in April.  Also, if the year is one of four special 
+            years (1954, 1981, 2049, or 2076) then subtract 7 from the date.
+            
+            Your program should print an error message if the user provides a date that is out of range.
+        
+            .. actex:: ex_6_13
+        
 
-    .. actex:: scratch_6_9
+        .. tab:: Answer
 
-.. toctree::
-    :hidden:
+            .. activecode:: answer_ex_6_13
+            
+                year = int(input("Please enter a year"))
+                if year >= 1900 and year <= 2099:
+                    a = year % 19
+                    b = year % 4
+                    c = year % 7
+                    d = (19*a + 24) % 30
+                    e = (2*b + 4*c + 6*d + 5) % 7
+                    dateofeaster = 22 + d + e
 
-    ../Labs/montepi
+                    if year == 1954 or year == 2981 or year == 2049 or year == 2076:
+                        dateofeaster = dateofeaster - 7
+                
+                    if dateofeaster > 31:
+                        print("April", dateofeaster - 31)
+                    else:
+                        print("March", dateofeaster)
+                else:
+                    print("ERROR...year out of range")
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_2dfd6acf1ca849c2853dad606d1ba255
+
 

@@ -10,6 +10,10 @@
 ..  shortname:: IntroToFunctions
 ..  description:: This is the introduction to the idea of defining and calling a function.
 
+.. qnum::
+   :prefix: func-
+   :start: 1
+   
 Functions
 =========
 
@@ -37,14 +41,14 @@ the solution to the problem.
 
 The syntax for a **function definition** is:
 
-.. sourcecode:: python
+.. code-block:: python
 
-    def NAME( PARAMETERS ):
-        STATEMENTS
+    def name( parameters ):
+        statements
 
 You can make up any names you want for the functions you create, except that
 you can't use a name that is a Python keyword, and the names must follow the rules
-for legal identifiers. The parameters specifies
+for legal identifiers that were given previously. The parameters specify
 what information, if any, you have to provide in order to use the new function.  Another way to say this is that the parameters specify what the function needs to do it's work.
 
 There can be any number of statements inside the function, but they have to be
@@ -58,7 +62,7 @@ pattern:
    indented the same amount -- *4 spaces is the Python standard* -- from
    the header line.
 
-We've already seen the `for` loop which follows this pattern.
+We've already seen the ``for`` loop which follows this pattern.
 
 In a function definition, the keyword in the header is ``def``, which is
 followed by the name of the function and some *parameters* enclosed in
@@ -80,7 +84,7 @@ squares.  It would make sense if we did not have to duplicate all the steps each
 
 .. image:: Figures/turtleproc.png
 
-Here is a function to capture this idea.  Give it a try.
+Here is a program containing a function to capture this idea.  Give it a try.
 
 .. activecode:: ch04_1
 
@@ -98,7 +102,7 @@ Here is a function to capture this idea.  Give it a try.
     wn.bgcolor("lightgreen")
 
     alex = turtle.Turtle()            # create alex
-    drawSquare(alex, 50)             # Call the function to draw the square
+    drawSquare(alex, 50)             # Call the function to draw the square passing the actual turtle and the actual side size
 
     wn.exitonclick()
 
@@ -125,7 +129,7 @@ this purpose!
 
 Defining a new function does not make the function run. To do that we need a
 **function call**.  This is also known as a **function invocation**. We've already seen how to call some built-in functions like
-**print**, **range** and **int**. Function calls contain the name of the function being
+``print``, ``range`` and ``int``. Function calls contain the name of the function to be
 executed followed by a list of values, called *arguments*, which are assigned
 to the parameters in the function definition.  So in the second to the last line of
 the program, we call the function, and pass ``alex`` as the turtle to be manipulated,
@@ -142,7 +146,7 @@ Once we've defined a function, we can call it as often as we like and its
 statements will be executed each time we call it.  In this case, we could use it to get
 one of our turtles to draw a square and then we can move the turtle and have it draw a different square in a
 different location.  Note that we lift the tail so that when ``alex`` moves there is no trace.  We put the tail
-back down before drawing the next square.
+back down before drawing the next square.  Make sure you can identify both invocations of the ``drawSquare`` function.
 
 .. activecode:: ch04_1a
 
@@ -200,9 +204,14 @@ been defined, we can call it as many times as we like with whatever actual param
 
     wn.exitonclick()
 
-.. admonition:: Scratch Editor
 
-    .. actex:: scratch_1
+.. note::
+
+   This workspace is provided for your convenience.  You can use this activecode window to try out anything you like.
+
+   .. activecode:: scratch_05_01
+
+
 
 **Check your understanding**
 
@@ -227,7 +236,7 @@ been defined, we can call it as many times as we like with whatever actual param
    :correct: b
    :feedback_a: Functions have little effect on how fast the program runs.
    :feedback_b: While functions are not required, they help the programmer better think about the solution by organizing pieces of the solution into logical chunks that can be reused.
-   :feedback_c: In the first several chapters, youíve seen many examples of Python programs written without the use of functions.  While writing and using functions is desirable and essential for good programming style as your programs get longer, it is not required.
+   :feedback_c: In the first several chapters, you have seen many examples of Python programs written without the use of functions.  While writing and using functions is desirable and essential for good programming style as your programs get longer, it is not required.
    :feedback_d: Not all functions calculate values.
 
    What is one main purpose of a function?
@@ -257,13 +266,15 @@ been defined, we can call it as many times as we like with whatever actual param
    :feedback_d: This is a comment stating what the function does.
 
    What is the name of the following function?
-   <pre>
-   def drawSquare(t, sz):
-       """Make turtle t draw a square of with side sz."""
-       for i in range(4):
-           t.forward(sz)
-           t.left(90)
-   </pre>
+
+   .. code-block:: python
+
+     def drawSquare(t, sz):
+         """Make turtle t draw a square of with side sz."""
+         for i in range(4):
+             t.forward(sz)
+             t.left(90)
+
 
 
 .. mchoicemf:: test_question5_1_5
@@ -278,13 +289,15 @@ been defined, we can call it as many times as we like with whatever actual param
    :feedback_d: the parameters include only those variables whose values that the function expects to receive as input.  They are specified in the header of the function.
 
    What are the parameters of the following function?
-   <pre>
-   def drawSquare(t, sz):
-       """Make turtle t draw a square of with side sz."""
-       for i in range(4):
-	   t.forward(sz)
-	   t.left(90)
-   </pre>
+
+   .. code-block:: python
+
+     def drawSquare(t, sz):
+         """Make turtle t draw a square of with side sz."""
+         for i in range(4):
+       t.forward(sz)
+       t.left(90)
+
 
 
 .. mchoicemf:: test_question5_1_6
@@ -301,13 +314,15 @@ been defined, we can call it as many times as we like with whatever actual param
    :feedback_e: Since alex was already previously defined and 10 is a value, we have passed in two correct values for this function.
 
    Considering the function below, which of the following statements correctly invokes, or calls, this function (i.e., causes it to run)?  Assume we already have a turtle named alex.
-   <pre>
-   def drawSquare(t, sz):
-       """Make turtle t draw a square of with side sz."""
-       for i in range(4):
-           t.forward(sz)
-	   t.left(90)
-   </pre>
+
+   .. code-block:: python
+
+     def drawSquare(t, sz):
+         """Make turtle t draw a square of with side sz."""
+         for i in range(4):
+             t.forward(sz)
+       t.left(90)
+
 
 
 .. mchoicemf:: test_question5_1_7
@@ -390,8 +405,8 @@ piece of data that is returned from the function.
 .. image:: Figures/blackboxfun.png
 
 
-How do we write our own fruitful function?  Lets start with a very simple
-mathematical function ``square``.  The square function will take one number
+How do we write our own fruitful function?  Lets start by creating a very simple
+mathematical function that we will call ``square``.  The square function will take one number
 as a parameter and return the result of squaring that number.  Here is the
 black-box diagram with the Python code following.
 
@@ -408,7 +423,7 @@ black-box diagram with the Python code following.
     result = square(toSquare)
     print("The result of ", toSquare, " squared is ", result)
 
-The **return** statement is followed an expression which is evaluated.  Its
+The **return** statement is followed by an expression which is evaluated.  Its
 result is returned to the caller as the "fruit" of calling this function.
 Because the return statement can contain any Python expression we could have
 avoided creating the **temporary variable** ``y`` and simply used
@@ -448,25 +463,34 @@ where the function call was made.
     print("The result of ", toSquare, " squared is ", squareResult)
 
 Another important thing to notice as you step through this codelens
-demonstration is the highlighting of line numbers.  Codelens boldfaces the line numbers that it has executed.
-When you first start running this codelens demonstration you will notice that
-line 1 is bolded.  The next line to be bolded is line 5.  Why is this?
-Because function definition is not the same as function execution.  Lines 2
-and 3 will not be bolded until the function is called on line 6.
+demonstration is the movement of the red and green arrows.  Codelens uses these arrows to show you where it is currently executing.
+Recall that the red arrow always points to the next line of code that will be executed.  The light green arrow points to the line
+that was just executed in the last step.
+
+When you first start running this codelens demonstration you will notice that there is only a red arrow and it points to
+line 1.  This is because line 1 is the next line to be executed and since it is the first line, there is no previously executed line
+of code.  
+
+When you click on the forward button, notice that the red arrow moves to line 5, skipping lines 2 and 3 of the function (and
+the light green arrow has now appeared on line 1).  Why is this?
+The answer is that function definition is not the same as function execution.  Lines 2
+and 3 will not be executed until the function is called on line 6.  Line 1 defines the function and the name ``square`` is added to the
+global variables, but that is all the ``def`` does at that point.  The body of the function will be executed later.  Continue to click
+the forward button to see how the flow of control moves from the call, back up to the body of the function, and then finally back to line 7, after the function has returned its value and the value has been assigned to ``squareResult``.
 
 
-Short variable names are more economical and sometimes make
-code easier to read:
-E = mc\ :sup:`2` would not be nearly so memorable if Einstein had
-used longer variable names!  If you do prefer short names,
-make sure you also have some comments to enlighten the reader
-about what the variables are used for.
+.. Short variable names are more economical and sometimes make
+.. code easier to read:
+.. E = mc\ :sup:`2` would not be nearly so memorable if Einstein had
+.. used longer variable names!  If you do prefer short names,
+.. make sure you also have some comments to enlighten the reader
+.. about what the variables are used for.
 
 
-All Python functions return ``None`` unless there is an explicit return statement with
+Finally, there is one more aspect of function return values that should be noted.  All Python functions return the value ``None`` unless there is an explicit return statement with
 a value other than ``None.``
 Consider the following common mistake made by beginning Python
-programmers.  As you step through this pay very close attention to the return
+programmers.  As you step through this example, pay very close attention to the return
 value in the local variables listing.  Then look at what is printed when the
 function returns.
 
@@ -481,7 +505,9 @@ function returns.
     squareResult = square(toSquare)
     print("The result of ", toSquare, " squared is ", squareResult)
 
-
+The problem with this function is that even though it prints the value of the square, that value will not be returned to the place
+where the call was done.  Since line 6 uses the return value as the right hand side of an assignment statement, the evaluation of the 
+function will be ``None``.  In this case, ``squareResult`` will refer to that value after the assignment statement and therefore the result printed in line 7 is incorrect.  Typically, functions will return values that can be printed or processed in some other way by the caller.
 
 .. index::
     single: local variable
@@ -489,9 +515,8 @@ function returns.
     single: lifetime
 
 
-.. admonition:: Scratch Editor
 
-    .. actex:: scratch_2
+
 
 **Check your understanding**
 
@@ -507,33 +532,37 @@ function returns.
    :feedback_d: Functions can return any legal data, including (but not limited to) numbers, strings, turtles, etc.
 
    What is wrong with the following function definition:
-   <pre>
-   def addEm(x, y, z):
-       return x+y+z
-       print('the answer is', x+y+z)
-   </pre>
+
+   .. code-block:: python
+
+     def addEm(x, y, z):
+         return x+y+z
+         print('the answer is', x+y+z)
+
 
 .. mchoicemf:: test_question5_2_2
    :answer_a: Nothing (no value)
    :answer_b: The value of x+y+z
    :answer_c: The string 'x+y+z'
    :correct: a
-   :feedback_a: We have accidentally used print where we mean return.  This is a VERY COMMON mistake so watch out!  This mistake is also particularly difficult to find because when you run the function the output looks the same.  It is not until you try to assign its value to a variable that you can notice a difference.
+   :feedback_a: We have accidentally used print where we mean return.  Therefore, the function will return the value None by default.  This is a VERY COMMON mistake so watch out!  This mistake is also particularly difficult to find because when you run the function the output looks the same.  It is not until you try to assign its value to a variable that you can notice a difference.
    :feedback_b: Careful!  This is a very common mistake.  Here we have printed the value x+y+z but we have not returned it.  To return a value we MUST use the return keyword.
    :feedback_c: x+y+z calculates a number (assuming x+y+z are numbers) which represents the sum of the values x, y and z.
 
    What will the following function return?
-   <pre>
-   def addEm(x, y, z):
-       print x+y+z
-   </pre>
+
+   .. code-block:: python
+
+    def addEm(x, y, z):
+        print(x+y+z)
+
 
 Variables and parameters are local
 ----------------------------------
 
 An assignment statement in a function creates a **local variable** for the
-variable on the left hand side of the assignment operator. This variable only
-exists inside the function, and you cannot use it outside. For example,
+variable on the left hand side of the assignment operator. It is called local because this variable only
+exists inside the function and you cannot use it outside. For example,
 consider again the ``square`` function:
 
 .. codelens:: bad_local
@@ -555,12 +584,14 @@ The variable ``y`` only exists while the function is being executed ---
 we call this its **lifetime**.
 When the execution of the function terminates (returns),
 the local variables  are destroyed.  Codelens helps you  visualize this
-because the local variables disappear after the function returns.
+because the local variables disappear after the function returns.  Go back and step thru the
+statements paying particular attention to the variables that are created when the function is called.
+Note when they are subsequently destroyed as the function returns.
 
 Formal parameters are also local and act like local variables.
 For example, the lifetime of ``x`` begins when ``square`` is
 called,
-and the lifetime ends when the function completes its execution.
+and its lifetime ends when the function completes its execution.
 
 So it is not possible for a function to set some local variable to a
 value, complete its execution, and then when it is called again next
@@ -568,8 +599,8 @@ time, recover the local variable.  Each call of the function creates
 new local variables, and their lifetimes expire when the function returns
 to the caller.
 
-Conversely, a function may access a global variable.  But this is considered
-**bad form** by nearly all programmers.  Look at the following,
+On the other hand, it is legal for a function to access a global variable.  However, this is considered
+**bad form** by nearly all programmers and should be avoided.  Look at the following,
 nonsensical variation of the square function.
 
 .. activecode:: badsquare_1
@@ -583,18 +614,18 @@ nonsensical variation of the square function.
     print(result)
 
 
-Although the ``badsquare`` function works, it is silly and poorly written.  But
-it illustrates an important rule about how variables are looked up in Python.
+Although the ``badsquare`` function works, it is silly and poorly written.  We have done it here to illustrate
+an important rule about how variables are looked up in Python.
 First, Python looks at the variables that are defined as local variables in
 the function.  We call this the **local scope**.  If the variable name is not
 found in the local scope, then Python looks at the global variables,
 or **global scope**.  This is exactly the case illustrated in the code above.
 ``power`` is not found locally in ``badsquare`` but it does exist globally.
 The appropriate way to write this function would be to pass power as a parameter.
-For practice, you should rewrite bad square to have a second parameter called power.
+For practice, you should rewrite the badsquare example to have a second parameter called power.
 
-Assignment statements in the local function can
-not change variables defined outside the function.  Consider the following
+There is another variation on this theme of local versus global variables.  Assignment statements in the local function cannot 
+change variables defined outside the function.  Consider the following
 codelens example:
 
 .. codelens::  cl_powerof_bad
@@ -608,8 +639,8 @@ codelens example:
     result = powerof(10,2)
     print(result)
 
-Now step through the code.  What do you notice about the values of ``power``
-in the local scope compared to the global scope?
+Now step through the code.  What do you notice about the values of variable ``power``
+in the local scope compared to the variable ``power`` in the global scope?
 
 The value of ``power`` in the local scope was different than the global scope.
 That is because in this example ``power`` was used on the left hand side of the
@@ -627,10 +658,10 @@ Inside the ``square`` function we are going to make an assignment to the
 parameter ``x``  There's no good reason to do this other than to emphasize
 the fact that the parameter ``x`` is a local variable.  If you step through
 the example in codelens you will see that although ``x`` is 0 in the local
-variables for ``square`` x remains 2 in the global scope.  This is confusing
+variables for ``square``, the ``x`` in the global scope remains 2.  This is confusing
 to many beginning programmers who think that an assignment to a
 formal parameter will cause a change to the value of the variable that was
-used as the actual parameter; especially when the two share the same name.
+used as the actual parameter, especially when the two share the same name.
 But this example demonstrates that that is clearly not how Python operates.
 
 .. codelens:: cl_change_parm
@@ -645,15 +676,13 @@ But this example demonstrates that that is clearly not how Python operates.
     print(z)
 
 
-.. admonition:: Scratch Editor
 
-    .. actex:: scratch_3
 
 **Check your understanding**
 
 .. mchoicemf:: test_question5_3_1
    :answer_a: Its value
-   :answer_b: The range of code where a variable has a certain value.
+   :answer_b: The range of statements in the code where a variable can be accessed.
    :answer_c: Its name
    :correct: b
    :feedback_a: Value is the contents of the variable.  Scope concerns where the variable is &quot;known&quot;.
@@ -667,7 +696,7 @@ But this example demonstrates that that is clearly not how Python operates.
    :answer_b: The same as a parameter
    :answer_c: Another name for any variable
    :correct: a
-   :feedback_a: Yes, a local variable is a temporary variable that is only known in the function it is defined in.
+   :feedback_a: Yes, a local variable is a temporary variable that is only known (only exists) in the function it is defined in.
    :feedback_b: While parameters may be considered local variables, functions may also define and use additional local variables.
    :feedback_c: Variables that are used outside a function are not local, but rather global variables.
 
@@ -732,20 +761,25 @@ is the details of how the squaring is done.  This is a great example of "black b
     print("The result of", toSquare, "squared is", squareResult)
 
 
-.. note::
 
-    What would happen if we put the assignment ``runningTotal = 0`` inside
-    the for statement?  Not sure? Try it and find out.
 
 
 In the program above, notice that the variable ``runningtotal`` starts out with a value of 0.  Next, the iteration is performed ``x`` times.  Inside the for loop, the update occurs. ``runningtotal`` is reassigned a new value which is the old value plus the value of ``x``.
+
 
 This pattern of iterating the updating of a variable is commonly
 referred to as the **accumulator pattern**.  We refer to the variable as the **accumulator**.  This pattern will come up over and over again.  Remember that the key
 to making it work successfully is to be sure to initialize the variable before you start the iteration.
 Once inside the iteration, it is required that you update the accumulator.
 
-Here is the same program in codelens.  Step thru the function and watch the "running total" accumulates the result.
+.. note::
+
+    What would happen if we put the assignment ``runningTotal = 0`` inside
+    the for statement?  Not sure? Try it and find out.
+
+
+
+Here is the same program in codelens.  Step thru the function and watch the "running total" accumulate the result.
 
 .. codelens:: sq_accum3
 
@@ -769,9 +803,12 @@ Here is the same program in codelens.  Step thru the function and watch the "run
     generalization
     abstraction
 
-.. admonition:: Scratch Editor
 
-    .. actex:: scratch_4
+.. note::
+
+   This workspace is provided for your convenience.  You can use this activecode window to try out anything you like.
+
+   .. activecode:: scratch_05_04
 
 **Check your understanding**
 
@@ -787,16 +824,36 @@ Here is the same program in codelens.  Step thru the function and watch the "run
    :feedback_d: The line runningtotal=0 is the first line in the for loop, but immediately after this line, the line runningtotal = runningtotal + x will execute, giving runningtotal a non-zero value  (assuming x is non-zero).
 
    Consider the following code:
-   <pre>
-   def square(x):
-       runningtotal = 0
-       for counter in range(x):
-           runningtotal = runningtotal + x
-       return runningtotal
-   </pre>
+
+   .. code-block:: python
+
+     def square(x):
+         runningtotal = 0
+         for counter in range(x):
+             runningtotal = runningtotal + x
+         return runningtotal
+
    What happens if you put the initialization of runningtotal (the
    line runningtotal = 0) inside the for loop as the first
    instruction in the loop?
+
+
+.. parsonsprob:: question5_4_1p
+
+   Rearrange the code statements so that the program will add up the first n odd numbers where n is provided by the user.
+   -----
+   n = int(input('How many even numbers would you like to add together?'))
+   thesum = 0
+   oddnumber = 1
+   =====
+   for counter in range(n):
+   =====
+      thesum = thesum + oddnumber
+      oddnumber = oddnumber + 2
+   =====
+   print(thesum)
+
+
 
 Functions can call other functions
 ----------------------------------
@@ -839,25 +896,24 @@ example, codelens bolds line 1 and line 5 as the functions are defined.  The
 body of square is not executed until it is called from the ``sum_of_squares``
 function for the first time on line 6.  Also notice that when ``square`` is
 called there are two groups of local variables, one for ``square`` and one
-for ``sum_of_squares``.  As you step through you will notice that ``x,
-`` and ``y`` are local variables in both functions and may even have
-different values.  This illustrates that even though they are named the same
-they are very different.
+for ``sum_of_squares``.  As you step through you will notice that ``x``, and ``y`` are local variables in both functions and may even have
+different values.  This illustrates that even though they are named the same,
+they are in fact, very different.
 
-Lets look at another example that uses two functions, but illustrates another
+Now we will look at another example that uses two functions.  This example illustrates an
 important computer science problem solving technique called
-**generalization**.  Let's assume now we want to write a
+**generalization**.  Assume we want to write a
 function to draw a square.  The generalization step is to realize that a
 square is just a special kind of rectangle.
 
-To draw a rectangle we need to be able to call the function with different
+To draw a rectangle we need to be able to call a function with different
 arguments for width and height.  Unlike the case of the square,
 we cannot repeat the same thing 4 times, because the four sides are not equal.
 However, it is the case that drawing the bottom and right sides are the
 same sequence as drawing the top and left sides.  So we eventually come up with
 this rather nice code that can draw a rectangle.
 
-.. sourcecode:: python
+.. code-block:: python
 
     def drawRectangle(t, w, h):
         """Get turtle t to draw a rectangle of width w and height h."""
@@ -870,8 +926,8 @@ this rather nice code that can draw a rectangle.
 The parameter names are deliberately chosen as single letters to ensure they're not misunderstood.
 In real programs, once you've had more experience, we will insist on better variable names than this.
 The point is that the program doesn't "understand" that you're drawing a rectangle or that the
-parameters represent the width and the height.  Concepts like rectangle, width, and height are
-the meaning we humans have, not concepts that the program or the computer understands.
+parameters represent the width and the height.  Concepts like rectangle, width, and height are meaningful
+for humans.  They are not concepts that the program or the computer understands.
 
 *Thinking like a computer scientist* involves looking for patterns and
 relationships.  In the code above, we've done that to some extent.  We did
@@ -883,7 +939,7 @@ simply uses the same value for both the height and the width.
 We already have a function that draws a rectangle, so we can use that to draw
 our square.
 
-.. sourcecode:: python
+.. code-block:: python
 
     def drawSquare(tx, sz):        # a new version of drawSquare
         drawRectangle(tx, sz, sz)
@@ -923,12 +979,12 @@ There are some points worth noting here:
   that we've spotted.
 * A caller of this function might say `drawSquare(tess, 50)`.  The parameters
   of this function, ``tx`` and ``sz``, are assigned the values of the tess object, and
-  the int 50 respectively.
-* In the body of the function they are just like any other variable.
-* When the call is made to `drawRectangle`, the values in variables `tx` and `sz`
+  the integer 50 respectively.
+* In the body of the function, ``tz`` and ``sz`` are just like any other variable.
+* When the call is made to ``drawRectangle``, the values in variables ``tx`` and ``sz``
   are fetched first, then the call happens.  So as we enter the top of
-  function `drawRectangle`, its variable `t` is assigned the tess object, and `w` and
-  `h` in that function are both given the value 50.
+  function `drawRectangle`, its variable ``t`` is assigned the tess object, and ``w`` and
+  ``h`` in that function are both given the value 50.
 
 
 So far, it may not be clear why it is worth the trouble to create all of these
@@ -952,12 +1008,9 @@ demonstrates two:
 
 .. index:: flow of execution
 
-.. admonition:: Scratch Editor
-
-    .. actex:: scratch_5
 
 
-Flow of execution summary
+Flow of Execution Summary
 -------------------------
 
 When you are working with functions it is really important to know the order
@@ -970,11 +1023,6 @@ executed one at a time, in order, from top to bottom.
 Function definitions do not alter the flow of execution of the program, but
 remember that statements inside the function are not executed until the
 function is called.
-
-.. Although it is not common, you can define one function
-.. inside another. In this case, the inner definition isn't executed until the
-.. outer function is called.
-
 Function calls are like a detour in the flow of execution. Instead of going to
 the next statement, the flow jumps to the first line of the called function,
 executes all the statements there, and then comes back to pick up where it left
@@ -990,8 +1038,7 @@ function completes, the program picks up where it left off in the function that
 called it. When it gets to the end of the program, it terminates.
 
 What's the moral of this sordid tale? When you read a program, don't read from
-top to bottom. Instead, follow the flow of execution.  At this risk of
-sounding repetitive this means that you will read the def statements as you
+top to bottom. Instead, follow the flow of execution.  This means that you will read the def statements as you
 are scanning from top to bottom, but you should skip the body of the function
 until you reach a point where that function is called.
 
@@ -1009,9 +1056,6 @@ until you reach a point where that function is called.
 
 .. index:: bar chart
 
-.. admonition:: Scratch Editor
-
-    .. actex:: scratch_6
 
 **Check your understanding**
 
@@ -1029,19 +1073,22 @@ until you reach a point where that function is called.
    :feedback_e: Python starts at line 1, notices that it is a function definition and skips over all of the lines in the function definition until it finds a line that it no longer included in the function (line 5).  It then notices line 5 is also a function definition and again skips over the function body to line 9.  On line 10 it notices it has a function to execute, so it goes back and executes the body of that function.  Notice that that function includes another function call.  Finally, it will return to line 11 after the function square is complete.
 
    Consider the following Python code. Note that line numbers are included on the left.
-   <pre>
-   1	def pow(b, p):
-   2	    y = b ** p
-   3	    return y
-   4
-   5	def square(x):
-   6	    a = pow(x, 2)
-   7	    return a
-   8
-   9	n = 5
-   10   result = square(n)
-   11   print(result)
-   </pre>
+
+   .. code-block:: python
+      :linenos:
+
+      def pow(b, p):
+          y = b ** p
+          return y
+     
+      def square(x):
+          a = pow(x, 2)
+          return a
+     
+      n = 5
+      result = square(n)
+      print(result)
+
    Which of the following best reflects the order in which these lines of code are processed in Python?
 
 .. mchoicemf:: test_question5_6_2
@@ -1056,19 +1103,22 @@ until you reach a point where that function is called.
    :feedback_d: Notice that pow is called from within square with a base (b) of 5 and a power (p) of two.
 
    Consider the following Python code. Note that line numbers are included on the left.
-   <pre>
-   1	def pow(b, p):
-   2	    y = b ** p
-   3	    return y
-   4
-   5	def square(x):
-   6	    a = pow(x, 2)
-   7	    return a
-   8
-   9	n = 5
-   10   result = square(n)
-   11   print(result)
-   </pre>
+
+   .. code-block:: python
+      :linenos:
+
+      def pow(b, p):
+          y = b ** p
+          return y
+     
+      def square(x):
+          a = pow(x, 2)
+          return a
+     
+      n = 5
+      result = square(n)
+      print(result)
+
    What does this function print?
 
 A Turtle Bar Chart
@@ -1077,13 +1127,13 @@ A Turtle Bar Chart
 Recall from our discussion of modules that there were a number of things that turtles can do.
 Here are a couple more tricks (remember that they are all described in the module documentation).
 
-* We can get a turtle to display text on the canvas at the turtle's current position.  The method is called `write`.
+* We can get a turtle to display text on the canvas at the turtle's current position.  The method is called ``write``.
   For example,   ``alex.write("Hello")`` would write the string `hello` at the current position.
 * One can fill a shape (circle, semicircle, triangle, etc.) with a fill color.  It is a two-step process.
-  First you call the method `begin_fill`, for example ``alex.begin_fill()``.  Then you draw the shape.
-  Finally, you call `end_fill` ( ``alex.end_fill()``).
+  First you call the method ``begin_fill``, for example ``alex.begin_fill()``.  Then you draw the shape.
+  Finally, you call ``end_fill`` ( ``alex.end_fill()``).
 * We've previously set the color of our turtle - we can now also set it's fill color, which need not
-  be the same as the turtle and the pen color.  To do this, we use a method called `fillcolor`,
+  be the same as the turtle and the pen color.  To do this, we use a method called ``fillcolor``,
   for example, ``alex.fillcolor("red")``.
 
 
@@ -1092,14 +1142,14 @@ Ok, so can we get tess to draw a bar chart?  Let us start with some data to be c
 ``xs = [48, 117, 200, 240, 160, 260, 220]``
 
 Corresponding to each data measurement, we'll draw a simple rectangle of that height, with a fixed width.
-Here is what we would like to create.
+Here is a simplified version of what we would like to create.
 
 .. image:: Figures/tess_bar_1.png
 
 We can quickly see that drawing a bar will be similar to drawing a rectangle or a square.  Since we will need to do it
-a number of times, it makes sense to create a function, ``drawBar``, that will need a turtle and the height of the bar.  We will assume that the width of the bar will be 40 units.  Once we have the function, we can use a simple for loop to process the list of data values.
+a number of times, it makes sense to create a function, ``drawBar``, that will need a turtle and the height of the bar.  We will assume that the width of the bar will be 40 units.  Once we have the function, we can use a basic for loop to process the list of data values.
 
-.. sourcecode:: python
+.. code-block:: python
 
     def drawBar(t, height):
         """ Get turtle t to draw one bar, of height. """
@@ -1124,62 +1174,65 @@ is to draw one bar.  We then implemented that chunk with a function. Then, for t
 chart, we repeatedly called our function.
 
 Next, at the top of each bar, we'll print the value of the data.
-We'll do this in the body of ``drawBar``, by adding   ``t.write('  ' + str(height))``
-as the new third line of the body.
-We've put a little space in front of the number, and turned the
-number into a string.  Without this extra space we tend
-to cramp our text awkwardly against the bar to the left.
+We will do this in the body of ``drawBar`` by adding   ``t.write(str(height))``
+as the new fourth line of the body.
+Note that we had to turn the
+number into a string.  
 Finally, we'll add the two methods needed  to fill each bar.
 
-The one remaining problem is related the fact that our turtle lives in a world where the center is at position (0,0).  In this problem, it would help if (0,0) were in the lower left hand corner.  To solve this we can use our ``setworldcoordinates`` method to rescale the window.  While we are at it, we should make the window fit the data.  The tallest bar will correspond to the maximum data value.  The width of the window will need to be proportional to the number of bars (the number of data values) where each has a width of 40.  Using this information, we can compute the coordinate
-system that makes sense for the data set.  To make it look nice, we'll add a bit of space at the bottom and at the left as a border.
+The one remaining problem is related the fact that our turtle lives in a world where position (0,0) is at the center of the drawing canvas.  In this problem, it would help if (0,0) were in the lower left hand corner.  To solve this we can use our ``setworldcoordinates`` method to rescale the window.  While we are at it, we should make the window fit the data.  The tallest bar will correspond to the maximum data value.  The width of the window will need to be proportional to the number of bars (the number of data values) where each has a width of 40.  Using this information, we can compute the coordinate
+system that makes sense for the data set.  To make it look nice, we'll add a 10 unit border around the bars.
 
-Here is the complete program.  Try it and then change the data to see that it can adapt to the new values.
+Here is the complete program.  Try it and then change the data to see that it can adapt to the new values.  Note also that
+we have stored the data values in a list and used a few list functions.  We will have much more to say about lists in a later chapter.
 
 .. activecode:: ch05_barchart
 
-	import turtle
+  import turtle
 
-	def drawBar(t, height):
-	    """ Get turtle t to draw one bar, of height. """
-	    t.begin_fill()               # start filling this shape
-	    t.left(90)
-	    t.forward(height)
-	    t.write('  '+ str(height))
-	    t.right(90)
-	    t.forward(40)
-	    t.right(90)
-	    t.forward(height)
-	    t.left(90)
-	    t.end_fill()                 # stop filling this shape
-
-
-
-	xs = [48,117,200,240,160,260,220]  # here is the data
-	maxheight = max(xs)
-	numbars = len(xs)
-	border = 10
-
-	tess = turtle.Turtle()           # create tess and set some attributes
-	tess.color("blue")
-	tess.fillcolor("red")
-	tess.pensize(3)
-
-	wn = turtle.Screen()             # Set up the window and its attributes
-	wn.bgcolor("lightgreen")
-	wn.setworldcoordinates(0-border,0-border,40*numbars+border,maxheight+border)
-
-
-	for a in xs:
-	    drawBar(tess, a)
-
-	wn.exitonclick()
+  def drawBar(t, height):
+      """ Get turtle t to draw one bar, of height. """
+      t.begin_fill()               # start filling this shape
+      t.left(90)
+      t.forward(height)
+      t.write(str(height))
+      t.right(90)
+      t.forward(40)
+      t.right(90)
+      t.forward(height)
+      t.left(90)
+      t.end_fill()                 # stop filling this shape
 
 
 
-.. admonition:: Scratch Editor
+  xs = [48,117,200,240,160,260,220]  # here is the data
+  maxheight = max(xs)
+  numbars = len(xs)
+  border = 10
 
-    .. actex:: scratch_7
+  tess = turtle.Turtle()           # create tess and set some attributes
+  tess.color("blue")
+  tess.fillcolor("red")
+  tess.pensize(3)
+
+  wn = turtle.Screen()             # Set up the window and its attributes
+  wn.bgcolor("lightgreen")
+  wn.setworldcoordinates(0-border,0-border,40*numbars+border,maxheight+border)
+
+
+  for a in xs:
+      drawBar(tess, a)
+
+  wn.exitonclick()
+
+
+
+
+.. note::
+
+   This workspace is provided for your convenience.  You can use this activecode window to try out anything you like.
+
+   .. activecode:: scratch_05_06
 
 Glossary
 --------
@@ -1209,7 +1262,7 @@ Glossary
 
         The syntax of a compound statement looks like this:
 
-        .. sourcecode:: python
+        .. code-block:: python
 
             keyword expression:
                 statement
@@ -1273,35 +1326,74 @@ Glossary
 
 Exercises
 ---------
+#.
 
-#.  Use the drawsquare function we wrote in this chapter in a program to draw
-    the image shown below.
-    Assume each side is 20 units.
-    (Hint: notice that the turtle has already moved away from the ending point of the last
-    square when the program ends.)
+    .. tabbed:: q1
 
-    .. image:: Figures/five_squares.png
+        .. tab:: Question
 
-    .. actex:: ex_5_1
+            Use the drawsquare function we wrote in this chapter in a program to draw
+            the image shown below.
+            Assume each side is 20 units.
+            (Hint: notice that the turtle has already moved away from the ending point of the last
+            square when the program ends.)
+        
+            .. image:: Figures/five_squares.png
+        
+            .. actex:: ex_5_1
+        
+                import turtle
+        
+                def drawSquare(t, sz):
+                    """Get turtle t to draw a square of sz side"""
+        
+                    for i in range(4):
+                        t.forward(sz)
+                        t.left(90)
+        
+                wn = turtle.Screen()
+                wn.bgcolor("lightgreen")
+        
+                alex = turtle.Turtle()
+                alex.color("pink")
+        
+                drawSquare(alex,20)
+        
+                wn.exitonclick()
+        
 
-        import turtle
+        .. tab:: Answer
+            
+            .. activecode:: q1_answer
 
-        def drawSquare(t, sz):
-            """Get turtle t to draw a square of sz side"""
+                import turtle
 
-            for i in range(4):
-                t.forward(sz)
-                t.left(90)
+                def drawSquare(t, sz):
+                    """Make turtle t draw a square of with side sz."""
+                    for i in range(4):
+                        t.forward(sz)
+                        t.left(90)
 
-        wn = turtle.Screen()
-        wn.bgcolor("lightgreen")
+                wn = turtle.Screen()       # Set up the window and its attributes
+                wn.bgcolor("lightgreen")
 
-        alex = turtle.Turtle()
-        alex.color("pink")
+                alex = turtle.Turtle()     # create alex
+                alex.color('hotpink')
+                alex.pensize(3)
 
-        drawSquare(alex,20)
+                for i in range(5):
+                    drawSquare(alex, 20)   # Call the function to draw the square
+                    alex.penup()
+                    alex.forward(40)       # move alex to the starting position for the next square
+                    alex.pendown()
 
-        wn.exitonclick()
+                wn.exitonclick()
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: a2ac86a8d0524fc6830aefb785199048
 
 
 #.  Write a program to draw this. Assume the innermost square is 20 units per side,
@@ -1313,13 +1405,46 @@ Exercises
     .. actex:: ex_5_2
 
 
-#.  Write a non-fruitful function `drawPoly(someturtle, somesides, somesize)` which makes a turtle
-    draw a regular polygon.
-    When called with `drawPoly(tess, 8, 50)`, it will draw a shape like this:
+#.
 
-    .. image:: Figures/regularpolygon.png
+    .. tabbed:: q3
 
-    .. actex:: ex_5_3
+        .. tab:: Question
+
+            Write a non-fruitful function ``drawPoly(someturtle, somesides, somesize)`` which makes a turtle
+            draw a regular polygon.
+            When called with ``drawPoly(tess, 8, 50)``, it will draw a shape like this:
+        
+            .. image:: Figures/regularpolygon.png
+        
+            .. actex:: ex_5_3
+        
+
+        .. tab:: Answer
+            
+            .. activecode:: q3_answer
+
+                import turtle
+
+                def drawPoly(t, num_sides, side_length):
+                    for i in range(num_sides):
+                        t.forward(side_length)
+                        t.left(360/num_sides)
+
+                wn = turtle.Screen()       # Set up the window and its attributes
+                wn.bgcolor("lightgreen")
+
+                tess = turtle.Turtle()
+                tess.color('hotpink')
+                tess.pensize(3)
+
+                drawPoly(tess, 8, 50)
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: ba2f11265c524c7581bf7cf25d23bf3a
 
 
 #. Draw this pretty pattern.
@@ -1328,38 +1453,115 @@ Exercises
 
     .. actex:: ex_5_4
 
-#.  The two spirals in this picture differ only by the turn angle.  Draw both.
+#.
 
-    .. image:: Figures/tess_spirals.png
-       :height: 240
+    .. tabbed:: q5
 
-    .. actex:: ex_5_5
+        .. tab:: Question
 
-#.  Write a non-fruitful function `drawEquitriangle(someturtle, somesize)` which calls `drawPoly` from the
+            The two spirals in this picture differ only by the turn angle.  Draw both.
+        
+            .. image:: Figures/tess_spirals.png
+               :height: 240
+        
+            .. actex:: ex_5_5
+
+        .. tab:: Answer
+            
+            .. activecode:: q5_answer
+
+                import turtle
+
+                def drawSpiral(t, angle):
+                    ''' takes a turtle, t, and an angle in degrees '''
+                    length = 1
+                    for i in range(84):
+                        t.forward(length)
+                        t.right(angle)
+                        length = length + 2
+
+
+                wn = turtle.Screen()       # Set up the window and its attributes
+                wn.bgcolor("lightgreen")
+
+                guido = turtle.Turtle()    # create guido
+                guido.color('blue')
+
+                ## draw the first spiral ##
+                # position guido
+                guido.penup()
+                guido.backward(110)
+                guido.pendown()
+
+                # draw the spiral using a 90 degree turn angle
+                drawSpiral(guido, 90)
+
+
+                ## draw the second spiral ##
+                # position guido
+                guido.home()
+                guido.penup()
+                guido.forward(90)
+                guido.pendown()
+
+                drawSpiral(guido, 89)
+
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: c587119991344db988f8fb37c8c9a31e
+
+
+#.  Write a non-fruitful function ``drawEquitriangle(someturtle, somesize)`` which calls ``drawPoly`` from the
     previous question to have its turtle draw a equilateral triangle.
 
     .. actex:: ex_5_6
 
 
+#.
 
-#.  Write a fruitful function `sumTo(n)` that returns the sum of all integer numbers up to and
-    including `n`.   So `sumTo(10)` would be `1+2+3...+10` which would return the value 55.  Use the
-    equation  (n * (n + 1)) / 2.
+    .. tabbed:: q7
 
-    .. actex:: ex_5_7
+        .. tab:: Question
 
-        from test import testEqual
+            Write a fruitful function ``sumTo(n)`` that returns the sum of all integer numbers up to and
+            including `n`.   So ``sumTo(10)`` would be ``1+2+3...+10`` which would return the value 55.  Use the
+            equation  (n * (n + 1)) / 2.
+        
+            .. actex:: ex_5_7
+        
+                from test import testEqual
+        
+                def sumTo(n):
+                    # your code here
 
-        def sumTo(n):
-            # your code here
 
-        # Now lets see how well this works
-        t = sumTo(0)
-        testEqual(t, 0)
-        t = sumTo(10)
-        testEqual(t, 55)
-        t = sumTo(1)
-        testEqual(t,1)
+        .. tab:: Answer
+            
+            .. activecode:: q7_answer
+
+                from test import testEqual
+
+                def sumTo(n):
+                    result = (n * (n + 1)) / 2
+                    return result
+
+                # Now lets see how well this works
+                t = sumTo(0)
+                print("The sum from 1 to 0 is",t)
+                t = sumTo(10)
+                print("The sum from 1 to 10 is",t)
+                t = sumTo(5)
+                print("The sum from 1 to 5 is",t)
+
+        .. tab:: Discussion
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: d6ba37a51d09845f39c96d4d4ef1d6f45
+
 
 #.  Write a function `areaOfCircle(r)` which returns the area of a circle of radius `r`.  Make sure you use the math module in your solution.
 
@@ -1378,15 +1580,42 @@ Exercises
         testEqual(t,31415.926535897932)
 
 
-#.  Write a non-fruitful function to draw a five pointed star, where the length of each side is 100 units.
+#.
 
-    .. image:: Figures/star.png
+    .. tabbed:: q9
 
-    .. actex:: ex_5_9
+        .. tab:: Question
+
+            Write a non-fruitful function to draw a five pointed star, where the length of each side is 100 units.
+
+            .. image:: Figures/star.png
+
+            .. actex:: ex_5_9
+
+        .. tab:: Answer
+
+            .. activecode:: q9_answer
+
+                import turtle
+
+                def drawFivePointStar(t):
+                    for i in range(5):
+                        t.forward(100)
+                        t.left(216)
+
+                wolfram = turtle.Turtle()
+                drawFivePointStar(wolfram)
+
+        .. tab:: Discussion
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: e757873187bb4581bffecdad449b5f61
+
 
 #.  Extend your program above.  Draw five stars, but between each, pick up the pen,
     move forward by 350 units, turn right by 144, put the pen down, and draw the next star.
-    You'll get something like this:
+    You'll get something like this (note that you will need to move to the left before drawing your first star in order to fit everything in the window):
 
     .. image:: Figures/five_stars.png
 
@@ -1395,10 +1624,37 @@ Exercises
     .. actex:: ex_5_10
 
 
-#.  Extend the star function to draw an n pointed star.  (Hint: n must be an odd number greater or
-    equal to 3).
+#.
 
-    .. actex:: ex_5_11
+    .. tabbed:: q11
+
+        .. tab:: Question
+
+            Extend the star function to draw an n pointed star.  (Hint: n must be an odd number greater or
+            equal to 3).
+
+            .. actex:: ex_5_11
+
+
+        .. tab:: Answer
+
+            .. activecode:: q11_answer
+
+                import turtle
+
+                def drawStar(t, n):
+                    for i in range(n):
+                        t.forward(100)
+                        t.left(180 - 180/n)
+
+                stroustrup = turtle.Turtle()
+                drawStar(stroustrup, 7)
+
+        .. tab:: Discussion
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: f2f8ff1b301e4d99bd4ac52e68c8c1ed
 
 
 #.  Write a function called drawSprite that will draw a sprite.  The function will need parameters for
@@ -1408,24 +1664,47 @@ Exercises
     .. actex:: ex_5_12
 
 
-#.  Rewrite the function `sumTo(n)` that returns the sum of all integer numbers up to and
-    including `n`.   This time use the accumulator pattern.
+#.
 
-    .. actex:: ex_5_13
+    .. tabbed:: q13
 
-        from test import testEqual
+        .. tab:: Question
 
-        def sumTo(n):
-            # your code here
+            Rewrite the function ``sumTo(n)`` that returns the sum of all integer numbers up to and
+            including `n`.   This time use the accumulator pattern.
 
-        # Now lets see how well this works
-        t = sumTo(0)
-        testEqual(t,0)
-        testEqual(sumTo(10),55)
-        testEqual(sumTo(1),1)
+            .. actex:: ex_5_13
+
+                def sumTo(n):
+                    # your code here
 
 
-#.  Write a function called `mySqrt` that will approximate the square root of a number, call it n, by using
+        .. tab:: Answer
+
+            .. activecode:: q13_answer
+
+                def sumTo(n):
+                    sum = 0
+                    for i in range(1,n+1):
+                        sum = sum + i
+                    return sum
+
+                # Now lets see how well this works
+                t = sumTo(0)
+                print("The sum from 1 to 0 is",t)
+                t = sumTo(10)
+                print("The sum from 1 to 10 is",t)
+                t = sumTo(5)
+                print("The sum from 1 to 5 is",t)
+
+        .. tab:: Discussion
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: eda665389fda49a584b128cc30515595
+
+
+#.  Write a function called ``mySqrt`` that will approximate the square root of a number, call it n, by using
     Newton's algorithm.
     Newton's approach is an iterative guessing algorithm where the initial guess is n/2 and each subsequent guess
     is computed using   the formula:  newguess = (1/2) * (oldguess + (n/oldguess)).
@@ -1433,30 +1712,93 @@ Exercises
     .. actex:: ex_5_14
 
 
-#.  Write a function called `myPi` that will return an approximation of PI (3.14159...).  Use the Liebniz approximation
-    as described in class.
+#.
 
-    .. actex:: ex_5_15
+    .. tabbed:: q15
+
+        .. tab:: Question
+
+            Write a function called ``myPi`` that will return an approximation of PI (3.14159...).  Use the `Leibniz <http://en.wikipedia.org/wiki/Leibniz_formula_for_%CF%80>`_ approximation.
+
+            .. actex:: ex_5_15
 
 
-#.  Write a function called `myPi` that will return an approximation of PI (3.14159...).  Use the Madhava approximation
-    as described in class.
+        .. tab:: Answer
+
+            .. activecode:: q15_answer
+
+                def myPi(iters):
+                    ''' Calculate an approximation of PI using the Leibniz
+                    approximation with iters number of iterations '''
+                    pi = 0
+                    sign = 1
+                    denominator = 1
+                    for i in range(iters):
+                        pi = pi + (sign/denominator)
+                        sign = sign * -1  # alternate positive and negative
+                        denominator = denominator + 2
+
+                    pi = pi * 4.0
+                    return pi
+
+                pi_approx = myPi(10000)
+                print(pi_approx)
+
+        .. tab:: Discussion
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: b699e4b7bad44db6bd788c795c124b23
+
+
+#.  Write a function called `myPi` that will return an approximation of PI (3.14159...).  Use the `Madhava <http://en.wikipedia.org/wiki/Madhava_of_Sangamagrama>`_ approximation.
 
     .. actex:: ex_5_16
 
-#.  Write a function called `fancySquare` that will draw a square with fancy corners (spites on the corners).  You should
-    implement and use the `drawSprite` function from above.  For an even more interesting look, how about adding small
-    triangles to the ends of the sprite legs.
+#.
 
-    .. actex:: ex_5_17
+    .. tabbed:: q17
 
-.. admonition:: Scratch Editor
+        .. tab:: Question
 
-    .. actex:: scratch_9
+            Write a function called `fancySquare` that will draw a square with fancy corners (spites on the corners).  You should
+            implement and use the `drawSprite` function from above.  For an even more interesting look, how about adding small
+            triangles to the ends of the sprite legs.
+
+            .. actex:: ex_5_17
+
+        .. tab:: Answer
+
+            .. activecode:: q17_answer
+
+                import turtle
+                
+                def drawSprite(t, numlegs, leglength):
+                   angle = 360/numlegs
+                   for i in range(numlegs):
+                      t.forward(leglength)
+                      t.backward(leglength)
+                      t.left(angle)
+                      
+                def drawFancySquare(t, sz, lgs, lgl):
+                   for i in range(4):
+                       t.forward(sz)
+                       drawSprite(t, lgs, lgl)
+                       t.left(90)
+                       
+                wn = turtle.Screen()
+                wn.bgcolor("lightgreen")
+                
+                alex = turtle.Turtle()
+                drawFancySquare(alex, 100, 10, 15)
+                
+                wn.exitonclick()
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: db5d8808bf5749579718bdd2088b539f
 
 
-.. toctree::
-    :hidden:
 
-    ../Labs/lab04_01
-    ../Labs/lab04_01a

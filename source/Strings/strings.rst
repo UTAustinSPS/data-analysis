@@ -10,6 +10,11 @@
 ..  shortname:: Strings
 ..  description:: Introduction to the string data type, operators, and methods.
 
+.. qnum::
+   :prefix: str-
+   :start: 1
+
+
 Strings
 =======
 
@@ -19,7 +24,7 @@ Strings Revisited
 -----------------
 
 Throughout the first chapters of this book we have used strings to represent words or phrases that we
-wanted to print out.  Our definition was simple.  A string is simply some characters inside quotes.  In this chapter we explore strings in much more detail.
+wanted to print out.  Our definition was simple:  a string is simply some characters inside quotes.  In this chapter we explore strings in much more detail.
 
 A Collection Data Type
 ----------------------
@@ -29,8 +34,8 @@ So far we have seen built-in types like: ``int``, ``float``,
 ``int``, ``float``, and
 ``bool`` are considered to be simple or primitive data types because their values are not composed
 of any smaller parts.  They cannot be broken down.
-On the other hand, strings and lists are qualitatively different from the others because they
-are made up of smaller pieces.  In the case of strings, they're made up of smaller
+On the other hand, strings and lists are different from the others because they
+are made up of smaller pieces.  In the case of strings, they are made up of smaller
 strings each containing one **character**.  
 
 Types that are comprised of smaller pieces are called **collection data types**.
@@ -40,7 +45,7 @@ single entity (the whole), or we may want to access its parts. This ambiguity is
 Strings can be defined as sequential collections of characters.  This means that the individual characters
 that make up the string are assumed to be in a particular order from left to right.
 
-A string that contains no characters, often referred to as the **empty string**, is still considered to be a string.  It is simply a sequence of zero characters and is represented by '' or "" (two quotes with nothing in between).
+A string that contains no characters, often referred to as the **empty string**, is still considered to be a string.  It is simply a sequence of zero characters and is represented by '' or "" (two single or two double quotes with nothing in between).
 
 .. index:: string operations, concatenation
 
@@ -70,11 +75,11 @@ joining the two operands by linking them end-to-end. For example:
     print(fruit + bakedGood)
 
 The output of this program is ``banana nut bread``. The space before the word
-``nut`` is part of the string, and is necessary to produce the space between
+``nut`` is part of the string and is necessary to produce the space between
 the concatenated strings.  Take out the space and run it again.
 
-The ``*`` operator also works on strings; it performs repetition. For example,
-``'Fun'*3`` is ``'FunFunFun'``. One of the operands has to be a string; the
+The ``*`` operator also works on strings.  It performs repetition. For example,
+``'Fun'*3`` is ``'FunFunFun'``. One of the operands has to be a string and the
 other has to be an integer.
 
 .. activecode:: ch08_mult
@@ -112,11 +117,14 @@ done first, you will need to use parenthesis.
 
 
    What is printed by the following statements?
-   <pre>
-   s = "python"
-   t = "rocks"
-   print(s+t)
-   </pre>
+   
+   .. code-block:: python
+
+      s = "python"
+      t = "rocks"
+      print(s+t)
+
+
 
 .. mchoicemf:: test_question8_1_2
    :answer_a: python!!!
@@ -131,11 +139,14 @@ done first, you will need to use parenthesis.
 
 
    What is printed by the following statements?
-   <pre>
-   s = "python"
-   excl = "!"
-   print(s+excl*3)
-   </pre>
+   
+   .. code-block:: python
+ 
+      s = "python"
+      excl = "!"
+      print(s+excl*3)
+
+
 
 
 Index Operator: Working with the Characters of a String
@@ -196,10 +207,13 @@ It is just a string of length 1.
 
 
    What is printed by the following statements?
-   <pre>
-   s = "python rocks"
-   print(s[3])
-   </pre>
+      
+   .. code-block:: python
+   
+      s = "python rocks"
+      print(s[3])
+
+
 
 
 .. mchoicemf:: test_question8_2_2
@@ -215,10 +229,13 @@ It is just a string of length 1.
 
 
    What is printed by the following statements?
-   <pre>
-   s = "python rocks"
-   print(s[2] + s[-5])
-   </pre>
+   
+   .. code-block:: python
+   
+      s = "python rocks"
+      print(s[2] + s[-5])
+
+
 
 
 String Methods
@@ -324,10 +341,13 @@ change the original.  You can also consult the `Python documentation for strings
 
 
    What is printed by the following statements?
-   <pre>
-   s = "python rocks"
-   print(s.count("o") + s.count("p"))
-   </pre>
+   
+   .. code-block:: python
+   
+      s = "python rocks"
+      print(s.count("o") + s.count("p"))
+
+
 
 
 .. mchoicemf:: test_question8_3_2
@@ -336,17 +356,19 @@ change the original.  You can also consult the `Python documentation for strings
    :answer_c: n
    :answer_d: Error, you cannot combine all those things together.
    :correct: a
-   :feedback_a: Yes, s[1] is y and the index of n is 5, so 5 y characters
+   :feedback_a: Yes, s[1] is y and the index of n is 5, so 5 y characters.  It is important to realize that the index method has precedence over the repetition operator.  Repetition is done last.
    :feedback_b: Close.  5 is not repeated, it is the number of times to repeat.
    :feedback_c: This expression uses the index of n
    :feedback_d: This is fine, the repetition operator used the result of indexing and the index method.
 
 
    What is printed by the following statements?
-   <pre>
-   s = "python rocks"
-   print(s[1]*s.index("n"))
-   </pre>
+   
+   .. code-block:: python
+   
+      s = "python rocks"
+      print(s[1]*s.index("n"))
+
 
 .. index::
     single: len function
@@ -413,10 +435,12 @@ two lines of code from above.
 
 
    What is printed by the following statements?
-   <pre>
-   s = "python rocks"
-   print(len(s))
-   </pre>
+   
+   .. code-block:: python
+   
+      s = "python rocks"
+      print(len(s))
+
 
 
 .. mchoicemf:: test_question8_4_2
@@ -432,10 +456,12 @@ two lines of code from above.
 
 
    What is printed by the following statements?
-   <pre>
-   s = "python rocks"
-   print(s[len(s)-5])
-   </pre>
+   
+   .. code-block:: python
+   
+      s = "python rocks"
+      print(s[len(s)-5])
+
 
 
 The Slice Operator
@@ -486,10 +512,12 @@ What do you think ``fruit[:]`` means?
 
 
    What is printed by the following statements?
-   <pre>
-   s = "python rocks"
-   print(s[3:8])
-   </pre>
+   
+   .. code-block:: python
+
+      s = "python rocks"
+      print(s[3:8])
+
 
 
 .. mchoicemf:: test_question8_5_2
@@ -505,10 +533,20 @@ What do you think ``fruit[:]`` means?
 
 
    What is printed by the following statements?
-   <pre>
-   s = "python rocks"
-   print(s[7:11]*3)
-   </pre>
+   
+   .. code-block:: python
+
+      s = "python rocks"
+      print(s[7:11]*3)
+
+
+
+.. note::
+
+    This workspace is provided for your convenience.  You can use this activecode window to try out anything you like.
+
+    .. activecode:: scratch_08_01
+
 
 
 .. index:: string comparison, comparison of strings
@@ -598,9 +636,11 @@ One thing to note in the last two examples is the fact that the space character 
    :feedback_b: Strings are compared character by character.
    
    Evaluate the following comparison:
-   <pre>
-   "Dog" < "Doghouse"
-   </pre>
+   
+   .. code-block:: python
+
+      "Dog" < "Doghouse"
+
    
    
 .. mchoicemf:: test_question8_6_2
@@ -613,9 +653,11 @@ One thing to note in the last two examples is the fact that the space character 
    :feedback_c: Python is case sensitive meaning that upper case and lower case characters are different.
    
    Evaluate the following comparison:
-   <pre>
-   "dog" < "Dog"
-   </pre>
+   
+   .. code-block:: python
+
+      "dog" < "Dog"
+
    
   
 .. mchoicemf:: test_question8_6_3
@@ -623,12 +665,14 @@ One thing to note in the last two examples is the fact that the space character 
    :answer_b: False
    :correct: b
    :feedback_a: d is greater than D.
-   :feedback_b: The length does not matter.
+   :feedback_b: The length does not matter.  Lower case d is greater than upper case D.
 
    Evaluate the following comparison:
-   <pre>
-   "dog" < "Doghouse"
-   </pre>
+   
+   .. code-block:: python
+
+      "dog" < "Doghouse"
+
 
    
 
@@ -675,11 +719,13 @@ The solution here is to concatenate a new first letter onto a slice of
    :feedback_c: Yes, strings are immutable.
 
    What is printed by the following statements:
-   <pre>
-   s = "Ball"
-   s[0] = "C"
-   print(s)
-   </pre>
+   
+   .. code-block:: python
+
+      s = "Ball"
+      s[0] = "C"
+      print(s)
+
 
 
 .. index:: traversal, for loop, concatenation, abecedarian series
@@ -742,11 +788,13 @@ Note that it is only possible to process the characters one at a time from left 
 
 
    How many times is the word HELLO printed by the following statements?
-   <pre>
-   s = "python rocks"
-   for ch in s:
-      print("HELLO")
-   </pre>
+   
+   .. code-block:: python
+
+      s = "python rocks"
+      for ch in s:
+         print("HELLO")
+
    
    
    
@@ -763,16 +811,18 @@ Note that it is only possible to process the characters one at a time from left 
 
 
    How many times is the word HELLO printed by the following statements?
-   <pre>
-   s = "python rocks"
-   for ch in s[3:8]:
-      print("HELLO")
-   </pre>
+   
+   .. code-block:: python
+
+      s = "python rocks"
+      for ch in s[3:8]:
+         print("HELLO")
+
 
 Traversal and the ``for`` Loop: By Index
 ----------------------------------------
 
-It is also possible to use the ``range`` function to systematically generate the indices of the characters.  The for loop can then be used to iterate over these positions. 
+It is also possible to use the ``range`` function to systematically generate the indices of the characters.  The ``for`` loop can then be used to iterate over these positions. 
 These positions can be used together with the indexing operator to access the individual
 characters in the string.
 
@@ -822,18 +872,20 @@ Trace the values of ``idx`` and satisfy yourself that they are correct.  In part
    :correct: c
    :feedback_a: The for loop visits each index but the selection only prints some of them.
    :feedback_b: o is at positions 4 and 8
-   :feedback_c: Yes, it will print all the characters in even index positions.
+   :feedback_c: Yes, it will print all the characters in even index positions and the o character appears both times in an even location.
    :feedback_d: The for statement can have any statements inside, including if as well as for.
 
 
    How many times is the letter o printed by the following statements?
-   <pre>
-   s = "python rocks"
-   for idx in range(len(s)):
-      if idx % 2 == 0:
-         print(s[idx])
    
-   </pre>
+   .. code-block:: python
+
+      s = "python rocks"
+      for idx in range(len(s)):
+         if idx % 2 == 0:
+            print(s[idx])
+      
+
 
 
 Traversal and the ``while`` Loop
@@ -887,14 +939,23 @@ Here is the same example in codelens so that you can trace the values of the var
 
 
    How many times is the letter o printed by the following statements?
-   <pre>
-   s = "python rocks"
-   idx = 1
-   while idx < len(s):
-      print(s[idx])
-      idx = idx + 2
    
-   </pre>
+   .. code-block:: python
+
+      s = "python rocks"
+      idx = 1
+      while idx < len(s):
+         print(s[idx])
+         idx = idx + 2
+      
+
+.. note::
+
+    This workspace is provided for your convenience.  You can use this activecode window to try out anything you like.
+
+    .. activecode:: scratch_08_02
+
+
 
 .. index::
     single: in operator
@@ -999,13 +1060,22 @@ Step thru the function using codelens to see the accumulator variable grow.
    :feedback_c: Yes, the order is reversed due to the order of the concatenation.
 
    What is printed by the following statements:
-   <pre>
-   s = "ball"
-   r = ""
-   for item in s:
-      r = item.upper() + r
-   print(r)
-   </pre>
+   
+   .. code-block:: python
+
+      s = "ball"
+      r = ""
+      for item in s:
+         r = item.upper() + r
+      print(r)
+
+
+.. note::
+
+   This workspace is provided for your convenience.  You can use this activecode window to try out anything you like.
+
+   .. activecode:: scratch_08_03
+
 
 Turtles and Strings and L-Systems
 ---------------------------------
@@ -1064,16 +1134,16 @@ above.
 
 .. activecode::  string_lsys1
 
-    def applyRules(ch):
-        newstr = ""
-        if ch == 'A':
-            newstr = 'B'   # Rule 1
-        elif ch == 'B':
-            newstr = 'AB'  # Rule 2
+    def applyRules(lhch):
+        rhstr = ""
+        if lhch == 'A':
+            rhstr = 'B'   # Rule 1
+        elif lhch == 'B':
+            rhstr = 'AB'  # Rule 2
         else:
-            newstr = ch    # no rules apply so keep the character
+            rhstr = ch    # no rules apply so keep the character
 
-        return newstr
+        return rhstr
 
 
     def processString(oldStr):
@@ -1245,10 +1315,10 @@ Feel free to try some different angles and segment lengths to see how the drawin
 Looping and counting
 --------------------
 
-We will finish this chapter with a few more examples that show variations on the theme of iteration through the characters of the string.  We will implement a few of the methods that we described earlier to show how they can be come.
+We will finish this chapter with a few more examples that show variations on the theme of iteration through the characters of a string.  We will implement a few of the methods that we described earlier to show how they can be done.
 
 
-The following program counts the number of times a particular letter, `` aChar``, appears in a
+The following program counts the number of times a particular letter, ``aChar``, appears in a
 string.  It is another example of the accumulator pattern that we have seen in previous chapters.
 
 .. activecode:: chp08_fun2
@@ -1466,6 +1536,12 @@ to be punctuation. Try the following and see what you get.
 For more information consult the ``string`` module documentaiton (see `Global Module Index <http://docs.python.org/py3k/py-modindex.html>`_).
 
 
+.. note::
+
+   This workspace is provided for your convenience.  You can use this activecode window to try out anything you like.
+
+   .. activecode:: scratch_08_04
+
 
 Summary 
 ------- 
@@ -1562,58 +1638,148 @@ Glossary
 Exercises
 ---------
 
+#.
 
-#. What is the result of each of the following:
+    .. tabbed:: q1
 
-    a. 'Python'[1]
-    #. "Strings are sequences of characters."[5]
-    #. len("wonderful")
-    #. 'Mystery'[:4]
-    #. 'p' in 'Pineapple'
-    #. 'apple' in 'Pineapple'
-    #. 'pear' not in 'Pineapple'
-    #. 'apple' > 'pineapple'
-    #. 'pineapple' < 'Peach'
-    
-#. 	In Robert McCloskey's
-	book *Make Way for Ducklings*, the names of the ducklings are Jack, Kack, Lack,
-	Mack, Nack, Ouack, Pack, and Quack.  This loop tries to output these names in order.
+        .. tab:: Question
 
-	.. sourcecode:: python
+            What is the result of each of the following:
+        
+            a. 'Python'[1]
+            #. "Strings are sequences of characters."[5]
+            #. len("wonderful")
+            #. 'Mystery'[:4]
+            #. 'p' in 'Pineapple'
+            #. 'apple' in 'Pineapple'
+            #. 'pear' not in 'Pineapple'
+            #. 'apple' > 'pineapple'
+            #. 'pineapple' < 'Peach'
 
-	    prefixes = "JKLMNOPQ"
-	    suffix = "ack"
+        .. tab:: Answer
 
-	    for p in prefixes:
-	        print(p + suffix)
+            a. 'Python'[1] = 'y'
+            #. 'Strings are sequences of characters.'[5] = 'g'
+            #. len('wonderful') = 9
+            #. 'Mystery'[:4] = 'Myst'
+            #. 'p' in 'Pineapple' = True
+            #. 'apple' in 'Pineapple' = True
+            #. 'pear' not in 'Pineapple' = True
+            #. 'apple' > 'pineapple' = False
+            #. 'pineapple' < 'Peach' = False
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_dc2457710a924d9283b12f42a31d2b27
 
 
+#. In Robert McCloskey's
+   book *Make Way for Ducklings*, the names of the ducklings are Jack, Kack, Lack,
+   Mack, Nack, Ouack, Pack, and Quack.  This loop tries to output these names in order.
+
+   .. sourcecode:: python
+
+       prefixes = "JKLMNOPQ"
+	   suffix = "ack"
+
+	   for p in prefixes:
+	       print(p + suffix)
 
 
-	Of course, that's not quite right because Ouack and Quack are misspelled.
-	Can you fix it?
+   Of course, that's not quite right because Ouack and Quack are misspelled.
+   Can you fix it?
    
     .. actex:: ex_8_2
    
-#. Assign to a variable in your program a triple-quoted string that contains 
-   your favourite paragraph of text - perhaps a poem, a speech, instructions
-   to bake a cake, some inspirational verses, etc.
+#.
 
-   Write a function which removes all punctuation from string and counts the number of words in your text that contain
-   the letter 'e'.  Your program should print an analysis of the text like this::
+    .. tabbed:: q3
 
-       Your text contains 243 words, of which 109 (44.8%) contain an 'e'.      
+        .. tab:: Question
 
-   .. actex:: ex_8_3
+           Assign to a variable in your program a triple-quoted string that contains 
+           your favorite paragraph of text - perhaps a poem, a speech, instructions
+           to bake a cake, some inspirational verses, etc.
+        
+           Write a function that counts the number of alphabetic characters (a thru z, or A thru Z) in your text and then keeps track of how many are the letter 'e'.  Your function should print an analysis of the text like this::
+        
+               Your text contains 243 alphabetic characters, of which 109 (44.8%) are 'e'.      
+        
+           .. actex:: ex_8_3
+
+        .. tab:: Answer
+            
+            .. activecode:: q3_answer
+
+                def count(p):
+                    lows="abcdefghijklmnopqrstuvwxyz"
+                    ups="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    
+                    numberOfe = 0
+                    totalChars = 0
+                    for achar in p:
+                        if achar in lows or achar in ups:
+                            totalChars = totalChars + 1
+                            if achar == 'e':
+                                numberOfe = numberOfe + 1
+
+                   
+                    percent_with_e = (numberOfe/totalChars) * 100
+                    print("Your text contains", totalChars, "alphabetic characters of which", numberOfe, "(", percent_with_e, "%)", "are 'e'.")
+
+
+                p = '''
+                "If the automobile had followed the same development cycle as the computer, a
+                Rolls-Royce would today cost $100, get a million miles per gallon, and explode
+                once a year, killing everyone inside."
+                -Robert Cringely
+                '''
+
+                count(p)
+
+        .. tab:: Discussion
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_bf88b1c4616d43f289c798b56a43b01c
+
 
 #. Print out a neatly formatted multiplication table, up to 12 x 12.
 
    .. actex:: ex_8_4
 
 
-#. Write a function that will return the number of digits in an integer.
+#.
 
-    .. actex:: ex_7_10
+    .. tabbed:: q5
+
+        .. tab:: Question
+
+           Write a function that will return the number of digits in an integer.
+        
+           .. actex:: ex_7_10
+        
+
+        .. tab:: Answer
+            
+            .. activecode:: q5_answer
+
+                def findNumDigits(n):
+                    n_str = str(n)
+                    return len(n_str)
+
+
+                print (findNumDigits(50))
+                print (findNumDigits(20000))
+                print (findNumDigits(1))
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_bfd6f74a183c4682b29c72c4411200fb
 
 
 #. Write a function that reverses its string argument.
@@ -1629,20 +1795,53 @@ Exercises
       testEqual(reverse("Python"), "nohtyP")
       testEqual(reverse(""),"")
 
-#. Write a function that mirrors its argument.
+#.
 
-   .. actex:: ex_8_6
+    .. tabbed:: q7
 
-      from test import testEqual
+        .. tab:: Question
 
-      def mirror(mystr):
-          # your code here
+           Write a function that mirrors its argument.
+        
+           .. actex:: ex_8_6
+        
+              from test import testEqual
+        
+              def mirror(mystr):
+                  # your code here
+        
+              testEqual(mirror('good'),'gooddoog')
+              testEqual(mirror('Python'),'PythonnohtyP')
+              testEqual(mirror(''), '')
+              testEqual(mirror('a'),'aa')
+        
+        
 
-      testEqual(mirror('good'),'gooddoog')
-      testEqual(mirror('Python'),'PythonnohtyP')
-      testEqual(mirror(''), '')
-      testEqual(mirror('a'),'aa')
+        .. tab:: Answer
+            
+            .. activecode:: q7_answer
 
+                from test import testEqual
+
+                def reverse(mystr):
+                    reversed = ''
+                    for char in mystr:
+                        reversed = char + reversed
+                    return reversed
+
+                def mirror(mystr):
+                    return mystr + reverse(mystr)
+
+                testEqual(mirror('good'),'gooddoog')
+                testEqual(mirror('Python'),'PythonnohtyP')
+                testEqual(mirror(''), '')
+                testEqual(mirror('a'),'aa')
+
+        .. tab:: Discussion
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_70b7ac515456497c952a2de5caa27ab9
 
 
 #. Write a function that removes all occurrences of a given letter from a string.
@@ -1660,20 +1859,57 @@ Exercises
 
 
 
-#. Write a function that recognizes palindromes. (Hint: use your ``reverse`` function to make this easy!).
+#.
 
-   .. actex:: ex_8_8
+    .. tabbed:: q9
 
-      from test import testEqual
+        .. tab:: Question
 
-      def is_palindrome(myStr):
-          # your code here
+           Write a function that recognizes palindromes. (Hint: use your ``reverse`` function to make this easy!).
+        
+           .. actex:: ex_8_8
+        
+              from test import testEqual
+        
+              def is_palindrome(myStr):
+                  # your code here
+        
+              testEqual(is_palindrome('abba'),True)
+              testEqual(is_palindrome('abab'),False)
+              testEqual(is_palindrome('straw warts'),True)
+              testEqual(is_palindrome('a'), True)
+              testEqual(is_palindrome(''),True)
+        
 
-      testEqual(is_palindrome('abba'),True)
-      testEqual(is_palindrome('abab'),False)
-      testEqual(is_palindrome('straw warts'),True)
-      testEqual(is_palindrome('a'), True)
-      testEqual(is_palindrome(''),True)
+        .. tab:: Answer
+            
+            .. activecode:: q9_answer
+
+                from test import testEqual
+
+                def reverse(mystr):
+                    reversed = ''
+                    for char in mystr:
+                        reversed = char + reversed
+                    return reversed
+
+                def is_palindrome(myStr):
+                    if myStr in reverse(myStr):
+                        return True
+                    else:
+                        return False
+
+                testEqual(is_palindrome('abba'),True)
+                testEqual(is_palindrome('abab'),False)
+                testEqual(is_palindrome('straw warts'),True)
+                testEqual(is_palindrome('a'), True)
+                testEqual(is_palindrome(''),True)
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_605923545bb849f7b8d41bbf823518e9
 
 
 #. Write a function that counts how many times a substring occurs in a string.
@@ -1693,20 +1929,51 @@ Exercises
       testEqual(count('aaa', 'aaaaaa'),  4)
 
 
-#. Write a function that removes the first occurrence of a string from another string.
+#.
 
-   .. actex:: ex_8_10
+    .. tabbed:: q11
 
-      from test import testEqual
+        .. tab:: Question
 
-      def remove(substr,theStr):
-          # your code here
+           Write a function that removes the first occurrence of a string from another string.
+        
+           .. actex:: ex_8_10
+        
+              from test import testEqual
+        
+              def remove(substr,theStr):
+                  # your code here
+        
+              testEqual(remove('an', 'banana'),'bana')
+              testEqual(remove('cyc', 'bicycle'), 'bile')
+              testEqual(remove('iss', 'Mississippi'), 'Missippi')
+              testEqual(remove('egg', 'bicycle'), 'bicycle')
+        
+        
 
-      testEqual(remove('an', 'banana'),'bana')
-      testEqual(remove('cyc', 'bicycle'), 'bile')
-      testEqual(remove('iss', 'Mississippi'), 'Missippi')
-      testEqual(remove('egg', 'bicycle'), 'bicycle')
+        .. tab:: Answer
+            
+            .. activecode:: q11_answer
 
+                from test import testEqual
+
+                def remove(substr,theStr):
+                    index = theStr.index(substr)
+                    if index < 0: # substr doesn't exist in theStr
+                        return theStr
+                    return_str = theStr[:index] + theStr[index+len(substr):]
+                    return return_str
+
+                testEqual(remove('an', 'banana'),'bana')
+                testEqual(remove('cyc', 'bicycle'), 'bile')
+                testEqual(remove('iss', 'Mississippi'), 'Missippi')
+                testEqual(remove('egg', 'bicycle'), 'bicycle')
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_2f2772134b604a6498748138542d312d
 
 
 #. Write a function that removes all occurrences of a string from another string.
@@ -1724,13 +1991,89 @@ Exercises
       testEqual(remove_all('eggs', 'bicycle'), 'bicycle')
 
 
-#. Here is another interesting L-System called a Hilbert curve.  Use 90 degrees::
+#.
 
-       L
-       L -> +RF-LFL-FR+
-       R -> -LF+RFR+FL-
+    .. tabbed:: q13
 
-   .. actex:: ex_8_12
+        .. tab:: Question
+
+           Here is another interesting L-System called a Hilbert curve.  Use 90 degrees::
+        
+               L
+               L -> +RF-LFL-FR+
+               R -> -LF+RFR+FL-
+        
+           .. actex:: ex_8_12
+
+        .. tab:: Answer
+
+            .. activecode:: q13_answer
+
+                import turtle
+
+                def createLSystem(numIters,axiom):
+                    startString = axiom
+                    endString = ""
+                    for i in range(numIters):
+                        endString = processString(startString)
+                        startString = endString
+
+                    return endString
+
+                def processString(oldStr):
+                    newstr = ""
+                    for ch in oldStr:
+                        newstr = newstr + applyRules(ch)
+
+                    return newstr
+
+                def applyRules(ch):
+                    newstr = ""
+                    if ch == 'L':
+                        newstr = '+RF-LFL-FR+'   # Rule 1
+                    elif ch == 'R':
+                        newstr = '-LF+RFR+FL-'
+                    else:
+                        newstr = ch     # no rules apply so keep the character
+
+                    return newstr
+
+                def drawLsystem(aTurtle,instructions,angle,distance):
+                    for cmd in instructions:
+                        if cmd == 'F':
+                            aTurtle.forward(distance)
+                        elif cmd == 'B':
+                            aTurtle.backward(distance)
+                        elif cmd == '+':
+                            aTurtle.right(angle)
+                        elif cmd == '-':
+                            aTurtle.left(angle)
+                        else:
+                            print('Error:', cmd, 'is an unknown command')
+
+                def main():
+                    inst = createLSystem(4,"L")   #create the string
+                    print(inst)
+                    t = turtle.Turtle()           #create the turtle
+                    wn = turtle.Screen()
+
+                    t.up()
+                    t.back(200)
+                    t.down()
+                    t.speed(9)
+                    drawLsystem(t,inst,90,5)      #draw the picture
+                                                  #angle 90, segment length 5
+                    wn.exitonclick()
+
+                main()
+
+
+        .. tab:: Discussion
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_ab823200fac64461a9e88f53b75f5795
+
 
 #. Here is a dragon curve.  Use 90 degrees.::
 
@@ -1740,13 +2083,87 @@ Exercises
 
    .. actex:: ex_8_13
 
-#. Here is something called an arrowhead curve.  Use 60 degrees.::
+#.
 
-       YF
-       X -> YF+XF+Y
-       Y -> XF-YF-X
+    .. tabbed:: q15
 
-   .. actex:: ex_8_14
+        .. tab:: Question
+
+           Here is something called an arrowhead curve.  Use 60 degrees.::
+        
+               YF
+               X -> YF+XF+Y
+               Y -> XF-YF-X
+        
+           .. actex:: ex_8_14
+
+        .. tab:: Answer
+            
+            .. activecode:: q15_answer
+
+                import turtle
+
+                def createLSystem(numIters,axiom):
+                    startString = axiom
+                    endString = ""
+                    for i in range(numIters):
+                        endString = processString(startString)
+                        startString = endString
+
+                    return endString
+
+                def processString(oldStr):
+                    newstr = ""
+                    for ch in oldStr:
+                        newstr = newstr + applyRules(ch)
+
+                    return newstr
+
+                def applyRules(ch):
+                    newstr = ""
+                    if ch == 'X':
+                        newstr = 'YF+XF+Y'   # Rule 1
+                    elif ch == 'Y':
+                        newstr = 'XF-YF-X'
+                    else:
+                        newstr = ch     # no rules apply so keep the character
+
+                    return newstr
+
+                def drawLsystem(aTurtle,instructions,angle,distance):
+                    for cmd in instructions:
+                        if cmd == 'F':
+                            aTurtle.forward(distance)
+                        elif cmd == 'B':
+                            aTurtle.backward(distance)
+                        elif cmd == '+':
+                            aTurtle.right(angle)
+                        elif cmd == '-':
+                            aTurtle.left(angle)
+                        else:
+                            # unknown command, ignore it.
+                            pass
+
+                def main():
+                    inst = createLSystem(5,"YF")   #create the string
+                    print(inst)
+                    t = turtle.Turtle()           #create the turtle
+                    wn = turtle.Screen()
+
+                    t.speed(9)
+                    drawLsystem(t,inst,60,5)      #draw the picture
+                                                  #angle 90, segment length 5
+                    wn.exitonclick()
+
+                main()
+
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_9b2dfba083a64d5c894f873af2e93a1b
+
 
 #. Try the Peano-Gosper curve.  Use 60 degrees.::
 
@@ -1756,13 +2173,93 @@ Exercises
 
    .. actex:: ex_8_15
 
-#. The Sierpinski Triangle.  Use 60 degrees.::
+#.
 
-       FXF--FF--FF
-       F -> FF
-       X -> --FXF++FXF++FXF--
+    .. tabbed:: q17
 
-   .. actex:: ex_8_16
+        .. tab:: Question
+
+            The Sierpinski Triangle.  Use 60 degrees.::
+        
+               FXF--FF--FF
+               F -> FF
+               X -> --FXF++FXF++FXF--
+        
+           .. actex:: ex_8_16
+
+        .. tab:: Answer
+
+            .. activecode:: q17_answer
+
+                import turtle
+
+                def createLSystem(numIters,axiom):
+                    startString = axiom
+                    endString = ""
+                    for i in range(numIters):
+                        endString = processString(startString)
+                        startString = endString
+
+                    return endString
+
+                def processString(oldStr):
+                    newstr = ""
+                    for ch in oldStr:
+                        newstr = newstr + applyRules(ch)
+
+                    return newstr
+
+                def applyRules(ch):
+                    newstr = ""
+                    if ch == 'F':
+                        newstr = 'FF'   # Rule 1
+                    elif ch == 'X':
+                        newstr = '--FXF++FXF++FXF--'
+                    else:
+                        newstr = ch     # no rules apply so keep the character
+
+                    return newstr
+
+                def drawLsystem(aTurtle,instructions,angle,distance):
+                    for cmd in instructions:
+                        if cmd == 'F':
+                            aTurtle.forward(distance)
+                        elif cmd == 'B':
+                            aTurtle.backward(distance)
+                        elif cmd == '+':
+                            aTurtle.right(angle)
+                        elif cmd == '-':
+                            aTurtle.left(angle)
+                        else:
+                            # unknown command, ignore it.
+                            pass
+
+                def main():
+                    inst = createLSystem(5,"FXF--FF--FF")   #create the string
+                    print(inst)
+                    t = turtle.Turtle()           #create the turtle
+                    wn = turtle.Screen()
+                    t.up()
+                    t.back(200)
+                    t.right(90)
+                    t.forward(100)
+                    t.left(90)
+                    t.down()
+                    t.speed(9)
+
+                    drawLsystem(t,inst,60,5)      #draw the picture
+                                                  #angle 90, segment length 5
+                    wn.exitonclick()
+
+                main()
+
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_912a5f19d3964dc2af7a067dcd832c7e
+
 
 #. Write a function that implements a substitution cipher.  In a substitution
    cipher one letter is substituted for another to garble the message.  For
@@ -1773,40 +2270,122 @@ Exercises
 
    .. actex:: ex_8_17
 
-#. Write a function that decrypts the message from the previous exercise.  It
-   should also take two parameters.  The encrypted message,
-   and the mixed up alphabet.  The function should return a string that is
-   the same as the original unencrypted message.
+#.
 
-   .. actex:: ex_8_18
+    .. tabbed:: q19
 
-#. Write a function ``descramble`` that takes a message that is scrambled
-   using the picket fence algorithm as discussed in class.  Try exchanging messages
-   with a friend and the secret message provided below:
+        .. tab:: Question
+
+           Write a function that decrypts the message from the previous exercise.  It
+           should also take two parameters.  The encrypted message,
+           and the mixed up alphabet.  The function should return a string that is
+           the same as the original unencrypted message.
+        
+           .. actex:: ex_8_18
+
+        .. tab:: Answer
+
+            .. activecode:: q19_answer
+
+                def encrypt(message, cipher):
+                    alphabet = "abcdefghijklmnopqrstuvwxyz"
+                    encrypted = ''
+                    for char in message:
+                        if char == ' ':
+                            encrypted = encrypted + ' '
+                        else:
+                            pos = alphabet.index(char)
+                            encrypted = encrypted + cipher[pos]
+                    return encrypted
+
+                def decrypt(encrypted, cipher):
+                    alphabet = "abcdefghijklmnopqrstuvwxyz"
+                    decrypted = ''
+                    for char in encrypted:
+                        if char == ' ':
+                            decrypted = decrypted + ' '
+                        else:
+                            pos = cipher.index(char)
+                            decrypted = decrypted + alphabet[pos]
+                    return decrypted
+
+
+                cipher = "badcfehgjilknmporqtsvuxwzy"
+
+                encrypted = encrypt('hello world', cipher)
+                print encrypted
+
+                decrypted = decrypt(encrypted, cipher)
+                print(decrypted)
+
+        .. tab:: Discussion
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_d7d1ca00bfff4e7bacf886386fb3302e
+
+
+#. Write a function called  ``removeDups`` that takes a string and creates a new string by only adding those characters that are not already present.  In other words,
+   there will never be a duplicate letter added to the new string.
 
    .. actex:: ex_8_19
 
-      def descramble(secret):
+      def removeDups(astring):
           # your code here
 
-      testmess = "ogauain o aescesul erpe hssce esg ueyyudsrea  o hsasgmncnrtltosyuhv ucsflydcytdti ertmsaesrl o eev nafrti sinet"
-      print(descramble(testmess))
+      
+      print(removeDups("mississippi"))   #should print misp
 
 
-#. Write a function called ``rot13`` that uses the Caesar cipher to encrypt a message.
-   The Caesar cipher works like a substitution cipher but each character is replaced
-   by the character 13 characters to 'its right' in the alphabet.  So for example
-   the letter a becomes the letter n.  If a letter is past the middle of the alphabet
-   then the counting wraps around to the letter a again, so n becomes a, o becomes b
-   and so on.  *Hint:* Whenever you talk about things wrapping around its a good idea
-   to think of modulo arithmetic.
+#.
 
-   .. actex:: ex_8_20
+    .. tabbed:: q21
 
-      def rot13(mess):
-          # Your code here
+        .. tab:: Question
 
-      print(rot13('abcde'))
-      print(rot13('nopqr'))
-      print(rot13(rot13('Since rot13 is symmetric you should see this message')))
+           Write a function called ``rot13`` that uses the Caesar cipher to encrypt a message.
+           The Caesar cipher works like a substitution cipher but each character is replaced
+           by the character 13 characters to 'its right' in the alphabet.  So for example
+           the letter a becomes the letter n.  If a letter is past the middle of the alphabet
+           then the counting wraps around to the letter a again, so n becomes a, o becomes b
+           and so on.  *Hint:* Whenever you talk about things wrapping around its a good idea
+           to think of modulo arithmetic.
+        
+           .. actex:: ex_8_20
+        
+              def rot13(mess):
+                  # Your code here
+        
+              print(rot13('abcde'))
+              print(rot13('nopqr'))
+              print(rot13(rot13('Since rot13 is symmetric you should see this message')))
+
+        .. tab:: Answer
+            
+            .. activecode:: q21_answer
+
+                def rot13(mess):
+                    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+                    encrypted = ''
+                    for char in mess:
+                        if char == ' ':
+                            encrypted = encrypted + ' '
+                        else:
+                            rotated_index = alphabet.index(char) + 13
+                            if rotated_index < 26:
+                                encrypted = encrypted + alphabet[rotated_index]
+                            else:
+                                encrypted = encrypted + alphabet[rotated_index % 26]
+                    return encrypted
+
+                print(rot13('abcde'))
+                print(rot13('nopqr'))
+                print(rot13(rot13('since rot thirteen is symmetric you should see this message')))
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_49e1151bb7864a3287a6b6ae1c84db16
+
 

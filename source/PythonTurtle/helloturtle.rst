@@ -10,6 +10,10 @@
 ..  shortname:: HelloTurtle
 ..  description:: An introduction to using the turtle module in python
 
+.. qnum::
+   :prefix: trl-
+   :start: 1
+
 .. _hello_turtles:
 
 Hello, Little Turtles!
@@ -61,17 +65,17 @@ Our First Turtle Program
 ------------------------
 
 Let's try a couple of lines of Python code to create a new turtle and
-start drawing a simple figure like a rectangle. We'll call the variable that refers to our first
-turtle `alex`, but you can choose another name if you follow the naming rules
+start drawing a simple figure like a rectangle.
+We will refer to our first turtle using the variable name alex, but remember that you can choose any name you wish as long
+as you follow the naming rules
 from the previous chapter.
 
 The program as shown will only draw the first two sides of the rectangle.
-After line 3 you will have a straight line going from the center of the
-canvas below towards the right.  After line 6, you will have a canvas with a
+After line 4 you will have a straight line going from the center of the
+drawing canvas towards the right.  After line 6, you will have a canvas with a
 turtle and a half drawn rectangle.  Press the run button to try it and see.
 
 .. activecode:: ch03_1
-    :nopre:
     :tour_1: "Overall Tour"; 1-6: Example01_Tour01_Line01; 3: Example01_Tour01_Line02; 4: Example01_Tour01_Line03; 5: Example01_Tour01_Line04; 6: Example01_Tour01_Line05;
     :tour_2: "Line by Line Tour"; 1: Example01_Tour02_Line01; 2: Example01_Tour02_Line02; 3: Example01_Tour02_Line03; 4: Example01_Tour02_Line04; 5: Example01_Tour02_Line05; 6: Example01_Tour02_Line06;
 
@@ -79,7 +83,7 @@ turtle and a half drawn rectangle.  Press the run button to try it and see.
     wn = turtle.Screen()    	# creates a graphics window
     alex = turtle.Turtle()   	# create a turtle named alex
     alex.forward(150)        	# tell alex to move forward by 150 units
-    alex.left(90)           		# turn by 90 degrees
+    alex.left(90)           	# turn by 90 degrees
     alex.forward(75)         	# complete the second side of a rectangle
 
 
@@ -91,8 +95,8 @@ The first line tells Python to load a **module** named ``turtle``.  That module
 brings us two new types that we can use: the ``Turtle`` type, and the
 ``Screen`` type.  The dot notation ``turtle.Turtle`` means *"The Turtle type
 that is defined within the turtle module"*.   (Remember that Python is case
-sensitive, so the module name, with a lowercase `t`, is different from the type
-Turtle.)
+sensitive, so the module name, ``turtle``, with a lowercase `t`, is different from the type
+``Turtle`` because of the uppercase `T`.)
 
 We then create and open what the turtle module calls a screen (we would
 prefer to call it a window, or in the case of this web version of Python
@@ -103,56 +107,52 @@ In line 3 we create a turtle. The variable `alex` is made to refer to this
 turtle.   These first three lines set us up so that we are ready to do some drawing.
 
 In lines 4-6, we instruct the **object** alex to move and to turn. We do this
-by **invoking** or activating, alex's **methods** --- these are the
+by **invoking** or activating alex's **methods** --- these are the
 instructions that all turtles know how to respond to.
 
 
 .. admonition:: Complete the rectangle ...
 
     Modify the program by adding the commands necessary to have *alex* complete the
-       rectangle.
-
+    rectangle.
 
 
 
 An object can have various methods --- things it can do --- and it can also
 have **attributes** --- (sometimes called *properties*).  For example, each
 turtle has a *color* attribute.  The method invocation  `alex.color("red")`
-will make alex red, and the line that it draws will be red too.
+will make alex red and the line that it draws will be red too.
 
 The color of the turtle, the width of its pen(tail), the position of the turtle
 within the window, which way it is facing, and so on are all part of its
-current **state**.   Similarly, the window object has a background co lor.
-These are all part of the state of the window object.
+current **state**.   Similarly, the window object has a background color which is part of its state.
 
-Quite a number of methods exist that allow us to modify the turtle and the
-window objects.  We'll just show a couple. We've only commented those
-lines that are different from the previous example.  Note also that we've now called our turtle object *tess*.
+Quite a number of methods exist that allow us to modify the turtle and
+window objects.  In the example below, we show just show a couple and have only commented those
+lines that are different from the previous example.  Note also that we have decided to call our turtle object *tess*.
 
 .. activecode:: ch03_2
-    :nopre:
     :tour_1: "Overall Tour"; 1-10: Example02_Tour01_Line01; 4: Example02_Tour01_Line02; 6: Example02_Tour01_Line03; 7: Example02_Tour01_Line04; 8: Example02_Tour01_Line05; 10: Example02_Tour01_Line06; 11: Example02_Tour01_Line07; 12: Example02_Tour01_Line08; 14: Example02_Tour01_Line09;
     :tour_2: "Line by Line Tour"; 1: Example01_Tour02_Line01; 3: Example01_Tour02_Line02; 4: Example02_Tour02_Line03; 6: Example02_Tour02_Line04; 7: Example02_Tour02_Line05; 8: Example02_Tour02_Line06; 10: Example02_Tour02_Line07; 11: Example02_Tour02_Line08; 12: Example02_Tour02_Line09; 14: Example02_Tour02_Line10;
 
     import turtle
 
     wn = turtle.Screen()
-    wn.bgcolor("lightgreen")       	# set the window background color
+    wn.bgcolor("lightgreen")        # set the window background color
 
     tess = turtle.Turtle()
-    tess.color("blue")               	# make tess blue
-    tess.pensize(3)                 	# set the width of her pen
+    tess.color("blue")              # make tess blue
+    tess.pensize(3)                 # set the width of her pen
 
     tess.forward(50)
     tess.left(120)
     tess.forward(50)
 
-    wn.exitonclick()
+    wn.exitonclick()                # wait for a user click on the canvas
 
 
 The last line plays a very important role. The wn variable refers to the window shown
-above. When we invoke its exitonclick method, it pauses the execution of the
-program, and waits for the user to click the mouse somewhere in the window.
+above. When we invoke its ``exitonclick`` method, the program pauses execution and waits for the user to click the mouse somewhere in the window.
 When this click event occurs, the response is to close the turtle window and
 exit (stop execution of) the Python program.
 
@@ -171,7 +171,7 @@ screen until we click on it.
     #. Do similar changes to allow the user, at runtime, to set tess' color.
     #. Do the same for the width of tess' pen.  *Hint:* your dialog with the
        user will return a string, but tess' ``pensize`` method
-       expects its argument to be an int.  So you'll need to convert
+       expects its argument to be an ``int``.  That means you need to convert
        the string to an int before you pass it to ``pensize``.
 
 
@@ -189,14 +189,15 @@ screen until we click on it.
    :feedback_d: If we leave it out, Python will give an error saying that it does not know about the name &quotturtle&quot when it reaches the line &quotwn = turtle.Screen()&quot
 
    Consider the following code:
-   <pre>
-   import turtle
-   wn = turtle.Screen()
-   alex = turtle.Turtle()
-   alex.forward(150)
-   alex.left(90)
-   alex.forward(75)
-   </pre>
+
+   .. code-block:: python
+
+     import turtle
+     wn = turtle.Screen()
+     alex = turtle.Turtle()
+     alex.forward(150)
+     alex.left(90)
+     alex.forward(75)
 
    What does the line "import turtle" do?
 
@@ -209,7 +210,7 @@ screen until we click on it.
    :feedback_b: The period separates the module name from the object name.  The parentheses at the end are what tell Python to invoke a new object.
    :feedback_c: Yes, the Turtle type is defined in the module turtle.  Remember that Python is case sensitive and Turtle is different from turtle.
 
-   Why do we type "turtle.Turtle()" to get a new Turtle object?
+   Why do we type ``turtle.Turtle()`` to get a new Turtle object?
 
 .. mchoicemf:: test_question3_1_3
    :answer_a: True
@@ -221,11 +222,11 @@ screen until we click on it.
    True or False: A Turtle object can have any name that follows the naming rules from Chapter 2.
 
 .. mchoicemf:: test_question3_1_4
-   :answer_a: <br /><img src="../_static/test1Alt1.png" alt="right turn of 90 degrees before drawing">
-   :answer_b: <br /><img src="../_static/test1Alt2.png" alt="left turn of 180 degrees before drawing">
-   :answer_c: <br /><img src="../_static/test1Alt3.png" alt="left turn of 270 degrees before drawing">
-   :answer_d: <br /><img src="../_static/test1Alt4.png" alt="right turn of 45 degrees before drawing">
-   :answer_e: <br /><img src="../_static/test1correct.png" alt="left turn of 90 degrees before drawing">
+   :answer_a: <img src="../_static/test1Alt1.png" alt="right turn of 90 degrees before drawing">
+   :answer_b: <img src="../_static/test1Alt2.png" alt="left turn of 180 degrees before drawing">
+   :answer_c: <img src="../_static/test1Alt3.png" alt="left turn of 270 degrees before drawing">
+   :answer_d: <img src="../_static/test1Alt4.png" alt="right turn of 45 degrees before drawing">
+   :answer_e: <img src="../_static/test1correct.png" alt="left turn of 90 degrees before drawing">
    :correct: e
    :feedback_a: This code would turn the turtle to the south before drawing
    :feedback_b: This code would turn the turtle to the west before drawing
@@ -233,7 +234,10 @@ screen until we click on it.
    :feedback_d: This code would turn the turtle to the southeast before drawing.
    :feedback_e: Yes, the turtle starts facing east, so to turn it north you can turn left 90 or right 270 degrees.
 
-   Which of the following would produce the following image? <br /><img src="../_static/turtleTest1.png" alt="long line to north with shorter line to west on top">
+   Which of the following would produce the following image? 
+
+   .. image:: ../_static/turtleTest1.png 
+      :alt: long line to north with shorter line to west on top
 
 .. index:: instance
 
@@ -248,7 +252,6 @@ pen.  So here is what happens when alex completes a square and tess
 completes her triangle:
 
 .. activecode:: ch03_3
-   :nopre:
    :tour_1: "Overall Tour"; 1-31: Example03_Tour01_Line01; 1-3: Example03_Tour01_Line02; 6-8: Example03_Tour01_Line03; 10: Example03_Tour01_Line04; 6,10: Example03_Tour01_Line05; 12-17: Example03_Tour01_Line06; 19-20: Example03_Tour01_Line07; 22-29: Example03_Tour01_Line08; 31: Example03_Tour01_Line09;
    :tour_2: "Line by Line Tour"; 1: Example01_Tour02_Line01; 2: Example01_Tour02_Line02; 3: Example02_Tour02_Line03; 6: Example02_Tour02_Line04; 7: Example03_Tour02_Line05; 8: Example03_Tour02_Line06; 10: Example01_Tour02_Line03; 6,10: Example03_Tour01_Line05; 12-17: Example03_Tour02_Line09; 12-13: Example03_Tour02_Line10; 12: Example03_Tour02_Line11; 13: Example03_Tour02_Line12; 14-15: Example03_Tour02_Line13; 14: Example03_Tour02_Line14; 15: Example03_Tour02_Line15; 16-17: Example03_Tour02_Line16; 16: Example03_Tour02_Line17; 17: Example03_Tour02_Line18; 19-20: Example03_Tour01_Line07; 19: Example03_Tour02_Line20; 20: Example03_Tour02_Line21; 22-29: Example03_Tour01_Line08; 10: Example03_Tour02_Line23; 22-23: Example03_Tour02_Line24; 22: Example03_Tour02_Line25; 23: Example03_Tour02_Line26; 24-25: Example03_Tour02_Line27; 26-27: Example03_Tour02_Line28; 28-29: Example03_Tour02_Line29; 31: Example02_Tour02_Line10;
 
@@ -282,18 +285,6 @@ completes her triangle:
    alex.forward(50)
    alex.left(90)
 
-   tess.right(180)                  # turn tess around
-   tess.forward(80)                 # move her away from the origin
-
-   alex.forward(50)                 # make alex draw a square
-   alex.left(90)
-   alex.forward(50)
-   alex.left(90)
-   alex.forward(50)
-   alex.left(90)
-   alex.forward(50)
-   alex.left(90)
-
    wn.exitonclick()
 
 
@@ -303,7 +294,7 @@ Here are some *How to think like a computer scientist* observations:
   turtle makes, *no matter what steps occurred between the turns*, you can
   easily figure out if they add up to some multiple of 360.  This should
   convince you that alex is facing in exactly the same direction as he was when
-  he was first created. (Geometry conventions have 0 degrees facing East, and
+  he was first created. (Geometry conventions have 0 degrees facing East and
   that is the case here too!)
 * We could have left out the last turn for alex, but that would not have been
   as satisfying.  If you're asked to draw a closed shape like a square or a
@@ -311,7 +302,7 @@ Here are some *How to think like a computer scientist* observations:
   turtle back where it started, facing the same direction as it started in.
   This makes reasoning about the program and composing chunks of code into
   bigger programs easier for us humans!
-* We did the same with tess: she drew her triangle, and turned through a full
+* We did the same with tess: she drew her triangle and turned through a full
   360 degress.  Then we turned her around and moved her aside.  Even the blank
   line 18 is a hint about how the programmer's *mental chunking* is working: in
   big terms, tess' movements were chunked as "draw the triangle"  (lines 12-17)
@@ -320,6 +311,17 @@ Here are some *How to think like a computer scientist* observations:
   ideas.   They're not always explicit in the code.
 * And, uh-huh, two turtles may not be enough for a herd, but you get the idea!
 
+
+**Check your understanding**
+
+.. mchoicemf:: test_question3_2_1
+   :answer_a: True
+   :answer_b: False
+   :correct: b
+   :feedback_a: You can create and use as many turtles as you like.  As long as they have different names, you can operate them independently, and make them move in any order you like.  To convince yourself this is true, try interleaving the instructions for alex and tess in ActiveCode box 3.
+   :feedback_b: You can create and use as many turtles as you like.  As long as they have different names, you can operate them independently, and make them move in any order you like.  If you are not totally convinced, try interleaving the instructions for alex and tess in ActiveCode box 3.
+
+   True or False: You can only have one active turtle at a time.  If you create a second one, you will no longer be able to access or use the first.
 
 .. index:: for loop
 
@@ -339,15 +341,19 @@ then turn, etc. etc. four times.  If we were drawing a hexagon, or an octogon,
 or a polygon with 42 sides, it would have been a nightmare to duplicate all that code.
 
 A basic building block of all programs is to be able to repeat some code
-over and over again.  In computer science, we refer to this repetitive idea as **iteration**.  In this chapter, we will explore some mechanisms for basic iteration.
+over and over again.  In computer science, we refer to this repetitive idea as **iteration**.  In this section, we will explore some mechanisms for basic iteration.
 
 In Python, the **for** statement allows us to write programs that implement iteration.   As a simple example, let's say we have some friends, and
 we'd like to send them each an email inviting them to our party.  We
 don't quite know how to send email yet, so for the moment we'll just print a
 message for each friend.
 
-.. activecode:: ch03_4    :nocanvas:    :tour_1: "Overall Tour"; 1-2: Example04_Tour01_Line01; 2: Example04_Tour01_Line02; 1: Example04_Tour01_Line03;    for name in ["Joe", "Amy", "Brad", "Angelina", "Zuki", "Thandi", "Paris"]:
-        print("Hi " + name + "  Please come to my party on Saturday!")
+.. activecode:: ch03_4
+    :nocanvas:
+    :tour_1: "Overall Tour"; 1-2: Example04_Tour01_Line01; 2: Example04_Tour01_Line02; 1: Example04_Tour01_Line03;
+
+    for name in ["Joe", "Amy", "Brad", "Angelina", "Zuki", "Thandi", "Paris"]:
+        print("Hi", name, "Please come to my party on Saturday!")
 
 
 Take a look at the output produced when you press the ``run`` button.  There is one line printed for each friend.  Here's how it works:
@@ -370,28 +376,13 @@ Take a look at the output produced when you press the ``run`` button.  There is 
 * At the end of each execution of the body of the loop, Python returns
   to the ``for`` statement, to see if there are more items to be handled.
 
-**Check your understanding**
 
-.. mchoicemf:: test_question3_2_1
-   :answer_a: True
-   :answer_b: False
-   :correct: b
-   :feedback_a: You can create and use as many turtles as you like.  As long as they have different names, you can operate them independently, and make them move in any order you like.  To convince yourself this is true, try interleaving the instructions for alex and tess in ActiveCode box 3.
-   :feedback_b: You can create and use as many turtles as you like.  As long as they have different names, you can operate them independently, and make them move in any order you like.  If you are not totally convinced, try interleaving the instructions for alex and tess in ActiveCode box 3.
-
-   True or False: You can only have one active turtle at a time.  If you create a second one, you will no longer be able to access or use the first.
 
 .. index:: control flow, flow of execution
-
-.. admonition:: Scratch Editor
-
-    .. actex:: turtle_scratch_1
 
 
 Flow of Execution of the for Loop
 ---------------------------------
-
-
 
 As a program executes, the interpreter always keeps track of which statement is
 about to be executed.  We call this the **control flow**, or the **flow of
@@ -418,7 +409,7 @@ the buttons.  You can see the value of ``name`` change as the loop iterates thru
 .. codelens:: vtest
 
     for name in ["Joe", "Amy", "Brad", "Angelina", "Zuki", "Thandi", "Paris"]:
-        print("Hi " + name + "  Please come to my party on Saturday!")
+        print("Hi ", name, "  Please come to my party on Saturday!")
 
 .. index:: range function, chunking
 
@@ -431,7 +422,6 @@ square.  This next program does exactly the same thing but, with the help of the
 each value in the list.
 
 .. activecode:: ch03_for1
-   :nopre:
 
    import turtle            #set up alex
    wn = turtle.Screen()
@@ -456,7 +446,6 @@ We could have used any four values.  For example, consider the following program
 
 
 .. activecode:: ch03_forcolor
-   :nopre:
 
    import turtle            #set up alex
    wn = turtle.Screen()
@@ -468,7 +457,7 @@ We could have used any four values.  For example, consider the following program
 
    wn.exitonclick()
 
-Since there are still four items in the list, the iteration will still occur four times.  ``aColor`` will
+In the previous example, there were four integers in the list.  This time there are four strings.  Since there are four items in the list, the iteration will still occur four times.  ``aColor`` will
 take on each color in the list.  We can even take this one step further and use the value of ``aColor`` as part
 of the computation.
 
@@ -501,10 +490,12 @@ In this case, the value of ``aColor`` is used to change the color attribute of `
    :feedback_d: The loop body will not execute more times than the number of elements in the list.
 
    In the following code, how many lines does this code print?
-   <pre>
-   for number in [5, 4, 3, 2, 1, 0]:
-       print("I have", number, "cookies.  Iím going to eat one.")
-   </pre>
+
+   .. code-block:: python
+
+     for number in [5, 4, 3, 2, 1, 0]:
+         print("I have", number, "cookies.  Iím going to eat one.")
+
 
 .. mchoicemf:: test_question3_4_2
    :answer_a: They are indented to the same degree from the loop header.
@@ -529,27 +520,31 @@ In this case, the value of ``aColor`` is used to change the color attribute of `
       :feedback_d: Python gives number the value of items in the list, one at a time, in order (from left to right).  number gets a new value each time the loop repeats.
 
       In the following code, what is the value of number the second time Python executes the loop?
-      <pre>
+
+      .. code-block:: python
+
          for number in [5, 4, 3, 2, 1, 0]:
              print("I have", number, "cookies.  Iím going to eat one.")
-      </pre>
+
 
 .. mchoicemf:: test_question3_4_4
       :answer_a: Draw a square using the same color for each side.
       :answer_b: Draw a square using a different color for each side.
       :answer_c: Draw one side of a square.
-      :correct: a
+      :correct: c
       :feedback_a: The items in the list are not actually used to control the color of the turtle because aColor is never used inside the loop.  But, the loop will execute once for each color in the list.
       :feedback_b: Notice that aColor is never actually used inside the loop.
-      :feedback_c: While the body of the loop only draws one side of the square it will be  repeated once for each item in the list.
+      :feedback_c: The body of the loop only draws one side of the square.  It will be  repeated once for each item in the list.  However, the color of the turtle never changes.
 
       Consider the following code:
-      <pre>
-      for aColor in ["yellow", "red", "green", "blue"]:
-         alex.forward(50)
-         alex.left(90)
-      </pre>
-      What does each iteration through the loop (i.e. "chunk of code") do?
+
+      .. code-block:: python
+
+        for aColor in ["yellow", "red", "green", "blue"]:
+           alex.forward(50)
+           alex.left(90)
+
+      What does each iteration through the loop do?
 
 The range Function
 ------------------
@@ -581,8 +576,7 @@ want to write simple ``for loop`` controlled iteration.  Even though you can use
 In fact, these lists are so popular that Python gives us special built-in
 ``range`` objects
 that can deliver a sequence of values to
-the ``for`` loop.  They start at 0, and in the  cases shown below do not include the 4
-or the 10.
+the ``for`` loop.  The sequence provided by ``range`` always starts with 0.  If you ask for ``range(4)``, then you will get 4 values starting with 0.  In other words, 0, 1, 2, and finally 3.  Notice that 4 is not included since we started with 0.  Likewise, ``range(10)`` provides 10 values, 0 through 9.
 
   .. sourcecode:: python
 
@@ -626,7 +620,7 @@ range(start,stop+1).
     stop it helps to simply think that the sequence begins with start and
     continues as long as the number is less than stop.
 
-Here are a two examples for you to run.  Add another line below to create a sequence starting
+Here are a two examples for you to run.  Try them and then add another line below to create a sequence starting
 at 10 and going up to 20 (including 20).
 
 
@@ -712,15 +706,13 @@ Try it in codelens.
 
   What happens if you give range only one argument?  For example: range(4)
 
-.. admonition:: Scratch Editor
 
-  .. actex:: turtle_scratch_2
 
 
 A Few More turtle Methods and Observations
 ------------------------------------------
 
-Here are a few more things that you might find useful as you use the turtle.
+Here are a few more things that you might find useful as you write programs that use turtles.
 
 * Turtle methods can use negative angles or distances.  So ``tess.foward(-100)``
   will move tess backwards, and ``tess.left(-30)`` turns her to the right.
@@ -740,13 +732,14 @@ Here are a few more things that you might find useful as you use the turtle.
   going to play with turtles.
 
 * A turtle's pen can be picked up or put down.  This allows us to move a turtle
-  to a different place without drawing a line.   The methods are ``penup`` and ``pendown``.
+  to a different place without drawing a line.   The methods are ``up`` and ``down``.  Note that the methods ``penup`` and ``pendown`` do the
+  same thing.
 
   .. sourcecode:: python
 
-     alex.penup()
+     alex.up()
      alex.forward(100)     # this moves alex, but no line is drawn
-     alex.pendown()
+     alex.down()
 
 * Every turtle can have its own shape.  The ones available "out of the box"
   are ``arrow``, ``blank``, ``circle``, ``classic``, ``square``, ``triangle``,
@@ -769,7 +762,7 @@ Here are a few more things that you might find useful as you use the turtle.
      alex.speed(10)
 
 * A turtle can "stamp" its footprint onto the canvas, and this will remain
-  after the turtle has moved somewhere else.  Stamping works, even when the pen
+  after the turtle has moved somewhere else.  Stamping works even when the pen
   is up.
 
 Let's do an example that shows off some of these new features.
@@ -784,7 +777,7 @@ Let's do an example that shows off some of these new features.
    tess.shape("turtle")
 
    print(range(5,60,2))
-   tess.penup()                    # this is new
+   tess.up()                    # this is new
    for size in range(5,60,2):      # start with size = 5 and grow by 2
        tess.stamp()                # leave an impression on the canvas
        tess.forward(size)          # move tess along
@@ -809,7 +802,7 @@ color, or to put her pen down and draw a line, or to change her shape, etc.)
       race.
 
 
-.. _turtle_methods:
+.. _summary_of_turtle_methods:
 
 Summary of Turtle Methods
 -------------------------
@@ -839,6 +832,14 @@ shape       shapename     Should be 'arrow', 'classic', 'turtle', or 'circle'
 Once you are comfortable with the basics of turtle graphics you can read about even
 more options on the `Python Docs Website <http://docs.python.org/dev/py3k/library/turtle.html>`_.  Note that we
 will describe Python Docs in more detail in the next chapter.
+
+
+.. note::
+
+   This workspace is provided for your convenience.  You can use this activecode window to try out anything you like.
+
+   .. activecode:: scratch_03
+
 
 
 
@@ -926,56 +927,207 @@ Glossary
 
 Exercises
 ---------
-#. Write a program that prints ``We like Python's turtles!`` 1000 times.
 
-   .. actex:: ex_3_1
+#.
+
+    .. tabbed:: q1
+
+        .. tab:: Question
+
+           Write a program that prints ``We like Python's turtles!`` 1000 times.
+        
+           .. actex:: ex_3_1
+
+        .. tab:: Answer
+            
+            .. activecode::  q1_answer
+                :nocanvas:
+
+                for i in range(1000):
+                    print("We like Python's turtles!")
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: f858d02024e54ae1b6b50ed8c65a01e6
+
 
 #. Give three attributes of your cellphone object.  Give three methods of your
    cellphone.
 
    .. actex:: ex_3_2
 
-#. Write a program that uses a for loop to print
-     |  ``One of the months of the year is January``
-     |  ``One of the months of the year is February``
-     |  ``One of the months of the year is March``
-     |  etc ...
+#.
 
-   .. actex:: ex_3_3
+    .. tabbed:: q3
 
-#. Assume you have the assignment ``xs = [12, 10, 32, 3, 66, 17, 42, 99, 20]``
+        .. tab:: Question
+
+           Write a program that uses a for loop to print
+             |  ``One of the months of the year is January``
+             |  ``One of the months of the year is February``
+             |  ``One of the months of the year is March``
+             |  etc ...
+        
+           .. actex:: ex_3_3
+
+        .. tab:: Answer
+            
+            .. activecode:: q3_answer
+                
+                
+                for amonth in ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'November', 'December']:
+                    print("One of the months of the year is", amonth)
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: b271442ee0864973a023c19f27aeb401
+
+
+#. Assume you have a list of numbers ``12, 10, 32, 3, 66, 17, 42, 99, 20``
 
    a. Write a loop that prints each of the numbers on a new line.
    b. Write a loop that prints each number and its square on a new line.
 
    .. actex:: ex_3_4
 
-#. Use ``for`` loops to make a turtle draw these regular polygons
-   (regular means all sides the same lengths, all angles the same):
+#.
 
-   * An equilateral triangle
-   * A square
-   * A hexagon (six sides)
-   * An octagon (eight sides)
+    .. tabbed:: q5
 
-   .. actex:: ex_3_5
+        .. tab:: Question
 
-#. .. _drunk_student_problem:
+           Use ``for`` loops to make a turtle draw these regular polygons
+           (regular means all sides the same lengths, all angles the same):
+        
+           * An equilateral triangle
+           * A square
+           * A hexagon (six sides)
+           * An octagon (eight sides)
+        
+           .. actex:: ex_3_5
 
-   A drunk pirate makes a random turn and then takes 100 steps forward, makes
-   another random turn, takes another 100 steps, turns another random amount,
-   etc.  A social science student records the angle of each turn
-   before the next 100 steps are taken. Her experimental data
-   is ``[160, -43, 270, -97, -43, 200, -940, 17, -86]``.  (Positive angles are
-   counter-clockwise.)  Use a turtle to draw the path taken by our drunk
-   friend.
+        .. tab:: Answer
+            
+            .. sourcecode:: python
+                
+                # draw an equilateral triangle
+                import turtle
 
-   .. actex:: ex_3_6
+                wn = turtle.Screen()
+                norvig = turtle.Turtle()
 
-#. Enhance your program above to also tell us what the drunk pirate's heading
-   is after he has finished stumbling around.
+                for i in range(3):
+                    norvig.forward(100)
 
-   .. actex:: ex_3_7
+                    # the angle of each vertice of a regular polygon 
+                    # is 360 divided by the number of sides
+                    norvig.left(360/3)
+
+                wn.exitonclick()
+
+            .. sourcecode:: python
+
+                # draw a square    
+                import turtle
+
+                wn = turtle.Screen()
+                kurzweil = turtle.Turtle()
+
+                for i in range(4):
+                    kurzweil.forward(100)
+                    kurzweil.left(360/4)
+
+                wn.exitonclick()
+
+            .. sourcecode:: python
+
+                # draw a hexagon    
+                import turtle
+
+                wn = turtle.Screen()
+                dijkstra = turtle.Turtle()
+
+                for i in range(6):
+                    dijkstra.forward(100)
+                    dijkstra.left(360/6)
+
+                wn.exitonclick()
+
+            .. sourcecode:: python
+
+                # draw an octogon    
+                import turtle
+
+                wn = turtle.Screen()
+                knuth = turtle.Turtle()
+
+                for i in range(8):
+                    knuth.forward(75)
+                    knuth.left(360/8)
+
+                wn.exitonclick()
+                
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: f36e8bc742b89424e82f111ba2d1dd33f
+
+
+#.  Write a program that asks the user for the number of sides, the length of the side, the color, and the fill color of a
+    regular polygon.  The program should draw the polygon and then fill it in.
+
+   
+
+    .. actex:: ex_3_6
+
+
+#. 
+    .. tabbed:: q7
+
+       .. tab:: Question
+
+            A drunk pirate makes a random turn and then takes 100 steps forward, makes another random turn, takes another 100 steps, turns another random amount, etc.  A social science student records the angle of each turn before the next 100 steps are taken.  Her experimental data is ``160, -43, 270, -97, -43, 200, -940, 17, -86``. (Positive angles are counter-clockwise.)  Use a turtle to draw the path taken by our drunk friend.  After the pirate is done walking, print the current heading.
+
+            .. actex:: ex_3_7
+
+       .. tab:: Answer
+
+           .. activecode:: q7_answer
+
+               import turtle
+
+               wn = turtle.Screen()
+               lovelace = turtle.Turtle()
+
+               # move the turtle foward a little so that the whole path fits on the screen
+               lovelace.penup()
+               lovelace.forward(60)
+
+               # now draw the drunk pirate's path
+               lovelace.pendown()
+               for angle in [160, -43, 270, -97, -43, 200, -940, 17, -86]:
+                   
+                   # we use .left() so that positive angles are counter-clockwise
+                   # and negative angles are clockwise
+                   lovelace.left(angle)
+                   lovelace.forward(100)
+
+               # the .heading() method gives us the turtle's current heading in degrees
+               print("The pirate's final heading was", lovelace.heading())
+
+               wn.exitonclick()
+
+       .. tab:: Discussion
+
+	       .. disqus::
+	            :shortname: interactivepython
+	            :identifier: a7e34946f59f348f2bfeb3f918eb57b7a
+
 
 #. On a piece of scratch paper, trace the following program and show the drawing.  When you are done, press ``run``
    and check your answer.
@@ -993,11 +1145,36 @@ Exercises
        tess.forward(-100)
 
 
-#. Write a program to draw a shape like this:
+#.
 
-   .. image:: Figures/star.png
+    .. tabbed:: q9
 
-   .. actex:: ex_3_9
+        .. tab:: Question
+
+           Write a program to draw a shape like this:
+        
+           .. image:: Figures/star.png
+        
+           .. actex:: ex_3_9
+
+        .. tab:: Answer
+
+            .. activecode:: q9_answer
+                
+                import turtle
+
+                turing = turtle.Turtle()
+
+                for i in range(5):
+                    turing.forward(110)
+                    turing.left(216)
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: c611217310057488aab6a34d4b591e753
+
 
 #. Write a program to draw a face of a clock that looks something like this:
 
@@ -1005,16 +1182,91 @@ Exercises
 
    .. actex:: ex_3_10
 
-#. Write a program to draw some kind of picture.  Be creative and experiment
-    with the turtle methods provided in turtle_methods_.
+#.
 
-   .. actex:: ex_3_11
+    .. tabbed:: q11
 
-#. Create a turtle, and assign it to a variable.  When you print its type,
-    what do you get?
+        .. tab:: Question
+
+           Write a program to draw some kind of picture.  Be creative and experiment
+           with the turtle methods provided in summary_of_turtle_methods_.
+        
+           .. actex:: ex_3_11
+
+        .. tab:: Answer
+            
+            .. activecode:: q11_answer
+
+                import turtle
+
+                tanenbaum = turtle.Turtle()
+
+                tanenbaum.hideturtle()
+                tanenbaum.speed(20)
+
+                for i in range(350):
+                    tanenbaum.forward(i)
+                    tanenbaum.right(98)
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: e928a562a4f5c41f9892c9bfc4a1d5883
+
+
+#. Create a turtle and assign it to a variable.  When you print its type, what do you get?
 
    .. actex:: ex_3_12
 
-#. Write a program to draw a Sprite where the number of legs is provided by the user.
+#.
 
-   .. actex:: ex_3_13
+    .. tabbed:: q13
+
+        .. tab:: Question
+            
+            A sprite is a simple spider shaped thing with n legs coming out from a center 
+            point. The angle between each leg is 360/n degrees.
+
+            Write a program to draw a sprite where the number of legs is provided by the user.
+                   
+            .. actex:: ex_3_13
+
+        .. tab:: Answer
+            
+            .. activecode:: q13_answer
+                
+                import turtle
+
+                wn = turtle.Screen()
+
+                babbage = turtle.Turtle()
+                babbage.shape("triangle")
+
+                n = int(input("How many legs should this sprite have? "))
+                angle = 360/n
+
+                for i in range(n):
+                    # draw the leg
+                    babbage.right(angle)
+                    babbage.forward(65)
+                    babbage.stamp()
+                    
+                    # go back to the middle and turn back around
+                    babbage.right(180)
+                    babbage.forward(65)
+                    babbage.right(180)
+
+                babbage.shape("circle")
+
+                wn.exitonclick()
+    
+        
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: b65d7e616d2b548f592205dba699cc132
+
+

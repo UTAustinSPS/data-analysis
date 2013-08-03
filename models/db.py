@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+import datetime
+
 #########################################################################
 ## This scaffolding model makes your app work on Google App Engine too
 ## File is released under public domain and you can use without limitations
@@ -43,27 +45,54 @@ from gluon.tools import Auth, Crud, Service, PluginManager, prettydate
 auth = Auth(db, hmac_key=Auth.get_or_create_key())
 crud, service, plugins = Crud(db), Service(), PluginManager()
 
-## Enable captcha's :-(
-from gluon.tools import Recaptcha
-auth.settings.captcha = Recaptcha(request,
-   '6Lfb_t4SAAAAAB9pG_o1CwrMB40YPsdBsD8GsvlD',
-   '6Lfb_t4SAAAAAGvAHwmkahQ6s44478AL5Cf-fI-x',
-   options="theme:'blackglass'")
+if settings.enable_captchas:
+    ## Enable captcha's :-(
+    from gluon.tools import Recaptcha
+    auth.settings.captcha = Recaptcha(request,
+        '6Lfb_t4SAAAAAB9pG_o1CwrMB40YPsdBsD8GsvlD',
+        '6Lfb_t4SAAAAAGvAHwmkahQ6s44478AL5Cf-fI-x',
+        options="theme:'blackglass'")
 
 auth.settings.login_captcha = False
 auth.settings.retrieve_password_captcha	= False
 #auth.settings.retrieve_username_captcha	= False
 
+
 ## create all tables needed by auth if not custom tables
 db.define_table('courses',
   Field('course_id','string'),
-  migrate=settings.migrate
-  )
+  Field('course_name', 'string', unique=True),
+  Field('term_start_date', 'date'),
+  migrate='runestone_courses.table'
+)
 if db(db.courses.id > 0).isempty():
-    db.courses.insert(course_id='devcourse')
+    db.courses.insert(course_name='boguscourse', term_start_date=datetime.date(2000, 1, 1)) # should be id 1
+    db.courses.insert(course_name='devcourse', term_start_date=datetime.date(2000, 1, 1))
 
 
 ########################################
+
+def getCourseNameFromId(courseid):
+    ''' used to compute auth.user.course_name field '''
+    if courseid == 1: # boguscourse
+        return ''
+    else:
+        q = db.courses.id == courseid
+        course_name = db(q).select()[0].course_name
+        return course_name
+
+class IS_COURSE_ID:
+    ''' used to validate that a course name entered (e.g. devcourse) corresponds to a 
+        valid course ID (i.e. db.courses.id) '''
+    def __init__(self, error_message='Unknown course name. Please see your instructor.'):
+        self.e = error_message
+
+    def __call__(self, value):
+        if db(db.courses.course_name == value).select():
+            return (db(db.courses.course_name == value).select()[0].id, None)
+        return (value, self.e)
+
+
 db.define_table('auth_user',
     Field('username', type='string',
           label=T('Username')),
@@ -89,11 +118,11 @@ db.define_table('auth_user',
     Field('registration_id',default='',
           writable=False,readable=False),
     Field('course_id',db.courses,label=T('Course Name'),
-      required=True,
-      requires=IS_IN_DB(db,db.courses.id,'%(course_id)s'),
-      widget=SQLFORM.widgets.options.widget   ),
+          required=True,
+          default=1),
+    Field('course_name',compute=lambda row: getCourseNameFromId(row.course_id)),
     format='%(username)s',
-    migrate=settings.migrate)
+    migrate='runestone_auth_user.table')
 
 
 db.auth_user.first_name.requires = IS_NOT_EMPTY(error_message=auth.messages.is_empty)
@@ -103,8 +132,13 @@ db.auth_user.username.requires = IS_NOT_IN_DB(db, db.auth_user.username)
 db.auth_user.registration_id.requires = IS_NOT_IN_DB(db, db.auth_user.registration_id)
 db.auth_user.email.requires = (IS_EMAIL(error_message=auth.messages.invalid_email),
                                IS_NOT_IN_DB(db, db.auth_user.email))
-auth.define_tables(migrate=settings.migrate)
+db.auth_user.course_id.requires = IS_COURSE_ID()
 
+auth.define_tables(migrate='runestone_')
+
+# create the instructor group if it doesn't already exist
+if not db(db.auth_group.role == 'instructor').select().first():
+    db.auth_group.insert(role='instructor')
 
 ## configure email
 mail=auth.settings.mailer
@@ -117,10 +151,26 @@ auth.settings.registration_requires_verification = False
 auth.settings.registration_requires_approval = False
 auth.settings.reset_password_requires_verification = True
 
+auth.settings.register_next = URL('default', 'index')
+
 ## if you need to use OpenID, Facebook, MySpace, Twitter, Linkedin, etc.
 ## register with janrain.com, write your domain:api_key in private/janrain.key
 #from gluon.contrib.login_methods.rpx_account import use_janrain
 #use_janrain(auth,filename='private/janrain.key')
+from gluon.contrib.login_methods.rpx_account import RPXAccount
+from gluon.contrib.login_methods.extended_login_form import ExtendedLoginForm
+
+janrain_url = 'http://%s/%s/default/user/login' % (request.env.http_host,
+                                                   request.application)
+
+janrain_form = RPXAccount(request,
+                          api_key=settings.janrain_api_key, # set in 1.py
+                          domain=settings.janrain_domain, # set in 1.py
+                          url=janrain_url)
+auth.settings.login_form = ExtendedLoginForm(auth, janrain_form) # uncomment this to use both Janrain and web2py auth
+#auth.settings.login_form = auth # uncomment this to just use web2py integrated authentication
+
+request.janrain_form = janrain_form # save the form so that it can be added to the user/register controller
 
 #########################################################################
 ## Define your tables below (or better in another model file) for example

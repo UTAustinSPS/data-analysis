@@ -11,7 +11,12 @@
 ..  description:: The basic list data type in python
     
 .. index:: list, element, sequence, collection    
-    
+
+.. qnum::
+   :prefix: list-
+   :start: 1
+
+
 Lists
 =====
 
@@ -44,7 +49,7 @@ another list.
 
 A list within another list is said to be **nested** and the inner list is often called a **sublist**.
 Finally, there is a special list that contains no elements. It is called the
-empty list, and is denoted ``[]``.
+empty list and is denoted ``[]``.
 
 As you would expect, we can also assign list values to variables and pass lists as parameters to functions.  
 
@@ -101,10 +106,11 @@ item when counting the length of the list.
 
    What is printed by the following statements?
    
-   <pre>
-   alist = [3, 67, "cat", 3.14, False]
-   print(len(alist))
-   </pre>
+   .. code-block:: python
+
+     alist = [3, 67, "cat", 3.14, False]
+     print(len(alist))
+   
    
 .. mchoicemf:: test_question9_2_2
    :answer_a: 7
@@ -115,10 +121,11 @@ item when counting the length of the list.
 
    What is printed by the following statements?
    
-   <pre>
-   alist = [3, 67, "cat", [56, 57, "dog"], [ ], 3.14, False]
-   print(len(alist))
-   </pre> 
+
+   .. code-block:: python
+
+      alist = [3, 67, "cat", [56, 57, "dog"], [ ], 3.14, False]
+      print(len(alist))
    
 Accessing Elements
 ------------------
@@ -151,10 +158,11 @@ of from the left.
    
    What is printed by the following statements?
    
-   <pre>
-   alist = [3, 67, "cat", [56, 57, "dog"], [ ], 3.14, False]
-   print(alist[5])
-   </pre>
+   .. code-block:: python
+
+     alist = [3, 67, "cat", [56, 57, "dog"], [ ], 3.14, False]
+     print(alist[5])
+
    
 .. mchoicemf:: test_question9_3_2
    :answer_a: Error, you cannot use the upper method on a list.
@@ -167,10 +175,11 @@ of from the left.
    
    What is printed by the following statements?
    
-   <pre>
-   alist = [3, 67, "cat", [56, 57, "dog"], [ ], 3.14, False]
-   print(alist[2].upper())
-   </pre>
+   .. code-block:: python
+
+     alist = [3, 67, "cat", [56, 57, "dog"], [ ], 3.14, False]
+     print(alist[2].upper())
+
    
 .. mchoicemf:: test_question9_3_3
    :answer_a: 56
@@ -185,10 +194,11 @@ of from the left.
    
    What is printed by the following statements?
    
-   <pre>
-   alist = [3, 67, "cat", [56, 57, "dog"], [ ], 3.14, False]
-   print(alist[2][0])
-   </pre>
+   .. code-block:: python
+
+     alist = [3, 67, "cat", [56, 57, "dog"], [ ], 3.14, False]
+     print(alist[2][0])
+
    
 List Membership
 ---------------
@@ -214,10 +224,11 @@ used them previously with strings and they also work here.
    
    What is printed by the following statements?
    
-   <pre>
-   alist = [3, 67, "cat", [56, 57, "dog"], [ ], 3.14, False]
-   print(3.14 in alist)
-   </pre>
+   .. code-block:: python
+
+     alist = [3, 67, "cat", [56, 57, "dog"], [ ], 3.14, False]
+     print(3.14 in alist)
+
 
 .. mchoicemf:: test_question9_4_2
    :answer_a: True
@@ -228,10 +239,11 @@ used them previously with strings and they also work here.
    
    What is printed by the following statements?
    
-   <pre>
-   alist = [3, 67, "cat", [56, 57, "dog"], [ ], 3.14, False]
-   print(57 in alist)
-   </pre>
+   .. code-block:: python
+
+     alist = [3, 67, "cat", [56, 57, "dog"], [ ], 3.14, False]
+     print(57 in alist)
+
 
 
 Concatenation and Repetition
@@ -252,7 +264,9 @@ Similarly, the ``*`` operator repeats the items in a list a given number of time
 
 It is important to see that these operators create new lists from the elements of the operand lists.  If you concatenate a list with 2 items and a list with 4 items, you will get a new list with 6 items (not a list with two sublists).  Similarly, repetition of a list of 2 items 4 times will give a list with 8 items.
 
-One way for us to make this more clear is to run a part of this example in codelens.  As you step thru the code, you will see the variables being created and the lists that they refer to.  Pay particular attention to the `id` tag that is shown after the data type descriptor (``list (id = 12)``).  The **id** in Python corresponds to a unique identifier for that particular object.  You can tell if you have different objects by comparing the ids.
+One way for us to make this more clear is to run a part of this example in codelens.  As you step thru the code, you will see the variables being created and the lists that they refer to.  Pay particular attention to the fact that when ``newlist`` is created by the statement ``newlist = fruit + numlist``, it refers to a completely new list formed by making copies of the items from ``fruit`` and ``numlist``.  You can see this very clearly in the codelens object diagram.  The objects are different.
+
+
 
 .. codelens:: chp09_concatid
 
@@ -265,9 +279,9 @@ One way for us to make this more clear is to run a part of this example in codel
 
 
 
-The statement ``newlist = fruit + numlist`` creates a new list object with the contents of the list ``fruit`` followed by the contents of the list ``numlist``. We can see it is a new list by looking at the ids.  The id of ``newlist`` is not the same as the others.  It is extremely important to know whether you are creating a new list or just modifying an existing list.  Again, the ids can help.
 
-In Python, there is a built-in function that can be called on any object to return its unique id.  The function is appropriately called ``id`` and takes a single parameter, the object that you are interested in knowing about.  You can see in the example below that a real id is usually a very large integer value (corresponding to an address in memory).
+
+In Python, every object has a unique identification tab.  Likewise, there is a built-in function that can be called on any object to return its unique id.  The function is appropriately called ``id`` and takes a single parameter, the object that you are interested in knowing about.  You can see in the example below that a real id is usually a very large integer value (corresponding to an address in memory).
 
 .. sourcecode:: python
 
@@ -291,11 +305,12 @@ In Python, there is a built-in function that can be called on any object to retu
    
    What is printed by the following statements?
    
-   <pre>
-   alist = [1,3,5]
-   blist = [2,4,6]
-   print(alist + blist)
-   </pre>
+   .. code-block:: python
+
+     alist = [1,3,5]
+     blist = [2,4,6]
+     print(alist + blist)
+
    
    
 .. mchoicemf:: test_question9_5_2
@@ -311,16 +326,20 @@ In Python, there is a built-in function that can be called on any object to retu
    
    What is printed by the following statements?
    
-   <pre>
-   alist = [1,3,5]
-   print(alist * 3)
-   </pre>
+   .. code-block:: python
+
+     alist = [1,3,5]
+     print(alist * 3)
+
    
 
 List Slices
 -----------
 
-The slice operation we saw with strings also work on lists.  Remember that the first index is the starting point for the slice and the second number is one index past the end of the slice (up to but not including that element).
+The slice operation we saw with strings also work on lists.  Remember that the first index is the starting point for the slice and the second number is one index past the end of the slice (up to but not including that element).  Recall also
+that if you omit the first index (before the colon), the slice starts at the
+beginning of the sequence. If you omit the second index, the slice goes to the
+end of the sequence.
 
 .. activecode:: chp09_6
     
@@ -343,10 +362,11 @@ The slice operation we saw with strings also work on lists.  Remember that the f
    
    What is printed by the following statements?
    
-   <pre>
-   alist = [3, 67, "cat", [56, 57, "dog"], [ ], 3.14, False]
-   print(alist[4:])
-   </pre>
+   .. code-block:: python
+   
+     alist = [3, 67, "cat", [56, 57, "dog"], [ ], 3.14, False]
+     print(alist[4:])
+
 
 
 .. index:: mutable, item assignment, immutable
@@ -423,18 +443,19 @@ desired location.
    
    What is printed by the following statements?
    
-   <pre>
-   alist = [4,2,8,6,5]
-   alist[2] = True
-   print(alist)
-   </pre>
+   .. code-block:: python
+
+     alist = [4,2,8,6,5]
+     alist[2] = True
+     print(alist)
+
 
 .. index:: del statement, statement; del
 
 List Deletion
 -------------
 
-Using slices to delete list elements can be awkward, and therefore error-prone.
+Using slices to delete list elements can be awkward and therefore error-prone.
 Python provides an alternative that is more readable.
 The ``del`` statement removes an element from a list by using its position.
 
@@ -453,6 +474,16 @@ error if the index is out of range.
 In addition, you can use a slice as an index for ``del``.
 As usual, slices select all the elements up to, but not including, the second
 index.
+
+
+.. note::
+
+    This workspace is provided for your convenience.  You can use this activecode window to try out anything you like.
+
+    .. activecode:: scratch_09_01
+
+
+
 
 .. index:: is operator, objects and values
 
@@ -550,7 +581,9 @@ In this case, the reference diagram looks like this:
    :alt: State snapshot for multiple references (aliases) to a list 
 
 Because the same list has two different names, ``a`` and ``b``, we say that it
-is **aliased**. Changes made with one alias affect the other.  In the codelens example below, the `ids` of ``a`` and ``b`` become the same after executing the assignment statement ``b = a``.
+is **aliased**. Changes made with one alias affect the other.  In the codelens example below, you can see that ``a`` and ``b`` refer
+to the same list after executing the assignment statement ``b = a``.
+
 
 .. codelens:: chp09_is3
     :showoutput:
@@ -587,12 +620,13 @@ economize.
    
    What is printed by the following statements?
    
-   <pre>
-   alist = [4,2,8,6,5]
-   blist = alist
-   blist[3] = 999
-   print(alist)
-   </pre>
+   .. code-block:: python
+
+     alist = [4,2,8,6,5]
+     blist = alist
+     blist[3] = 999
+     print(alist)
+
 
 .. index:: clone
 
@@ -622,7 +656,7 @@ consist of the whole list.
     print(a)
     print(b)
 
-Now we are free to make changes to ``b`` without worrying about ``a``.  Note also that the `id` of b is different from the ``id`` of a.  It is an entirely different list.
+Now we are free to make changes to ``b`` without worrying about ``a``.  Again, we can clearly see in codelens that ``a`` and ``b`` are entirely different list objects.
 
 
 Repetition and References
@@ -706,12 +740,13 @@ Here is the same example in codelens.  Step through the code until paying partic
    
    What is printed by the following statements?
    
-   <pre>
-   alist = [4,2,8,6,5]
-   blist = alist * 2
-   blist[3] = 999
-   print(alist)
-   </pre>
+   .. code-block:: python
+
+     alist = [4,2,8,6,5]
+     blist = alist * 2
+     blist[3] = 999
+     print(alist)
+
 
 .. mchoicemf:: test_question9_12_2
    :answer_a: [4,2,8,999,5,4,2,8,999,5]
@@ -726,12 +761,15 @@ Here is the same example in codelens.  Step through the code until paying partic
    
    What is printed by the following statements?
    
-   <pre>
-   alist = [4,2,8,6,5]
-   blist = [alist] * 2
-   alist[3] = 999
-   print(blist)
-   </pre>
+   .. code-block:: python
+
+     alist = [4,2,8,6,5]
+     blist = [alist] * 2
+     alist[3] = 999
+     print(blist)
+
+
+
 
 
 .. index:: list; append
@@ -777,7 +815,12 @@ There are two ways to use the ``pop`` method.  The first, with no parameter, wil
 last item of the list.  If you provide a parameter for the position, ``pop`` will remove and return the
 item at that position.  Either way the list is changed.
 
-The following table provides a summary of the list methods shown above.  Be sure
+The following table provides a summary of the list methods shown above.  The column labeled
+`result` gives an explanation as to what the return value is as it relates to the new value of the list.  The word
+**mutator** means that the list is changed by the method but nothing is returned (actually ``None`` is returned).  A **hybrid** method is one that not only changes the list but also returns a value as its result.  Finally, if the result is simply a return, then the list
+is unchanged by the method.
+
+Be sure
 to experiment with these methods to gain a better understanding of what they do.
 
 
@@ -801,8 +844,8 @@ remove      item            mutator       Removes the first occurrence of item
 Details for these and others
 can be found in the `Python Documentation <http://docs.python.org/py3k/library/stdtypes.html#sequence-types-str-bytes-bytearray-list-tuple-range>`_.
 
-It is important to note that ``append``, ``sort``, 
-and ``reverse`` all return ``None``.  This means that re-assigning ``mylist`` to the result of sorting ``mylist`` will result in losing the entire list.
+It is important to remember that methods like ``append``, ``sort``, 
+and ``reverse`` all return ``None``.  This means that re-assigning ``mylist`` to the result of sorting ``mylist`` will result in losing the entire list.  Calls like these will likely never appear as part of an assignment statement (see line 8 below).
 
 .. activecode:: chp09_meth2
 
@@ -829,12 +872,13 @@ and ``reverse`` all return ``None``.  This means that re-assigning ``mylist`` to
    
    What is printed by the following statements?
    
-   <pre>
-   alist = [4,2,8,6,5]
-   alist.append(True)
-   alist.append(False)
-   print(alist)
-   </pre>
+   .. code-block:: python
+
+     alist = [4,2,8,6,5]
+     alist.append(True)
+     alist.append(False)
+     print(alist)
+
 
 
 .. mchoicemf:: test_question9_13_2
@@ -848,12 +892,13 @@ and ``reverse`` all return ``None``.  This means that re-assigning ``mylist`` to
    
    What is printed by the following statements?
    
-   <pre>
-   alist = [4,2,8,6,5]
-   alist.insert(2,True)
-   alist.insert(0,False)
-   print(alist)
-   </pre>
+   .. code-block:: python
+
+     alist = [4,2,8,6,5]
+     alist.insert(2,True)
+     alist.insert(0,False)
+     print(alist)
+
 
 .. mchoicemf:: test_question9_13_3
    :answer_a: [4,8,6]
@@ -866,12 +911,13 @@ and ``reverse`` all return ``None``.  This means that re-assigning ``mylist`` to
    
    What is printed by the following statements?
    
-   <pre>
-   alist = [4,2,8,6,5]
-   temp = alist.pop(2)
-   temp = alist.pop()
-   print(alist)
-   </pre>
+   .. code-block:: python
+
+     alist = [4,2,8,6,5]
+     temp = alist.pop(2)
+     temp = alist.pop()
+     print(alist)
+
    
    
 .. mchoicemf:: test_question9_13_4
@@ -887,15 +933,22 @@ and ``reverse`` all return ``None``.  This means that re-assigning ``mylist`` to
    
    What is printed by the following statements?
    
-   <pre>
-   alist = [4,2,8,6,5]
-   alist = alist.pop(0)
-   print(alist)
-   </pre>
+   .. code-block:: python
 
-.. admonition:: Scratch Editor
+     alist = [4,2,8,6,5]
+     alist = alist.pop(0)
+     print(alist)
 
-	.. actex:: scratch_9_1
+
+
+.. note::
+
+   This workspace is provided for your convenience.  You can use this activecode window to try out anything you like.
+
+   .. activecode:: scratch_09_03
+
+
+
 
 The Return of L-Systems
 -----------------------
@@ -1004,9 +1057,8 @@ This example only uses 6 expansions.  Try it out with a larger number of
 expansions.  You may also want to try this example with different values for
 the angle and distance parameters.
 
-.. admonition:: Scratch Editor
 
-	.. actex:: scratch_9_2
+
 
 Append versus Concatenate
 -------------------------
@@ -1036,9 +1088,17 @@ Note that the word "cat" needs to be placed in a list since the concatenation op
     origlist = origlist + ["cat"]
 
 
-It is also important to see that with append, the original list is simply modified.  You can see this by watching the `id` of ``origlist``.  It stays the same before and after the append.
+It is also important to realize that with append, the original list is simply modified.  
+On the other hand, with concatenation, an entirely new list is created.  This can be seen in the following codelens example where
+``newlist`` refers to a list which is a copy of the original list, ``origlist``, with the new item "cat" added to the end.  ``origlist`` still contains the three values it did before the concatenation.  This is why the assignment operation is necessary as part of the
+accumulator pattern.
 
-On the other hand, with concatenation, you will see that the `id` of the original list is not the same as the `id` of the result after the assignment statement. Step through both examples very slowly to see this important difference.
+.. codelens:: appcon3
+
+    origlist = [45,32,88]
+
+    newlist = origlist + ["cat"]
+
 
 **Check you understanding**
 
@@ -1051,11 +1111,12 @@ On the other hand, with concatenation, you will see that the `id` of the origina
    
    What is printed by the following statements?
    
-   <pre>
-   alist = [4,2,8,6,5]
-   alist = alist + 999
-   print(alist)
-   </pre>
+   .. code-block:: python
+
+     alist = [4,2,8,6,5]
+     alist = alist + 999
+     print(alist)
+
 
 .. index:: for loop, enumerate
 
@@ -1123,9 +1184,10 @@ Take a moment to think about ``range(len(numbers))`` until you understand how
 it works. We are interested here in both the *value* and its *index* within the
 list, so that we can assign a new value to it.
 
-.. admonition:: Scratch Editor
 
-	.. actex:: scratch_9_3
+    
+    
+    
 
 **Check your understanding**
 
@@ -1142,13 +1204,14 @@ list, so that we can assign a new value to it.
    
    What is printed by the following statements?
    
-   <pre>
-   alist = [4,2,8,6,5]
-   blist = [ ]
-   for item in alist:
-      blist.append(item+5)
-   print(blist)
-   </pre>
+   .. code-block:: python
+
+     alist = [4,2,8,6,5]
+     blist = [ ]
+     for item in alist:
+        blist.append(item+5)
+     print(blist)
+
 
 .. index:: parameter
 
@@ -1158,7 +1221,7 @@ Using Lists as Parameters
 Functions which take lists as arguments and change them during execution are
 called **modifiers** and the changes they make are called **side effects**.
 Passing a list as an argument actually passes a reference to the list, not a
-copy of the list. Since lists are mutable changes made to the 
+copy of the list. Since lists are mutable, changes made to the 
 elements referenced by the parameter change
 the same list that the argument is referencing. 
 For example, the function below takes a list as an
@@ -1188,7 +1251,7 @@ Since the list object is shared by two references, there is only one copy.
 If a function modifies the elements of a list parameter, the caller sees the change since the change
 is occurring to the original.
 
-This can be easily seen in codelens.  Note that after the call to ``doubleStuff``, the `id` of the formal parameter ``aList`` is the same as the `id` of ``things``.
+This can be easily seen in codelens.  Note that after the call to ``doubleStuff``, the formal parameter ``aList`` refers to the same object as the actual parameter ``things``.  There is only one copy of the list object itself.
 
 
 .. codelens:: chp09_parm1_trace
@@ -1213,7 +1276,7 @@ Pure Functions
 
 
 A **pure function** does not produce side effects. It communicates with the
-calling program only through parameters, which it does not modify, and a return
+calling program only through parameters (which it does not modify) and a return
 value. Here is the ``doubleStuff`` function from the previous section written as a pure function.
 To use the pure function version of ``double_stuff`` to modify ``things``,
 you would assign the return value back to ``things``.
@@ -1250,10 +1313,6 @@ Once again, codelens helps us to see the actual references and objects as they a
     things = doubleStuff(things)
 
 
-
-.. admonition:: Scratch Editor
-
-	.. actex:: scratch_9_4
 
 Which is Better?
 ----------------
@@ -1327,9 +1386,14 @@ To write the ``primes_upto`` function we will use the ``is_prime`` function to f
 	    return result
 
 
-.. admonition:: Scratch Editor
 
-	.. actex:: scratch_9_5
+.. note::
+
+    This workspace is provided for your convenience.  You can use this activecode window to try out anything you like.
+
+    .. activecode:: scratch_09_06
+    
+    
 
 **Check your understanding**
 
@@ -1346,11 +1410,12 @@ To write the ``primes_upto`` function we will use the ``is_prime`` function to f
    
    What is printed by the following statements?
    
-   <pre>
-   alist = [4,2,8,6,5]
-   blist = [num*2 for num in alist if num%2==1]
-   print(blist)
-   </pre>
+   .. code-block:: python
+
+     alist = [4,2,8,6,5]
+     blist = [num*2 for num in alist if num%2==1]
+     print(blist)
+
 
 .. index:: nested list, list; nested
        
@@ -1388,17 +1453,18 @@ left to right.
    :feedback_a: 6 is in the wrong list.  alist[1] refers to the second item in alist, namely [888,999].
    :feedback_b: 8 is in the wrong list.  alist[1] refers to the second item in alist, namely [888,999].
    :feedback_c: Yes, alist[0][1][0] is True and alist[1] is the second list, the first item is 888.
-   :feedback_d: alist[0][1][0] is False.  Take another look at the if statement.
+   :feedback_d: alist[0][1][0] is True.  Take another look at the if statement.
    
    What is printed by the following statements?
    
-   <pre>
-   alist = [ [4, [True, False], 6, 8], [888, 999] ]
-   if alist[0][1][0]:
-      print(alist[1][0])
-   else:
-      print(alist[1][1])
-   </pre>
+   .. code-block:: python
+
+     alist = [ [4, [True, False], 6, 8], [888, 999] ]
+     if alist[0][1][0]:
+        print(alist[1][0])
+     else:
+        print(alist[1][1])
+
 
 .. index:: strings and lists, split, join
 
@@ -1447,9 +1513,7 @@ and join the list with the glue between each of the elements.
 The list that you glue together (``wds`` in this example) is not modified.  Also, 
 you can use empty glue or multi-character strings as glue.
 
-.. admonition:: Scratch Editor
 
-	.. actex:: scratch_9_6
 
 **Check your understanding**
 
@@ -1466,14 +1530,15 @@ you can use empty glue or multi-character strings as glue.
    
    What is printed by the following statements?
    
-   <pre>
-   myname = "Edgar Allan Poe"
-   namelist = myname.split()
-   init = ""
-   for aname in namelist:
-      init = init + aname[0]
-   print(init)
-   </pre>
+   .. code-block:: python
+
+     myname = "Edgar Allan Poe"
+     namelist = myname.split()
+     init = ""
+     for aname in namelist:
+        init = init + aname[0]
+     print(init)
+
 
     
 ``list`` Type Conversion Function
@@ -1637,9 +1702,13 @@ of a circle of radius r.
     print(circleInfo(10))
 
 
-.. admonition:: Scratch Editor
 
-	.. actex:: scratch_9_7
+
+.. note::
+
+    This workspace is provided for your convenience.  You can use this activecode window to try out anything you like.
+
+    .. activecode:: scratch_09_07
 
 Glossary
 --------
@@ -1713,88 +1782,319 @@ Glossary
 
 Exercises
 ---------
+#.
+
+    .. tabbed:: q1
+
+        .. tab:: Question
+
+           Draw a reference diagram for ``a`` and ``b`` before and after the third line of
+           the following python code is executed:
+        
+           .. sourcecode:: python
+            
+               a = [1, 2, 3]
+               b = a[:]
+               b[0] = 5
+
+        .. tab:: Answer
+            
+            Your diagram should show two variables referring to two different lists.  ``a`` refers to the original list with 1,2, and 3.
+            ``b`` refers to a list with 5,2, and 3 since the zero-eth element was replaced with 5.
+
+        .. tab:: Discussion
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_12314cf40dbe407cb145f029870c0347
 
 
-
-   
-#. Draw a reference diagram for ``a`` and ``b`` before and after the third line of
-   the following python code is executed:
-
-   .. sourcecode:: python
-    
-       a = [1, 2, 3]
-       b = a[:]
-       b[0] = 5
-
-#.  Create a list called ``myList`` with the following six items: 76, 92.3, "hello", True, 4, 76.
+#.  Create a list called ``myList`` with the following six items: 76, 92.3, "hello", True, 4, 76.  Do it with both append and with concatenation, one item at a time.
 
     .. actex:: ex_9_2
 
- 
-#.  Write Python statements to do the following:
 
-    a. Append "apple" and 76 to the list.
-    #. Insert the value "cat" at position 3.
-    #. Insert the value 99 at the start of the list.
-    #. Find the index of "hello".
-    #. Count the number of 76s in the list.
-    #. Remove the first occurrence of 76 from the list.
-    #. Remove True from the list using ``pop`` and ``index``.
+#.
+
+    .. tabbed:: q3
+
+        .. tab:: Question
+
+           Starting with the list in Exercise 1, write Python statements to do the following:
+
+           a. Append "apple" and 76 to the list.
+           #. Insert the value "cat" at position 3.
+           #. Insert the value 99 at the start of the list.
+           #. Find the index of "hello".
+           #. Count the number of 76s in the list.
+           #. Remove the first occurrence of 76 from the list.
+           #. Remove True from the list using ``pop`` and ``index``.
 
 
-    .. actex:: ex_9_3
+           .. actex:: ex_9_3
+
+        .. tab:: Answer
+
+            .. activecode:: q3_answer
+
+                myList = [76, 92.3, 'hello', True, 4, 76]
+
+                myList.append("apple")         # a
+                myList.append(76)              # a
+                myList.insert(3, "cat")        # b
+                myList.insert(0, 99)           # c
+
+                print(myList.index("hello"))   # d
+                print(myList.count(76))        # e
+                myList.remove(76)              # f
+                myList.pop(myList.index(True)) # g
+
+                print (myList)
+
+        .. tab:: Discussion
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_b9034b274ebe4c55a58c44315ee681a4
+
 
 #.  Create a list containing 100 random integers between 0 and 1000 (use iteration, append, and the random module).  Write a function called ``average`` that will take the list as a parameter and return the average.
 
     .. actex:: ex_9_4
 
-#. Write a Python function that will take a the list of integers from the previous problem and return the maximum value.  (Note: there is a builtin function named ``max`` but pretend you cannot use it.)
+#.
 
-    .. actex:: ex_9_5
+    .. tabbed:: q5
+
+        .. tab:: Question
+
+           Write a Python function that will take a the list of 100 random integers between 0 and 1000 and return the maximum value.  (Note: there is a builtin function named ``max`` but pretend you cannot use it.)
+
+           .. actex:: ex_9_5
+
+
+        .. tab:: Answer
+
+            .. activecode:: q5_answer
+
+                import random
+
+                def max(lst):
+                    max = 0
+                    for e in lst:
+                        if e > max:
+                            max = e
+                    return max
+
+                lst = []
+                for i in range(100):
+                    lst.append(random.randint(0, 1000))
+
+                print(max(lst))
+
+        .. tab:: Discussion
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_714fd5537ebf41189ce5fb6fb16d1d26
 
 
 #. Write a function ``sum_of_squares(xs)`` that computes the sum
    of the squares of the numbers in the list ``xs``.  For example,
    ``sum_of_squares([2, 3, 4])`` should return 4+9+16 which is 29:
 
-    .. actex:: ex_7_11
+   .. actex:: ex_7_11
 
-#. Write a function to count how many odd numbers are in a list.
+#.
 
-    .. actex:: ex_9_6
+    .. tabbed:: q7
+
+        .. tab:: Question
+
+           Write a function to count how many odd numbers are in a list.
+
+           .. actex:: ex_9_6
+
+        .. tab:: Answer
+
+            .. activecode:: q7_answer
+
+                import random
+
+                def countOdd(lst):
+                    odd = 0
+                    for e in lst:
+                        if not e % 2 == 0:
+                            odd = odd + 1
+                    return odd
+
+                # make a random list to test the function
+                lst = []
+                for i in range(100):
+                    lst.append(random.randint(0, 1000))
+
+                print(countOdd(lst))
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_fdd366b1b4c8494082a385e1e1197844
+
 
 #. Sum up all the even numbers in a list.
 
-    .. actex:: ex_9_7
+   .. actex:: ex_9_7
 
-#. Sum up all the negative numbers in a list.
+#.
 
-    .. actex:: ex_9_8
+    .. tabbed:: q9
+
+        .. tab:: Question
+
+           Sum up all the negative numbers in a list.
+        
+           .. actex:: ex_9_8
+
+        .. tab:: Answer
+            
+            .. activecode:: q9_answer
+
+                import random
+
+                def sumNegative(lst):
+                    sum = 0
+                    for e in lst:
+                        if e < 0:
+                            sum = sum + e
+                    return sum
+
+                lst = []
+                for i in range(100):
+                    lst.append(random.randrange(-1000, 1000))
+
+                print(sumNegative(lst))
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_bfe671ac1e0942f2be4de7179921f83f
+
 
 #. Count how many words in a list have length 5.
 
-    .. actex:: ex_9_9
+   .. actex:: ex_9_9
 
-#. Sum all the elements in a list up to but not including the first even number.
+#.
 
-    .. actex:: ex_9_10
+    .. tabbed:: q11
+
+        .. tab:: Question
+
+           Sum all the elements in a list up to but not including the first even number.
+        
+           .. actex:: ex_9_10
+
+        .. tab:: Answer
+            
+            .. activecode:: q11_answer
+
+                import random
+
+                def sum(lst):
+                    sum = 0
+                    index = 0
+                    while not lst[index] % 2 == 0 and not index >= len(lst):
+                        sum = sum + lst[index]
+                        index = index + 1
+                    return sum
+
+                lst = []
+                for i in range(100):
+                    lst.append(random.randint(0,1000))
+
+                print(sum(lst))
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_90f95bbe4a49428caa9ed0c5e02747b1
+
 
 #. Count how many words occur in a list up to and including the first occurrence of the word "sam".
 
-    .. actex:: ex_9_11
+   .. actex:: ex_9_11
 
 
+#.
 
-#. Although Python provides us with many list methods, it is good practice and very instructive to think about how they are implemented.  Implement a Python function that works like the following:
+    .. tabbed:: q13
 
-    a. count
-    #. in
-    #. reverse
-    #. index
-    #. insert
+        .. tab:: Question
 
-   
-    .. actex:: ex_9_12
+           Although Python provides us with many list methods, it is good practice and very instructive to think about how they are implemented.  Implement a Python function that works like the following:
+        
+           a. count
+           #. in
+           #. reverse
+           #. index
+           #. insert
+        
+           
+           .. actex:: ex_9_12
+
+        .. tab:: Answer
+            
+            .. activecode:: q13_answer
+
+                def count(obj, lst):
+                    count = 0
+                    for e in lst:
+                        if e == obj:
+                            count = count + 1
+                    return count
+
+                def is_in(obj, lst):  # cannot be called in() because in is a reserved keyword
+                    for e in lst:
+                        if e == obj:
+                            return True
+                    return False
+
+                def reverse(lst):
+                    reversed = []
+                    for i in range(len(lst)-1, -1, -1): # step through the original list backwards
+                        reversed.append(lst[i])
+                    return reversed
+
+                def index(obj, lst):
+                    for i in range(len(lst)):
+                        if lst[i] == obj:
+                            return i
+                    return -1
+
+                def insert(obj, index, lst):
+                    newlst = []
+                    for i in range(len(lst)):
+                        if i == index:
+                            newlst.append(obj)
+                        newlst.append(lst[i])
+                    return newlst
+
+                lst = [0,1,1,2,2,3,4,5,6,7,8,9]
+                print(count(1, lst))
+                print(is_in(4, lst))
+                print(reverse(lst))
+                print(index(2, lst))
+                print(insert('cat', 4, lst))
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_39ee0274e51d4c888cc20b6fefa4069c
+
 
 #. Write a function ``replace(s, old, new)`` that replaces all occurences of
    ``old`` with ``new`` in a string ``s``::
@@ -1810,19 +2110,106 @@ Exercises
 
    *Hint*: use the ``split`` and ``join`` methods.
 
-    .. actex:: ex_9_13
+   .. actex:: ex_9_13
 
 
-#. Here are the rules for an L-system that creates something that resembles
-   a common garden herb.  Implement the following rules and try it.  Use an
-   angle of 25.7 degrees.::
+#.
 
-       H
-       H --> HFX[+H][-H]
-       X --> X[-FFF][+FFF]FX
+    .. tabbed:: q15
+
+        .. tab:: Question
+
+           Here are the rules for an L-system that creates something that resembles 
+           a common garden herb.  Implement the following rules and try it.  Use an
+           angle of 25.7 degrees.
+           
+           ::
+        
+               H
+               H --> HFX[+H][-H]
+               X --> X[-FFF][+FFF]FX
+        
+        
+           .. actex:: ex_9_14
+
+        .. tab:: Answer
+            
+            .. activecode:: q15_answer
+
+                import turtle
+
+                def createLSystem(numIters,axiom):
+                    startString = axiom
+                    endString = ""
+                    for i in range(numIters):
+                        endString = processString(startString)
+                        startString = endString
+
+                    return endString
+
+                def processString(oldStr):
+                    newstr = ""
+                    for ch in oldStr:
+                        newstr = newstr + applyRules(ch)
+
+                    return newstr
+
+                def applyRules(ch):
+                    newstr = ""
+                    if ch == 'H':
+                        newstr = 'HFX[+H][-H]'   # Rule 1
+                    elif ch == 'X':
+                        newstr = 'X[-FFF][+FFF]FX'
+                    else:
+                        newstr = ch     # no rules apply so keep the character
+
+                    return newstr
+
+                def drawLsystem(aTurtle,instructions,angle,distance):
+                    savedInfoList = []
+                    for cmd in instructions:
+                        if cmd == 'F':
+                            aTurtle.forward(distance)
+                        elif cmd == 'B':
+                            aTurtle.backward(distance)
+                        elif cmd == '+':
+                            aTurtle.right(angle)
+                        elif cmd == '-':
+                            aTurtle.left(angle)
+                        elif cmd == '[':
+                            savedInfoList.append([aTurtle.heading(),aTurtle.xcor(),aTurtle.ycor()])
+                            #print(savedInfoList)
+                        elif cmd == ']':
+                            newInfo = savedInfoList.pop()
+                            aTurtle.setheading(newInfo[0])
+                            aTurtle.setposition(newInfo[1],newInfo[2])
+                        else:
+                            #print('Error:', cmd, 'is an unknown command')
+                            pass
+                
+
+                def main():
+                    inst = createLSystem(4,"H")   #create the string
+                    print(inst)
+                    t = turtle.Turtle()           #create the turtle
+                    wn = turtle.Screen()
+                    t.up()
+                    t.back(200)
+                    t.down()
+                    t.speed(9)
+                    drawLsystem(t,inst,27.5,5)      #draw the picture
+
+                    wn.exitonclick()
+
+                main()
 
 
-   .. actex:: ex_9_14
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_10a1fdd1fadb401b8e733afd9d105052
+
 
 #. Here is another L-System.  Use an Angle of 25::
 
@@ -1830,4 +2217,3 @@ Exercises
        F --> F[-F]F[+F]F
 
    .. actex:: ex_9_15
-

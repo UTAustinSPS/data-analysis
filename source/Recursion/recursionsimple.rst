@@ -9,6 +9,12 @@
 ..  shortname:: IntroductionRecursion
 ..  description:: This is a simple introduction to the idea of recursion
 
+
+.. qnum::
+   :prefix: rec-
+   :start: 1
+
+
 Recursion
 ---------
 
@@ -398,16 +404,23 @@ call. The code for this modified algorithm is shown in
 
 .. activecode:: lst_recstack
 
+    from pythonds.basic.stack import Stack
+
     rStack = Stack()
 
     def toStr(n,base):
         convertString = "0123456789ABCDEF"
-        if n < base:                 
-            rStack.push(convertString[n])
-        else:
-            rStack.push(convertString[n % base])
-            toStr(n // base, base)     
-            
+        while n > 0:
+            if n < base:
+                rStack.push(convertString[n])
+            else:
+                rStack.push(convertString[n % base])
+            n = n // base
+        res = ""
+        while not rStack.isEmpty():
+            res = res + str(rStack.pop())
+        return res
+
     print(toStr(1453,16))
 
 Each time we make a call to ``toStr``, we push a character on the stack.

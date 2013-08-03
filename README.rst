@@ -4,8 +4,18 @@ Runestone Interactive Tools and Content
 Important Notice
 ----------------
 
-This is the consolidated repository for all work related to our interactive textbook project.  If you were using the
-thinkcspy repository and the eBookExtensions repository you will find all of that work here.  Thanks.
+On July 26, 2013 We made some structural changes which involved moving the
+three extisting submodules.  skulpt, codelens, and js-parson.  Submodules are
+a known PITA for many git operations.  If you have an existing project here is
+what you should do.
+
+1.  git pull or follow the fetch instructions for your Fork.
+2.  git submodule init
+3.  git submodule sync
+4.  git submodule update
+
+If you are Forking this repo for the first time, you can just proceed to the
+dependencies.
 
 Dependencies
 ------------
@@ -15,15 +25,13 @@ can build and use this eBook.
 
 First get Sphinx, Version 1.1.x is current as of this writing.
 
-http://sphinx.pocoo.org
+http://sphinx.pocoo.org
 
 Follow the instructions there to download and install Sphinx.
 
-Next install paver, version 1.2.0 is current as of this writing.  If you have ``pip`` installed its as easy as ``pip install paver`` if not, then follow the instructions `On the paver github page <http://paver.github.com/paver/#installation>`_
+Next install paver, version 1.2.0 is current as of this writing.  If you have ``pip`` installed its as easy as ``pip install paver`` if not, then follow the instructions `on the paver github page <http://paver.github.com/paver/#installation>`_
 
-Once paver is installed you will also need to install sphincontrib-paverutils, again the easiest route is to use ``pip install sphinxcontrib-paverutils``
-
-**Warning**  The current sphinxcontrib-paverutils is not compatible with Paver 1.2.  either install paver 1.1.4 or clone the repository:  https://bitbucket.org/bnmnetp/sphinx-contrib and run  ``python setup.py install`` in the paverutils directory.
+Once paver is installed you will also need to install sphincontrib-paverutils, again the easiest route is to use ``pip install sphinxcontrib-paverutils``   Make sure you have version 1.5 or later.
 
 
 If you want to run a full blown server -- so you can save activecode assignments etc. then you will need to download and install web2py.  http://web2py.com
@@ -45,6 +53,22 @@ This project consists of the main repository, plus *submodules* for codelens, pa
 If you are using a GUI git client you may simply get prompted to update the submodules and all will be taken care of for you.  Newer versions of git also support::
 
     $ git clone --recursive https://github.com/bnmnetp/runestone.git
+
+Configure the Book
+------------------
+
+Although the book looks like a static website, there are quite a few AJAX calls going on in the background.  The javascript relies on a configuration object called eBookConfig.  To get the right values in the eBookConfig object you need to configure a couple of things prior to running the paver command to build the book.  We have provided a ``paverconfig.py.prototype`` file, you can simply copy that to ``paverconfig.py``.  It contains the following two lines:
+
+::
+
+    master_url = 'http://127.0.0.1:8000'
+    master_app = 'runestone'
+
+You can modify the master_url to be the hostname that you are running your app on, but if you are just doing local development you will probably want to leave it alone.  If you omit this step the books will build in the next step using the values above as default values, but you will get a warning message:
+
+::
+
+    'NOTICE:  You are using default values for master_* Make your own paverconfig.py file'
 
 
 Building the Book
@@ -81,6 +105,21 @@ Now before you start web2py its convenient to make runestone the default applica
 Running the Server
 ------------------
 
+You will have to set a few configuration values in the file ``models/1.py``. Copy ``models/1.py.prototype`` to ``models/1.py`` and open the newly created 1.py. If you don't wish to use a local SQLite database, change the database_uri (line 13) to match your actual credentials.
+If you wish to use Janrain Engage to provide social network authentication integration, you will also have to set your Janrain API key and domain in 1.py.
+
+Note: If you do *not* wish to use Janrain, you must comment out lines 159 - 163 of ``models/0.db``::
+
+    janrain_form = RPXAccount(request,
+                              api_key=settings.janrain_api_key, # set in 1.py
+                              domain=settings.janrain_domain, # set in 1.py
+                              url=janrain_url)
+    auth.settings.login_form = ExtendedLoginForm(auth, janrain_form) # uncomment this to use both Janrain and web2py auth
+
+and uncomment line 164. This will disable Janrain and only use Web2Py integrated authentication. ::
+
+    auth.settings.login_form = auth # uncomment this to just use web2py integrated authentication
+
 Once you've built the book using the steps above.  You can start the web2py development server by simply running ::
 
 	python web2py.py.
@@ -98,14 +137,22 @@ If you get an error at this point the most likely reason is that the settings fi
 	else:
 	        raise RuntimeError('Host unknown, senttings not configured')
 
-For  your own personal development, you want the first clause of the if statment to match.
+For your own personal development, you want the first clause of the if statement to match. If you are on a Unix-like system,
+you can replace 'Darwin' with the result of running ``uname`` at a terminal. Another option is to replace 'local' with
+your computer's hostname.
 
 Final Configuration
 -------------------
+To use the admin functionalities you are going to want to do one more bit of configuration:
 
-To use the admin functionalities you are going to want to do one more bit of configuration.  Using the appadmin functionality of web2py.  Open ``http://127.0.0.1:8000/runestone/appadmin``  Login using the password you supplied.  click on the link for ``insert new auth_group`` and add instructor as a role.  Description can be whatever you want.
+* Click the "Register" link in the upper right corner of the browser window.
+* Fill in the form to create a user account for yourself.
 
-Now go back to the appadmin/index page and click on ``insert new auth_membership``  seleect yourself, and instructor as the two values and click submit.  You are now an instructor.
+Now, add your new user account to the 'instructors' group using the appadmin
+functionality of web2py:
+
+* Open ``http://127.0.0.1:8000/runestone/appadmin``. Login using the password you supplied when you ran web2py.
+* Click on ``insert new auth_membership``. Select your user account and the instructor group as the two values and click submit.  You are now an instructor.
 
 
 How to Contribute
@@ -120,6 +167,19 @@ How to Contribute
 #. test
 #. Make a Pull Request.  This will notify me that I should look at your changes and merge them into the main repository.
 #. Repeat!
+
+
+How to Contribute $$
+--------------------
+
+as our popularity has grown we have server costs.  We
+were also able to make great progress during the Summer of 2013
+thanks to a generous grant from ACM-SIGCSE that supported one of our
+undergraduate students. It would be great if we could have a student
+working on this all the time.
+
+If this system or these books have helped you, please consider making a small
+donation using `gittip <https://www.gittip.com/bnmnetp/>`_
 
 
 More Documentation

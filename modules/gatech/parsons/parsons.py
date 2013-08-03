@@ -19,26 +19,27 @@ import re
 from docutils import nodes
 from docutils.parsers.rst import directives
 from docutils.parsers.rst import Directive
+from luther.sphinx.assess import Assessment
 
 def setup(app):
     app.add_directive('parsonsprob',ParsonsProblem)
 
-    app.add_stylesheet('js-parsons/parsons.css')
-    app.add_stylesheet('js-parsons/lib/prettify.css')
+    app.add_stylesheet('parsons.css')
+    app.add_stylesheet('lib/prettify.css')
 
     # includes parsons specific javascript headers
     # parsons-noconflict reverts underscore and
     # jquery to their original versions
-    app.add_javascript('js-parsons/lib/jquery.min.js')
-    app.add_javascript('js-parsons/lib/jquery-ui.min.js')
-    app.add_javascript('js-parsons/lib/prettify.js')
-    app.add_javascript('js-parsons/lib/underscore-min.js')
-    app.add_javascript('js-parsons/lib/lis.js')
-    app.add_javascript('js-parsons/parsons.js')
+    app.add_javascript('lib/jquery.min.js')
+    app.add_javascript('lib/jquery-ui.min.js')
+    app.add_javascript('lib/prettify.js')
+    app.add_javascript('lib/underscore-min.js')
+    app.add_javascript('lib/lis.js')
+    app.add_javascript('parsons.js')
     app.add_javascript('parsons-noconflict.js')
 
 
-class ParsonsProblem(Directive):
+class ParsonsProblem(Assessment):
     required_arguments = 1
     optional_arguments = 0
     final_argument_whitespace = False
@@ -78,8 +79,8 @@ Example:
 
         """
 
-
         template_values = {}
+        template_values['qnumber'] = self.getNumber()        
         template_values['unique_id'] = self.lineno
         template_values['instructions'] = ""
         code = self.content
@@ -97,15 +98,16 @@ Example:
         template_values['divid'] = self.arguments[0]
 
         TEMPLATE = '''
-        %(instructions)s
-        <div>
+        <div class='parsons alert'>
+        %(qnumber)s: %(instructions)s<br /><br />
         <div id="parsons-orig-%(unique_id)s" style="display:none;">%(code)s</div>
         <div id="parsons-sortableTrash-%(unique_id)s" class="sortable-code"></div>
         <div id="parsons-sortableCode-%(unique_id)s" class="sortable-code"></div>
-	<div style="clear:left;"></div>
-        <div id="parsons-message-%(unique_id)s" style="background: pink; padding: 1em;"></div>
-        <a href="#" id="newInstanceLink-%(unique_id)s">Reset</a>
-        <a href="#" id="feedbackLink-%(unique_id)s">Get feedback</a>
+    	<div style="clear:left;"></div>
+        <div id="parsons-message-%(unique_id)s"></div>
+        
+        <button id="newInstanceLink-%(unique_id)s" class='btn btn-small'>Reset</button>
+        <button id="feedbackLink-%(unique_id)s" class='btn btn-small btn-success'>Get Feedback</button>
         </div>
 
     <script>
@@ -116,15 +118,14 @@ Example:
 	        if(fb.errors.length > 0) {
                     var hash = pp_%(unique_id)s.getHash("#ul-parsons-sortableCode-%(unique_id)s");
                     msgBox.fadeIn(500);
-                    msgBox.css("background-color","pink");
+                    msgBox.attr('class','alert alert-danger');
                     msgBox.html(fb.errors[0]);
                     logBookEvent({'event':'parsons', 'act':hash, 'div_id':'%(divid)s'});
 
 	        } else {
                     logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'%(divid)s'});
-                    msgBox.css("background-color","white");
+                    msgBox.attr('class','alert alert-success');
                     msgBox.html("Perfect!")
-                    msgBox.fadeOut(3000);
                 }
 	    }
  

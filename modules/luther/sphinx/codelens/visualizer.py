@@ -24,16 +24,14 @@ import json
 
 def setup(app):
     app.add_directive('codelens',Codelens)
-    app.add_stylesheet('codelens/v3/css/pytutor.css')
-    app.add_stylesheet('codelens/v3/css/basic.css')
-    app.add_stylesheet('codelens/v3/css/ui-lightness/jquery-ui-1.8.24.custom.css')
+    app.add_stylesheet('css/pytutor.css')
+    app.add_stylesheet('css/basic.css')
 
-    app.add_javascript('codelens/v3/js/jquery.simplemodal.js')
-    app.add_javascript('codelens/v3/js/d3.v2.min.js')
-    app.add_javascript('codelens/v3/js/jquery.ba-bbq.min.js')
-    app.add_javascript('codelens/v3/js/jquery.jsPlumb-1.3.10-all-min.js')
-    app.add_javascript('codelens/v3/js/jquery-ui-1.8.24.custom.min.js')
-    app.add_javascript('codelens/v3/js/pytutor.js')
+    app.add_javascript('js/d3.v2.min.js')
+    app.add_javascript('jquery-migrate-1.2.1.min.js') # needed so that ba-bbq can use the latest jQuery that we've included
+    app.add_javascript('js/jquery.ba-bbq.min.js')
+    app.add_javascript('js/jquery.jsPlumb-1.3.10-all-min.js')
+    app.add_javascript('js/pytutor.js')
 
 
 
@@ -42,15 +40,28 @@ VIS = '''
 <p class="cl_caption"><span class="cl_caption_text">%(caption)s (%(divid)s)</span> </p>'''
 
 QUESTION = '''
-<div id="%(divid)s_modal" class="basic-modal-content">
-    <h3>Check your understanding</h3>
-    %(question)s
-    <input id="%(divid)s_textbox" type="textbox" />
-    <button id="%(divid)s_tracecheck" onclick="traceQCheckMe('%(divid)s_textbox','%(divid)s','%(correct)s')">Check
-    Me</button>
-    <button onclick="closeModal('%(divid)s')">Continue...</button>
-    <p id="%(divid)s_feedbacktext" class="feedbacktext"></p>
+<div id="%(divid)s_modal" class="modal fade codelens-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Check your understanding</h4>
+      </div>
+      <div class="modal-body">
+        <p>%(question)s</p>
+        <input id="%(divid)s_textbox" type="textbox" class="form-control" style="width:200px;" />
+        <br />
+        <button id="%(divid)s_tracecheck" class='btn btn-default btn-small tracecheck' onclick="traceQCheckMe('%(divid)s_textbox','%(divid)s','%(correct)s')">
+          Check Me
+        </button>
+        <button type="button" class="btn btn-default btn-small" data-dismiss="modal">Continue</button>
+        <br />
+        <p id="%(divid)s_feedbacktext" class="feedbacktext alert"></p>
+      </div>
+    </div>
+  </div>
 </div>
+
 '''
 
 DATA = '''
@@ -67,12 +78,13 @@ $(document).ready(function() {
                                 });
     attachLoggers(%(divid)s_vis,'%(divid)s');
     allVisualizers.push(%(divid)s_vis);
+
 });
 
 $(document).ready(function() {
     $("#%(divid)s_tracecheck").click(function() {
         logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'%(divid)s'});
-        });
+    });
 });
 
 if (allVisualizers === undefined) {

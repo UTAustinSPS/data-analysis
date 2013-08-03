@@ -10,8 +10,14 @@
 ..  shortname:: Dictionaries
 ..  description:: This is the introduction to the dictionary data type
 
+
+.. qnum::
+   :prefix: dict-
+   :start: 1
+
 Dictionaries
 ============
+
 
 .. index:: dictionary, mapping type, key, value, key-value pair
 
@@ -26,7 +32,7 @@ is from a **key**, which can be any immutable type,
 to a **value**, which can be any Python data object.
 
 As an example, we will create a dictionary to translate English words into
-Spanish. For this dictionary, the keys are strings.
+Spanish. For this dictionary, the keys are strings and the values will also be strings.
 
 One way to create a dictionary is to start with the empty dictionary and add
 **key-value pairs**. The empty dictionary is denoted ``{}``
@@ -39,7 +45,7 @@ One way to create a dictionary is to start with the empty dictionary and add
     eng2sp['three'] = 'tres'
 
 
-The first assignment creates a dictionary named ``eng2sp``.  The other
+The first assignment creates an empty dictionary named ``eng2sp``.  The other
 assignments add new key-value pairs to the dictionary.  The left hand side gives the dictionary and the key being associated.  The right hand side gives the value being associated with that key.
 We can print the current
 value of the dictionary in the usual way.
@@ -72,13 +78,18 @@ Here is how we use a key to look up the corresponding value.
     eng2sp = {'three': 'tres', 'one': 'uno', 'two': 'dos'}
 
     value = eng2sp['two']
+    print(value)
 
 
 The key ``'two'`` yields the value ``'dos'``.
 
-.. admonition:: Scratch Editor
 
-  .. actex:: dict_scratch_1
+
+.. note::
+
+    This workspace is provided for your convenience.  You can use this activecode window to try out anything you like.
+
+    .. activecode:: scratch_11_01
 
 
 **Check your understanding**
@@ -107,10 +118,11 @@ The key ``'two'`` yields the value ``'dos'``.
    
    What is printed by the following statements?
    
-   <pre>
-   mydict = {"cat":12, "dog":6, "elephant":23}
-   print(mydict["dog"])
-   </pre>
+   .. sourcecode:: python
+
+     mydict = {"cat":12, "dog":6, "elephant":23}
+     print(mydict["dog"])
+
 
 .. index:: del statement, statement; del
 
@@ -155,9 +167,6 @@ Notice that there are now 512 bananas---the dictionary has been modified.  Note 
 of key-value pairs:
 
 
-.. admonition:: Scratch Editor
-
-  .. actex:: dict_scratch_2
 
 
 **Check your understanding**
@@ -176,11 +185,12 @@ of key-value pairs:
    
    What is printed by the following statements?
    
-   <pre>
-   mydict = {"cat":12, "dog":6, "elephant":23}
-   mydict["mouse"] = mydict["cat"] + mydict["dog"]
-   print(mydict["mouse"])
-   </pre>
+   .. sourcecode:: python
+
+     mydict = {"cat":12, "dog":6, "elephant":23}
+     mydict["mouse"] = mydict["cat"] + mydict["dog"]
+     print(mydict["mouse"])
+
 
 
 
@@ -214,9 +224,7 @@ list by using the ``list`` conversion function.
        
     ks = list(inventory.keys())
     print(ks)
-    
-    for k in inventory:     
-       print("Got key", k)
+
     
 It is so common to iterate over the keys in a dictionary that you can
 omit the ``keys`` method call in the ``for`` loop --- iterating over
@@ -274,8 +282,8 @@ dictionary causes a runtime error.
 
 The ``get`` method allows us to access the value associated with a key, similar to the ``[ ]`` operator.
 The important difference is that ``get`` will not cause a runtime error if the key is not present.  It
-will instead return None.  There exists a variation of ``get`` that allows an alternative return value
-in the case where the key is not present.
+will instead return None.  There exists a variation of ``get`` that allows a second parameter that serves as an alternative return value
+in the case where the key is not present.  This can be seen in the final example below.  In this case, since "cherries" is not a key, return 0 (instead of None).
 
 .. activecode:: chp12_dict10
     
@@ -285,6 +293,16 @@ in the case where the key is not present.
     print(inventory.get("cherries"))
 
     print(inventory.get("cherries",0))
+
+
+
+
+.. note::
+
+    This workspace is provided for your convenience.  You can use this activecode window to try out anything you like.
+
+    .. activecode:: scratch_11_02
+
 
 **Check your understanding**
 
@@ -302,12 +320,13 @@ in the case where the key is not present.
    
    What is printed by the following statements?
    
-   <pre>
-   mydict = {"cat":12, "dog":6, "elephant":23, "bear":20}
-   keylist = list(mydict.keys())
-   keylist.sort()
-   print(keylist[3])
-   </pre>
+   .. sourcecode:: python
+
+     mydict = {"cat":12, "dog":6, "elephant":23, "bear":20}
+     keylist = list(mydict.keys())
+     keylist.sort()
+     print(keylist[3])
+   
    
    
 .. mchoicemf:: test_question11_3_2
@@ -324,11 +343,12 @@ in the case where the key is not present.
    
    What is printed by the following statements?
    
-   <pre>
-   mydict = {"cat":12, "dog":6, "elephant":23, "bear":20}
-   answer = mydict.get("cat")//mydict.get("dog")
-   print(answer)
-   </pre>
+   .. sourcecode:: python
+
+     mydict = {"cat":12, "dog":6, "elephant":23, "bear":20}
+     answer = mydict.get("cat")//mydict.get("dog")
+     print(answer)
+
    
    
 .. mchoicemf:: test_question11_3_3
@@ -340,10 +360,11 @@ in the case where the key is not present.
    
    What is printed by the following statements?
    
-   <pre>
-   mydict = {"cat":12, "dog":6, "elephant":23, "bear":20}
-   print("dog" in mydict)
-   </pre>
+   .. sourcecode:: python
+
+     mydict = {"cat":12, "dog":6, "elephant":23, "bear":20}
+     print("dog" in mydict)
+
 
 
 .. mchoicemf:: test_question11_3_4
@@ -355,10 +376,11 @@ in the case where the key is not present.
    
    What is printed by the following statements?
    
-   <pre>
-   mydict = {"cat":12, "dog":6, "elephant":23, "bear":20}
-   print(23 in mydict)
-   </pre>
+   .. sourcecode:: python
+
+      mydict = {"cat":12, "dog":6, "elephant":23, "bear":20}
+      print(23 in mydict)
+
 
 
 .. mchoicemf:: test_question11_3_5
@@ -375,15 +397,16 @@ in the case where the key is not present.
    
    What is printed by the following statements?
    
-   <pre>
-   total = 0
-   mydict = {"cat":12, "dog":6, "elephant":23, "bear":20}
-   for akey in mydict:
-      if len(akey) > 3:
-         total = total + mydict[akey]
-   print(total)
+   .. sourcecode:: python
+
+      total = 0
+      mydict = {"cat":12, "dog":6, "elephant":23, "bear":20}
+      for akey in mydict:
+         if len(akey) > 3:
+            total = total + mydict[akey]
+      print(total)
    
-   </pre>
+
 
 .. index:: aliases
 
@@ -432,26 +455,30 @@ If you want to modify a dictionary and keep a copy of the original, use the dict
    
    What is printed by the following statements?
    
-   <pre>
-   mydict = {"cat":12, "dog":6, "elephant":23, "bear":20}
-   yourdict = mydict
-   yourdict["elephant"] = 999
-   print(mydict["elephant"])
-   </pre>
+   .. sourcecode:: python
+
+     mydict = {"cat":12, "dog":6, "elephant":23, "bear":20}
+     yourdict = mydict
+     yourdict["elephant"] = 999
+     print(mydict["elephant"])
+
 
 .. index:: matrix
 
 Sparse matrices
 ---------------
 
-We previously used a list of lists to represent a matrix. That is a good choice
-for a matrix with mostly nonzero values, but consider a `sparse matrix
-<http://en.wikipedia.org/wiki/Sparse_matrix>`__ like this one:
+A matrix is a two dimensional collection, typically thought of as having rows and columns of data.  One of the easiest ways to create a matrix is to use a list of lists.  For example, consider the matrix shown below.  
+
+
+
 
 .. image:: Figures/sparse.png
    :alt: sparse matrix 
 
-The list representation contains a lot of zeroes:
+We can represent this collection as five rows, each row having five columns.  Using a list of lists representation, we will have a list of five items, each of which is a list of five items.  The
+outer items represent the rows and the items in the nested lists represent the data in each column.
+
 
 .. sourcecode:: python
     
@@ -460,8 +487,17 @@ The list representation contains a lot of zeroes:
               [0, 2, 0, 0, 0],
               [0, 0, 0, 0, 0],
               [0, 0, 0, 3, 0]]
+              
+              
+              
 
-An alternative is to use a dictionary. For the keys, we can use tuples that
+
+
+One thing that you might note about this example matrix is that there are many items that are zero.  In fact, only three of the
+data values are nonzero.  This type of matrix has a special name.  It is called a `sparse matrix <http://en.wikipedia.org/wiki/Sparse_matrix>`__.
+
+Since there is really no need to store all of the zeros, the list of lists representation is considered to be inefficient.
+An alternative representation is to use a dictionary. For the keys, we can use tuples that
 contain the row and column numbers. Here is the dictionary representation of
 the same matrix.
 
@@ -543,32 +579,67 @@ Glossary
 
 Exercises
 ---------
+#.
 
-#. Write a program that reads in a string on the command line and returns a
-   table of the letters of the alphabet in alphabetical order which occur in
-   the string together with the number of times each letter occurs. Case should 
-   be ignored. A sample run of the program would look this this::
+    .. tabbed:: q1
 
-       $ python letter_counts.py "ThiS is String with Upper and lower case Letters."
-       a  2
-       c  1
-       d  1
-       e  5
-       g  1
-       h  2
-       i  4
-       l  2
-       n  2
-       o  1
-       p  2
-       r  4
-       s  5
-       t  5
-       u  1
-       w  2
-       $
+        .. tab:: Question
 
-   .. actex:: ex_11_01
+           Write a program that reads in a string on the command line and returns a
+           table of the letters of the alphabet in alphabetical order which occur in
+           the string together with the number of times each letter occurs. Case should 
+           be ignored. A sample run of the program would look this this::
+        
+               $ python letter_counts.py "ThiS is String with Upper and lower case Letters."
+               a  2
+               c  1
+               d  1
+               e  5
+               g  1
+               h  2
+               i  4
+               l  2
+               n  2
+               o  1
+               p  2
+               r  4
+               s  5
+               t  5
+               u  1
+               w  2
+               $
+        
+           .. actex:: ex_11_01
+
+        .. tab:: Answer
+            
+            .. activecode:: q1_answer
+
+                x = input("Enter a sentence")
+
+                x = x.lower() # convert to all lowercase
+
+                alphabet = 'abcdefghijklmnopqrstuvwxyz'
+
+                letter_count = {} # empty dictionary
+                for char in x:
+                    if char in alphabet: # ignore any punctuation, numbers, etc
+                        if char in letter_count:
+                            letter_count[char] = letter_count[char] + 1
+                        else:
+                            letter_count[char] = 1
+
+                keys = letter_count.keys()
+                keys.sort()
+                for char in keys:
+                    print(char, letter_count[char])
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_de4f21e35d3a41a4a3ac4ac888f78d1a
+
 
 #. Give the Python interpreter's response to each of the following from a
    continuous interpreter session:
@@ -630,64 +701,153 @@ Exercises
        add_fruit(new_inventory, 'strawberries', 25)
        test(new_inventory['strawberries'] , 35)      
 
-#. Write a program called ``alice_words.py`` that creates a text file named
-   ``alice_words.txt`` containing an alphabetical listing of all the words, and the
-   number of times each occurs, in the text version of `Alice's Adventures in Wonderland`.  
-   (You can obtain a free plain text version of the book, along with many others, from 
-   http://www.gutenberg.org.) The first 10 lines of your output file should look
-   something like this
+#.
 
-    =========== ===========
-    Word              Count
-    =========== ===========
-    a                 631
-    a-piece           1
-    abide             1
-    able              1
-    about             94
-    above             3
-    absence           1
-    absurd            2
-    =========== ===========
+    .. tabbed:: q3
 
-   How many times does the word, ``alice``, occur in the book?  If you are writing this 
-   in the activecode window simply print out the results rather than write them to a file.
-   
-   .. actex:: ex_11_02
-   
+        .. tab:: Question
+
+           Write a program called ``alice_words.py`` that creates a text file named
+           ``alice_words.txt`` containing an alphabetical listing of all the words, and the
+           number of times each occurs, in the text version of `Alice's Adventures in Wonderland`.  
+           (You can obtain a free plain text version of the book, along with many others, from 
+           http://www.gutenberg.org.) The first 10 lines of your output file should look
+           something like this
+        
+            =========== ===========
+            Word              Count
+            =========== ===========
+            a                 631
+            a-piece           1
+            abide             1
+            able              1
+            about             94
+            above             3
+            absence           1
+            absurd            2
+            =========== ===========
+        
+           How many times does the word, ``alice``, occur in the book?  If you are writing this 
+           in the activecode window simply print out the results rather than write them to a file.
+           
+           .. actex:: ex_11_02
+
+        .. tab:: Answer
+            
+            .. sourcecode:: python
+
+                f = open('alice.txt', 'r')
+
+                count = {}
+
+                for line in f:
+                    for word in line.split():
+
+                        # remove punctuation
+                        word = word.replace('_','').replace('"','').replace(',','').replace('.','')
+                        word = word.replace('-','').replace('?','').replace('!','').replace("'","")
+                        word = word.replace('(','').replace(')','').replace(':','').replace('[','')
+                        word = word.replace(']','').replace(';','')
+
+                        # ignore case
+                        word = word.lower()
+
+                        # ignore numbers
+                        if word.isalpha():
+                            if word in count:
+                                count[word] = count[word] + 1
+                            else:
+                                count[word] = 1
+
+                keys = count.keys()
+                keys.sort()
+
+                # save the word count analysis to a file
+                out = open('alice_words.txt', 'w')
+
+                for word in keys:
+                    out.write(word + " " + str(count[word]))
+                    out.write('\n')
+
+                print("The word 'alice' appears " + str(count['alice']) + " times in the book.")
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_4f2d7860fc3143339c9c6a533c07b62d
+
+
 #. What is the longest word in Alice in Wonderland? How many characters does it have?
 
    .. actex:: ex_11_03
    
-#. Here's a table of English to Pirate translations
+#.
 
-    ==========  ==============
-    English     Pirate
-    ==========  ==============
-    sir	        matey
-    hotel	    fleabag inn
-    student	    swabbie
-    boy	        matey
-    madam	    proud beauty
-    professor	foul blaggart
-    restaurant	galley
-    your	    yer
-    excuse	    arr
-    students	swabbies
-    are	        be
-    lawyer	    foul blaggart
-    the	        th'
-    restroom	head
-    my	        me
-    hello	    avast
-    is	        be
-    man	        matey
-    ==========  ==============
-    
-    Write a program that asks the user for a sentence in English and then translates that 
-    sentence to Pirate.
-    
-    .. actex:: ex_11_04
-    
+    .. tabbed:: q5
 
-    
+        .. tab:: Question
+
+            Here's a table of English to Pirate translations
+        
+            ==========  ==============
+            English     Pirate
+            ==========  ==============
+            sir	        matey
+            hotel	    fleabag inn
+            student	    swabbie
+            boy	        matey
+            madam	    proud beauty
+            professor	foul blaggart
+            restaurant	galley
+            your	    yer
+            excuse	    arr
+            students	swabbies
+            are	        be
+            lawyer	    foul blaggart
+            the	        th'
+            restroom	head
+            my	        me
+            hello	    avast
+            is	        be
+            man	        matey
+            ==========  ==============
+            
+            Write a program that asks the user for a sentence in English and then translates that 
+            sentence to Pirate.
+            
+            .. actex:: ex_11_04
+            
+
+        .. tab:: Answer
+        
+            .. activecode:: ch11_q5_answer
+            
+                pirate = {}
+                pirate['sir'] = 'matey'
+                pirate['hotel'] = 'fleabag inn'
+                pirate['student'] = 'swabbie'
+                pirate['boy'] = 'matey'
+                pirate['restaurant'] = 'galley'
+                #and so on
+            
+                sentence = input("Please enter a sentence in English")
+            
+                psentence = []
+                words = sentence.split()
+                for aword in words:
+                    if aword in pirate:
+                        psentence.append(pirate[aword])
+                    else:
+                        psentence.append(aword)
+                    
+                print(" ").join(psentence)
+            
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_dd296be40c8643999060129b6d8dc7ae
+
+

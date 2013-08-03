@@ -9,6 +9,10 @@
 ..  shortname:: Stacks
 ..  description:: This is the introduction to the stack data structure
 
+.. qnum::
+   :prefix: stk-
+   :start: 1
+
 Stacks
 ------
 
@@ -258,14 +262,17 @@ benchmark testing.
 
 .. admonition:: Self Check
 
-   .. multiplechoice:: stack_1
+   .. mchoicemf:: stack_1
       :iscode:
       :answer_a: 'x'
       :answer_b: 'y'
       :answer_c: 'z'
       :answer_d: The stack is empty
       :correct: c
-      :feedback: Remember that a stack is built from the bottom up.
+      :feedback_a: Remember that a stack is built from the bottom up.
+      :feedback_b: Remember that a stack is built from the bottom up.
+      :feedback_c: Good job.
+      :feedback_d: Remember that a stack is built from the bottom up.
 
        Given the following sequence of stack operations what is the top item on the stack?
        m = Stack()
@@ -275,23 +282,28 @@ benchmark testing.
        m.push('z')
        m.peek()
 
-   .. multiplechoice:: stack_2
-      :iscode:
+   .. mchoicemf:: stack_2
       :answer_a: 'x'
       :answer_b: the stack is empty
       :answer_c: an error will occur
       :answer_d: 'z'
       :correct: c
-      :feedback: none
+      :feedback_a: You may want to check out the docs for isEmpty
+      :feedback_b: There is an odd number of things on the stack but each time through the loop 2 things are popped.
+      :feedback_c: Good Job.
+      :feedback_d: You may want to check out the docs for isEmpty
 
-	  Given the following sequence of stack operations, what is the top item on the stack?
-	  m = Stack()
-	  m.push('x')
-	  m.push('y')
-	  m.push('z')
-	  while not m.isEmpty():
-	     m.pop()
-         m.pop()
+      Given the following sequence of stack operations, what is the top item on the stack?
+
+      .. code-block:: python
+  
+        m = Stack()
+        m.push('x')
+        m.push('y')
+        m.push('z')
+        while not m.isEmpty():
+           m.pop()
+           m.pop()
 
    Write a function `revstring(mystr)` that uses a stack to reverse the
    characters in a string.
@@ -671,19 +683,22 @@ resulting string.
 
    .. fillintheblank:: baseconvert1
       :correct: \\b31\\b
+      :blankid: bcblank1
 
-      What is value of 25 expressed as an octal number (base 8) ___
+      What is value of 25 expressed as an octal number :textfield:`bcblank1::mini`
 
    .. fillintheblank:: baseconvert2
       :correct: \\b100\\b
+      :blankid: bcblank2
 
-      What is value of 256 expressed as a hexidecimal number (base 16) ___
+      What is value of 256 expressed as a hexidecimal number :textfield:`bcblank2::mini`
 
    .. fillintheblank:: baseconvert3
       :correct: \\b10\\b
       :feedback1: ('.*', 'You may need to modify the baseConverter function, or simply find a pattern in the conversion of bases.')
+      :blankid: bcblank3
 
-      What is value of 26 expressed in base 26 ___
+      What is value of 26 expressed in base 26 :textfield:`bcblank3::mini`
 
 
 .. video:: video_Stack2
@@ -1173,20 +1188,23 @@ this as an exercise at the end of the chapter.
       :correct: \\b10\\s+3\\s+5\\s*\\*\\s*16\\s+4\\s*-\\s*/\\s*\\+
       :feedback1:  ('10.*3.*5.*16.*4', 'The numbers appear to be in the correct order check your operators')
       :feedback2: ('.*', 'Remember the numbers will be in the same order as the original equation')
+      :blankid: pfblank1
 
-      Without using the activecode infixToPostfix function, convert the following expression to postfix <br> 10 + 3 * 5 / (16 - 4) ___
+      Without using the activecode infixToPostfix function, convert the following expression to postfix  ``10 + 3 * 5 / (16 - 4)`` :textfield:`pfblank1::xlarge`
 
    .. fillintheblank:: postfix2
       :correct: \\b9\\b
       :feedback1: ('.*', "Remember to push each intermediate result back on the stack" )
+      :blankid: pfblank2
 
-      17 10 + 3 * 9 / == ___
+      ``17 10 + 3 * 9 / ==`` :textfield:`pfblank2::mini`
 
    .. fillintheblank:: postfix3
       :correct: 5\\s+3\\s+4\\s+2\\s*-\\s*\\^\\s*\\*
       :feedback1: ('.*', 'Hint: You only need to add one line to the function!!')
+      :blankid: pfblank3
 
-      Modify the infixToPostfix function so that it can convert the following expression:  5 * 3 ^ (4 - 2)   Paste the answer here: ___
+      Modify the infixToPostfix function so that it can convert the following expression:  ``5 * 3 ^ (4 - 2)``   Paste the answer here: :textfield:`pfblank3::large`
 
 
 .. video:: video_Stack3

@@ -10,6 +10,10 @@
 ..  shortname:: MoreAboutIteration
 ..  description:: This module has more information about iteration and while loops
 
+.. qnum::
+   :prefix: itr-
+   :start: 1
+
 Iteration Revisited
 ===================
 
@@ -25,14 +29,10 @@ people do poorly.
 
 Repeated execution of a sequence of statements is called **iteration**.  Because
 iteration is so common, Python provides several language features to make it
-easier. We've already seen the ``for`` statement in Chapter 3.  This is a very common
+easier. We've already seen the ``for`` statement in a previous chapter.  This is a very common
 form of iteration in Python. In this chapter
-we are also going to look at the ``while`` statement --- another way to have your
+we are going to look at the ``while`` statement --- another way to have your
 program do iteration.
-
-.. admonition:: Scratch Editor
-
-    .. actex:: scratch_7_1
 
 
 .. index:: for loop
@@ -47,13 +47,12 @@ We saw this example in an earlier chapter.
 .. activecode:: ch07_for1
 
     for f in ["Joe", "Amy", "Brad", "Angelina", "Zuki", "Thandi", "Paris"]:
-        invitation = "Hi " + f + ".  Please come to my party on Saturday!"
-        print(invitation)
+        print("Hi", f, "Please come to my party on Saturday")
 
 
 We have also seen iteration paired with the update idea to form the accumulator pattern.  For example, to compute
 the sum of the first n integers, we could create a for loop using the ``range`` to produce the numbers 1 thru n.
-Using the accumulator pattern, we can start with a running total and on each iteration, add the current value of the loop
+Using the accumulator pattern, we can start with a running total variable initialized to 0 and on each iteration, add the current value of the loop
 variable.  A function to compute this sum is shown below.
 
 .. activecode:: ch07_summation
@@ -69,13 +68,11 @@ variable.  A function to compute this sum is shown below.
 
     print(sumTo(1000))
 
-To review, the variable ``theSum`` is called the accumulator.  It is initialized to zero before we start the loop.  The loop variable, ``aNumber`` will take on the values produced by the ``range(1,aBound+1)`` function call.  Note that this produces all the integers starting from 1 up to the value of ``aBound``.  If we had not added 1 to ``aBound``, the range would have stopped one value short since ``range`` does not include the upper bound.
+To review, the variable ``theSum`` is called the accumulator.  It is initialized to zero before we start the loop.  The loop variable, ``aNumber`` will take on the values produced by the ``range(1,aBound+1)`` function call.  Note that this produces all the integers from 1 up to the value of ``aBound``.  If we had not added 1 to ``aBound``, the range would have stopped one value short since ``range`` does not include the upper bound.
 
 The assignment statement, ``theSum = theSum + aNumber``, updates ``theSum`` each time thru the loop.  This accumulates the running total.  Finally, we return the value of the accumulator.
 
-.. admonition:: Scratch Editor
 
-    .. actex:: scratch_7_2
 
 
 The ``while`` Statement
@@ -166,11 +163,11 @@ eventually the condition becomes ``False`` and the loop terminates. Otherwise th
 loop will repeat forever. This is called an **infinite loop**.
 An endless
 source of amusement for computer scientists is the observation that the
-directions on shampoo, lather, rinse, repeat, are an infinite loop.
+directions written on the back of the shampoo bottle (lather, rinse, repeat) create an infinite loop.
 
 In the case shown above, we can prove that the loop terminates because we
-know that the value of ``n`` is finite, and we can see that the value of ``v``
-increments each time through the loop, so eventually it will have to exceed ``n``. In
+know that the value of ``aBound`` is finite, and we can see that the value of ``aNumber``
+increments each time through the loop, so eventually it will have to exceed ``aBound``. In
 other cases, it is not so easy to tell.
 
 .. note::
@@ -190,9 +187,13 @@ terminates.
 So why have two kinds of loop if ``for`` looks easier?  This next example shows an indefinite iteration where
 we need the extra power that we get from the ``while`` loop.
 
-.. admonition:: Scratch Editor
 
-    .. actex:: scratch_7_3
+.. note::
+
+   This workspace is provided for your convenience.  You can use this activecode window to try out anything you like.
+
+   .. activecode:: scratch_07_01
+
 
 **Check your understanding**
 
@@ -217,14 +218,16 @@ we need the extra power that we get from the ``while`` loop.
    :feedback_d: The loop condition must become False for the loop to terminate, but n by itself is not the condition in this case.
 
    The following code contains an infinite loop.  Which is the best explanation for why the loop does not terminate?
-     <pre>
+
+   .. code-block:: python
+
      n = 10
      answer = 1
      while ( n > 0 ):
        answer = answer + n
        n = n + 1
      print answer
-     </pre>
+
 
 
 Randomly Walking Turtles
@@ -325,10 +328,10 @@ turtle and then use conditionals to decide.  Here is one implementation:
 .. sourcecode:: python
 
     def isInScreen(wn,t):
-        leftBound = - wn.window_width()/2
+        leftBound = -(wn.window_width()/2)
         rightBound = wn.window_width()/2
         topBound = wn.window_height()/2
-        bottomBound = -wn.window_height()/2
+        bottomBound = -(wn.window_height()/2)
 
         turtleX = t.xcor()
         turtleY = t.ycor()
@@ -344,7 +347,7 @@ turtle and then use conditionals to decide.  Here is one implementation:
 There are lots of ways that the conditional could be written.  In this case
 we have given ``stillIn`` the default value of ``True`` and use two ``if``
 statements
-to set the value to ``False``.  You could rewrite this to use nested
+to possibly set the value to ``False``.  You could rewrite this to use nested
 conditionals or ``elif`` statements and set ``stillIn`` to ``True`` in an else
 clause.
 
@@ -387,19 +390,15 @@ Here is the full version of our random walk program.
 
     wn.exitonclick()
 
-We could have written this program without using a boolean function,
-You might try to rewrite it using a complex condition on the while statement,
-but using a boolean function makes the program much more readable and easier
+We could have written this program without using a boolean function.
+You might want to try to rewrite it using a complex condition on the while statement.
+However, using a boolean function makes the program much more readable and easier
 to understand.  It also gives us another tool to use if this was a
 larger program and we needed to have a check for whether the turtle
 was still in the screen in another part of the program.  Another advantage is
 that if you ever need to write a similar program, you can reuse this function
 with confidence the next time you need it.  Breaking up this
 program into a couple of parts is another example of functional decomposition.
-
-.. admonition:: Scratch Editor
-
-    .. actex:: scratch_7_4
 
 
 
@@ -436,7 +435,7 @@ The 3n + 1 Sequence
 
 As another example of indefinite iteration, let's look at a sequence that has fascinated mathematicians for many years.
 The rule  for creating the sequence is to start from
-some given ``n``, and to generate
+some given number, call it ``n``, and to generate
 the next term of the sequence from ``n``, either by halving ``n``,
 whenever ``n`` is even, or else by multiplying it by three and adding 1 when it is odd.  The sequence
 terminates when ``n`` reaches 1.
@@ -518,12 +517,6 @@ be other cycles that we just haven't found.
 .. There are also some great visualization tools becoming available to help you
 .. trace and understand small fragments of Python code.  The one we recommend is at
 .. http://netserv.ict.ru.ac.za/python3_viz
-
-.. admonition:: Scratch Editor
-
-    .. actex:: scratch_7_5
-
-
 
 
 .. index::
@@ -608,11 +601,6 @@ uses a ``while`` condition to execute until the approximation is no longer chang
 .. index:: algorithm
 
 
-.. admonition:: Scratch Editor
-
-    .. actex:: scratch_7_6
-
-
 Algorithms Revisited
 --------------------
 
@@ -654,9 +642,13 @@ algorithm.
 .. index:: table, logarithm, Intel, Pentium, escape sequence, tab, newline,
            cursor
 
-.. admonition:: Scratch Editor
 
-    .. actex:: scratch_7_7
+.. note::
+
+  This workspace is provided for your convenience.  You can use this activecode window to try out anything you like.
+
+  .. activecode:: scratch_07_03
+
 
 
 
@@ -702,7 +694,7 @@ a backslash in a string?
 
 As characters and strings are displayed on the screen, an invisible marker
 called the **cursor** keeps track of where the next character will go. After a
-``print`` function, the cursor normally goes to the beginning of the next
+``print`` function is executed, the cursor normally goes to the beginning of the next
 line.
 
 The tab character shifts the cursor to the right until it reaches one of the
@@ -711,9 +703,6 @@ of the previous program.
 Because of the tab characters between the columns, the position of the second
 column does not depend on the number of digits in the first column.
 
-.. admonition:: Scratch Editor
-
-    .. actex:: scratch_7_8
 
 
 
@@ -830,7 +819,7 @@ the same as the current amount of green.
    :feedback_c: The first value in RGB is the red value.  The second is the green.  This color has no green in it.
    :feedback_d: The first value in RGB is the red value.  The second is the green.  This color has no green in it.
 
-   If you have a pixel whose RGB value is (20, 0, 0), what color will this pixel appear to be?
+   If you have a pixel whose RGB value is (50, 0, 0), what color will this pixel appear to be?
 
 Image Objects
 ^^^^^^^^^^^^^
@@ -905,7 +894,7 @@ pixel at column 45, row 55, has RGB values of 165, 161, and 158.  Try a few othe
    :feedback_c: These are the values from the original example (row 45, column 55). Get the values for row 100 and column 30 with p = img.getPixel(30,100).
    :feedback_d: These are simply made-up values that may or may not appear in the image.  Get the values for row 100 and column 30 with p = img.getPixel(30,100).
 
-   In the example in ActiveCode box 10, what are the RGB values of the pixel at row 100, column 30?
+   In the previous ActiveCode example, what are the RGB values of the pixel at row 100, column 30?
 
 
 Image Processing and Nested Iteration
@@ -917,7 +906,7 @@ to do this is to use **nested iteration**.
 
 Nested iteration simply means that we will place one iteration construct inside of another.  We will call these two
 iterations the **outer iteration** and the **inner iteration**.
-To see how this works, consider the simple iteration below.
+To see how this works, consider the iteration below.
 
 .. sourcecode:: python
 
@@ -963,8 +952,8 @@ The resulting code will look like the following.  We are now free to do anything
 
 .. sourcecode:: python
 
-	for col in range(img.getWidth()):
-	    for row in range(img.getHeight()):
+	for row in range(img.getHeight()):
+	    for col in range(img.getWidth()):
 	        #do something with the pixel at position (col,row)
 
 One of the easiest image processing algorithms will create what is known as a **negative** image.  A negative image simply means that
@@ -996,8 +985,8 @@ The program below implements this algorithm using the previous image.  Run it to
     newimg = image.EmptyImage(img.getWidth(),img.getHeight())
     win = image.ImageWin()
 
-    for col in range(img.getWidth()):
-        for row in range(img.getHeight()):
+    for row in range(img.getHeight()):
+        for col in range(img.getWidth()):
            p = img.getPixel(col,row)
 
            newred = 255-p.getRed()
@@ -1013,11 +1002,11 @@ The program below implements this algorithm using the previous image.  Run it to
 
 Lets take a closer look at the code.  After importing the image module, we create two image objects.  The first, ``img``, represents a typical digital photo.  The second, ``newimg``, is an empty image that will be "filled in" as we process the original pixel by pixel.  Note that the width and height of the empty image is set to be the same as the width and height of the original.
 
-Lines 8 and 9 create the nested iteration that we discussed earlier.  This allows us to process each pixel in the image.
-Line 10 gets an individual pixel.
+Lines 7 and 8 create the nested iteration that we discussed earlier.  This allows us to process each pixel in the image.
+Line 9 gets an individual pixel.
 
-Lines 12-14 create the negative intensity values by extracting the original intensity from the pixel and subtracting it
-from 255.  Once we have the ``newred``, ``newgreen``, and ``newblue`` values, we can create a new pixel (Line 16).
+Lines 11-13 create the negative intensity values by extracting the original intensity from the pixel and subtracting it
+from 255.  Once we have the ``newred``, ``newgreen``, and ``newblue`` values, we can create a new pixel (Line 15).
 
 Finally, we need to insert the new pixel into the empty image in the same location as the original pixel that it came from in the digital photo.
 
@@ -1033,9 +1022,8 @@ Finally, we need to insert the new pixel into the empty image in the same locati
 	You can also do some complex arithmetic and create interesting effects, such as
 	`Sepia Tone <http://en.wikipedia.org/wiki/Sepia_tone#Sepia_toning>`_
 
-.. admonition:: Scratch Editor
 
-    .. actex:: scratch_7_9
+
 
 
 
@@ -1056,44 +1044,48 @@ What remains is to focus on ways that we can better represent our problems in te
    :feedback_d: The outer for-loop runs 3 times (0, 1, 2) and the inner for-loop runs twice for each time the outer for-loop runs, so this code prints exactly 6 lines.
 
    What will the following nested for-loop print?  (Note, if you are having trouble with this question, review CodeLens 3).
-    <pre>
-    for i in range(3):
-      for j in range(2):
-        print(i,j)
-    </pre>
-    a.
-    <pre>
-    0	0
-    0	1
-    1	0
-    1	1
-    2	0
-    2	1
-    </pre>
-    b.
-    <pre>
-    0   0
-    1   0
-    2   0
-    0   1
-    1   1
-    2   1
-    </pre>
-    c.
-    <pre>
-    0   0
-    0   1
-    0   2
-    1   0
-    1   1
-    1   2
-    </pre>
-    d.
-    <pre>
-    0   1
-    0   1
-    0   1
-    </pre>
+
+   .. code-block:: python
+
+      for i in range(3):
+        for j in range(2):
+          print(i,j)
+
+   ::
+
+      a.
+
+      0	0
+      0	1
+      1	0
+      1	1
+      2	0
+      2	1
+
+      b.
+
+      0   0
+      1   0
+      2   0
+      0   1
+      1   1
+      2   1
+
+      c.
+
+      0   0
+      0   1
+      0   2
+      1   0
+      1   1
+      1   2
+
+      d.
+
+      0   1
+      0   1
+      0   1
+
 
 
 .. mchoicemf:: test_question7_8_3_2
@@ -1107,18 +1099,22 @@ What remains is to focus on ways that we can better represent our problems in te
    :feedback_c: If you remove the blue and green values from the pixels, the image will look different, even though there does not appear to be any blue or green in the original image (remember that other colors are made of combinations of red, green and blue).
    :feedback_d: Because we have changed the value of the pixels from what they were in the original ActiveCode box code, the image will not be the same.
 
-   What would the image produced from ActiveCode box 12 look like if you replaced the lines:
-   <pre>
-   newred = 255-p.getRed()
-   newgreen = 255-p.getGreen()
-   newblue = 255-p.getBlue()
-   </pre>
+   What would the image produced from ActiveCode box 16 look like if you replaced the lines:
+
+   .. code-block:: python
+
+      newred = 255-p.getRed()
+      newgreen = 255-p.getGreen()
+      newblue = 255-p.getBlue()
+
    with the lines:
-   <pre>
-   newred = p.getRed()
-   newgreen = 0
-   newblue = 0
-   </pre>
+
+   .. code-block:: python
+
+      newred = p.getRed()
+      newgreen = 0
+      newblue = 0
+
 
 
 Image Processing on Your Own
@@ -1134,6 +1130,15 @@ If you want to try some image processing on your own, outside of the textbook yo
 .. admonition:: Note
 
    One important caveat about using ``cImage.py`` is that it will only work with GIF files unless you also install the Python Image Library.  The easiest version to install is called ``Pillow``.  If you have the ``pip`` command installed on your computer this is really easy to install, with ``pip install pillow`` otherwise you will need to follow the instructions on the `Python Package Index <https://pypi.python.org/pypi/Pillow/>`_ page.  With Pillow installed you will be able to use almost any kind of image that you download.
+
+
+
+
+.. note::
+
+  This workspace is provided for your convenience.  You can use this activecode window to try out anything you like.
+
+  .. activecode:: scratch_07_05
 
 
 Glossary
@@ -1223,28 +1228,42 @@ Glossary
 Exercises
 ---------
 
-This chapter showed us how to sum a list of items,
-and how to count items.  The counting example also had an ``if`` statement
-that let us only count some selected items.  In the previous
-chapter we also showed a function ``find_first_2_letter_word`` that allowed
-us an "early exit" from inside a loop by using ``return`` when some condition occurred.
-We now also have ``break`` to exit a loop (but not the enclosing function, and
-``continue`` to abandon the current iteration of the loop without ending the loop.
-
-Composition of list traversal, summing, counting, testing conditions
-and early exit is a rich collection of building blocks that can be combined
-in powerful ways to create many functions that are all slightly different.
-
-The first six questions are typical functions you should be able to write using only
-these building blocks.
 
 
-   
-#. Add a print function to Newton's ``sqrt`` function that
-   prints out ``better`` each time it is calculated. Call your modified
-   function with 25 as an argument and record the results.
+#.
 
-    .. actex:: ex_7_7
+    .. tabbed:: q1
+
+        .. tab:: Question
+
+           Add a print statement to Newton's ``sqrt`` function that
+           prints out ``better`` each time it is calculated. Call your modified
+           function with 25 as an argument and record the results.
+        
+           .. actex:: ex_7_7
+        
+
+        .. tab:: Answer
+            
+            .. activecode:: q1_answer
+
+                def newtonSqrt(n):
+                    approx = 0.5 * n
+                    better = 0.5 * (approx + n/approx)
+                    while  better !=  approx:
+                        approx = better
+                        better = 0.5 * (approx + n/approx)
+                        print (" Approx:", better)
+                    return approx
+
+
+                print ("Final approx:", newtonSqrt(25))
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_5784e08291ba43199d43fdab277849f5
 
 
 #. Write a function ``print_triangular_numbers(n)`` that prints out the first
@@ -1262,43 +1281,252 @@ these building blocks.
    .. actex:: ex_7_8
 
 
-#. Write a function, ``is_prime``, which takes a single integer argument
-   and returns ``True`` when the argument is a *prime number* and ``False``
-   otherwise.
+#.
 
-    .. actex:: ex_7_9
+    .. tabbed:: q3
+
+        .. tab:: Question
+
+           Write a function, ``is_prime``, that takes a single integer argument
+           and returns ``True`` when the argument is a *prime number* and ``False``
+           otherwise.
+        
+           .. actex:: ex_7_9
+        
+        
+
+        .. tab:: Answer
+            
+            .. activecode:: q3_answer
+
+                def is_prime(n):
+                    for i in range(2, n):
+                        if n % i == 0:
+                            return False
+                    return True
+
+                print (is_prime(25))
+                print (is_prime(7))
+                print (is_prime(251))
+                print (is_prime(20))
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_418de05233374e76b3b66aeb96b55656
 
 
 
-#. Modify the the Random turtle walk program so that the turtle turns around
-   when it hits the wall and goes the other direction.  This bouncing off the
-   walls should continue until the turtle has hit the wall 4 times.
 
-    .. actex:: ex_7_12
-
-#. Modify the previous program so that you have two turtles each with a
-   random starting location.  Keep the turtles moving and bouncing off the
-   walls until they collide with each other.
-
-    .. actex:: ex_7_13
-
-#. Modify the previous program so that rather than a left or right turn the
-   angle of the turn is determined randomly at each step.  When the turtle
-   hits the wall you must calculate the correct angle for the bounce.
+#. Modify the walking turtle program so that rather than a 90 degree left or right turn the
+   angle of the turn is determined randomly at each step.
 
     .. actex:: ex_7_14
+    
+    
+    
 
-#. Write a function to remove all the red from an image.
+#.
 
-    .. actex:: ex_7_15
+    .. tabbed:: q5
+
+        .. tab:: Question
+
+           Modify the turtle walk program so that you have two turtles each with a
+           random starting location.  Keep the turtles moving until one of them leaves the screen.
+
+           .. actex:: ex_7_13
+
+        .. tab:: Answer
+
+            .. activecode:: q5_answer
+
+                import random
+                import turtle
+
+                def moveRandom(wn, t):
+                    coin = random.randrange(0,2)
+                    if coin == 0:
+                        t.left(90)
+                    else:
+                        t.right(90)
+
+                    t.forward(50)
+
+                def areColliding(t1, t2):
+                    if t1.distance(t2) < 2:
+                        return True
+                    else:
+                        return False
+
+                def isInScreen(w,t):
+                    leftBound = - w.window_width()/2
+                    rightBound = w.window_width()/2
+                    topBound = w.window_height()/2
+                    bottomBound = -w.window_height()/2
+
+                    turtleX = t.xcor()
+                    turtleY = t.ycor()
+
+                    stillIn = True
+                    if turtleX > rightBound or turtleX < leftBound:
+                        stillIn = False
+                    if turtleY > topBound or turtleY < bottomBound:
+                        stillIn = False
+                    return stillIn
+
+                t1 = turtle.Turtle()
+                t2 = turtle.Turtle()
+                wn = turtle.Screen()
+
+                t1.shape('turtle')
+                t2.shape('circle')
+
+                leftBound = -wn.window_width()/2
+                rightBound = wn.window_width()/2
+                topBound = wn.window_height()/2
+                bottomBound = -wn.window_height()/2
+
+                t1.up()
+                t1.goto(random.randrange(leftBound,rightBound),random.randrange(bottomBound,topBound))
+                t1.setheading(random.randrange(0,360))
+                t1.down()
+
+                t2.up()
+                t2.goto(random.randrange(leftBound,rightBound),random.randrange(bottomBound,topBound))
+                t2.setheading(random.randrange(0,360))
+                t2.down()
+
+
+                while isInScreen(wn,t1) and isInScreen(wn,t2):
+                    moveRandom(wn, t1)
+                    moveRandom(wn, t2)
+
+                wn.exitonclick()
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_0cd01637a1814f86b11f576c37a46437
+
+
+
+#. Modify the previous turtle walk program so that the turtle turns around
+   when it hits the wall or when one turtle collides with another turtle.
+
+   .. actex:: ex_7_12
+   
+   
+
+#.
+
+    .. tabbed:: q7
+
+        .. tab:: Question
+
+           Write a function to remove all the red from an image.
+        
+           .. actex:: ex_7_15
+
+        .. tab:: Answer
+            
+            .. activecode:: q7_answer
+
+                import image
+
+                img = image.Image("luther.jpg")
+                newimg = image.EmptyImage(img.getWidth(),img.getHeight())
+                win = image.ImageWin()
+
+                for col in range(img.getWidth()):
+                    for row in range(img.getHeight()):
+                       p = img.getPixel(col, row)
+
+                       newred = 0
+                       green = p.getGreen()
+                       blue = p.getBlue()
+
+                       newpixel = image.Pixel(newred, green, blue)
+
+                       newimg.setPixel(col, row, newpixel)
+
+                newimg.draw(win)
+                win.exitonclick()
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_777006b154ca4af7ab8bd11cc25c208a
+
 
 #. Write a function to convert the image to grayscale.
 
     .. actex:: ex_7_16
 
-#. Write a function to convert an image to black and white.
+#.
 
-    .. actex:: ex_7_17
+    .. tabbed:: q9
+
+        .. tab:: Question
+
+           Write a function to convert an image to black and white.
+        
+           .. actex:: ex_7_17
+
+        .. tab:: Answer
+            
+            .. activecode:: q9_answer
+
+                import image
+
+                def convertBlackWhite(input_image):
+                    grayscale_image = image.EmptyImage(input_image.getWidth(),input_image.getHeight())
+
+                    for col in range(input_image.getWidth()):
+                        for row in range(input_image.getHeight()):
+                            p = input_image.getPixel(col, row)
+
+                            red = p.getRed()
+                            green = p.getGreen()
+                            blue = p.getBlue()
+
+                            avg = (red + green + blue) / 3.0
+
+                            newpixel = image.Pixel(avg, avg, avg)
+                            grayscale_image.setPixel(col, row, newpixel)
+
+                    blackwhite_image = image.EmptyImage(input_image.getWidth(),input_image.getHeight())
+                    for col in range(input_image.getWidth()):
+                        for row in range(input_image.getHeight()):
+                            p = grayscale_image.getPixel(col, row)
+                            red = p.getRed()
+                            if red > 140:
+                                val = 255
+                            else:
+                                val = 0
+
+                            newpixel = image.Pixel(val, val, val)
+                            blackwhite_image.setPixel(col, row, newpixel)
+                    return blackwhite_image
+
+
+                win = image.ImageWin()
+                img = image.Image("luther.jpg")
+
+                bw_img = convertBlackWhite(img)
+                bw_img.draw(win)
+
+                win.exitonclick()
+
+        .. tab:: Discussion
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_0f0fb41d607743998a86962a11eed53d
+
 
 #. Sepia Tone images are those brownish colored images that may remind you of
    times past.  The formula for creating a sepia tone is as follows:
@@ -1314,28 +1542,116 @@ these building blocks.
 
     .. actex:: ex_7_18
 
-#. Write a function to uniformly shrink or enlarge an image.  Your function
-   should take an image along with a scaling factor.  To shrink the image the
-   scale factor should be between 0 and 1 to enlarge the image the scaling
-   factor should be greater than 1.
+#.
+
+    .. tabbed:: q11
+
+        .. tab:: Question
+
+           Write a function to uniformly enlarge an image by a factor of 2 (double the size).
+        
+        
+           .. actex:: ex_7_19
+
+        .. tab:: Answer
+            
+            .. activecode:: answer_7_11
+            
+               import image
+                
+               def double(oldimage):
+                   oldw = oldimage.getWidth()
+                   oldh = oldimage.getHeight()
+                   
+                   newim = EmptyImage(oldw*2, oldh*2)
+                   for row in range(oldh):
+                       for col in range(oldw):
+                           oldpixel = oldimage.getPixel(col,row)
+                           
+                           newim.setPixel(2*col,2*row, oldpixel)
+                           newim.setPixel(2*col+1, 2*row, oldpixel)
+                           newim.setPixel(2*col, 2*row+1, oldpixel)
+                           newim.setPixel(2*col+1, 2*row+1), oldpixel)
+                           
+                   return newim
+                   
+               win = image.ImageWin()
+               img = image.Image("luther.jpg")
+
+               bigimg = double(img)
+               bigimg.draw(win)
+
+               win.exitonclick()                
+                
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_9ca319187b4a4c2399402de0d99c0b1d
 
 
-    .. actex:: ex_7_19
+#.   After you have scaled an image too much it looks blocky.  One way of
+     reducing the blockiness of the image is to replace each pixel with the
+     average values of the pixels around it.  This has the effect of smoothing
+     out the changes in color.  Write a function that takes an image as a
+     parameter and smooths the image.  Your function should return a new image
+     that is the same as the old but smoothed.
 
-#. Write a function to rotate an image.  Your function should take an image
-   object along with the number of degrees to rotate.  The rotational degrees
-   can be positive or negative, and should be multiples of 90.
+       .. actex:: ex_7_20
 
-    .. actex:: ex_7_20
+#.
 
-#. After you have scaled an image too much it looks blocky.  One way of
-   reducing the blockiness of the image is to replace each pixel with the
-   average values of the pixels around it.  This has the effect of smoothing
-   out the changes in color.  Write a function that takes an image as a
-   parameter and smooths the image.  Your function should return a new image
-   that is the same as the old but smoothed.
+    .. tabbed:: q13
 
-    .. actex:: ex_7_21
+        .. tab:: Question
+
+           Write a general pixel mapper function that will take an image and a pixel mapping function as
+           parameters.  The pixel mapping function should perform a manipulation on a single pixel and return
+           a new pixel.
+        
+           .. actex:: ex_7_21
+
+        .. tab:: Answer
+            
+            .. activecode:: q13_answer
+            
+                import image
+                
+                def pixelMapper(oldimage, rgbFunction):
+                    width = oldimage.getWidth()
+                    height = oldimage.getHeight()
+                    newim = image.EmptyImage(width,height)
+                
+                    for row in range(height):
+                        for col in range(width):
+                            originalpixel = oldimage.getPixel(col,row)
+                            newpixel = rgbFunction(originalpixel)
+                            newim.setPixel(col,row,newpixel)
+                            
+                    return newim
+                        
+                def graypixel(oldpixel):
+                    intensitysum = oldpixel.getRed() + oldpixel.getGreen() + oldpixel.getBlue()
+                    aveRGB = intensitysum//3
+                    newPixel = image.Pixel(aveRGB,aveRGB,aveRGB)
+                    return newPixel
+                
+                win = image.ImageWin()
+                img = image.Image("luther.jpg")
+
+                newim = pixelMapper(img,graypixel)
+                newim.draw(win)
+
+                win.exitonclick()          
+                
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_eb9f71a62de24efaa61f64b5a7e5d9c9
+
 
 #. When you scan in images using a scanner they may have lots of noise due to
    dust particles on the image itself or the scanner itself,
@@ -1344,13 +1660,130 @@ these building blocks.
 
     .. actex:: ex_7_22
 
-#. Research the Sobel edge detection algorithm and implement it.
+#.
 
-    .. actex:: ex_7_23
+    .. tabbed:: q15
 
-.. toctree::
-    :hidden:
+        .. tab:: Question
 
-    ../Labs/sequencelab
+           Research the Sobel edge detection algorithm and implement it.
+        
+           .. actex:: ex_7_23
+        
+
+        .. tab:: Answer
+            
+            .. activecode:: q15_answer
+
+                import image
+                import math
+                import sys
+
+                # Code adapted from http://www.cl.cam.ac.uk/projects/raspberrypi/tutorials/image-processing/edge_detection.html
+                # Licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License.
+
+                # this algorithm takes some time for larger images - this increases the amount of time
+                # the program is allowed to run before it times out
+                sys.setExecutionLimit(20000)
+
+                img = image.Image("luther.jpg")
+                newimg = image.EmptyImage(img.getWidth(),img.getHeight())
+                win = image.ImageWin()
+
+                for x in range(1, img.getWidth()-1):  # ignore the edge pixels for simplicity (1 to width-1)
+                    for y in range(1, img.getHeight()-1): # ignore edge pixels for simplicity (1 to height-1)
+
+                        # initialise Gx to 0 and Gy to 0 for every pixel
+                        Gx = 0
+                        Gy = 0
+
+                        # top left pixel
+                        p = img.getPixel(x-1, y-1)
+                        r = p.getRed()
+                        g = p.getGreen()
+                        b = p.getBlue()
+
+                        # intensity ranges from 0 to 765 (255 * 3)
+                        intensity = r + g + b
+
+                        # accumulate the value into Gx, and Gy
+                        Gx += -intensity
+                        Gy += -intensity
+
+                        # remaining left column
+                        p = img.getPixel(x-1, y)
+                        r = p.getRed()
+                        g = p.getGreen()
+                        b = p.getBlue()
+
+                        Gx += -2 * (r + g + b)
+
+                        p = img.getPixel(x-1, y+1)
+                        r = p.getRed()
+                        g = p.getGreen()
+                        b = p.getBlue()
+
+                        Gx += -(r + g + b)
+                        Gy += (r + g + b)
+
+                        # middle pixels
+                        p = img.getPixel(x, y-1)
+                        r = p.getRed()
+                        g = p.getGreen()
+                        b = p.getBlue()
+
+                        Gy += -2 * (r + g + b)
+
+                        p = img.getPixel(x, y+1)
+                        r = p.getRed()
+                        g = p.getGreen()
+                        b = p.getBlue()
+
+                        Gy += 2 * (r + g + b)
+
+                        # right column
+                        p = img.getPixel(x+1, y-1)
+                        r = p.getRed()
+                        g = p.getGreen()
+                        b = p.getBlue()
+
+                        Gx += (r + g + b)
+                        Gy += -(r + g + b)
+
+                        p = img.getPixel(x+1, y)
+                        r = p.getRed()
+                        g = p.getGreen()
+                        b = p.getBlue()
+
+                        Gx += 2 * (r + g + b)
+
+                        p = img.getPixel(x+1, y+1)
+                        r = p.getRed()
+                        g = p.getGreen()
+                        b = p.getBlue()
+
+                        Gx += (r + g + b)
+                        Gy += (r + g + b)
+
+                        # calculate the length of the gradient (Pythagorean theorem)
+                        length = math.sqrt((Gx * Gx) + (Gy * Gy))
+
+                        # normalise the length of gradient to the range 0 to 255
+                        length = length / 4328 * 255
+
+                        length = int(length)
+
+                        # draw the length in the edge image
+                        newpixel = image.Pixel(length, length, length)
+                        newimg.setPixel(x, y, newpixel)
+
+                newimg.draw(win)
+                win.exitonclick()
+
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: interactivepython
+                :identifier: disqus_dd2d9ca5ea744aafbf7cdc2a4ad5e974
 
 
