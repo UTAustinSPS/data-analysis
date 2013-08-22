@@ -24,7 +24,7 @@ settings.plugins = []
 settings.janrain_api_key = 'a_fake_key'
 settings.janrain_domain = 'a-fake-domain'
 
-if 'local' in uname()[1] or 'Darwin' in uname()[0]:
+if 'utsps' in uname()[1] or 'Linux' in uname()[0]:
 	settings.database_uri = 'sqlite://storage.sqlite'
 elif 'webfaction' in uname()[1]: 
     # the real uri is set in gitignore'd 1.py
