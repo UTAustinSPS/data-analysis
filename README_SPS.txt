@@ -17,3 +17,13 @@ For editing the "main" site, you'll need to edit things in the "views"
 directory, which is just the raw html that gets used for menus, etc.
 
 Please don't forget to really test all the parts of any code you commit so we don't get broken code on the server.
+
+One problem is that the master url has to be set in order
+for things to work properly, so that means that
+you will have to change it regularly in physres and for
+Java4Python. When running locally, just use 127.0.0.1:8000
+which is the default configuration for web2py.
+
+The ideal case is the real master server's ip running on port 80,
+unless there are routers involved in which case things might be
+a little nicer to handle, but that's another story.
