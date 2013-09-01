@@ -34,3 +34,11 @@ This course will first go through the beginnings of the :math:`\LaTeX` language,
 and interesting final document. Throughout this course, there will be questions to answer, some coding-based
 some more traditional question formats. Assignments will be given for students registered for the *DemTex*
 program at UT and will be available through the course website listed in the syllabus.
+
+The Syllabus
+------------
+
+.. toctree::
+   :maxdepth: 2
+
+   syllabus.rst
