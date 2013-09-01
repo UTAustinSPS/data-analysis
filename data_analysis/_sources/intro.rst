@@ -15,8 +15,8 @@ one of the original experts in many parts of computer science, and his *Art of C
 are one of the most widely-accepted texts on a variety of subjects. Knuth was disappointed with the
 lack of clear, elegant ways of expressing ideas on early displays and created :math:`\TeX` to
 be able to have more control. And yes, :math:`\LaTeX` and :math:`\TeX` are the correct ways to typeset the
-names of these languages. However, if not available (in code, use :math:`\begin{verbatim}\LaTeX\end{verbatim}` and
-:math:`\begin{verbatim}\TeX\end{verbatim}`), then "LaTeX" and "TeX" will work in a pinch. Lastly, :math:`\LaTeX`
+names of these languages. However, if not available (in code, use ``\LaTeX`` and
+``\TeX``), then "LaTeX" and "TeX" will work in a pinch. Lastly, :math:`\LaTeX`
 may be pronounced "lay'-tech" or "lah'-tech".
 
 *Mathematica* is a proprietary languaged developed by the *Wolfram* corporation and is both fairly easy
