@@ -12,7 +12,7 @@ sys.path.append(os.getcwd())
 project_name = "physres"
 ###############################
 
-master_url = 'http://192.168.0.10:80'
+master_url = 'http://192.168.10.103:8000'
 master_app = 'runestone'
 
 options(

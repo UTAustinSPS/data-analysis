@@ -6,19 +6,17 @@
     <p>Check out the UT SPS/SpiS course on developing your physics research
     skills so that you're more marketable as a researcher!</p>
 
-.. activecode:: test
-    :above:
+.. activecode:: ex1
     :autorun:
     :hidecode:
 
-    def main():
-        print("fish")
-    main()
+    print("fish")
 
-Here's cool stuff!
-------------------
-* Like a list!
-* With items! **in bold**
+Python
+------
+Python is a programming language that is extremely versatile and is
+up and coming as one of the newer languages to span many industries.
+This course will teach you some of the basics.
 
 And more!
 ---------
