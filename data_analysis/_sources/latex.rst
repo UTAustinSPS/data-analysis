@@ -1,4 +1,6 @@
-.. topic:: :math:`\LaTeX`
+.. raw:: html
+
+   <h1>LaTeX</h1>
 
 Introduction
 ------------

@@ -1,4 +1,5 @@
 .. raw:: html
+
    <h1>Course Syllabus Spring '13</h1>
 
 Contact Information
