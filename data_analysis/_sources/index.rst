@@ -13,3 +13,10 @@ Introduction
 
    intro.rst
 
+:math:`\LaTeX`
+==============
+
+.. toctree::
+   :maxdepth: 2
+   
+   latex.rst
