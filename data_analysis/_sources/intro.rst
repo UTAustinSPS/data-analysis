@@ -38,6 +38,8 @@ program at UT and will be available through the course website listed in the syl
 The Syllabus
 ------------
 
+The current syllabus is accessible through the following links.
+
 .. toctree::
    :maxdepth: 2
 

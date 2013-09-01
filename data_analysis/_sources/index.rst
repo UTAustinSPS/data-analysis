@@ -13,6 +13,14 @@ Introduction
 
    intro.rst
 
+*Mathematica*
+=============
+
+.. toctree::
+   :maxdepth: 2
+
+   mathematica.rst
+
 :math:`\LaTeX`
 ==============
 

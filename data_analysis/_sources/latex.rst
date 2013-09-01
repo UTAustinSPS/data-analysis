@@ -1,4 +1,5 @@
-Introduction to :math:`\LaTeX`
-----------------------------------
+.. topic:: :math:`\LaTeX`
 
-Here's info about LaTeX
+Introduction
+------------
+Here's info about :math:`\LaTeX`
