@@ -12,10 +12,11 @@
 
     print("fish")
 
-Here's cool stuff!
-------------------
-* Like a list!
-* With items! **in bold**
+Python
+------
+Python is a programming language that is extremely versatile and is
+up and coming as one of the newer languages to span many industries.
+This course will teach you some of the basics.
 
 And more!
 ---------
