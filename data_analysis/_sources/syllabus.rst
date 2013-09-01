@@ -5,9 +5,13 @@
 Contact Information
 -------------------
 Student Facilitator: Evan Ott
+
 Student Facilitator Email: `evan.ott@utexas.edu <mailto:evan.ott@utexas.edu>`_
 
+
+
 Faculty Supervisor: XXXXXXX
+
 Faculty Supervisor Email: XXXXXX
 
 Course Website
@@ -96,17 +100,30 @@ This schedule is tentative, due to the potential for questions to dominate the c
 it should serve as a guide to the topics to be discussed through the semester.
 
 **Week 1**  - Introduction to Course; Review of End Goals; Introduction to *Mathematica* and brief diversion to PMCL
+
 **Week 2** - Introduction to *Mathematica* (continued): Simple programs, graphing
+
 **Week 3** - Introduction to *Mathematica* (continued): Simple programs
+
 **Week 4** - *Mathematica*: Reading in data, simple analysis
+
 **Week 5** - *Mathematica*: More advanced data analysis
+
 **Week 6** - Introduction to :math:`\LaTeX`: The language, how to download
+
 **Week 7** - Introduction to :math:`\LaTeX` (continued): My first document
+
 **Week 8** - :math:`\LaTeX`: More complex documents
+
 **Week 9** - :math:`\LaTeX`: Formatting and new concepts
+
 **Week 10** - :math:`\LaTeX`, *Mathematica*: Make-up week for covering additional topics
+
 **Week 11** - :math:`\LaTeX`, *Mathematica*: Combining data analysis and articles
+
 **Week 12** - :math:`\LaTeX`, *Mathematica*: Combining data analysis and articles (continued)
+
 **Week 13** - :math:`\LaTeX`, *Mathematica*: Pushing limits
+
 **Week 14** - :math:`\LaTeX`, *Mathematica*: Wrap-up
 
