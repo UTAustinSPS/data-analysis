@@ -45,5 +45,6 @@ images, and other special features. A simple document looks like the following.
    \end{document}
 Which produces something like
 .. raw:: html
-
+   
    <img src="latex_example.jpg" alt="Example">
+
