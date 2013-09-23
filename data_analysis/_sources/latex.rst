@@ -23,4 +23,27 @@ Besides making text look good, :math:`\LaTeX` is for
 
 What Does it Look Like?
 -----------------------
+:math:`\LaTeX` documents are mostly the text you want to display, with additional information for formatting,
+images, and other special features. A simple document looks like the following.
 
+::
+
+   \documentclass{article}
+   \title{This is a title}
+   \author{Evan Ott}
+   \date{\today}
+   \begin{document}
+   \maketitle
+   \begin{abstract}
+      This is my abstract.
+   \end{abstract}
+   \section{This is a section}
+      \begin{subsection}{This is a subsection}
+         Here is my paragraph.
+         Isn't it fun.
+      \end{subsection}
+   \end{document}
+Which produces something like
+.. raw:: html
+
+   <img src="latex_example.jpg" alt="Example">
