@@ -9,7 +9,7 @@ languages in order to better prepare you for UT Austin's PHY 353L (Modern Physic
 
 :math:`\LaTeX` is typically used as a "markup" language, which is to say that it takes the place of other
 document formatters like *Microsoft Word* in order to create a presentable document in a fairly standard way.
-Although *Word* is now better about cross-platform stability, :math:`\LaTeX` is the standard for most physics journals.
+Although *Word* is now competitive about cross-platform stability, :math:`\LaTeX` is the standard for most physics journals.
 :math:`\LaTeX` is based on the :math:`\TeX` language, created by Turing Award winner Donald Knuth. Knuth is
 one of the original experts in many parts of computer science, and his *Art of Computer Programming* volumes
 are one of the most widely-accepted texts on a variety of subjects. Knuth was disappointed with the
@@ -28,7 +28,6 @@ but in practice it is generally used for its analysis capabilities, with results
 
 The Course
 ----------
-
 This course will first go through the beginnings of the :math:`\LaTeX` language, then introduce concepts in
 *Mathematica*, followed by several sections on how the two may be combined to produce a clean, elegant,
 and interesting final document. Throughout this course, there will be questions to answer, some coding-based
@@ -37,7 +36,6 @@ program at UT and will be available through the course website listed in the syl
 
 The Syllabus
 ------------
-
 The current syllabus is accessible through the following links.
 
 .. toctree::

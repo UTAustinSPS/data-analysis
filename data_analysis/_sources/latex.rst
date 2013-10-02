@@ -3,7 +3,7 @@
    <h1>LaTeX</h1>
 
 Introduction (What's a :math:`\LaTeX`?)
-------------
+---------------------------------------
 :math:`\LaTeX` ("lah-tech" or "lay-tech") is a markup language - one that allows the author to
 more precisely (and easily) specify how layout and content are combined. :math:`\LaTeX` (which should
 be written that way whenever possible) is based on Turing Award Winner Dr. Donald Knuth's :math:`\TeX`
@@ -43,8 +43,11 @@ images, and other special features. A simple document looks like the following.
          Isn't it fun.
       \end{subsection}
    \end{document}
+
 Which produces something like
+
 .. raw:: html
-   
-   <img src="latex_example.jpg" alt="Example">
+
+    <img src="_static/latex_simple.jpg" height="423" width="705">
+
 

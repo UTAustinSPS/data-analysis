@@ -25,7 +25,7 @@ is being offered through the DemTex program (see description below).
 
 DemTex
 ------
-*DemTex courses (UGS 122) are regularly scheduled academic courses that meet 1-hour per week at a time and
+*DemTex* courses (UGS 122) are regularly scheduled academic courses that meet 1-hour per week at a time and
 location arranged by the School of Undergraduate Studies.
 
 These courses are led by an undergraduate peer facilitator under the supervision of a faculty supervisor. The
@@ -45,7 +45,7 @@ completing assignments under different constraints to familiarize yourself with 
 
 Course Structure
 ----------------
-This course will largely follow the “flipped-classroom” model, involving readings and homework
+This course will largely follow the 'flipped-classroom' model, involving readings and homework
 assignments to be completed outside of class in an effort to make class-time as interactive and
 helpful as possible. Each week, students will complete a reading assignment from an online
 textbook created for this course by the student facilitator and edited by the Society of Physics
@@ -64,12 +64,12 @@ built-in distribution functions more enlightening than re-writing them in a more
 
 The student facilitator will then review topics that proved most challenging for students based on
 the first-drafts submitted the previous day and help with troubleshooting errors. Then, each week,
-a student (or small group of students) will review the week’s reading material, leading discussion
+a student (or small group of students) will review the week's reading material, leading discussion
 to be overseen by the student facilitator. If time permits, students will begin work on the next
-week’s assignment, working collaboratively. An example class agenda can be found below.
+week's assignment, working collaboratively. An example class agenda can be found below.
 
 Office hours will be held weekly (time and location to be provided on the first class day) for
-students to come ask questions or discuss the week’s reading.
+students to come ask questions or discuss the week's reading.
 
 Assignments
 -----------
@@ -159,29 +159,29 @@ it should serve as a guide to the topics to be discussed through the semester.
 
 Example Class Agenda - Week 4
 -----------------------------
-1. Students are to have read textbook information on “*Mathematica*: Reading in data, simple
-analysis” before coming to class
+1. Students are to have read textbook information on '*Mathematica*: Reading in data, simple
+analysis' before coming to class
 
-2. Rough drafts of “*Mathematica*: Simple programs” assignment solutions due the day before class
+2. Rough drafts of '*Mathematica*: Simple programs' assignment solutions due the day before class
 
-3. 1-2 Students present solutions to “*Mathematica*: Simple programs” homework (10 min)
+3. 1-2 Students present solutions to '*Mathematica*: Simple programs' homework (10 min)
 
 	a. Class discusses extent to which solutions address the tasks from the assignment
 	b. Class discusses relative merits of technologies presenters employed versus other potential 	solutions
 
-4. Student facilitator leads discussion of “*Mathematica*: Simple programs” solutions in terms of
+4. Student facilitator leads discussion of '*Mathematica*: Simple programs' solutions in terms of
 identified issues (10 min)
 
-5. Student or group of students presents over “*Mathematica*: Reading in data, simple analysis”
+5. Student or group of students presents over '*Mathematica*: Reading in data, simple analysis'
 material (15-25 min)
 	
 	a. Presenter(s), class, and student facilitator help address questions from classmates
 
-6. Student facilitator distributes homework assignment over “*Mathematica*: Reading in data,
-simple analysis” and answers questions about it. Student facilitator assigns the
-“*Mathematica*: More advanced data analysis” reading (5 min)
+6. Student facilitator distributes homework assignment over '*Mathematica*: Reading in data,
+simple analysis' and answers questions about it. Student facilitator assigns the
+'*Mathematica*: More advanced data analysis' reading (5 min)
 
-7. *If time permits*, students begin work on next week’s assignment, working collaboratively
+7. *If time permits*, students begin work on next week's assignment, working collaboratively
 
 Students with Disabilities
 --------------------------
@@ -200,10 +200,10 @@ information please visit the Student Judicial Services Web site:
 
 About the Student Facilitator
 -----------------------------
-Evan Ott is a physics and computer science major and the 2012-2014 president of UT’s chapter
+Evan Ott is a physics and computer science major and the 2012-2014 president of UT's chapter
 of the Society of Physics Students. He has previously team-taught a 4-week seminar on
 :math:`\LaTeX` (materials available `here <http://www.ph.utexas.edu/~sps/pages/resources.html?modalID=LaTeXModal>`_)
-and coached his high school’s computer science club for two years
+and coached his high school's computer science club for two years
 in *Java* leading them to win several competitions. He has served as an undergraduate 
 teaching assistant for UGS 303: Originality in the Arts and Sciences and PHY 110C: Science
 of the Times. In his time as SPS president, he has consistently worked to help provide
@@ -213,7 +213,7 @@ Example Assignment (near end of semester)
 -----------------------------------------
 Your first goal this week is to read the data in **single.txt** which has points (x,y) in CSV
 format. Express this data graphically. From what type of distribution might this have arisen?
-(refer to the textbook’s appendix if you aren’t familiar with distribution functions)
+(refer to the textbook's appendix if you aren't familiar with distribution functions)
 
 Fit this distribution function to your data, and plot the data and function on the same graph.
 Do you think you were right? Use an appropriate statistical test for the function to determine

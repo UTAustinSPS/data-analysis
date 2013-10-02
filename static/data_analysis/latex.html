@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 
@@ -5,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Introduction &mdash; Introduction to Data Analysis for Physics</title>
+    <title>Introduction (What’s a \(\LaTeX\)?) &mdash; Introduction to Data Analysis for Physics</title>
     
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -27,7 +28,7 @@
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
+        URL_ROOT:    '',
         VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
@@ -73,7 +74,7 @@
     <script type="text/javascript" src="_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
     <link rel="top" title="Introduction to Data Analysis for Physics" href="index.html" />
-    <link rel="prev" title="Contact Information" href="syllabus.html" />
+    <link rel="prev" title="Introduction" href="mathematica.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -236,7 +237,9 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Introduction</a></li>
+<li><a class="reference internal" href="#">Introduction (What&#8217;s a <span class="math">\(\LaTeX\)</span>?)</a></li>
+<li><a class="reference internal" href="#what-is-used-for">What is Used For?</a></li>
+<li><a class="reference internal" href="#what-does-it-look-like">What Does it Look Like?</a></li>
 </ul>
 </ul>
 </li>
@@ -244,8 +247,8 @@
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Contact Information" data-toggle="tooltip">
-    <a href="syllabus.html" >
+  <li id="relations-prev" title="Previous Chapter - Introduction" data-toggle="tooltip">
+    <a href="mathematica.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -275,10 +278,49 @@
 
 <div class="container">
   
-  <h1>LaTeX</h1><div class="section" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p>Here&#8217;s info about <span class="math">\(\LaTeX\)</span></p>
+  <h1>LaTeX</h1><div class="section" id="introduction-what-s-a">
+<h1>Introduction (What&#8217;s a <span class="math">\(\LaTeX\)</span>?)<a class="headerlink" href="#introduction-what-s-a" title="Permalink to this headline">¶</a></h1>
+<p><span class="math">\(\LaTeX\)</span> (&#8220;lah-tech&#8221; or &#8220;lay-tech&#8221;) is a markup language - one that allows the author to
+more precisely (and easily) specify how layout and content are combined. <span class="math">\(\LaTeX\)</span> (which should
+be written that way whenever possible) is based on Turing Award Winner Dr. Donald Knuth&#8217;s <span class="math">\(\TeX\)</span>
+typesetting system:</p>
+<ul class="simple">
+<li>Built for a &#8220;minimal amount of effort&#8221; for the author to produce high-quality documents</li>
+<li>Be totally platform- and time-independent for resultant documents</li>
+</ul>
 </div>
+<div class="section" id="what-is-used-for">
+<h1>What is Used For?<a class="headerlink" href="#what-is-used-for" title="Permalink to this headline">¶</a></h1>
+<p>Besides making text look good, <span class="math">\(\LaTeX\)</span> is for</p>
+<ul class="simple">
+<li>Digital and hard-copy media</li>
+<li>Hyperlinks and document bookmarks in PDFs</li>
+<li>High-quality non-rasterized fonts for arbitrary-sized printing</li>
+<li>Embedding vector graphics</li>
+</ul>
+</div>
+<div class="section" id="what-does-it-look-like">
+<h1>What Does it Look Like?<a class="headerlink" href="#what-does-it-look-like" title="Permalink to this headline">¶</a></h1>
+<p><span class="math">\(\LaTeX\)</span> documents are mostly the text you want to display, with additional information for formatting,
+images, and other special features. A simple document looks like the following.</p>
+<div class="highlight-python"><pre>\documentclass{article}
+\title{This is a title}
+\author{Evan Ott}
+\date{\today}
+\begin{document}
+\maketitle
+\begin{abstract}
+   This is my abstract.
+\end{abstract}
+\section{This is a section}
+   \begin{subsection}{This is a subsection}
+      Here is my paragraph.
+      Isn't it fun.
+   \end{subsection}
+\end{document}</pre>
+</div>
+<p>Which produces something like</p>
+<img src="_static/latex_simple.jpg" height="423" width="705"></div>
 
 
 </div>
@@ -290,7 +332,7 @@
     </p>
     <p>
         &copy; Copyright 2013, University of Texas at Austin Society of Physics Students and Sigma Pi Sigma.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2b1.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </p>
   </div>
 </footer>
