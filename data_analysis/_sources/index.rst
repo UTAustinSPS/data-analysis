@@ -14,17 +14,18 @@ Introduction
    intro.rst
 
 *Mathematica*
-=============
+:::::::::::::
 
 .. toctree::
    :maxdepth: 2
 
    mathematica.rst
 
-:math:`\LaTeX`
-==============
+LaTeX
+:::::
 
 .. toctree::
    :maxdepth: 2
    
-   latex.rst
+   LaTeX/latex.rst
+   LaTeX/latex_newcommand.rst
