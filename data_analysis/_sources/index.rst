@@ -21,11 +21,13 @@ Introduction
 
    mathematica.rst
 
-LaTeX
-:::::
+The LaTeXtbook
+::::::::::::::
 
 .. toctree::
    :maxdepth: 2
    
    LaTeX/latex.rst
-   LaTeX/latex_newcommand.rst
+   LaTeX/math.rst
+   LaTeX/symbols.rst
+   LaTeX/newcommand.rst
