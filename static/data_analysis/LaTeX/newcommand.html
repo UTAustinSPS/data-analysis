@@ -1,0 +1,435 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>New Commands (\newcommand) &mdash; Introduction to Data Analysis for Physics</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0-rc1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0-rc1/css/bootstrap-glyphicons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../../runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/js/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/js/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.js"></script>
+    <script type="text/javascript" src="../_static/builtin.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0-rc1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
+    <link rel="prev" title="Symbols" href="symbols.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://192.168.0.10:80' ? 'http://192.168.0.10:80' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'data_analysis';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-fixed-top">
+
+  <div class="container">
+
+    <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+    <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <div>
+     <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+      <a class="navbar-brand" href="../index.html">Introduction to Data Analysis for Physics</a>
+    </div>
+
+    <div class="nav-collapse collapse navbar-responsive-collapse">
+
+      <ul class="nav navbar-nav pull-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/data_analysis/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit"">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://192.168.0.10:80/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://192.168.0.10:80/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://192.168.0.10:80/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://192.168.0.10:80/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/data_analysis/navhelp.html'>Navigation Help</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">New Commands (\newcommand)</a><ul>
+<li><a class="reference internal" href="#zero-argument-commands">Zero Argument Commands</a></li>
+<li><a class="reference internal" href="#argument-commands">Argument Commands</a></li>
+<li><a class="reference internal" href="#optional-argument-commands">Optional Argument Commands</a></li>
+<li><a class="reference internal" href="#looping-commands">Looping Commands</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Symbols" data-toggle="tooltip">
+    <a href="symbols.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+    <li class="divider-vertical"></li>
+  
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="new-commands-newcommand">
+<h1>New Commands (\newcommand)<a class="headerlink" href="#new-commands-newcommand" title="Permalink to this headline">¶</a></h1>
+<p>LaTeX allows users to specify new commands in order to make typing faster and easier to read. Examine the following blocks of code.</p>
+<div class="highlight-python"><pre>A Hermitian operator $Q$ has real eigenvalues.
+\begin{align}
+\left. Q \middle| f \right&gt; = \left. f \middle| f \right&gt; \\
+\left&lt; f \middle| Q \middle| f\right&gt; = \left&lt; f \middle| f \middle| f\right&gt; =\; ^q\!f \left&lt; f \middle| f \right&gt; \\
+\left&lt; Q^\dagger f \middle| f \right&gt; = \left&lt; q_f f \middle| f \right&gt; = q^\ast_f \left&lt; f \middle| f \right&gt; \\
+0 = (q_f - q^\ast_f) \left&lt; f \middle| f \right&gt; \\
+\implies q_f \in \mathbb{R}
+\end{align}</pre>
+</div>
+<p>This produces the following output.</p>
+<img alt="Sample" src="../_images/hermitian.jpg" />
+<p>By using \newcommand, the above code could be reduced to just the following:</p>
+<div class="highlight-python"><pre>A Hermitian operator $Q$ has real eigenvalues.
+\begin{align}
+\ket[Q]{f} = \ket[f]{f} \\
+\brakett{f}{Q}{f} = \brakett{f}{f}{f} = \; ^q\!f \braket{f}{f} \\
+\braket{Q^\dagger f}{f} = \braket{q_f f}{f} = q^\ast_f \braket{f}{f} \\
+0 = (q_f - q^\ast_f) \braket{f}{f} \\
+\implies q_f \in \R
+\end{align}</pre>
+</div>
+<p>The format of \newcommand is</p>
+<div class="highlight-python"><pre>\newcommand{cmd}[args]{def}</pre>
+</div>
+<p>The cmd represents a command name beginning with a &#8216;\&#8217;. The command must be unique, and cannot begin with &#8216;end&#8217;. The arg represents an optional argument which can take any value from 1 to 9, so a command may take up to 9 arguments. The def represents the text stubstituted.</p>
+<div class="section" id="zero-argument-commands">
+<h2>Zero Argument Commands<a class="headerlink" href="#zero-argument-commands" title="Permalink to this headline">¶</a></h2>
+<p>Ofttimes, it is easier to reduce a common symbol to a simple sequence than the full command. For real analysis, the symbols <span class="math">\(\mathbb{R}\)</span> and <cite>mathbb{Z}</cite> are common and it can be a chore to type (and remember) the commands \mathbb{R} and \mathbb{Z}. Since \R and \Z are not natively commands, the lengthy symbol calls can be assigned to these much shorter commands if the following two lines are included in the preamble.</p>
+<div class="highlight-python"><pre>\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}</pre>
+</div>
+<p>Now, anywhere in the document, \R will be translated into <span class="math">\(\mathbb{R}\)</span> and \Z will be translated into <span class="math">\(\mathbb{Z}\)</span>. A zero argument command can also be used for much longer items, such as the 3x3 identity matrix.</p>
+<div class="highlight-python"><pre>\newcommand{\imat}{\left(\begin{matrix}1&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;0&amp;1\end{matrix}\right)}</pre>
+</div>
+</div>
+<div class="section" id="argument-commands">
+<h2>Argument Commands<a class="headerlink" href="#argument-commands" title="Permalink to this headline">¶</a></h2>
+<p>Besides making certain symbols easier to access, new commands can be used to make formatting easier. It can be a pain to type \left( and \right) every time it is desired to enclose something in parenthesis. Also, if one of the enclosures is left out then LaTeX will thrown an error. The below line creates a command identical to the standard \frac command, except that it automatically places parenthesis around it.</p>
+<div class="highlight-python"><pre>\newcommand{\efrac}[2]{\left(\frac{#1}{#2}\right)}</pre>
+</div>
+<p>With this command, the following two lines become identical.</p>
+<div class="highlight-python"><pre>\left(\frac{1}{x^2+1}\right)^2
+\efrac{1}{x^2+1}^2</pre>
+</div>
+<p>The new line is 12 characters shorter, and is easier to deal with than using enclosures the standard way. Also, to remove the enclosing parentheses, it is easier to change \efrac to \frac rather than search through a more complicated expression to find the matching left and right enclosures.</p>
+</div>
+<div class="section" id="optional-argument-commands">
+<h2>Optional Argument Commands<a class="headerlink" href="#optional-argument-commands" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes there are two very related desired commands, with the only difference being that one requires an additional argument. For example, partial derivatives. Normally, typing out partial derivatives looks like this:</p>
+<div class="highlight-python"><pre>\frac{\partial x}{\partial y}
+\frac{\partial^2 x}{\partial y^2}</pre>
+</div>
+<p>One new command can make both of these expressions easier to type, even though one needs an exponent.</p>
+<div class="highlight-python"><pre>\newcommand{\parti}[3][{{}}]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\parti{x}{y}
+\parti[2]{x}{y}</pre>
+</div>
+<p>The optional argument is specified right after the number of arguments. Since no exponent is displayed for the first partial derivative, the optional argument for this command is [{{}}]. The two sets of curly braces tell LaTeX that the argument is empty. If the second partial derivative was desired to be the default, then [{{}}] would be replaced with [2].</p>
+<p>Another example would be the ket for quantum physics.</p>
+<div class="highlight-python"><pre>\newcommmand{\ket}[2][{{}}]{\left.#1\middle|#2\right&gt;</pre>
+</div>
+<p>That command allows the following two lines to be equivalent.</p>
+<div class="highlight-python"><pre>\left. Q \middle| f \right&gt; = \left. f \middle| f \right&gt;
+\ket[Q]{f} = \ket[f]{f}</pre>
+</div>
+</div>
+<div class="section" id="looping-commands">
+<h2>Looping Commands<a class="headerlink" href="#looping-commands" title="Permalink to this headline">¶</a></h2>
+<p>It is recommended to read the sections on looping and logic before continuing.</p>
+<div class="highlight-python"><pre>\newcommand{\term}[2][x]{\ifnumless{1}{#2}{\frac{1}{#2!}(x-x')^{#2}f^{(#2)}}{\ifnumless{0}{#2}{(x-x')f^{(1)}(#1)}{f(#1)}}}
+\newcommand{\taylor}[1][4]{f(x)\ifnumless{0}{#1}{\foreach\x in {1,...,#1}{+\term{\x}}}{}}</pre>
+</div>
+<p>This produces the \taylor command, which writes out the taylor polynomial of an arbitrary order. So the zeroth through fourth order taylor expansions about a point can be written with one line:</p>
+<div class="highlight-python"><pre>\foreach\x in {0,...,4}{\begin{equation}\taylor[\x]\end{equation}}</pre>
+</div>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013, University of Texas at Austin Society of Physics Students and Sigma Pi Sigma.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-small btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-small btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-small btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-small btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,759 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Symbols &mdash; Introduction to Data Analysis for Physics</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0-rc1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0-rc1/css/bootstrap-glyphicons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../../runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/js/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/js/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.js"></script>
+    <script type="text/javascript" src="../_static/builtin.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0-rc1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
+    <link rel="next" title="New Commands (\newcommand)" href="newcommand.html" />
+    <link rel="prev" title="Mathematics in LaTeX" href="math.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://192.168.0.10:80' ? 'http://192.168.0.10:80' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'data_analysis';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-fixed-top">
+
+  <div class="container">
+
+    <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+    <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <div>
+     <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+      <a class="navbar-brand" href="../index.html">Introduction to Data Analysis for Physics</a>
+    </div>
+
+    <div class="nav-collapse collapse navbar-responsive-collapse">
+
+      <ul class="nav navbar-nav pull-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/data_analysis/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit"">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://192.168.0.10:80/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://192.168.0.10:80/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://192.168.0.10:80/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://192.168.0.10:80/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/data_analysis/navhelp.html'>Navigation Help</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Symbols</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Mathematics in LaTeX" data-toggle="tooltip">
+    <a href="math.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - New Commands (\newcommand)' data-toggle="tooltip" >
+    <a href="newcommand.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="symbols">
+<h1>Symbols<a class="headerlink" href="#symbols" title="Permalink to this headline">¶</a></h1>
+<p>This is not intended to be an exhaustive list of LaTeX symbols, just the ones which are most likely to be useful. Nearly all of these symbols must be typed while in math mode.</p>
+<p>These symbols can be accessed without any special commands:</p>
+<div class="highlight-python"><pre>+ - = ! / ( ) [ ] &lt; &gt; | ' : &lt; &gt;</pre>
+</div>
+<p>Beyond these, the majority of symbols are produced with commands. Commands start with \ and tell LaTeX to replace the command with the symbol which the command represents. For example,</p>
+<div class="highlight-python"><pre>$(\forall \epsilon &gt; 0)(\exists N : n &gt; N \implies d(p_n, p) &lt; \epsilon)$</pre>
+</div>
+<p>produces <span class="math">\((\forall \epsilon&gt;0)(\exists N:n&gt;N\implies d(p_n,p)&lt;\epsilon)\)</span>. Most Greek letters have a command specifically for them. To differentiate between capital and lowercase, capitalize the initial letter. For example, \sigma produces <span class="math">\(\sigma\)</span> and \Sigma produces <span class="math">\(\Sigma\)</span>. Some capital letters such as Alpha, Beta, and Kappa do not have their own symbol - since they are identical to A, B, and K respectively they may be accessed by just typing the letter. Lowercase phi has two forms, \phi which yields <span class="math">\(\phi\)</span> and \varphi which yields <span class="math">\(\varphi\)</span>. The same pattern follows for epsilon, theta, pi, rho, and sigma.</p>
+<table border="1" class="docutils">
+<caption><strong>Table 1: Equalities, Inequalities, and Sets</strong></caption>
+<colgroup>
+<col width="9%" />
+<col width="14%" />
+<col width="11%" />
+<col width="14%" />
+<col width="11%" />
+<col width="14%" />
+<col width="11%" />
+<col width="14%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Command</strong></th>
+<th class="head"><strong>Symbol</strong></th>
+<th class="head"><strong>Command</strong></th>
+<th class="head"><strong>Symbol</strong></th>
+<th class="head"><strong>Command</strong></th>
+<th class="head"><strong>Symbol</strong></th>
+<th class="head"><strong>Command</strong></th>
+<th class="head"><strong>Symbol</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>\neq</td>
+<td><span class="math">\(\neq\)</span></td>
+<td>\equiv</td>
+<td><span class="math">\(\equiv\)</span></td>
+<td>\leq</td>
+<td><span class="math">\(\leq\)</span></td>
+<td>\geq</td>
+<td><span class="math">\(\geq\)</span></td>
+</tr>
+<tr class="row-odd"><td>\sim</td>
+<td><span class="math">\(\sim\)</span></td>
+<td>\approx</td>
+<td><span class="math">\(\approx\)</span></td>
+<td>\gg</td>
+<td><span class="math">\(\gg\)</span></td>
+<td>\ll</td>
+<td><span class="math">\(\ll\)</span></td>
+</tr>
+<tr class="row-even"><td>\subset</td>
+<td><span class="math">\(\subset\)</span></td>
+<td>\supset</td>
+<td><span class="math">\(\supset\)</span></td>
+<td>\subseteq</td>
+<td><span class="math">\(\subseteq\)</span></td>
+<td>\supseteq</td>
+<td><span class="math">\(\supseteq\)</span></td>
+</tr>
+<tr class="row-odd"><td>\forall</td>
+<td><span class="math">\(\forall\)</span></td>
+<td>\exists</td>
+<td><span class="math">\(\exists\)</span></td>
+<td>\propto</td>
+<td><span class="math">\(\propto\)</span></td>
+<td>\cong</td>
+<td><span class="math">\(\cong\)</span></td>
+</tr>
+<tr class="row-even"><td>\in</td>
+<td><span class="math">\(\in\)</span></td>
+<td>\ni</td>
+<td><span class="math">\(\ni\)</span></td>
+<td>\cap</td>
+<td><span class="math">\(\cap\)</span></td>
+<td>\cup</td>
+<td><span class="math">\(\cup\)</span></td>
+</tr>
+<tr class="row-odd"><td>\parallel</td>
+<td><span class="math">\(\parallel\)</span></td>
+<td>\perp</td>
+<td><span class="math">\(\perp\)</span></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Many of these may be inverted with the \not command. If used before many commands, LaTeX renders the negated relation. For example, \not\subset produces <span class="math">\(\not\subset\)</span> and \not\sim produces <span class="math">\(\not\sim\)</span>. If a symbol does not have a negated version, then LaTeX will simply superimpose the not symbol, <span class="math">\(\not\;\)</span> on it. So \not a will become <span class="math">\(\not a\)</span>.</p>
+<table border="1" class="docutils">
+<caption><strong>Table 2: Logic</strong></caption>
+<colgroup>
+<col width="27%" />
+<col width="18%" />
+<col width="32%" />
+<col width="23%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Symbol</strong></th>
+<th class="head"><strong>Command</strong></th>
+<th class="head"><strong>Symbol</strong></th>
+<th class="head"><strong>Command</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><span class="math">\(\models\)</span></td>
+<td>\models</td>
+<td><span class="math">\(\neg\)</span></td>
+<td>\neg</td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\implies\)</span></td>
+<td>\implies</td>
+<td><span class="math">\(\iff\)</span></td>
+<td>\iff</td>
+</tr>
+<tr class="row-even"><td><span class="math">\(\Rightarrow\)</span></td>
+<td>\Rightarrow</td>
+<td><span class="math">\(\Leftrightarrow\)</span></td>
+<td>\Leftrightarrow</td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\forall\)</span></td>
+<td>\forall</td>
+<td><span class="math">\(\exists\)</span></td>
+<td>\exists</td>
+</tr>
+<tr class="row-even"><td><span class="math">\(\land\)</span></td>
+<td>\land</td>
+<td><span class="math">\(\lor\)</span></td>
+<td>\lor</td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\emptyset\)</span></td>
+<td>\emptyset</td>
+<td><span class="math">\(\varnothing\)</span></td>
+<td>\varnothing</td>
+</tr>
+</tbody>
+</table>
+<p>Note that it is preferred to use the \Rightarrow (<span class="math">\(\Rightarrow\)</span>) for &#8220;implies&#8221; and \Leftrightarrow (<span class="math">\(\Leftrightarrow\)</span>) for &#8220;if and only if.&#8221; If it feels more natural (and easier) to type \implies and \iff, then including these two lines in the preamble  will automatically replace all instances of \implies and \iff with their preferred counterparts.</p>
+<div class="highlight-python"><pre>\renewcommand{\implies}{\Rightarrow}
+\renewcommand{\iff}{\Leftrightarrow}</pre>
+</div>
+<p>The explanation for the above code can be found on the \newcommand page.</p>
+<table border="1" class="docutils">
+<caption><strong>Table 3: Operators</strong></caption>
+<colgroup>
+<col width="9%" />
+<col width="14%" />
+<col width="11%" />
+<col width="14%" />
+<col width="11%" />
+<col width="14%" />
+<col width="11%" />
+<col width="14%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Command</strong></th>
+<th class="head"><strong>Symbol</strong></th>
+<th class="head"><strong>Command</strong></th>
+<th class="head"><strong>Symbol</strong></th>
+<th class="head"><strong>Command</strong></th>
+<th class="head"><strong>Symbol</strong></th>
+<th class="head"><strong>Command</strong></th>
+<th class="head"><strong>Symbol</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>\pm</td>
+<td><span class="math">\(\pm\)</span></td>
+<td>\mp</td>
+<td><span class="math">\(\mp\)</span></td>
+<td>\times</td>
+<td><span class="math">\(\times\)</span></td>
+<td>\div</td>
+<td><span class="math">\(\div\)</span></td>
+</tr>
+<tr class="row-odd"><td>\cdot</td>
+<td><span class="math">\(\cdot\)</span></td>
+<td>\ast</td>
+<td><span class="math">\(\ast\)</span></td>
+<td>\vee</td>
+<td><span class="math">\(\vee\)</span></td>
+<td>\wedge</td>
+<td><span class="math">\(\wedge\)</span></td>
+</tr>
+<tr class="row-even"><td>\oplus</td>
+<td><span class="math">\(\oplus\)</span></td>
+<td>\otimes</td>
+<td><span class="math">\(\otimes\)</span></td>
+<td>\circ</td>
+<td><span class="math">\(\circ\)</span></td>
+<td>\bullet</td>
+<td><span class="math">\(\bullet\)</span></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<caption><strong>Table 4: Arrows and Dots</strong></caption>
+<colgroup>
+<col width="9%" />
+<col width="13%" />
+<col width="10%" />
+<col width="15%" />
+<col width="12%" />
+<col width="17%" />
+<col width="10%" />
+<col width="14%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Command</strong></th>
+<th class="head"><strong>Symbol</strong></th>
+<th class="head"><strong>Command</strong></th>
+<th class="head"><strong>Symbol</strong></th>
+<th class="head"><strong>Command</strong></th>
+<th class="head"><strong>Symbol</strong></th>
+<th class="head"><strong>Command</strong></th>
+<th class="head"><strong>Symbol</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>\to</td>
+<td><span class="math">\(\to\)</span></td>
+<td>\gets</td>
+<td><span class="math">\(\gets\)</span></td>
+<td>\rightarrow</td>
+<td><span class="math">\(\rightarrow\)</span></td>
+<td>\leftarrow</td>
+<td><span class="math">\(\leftarrow\)</span></td>
+</tr>
+<tr class="row-odd"><td>\mapsto</td>
+<td><span class="math">\(\mapsto\)</span></td>
+<td>\leftrightarrow</td>
+<td><span class="math">\(\leftrightarrow\)</span></td>
+<td>\rightleftharpoons</td>
+<td><span class="math">\(\rightleftharpoons\)</span></td>
+<td>\leadsto</td>
+<td><span class="math">\(\leadsto\)</span></td>
+</tr>
+<tr class="row-even"><td>\leftharpoonup</td>
+<td><span class="math">\(\leftharpoonup\)</span></td>
+<td>\leftharpoondown</td>
+<td><span class="math">\(\leftharpoondown\)</span></td>
+<td>\rightharpoondown</td>
+<td><span class="math">\(\rightharpoondown\)</span></td>
+<td>\rightharpoonup</td>
+<td><span class="math">\(\rightharpoonup\)</span></td>
+</tr>
+<tr class="row-odd"><td>\uparrow</td>
+<td><span class="math">\(\uparrow\)</span></td>
+<td>\downarrow</td>
+<td><span class="math">\(\downarrow\)</span></td>
+<td>\updownarrow</td>
+<td><span class="math">\(\updownarrow\)</span></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>\ldots</td>
+<td><span class="math">\(\ldots\)</span></td>
+<td>\cdots</td>
+<td><span class="math">\(\cdots\)</span></td>
+<td>\vdots</td>
+<td><span class="math">\(\vdots\)</span></td>
+<td>\ddots</td>
+<td><span class="math">\(\ddots\)</span></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<caption><strong>Table 5: Math Mode Accents</strong></caption>
+<colgroup>
+<col width="9%" />
+<col width="14%" />
+<col width="10%" />
+<col width="15%" />
+<col width="12%" />
+<col width="17%" />
+<col width="10%" />
+<col width="14%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Command</strong></th>
+<th class="head"><strong>Symbol</strong></th>
+<th class="head"><strong>Command</strong></th>
+<th class="head"><strong>Symbol</strong></th>
+<th class="head"><strong>Command</strong></th>
+<th class="head"><strong>Symbol</strong></th>
+<th class="head"><strong>Command</strong></th>
+<th class="head"><strong>Symbol</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>\hat{a}</td>
+<td><span class="math">\(\hat{a}\)</span></td>
+<td>\check{a}</td>
+<td><span class="math">\(\check{a}\)</span></td>
+<td>\dot{a}</td>
+<td><span class="math">\(\dot{a}\)</span></td>
+<td>\ddot{a}</td>
+<td><span class="math">\(\ddot{a}\)</span></td>
+</tr>
+<tr class="row-odd"><td>\bar{a}</td>
+<td><span class="math">\(\bar{a}\)</span></td>
+<td>\vec{a}</td>
+<td><span class="math">\(\vec{a}\)</span></td>
+<td>\tilde{a}</td>
+<td><span class="math">\(\tilde{a}\)</span></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Many arrow commands have a counterpart which is referenced by capitalizing the first letter. For example, \uparrow produces <span class="math">\(\uparrow\)</span> and \Uparrow produces <span class="math">\(\Uparrow\)</span></p>
+<p>Miscellaneous math symbols.</p>
+<table border="1" class="docutils">
+<caption><strong>Table 7: General Math Symbols</strong></caption>
+<colgroup>
+<col width="9%" />
+<col width="14%" />
+<col width="11%" />
+<col width="14%" />
+<col width="11%" />
+<col width="14%" />
+<col width="11%" />
+<col width="14%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Command</strong></th>
+<th class="head"><strong>Symbol</strong></th>
+<th class="head"><strong>Command</strong></th>
+<th class="head"><strong>Symbol</strong></th>
+<th class="head"><strong>Command</strong></th>
+<th class="head"><strong>Symbol</strong></th>
+<th class="head"><strong>Command</strong></th>
+<th class="head"><strong>Symbol</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>\infty</td>
+<td><span class="math">\(\infty\)</span></td>
+<td>\aleph</td>
+<td><span class="math">\(\aleph\)</span></td>
+<td>\hbar</td>
+<td><span class="math">\(\hbar\)</span></td>
+<td>\ell</td>
+<td><span class="math">\(\ell\)</span></td>
+</tr>
+<tr class="row-odd"><td>\imath</td>
+<td><span class="math">\(\imath\)</span></td>
+<td>\jmath</td>
+<td><span class="math">\(\jmath\)</span></td>
+<td>\Re</td>
+<td><span class="math">\(\Re\)</span></td>
+<td>\Im</td>
+<td><span class="math">\(\Im\)</span></td>
+</tr>
+<tr class="row-even"><td>\nabla</td>
+<td><span class="math">\(\nabla\)</span></td>
+<td>\Delta</td>
+<td><span class="math">\(\Delta\)</span></td>
+<td>\partial</td>
+<td><span class="math">\(\partial\)</span></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Some symbols are natively used to perform commands, and so need to be referenced with a specific character sequence.</p>
+<table border="1" class="docutils">
+<caption><strong>Table 8: Command Symbols</strong></caption>
+<colgroup>
+<col width="9%" />
+<col width="14%" />
+<col width="11%" />
+<col width="14%" />
+<col width="11%" />
+<col width="14%" />
+<col width="11%" />
+<col width="14%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Command</strong></th>
+<th class="head"><strong>Symbol</strong></th>
+<th class="head"><strong>Command</strong></th>
+<th class="head"><strong>Symbol</strong></th>
+<th class="head"><strong>Command</strong></th>
+<th class="head"><strong>Symbol</strong></th>
+<th class="head"><strong>Command</strong></th>
+<th class="head"><strong>Symbol</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>\$</td>
+<td><span class="math">\(\$\)</span></td>
+<td>\&amp;</td>
+<td><span class="math">\(\&amp;\)</span></td>
+<td>\%</td>
+<td><span class="math">\(\%\)</span></td>
+<td>\#</td>
+<td><span class="math">\(\#\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>In some cases \$ will not work, in which case it can be replaced with textdollar.</p>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013, University of Texas at Austin Society of Physics Students and Sigma Pi Sigma.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-small btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-small btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-small btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-small btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>
