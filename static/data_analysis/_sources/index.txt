@@ -28,7 +28,19 @@ The LaTeXtbook
    :maxdepth: 2
    
    LaTeX/latex.rst
+   LaTeX/docstructure.rst
+   LaTeX/packages.rst
    LaTeX/math.rst
    LaTeX/tables.rst
    LaTeX/symbols.rst
    LaTeX/newcommand.rst
+   LaTeX/include.rst
+
+..
+   To Do:
+   Packages
+   Lists
+   Formatting
+   Conditional Statements
+   Looping
+   Tikz Introduction
