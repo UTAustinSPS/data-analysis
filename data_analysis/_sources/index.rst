@@ -29,5 +29,6 @@ The LaTeXtbook
    
    LaTeX/latex.rst
    LaTeX/math.rst
+   LaTeX/tables.rst
    LaTeX/symbols.rst
    LaTeX/newcommand.rst
