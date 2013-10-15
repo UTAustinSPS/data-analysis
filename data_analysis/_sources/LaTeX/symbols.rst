@@ -1,7 +1,9 @@
 Symbols
 =======
 
-This is not intended to be an exhaustive list of LaTeX symbols, just the ones which are most likely to be useful. Nearly all of these symbols must be typed while in math mode.
+This is not intended to be an exhaustive list of `LaTeX symbols`_, just the ones which are most likely to be useful. Nearly all of these symbols must be typed while in math mode.
+
+.. _LaTeX symbols: http://www.tex.ac.uk/tex-archive/info/symbols/comprehensive/symbols-a4.pdf
 
 These symbols can be accessed without any special commands:
 
