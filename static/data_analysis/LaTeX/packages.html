@@ -290,16 +290,93 @@
 <p>Packages are sets of commands, environments, and formatting which expand LaTeX.</p>
 <div class="section" id="common-packages-and-what-they-do">
 <h2>Common Packages and What they Do<a class="headerlink" href="#common-packages-and-what-they-do" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>The amsmath package includes many useful math environments and symbols.</li>
-<li>The geometry package formats pages.</li>
-<li>The enumitem package allows for the extensive customizaiton of lists.</li>
-<li>The fancyhdr package includes commands which allow for the inclusion and customization of page headers.</li>
-<li>The tikz package is a powerful diagram editor.</li>
-</ul>
+<table border="1" class="docutils">
+<caption><strong>Table 1: Equalities, Inequalities, and Sets</strong></caption>
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Package</th>
+<th class="head">What it does</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>amsfonts</td>
+<td>fonts for math typesetting</td>
+</tr>
+<tr class="row-odd"><td>amsmath</td>
+<td>math environments and symbols</td>
+</tr>
+<tr class="row-even"><td>amssymb</td>
+<td>symbols</td>
+</tr>
+<tr class="row-odd"><td>amsthm</td>
+<td>customizable environments for theorems and other similar objects</td>
+</tr>
+<tr class="row-even"><td>booktabs</td>
+<td>improvements to the various table typesetting enviornments</td>
+</tr>
+<tr class="row-odd"><td>enumitem</td>
+<td>list customization</td>
+</tr>
+<tr class="row-even"><td>fancyhdr</td>
+<td>page headers and footers</td>
+</tr>
+<tr class="row-odd"><td>geometry</td>
+<td>page formatting options</td>
+</tr>
+<tr class="row-even"><td>graphics</td>
+<td>the \includegraphics command, which allows for including graphics</td>
+</tr>
+<tr class="row-odd"><td>graphicx</td>
+<td>an expanded version of the graphics package</td>
+</tr>
+<tr class="row-even"><td>hyperref</td>
+<td>create hyperlinks to facilitate moving through the pdf</td>
+</tr>
+<tr class="row-odd"><td>kbordermatrix</td>
+<td>makes adding column and row labels to matrices easy</td>
+</tr>
+<tr class="row-even"><td>microtype</td>
+<td>plays with spacing between letters and words to reduce visual obtrusion</td>
+</tr>
+<tr class="row-odd"><td>natbib</td>
+<td>flexible version of the \cite command</td>
+</tr>
+<tr class="row-even"><td>pgffor</td>
+<td>for loops</td>
+</tr>
+<tr class="row-odd"><td>pgfplots</td>
+<td>high quality 2D and 3D plots</td>
+</tr>
+<tr class="row-even"><td>siunitx</td>
+<td>typesetting SI units made easy</td>
+</tr>
+<tr class="row-odd"><td>subfigure</td>
+<td>include multiple figures and tables in one figure</td>
+</tr>
+<tr class="row-even"><td>tikz</td>
+<td>diagram editor</td>
+</tr>
+<tr class="row-odd"><td>verbatim</td>
+<td>an environment to display raw text</td>
+</tr>
+<tr class="row-even"><td>xcolor</td>
+<td>colored text and symbols</td>
+</tr>
+<tr class="row-odd"><td>xspace</td>
+<td>smart spacing for macros, commands don&#8217;t unnecessarily eat whitespace</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="optional-package-arguments">
 <h2>Optional Package Arguments<a class="headerlink" href="#optional-package-arguments" title="Permalink to this headline">¶</a></h2>
+<p>For the geometry package, it has an optional argument which can be filled with formatting options. By far, the most common use is:</p>
+<div class="highlight-python"><pre>\usepackage[margin=1in]{geometry}</pre>
+</div>
+<p>Natively, LaTeX uses very wide margins, and the above command narrows them to increase the amount of content per page.</p>
 </div>
 </div>
 
