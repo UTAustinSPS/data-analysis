@@ -74,6 +74,8 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
+    <link rel="next" title="Packages" href="packages.html" />
+    <link rel="prev" title="Introduction (What’s a LaTeX?)" href="latex.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -238,13 +240,18 @@
   <ul class="dropdown-menu localtoc"><ul>
 <li><a class="reference internal" href="#">Document Structure</a><ul>
 <li><a class="reference internal" href="#preamble">Preamble</a><ul>
-<li><a class="reference internal" href="#required-statements">Required Statements</a></li>
+<li><a class="reference internal" href="#the-required-command">The Required Command</a></li>
 <li><a class="reference internal" href="#packages">Packages</a></li>
 <li><a class="reference internal" href="#new-commands">New Commands</a></li>
 <li><a class="reference internal" href="#formatting">Formatting</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#body">Body</a></li>
+<li><a class="reference internal" href="#after-the-end-document">After the \end{document}</a><ul>
+<li><a class="reference internal" href="#debugging-and-testing">Debugging and Testing</a></li>
+<li><a class="reference internal" href="#code-storage">Code Storage</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -254,6 +261,18 @@
         
         
           
+  <li id="relations-prev" title="Previous Chapter - Introduction (What&#8217;s a LaTeX?)" data-toggle="tooltip">
+    <a href="latex.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Packages' data-toggle="tooltip" >
+    <a href="packages.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -279,23 +298,44 @@
   
   <div class="section" id="document-structure">
 <h1>Document Structure<a class="headerlink" href="#document-structure" title="Permalink to this headline">¶</a></h1>
+<p>LaTeX documents have two main parts: the preamble, and the body.</p>
 <div class="section" id="preamble">
 <h2>Preamble<a class="headerlink" href="#preamble" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="required-statements">
-<h3>Required Statements<a class="headerlink" href="#required-statements" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="the-required-command">
+<h3>The Required Command<a class="headerlink" href="#the-required-command" title="Permalink to this headline">¶</a></h3>
+<p>There is one required command for every LaTeX document, \documentclass. Specifying the class of the document tells LaTeX the basic formatting desired for the document. There are many document classes, and they are covered on the document classes page.</p>
 </div>
 <div class="section" id="packages">
 <h3>Packages<a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h3>
+<p>Once LaTeX knows what kind of document this is, relevant packages should be loaded. Packages include new commands, environments, symbols, and generally increase the functionality of LaTeX far beyond the bare minimum it natively includes. More information on packages is included in the packages page.</p>
 </div>
 <div class="section" id="new-commands">
 <h3>New Commands<a class="headerlink" href="#new-commands" title="Permalink to this headline">¶</a></h3>
+<p>New commands should be specified here. New commands make life easier by creating shortcuts for calling symbols and oft-used symbol and information patterns. More information on new commands is available in the new command lesson.</p>
 </div>
 <div class="section" id="formatting">
 <h3>Formatting<a class="headerlink" href="#formatting" title="Permalink to this headline">¶</a></h3>
+<p>Generally, the last part of the preamble should be formatting. Now that packages are loaded and new commands have been created, there are many options to fiddle with and none will be overridden by loading packages after specifying custom formatting. Everything in LaTeX can be customized. Fortunately, specifying the document class prevents declaring the base formatting from being necessary. Sometimes, packages allow for easier access to formatting, such as creating custom list levels and formatting. More information on formatting is in the formatting lesson.</p>
 </div>
 </div>
 <div class="section" id="body">
 <h2>Body<a class="headerlink" href="#body" title="Permalink to this headline">¶</a></h2>
+<p>The body of a document begins with the \begin{document} command and ends with the \end{document} command. LaTeX treats everything between those \begin and \end statements as the &#8220;document&#8221; environment.</p>
+<p>Except comments, everything written the body of a LaTeX document will be processed during typesetting.</p>
+</div>
+<div class="section" id="after-the-end-document">
+<h2>After the \end{document}<a class="headerlink" href="#after-the-end-document" title="Permalink to this headline">¶</a></h2>
+<p>Nothing after \end{document} is used in the output. Common reasons for having code after \end{document} include debugging, testing, and temporary code storage.</p>
+<div class="section" id="debugging-and-testing">
+<h3>Debugging and Testing<a class="headerlink" href="#debugging-and-testing" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes, LaTeX gives obscure errors and references lines which don&#8217;t actually contain errors. This is because LaTeX usually doesn&#8217;t encounter the errors until it tries to piece together code, such as at the end of an environment, most commonly when writing math.</p>
+<p>Putting \end{document} inside of an environment does cause an error itself. However, LaTeX will have processed all code up to that point so the original error will still cause an issue. This is because when LaTeX encounters \end, it will typeset everything up to that point. If the only error is that \end{document} is inside an environment, then \end{document} is before the error. If not, then \end{document} is after the error. This allows for a line-by-line search to find the bug.</p>
+</div>
+<div class="section" id="code-storage">
+<h3>Code Storage<a class="headerlink" href="#code-storage" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes there is part of a document that doesn&#8217;t fit anywhere inside the document currently, but might later. Rather than deleting the code or storing it somewhere else, placing it after \end{document} allows for safe storage.</p>
+<p>For larger projects, it is a better idea to learn and use version control so nothing valuable will be lost.</p>
+</div>
 </div>
 </div>
 

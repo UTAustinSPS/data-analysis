@@ -1,9 +1,14 @@
 Packages
 ========
+Packages are sets of commands, environments, and formatting which expand LaTeX.
 
-Common Packages
----------------
-
+Common Packages and What they Do
+--------------------------------
+- The amsmath package includes many useful math environments and symbols.
+- The geometry package formats pages.
+- The enumitem package allows for the extensive customizaiton of lists.
+- The fancyhdr package includes commands which allow for the inclusion and customization of page headers.
+- The tikz package is a powerful diagram editor.
 
 Optional Package Arguments
 --------------------------
