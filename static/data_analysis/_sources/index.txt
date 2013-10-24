@@ -37,10 +37,37 @@ The LaTeXtbook
    LaTeX/include.rst
 
 ..
-   To Do:
-   Packages
+   To Do for LaTeX (feel free to add):
    Lists
-   Formatting
+   Basics: Spaces, Groups, Environments, Commands, Comments, 
+   |
+   Newcommand: xkeyval
+   Formatting: Switches and Commands
+   Advanced Formatting: enumitem, fancyhdr, geometry, microtype
+   Advanced Math: kbordermatrix
+   Figures: graphics/x, subfigure
+   Environments
    Conditional Statements
    Looping
-   Tikz Introduction
+   Lessons for Specific Packages:
+   |amsmath
+   |siunitx
+   |tikz
+   Useful External Webpages: TeXexchange, wikibooks, 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
