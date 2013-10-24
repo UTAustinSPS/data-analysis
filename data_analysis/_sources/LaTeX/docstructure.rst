@@ -23,6 +23,10 @@ Formatting
 ----------
 Generally, the last part of the preamble should be formatting. Now that packages are loaded and new commands have been created, there are many options to fiddle with and none will be overridden by loading packages after specifying custom formatting. Everything in LaTeX can be customized. Fortunately, specifying the document class prevents declaring the base formatting from being necessary. Sometimes, packages allow for easier access to formatting, such as creating custom list levels and formatting. More information on formatting is in the formatting lesson.
 
+Miscellaneous Actions
+---------------------
+There are many, many more things that can be useful to have in the preamble. These include declaring new operators, having an external preamble (to act as a stylesheet or collection of common commands for many documents), and .
+
 Body
 ====
 The body of a document begins with the \\begin{document} command and ends with the \\end{document} command. LaTeX treats everything between those \\begin and \\end statements as the "document" environment.

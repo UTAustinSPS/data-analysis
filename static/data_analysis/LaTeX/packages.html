@@ -74,6 +74,8 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
+    <link rel="next" title="Mathematics in LaTeX" href="math.html" />
+    <link rel="prev" title="Document Structure" href="docstructure.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -237,7 +239,7 @@
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
 <li><a class="reference internal" href="#">Packages</a><ul>
-<li><a class="reference internal" href="#common-packages">Common Packages</a></li>
+<li><a class="reference internal" href="#common-packages-and-what-they-do">Common Packages and What they Do</a></li>
 <li><a class="reference internal" href="#optional-package-arguments">Optional Package Arguments</a></li>
 </ul>
 </li>
@@ -248,6 +250,18 @@
         
         
           
+  <li id="relations-prev" title="Previous Chapter - Document Structure" data-toggle="tooltip">
+    <a href="docstructure.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Mathematics in LaTeX' data-toggle="tooltip" >
+    <a href="math.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -273,11 +287,96 @@
   
   <div class="section" id="packages">
 <h1>Packages<a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="common-packages">
-<h2>Common Packages<a class="headerlink" href="#common-packages" title="Permalink to this headline">¶</a></h2>
+<p>Packages are sets of commands, environments, and formatting which expand LaTeX.</p>
+<div class="section" id="common-packages-and-what-they-do">
+<h2>Common Packages and What they Do<a class="headerlink" href="#common-packages-and-what-they-do" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<caption><strong>Table 1: Equalities, Inequalities, and Sets</strong></caption>
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Package</th>
+<th class="head">What it does</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>amsfonts</td>
+<td>fonts for math typesetting</td>
+</tr>
+<tr class="row-odd"><td>amsmath</td>
+<td>math environments and symbols</td>
+</tr>
+<tr class="row-even"><td>amssymb</td>
+<td>symbols</td>
+</tr>
+<tr class="row-odd"><td>amsthm</td>
+<td>customizable environments for theorems and other similar objects</td>
+</tr>
+<tr class="row-even"><td>booktabs</td>
+<td>improvements to the various table typesetting enviornments</td>
+</tr>
+<tr class="row-odd"><td>enumitem</td>
+<td>list customization</td>
+</tr>
+<tr class="row-even"><td>fancyhdr</td>
+<td>page headers and footers</td>
+</tr>
+<tr class="row-odd"><td>geometry</td>
+<td>page formatting options</td>
+</tr>
+<tr class="row-even"><td>graphics</td>
+<td>the \includegraphics command, which allows for including graphics</td>
+</tr>
+<tr class="row-odd"><td>graphicx</td>
+<td>an expanded version of the graphics package</td>
+</tr>
+<tr class="row-even"><td>hyperref</td>
+<td>create hyperlinks to facilitate moving through the pdf</td>
+</tr>
+<tr class="row-odd"><td>kbordermatrix</td>
+<td>makes adding column and row labels to matrices easy</td>
+</tr>
+<tr class="row-even"><td>microtype</td>
+<td>plays with spacing between letters and words to reduce visual obtrusion</td>
+</tr>
+<tr class="row-odd"><td>natbib</td>
+<td>flexible version of the \cite command</td>
+</tr>
+<tr class="row-even"><td>pgffor</td>
+<td>for loops</td>
+</tr>
+<tr class="row-odd"><td>pgfplots</td>
+<td>high quality 2D and 3D plots</td>
+</tr>
+<tr class="row-even"><td>siunitx</td>
+<td>typesetting SI units made easy</td>
+</tr>
+<tr class="row-odd"><td>subfigure</td>
+<td>include multiple figures and tables in one figure</td>
+</tr>
+<tr class="row-even"><td>tikz</td>
+<td>diagram editor</td>
+</tr>
+<tr class="row-odd"><td>verbatim</td>
+<td>an environment to display raw text</td>
+</tr>
+<tr class="row-even"><td>xcolor</td>
+<td>colored text and symbols</td>
+</tr>
+<tr class="row-odd"><td>xspace</td>
+<td>smart spacing for macros, commands don&#8217;t unnecessarily eat whitespace</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="optional-package-arguments">
 <h2>Optional Package Arguments<a class="headerlink" href="#optional-package-arguments" title="Permalink to this headline">¶</a></h2>
+<p>For the geometry package, it has an optional argument which can be filled with formatting options. By far, the most common use is:</p>
+<div class="highlight-python"><pre>\usepackage[margin=1in]{geometry}</pre>
+</div>
+<p>Natively, LaTeX uses very wide margins, and the above command narrows them to increase the amount of content per page.</p>
 </div>
 </div>
 

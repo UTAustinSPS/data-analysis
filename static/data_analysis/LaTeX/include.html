@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>The \include Command &mdash; Introduction to Data Analysis for Physics</title>
+    <title>Inputting and Including External Files &mdash; Introduction to Data Analysis for Physics</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -74,6 +74,7 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
+    <link rel="prev" title="New Commands (\newcommand)" href="newcommand.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -236,8 +237,10 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">The \include Command</a><ul>
-<li><a class="reference internal" href="#content">Content</a></li>
+<li><a class="reference internal" href="#">Inputting and Including External Files</a><ul>
+<li><a class="reference internal" href="#differences-between-include-and-input">Differences between \include and \input</a></li>
+<li><a class="reference internal" href="#how-to-use">How to Use</a></li>
+<li><a class="reference internal" href="#common-problems">Common Problems</a></li>
 </ul>
 </li>
 </ul>
@@ -247,6 +250,14 @@
         
         
           
+  <li id="relations-prev" title="Previous Chapter - New Commands (\newcommand)" data-toggle="tooltip">
+    <a href="newcommand.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+    <li class="divider-vertical"></li>
+  
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -270,13 +281,33 @@
 
 <div class="container">
   
-  <div class="section" id="the-include-command">
-<h1>The \include Command<a class="headerlink" href="#the-include-command" title="Permalink to this headline">¶</a></h1>
-<p>The \include command tells LaTeX to read everything in an external document before continuing. It can be used to remove clutter from documents.</p>
-<hr class="docutils" />
-<div class="section" id="content">
-<h2>Content<a class="headerlink" href="#content" title="Permalink to this headline">¶</a></h2>
-<p>When to use.</p>
+  <div class="section" id="inputting-and-including-external-files">
+<h1>Inputting and Including External Files<a class="headerlink" href="#inputting-and-including-external-files" title="Permalink to this headline">¶</a></h1>
+<p>There are two similar commands to tell LaTeX to read a local external file, \input and \include.</p>
+<p>Both tell LaTeX to read and typeset everything in an external document before continuing. They can be used to remove clutter from documents and streamline the process of creating more documents, acting as easy to make and edit pseudo-packages.</p>
+<div class="section" id="differences-between-include-and-input">
+<h2>Differences between \include and \input<a class="headerlink" href="#differences-between-include-and-input" title="Permalink to this headline">¶</a></h2>
+<p>There are a few main differences between \include and \input.</p>
+<p>When told to \input a file, LaTeX acts as if the text from the external file was copied and pasted into the current document, but when told to \include the file, LaTeX will start a new page before and after the external content. As such, \include cannot appear in the preamble since the document has not started yet, but \include tells LaTeX to start new pages. So \input can be used in nearly any location as a way to insert content, but \include must be by itself.</p>
+<p>The \input command can be nested, but \include cannot. So if document1 has an input command to document2, and document 2 has an input command to document3, then everything in document3 will be input to document1 also.</p>
+<p>Generally, \include would be used to make having chapters of a book in separate files, with one central document which typesets every chapter.</p>
+</div>
+<div class="section" id="how-to-use">
+<h2>How to Use<a class="headerlink" href="#how-to-use" title="Permalink to this headline">¶</a></h2>
+<p>The syntax for using \include and \input is identical. To input document1.tex then include document2.tex, the commands would be</p>
+<div class="highlight-python"><pre>\input{document1}
+\include{document2}</pre>
+</div>
+<p>One use of \input is to have a standard preamble document. Rather than needing a lengthy template to include common packages and user-defined formatting and commands, the preamble of a document could look as follows.:</p>
+<div class="highlight-python"><pre>\documentclass{article}
+\include{preamble}
+\begin{document}</pre>
+</div>
+<p>This is particularly useful for using LaTeX for homework, since each document for a given class probably needs the same preamble. It is also helpful for working on many documents in the same directory, since updating the preamble file updates all of the documents, rather than having to manually edit the preamble in each file.</p>
+</div>
+<div class="section" id="common-problems">
+<h2>Common Problems<a class="headerlink" href="#common-problems" title="Permalink to this headline">¶</a></h2>
+<p>If a referenced document contains \end{document}, inputting or including the document will cause LaTeX to stop typesetting once it reaches \end{document}.</p>
 </div>
 </div>
 
