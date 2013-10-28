@@ -12,12 +12,7 @@ Ordering Matters
 Although *Mathematica* allows the user to execute lines in any order, this can lead to complications.
 For example:
 
-::
-
-	x = 5
-	f = x ^ 2
-
-if the x=5 line is executed first, then f simply gets the value 25. TEST THIS
+FIXME
 
 Fortunately, the *Mathematica* application shows you the order in which statements were run by indexing
 each line of code with "In[EXEC_NUM]" and each line of output with "Out[EXEC_NUM]". That way, when

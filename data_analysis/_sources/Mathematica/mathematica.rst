@@ -48,7 +48,8 @@ Then, we can simply plot the list we created with:
 
 Which gives a result that looks like:
 
-FIXME FIXME FIXME
+.. image:: Figures/primes.jpg
+   :alt: Primes
 
 While *Mathematica* may not be the best language for extremely-large scale data processing (although
 it has cluster capabilities which will not be discussed here), the above example hopefully
