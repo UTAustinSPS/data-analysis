@@ -238,8 +238,8 @@
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
 <li><a class="reference internal" href="#">Document Structure and Syntax</a><ul>
-<li><a class="reference internal" href="#ordering-matters">Ordering Matters</a></li>
 <li><a class="reference internal" href="#basic-constructs">Basic Constructs</a></li>
+<li><a class="reference internal" href="#ordering-matters">Ordering Matters</a></li>
 </ul>
 </li>
 </ul>
@@ -292,19 +292,6 @@ languages like <em>Python</em>, <em>C</em> or <em>Java</em>, <em>Mathematica</em
 is in focus. This eliminates the need for the &#8220;boilerplate&#8221; code that comes in many languages
 of having to set up a particular &#8220;main&#8221; function to execute, by instead allowing the user
 to essentially say &#8220;execute these lines&#8221;.</p>
-<div class="section" id="ordering-matters">
-<h2>Ordering Matters<a class="headerlink" href="#ordering-matters" title="Permalink to this headline">¶</a></h2>
-<p>Although <em>Mathematica</em> allows the user to execute lines in any order, this can lead to complications.
-For example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">x</span> <span class="o">^</span> <span class="mi">2</span>
-</pre></div>
-</div>
-<p>if the x=5 line is executed first, then f simply gets the value 25. TEST THIS</p>
-<p>Fortunately, the <em>Mathematica</em> application shows you the order in which statements were run by indexing
-each line of code with &#8220;In[EXEC_NUM]&#8221; and each line of output with &#8220;Out[EXEC_NUM]&#8221;. That way, when
-using the language, you can backtrack what the values of variables/functions should be.</p>
-</div>
 <div class="section" id="basic-constructs">
 <h2>Basic Constructs<a class="headerlink" href="#basic-constructs" title="Permalink to this headline">¶</a></h2>
 <p>As already seen, assignment of variables is quite easy, with the statement</p>
@@ -312,10 +299,61 @@ using the language, you can backtrack what the values of variables/functions sho
 </pre></div>
 </div>
 <p>being read as &#8220;x is given the value 5&#8221;. Most statements in <em>Mathematica</em> produce some kind of output
-(the above would output the value 5), but this can be hidden by ending the statement with a semi-colon:</p>
+(the above would output the value 5), but this can be hidden by ending the statement with a semicolon:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 </pre></div>
 </div>
+<p>We can easily create expressions of other variables and functions:</p>
+<div class="highlight-python"><pre>f[x_] := x^2
+e = x ^ 2</pre>
+</div>
+<p>f is now the function <span class="math">\(f(x)=x^2\)</span> and e is an expression. The difference is that if we have defined
+a variable &#8220;x&#8221;, e will be that value squared. But f is still the function that squares its argument, rather
+than giving the square of some pre-defined variable x. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">f</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">g</span>
+<span class="n">f</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">f</span><span class="p">[</span><span class="n">y</span><span class="p">]</span>
+<span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>if executed sequentially will output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="mi">25</span>
+<span class="mi">3</span>
+<span class="mi">9</span>
+<span class="mi">16</span>
+<span class="n">y</span><span class="o">^</span><span class="mi">2</span>
+<span class="mi">9</span>
+</pre></div>
+</div>
+<p>One handy part of <em>Mathematica</em> is that it supports the use of variables as input to functions (as seen with
+f[y] above). In that way, it can also handle function composition:</p>
+<div class="highlight-python"><pre>u[x_] := x^2;
+v[x_] := x + 1;
+u[v[y]]</pre>
+</div>
+<p>has the output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">(</span><span class="n">y</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ordering-matters">
+<h2>Ordering Matters<a class="headerlink" href="#ordering-matters" title="Permalink to this headline">¶</a></h2>
+<p>Although <em>Mathematica</em> allows the user to execute lines in any order, this can lead to complications.
+For example:</p>
+<blockquote>
+<div>x = 5;
+x ^ 2
+x = 2;</div></blockquote>
+<p>In the above example, if the statements are executed in the order above (as in most other
+programming languages), the value 25 would be printed. But, if we instead execute the last statement
+then the middle statement, the value 4 would be printed. As such, it is typically useful to not re-use
+variables within a program, or at the very least to separate the blocks of code such that you
+always fix the value before using it.</p>
+<p>Fortunately, the <em>Mathematica</em> application shows you the order in which statements were run by indexing
+each line of code with &#8220;In[EXEC_NUM]&#8221; and each line of output with &#8220;Out[EXEC_NUM]&#8221;. That way, when
+using the language, you can backtrack what the values of variables/functions should be.</p>
 </div>
 </div>
 
