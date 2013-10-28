@@ -19,7 +19,8 @@ Introduction
 .. toctree::
    :maxdepth: 2
 
-   mathematica.rst
+   Mathematica/mathematica.rst
+   Mathematica/structure.rst
 
 The LaTeXtbook
 ::::::::::::::

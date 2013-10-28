@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Tables, Arrays, and Matrices &mdash; Introduction to Data Analysis for Physics</title>
+    <title>Introduction &mdash; Introduction to Data Analysis for Physics</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -73,8 +73,8 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
-    <link rel="next" title="Symbols" href="symbols.html" />
-    <link rel="prev" title="Mathematics in LaTeX" href="math.html" />
+    <link rel="next" title="Document Structure and Syntax" href="structure.html" />
+    <link rel="prev" title="Contact Information" href="../syllabus.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -237,9 +237,11 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Tables, Arrays, and Matrices</a><ul>
-<li><a class="reference internal" href="#the-tabular-and-array-environments">The Tabular and Array Environments</a></li>
-<li><a class="reference internal" href="#the-matrix-environment">The Matrix Environment</a></li>
+<li><a class="reference internal" href="#">Introduction</a><ul>
+<li><a class="reference internal" href="#why-mathematica">Why <em>Mathematica</em></a></li>
+<li><a class="reference internal" href="#access">Access</a></li>
+<li><a class="reference internal" href="#example">Example</a></li>
+<li><a class="reference internal" href="#other-information-sources">Other Information Sources</a></li>
 </ul>
 </li>
 </ul>
@@ -249,14 +251,14 @@
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Mathematics in LaTeX" data-toggle="tooltip">
-    <a href="math.html" >
+  <li id="relations-prev" title="Previous Chapter - Contact Information" data-toggle="tooltip">
+    <a href="../syllabus.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Symbols' data-toggle="tooltip" >
-    <a href="symbols.html" >
+  <li id="relations-next" title='Next Chapter - Document Structure and Syntax' data-toggle="tooltip" >
+    <a href="structure.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -284,26 +286,56 @@
 
 <div class="container">
   
-  <div class="section" id="tables-arrays-and-matrices">
-<h1>Tables, Arrays, and Matrices<a class="headerlink" href="#tables-arrays-and-matrices" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="the-tabular-and-array-environments">
-<h2>The Tabular and Array Environments<a class="headerlink" href="#the-tabular-and-array-environments" title="Permalink to this headline">¶</a></h2>
-<p>The array environment is a version of the tabular environment for math mode.</p>
+  <h1><i>Mathematica</i></h1><div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p><em>Mathematica</em> is a language and application created by Stephen Wolfram&#8217;s company, Wolfram Research. As of Fall 2013,
+it is in its 9th major version. <em>Mathematica</em> is used for a variety of applications and has capabilities for
+cluster computing (essentially, having many computers run the same program with different data to solve a problem).</p>
+<div class="section" id="why-mathematica">
+<h2>Why <em>Mathematica</em><a class="headerlink" href="#why-mathematica" title="Permalink to this headline">¶</a></h2>
+<p>As in most programming languages, you can make the code as general as possible, with a variety of applications,
+but in the general case for <em>Mathematica</em>, individual programs are written to solve specific problems. As the name suggests,
+<em>Mathematica</em> is very good at all sorts of mathematical problems, from integrals and derivatives to
+3D data plots to statistical analysis and more (for more, see the
+<a class="reference external" href="http://www.wolfram.com/mathematica/features/application-areas.html">Wolfram site</a>). It is a cross-platform application,
+meaning that it is available on Windows, Mac, and Linux, and except for special cases, you will need the <em>Mathematica</em>
+application to do anything using the <em>Mathematica</em> language (the CDF format -
+essentially an interactive PDF can be viewed without <em>Mathematica</em>, but <em>Mathematica</em>
+it is needed to edit CDFs).</p>
 </div>
-<div class="section" id="the-matrix-environment">
-<h2>The Matrix Environment<a class="headerlink" href="#the-matrix-environment" title="Permalink to this headline">¶</a></h2>
-<p>This works much like the previous two environments, but the matrix environemt is specifically designed for mathematical matrices. Note that there are several modified versions of the matrix environment which may come in handy.:</p>
-<div class="highlight-python"><pre>\begin{matrix}{1&amp;0\\0&amp;1}\end{matrix}
-\begin{pmatrix}{1&amp;0\\0&amp;1}\end{matrix}
-\begin{bmatrix}{1&amp;0\\0&amp;1}\end{matrix}
-\begin{Bmatrix}{1&amp;0\\0&amp;1}\end{matrix}
-\begin{vmatrix}{1&amp;0\\0&amp;1}\end{matrix}
-\begin{Vmatrix}{1&amp;0\\0&amp;1}\end{matrix}</pre>
+<div class="section" id="access">
+<h2>Access<a class="headerlink" href="#access" title="Permalink to this headline">¶</a></h2>
+<p>If you are a physics student at UT, you can obtain it using a site licence paid for by the university. See the
+<a class="reference external" href="http://www.ph.utexas.edu/~help/software.php">Physics Department Software Page</a> for more.</p>
+<p>Otherwise, if you are a UT student, various computer labs, including the PMCL in RLM have <em>Mathematica</em> installed
+already. If you are not a UT student, you will need to purchase the software from <a class="reference external" href="http://www.wolfram.com/mathematica/">Wolfram</a>.</p>
 </div>
-<p>The smallmatrix environment is useful for creating inline matrices which do not disrupt line spacing.:</p>
-<div class="highlight-python"><pre>The identity matrix, $\begin{matrix}1&amp;0\\0&amp;1\end{matrix}$
-The identity matrix, $\begin{smallmatrix}1&amp;0\\0&amp;1\end{smallmatrix}$</pre>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s say that we want to produce a very simple <em>Mathematica</em> document that plots the function
+<span class="math">\(\sqrt{P_n}\)</span> where <span class="math">\(P_n\)</span> is the <span class="math">\(n^{\textrm{th}}\)</span> prime number starting at
+<span class="math">\(P_1=2\)</span>, for <span class="math">\(n\in[1,50]\)</span>.</p>
+<p>First, we create the list of square-rooted primes:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sqrtPrimes</span> <span class="o">=</span> <span class="n">Table</span><span class="p">[</span><span class="n">Sqrt</span><span class="p">[</span><span class="n">Primes</span><span class="p">[</span><span class="n">n</span><span class="p">]],</span> <span class="p">{</span><span class="n">n</span><span class="p">,</span><span class="mi">50</span><span class="p">}]</span>
+</pre></div>
 </div>
+<p>Then, we can simply plot the list we created with:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">ListPlot</span><span class="p">[</span><span class="n">sqrtPrimes</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Which gives a result that looks like:</p>
+<p>FIXME FIXME FIXME</p>
+<p>While <em>Mathematica</em> may not be the best language for extremely-large scale data processing (although
+it has cluster capabilities which will not be discussed here), the above example hopefully
+indicates how easy some tasks can be in the language. We will see later how to do more complicated
+input (reading files, etc.) and output (graphs, tables, etc.), as well as incorporate data analysis
+concepts like linear regression.</p>
+</div>
+<div class="section" id="other-information-sources">
+<h2>Other Information Sources<a class="headerlink" href="#other-information-sources" title="Permalink to this headline">¶</a></h2>
+<p>Wolfram has a tutorial on the &#8220;Core Language&#8221; <a class="reference external" href="http://www.wolfram.com/learningcenter/tutorialcollection/CoreLanguage/">here</a>. It is available for purchase in print or free download. It covers many
+topics that will be referenced here. Their <em>Mathematica</em> site also maintains documentation
+of all the built-in parts of the language <a class="reference external" href="http://reference.wolfram.com/mathematica/guide/Mathematica.html">here</a>.</p>
 </div>
 </div>
 

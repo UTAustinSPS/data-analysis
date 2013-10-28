@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 
@@ -28,7 +27,7 @@
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '',
+        URL_ROOT:    './',
         VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
@@ -80,7 +79,7 @@
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 <script type="text/javascript">
   eBookConfig = {};
-  eBookConfig.host = 'http://192.168.0.10:80' ? 'http://192.168.0.10:80' : 'http://127.0.0.1:8000';
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
   eBookConfig.app = eBookConfig.host+'/runestone';
   eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
   eBookConfig.course = 'data_analysis';
@@ -201,11 +200,11 @@
           <ul class="dropdown-menu user-menu">
             <li><span class='loggedinuser'></span></li>
             <li class="divider"></li>
-            <li><a href='http://192.168.0.10:80/runestone/admin/index'>Instructor's Page</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
             <li class="divider"></li>
-            <li><a href="http://192.168.0.10:80/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
-            <li><a href="http://192.168.0.10:80/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
-            <li><a href="http://192.168.0.10:80/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
             <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
           </ul>
         </li>
@@ -296,7 +295,6 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html#the-syllabus">The Syllabus</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="syllabus.html">Contact Information</a></li>
 <li class="toctree-l2"><a class="reference internal" href="syllabus.html#course-description">Course Description</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syllabus.html#demtex">DemTex</a></li>
 <li class="toctree-l2"><a class="reference internal" href="syllabus.html#learning-outcomes">Learning Outcomes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="syllabus.html#course-structure">Course Structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="syllabus.html#assignments">Assignments</a></li>
@@ -316,8 +314,18 @@
 <h2><em>Mathematica</em><a class="headerlink" href="#mathematica" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="mathematica.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mathematica.html#access">Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mathematica/mathematica.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/mathematica.html#why-mathematica">Why <em>Mathematica</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/mathematica.html#access">Access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/mathematica.html#example">Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/mathematica.html#other-information-sources">Other Information Sources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Mathematica/structure.html">Document Structure and Syntax</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/structure.html#ordering-matters">Ordering Matters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/structure.html#basic-constructs">Basic Constructs</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -380,7 +388,7 @@
     </p>
     <p>
         &copy; Copyright 2013, University of Texas at Austin Society of Physics Students and Sigma Pi Sigma.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2b3.
     </p>
   </div>
 </footer>

@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Tables, Arrays, and Matrices &mdash; Introduction to Data Analysis for Physics</title>
+    <title>Document Structure and Syntax &mdash; Introduction to Data Analysis for Physics</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -73,8 +73,8 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
-    <link rel="next" title="Symbols" href="symbols.html" />
-    <link rel="prev" title="Mathematics in LaTeX" href="math.html" />
+    <link rel="next" title="Introduction (What’s a LaTeX?)" href="../LaTeX/latex.html" />
+    <link rel="prev" title="Introduction" href="mathematica.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -237,9 +237,9 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Tables, Arrays, and Matrices</a><ul>
-<li><a class="reference internal" href="#the-tabular-and-array-environments">The Tabular and Array Environments</a></li>
-<li><a class="reference internal" href="#the-matrix-environment">The Matrix Environment</a></li>
+<li><a class="reference internal" href="#">Document Structure and Syntax</a><ul>
+<li><a class="reference internal" href="#ordering-matters">Ordering Matters</a></li>
+<li><a class="reference internal" href="#basic-constructs">Basic Constructs</a></li>
 </ul>
 </li>
 </ul>
@@ -249,14 +249,14 @@
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Mathematics in LaTeX" data-toggle="tooltip">
-    <a href="math.html" >
+  <li id="relations-prev" title="Previous Chapter - Introduction" data-toggle="tooltip">
+    <a href="mathematica.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Symbols' data-toggle="tooltip" >
-    <a href="symbols.html" >
+  <li id="relations-next" title='Next Chapter - Introduction (What&#8217;s a LaTeX?)' data-toggle="tooltip" >
+    <a href="../LaTeX/latex.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -284,25 +284,37 @@
 
 <div class="container">
   
-  <div class="section" id="tables-arrays-and-matrices">
-<h1>Tables, Arrays, and Matrices<a class="headerlink" href="#tables-arrays-and-matrices" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="the-tabular-and-array-environments">
-<h2>The Tabular and Array Environments<a class="headerlink" href="#the-tabular-and-array-environments" title="Permalink to this headline">¶</a></h2>
-<p>The array environment is a version of the tabular environment for math mode.</p>
+  <div class="section" id="document-structure-and-syntax">
+<h1>Document Structure and Syntax<a class="headerlink" href="#document-structure-and-syntax" title="Permalink to this headline">¶</a></h1>
+<p><em>Mathematica</em> largely lacks the kind of structures one might find in other languages. Instead of
+having sections like <span class="math">\(\LaTeX\)</span>, it simply has blocks of code you can execute. And unlike
+languages like <em>Python</em>, <em>C</em> or <em>Java</em>, <em>Mathematica</em> will simply execute whatever block of code
+is in focus. This eliminates the need for the &#8220;boilerplate&#8221; code that comes in many languages
+of having to set up a particular &#8220;main&#8221; function to execute, by instead allowing the user
+to essentially say &#8220;execute these lines&#8221;.</p>
+<div class="section" id="ordering-matters">
+<h2>Ordering Matters<a class="headerlink" href="#ordering-matters" title="Permalink to this headline">¶</a></h2>
+<p>Although <em>Mathematica</em> allows the user to execute lines in any order, this can lead to complications.
+For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">x</span> <span class="o">^</span> <span class="mi">2</span>
+</pre></div>
 </div>
-<div class="section" id="the-matrix-environment">
-<h2>The Matrix Environment<a class="headerlink" href="#the-matrix-environment" title="Permalink to this headline">¶</a></h2>
-<p>This works much like the previous two environments, but the matrix environemt is specifically designed for mathematical matrices. Note that there are several modified versions of the matrix environment which may come in handy.:</p>
-<div class="highlight-python"><pre>\begin{matrix}{1&amp;0\\0&amp;1}\end{matrix}
-\begin{pmatrix}{1&amp;0\\0&amp;1}\end{matrix}
-\begin{bmatrix}{1&amp;0\\0&amp;1}\end{matrix}
-\begin{Bmatrix}{1&amp;0\\0&amp;1}\end{matrix}
-\begin{vmatrix}{1&amp;0\\0&amp;1}\end{matrix}
-\begin{Vmatrix}{1&amp;0\\0&amp;1}\end{matrix}</pre>
+<p>if the x=5 line is executed first, then f simply gets the value 25. TEST THIS</p>
+<p>Fortunately, the <em>Mathematica</em> application shows you the order in which statements were run by indexing
+each line of code with &#8220;In[EXEC_NUM]&#8221; and each line of output with &#8220;Out[EXEC_NUM]&#8221;. That way, when
+using the language, you can backtrack what the values of variables/functions should be.</p>
 </div>
-<p>The smallmatrix environment is useful for creating inline matrices which do not disrupt line spacing.:</p>
-<div class="highlight-python"><pre>The identity matrix, $\begin{matrix}1&amp;0\\0&amp;1\end{matrix}$
-The identity matrix, $\begin{smallmatrix}1&amp;0\\0&amp;1\end{smallmatrix}$</pre>
+<div class="section" id="basic-constructs">
+<h2>Basic Constructs<a class="headerlink" href="#basic-constructs" title="Permalink to this headline">¶</a></h2>
+<p>As already seen, assignment of variables is quite easy, with the statement</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<p>being read as &#8220;x is given the value 5&#8221;. Most statements in <em>Mathematica</em> produce some kind of output
+(the above would output the value 5), but this can be hidden by ending the statement with a semi-colon:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+</pre></div>
 </div>
 </div>
 </div>

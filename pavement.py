@@ -113,15 +113,15 @@ def devcourse(options):
 
 @task
 @cmdopts([('all','a','rebuild everything')])
-def java4python(options):
+def data_analysis(options):
     # project-specific pavements have defaults set but we can override here
     params = ["paver", "build", # task name
               "--masterapp", master_app,
               "--masterurl", master_url]
-    if 'all' in options.java4python:
+    if 'all' in options.data_analysis:
         params.append("-a")
 
-    os.chdir("Java4Python")
+    os.chdir("data_analysis")
     subprocess.call(params)
     os.chdir("..")
 
@@ -135,8 +135,10 @@ def allbooks(options):
     options.thinkcspy = opts
     options.pythonds = opts
     options.overview = opts
+    options.data_analysis = opts
 
     thinkcspy(options)
     pythonds(options)
+    data_analysis(options)
     overview(options)
 
