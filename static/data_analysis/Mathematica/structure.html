@@ -239,7 +239,10 @@
   <ul class="dropdown-menu localtoc"><ul>
 <li><a class="reference internal" href="#">Document Structure and Syntax</a><ul>
 <li><a class="reference internal" href="#basic-constructs">Basic Constructs</a></li>
-<li><a class="reference internal" href="#ordering-matters">Ordering Matters</a></li>
+<li><a class="reference internal" href="#order-matters">Order Matters</a></li>
+<li><a class="reference internal" href="#building-on-output">Building on Output</a></li>
+<li><a class="reference internal" href="#approximations">Approximations</a></li>
+<li><a class="reference internal" href="#evaluating-symbolic-expressions">Evaluating Symbolic Expressions</a></li>
 </ul>
 </li>
 </ul>
@@ -303,7 +306,9 @@ to essentially say &#8220;execute these lines&#8221;.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>We can easily create expressions of other variables and functions:</p>
+<p>We can at any point redefine variables (just do another assignment) or &#8220;clear&#8221; them, which will
+turn them into a symbol again, using the &#8220;Clear[x]&#8221; command, where &#8220;x&#8221; is the variable we want to clear.</p>
+<p>We can easily create functions and expressions of other variables:</p>
 <div class="highlight-python"><pre>f[x_] := x^2
 e = x ^ 2</pre>
 </div>
@@ -311,7 +316,8 @@ e = x ^ 2</pre>
 a variable &#8220;x&#8221;, e will be that value squared. But f is still the function that squares its argument, rather
 than giving the square of some pre-defined variable x. For example:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">f</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">g</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
 <span class="n">g</span>
 <span class="n">f</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
 <span class="n">f</span><span class="p">[</span><span class="n">y</span><span class="p">]</span>
@@ -320,7 +326,7 @@ than giving the square of some pre-defined variable x. For example:</p>
 </div>
 <p>if executed sequentially will output:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="mi">25</span>
-<span class="mi">3</span>
+<span class="n">x</span><span class="o">^</span><span class="mi">2</span>
 <span class="mi">9</span>
 <span class="mi">16</span>
 <span class="n">y</span><span class="o">^</span><span class="mi">2</span>
@@ -338,14 +344,15 @@ u[v[y]]</pre>
 </pre></div>
 </div>
 </div>
-<div class="section" id="ordering-matters">
-<h2>Ordering Matters<a class="headerlink" href="#ordering-matters" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="order-matters">
+<h2>Order Matters<a class="headerlink" href="#order-matters" title="Permalink to this headline">¶</a></h2>
 <p>Although <em>Mathematica</em> allows the user to execute lines in any order, this can lead to complications.
 For example:</p>
-<blockquote>
-<div>x = 5;
-x ^ 2
-x = 2;</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="n">x</span> <span class="o">^</span> <span class="mi">2</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+</pre></div>
+</div>
 <p>In the above example, if the statements are executed in the order above (as in most other
 programming languages), the value 25 would be printed. But, if we instead execute the last statement
 then the middle statement, the value 4 would be printed. As such, it is typically useful to not re-use
@@ -353,7 +360,61 @@ variables within a program, or at the very least to separate the blocks of code 
 always fix the value before using it.</p>
 <p>Fortunately, the <em>Mathematica</em> application shows you the order in which statements were run by indexing
 each line of code with &#8220;In[EXEC_NUM]&#8221; and each line of output with &#8220;Out[EXEC_NUM]&#8221;. That way, when
-using the language, you can backtrack what the values of variables/functions should be.</p>
+using the language, you can backtrack what the values of variables/output should be.</p>
+<p>However, in this textbook, unless otherwise noted, we will use the convention that all lines are executed
+and executed sequentially down the page.</p>
+</div>
+<div class="section" id="building-on-output">
+<h2>Building on Output<a class="headerlink" href="#building-on-output" title="Permalink to this headline">¶</a></h2>
+<p>One construct that can be prone to errors, but can also make things easier to write if you&#8217;re careful
+is similar to the &#8220;Ans&#8221; feature on many Texas Instruments graphing calculators, which allows you to
+load previous results. In <em>Mathematica</em>, this is done with the &#8220;%&#8221; operator:</p>
+<div class="highlight-python"><pre>5
+%^2
+%%^3
+%%%^3</pre>
+</div>
+<p>This would print:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="mi">5</span>
+<span class="mi">25</span>
+<span class="mi">125</span>
+<span class="mi">625</span>
+</pre></div>
+</div>
+<p>You can also use <span class="math">\(\%n\)</span>, which gives the output of the <span class="math">\(n^\textrm{th}\)</span> execution, which is
+even more prone to errors.</p>
+</div>
+<div class="section" id="approximations">
+<h2>Approximations<a class="headerlink" href="#approximations" title="Permalink to this headline">¶</a></h2>
+<p>We will look at making physical approximations and solving problems numerically later on, but one useful
+function to know about is the &#8220;N&#8221; function. The canonical example of the use of the N function is this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">pi_approx</span> <span class="o">=</span> <span class="n">N</span><span class="p">[</span><span class="n">Pi</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>which will take the built-in value <span class="math">\(\textrm{Pi}=\pi\)</span> with 8 digit precision and assigns that value
+to &#8220;pi_approx&#8221;. It is a powerful tool to get down to actual values instead of more abstract expressions.</p>
+</div>
+<div class="section" id="evaluating-symbolic-expressions">
+<h2>Evaluating Symbolic Expressions<a class="headerlink" href="#evaluating-symbolic-expressions" title="Permalink to this headline">¶</a></h2>
+<p>When we have an expression, such as &#8220;x^2&#8221;, we need not have &#8220;x&#8221; defined (as seen above) for <em>Mathematica</em>
+to run. In fact, <em>Mathematica</em> gives us considerable flexibility if we choose not to define &#8220;x&#8221;, and
+instead use the &#8220;replacement&#8221; operator instead:</p>
+<div class="highlight-python"><pre>g = x^2 + y
+g/.x-&gt;5
+g/.x-&gt;5/.y-&gt;2
+g/.{x-&gt;5, y-&gt;2}</pre>
+</div>
+<p>would output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span>
+<span class="mi">25</span> <span class="o">+</span> <span class="n">y</span>
+<span class="mi">27</span>
+<span class="mi">27</span>
+</pre></div>
+</div>
+<p>&#8220;/.&#8221; is telling mathematica that you want to apply a particular set of values to variables in
+the expression. The &#8220;-&gt;&#8221; operator is stating that the variable on the left hand side should take the value
+on the right hand side. You can apply many such substitutions one after another (&#8220;g/.x-&gt;5/.y-&gt;2&#8221;) or
+apply many at once using curly braces (&#8220;g/.{x-&gt;5, y-&gt;2}&#8221;).</p>
 </div>
 </div>
 
