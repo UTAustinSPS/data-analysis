@@ -286,7 +286,8 @@
   
   <div class="section" id="mathematics-in-latex">
 <h1>Mathematics in LaTeX<a class="headerlink" href="#mathematics-in-latex" title="Permalink to this headline">¶</a></h1>
-<p>LaTeX has a math mode designed to format mathematics. It can be invoked on the same line as text by enclosing the mathematics in dollar signs: $your math here$.</p>
+<p><span class="math">\(\LaTeX\)</span> has a math mode designed to format mathematics. It can be invoked on the
+same line as text by enclosing the mathematics in dollar signs: <tt class="code docutils literal"><span class="pre">$your</span> <span class="pre">math</span> <span class="pre">here$</span></tt>.</p>
 <div class="highlight-python"><pre>\documentclass{article}
 \begin{document}
 The positive real root of $x^4-16=0$ is $x=2$.
@@ -295,18 +296,22 @@ The positive real root of $x^4-16=0$ is $x=2$.
 <p>The positive real root of <span class="math">\(x^4-16=0\)</span> is <span class="math">\(x=2\)</span>.</p>
 <div class="section" id="basic-typesetting">
 <h2>Basic Typesetting<a class="headerlink" href="#basic-typesetting" title="Permalink to this headline">¶</a></h2>
-<p>The most common typesetting needs in mathematics is the superscript and the subscript. These can be accessed using the caret &#8216;^&#8217; and the underscore &#8216;_&#8217;.</p>
+<p>The most common typesetting needs in mathematics is the superscript and the subscript.
+These can be accessed using the caret <tt class="code docutils literal"><span class="pre">^</span></tt> and the underscore <tt class="code docutils literal"><span class="pre">_</span></tt>.</p>
 <div class="highlight-python"><pre>Consider the sequence $(x_i)$ where $x_i = 2^x$</pre>
 </div>
 <p>These only work for a single character, so</p>
 <div class="highlight-python"><pre>A gigabyte contains $2^30$ bytes. Let $x_ij=x_ji$.</pre>
 </div>
 <p>actually returns: A gigabyte contains <span class="math">\(2^30\)</span> bytes. Let <span class="math">\(x_ij=x_ji\)</span></p>
-<p>To tell LaTeX that more than one character should be typeset as a superscript or subscript, enclose the desired text in braces.</p>
+<p>To tell <span class="math">\(\LaTeX\)</span> that more than one character should be typeset as a superscript
+or subscript, enclose the desired text in braces.</p>
 <div class="highlight-python"><pre>A gigabyte contains $2^{30}$ bytes. Consider a matrix $A$ where $a_{ij}=a_{ji}$.</pre>
 </div>
-<p>This gives the expected result of: A gigabyte contains <span class="math">\(2^{30}\)</span> bytes. Let <span class="math">\(x_{ij}=x_{ji}\)</span>.</p>
-<p>There is a native equation environment, displaymath, which can be invoked by encasing math inside double dollar signs or \ [, and \ ].</p>
+<p>This gives the expected result of: A gigabyte contains <span class="math">\(2^{30}\)</span> bytes.
+Let <span class="math">\(x_{ij}=x_{ji}\)</span>.</p>
+<p>There is a native equation environment, displaymath, which can be invoked by encasing
+math inside double dollar signs or <tt class="code docutils literal"><span class="pre">\[</span></tt>, and <tt class="code docutils literal"><span class="pre">\]</span></tt>.</p>
 <div class="highlight-python"><pre>\documentclass{article}
 \begin{document}
 $$e=\sum_{i=0}^\infty \frac{1}{i!}$$
@@ -315,7 +320,11 @@ $$e=\sum_{i=0}^\infty \frac{1}{i!}$$
 \]
 \end{document}</pre>
 </div>
-<p>Both invoke the displaymath environment, and so are nearly identical. The only difference is that <span class="math">\(\$\$\)</span> math <span class="math">\(\$\$\)</span> makes a call to TeX and \[stuff \ <span class="math">\(]\)</span> makes a call to LaTeX. It is not recommended to use these environments except when minimal control is needed. The environments provided by the amsmath package are much more robust and flexible.</p>
+<p>Both invoke the displaymath environment, and so are nearly identical. The only
+difference is that <tt class="code docutils literal"><span class="pre">\$\$</span></tt> math <tt class="code docutils literal"><span class="pre">\$\$</span></tt> makes a call to <span class="math">\(\TeX\)</span> and
+<tt class="code docutils literal"><span class="pre">\[`stuff</span> <span class="pre">:code:</span></tt>]` makes a call to <span class="math">\(\LaTeX\)</span>. It is not recommended to
+use these environments except when minimal control is needed. The environments provided
+by the amsmath package are much more robust and flexible.</p>
 </div>
 <div class="section" id="advanced-mathematics">
 <h2>Advanced Mathematics<a class="headerlink" href="#advanced-mathematics" title="Permalink to this headline">¶</a></h2>

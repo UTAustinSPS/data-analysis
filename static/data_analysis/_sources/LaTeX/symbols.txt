@@ -1,7 +1,8 @@
 Symbols
 =======
 
-This is not intended to be an exhaustive list of `LaTeX symbols`_, just the ones which are most likely to be useful. Nearly all of these symbols must be typed while in math mode.
+This is not intended to be an exhaustive list of `LaTeX symbols`_, just the ones which
+are most likely to be useful. Nearly all of these symbols must be typed while in math mode.
 
 .. _LaTeX symbols: http://www.tex.ac.uk/tex-archive/info/symbols/comprehensive/symbols-a4.pdf
 
@@ -12,7 +13,9 @@ These symbols can be accessed without any special commands:
    + - = ! / ( ) [ ] < > | ' : < >
 
 
-Beyond these, the majority of symbols are produced with commands. Commands start with \\ and tell LaTeX to replace the command with the symbol which the command represents. For example,
+Beyond these, the majority of symbols are produced with commands. Commands start with 
+``\`` and tell :math:`\LaTeX` to replace the command with the symbol which the
+command represents. For example,
 
 ::
    
@@ -21,7 +24,13 @@ Beyond these, the majority of symbols are produced with commands. Commands start
    
 
 
-produces :math:`(\forall \epsilon>0)(\exists N:n>N\implies d(p_n,p)<\epsilon)`. Most Greek letters have a command specifically for them. To differentiate between capital and lowercase, capitalize the initial letter. For example, \\sigma produces :math:`\sigma` and \\Sigma produces :math:`\Sigma`. Some capital letters such as Alpha, Beta, and Kappa do not have their own symbol - since they are identical to A, B, and K respectively they may be accessed by just typing the letter. Lowercase phi has two forms, \\phi which yields :math:`\phi` and \\varphi which yields :math:`\varphi`. The same pattern follows for epsilon, theta, pi, rho, and sigma.
+produces :math:`(\forall \epsilon>0)(\exists N:n>N\implies d(p_n,p)<\epsilon)`. Most
+Greek letters have a command specifically for them. To differentiate between capital and lowercase, capitalize the initial letter. For example, :code:`\sigma` produces
+:math:`\sigma` and :code:`\Sigma` produces :math:`\Sigma`. Some capital letters such
+as Alpha, Beta, and Kappa do not have their own symbol - since they are identical to
+A, B, and K respectively they may be accessed by just typing the letter. Lowercase phi
+has two forms, :code:`\phi` which yields :math:`\phi` and :code:`\varphi` which yields
+:math:`\varphi`. The same pattern follows for epsilon, theta, pi, rho, and sigma.
 
 
 .. table:: **Table 1: Equalities, Inequalities, and Sets**
@@ -37,7 +46,11 @@ produces :math:`(\forall \epsilon>0)(\exists N:n>N\implies d(p_n,p)<\epsilon)`. 
     \\parallel  :math:`\parallel` \\perp        :math:`\perp`     
     =========== ================= ============= ================= ============= ================= ============= =================
 
-Many of these may be inverted with the \\not command. If used before many commands, LaTeX renders the negated relation. For example, \\not\\subset produces :math:`\not\subset` and \\not\\sim produces :math:`\not\sim`. If a symbol does not have a negated version, then LaTeX will simply superimpose the not symbol, :math:`\not\;` on it. So \\not a will become :math:`\not a`.
+Many of these may be inverted with the \\not command. If used before many commands,
+:math:`\LaTeX` renders the negated relation. For example, :code:`\not\subset` produces
+:math:`\not\subset` and :code:`\not\sim` produces :math:`\not\sim`. If a symbol does
+not have a negated version, then :math:`\LaTeX` will simply superimpose the not symbol,
+:math:`\not\;` on it. So :code:`\not a` will become :math:`\not a`.
 
 
 .. table:: **Table 2: Logic**
@@ -54,7 +67,11 @@ Many of these may be inverted with the \\not command. If used before many comman
     =================== ============= ======================= ================
 
 
-Note that it is preferred to use the \\Rightarrow (:math:`\Rightarrow`) for "implies" and \\Leftrightarrow (:math:`\Leftrightarrow`) for "if and only if." If it feels more natural (and easier) to type \\implies and \\iff, then including these two lines in the preamble  will automatically replace all instances of \\implies and \\iff with their preferred counterparts.
+Note that it is preferred to use the :code:`\Rightarrow` (:math:`\Rightarrow`) for
+"implies" and :code:`\Leftrightarrow` (:math:`\Leftrightarrow`) for "if and only if."
+If it feels more natural (and easier) to type :code:`\implies` and :code:`\iff`, then
+including these two lines in the preamble  will automatically replace all instances of
+:code:`\implies` and :code:`\iff` with their preferred counterparts.
 
 ::
 
@@ -62,7 +79,7 @@ Note that it is preferred to use the \\Rightarrow (:math:`\Rightarrow`) for "imp
      \renewcommand{\iff}{\Leftrightarrow}
 
 
-The explanation for the above code can be found on the \\newcommand page.
+The explanation for the above code can be found on the :code:`\newcommand` page.
 
 
 .. table:: **Table 3: Operators**
@@ -100,9 +117,9 @@ The explanation for the above code can be found on the \\newcommand page.
     ============= ==================== =============== ====================== ================= ========================= ============== =====================
 
 
-Many arrow commands have a counterpart which is referenced by capitalizing the first letter. For example, \\uparrow produces :math:`\uparrow` and \\Uparrow produces :math:`\Uparrow`
-
-
+Many arrow commands have a counterpart which is referenced by capitalizing the first letter.
+For example, :code:`\uparrow` produces :math:`\uparrow` and :code:`\Uparrow` produces
+:math:`\Uparrow`
 
 Miscellaneous math symbols.
 
@@ -116,7 +133,8 @@ Miscellaneous math symbols.
     \\nabla     :math:`\nabla`    \\Delta       :math:`\Delta`    \\partial     :math:`\partial`  
     =========== ================= ============= ================= ============= ================= ============= =================
 
-Some symbols are natively used to perform commands, and so need to be referenced with a specific character sequence.
+Some symbols are natively used to perform commands, and so need to be referenced
+with a specific character sequence.
 
 .. table:: **Table 8: Command Symbols**
 
@@ -127,7 +145,8 @@ Some symbols are natively used to perform commands, and so need to be referenced
     =========== ================= ============= ================= ============= ================= ============= =================
 
 
-In some cases \\$ will not work, in which case it can be replaced with \textdollar.
+In some cases :code:`\$` will not work, in which case it can be replaced with
+:code:`\textdollar`.
 
 
 

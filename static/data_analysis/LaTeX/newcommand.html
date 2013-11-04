@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>New Commands (\newcommand) &mdash; Introduction to Data Analysis for Physics</title>
+    <title>New Commands &mdash; Introduction to Data Analysis for Physics</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -237,7 +237,7 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">New Commands (\newcommand)</a><ul>
+<li><a class="reference internal" href="#">New Commands</a><ul>
 <li><a class="reference internal" href="#zero-argument-commands">Zero Argument Commands</a></li>
 <li><a class="reference internal" href="#argument-commands">Argument Commands</a></li>
 <li><a class="reference internal" href="#optional-argument-commands">Optional Argument Commands</a></li>
@@ -286,9 +286,10 @@
 
 <div class="container">
   
-  <div class="section" id="new-commands-newcommand">
-<h1>New Commands (\newcommand)<a class="headerlink" href="#new-commands-newcommand" title="Permalink to this headline">¶</a></h1>
-<p>LaTeX allows users to specify new commands in order to make typing faster and easier to read. Examine the following blocks of code.</p>
+  <div class="section" id="new-commands">
+<h1>New Commands<a class="headerlink" href="#new-commands" title="Permalink to this headline">¶</a></h1>
+<p><span class="math">\(\LaTeX\)</span> allows users to specify new commands in order to make typing faster and
+easier to read. Examine the following blocks of code.</p>
 <div class="highlight-python"><pre>A Hermitian operator $Q$ has real eigenvalues.
 \begin{align}
 \left. Q \middle| f \right&gt; = \left. f \middle| f \right&gt; \\
@@ -300,7 +301,7 @@
 </div>
 <p>This produces the following output.</p>
 <img alt="Sample" src="../_images/hermitian.jpg" />
-<p>By using \newcommand, the above code could be reduced to just the following:</p>
+<p>By using <tt class="code docutils literal"><span class="pre">\newcommand</span></tt>, the above code could be reduced to just the following:</p>
 <div class="highlight-python"><pre>A Hermitian operator $Q$ has real eigenvalues.
 \begin{align}
 \ket[Q]{f} = \ket[f]{f} \\
@@ -310,43 +311,67 @@
 \implies q_f \in \R
 \end{align}</pre>
 </div>
-<p>The format of \newcommand is</p>
+<p>The format of <tt class="code docutils literal"><span class="pre">\newcommand</span></tt> is</p>
 <div class="highlight-python"><pre>\newcommand{cmd}[args]{def}</pre>
 </div>
-<p>The cmd represents a command name beginning with a &#8216;\&#8217;. The command must be unique, and cannot begin with &#8216;end&#8217;. The arg represents an optional argument which can take any value from 1 to 9, so a command may take up to 9 arguments. The def represents the text stubstituted.</p>
+<p>The cmd represents a command name beginning with a <tt class="code docutils literal"><span class="pre">\`.</span> <span class="pre">The</span> <span class="pre">command</span> <span class="pre">must</span> <span class="pre">be</span> <span class="pre">unique,</span>
+<span class="pre">and</span> <span class="pre">cannot</span> <span class="pre">begin</span> <span class="pre">with</span> <span class="pre">:code:</span></tt>end`. The arg represents an optional argument which can
+take any value from 1 to 9, so a command may take up to 9 arguments. The def
+represents the text substituted.</p>
 <div class="section" id="zero-argument-commands">
 <h2>Zero Argument Commands<a class="headerlink" href="#zero-argument-commands" title="Permalink to this headline">¶</a></h2>
-<p>Ofttimes, it is easier to reduce a common symbol to a simple sequence than the full command. For real analysis, the symbols <span class="math">\(\mathbb{R}\)</span> and <cite>mathbb{Z}</cite> are common and it can be a chore to type (and remember) the commands \mathbb{R} and \mathbb{Z}. Since \R and \Z are not natively commands, the lengthy symbol calls can be assigned to these much shorter commands if the following two lines are included in the preamble.</p>
+<p>Ofttimes, it is easier to reduce a common symbol to a simple sequence than the full
+command. For real analysis, the symbols <span class="math">\(\mathbb{R}\)</span> and <cite>mathbb{Z}</cite> are common
+and it can be a chore to type (and remember) the commands <tt class="code docutils literal"><span class="pre">\mathbb{R}</span></tt> and
+<tt class="code docutils literal"><span class="pre">\mathbb{Z}</span></tt>. Since <tt class="code docutils literal"><span class="pre">\R</span></tt> and <tt class="code docutils literal"><span class="pre">\Z</span></tt> are not natively commands, the
+lengthy symbol calls can be assigned to these much shorter commands if the following
+two lines are included in the preamble.</p>
 <div class="highlight-python"><pre>\newcommand{\R}{\mathbb{R}}
 \newcommand{\Z}{\mathbb{Z}}</pre>
 </div>
-<p>Now, anywhere in the document, \R will be translated into <span class="math">\(\mathbb{R}\)</span> and \Z will be translated into <span class="math">\(\mathbb{Z}\)</span>. A zero argument command can also be used for much longer items, such as the 3x3 identity matrix.</p>
+<p>Now, anywhere in the document, <tt class="code docutils literal"><span class="pre">\R</span></tt> will be translated into <span class="math">\(\mathbb{R}\)</span> and
+<tt class="code docutils literal"><span class="pre">\Z</span></tt> will be translated into <span class="math">\(\mathbb{Z}\)</span>. A zero argument command can also
+be used for much longer items, such as the 3x3 identity matrix.</p>
 <div class="highlight-python"><pre>\newcommand{\imat}{\left(\begin{matrix}1&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;0&amp;1\end{matrix}\right)}</pre>
 </div>
 </div>
 <div class="section" id="argument-commands">
 <h2>Argument Commands<a class="headerlink" href="#argument-commands" title="Permalink to this headline">¶</a></h2>
-<p>Besides making certain symbols easier to access, new commands can be used to make formatting easier. It can be a pain to type \left( and \right) every time it is desired to enclose something in parenthesis. Also, if one of the enclosures is left out then LaTeX will thrown an error. The below line creates a command identical to the standard \frac command, except that it automatically places parenthesis around it.</p>
+<p>Besides making certain symbols easier to access, new commands can be used to make formatting
+easier. It can be a pain to type <tt class="code docutils literal"><span class="pre">\left(</span></tt> and <tt class="code docutils literal"><span class="pre">\right)</span></tt> every time it is
+desired to enclose something in parenthesis. Also, if one of the enclosures is left out then
+<span class="math">\(\LaTeX\)</span> will thrown an error. The below line creates a command identical to the
+standard <tt class="code docutils literal"><span class="pre">\frac</span></tt> command, except that it automatically places parenthesis around it.</p>
 <div class="highlight-python"><pre>\newcommand{\efrac}[2]{\left(\frac{#1}{#2}\right)}</pre>
 </div>
 <p>With this command, the following two lines become identical.</p>
 <div class="highlight-python"><pre>\left(\frac{1}{x^2+1}\right)^2
 \efrac{1}{x^2+1}^2</pre>
 </div>
-<p>The new line is 12 characters shorter, and is easier to deal with than using enclosures the standard way. Also, to remove the enclosing parentheses, it is easier to change \efrac to \frac rather than search through a more complicated expression to find the matching left and right enclosures.</p>
+<p>The new line is 12 characters shorter, and is easier to deal with than using enclosures
+the standard way. Also, to remove the enclosing parentheses, it is easier to change
+<tt class="code docutils literal"><span class="pre">\efrac</span></tt> to <tt class="code docutils literal"><span class="pre">\frac</span></tt> rather than search through a more complicated expression
+to find the matching left and right enclosures.</p>
 </div>
 <div class="section" id="optional-argument-commands">
 <h2>Optional Argument Commands<a class="headerlink" href="#optional-argument-commands" title="Permalink to this headline">¶</a></h2>
-<p>Sometimes there are two very related desired commands, with the only difference being that one requires an additional argument. For example, partial derivatives. Normally, typing out partial derivatives looks like this:</p>
+<p>Sometimes there are two very related desired commands, with the only difference
+being that one requires an additional argument. For example, partial derivatives.
+Normally, typing out partial derivatives looks like this:</p>
 <div class="highlight-python"><pre>\frac{\partial x}{\partial y}
 \frac{\partial^2 x}{\partial y^2}</pre>
 </div>
-<p>One new command can make both of these expressions easier to type, even though one needs an exponent.</p>
+<p>One new command can make both of these expressions easier to type, even though one
+needs an exponent.</p>
 <div class="highlight-python"><pre>\newcommand{\parti}[3][{{}}]{\frac{\partial^#1 #2}{\partial #3^#1}}
 \parti{x}{y}
 \parti[2]{x}{y}</pre>
 </div>
-<p>The optional argument is specified right after the number of arguments. Since no exponent is displayed for the first partial derivative, the optional argument for this command is [{{}}]. The two sets of curly braces tell LaTeX that the argument is empty. If the second partial derivative was desired to be the default, then [{{}}] would be replaced with [2].</p>
+<p>The optional argument is specified right after the number of arguments. Since no
+exponent is displayed for the first partial derivative, the optional argument for
+this command is [{{}}]. The two sets of curly braces tell <span class="math">\(\LaTeX\)</span> that the
+argument is empty. If the second partial derivative was desired to be the default,
+then [{{}}] would be replaced with [2].</p>
 <p>Another example would be the ket for quantum physics.</p>
 <div class="highlight-python"><pre>\newcommmand{\ket}[2][{{}}]{\left.#1\middle|#2\right&gt;</pre>
 </div>
@@ -361,7 +386,7 @@
 <div class="highlight-python"><pre>\newcommand{\term}[2][x]{\ifnumless{1}{#2}{\frac{1}{#2!}(x-x')^{#2}f^{(#2)}}{\ifnumless{0}{#2}{(x-x')f^{(1)}(#1)}{f(#1)}}}
 \newcommand{\taylor}[1][4]{f(x)\ifnumless{0}{#1}{\foreach\x in {1,...,#1}{+\term{\x}}}{}}</pre>
 </div>
-<p>This produces the \taylor command, which writes out the taylor polynomial of an arbitrary order. So the zeroth through fourth order taylor expansions about a point can be written with one line:</p>
+<p>This produces the <tt class="code docutils literal"><span class="pre">\taylor</span></tt> command, which writes out the Taylor polynomial of an arbitrary order. So the zeroth through fourth order taylor expansions about a point can be written with one line:</p>
 <div class="highlight-python"><pre>\foreach\x in {0,...,4}{\begin{equation}\taylor[\x]\end{equation}}</pre>
 </div>
 </div>

@@ -40,8 +40,7 @@ images, and other special features. A simple document looks like the following.
    \end{abstract}
    \section{This is a section}
       \begin{subsection}{This is a subsection}
-         Here is my paragraph.
-         Isn't it fun.
+         Here is text
       \end{subsection}
    \end{document}
 
