@@ -21,6 +21,7 @@ Introduction
 
    Mathematica/mathematica.rst
    Mathematica/structure.rst
+   Mathematica/lists.rst
 
 The LaTeXtbook
 ::::::::::::::
@@ -55,20 +56,3 @@ The LaTeXtbook
    |siunitx
    |tikz
    Useful External Webpages: TeXexchange, wikibooks, 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

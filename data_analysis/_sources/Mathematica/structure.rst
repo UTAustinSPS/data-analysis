@@ -23,7 +23,8 @@ being read as "x is given the value 5". Most statements in *Mathematica* produce
 	x = 5;
 
 We can at any point redefine variables (just do another assignment) or "clear" them, which will
-turn them into a symbol again, using the "Clear[x]" command, where "x" is the variable we want to clear.
+turn them into a symbol again, using the :code:`Clear[x]` command, where :code:`x` is the 
+variable we want to clear.
 
 We can easily create functions and expressions of other variables:
 
@@ -58,7 +59,7 @@ if executed sequentially will output:
 	9
 
 One handy part of *Mathematica* is that it supports the use of variables as input to functions (as seen with
-f[y] above). In that way, it can also handle function composition:
+:code:`f[y]` above). In that way, it can also handle function composition:
 
 ::
 
@@ -90,7 +91,7 @@ variables within a program, or at the very least to separate the blocks of code 
 always fix the value before using it.
 
 Fortunately, the *Mathematica* application shows you the order in which statements were run by indexing
-each line of code with "In[EXEC_NUM]" and each line of output with "Out[EXEC_NUM]". That way, when
+each line of code with :code:`In[EXEC_NUM]` and each line of output with :code:`Out[EXEC_NUM]`. That way, when
 using the language, you can backtrack what the values of variables/output should be.
 
 However, in this textbook, unless otherwise noted, we will use the convention that all lines are executed
@@ -100,7 +101,7 @@ Building on Output
 ------------------
 One construct that can be prone to errors, but can also make things easier to write if you're careful
 is similar to the "Ans" feature on many Texas Instruments graphing calculators, which allows you to
-load previous results. In *Mathematica*, this is done with the "%" operator:
+load previous results. In *Mathematica*, this is done with the :code:`%` operator:
 
 ::
 
@@ -118,13 +119,13 @@ This would print:
 	125
 	625
 
-You can also use :math:`\%n`, which gives the output of the :math:`n^\textrm{th}` execution, which is
+You can also use :code:`\%n`, which gives the output of the :math:`n^\textrm{th}` execution, which is
 even more prone to errors.
 
 Approximations
 --------------
 We will look at making physical approximations and solving problems numerically later on, but one useful
-function to know about is the "N" function. The canonical example of the use of the N function is this:
+function to know about is the :code:`N` function. The canonical example of the use of the N function is this:
 
 ::
 
@@ -135,8 +136,8 @@ to "pi_approx". It is a powerful tool to get down to actual values instead of mo
 
 Evaluating Symbolic Expressions
 -------------------------------
-When we have an expression, such as "x^2", we need not have "x" defined (as seen above) for *Mathematica*
-to run. In fact, *Mathematica* gives us considerable flexibility if we choose not to define "x", and
+When we have an expression, such as :code:`x^2`, we need not have :code:`x` defined (as seen above) for *Mathematica*
+to run. In fact, *Mathematica* gives us considerable flexibility if we choose not to define :code:`x`, and
 instead use the "replacement" operator instead:
 
 ::
@@ -155,7 +156,8 @@ would output:
 	27
 	27
 
-"/." is telling mathematica that you want to apply a particular set of values to variables in 
-the expression. The "->" operator is stating that the variable on the left hand side should take the value
-on the right hand side. You can apply many such substitutions one after another ("g/.x->5/.y->2") or
-apply many at once using curly braces ("g/.{x->5, y->2}").
+:code:`/.` is telling mathematica that you want to apply a particular set of values to variables in 
+the expression. The :code:`->` operator is stating that the variable on the left hand side should take the value
+on the right hand side. You can apply many such substitutions one after another (
+:code:`g/.x->5/.y->2`) or
+apply many at once using curly braces (:code:`g/.{x->5, y->2}`).
