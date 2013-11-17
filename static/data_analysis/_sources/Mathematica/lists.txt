@@ -44,6 +44,7 @@ We can perform operations on lists as well, many of which can be extremely power
 
 prints
 ::
+	
 	{1, 4, 9, 16, 25}
 	1
 	15
