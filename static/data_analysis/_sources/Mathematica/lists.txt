@@ -44,7 +44,11 @@ We can perform operations on lists as well, many of which can be extremely power
 
 prints
 ::
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> mathematica
 	{1, 4, 9, 16, 25}
 	1
 	15
@@ -70,6 +74,7 @@ Tables
 ------
 Tables are just lists created by the :code:`Table` command which is easy to use and effective
 for producing sequences:
+
 ::
 
 	Table[i,{i,1,10}]
@@ -79,6 +84,7 @@ for producing sequences:
 	Table[list[[i]]^2, {i, Length[list]}]
 
 is
+
 ::
 
 	{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
@@ -95,7 +101,7 @@ different concepts and structures in *Mathematica* can be combined.
 
 Matrices
 --------
-Just as tables are actually just lists, so are matrices:
+Just as tables are actually just lists, lists are in fact matrices:
 
 ::
 
@@ -105,7 +111,7 @@ is the matrix :math:`\left(\begin{array}{ccc} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 
 
 ::
 
-	{1, 2, 3}
+	{{1, 2, 3}}
 
 is the row vector :math:`\left(\begin{array}{ccc}1 & 2 & 3\end{array}\right)` and
 
@@ -114,3 +120,41 @@ is the row vector :math:`\left(\begin{array}{ccc}1 & 2 & 3\end{array}\right)` an
 	{{1}, {2}, {3}}
 
 is the column vector :math:`\left(\begin{array}{c}1\\2\\3\end{array}\right)`.
+
+We have many operations on matrices at our disposal too. For example:
+
+::
+
+	m = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+	Transpose[m]
+	Det[m]
+	m . m
+	MatrixPower[m, 2]
+	Eigenvalues[m]
+
+is
+
+::
+
+	{{1, 4, 7}, {2, 5, 8}, {3, 6, 9}}
+	0
+	{{30, 36, 42}, {66, 81, 96}, {102, 126, 150}}
+	{{30, 36, 42}, {66, 81, 96}, {102, 126, 150}}
+	{3/2 (5 + Sqrt[33]), 3/2 (5 - Sqrt[33]), 0}
+
+where :code:`Transpose[m]` computes the matrix transpose :math:`m^\intercal`
+(:code:`ConjugateTranspose[m]` takes the transpose then converts each value
+to its complex conjugate, giving :math:`m^\dagger`), :code:`Det[m]` computes the
+determinant :math:`|m|`, :code:`m . m` computes the matrix product
+(generally, when :math:`A` has dimensions :math:`m\times{n}`, :math:`B` has dimensions
+:math:`n\times{p}`, and :math:`AB=A\times{B}` has dimensions :math:`m\times{p}`, such that
+:math:`(AB)_{i,j}=\sum_{k=1}^{n}A_{i,k}B_{k,j}`), :code:`MatrixPower[m, n]` computes
+:math:`m^n=m\times m\times m\times \ldots \times m`, and :code:`EigenValues[m]`
+gives the eigenvalues of the matrix :math:`m`.
+
+.. seealso:: Eigenvalues
+	
+	If you keep hearing the term "eigenvalues" or "eigenvectors" around the physics department
+	but aren't sure what they are, there's a quick tutorial in the appendix about it.
+	You might need to brush up on matrices a little beforehand. The tutorial
+	can be found `here <../Math/eigenvalues.html>`_).

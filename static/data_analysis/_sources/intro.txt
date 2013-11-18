@@ -7,6 +7,9 @@ Introduction to the Introduction
 Welcome! This is a course designed to teach the basics of the :math:`\LaTeX` and *Mathematica* programming
 languages in order to better prepare you for UT Austin's PHY 353L (Modern Physics Laboratory) course.
 
+This document is maintained by the UT Austin chapters of the Society of Physics Students and Sigma Pi Sigma,
+but was initially created for the Spring 2014 offering of PHY 110C by Evan Ott and Will Beason.
+
 :math:`\LaTeX` is typically used as a "markup" language, which is to say that it takes the place of other
 document formatters like *Microsoft Word* in order to create a presentable document in a fairly standard way.
 Although *Word* is now competitive about cross-platform stability, :math:`\LaTeX` is the standard for most physics journals.
