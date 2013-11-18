@@ -3,6 +3,12 @@
 Introduction to Data Analysis for Physics
 =========================================
 
+
+.. sidebar:: Authors
+
+   The original authors of this document are Evan Ott and Will Beason.
+
+
 .. Here is were you specify the content and order of your new book.
 
 Introduction
@@ -37,6 +43,14 @@ The LaTeXtbook
    LaTeX/symbols.rst
    LaTeX/newcommand.rst
    LaTeX/include.rst
+
+Appendix
+::::::::
+
+.. toctree::
+   :maxdepth: 1
+
+   Math/eigenvalues.rst
 
 ..
    To Do for LaTeX (feel free to add):
