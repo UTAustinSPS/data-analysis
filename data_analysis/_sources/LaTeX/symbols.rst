@@ -89,19 +89,16 @@ The explanation for the above code can be found on the \\newcommand page.
     \\ldots         :math:`\ldots`         \\cdots           :math:`\cdots`           \\vdots             :math:`\vdots`              \\ddots          :math:`\ddots`
     =============== ====================== ================= ======================== =================== =========================== ================ =======================
 
+Many arrow commands have a counterpart which is referenced by capitalizing the first letter. For example, \\uparrow produces :math:`\uparrow` and \\Uparrow produces :math:`\Uparrow`.
 
 .. table:: **Table 5: Math Mode Accents**
     
-    ============= ==================== =============== ====================== ================= ========================= ============== =====================
-    **Command**   **Symbol**           **Command**     **Symbol**             **Command**       **Symbol**                **Command**    **Symbol**         
-    ============= ==================== =============== ====================== ================= ========================= ============== =====================
-    \\hat{a}      :math:`\hat{a}`      \\check{a}      :math:`\check{a}`      \\dot{a}          :math:`\dot{a}`           \\ddot{a}      :math:`\ddot{a}`
+    ============= ==================== =============== ====================== ================= ========================= ============ =====================
+    **Command**   **Symbol**           **Command**     **Symbol**             **Command**       **Symbol**                **Command**  **Symbol**         
+    ============= ==================== =============== ====================== ================= ========================= ============ =====================
+    \\hat{a}      :math:`\hat{a}`      \\check{a}      :math:`\check{a}`      \\dot{a}          :math:`\dot{a}`           \\ddot{a}    :math:`\ddot{a}`
     \\bar{a}      :math:`\bar{a}`      \\vec{a}        :math:`\vec{a}`        \\tilde{a}        :math:`\tilde{a}`         
-    ============= ==================== =============== ====================== ================= ========================= ============== =====================
-
-
-Many arrow commands have a counterpart which is referenced by capitalizing the first letter. For example, \\uparrow produces :math:`\uparrow` and \\Uparrow produces :math:`\Uparrow`
-
+    ============= ==================== =============== ====================== ================= ========================= ============ =====================
 
 
 Miscellaneous math symbols.
