@@ -74,7 +74,8 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
-    <link rel="prev" title="New Commands (\newcommand)" href="newcommand.html" />
+    <link rel="next" title="Eigenvalue Problems" href="../Math/eigenvalues.html" />
+    <link rel="prev" title="New Commands" href="newcommand.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -238,7 +239,7 @@
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
 <li><a class="reference internal" href="#">Inputting and Including External Files</a><ul>
-<li><a class="reference internal" href="#differences-between-include-and-input">Differences between \include and \input</a></li>
+<li><a class="reference internal" href="#differences-between-include-and-input">Differences between include and input</a></li>
 <li><a class="reference internal" href="#how-to-use">How to Use</a></li>
 <li><a class="reference internal" href="#common-problems">Common Problems</a></li>
 </ul>
@@ -250,14 +251,18 @@
         
         
           
-  <li id="relations-prev" title="Previous Chapter - New Commands (\newcommand)" data-toggle="tooltip">
+  <li id="relations-prev" title="Previous Chapter - New Commands" data-toggle="tooltip">
     <a href="newcommand.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-    <li class="divider-vertical"></li>
-  
+  <li id="relations-next" title='Next Chapter - Eigenvalue Problems' data-toggle="tooltip" >
+    <a href="../Math/eigenvalues.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -283,31 +288,46 @@
   
   <div class="section" id="inputting-and-including-external-files">
 <h1>Inputting and Including External Files<a class="headerlink" href="#inputting-and-including-external-files" title="Permalink to this headline">¶</a></h1>
-<p>There are two similar commands to tell LaTeX to read a local external file, \input and \include.</p>
-<p>Both tell LaTeX to read and typeset everything in an external document before continuing. They can be used to remove clutter from documents and streamline the process of creating more documents, acting as easy to make and edit pseudo-packages.</p>
+<p>There are two similar commands to tell <span class="math">\(\LaTeX\)</span> to read a local external file, <tt class="docutils literal"><span class="pre">\input</span></tt> and <tt class="docutils literal"><span class="pre">\include</span></tt>.</p>
+<p>Both tell <span class="math">\(\LaTeX\)</span> to read and typeset everything in an external document before continuing. They can be used to remove clutter from documents and streamline the process of creating more documents, acting as easy to make and edit pseudo-packages.</p>
 <div class="section" id="differences-between-include-and-input">
-<h2>Differences between \include and \input<a class="headerlink" href="#differences-between-include-and-input" title="Permalink to this headline">¶</a></h2>
-<p>There are a few main differences between \include and \input.</p>
-<p>When told to \input a file, LaTeX acts as if the text from the external file was copied and pasted into the current document, but when told to \include the file, LaTeX will start a new page before and after the external content. As such, \include cannot appear in the preamble since the document has not started yet, but \include tells LaTeX to start new pages. So \input can be used in nearly any location as a way to insert content, but \include must be by itself.</p>
-<p>The \input command can be nested, but \include cannot. So if document1 has an input command to document2, and document 2 has an input command to document3, then everything in document3 will be input to document1 also.</p>
-<p>Generally, \include would be used to make having chapters of a book in separate files, with one central document which typesets every chapter.</p>
+<h2>Differences between include and input<a class="headerlink" href="#differences-between-include-and-input" title="Permalink to this headline">¶</a></h2>
+<p>There are a few main differences between <tt class="docutils literal"><span class="pre">\include</span></tt> and <tt class="docutils literal"><span class="pre">\input</span></tt>.</p>
+<p>When told to <tt class="docutils literal"><span class="pre">\input</span></tt> a file, <span class="math">\(\LaTeX\)</span> acts as if the text from the external file
+was copied and pasted into the current document, but when told to <tt class="docutils literal"><span class="pre">\include</span></tt> the file,
+<span class="math">\(\LaTeX\)</span> will start a new page before and after the external content. As such,
+<tt class="docutils literal"><span class="pre">\include</span></tt> cannot appear in the preamble since the document has not started yet,
+but <tt class="docutils literal"><span class="pre">\include</span></tt> tells <span class="math">\(\LaTeX\)</span> to start new pages. So <tt class="docutils literal"><span class="pre">\input</span></tt> can be used in
+nearly any location as a way to insert content, but <tt class="docutils literal"><span class="pre">\include</span></tt> must be by itself.</p>
+<p>The <tt class="docutils literal"><span class="pre">\input</span></tt> command can be nested, but <tt class="docutils literal"><span class="pre">\include</span></tt> cannot. So if document1 has an
+input command to document2, and document 2 has an input command to document3, then
+everything in document3 will be input to document1 also.</p>
+<p>Generally, <tt class="docutils literal"><span class="pre">\include</span></tt> would be used to make having chapters of a book in separate
+files, with one central document which typesets every chapter.</p>
 </div>
 <div class="section" id="how-to-use">
 <h2>How to Use<a class="headerlink" href="#how-to-use" title="Permalink to this headline">¶</a></h2>
-<p>The syntax for using \include and \input is identical. To input document1.tex then include document2.tex, the commands would be</p>
+<p>The syntax for using <tt class="docutils literal"><span class="pre">\include</span></tt> and <tt class="docutils literal"><span class="pre">\input</span></tt> is identical. To input document1.tex
+then include document2.tex, the commands would be</p>
 <div class="highlight-python"><pre>\input{document1}
 \include{document2}</pre>
 </div>
-<p>One use of \input is to have a standard preamble document. Rather than needing a lengthy template to include common packages and user-defined formatting and commands, the preamble of a document could look as follows.:</p>
+<p>One use of <tt class="docutils literal"><span class="pre">\input</span></tt> is to have a standard preamble document. Rather than needing a
+lengthy template to include common packages and user-defined formatting and commands,
+the preamble of a document could look as follows.</p>
 <div class="highlight-python"><pre>\documentclass{article}
 \include{preamble}
 \begin{document}</pre>
 </div>
-<p>This is particularly useful for using LaTeX for homework, since each document for a given class probably needs the same preamble. It is also helpful for working on many documents in the same directory, since updating the preamble file updates all of the documents, rather than having to manually edit the preamble in each file.</p>
+<p>This is particularly useful for using <span class="math">\(\LaTeX\)</span> for homework, since each document for
+a given class probably needs the same preamble. It is also helpful for working on
+many documents in the same directory, since updating the preamble file updates
+all of the documents, rather than having to manually edit the preamble in each file.</p>
 </div>
 <div class="section" id="common-problems">
 <h2>Common Problems<a class="headerlink" href="#common-problems" title="Permalink to this headline">¶</a></h2>
-<p>If a referenced document contains \end{document}, inputting or including the document will cause LaTeX to stop typesetting once it reaches \end{document}.</p>
+<p>If a referenced document contains <tt class="docutils literal"><span class="pre">\end{document}</span></tt>, inputting or including the document
+will cause <span class="math">\(\LaTeX\)</span> to stop typesetting once it reaches <tt class="docutils literal"><span class="pre">\end{document}</span></tt>.</p>
 </div>
 </div>
 

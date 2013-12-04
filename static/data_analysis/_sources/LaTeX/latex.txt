@@ -3,7 +3,12 @@ LaTeX
 ==============================
 Introduction (What's a LaTeX?)
 ==============================
+<<<<<<< HEAD
 :math:`\LaTeX` ("lah-tech" or "lay-tech") is a markup language - one that allows the author to precisely (and easily) specify how layout and content are combined. :math:`\LaTeX` (which should
+=======
+LaTeX ("lah-tech" or "lay-tech") is a markup language - one that allows the author to
+more precisely (and easily) specify how layout and content are combined. :math:`\LaTeX` (which should
+>>>>>>> f88251aa4f3e76ac4e575a1236b4c6a891c16949
 be written that way whenever possible) is based on Turing Award Winner Dr. Donald Knuth's :math:`\TeX`
 typesetting system which is:
 
@@ -26,7 +31,18 @@ What Does it Look Like?
 images, and other special features. A simple document looks like the following.
 
 ::
+   
+   \documentclass{article}
+   \begin{document}
+   Hello World!
+   \end{document}
 
+This produces the following document:
+
+
+::
+
+<<<<<<< HEAD
   \documentclass{article}
   
   \title{This is a title}
@@ -55,6 +71,22 @@ images, and other special features. A simple document looks like the following.
      \end{subsection}
    
   \end{document}
+=======
+   \documentclass{article}
+   \title{This is a title}
+   \author{Evan Ott}
+   \date{\today}
+   \begin{document}
+   \maketitle
+   \begin{abstract}
+      This is my abstract.
+   \end{abstract}
+   \section{This is a section}
+      \begin{subsection}{This is a subsection}
+         Here is text
+      \end{subsection}
+   \end{document}
+>>>>>>> f88251aa4f3e76ac4e575a1236b4c6a891c16949
 
 Which produces something like
 

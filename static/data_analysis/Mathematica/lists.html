@@ -1,0 +1,500 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Lists, Tables, and Matrices &mdash; Introduction to Data Analysis for Physics</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0-rc1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0-rc1/css/bootstrap-glyphicons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../../runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/js/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/js/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.js"></script>
+    <script type="text/javascript" src="../_static/builtin.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0-rc1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
+    <link rel="next" title="Introduction (What’s a LaTeX?)" href="../LaTeX/latex.html" />
+    <link rel="prev" title="Document Structure and Syntax" href="structure.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://192.168.0.10:80' ? 'http://192.168.0.10:80' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'data_analysis';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-fixed-top">
+
+  <div class="container">
+
+    <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+    <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <div>
+     <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+      <a class="navbar-brand" href="../index.html">Introduction to Data Analysis for Physics</a>
+    </div>
+
+    <div class="nav-collapse collapse navbar-responsive-collapse">
+
+      <ul class="nav navbar-nav pull-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/data_analysis/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit"">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://192.168.0.10:80/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://192.168.0.10:80/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://192.168.0.10:80/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://192.168.0.10:80/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/data_analysis/navhelp.html'>Navigation Help</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Lists, Tables, and Matrices</a><ul>
+<li><a class="reference internal" href="#lists">Lists</a></li>
+<li><a class="reference internal" href="#tables">Tables</a></li>
+<li><a class="reference internal" href="#matrices">Matrices</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Document Structure and Syntax" data-toggle="tooltip">
+    <a href="structure.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Introduction (What&#8217;s a LaTeX?)' data-toggle="tooltip" >
+    <a href="../LaTeX/latex.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="lists-tables-and-matrices">
+<h1>Lists, Tables, and Matrices<a class="headerlink" href="#lists-tables-and-matrices" title="Permalink to this headline">¶</a></h1>
+<p>Often, we would like to do more than just store individual values, particularly
+when we start wanting to analyze experimental data. As such, we would like
+a way to analyze datasets all at once (finding the mean, standard deviation, etc.),
+and may want to do even more. We&#8217;ll now take a look at some of the ways we can
+do this in <em>Mathematica</em>.</p>
+<div class="section" id="lists">
+<h2>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h2>
+<p>Lists are a convenient way of storing linear data. For example, we might
+want to store the results of several runs of an experiment (in Modern Lab,
+maybe the Gamma-Gamma experiment with total number of photons captured in a given
+time interval). We can do this fairly simply:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="mi">21</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">18</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>To access the elements of <tt class="code docutils literal"><span class="pre">data</span></tt>, we apply the indexing operator:</p>
+<div class="highlight-python"><pre>data[[1]]
+data[[1;;2]]
+data[[2;;4]]</pre>
+</div>
+<p>prints</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="mi">21</span>
+<span class="p">{</span><span class="mi">21</span><span class="p">,</span> <span class="mi">24</span><span class="p">}</span>
+<span class="p">{</span><span class="mi">24</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">32</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>We can perform operations on lists as well, many of which can be extremely powerful:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span><span class="o">^</span><span class="mi">2</span>
+<span class="n">Length</span><span class="p">[{</span><span class="mi">4</span><span class="p">}]</span>
+<span class="n">Total</span><span class="p">[{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}]</span>
+<span class="n">Mean</span><span class="p">[{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">}]</span>
+<span class="n">Norm</span><span class="p">[{</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">}]</span>
+<span class="n">Dot</span><span class="p">[{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">},{</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">}]</span>
+<span class="n">Union</span><span class="p">[{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}]</span>
+<span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span> <span class="o">+</span> <span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>prints
+::
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+<hr class="docutils" />
+<dl class="docutils">
+<dt>&gt;&gt;&gt;&gt;&gt;&gt;&gt; mathematica</dt>
+<dd>{1, 4, 9, 16, 25}
+1
+15
+1
+2
+0
+{1, 2, 3, 4, 5}
+{4, 4, 4}</dd>
+</dl>
+<p>The above examples show some useful functions on lists. Applying a simple arithmetic
+operators on scalars applies the operation to each element and returns that list.
+Many desired functions often exist within <em>Mathematica</em> without having to re-create them
+by hand: <tt class="code docutils literal"><span class="pre">Length</span></tt> is just the number of elements in the list, <tt class="code docutils literal"><span class="pre">Mean</span></tt> is
+the arithmetic average of the elements, <tt class="code docutils literal"><span class="pre">Norm</span></tt> is the mathematical norm
+<span class="math">\(||list||\)</span>, <tt class="code docutils literal"><span class="pre">Dot</span></tt> takes the the dot (inner) product of the two lists, and
+<tt class="code docutils literal"><span class="pre">Union</span></tt> treats the lists as sets and takes the union. Many other useful functions
+exist (many can be found
+<a class="reference external" href="http://reference.wolfram.com/mathematica/guide/ListManipulation.html">here</a>). The last
+example above shows that the addition operator for lists can also be applied
+to add each <span class="math">\(i^\textrm{th}\)</span> element and return the resultant list.</p>
+</div>
+<div class="section" id="tables">
+<h2>Tables<a class="headerlink" href="#tables" title="Permalink to this headline">¶</a></h2>
+<p>Tables are just lists created by the <tt class="code docutils literal"><span class="pre">Table</span></tt> command which is easy to use and effective
+for producing sequences:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Table</span><span class="p">[</span><span class="n">i</span><span class="p">,{</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">}]</span>
+<span class="n">Table</span><span class="p">[</span><span class="n">i</span><span class="o">^</span><span class="mi">2</span><span class="p">,{</span><span class="n">i</span><span class="p">,</span><span class="mi">5</span><span class="p">}]</span>
+<span class="n">Table</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">}}]</span>
+<span class="nb">list</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">};</span>
+<span class="n">Table</span><span class="p">[</span><span class="nb">list</span><span class="p">[[</span><span class="n">i</span><span class="p">]]</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="n">Length</span><span class="p">[</span><span class="nb">list</span><span class="p">]}]</span>
+</pre></div>
+</div>
+<p>is</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">}</span>
+<span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">}</span>
+<span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
+<span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Essentially, <tt class="code docutils literal"><span class="pre">Table</span></tt> accepts some function over the domain given and will then
+create the list of the elements in the sequence over the given elements in the domain.
+The second example shows that given <tt class="code docutils literal"><span class="pre">{i,</span> <span class="pre">N}</span></tt>, the range is <span class="math">\(i\in[1, N]\)</span>.
+The third example shows that the elements to use can be given explicitly as well.
+The last example combines what we learned about lists above to show how easily
+different concepts and structures in <em>Mathematica</em> can be combined.</p>
+</div>
+<div class="section" id="matrices">
+<h2>Matrices<a class="headerlink" href="#matrices" title="Permalink to this headline">¶</a></h2>
+<p>Just as tables are actually just lists, lists are in fact matrices:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">},</span> <span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">},</span> <span class="p">{</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">}}</span>
+</pre></div>
+</div>
+<p>is the matrix <span class="math">\(\left(\begin{array}{ccc} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ 7 &amp; 8 &amp; 9 \end{array}\right)\)</span> in the same way that</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}}</span>
+</pre></div>
+</div>
+<p>is the row vector <span class="math">\(\left(\begin{array}{ccc}1 &amp; 2 &amp; 3\end{array}\right)\)</span> and</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{{</span><span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="mi">2</span><span class="p">},</span> <span class="p">{</span><span class="mi">3</span><span class="p">}}</span>
+</pre></div>
+</div>
+<p>is the column vector <span class="math">\(\left(\begin{array}{c}1\\2\\3\end{array}\right)\)</span>.</p>
+<p>We have many operations on matrices at our disposal too. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">m</span> <span class="o">=</span> <span class="p">{{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">},</span> <span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">},</span> <span class="p">{</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">}};</span>
+<span class="n">Transpose</span><span class="p">[</span><span class="n">m</span><span class="p">]</span>
+<span class="n">Det</span><span class="p">[</span><span class="n">m</span><span class="p">]</span>
+<span class="n">m</span> <span class="o">.</span> <span class="n">m</span>
+<span class="n">MatrixPower</span><span class="p">[</span><span class="n">m</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">Eigenvalues</span><span class="p">[</span><span class="n">m</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>is</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">},</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">},</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">}}</span>
+<span class="mi">0</span>
+<span class="p">{{</span><span class="mi">30</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">42</span><span class="p">},</span> <span class="p">{</span><span class="mi">66</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">96</span><span class="p">},</span> <span class="p">{</span><span class="mi">102</span><span class="p">,</span> <span class="mi">126</span><span class="p">,</span> <span class="mi">150</span><span class="p">}}</span>
+<span class="p">{{</span><span class="mi">30</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">42</span><span class="p">},</span> <span class="p">{</span><span class="mi">66</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">96</span><span class="p">},</span> <span class="p">{</span><span class="mi">102</span><span class="p">,</span> <span class="mi">126</span><span class="p">,</span> <span class="mi">150</span><span class="p">}}</span>
+<span class="p">{</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span> <span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="n">Sqrt</span><span class="p">[</span><span class="mi">33</span><span class="p">]),</span> <span class="mi">3</span><span class="o">/</span><span class="mi">2</span> <span class="p">(</span><span class="mi">5</span> <span class="o">-</span> <span class="n">Sqrt</span><span class="p">[</span><span class="mi">33</span><span class="p">]),</span> <span class="mi">0</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>where <tt class="code docutils literal"><span class="pre">Transpose[m]</span></tt> computes the matrix transpose <span class="math">\(m^\intercal\)</span>
+(<tt class="code docutils literal"><span class="pre">ConjugateTranspose[m]</span></tt> takes the transpose then converts each value
+to its complex conjugate, giving <span class="math">\(m^\dagger\)</span>), <tt class="code docutils literal"><span class="pre">Det[m]</span></tt> computes the
+determinant <span class="math">\(|m|\)</span>, <tt class="code docutils literal"><span class="pre">m</span> <span class="pre">.</span> <span class="pre">m</span></tt> computes the matrix product
+(generally, when <span class="math">\(A\)</span> has dimensions <span class="math">\(m\times{n}\)</span>, <span class="math">\(B\)</span> has dimensions
+<span class="math">\(n\times{p}\)</span>, and <span class="math">\(AB=A\times{B}\)</span> has dimensions <span class="math">\(m\times{p}\)</span>, such that
+<span class="math">\((AB)_{i,j}=\sum_{k=1}^{n}A_{i,k}B_{k,j}\)</span>), <tt class="code docutils literal"><span class="pre">MatrixPower[m,</span> <span class="pre">n]</span></tt> computes
+<span class="math">\(m^n=m\times m\times m\times \ldots \times m\)</span>, and <tt class="code docutils literal"><span class="pre">EigenValues[m]</span></tt>
+gives the eigenvalues of the matrix <span class="math">\(m\)</span>.</p>
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p>Eigenvalues</p>
+<p class="last">If you keep hearing the term &#8220;eigenvalues&#8221; or &#8220;eigenvectors&#8221; around the physics department
+but aren&#8217;t sure what they are, there&#8217;s a quick tutorial in the appendix about it.
+You might need to brush up on matrices a little beforehand. The tutorial
+can be found <a class="reference external" href="../Math/eigenvalues.html">here</a>).</p>
+</div>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013, University of Texas at Austin Society of Physics Students and Sigma Pi Sigma.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-small btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-small btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-small btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-small btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

@@ -1,6 +1,6 @@
 Packages
 ========
-Packages are sets of commands, environments, and formatting which expand LaTeX.
+Packages are sets of commands, environments, and formatting which expand :math:`\LaTeX`.
 
 Common Packages and What they Do
 --------------------------------
@@ -37,24 +37,10 @@ Common Packages and What they Do
 
 Optional Package Arguments
 --------------------------
-For the geometry package, it has an optional argument which can be filled with formatting options. By far, the most common use is::
+For the geometry package, it has an optional argument which can be filled with formatting options. By far, the most common use is
+::
 
   \usepackage[margin=1in]{geometry}
 
 
-Natively, LaTeX uses very wide margins, and the above command narrows them to increase the amount of content per page.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Natively, :math:`\LaTeX` uses very wide margins, and the above command narrows them to increase the amount of content per page.

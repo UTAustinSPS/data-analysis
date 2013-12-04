@@ -1,0 +1,580 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Eigenvalue Problems &mdash; Introduction to Data Analysis for Physics</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0-rc1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0-rc1/css/bootstrap-glyphicons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../../runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/js/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/js/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.js"></script>
+    <script type="text/javascript" src="../_static/builtin.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0-rc1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
+    <link rel="prev" title="Inputting and Including External Files" href="../LaTeX/include.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://192.168.0.10:80' ? 'http://192.168.0.10:80' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'data_analysis';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-fixed-top">
+
+  <div class="container">
+
+    <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+    <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <div>
+     <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+      <a class="navbar-brand" href="../index.html">Introduction to Data Analysis for Physics</a>
+    </div>
+
+    <div class="nav-collapse collapse navbar-responsive-collapse">
+
+      <ul class="nav navbar-nav pull-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/data_analysis/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit"">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://192.168.0.10:80/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://192.168.0.10:80/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://192.168.0.10:80/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://192.168.0.10:80/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/data_analysis/navhelp.html'>Navigation Help</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Eigenvalue Problems</a><ul>
+<li><a class="reference internal" href="#the-problem">The problem</a></li>
+<li><a class="reference internal" href="#example-calculation">Example calculation</a></li>
+<li><a class="reference internal" href="#application-spring-oscillation">Application: Spring oscillation</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Inputting and Including External Files" data-toggle="tooltip">
+    <a href="../LaTeX/include.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+    <li class="divider-vertical"></li>
+  
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="eigenvalue-problems">
+<h1>Eigenvalue Problems<a class="headerlink" href="#eigenvalue-problems" title="Permalink to this headline">¶</a></h1>
+<p>Note: If you are familiar with eigenvalue problems from linear algebra, waves, or quantum mechanics, you can
+likely skip this section or treat it as a refresher.</p>
+<p>Matrices are a powerful tool in many fields, often representing data in a compact way, and occasionally
+providing us a mathematical construct for other interesting properties of whatever we&#8217;re looking at. One
+particular tool is the eigenvalue/eigenvector problem, which has broad uses, particularly in physics. First,
+we&#8217;ll look at what the problem is, solve an example problem, then briefly talk about some applications.</p>
+<div class="section" id="the-problem">
+<h2>The problem<a class="headerlink" href="#the-problem" title="Permalink to this headline">¶</a></h2>
+<p>We will consider the problem of having the square matrix <span class="math">\(A\)</span> (dimensions <span class="math">\(n\times{n}\)</span>) and
+wanting to solve the equation</p>
+<div class="math">
+\[A\bf{x}=\lambda\bf{x}\]</div>
+<p>where <span class="math">\(\bf{x}\)</span> is an n-row column vector, and <span class="math">\(\lambda\)</span> is some scalar.
+This may look impossible
+to start (we have an unknown scalar and a whole range of vectors - how can we know how many
+solutions there
+are, much less figure out what they are?), but we can apply some critical thinking and come up with a
+procedure to solve it.</p>
+<p>First of all, we know the equation above will always be true for <span class="math">\(\bf{x}=\bf{0}\)</span>, where <span class="math">\(\bf{0}\)</span>
+is the column vector with n rows and each element equal to 0. This is often considered the &#8220;trivial&#8221; case,
+as it usually ends up not being useful physically. We can introduce another matrix, however, called <span class="math">\(I\)</span>,
+known as the n-dimensional identity matrix:</p>
+<div class="math">
+\[\begin{split}I=\left(\begin{array}{ccccc}
+1 &amp; 0 &amp; 0 &amp;  &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; \cdots &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp;  &amp; 0 \\
+  &amp; \vdots &amp; &amp; \ddots &amp; \vdots \\
+0 &amp; 0 &amp; 0 &amp; \cdots &amp; 1
+\end{array}\right)\end{split}\]</div>
+<p>If we use normal matrix multiplication, we have that <span class="math">\(I{\bf{x}}=\bf{x}\)</span> for any matrix (and thus column
+vector) <span class="math">\(\bf{x}\)</span>.</p>
+<p>Thus, we want to solve the problem:</p>
+<div class="math">
+\[A{\bf{x}}=\lambda{I}\bf{x}\]</div>
+<p>Now, we can subtract <span class="math">\(\lambda{I}\bf{x}\)</span> from both sides, giving:</p>
+<div class="math">
+\[A{\bf{x}}-\lambda{I}{\bf{x}}=(A-\lambda{I}){\bf{x}}=\bf{0}\]</div>
+<p>If we take the non-trivial case, the only non-zero solutions for <span class="math">\(\bf{x}\)</span> require
+that <span class="math">\(\left|A-\lambda{I}\right|=0\)</span>. Then, we can solve for all values <span class="math">\(\lambda\)</span>
+that satisfy the equation (this will give an n-degree polynomial to solve), which are our
+eigenvalues. We can then solve for <span class="math">\(\bf{x}\)</span> to get the eigenvectors.</p>
+</div>
+<div class="section" id="example-calculation">
+<h2>Example calculation<a class="headerlink" href="#example-calculation" title="Permalink to this headline">¶</a></h2>
+<p>Consider the following matrix:</p>
+<div class="math">
+\[\begin{split}A=\left(\begin{array}{ccc}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 2 &amp; 0 \\
+0 &amp; 1 &amp; 3
+\end{array}\right)\end{split}\]</div>
+<p>Looking to our equations above, we want to solve:</p>
+<div class="math">
+\[\begin{split}\left|A-\lambda{I}\right|=\left|\begin{array}{ccc}
+1 - \lambda &amp; 0 &amp; 0 \\
+0 &amp; 2 - \lambda &amp; 0 \\
+0 &amp; 1 &amp; 3 - \lambda
+\end{array}\right|=0\end{split}\]</div>
+<p>Taking the determinant gives us what&#8217;s known as the &#8220;characteristic polynomail&#8221;:</p>
+<div class="math">
+\[(1 - \lambda)(2-\lambda)(3-\lambda)=0\]</div>
+<p>which is easily solved for <span class="math">\(\lambda=1,2,3\)</span>. These are the eigenvalues of the matrix <span class="math">\(A\)</span>,
+collectively known as the spectrum of <span class="math">\(A\)</span>. Now, we&#8217;ll calculate the eigenvectors, which are, again
+the column vectors <span class="math">\(\bf{x}\)</span> that satisfy:</p>
+<div class="math">
+\[A\bf{x}=\lambda\bf{x}\]</div>
+<p>Let&#8217;s start with <span class="math">\(\lambda=1\)</span>. We&#8217;ll let <span class="math">\(x_i\)</span> be the element of <span class="math">\(\bf{x}\)</span> in the
+<span class="math">\(i^\textrm{th}\)</span> row.</p>
+<div class="math">
+\[\begin{split}\left(\begin{array}{ccc}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 2 &amp; 0 \\
+0 &amp; 1 &amp; 3
+\end{array}\right)
+\left(\begin{array}{c}
+x_1 \\
+x_2 \\
+x_3
+\end{array}\right)
+=
+1\cdot
+\left(\begin{array}{c}
+x_1 \\
+x_2 \\
+x_3
+\end{array}\right)\end{split}\]</div>
+<p>If we treat this as a simple system of equations, we get the following:</p>
+<div class="math">
+\[1\cdot{x_1}=1\cdot{x_1}\]\[2\cdot{x_2}=1\cdot{x_2}\]\[1\cdot{x_2}+3\cdot{x_3}=1\cdot{x_3}\]</div>
+<p>The second equation can only be true for <span class="math">\(x_2=0\)</span>. If we plug this in to the third
+equation, we find that <span class="math">\(x_3=0\)</span> as well. We know that the the first equation will be
+true for any <span class="math">\(x_1\)</span>, which presents a problem - which should we choose? By convention,
+we choose to work with unit vectors, which is to say that:</p>
+<div class="math">
+\[\|{\bf{x}}\|=\sqrt{\sum_{i=1}^N x_i^2}=1\]</div>
+<p>With this, we have <span class="math">\(x_1^2+0+0=1\)</span>. We&#8217;ll take the positive root to define</p>
+<div class="math">
+\[\begin{split}{\bf{x}_1}=\left(\begin{array}{c}
+1 \\ 0 \\ 0
+\end{array}\right)\end{split}\]</div>
+<p>However, we recognize that for any scalar <span class="math">\(c\)</span>, we have:</p>
+<div class="math">
+\[A(c{\bf{x}_1})=c\cdot{A}{\bf{x}_1}=c\lambda_1{\bf{x}_1}=1\cdot{c}{\bf{x}_1}=c{\bf{x}_1}\]</div>
+<p>which says that if <span class="math">\(v\)</span> is an eigenvector of <span class="math">\(A\)</span>, then <span class="math">\(cv\)</span> is also an
+eigenvector of <span class="math">\(A\)</span>. As such, we can use any convention for stating what eigenvectors
+we choose. Often, the convention is that for at least one element, <span class="math">\(x_i=1\)</span>.</p>
+<div class="admonition-practice-problem-1 admonition">
+<p class="first admonition-title">Practice Problem 1</p>
+<p class="last">Work through this process for <span class="math">\(\lambda=2\)</span> and <span class="math">\(\lambda=3\)</span> to familarize yourself
+with the process of solving eigenvalue problems. Then try the whole process for a new matrix
+<span class="math">\(B=\left(\begin{array}{ccc}
+1 &amp; 2 &amp; 0 \\
+2 &amp; -1 &amp; 1 \\
+4 &amp; 0 &amp; 3
+\end{array}\right)\)</span>.</p>
+</div>
+<div class="note admonition">
+<p class="first admonition-title">Practice Answers 1</p>
+<p>You should have found that for matrix <span class="math">\(A\)</span>:</p>
+<p><span class="math">\(\begin{array}{l}
+\lambda = 1 \Rightarrow {\bf{x}} = \left(\begin{array}{c}1 \\ 0 \\ 0 \end{array}\right) \\
+\lambda = 2 \Rightarrow {\bf{x}} = \left(\begin{array}{c}0 \\ 1 \\ -1 \end{array}\right)\\
+\lambda = 3 \Rightarrow {\bf{x}} = \left(\begin{array}{c}0 \\ 0 \\ 1 \end{array}\right)
+\end{array}\)</span></p>
+<p>For matrix <span class="math">\(B\)</span>, you should arrive at:</p>
+<p class="last"><span class="math">\(\begin{array}{l}
+\lambda = 1 \Rightarrow {\bf{x}} = \left(\begin{array}{c}1 \\ 0 \\ -2\end{array}\right) \\
+\lambda = 1 + 2\sqrt{2} \Rightarrow {\bf{x}} = \left(\begin{array}{c}1 \\
+\sqrt{2} \\ 2(1+\sqrt{2}) \end{array}\right)\\
+\lambda = 1 - 2\sqrt{2} \Rightarrow {\bf{x}} = \left(\begin{array}{c}1 \\ -\sqrt{2} \\
+-2(\sqrt{2}-1)\end{array}\right)
+\end{array}\)</span></p>
+</div>
+</div>
+<div class="section" id="application-spring-oscillation">
+<h2>Application: Spring oscillation<a class="headerlink" href="#application-spring-oscillation" title="Permalink to this headline">¶</a></h2>
+<p>For a concrete example of how to apply our newly-learned techniques to a problem, let&#8217;s look at
+a simple Hooke&#8217;s law spring. This section does require knowing some calculus for full understanding.
+For this section, we&#8217;ll define</p>
+<div class="math">
+\[\dot{x}=\frac{dx}{dt}\]</div>
+<p>For a one-dimensional Hooke&#8217;s law spring, we know that the force is directly proportional to the
+displacement from equilibrium, but in the opposite direction. That is,</p>
+<div class="math">
+\[F=m\cdot a=m\cdot\ddot{x}=-k\cdot x\]</div>
+<p>If we take <span class="math">\(w=\sqrt{\frac{k}{m}}\)</span>, we have <span class="math">\(\ddot{x}=-w^2x\)</span>. This is a second-order
+differential equation which is generally pretty hard to solve (consider if we had a damped spring!).
+But this is all differential equations! How in the world is our eigenvalue problem going to help us?</p>
+<p>The only way that it could help is if we could find some way to talk about matrices instead of
+derivatives. If we could do that, maybe we could then solve our problem. If we could just get
+this problem to look like a first-order differential equation, then we can use normal
+tricks to solve that equation and find a solution for <span class="math">\(x(t)\)</span>. After trying different ideas for a while,
+we might think about taking the derivative of some vector. In fact, what about:</p>
+<div class="math">
+\[\begin{split}\frac{d}{dt}\left(\begin{array}{c}x \\ \dot{x}\end{array}\right)=
+\left(\begin{array}{c}\dot{x} \\ \ddot{x}\end{array}\right)\end{split}\]</div>
+<p>Is that really helping our case? Well, if we had some way to have the right-hand side be some square
+matrix times the vector we were taking the derivative of and have that be equal to a constant, we&#8217;d be home
+free. But all that does is set up a system of equations. Let&#8217;s see if we can figure out which system:</p>
+<div class="math">
+\[\begin{split}\frac{d}{dt}\left(\begin{array}{c}x \\ \dot{x}\end{array}\right)=
+\left(\begin{array}{c}\dot{x} \\ \ddot{x}\end{array}\right)=
+\left(\begin{array}{cc}a_{1,1} &amp; a_{1,2} \\ a_{2,1} &amp; a_{2,2}\end{array}\right)
+\left(\begin{array}{c}x \\ \dot{x}\end{array}\right)\end{split}\]</div>
+<p>Well, we know that <span class="math">\(\ddot{x}=-w^2x\)</span>. So, <span class="math">\(\ddot{x}=a_{2,1}x+a_{2,2}\dot{x}=-w^2x\)</span> which
+gives <span class="math">\(a_{2,1}=-w^2,~a_{2,2}=0\)</span> since that is the only way for the statement to hold for all <span class="math">\(x\)</span>.</p>
+<p>And let&#8217;s take a look at the first row of the matrix. <span class="math">\(\dot{x}=a_{1,1}x+a_{1,2}\dot{x}\)</span> must hold
+for all <span class="math">\(\dot{x}\)</span>, so we arrive at <span class="math">\(a_{1,1}=0,~a_{1,2}=1\)</span>. Now we&#8217;re in business:</p>
+<div class="math">
+\[\begin{split}\frac{d}{dt}\left(\begin{array}{c}x \\ \dot{x}\end{array}\right)=
+\left(\begin{array}{cc}0 &amp; 1 \\ -w^2 &amp; 0\end{array}\right)
+\left(\begin{array}{c}x \\ \dot{x}\end{array}\right)\end{split}\]</div>
+<p>Now, we have our formulation. But what would it mean for <span class="math">\(\left(\begin{array}{cc}0 &amp; 1 \\
+-w^2 &amp; 0\end{array}\right)\left(\begin{array}{c}x \\
+\dot{x}\end{array}\right)=      \lambda\left(\begin{array}{c}x \\
+\dot{x}\end{array}\right)\)</span>? The meaning is not so obvious. However, we have now totally eliminated
+<span class="math">\(\ddot{x}\)</span> from our system of equations. That means that if we were to solve this new formulation,
+we would end up with equations based solely on <span class="math">\(w\)</span>, which is a constant, <span class="math">\(\lambda\)</span>, which
+is a scalar we&#8217;ll solve for, then <span class="math">\(x\)</span> and <span class="math">\(\dot{x}\)</span>. That sounds like a system of first-order
+differential equations, which we&#8217;ll likely be able to solve - certainly more easily than trying to solve
+the first formulation of the problem which was a second-order differential equation. So, let&#8217;s use the hammer
+that is the eigenvalue problem process on the nail of this problem and see if it helps us out.</p>
+<div class="math">
+\[\begin{split}\left|\left(\begin{array}{cc}0 &amp; 1 \\ -w^2 &amp; 0\end{array}\right) -
+\lambda\left(\begin{array}{cc}1 &amp; 0 \\ 0 &amp; 1\end{array}\right)\right|=
+\left|\left(\begin{array}{cc}-\lambda &amp; 1 \\ -w^2 &amp; -\lambda\end{array}\right)\right|=
+\lambda^2+w^2=0\end{split}\]</div>
+<p>This gives us <span class="math">\(\lambda=\pm{iw}\)</span>, where <span class="math">\(i=\sqrt{-1}\)</span>. Because these solutions are so
+similar, for the moment, let&#8217;s try to solve for the eigenvectors at the same time:</p>
+<div class="math">
+\[\begin{split}\begin{array}{l}\left(\begin{array}{cc}0 &amp; 1 \\ -w^2 &amp; 0\end{array}\right)
+\left(\begin{array}{c}x_\pm \\ \dot{x_\pm}\end{array}\right)=
+\pm{iw}\left(\begin{array}{c}x_\pm \\ \dot{x_\pm}\end{array}\right)
+\\ \\
+\textrm{or,}
+\\ \\
+\dot{x_\pm}=\pm{iw}x_\pm
+\end{array}\end{split}\]</div>
+<p>This is just a simple equation that says that the derivative of some function is a constant times that
+function. At this point, our hammer has done its job, now it&#8217;s time to stain, coat, and finish the
+masterpiece. While not trivial the above gives the elementary result:</p>
+<div class="math">
+\[x_\pm=A_{\pm}e^{\pm{iwt}}\]</div>
+<p>That&#8217;s good, but can we get a better result? Let&#8217;s go back to our first statement of the problem. We can
+easily see that <span class="math">\(\ddot{x_\pm}=-w^2x_\pm\)</span> through substitution. But, if we take <span class="math">\(x_H=x_++x_-\)</span>,
+we also get that <span class="math">\(\ddot{x_H}=-w^2x_H\)</span>. That means that <span class="math">\(x_H\)</span> is an eigenfunction as well,
+and is more general than <span class="math">\(x_+\)</span> or <span class="math">\(x_-\)</span>. That means that the general solution to our
+problem is:</p>
+<div class="math">
+\[x_H=Ae^{iwt}+Be^{-iwt}\]</div>
+<p>where <span class="math">\(A\)</span> and <span class="math">\(B\)</span> would be determined through initial conditions or other information.
+However, if we apply Euler&#8217;s formula (the one relevant to the euation above [
+<span class="math">\(e^{\pm{ix}}=\cos(x)\pm{i}\sin(x)\)</span>
+]), and let <span class="math">\(C=A+B,~D=(A-B)i\)</span>, we arrive at the solution:</p>
+<div class="math">
+\[x_H=C\cos(wt)+D\sin(wt)\]</div>
+<p>For the most familar form, we take <span class="math">\(A^2=C^2+D^2,~A\cos\phi=C,~A\sin\phi=D\)</span>, then
+<span class="math">\(x_H=A(\cos(wt)\cos\phi+\sin(wt)\sin\phi)\)</span>. Employing the trignometric identity
+<span class="math">\(\cos(\alpha-\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta\)</span>, we finally arrive at:</p>
+<div class="math">
+\[x(t)=A\cos(wt-\phi)\]</div>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013, University of Texas at Austin Society of Physics Students and Sigma Pi Sigma.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-small btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-small btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-small btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-small btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>
