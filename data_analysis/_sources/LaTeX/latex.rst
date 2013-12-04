@@ -4,7 +4,7 @@
 
 Introduction (What's a LaTeX?)
 ==============================
-:math:`\LaTeX` ("lah-tech" or "lay-tech") is a markup language - one that allows the author to
+LaTeX ("lah-tech" or "lay-tech") is a markup language - one that allows the author to
 more precisely (and easily) specify how layout and content are combined. :math:`\LaTeX` (which should
 be written that way whenever possible) is based on Turing Award Winner Dr. Donald Knuth's :math:`\TeX`
 typesetting system:
@@ -26,6 +26,16 @@ What Does it Look Like?
 -----------------------
 :math:`\LaTeX` documents are mostly the text you want to display, with additional information for formatting,
 images, and other special features. A simple document looks like the following.
+
+::
+   
+   \documentclass{article}
+   \begin{document}
+   Hello World!
+   \end{document}
+
+This produces the following document:
+
 
 ::
 

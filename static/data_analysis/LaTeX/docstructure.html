@@ -81,7 +81,7 @@
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 <script type="text/javascript">
   eBookConfig = {};
-  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.host = 'http://192.168.0.10:80' ? 'http://192.168.0.10:80' : 'http://127.0.0.1:8000';
   eBookConfig.app = eBookConfig.host+'/runestone';
   eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
   eBookConfig.course = 'data_analysis';
@@ -202,11 +202,11 @@
           <ul class="dropdown-menu user-menu">
             <li><span class='loggedinuser'></span></li>
             <li class="divider"></li>
-            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li><a href='http://192.168.0.10:80/runestone/admin/index'>Instructor's Page</a></li>
             <li class="divider"></li>
-            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
-            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
-            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li><a href="http://192.168.0.10:80/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://192.168.0.10:80/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://192.168.0.10:80/runestone/default/user/register" id="registerlink">Register</a></li>
             <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
           </ul>
         </li>
@@ -239,15 +239,19 @@
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
 <li><a class="reference internal" href="#">Document Structure</a><ul>
-<li><a class="reference internal" href="#preamble">Preamble</a><ul>
+<li><a class="reference internal" href="#useful-structures">Useful Structures</a><ul>
 <li><a class="reference internal" href="#the-required-command">The Required Command</a></li>
+<li><a class="reference internal" href="#body">Body</a></li>
+<li><a class="reference internal" href="#sections-subsections-and-subsubsections-oh-my">Sections, Subsections, and Subsubsections, Oh My!</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-preamble">The Preamble</a><ul>
 <li><a class="reference internal" href="#packages">Packages</a></li>
 <li><a class="reference internal" href="#new-commands">New Commands</a></li>
 <li><a class="reference internal" href="#formatting">Formatting</a></li>
 <li><a class="reference internal" href="#miscellaneous-actions">Miscellaneous Actions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#body">Body</a></li>
 <li><a class="reference internal" href="#after-the-end-document">After the \end{document}</a><ul>
 <li><a class="reference internal" href="#debugging-and-testing">Debugging and Testing</a></li>
 <li><a class="reference internal" href="#code-storage">Code Storage</a></li>
@@ -300,26 +304,52 @@
   <div class="section" id="document-structure">
 <h1>Document Structure<a class="headerlink" href="#document-structure" title="Permalink to this headline">¶</a></h1>
 <p><span class="math">\(\LaTeX\)</span> documents have two main parts: the preamble, and the body.</p>
-<div class="section" id="preamble">
-<h2>Preamble<a class="headerlink" href="#preamble" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="useful-structures">
+<h2>Useful Structures<a class="headerlink" href="#useful-structures" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="the-required-command">
 <h3>The Required Command<a class="headerlink" href="#the-required-command" title="Permalink to this headline">¶</a></h3>
 <p>There is one required command for every <span class="math">\(\LaTeX\)</span> document, <tt class="code docutils literal"><span class="pre">\documentclass</span></tt>.
 Specifying the class of the document tells <span class="math">\(\LaTeX\)</span> the basic formatting desired for the
 document. There are many document classes, and they are covered on the document classes page.</p>
 </div>
+<div class="section" id="body">
+<h3>Body<a class="headerlink" href="#body" title="Permalink to this headline">¶</a></h3>
+<p>The body of a document begins with the <tt class="code docutils literal"><span class="pre">\begin{document}</span></tt> command and ends with
+the <tt class="code docutils literal"><span class="pre">\end{document}</span></tt> command. <span class="math">\(\LaTeX\)</span> treats everything between those
+<tt class="code docutils literal"><span class="pre">\begin</span></tt> and <tt class="code docutils literal"><span class="pre">\end</span></tt> statements as the <tt class="code docutils literal"><span class="pre">document</span></tt> environment.</p>
+<p>Except comments, everything written the body of a <span class="math">\(\LaTeX\)</span> document will be
+processed during typesetting.</p>
+</div>
+<div class="section" id="sections-subsections-and-subsubsections-oh-my">
+<h3>Sections, Subsections, and Subsubsections, Oh My!<a class="headerlink" href="#sections-subsections-and-subsubsections-oh-my" title="Permalink to this headline">¶</a></h3>
+<p>LaTeX provides many commands which make it easy to organize the body of the document using headings. These built-in commands also automatically provide content for the table of contents (should you choose to have one).</p>
+<p>The most common section command is <tt class="code docutils literal"><span class="pre">\section{Section</span> <span class="pre">Name}</span></tt>, with &#8220;Section Name&#8221; replaced with whatever you want the section to be called. These can be further divided with <tt class="code docutils literal"><span class="pre">\subsection{}</span></tt>, and <tt class="code docutils literal"><span class="pre">\subsubsection{}</span></tt>. For document class <tt class="code docutils literal"><span class="pre">article</span></tt>, these are generally the only ones you will need to use. If you are typesetting a <tt class="code docutils literal"><span class="pre">book</span></tt> or a <tt class="code docutils literal"><span class="pre">report</span></tt>, there is a heading level above section, <tt class="code docutils literal"><span class="pre">\chapter{}</span></tt>. The largest section heading level is <tt class="code docutils literal"><span class="pre">\part{}</span></tt>, and can be used in nearly any document.</p>
+<p>There are <tt class="code docutils literal"><span class="pre">\paragraph{}</span></tt> and <tt class="code docutils literal"><span class="pre">\subparagraph{}</span></tt> commands. They allow paragraphs to have titles, and look like this:</p>
+<div class="highlight-python"><pre>\paragraph{Paragraphs}
+I'm a paragraph!
+\subparagraph{Hey, }
+I'm just a subparagraph.</pre>
+</div>
+<p>Using these commands to specify paragraphs is generally unnecessary since most documents don&#8217;t need to be this structured. A paragraph break can be specified by inserting a plank line between paragraphs. If you want to keep the paragraph heading styling, but want to start the paragraph on it&#8217;s own line, just insert an empty space as so.</p>
+<div class="highlight-python"><pre>\paragraph{Another Paragraph} \hspace{0pt} \\
+I started on a new line!</pre>
+</div>
+</div>
+</div>
+<div class="section" id="the-preamble">
+<h2>The Preamble<a class="headerlink" href="#the-preamble" title="Permalink to this headline">¶</a></h2>
+<p>Besides declaring the document class, having a preamble is completely optional. However, having a good preamble can save a lot of time with formatting. Ideally, it should function like a stylesheet for a webpage. The body of the document should have as little formatting as possible, made possible by the preamble.</p>
+<p>The preamble contains packages, new commands, and formatting information. Packages include new commands, environments, symbols, and generally increase the functionality of LaTeX far beyond the bare minimum it natively includes. New commands make life easier by creating shortcuts for calling symbols and oft-used symbol and information patterns.</p>
 <div class="section" id="packages">
 <h3>Packages<a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h3>
-<p>Once <span class="math">\(\LaTeX\)</span> knows what kind of document this is, relevant packages should be loaded.
-Packages include new commands, environments, symbols, and generally increase the
-functionality of <span class="math">\(\LaTeX\)</span> far beyond the bare minimum it natively includes. More
-information on packages is included in the packages page.</p>
+<p>Once LaTeX knows what kind of document you are working in, relevant packages should be loaded. The order of packages loaded can matter, particularly if they alter some of the same settings. In this case, the package loaded last usually gets the final say. Packages are loaded with the <tt class="code docutils literal"><span class="pre">\usepackage{thepackage}</span></tt> command.</p>
+<p>The <tt class="code docutils literal"><span class="pre">usepackage</span></tt> command also takes an optional argument which allows for changing some settings on the package. For example, the <tt class="code docutils literal"><span class="pre">geometry</span></tt> package allows margins to be set using this method. If you want your document to have margins of 1 inch rather than the default by loading the package with <tt class="code docutils literal"><span class="pre">\usepackage[margin=1in]{geometry}</span></tt>.</p>
+<p>More information on packages is included in the packages page.</p>
 </div>
 <div class="section" id="new-commands">
 <h3>New Commands<a class="headerlink" href="#new-commands" title="Permalink to this headline">¶</a></h3>
-<p>New commands should be specified here. New commands make life easier by creating
-shortcuts for calling symbols and oft-used symbol and information patterns. More
-information on new commands is available in the new command lesson.</p>
+<p>New commands are declared with <tt class="code docutils literal"><span class="pre">\newcommand{}{}</span></tt> which has two mandatory arguments. The first argument specifies how the command is called, and the second are how LaTeX should interpret the command. Say we like the way <span class="math">\(\varepsilon\)</span> looks better than <span class="math">\(\epsilon\)</span>, but don&#8217;t want to have to type <tt class="code docutils literal"><span class="pre">\varepsilon</span></tt> every time. By using <tt class="code docutils literal"><span class="pre">\newcommand{\e}{\varepsilon}</span></tt>, we can create <span class="math">\(\varepsilon\)</span> by just typing <tt class="code docutils literal"><span class="pre">\e</span></tt>.</p>
+<p>The <tt class="code docutils literal"><span class="pre">\newcommand{}{}</span></tt> also takes an optional argument which specifies the number of arguments. More information on new commands is available in the new command lesson.</p>
 </div>
 <div class="section" id="formatting">
 <h3>Formatting<a class="headerlink" href="#formatting" title="Permalink to this headline">¶</a></h3>
@@ -337,14 +367,6 @@ formatting. More information on formatting is in the formatting lesson.</p>
 include declaring new operators, having an external preamble (to act as a stylesheet
 or collection of common commands for many documents), and .</p>
 </div>
-</div>
-<div class="section" id="body">
-<h2>Body<a class="headerlink" href="#body" title="Permalink to this headline">¶</a></h2>
-<p>The body of a document begins with the <tt class="code docutils literal"><span class="pre">\begin{document}</span></tt> command and ends with
-the <tt class="code docutils literal"><span class="pre">\end{document}</span></tt> command. <span class="math">\(\LaTeX\)</span> treats everything between those
-<tt class="code docutils literal"><span class="pre">\begin</span></tt> and <tt class="code docutils literal"><span class="pre">\end</span></tt> statements as the <tt class="code docutils literal"><span class="pre">document</span></tt> environment.</p>
-<p>Except comments, everything written the body of a <span class="math">\(\LaTeX\)</span> document will be
-processed during typesetting.</p>
 </div>
 <div class="section" id="after-the-end-document">
 <h2>After the \end{document}<a class="headerlink" href="#after-the-end-document" title="Permalink to this headline">¶</a></h2>
