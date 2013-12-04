@@ -33,7 +33,7 @@ The LaTeXtbook
 ::::::::::::::
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    
    LaTeX/latex.rst
    LaTeX/docstructure.rst

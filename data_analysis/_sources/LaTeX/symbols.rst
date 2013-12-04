@@ -106,20 +106,26 @@ The explanation for the above code can be found on the :code:`\newcommand` page.
     \\ldots         :math:`\ldots`         \\cdots           :math:`\cdots`           \\vdots             :math:`\vdots`              \\ddots          :math:`\ddots`
     =============== ====================== ================= ======================== =================== =========================== ================ =======================
 
+Many arrow commands have a counterpart which is referenced by capitalizing the first letter. For example, \\uparrow produces :math:`\uparrow` and \\Uparrow produces :math:`\Uparrow`.
 
 .. table:: **Table 5: Math Mode Accents**
     
-    ============= ==================== =============== ====================== ================= ========================= ============== =====================
-    **Command**   **Symbol**           **Command**     **Symbol**             **Command**       **Symbol**                **Command**    **Symbol**         
-    ============= ==================== =============== ====================== ================= ========================= ============== =====================
-    \\hat{a}      :math:`\hat{a}`      \\check{a}      :math:`\check{a}`      \\dot{a}          :math:`\dot{a}`           \\ddot{a}      :math:`\ddot{a}`
+    ============= ==================== =============== ====================== ================= ========================= ============ =====================
+    **Command**   **Symbol**           **Command**     **Symbol**             **Command**       **Symbol**                **Command**  **Symbol**         
+    ============= ==================== =============== ====================== ================= ========================= ============ =====================
+    \\hat{a}      :math:`\hat{a}`      \\check{a}      :math:`\check{a}`      \\dot{a}          :math:`\dot{a}`           \\ddot{a}    :math:`\ddot{a}`
     \\bar{a}      :math:`\bar{a}`      \\vec{a}        :math:`\vec{a}`        \\tilde{a}        :math:`\tilde{a}`         
+<<<<<<< HEAD
+    ============= ==================== =============== ====================== ================= ========================= ============ =====================
+
+=======
     ============= ==================== =============== ====================== ================= ========================= ============== =====================
 
 
 Many arrow commands have a counterpart which is referenced by capitalizing the first letter.
 For example, :code:`\uparrow` produces :math:`\uparrow` and :code:`\Uparrow` produces
 :math:`\Uparrow`
+>>>>>>> f88251aa4f3e76ac4e575a1236b4c6a891c16949
 
 Miscellaneous math symbols.
 

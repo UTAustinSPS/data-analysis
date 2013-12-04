@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Introduction (What’s a LaTeX?) &mdash; Introduction to Data Analysis for Physics</title>
+    <title>LaTeX &mdash; Introduction to Data Analysis for Physics</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -75,7 +75,11 @@
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
     <link rel="next" title="Document Structure" href="docstructure.html" />
+<<<<<<< HEAD
+    <link rel="prev" title="Introduction" href="../mathematica.html" />
+=======
     <link rel="prev" title="Lists, Tables, and Matrices" href="../Mathematica/lists.html" />
+>>>>>>> f88251aa4f3e76ac4e575a1236b4c6a891c16949
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -238,9 +242,12 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Introduction (What&#8217;s a LaTeX?)</a><ul>
+<li><a class="reference internal" href="#">LaTeX</a><ul>
+<li><a class="reference internal" href="#introduction-what-s-a-latex">Introduction (What&#8217;s a LaTeX?)</a><ul>
 <li><a class="reference internal" href="#what-is-used-for">What is Used For?</a></li>
 <li><a class="reference internal" href="#what-does-it-look-like">What Does it Look Like?</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -285,18 +292,26 @@
 
 <div class="container">
   
+<<<<<<< HEAD
+  <div class="section" id="latex">
+<h1>LaTeX<a class="headerlink" href="#latex" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction-what-s-a-latex">
+<h2>Introduction (What&#8217;s a LaTeX?)<a class="headerlink" href="#introduction-what-s-a-latex" title="Permalink to this headline">¶</a></h2>
+<p><span class="math">\(\LaTeX\)</span> (&#8220;lah-tech&#8221; or &#8220;lay-tech&#8221;) is a markup language - one that allows the author to precisely (and easily) specify how layout and content are combined. <span class="math">\(\LaTeX\)</span> (which should
+=======
   <h1>LaTeX</h1><div class="section" id="introduction-what-s-a-latex">
 <h1>Introduction (What&#8217;s a LaTeX?)<a class="headerlink" href="#introduction-what-s-a-latex" title="Permalink to this headline">¶</a></h1>
 <p>LaTeX (&#8220;lah-tech&#8221; or &#8220;lay-tech&#8221;) is a markup language - one that allows the author to
 more precisely (and easily) specify how layout and content are combined. <span class="math">\(\LaTeX\)</span> (which should
+>>>>>>> f88251aa4f3e76ac4e575a1236b4c6a891c16949
 be written that way whenever possible) is based on Turing Award Winner Dr. Donald Knuth&#8217;s <span class="math">\(\TeX\)</span>
-typesetting system:</p>
+typesetting system which is:</p>
 <ul class="simple">
 <li>Built for a &#8220;minimal amount of effort&#8221; for the author to produce high-quality documents</li>
-<li>Be totally platform- and time-independent for resultant documents</li>
+<li>Totally platform- and time-independent for resultant documents</li>
 </ul>
 <div class="section" id="what-is-used-for">
-<h2>What is Used For?<a class="headerlink" href="#what-is-used-for" title="Permalink to this headline">¶</a></h2>
+<h3>What is Used For?<a class="headerlink" href="#what-is-used-for" title="Permalink to this headline">¶</a></h3>
 <p>Besides making text look good, <span class="math">\(\LaTeX\)</span> is for</p>
 <ul class="simple">
 <li>Digital and hard-copy media</li>
@@ -307,32 +322,56 @@ typesetting system:</p>
 </ul>
 </div>
 <div class="section" id="what-does-it-look-like">
-<h2>What Does it Look Like?<a class="headerlink" href="#what-does-it-look-like" title="Permalink to this headline">¶</a></h2>
+<h3>What Does it Look Like?<a class="headerlink" href="#what-does-it-look-like" title="Permalink to this headline">¶</a></h3>
 <p><span class="math">\(\LaTeX\)</span> documents are mostly the text you want to display, with additional information for formatting,
 images, and other special features. A simple document looks like the following.</p>
 <div class="highlight-python"><pre>\documentclass{article}
+<<<<<<< HEAD
+
+=======
 \begin{document}
 Hello World!
 \end{document}</pre>
 </div>
 <p>This produces the following document:</p>
 <div class="highlight-python"><pre>\documentclass{article}
+>>>>>>> f88251aa4f3e76ac4e575a1236b4c6a891c16949
 \title{This is a title}
 \author{Evan Ott}
 \date{\today}
 \begin{document}
 \maketitle
 \begin{abstract}
-   This is my abstract.
+   This is an abstract.
 \end{abstract}
+<<<<<<< HEAD
+\section{A Section}
+   \begin{subsection}{A Subsection on Paragraphs}
+      Here is a paragraph.
+
+      To start a new paragraph, start
+      with a new line or LaTeX assumes it is the same paragraph.
+
+      LaTeX        converts              many spaces to         one.
+
+
+
+      The same goes for many blank lines. Extra horizontal space between words can be specified with \hspace{0.5in} \textbackslash hspace, and
+      \vspace{0.5in}
+
+      extra vertical space between paragraphs can be specified with \textbackslash vspace.
+=======
 \section{This is a section}
    \begin{subsection}{This is a subsection}
       Here is text
+>>>>>>> f88251aa4f3e76ac4e575a1236b4c6a891c16949
    \end{subsection}
+
 \end{document}</pre>
 </div>
 <p>Which produces something like</p>
-<img alt="Sample" src="../_images/latex_simple.jpg" />
+<img alt="Sample Document" src="../_images/looklike.jpg" />
+</div>
 </div>
 </div>
 

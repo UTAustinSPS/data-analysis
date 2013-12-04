@@ -1,16 +1,19 @@
-.. raw:: html
-
-   <h1>LaTeX</h1>
-
+==============================
+LaTeX
+==============================
 Introduction (What's a LaTeX?)
 ==============================
+<<<<<<< HEAD
+:math:`\LaTeX` ("lah-tech" or "lay-tech") is a markup language - one that allows the author to precisely (and easily) specify how layout and content are combined. :math:`\LaTeX` (which should
+=======
 LaTeX ("lah-tech" or "lay-tech") is a markup language - one that allows the author to
 more precisely (and easily) specify how layout and content are combined. :math:`\LaTeX` (which should
+>>>>>>> f88251aa4f3e76ac4e575a1236b4c6a891c16949
 be written that way whenever possible) is based on Turing Award Winner Dr. Donald Knuth's :math:`\TeX`
-typesetting system:
+typesetting system which is:
 
 - Built for a "minimal amount of effort" for the author to produce high-quality documents
-- Be totally platform- and time-independent for resultant documents
+- Totally platform- and time-independent for resultant documents
 
 What is Used For?
 -----------------
@@ -39,6 +42,36 @@ This produces the following document:
 
 ::
 
+<<<<<<< HEAD
+  \documentclass{article}
+  
+  \title{This is a title}
+  \author{Evan Ott}
+  \date{\today}
+  \begin{document}
+  \maketitle
+  \begin{abstract}
+     This is an abstract.
+  \end{abstract}
+  \section{A Section}
+     \begin{subsection}{A Subsection on Paragraphs}
+        Here is a paragraph.
+        
+        To start a new paragraph, start
+        with a new line or LaTeX assumes it is the same paragraph.
+        
+        LaTeX        converts              many spaces to         one.
+        
+        
+        
+        The same goes for many blank lines. Extra horizontal space between words can be specified with \hspace{0.5in} \textbackslash hspace, and
+        \vspace{0.5in}
+        
+        extra vertical space between paragraphs can be specified with \textbackslash vspace.
+     \end{subsection}
+   
+  \end{document}
+=======
    \documentclass{article}
    \title{This is a title}
    \author{Evan Ott}
@@ -53,10 +86,12 @@ This produces the following document:
          Here is text
       \end{subsection}
    \end{document}
+>>>>>>> f88251aa4f3e76ac4e575a1236b4c6a891c16949
 
 Which produces something like
 
-.. image:: Figures/latex_simple.jpg
-   :alt: Sample
+.. image:: Figures/looklike.jpg
+   :alt: Sample Document
+
 
 
