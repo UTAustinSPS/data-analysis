@@ -1,24 +1,29 @@
+.. role:: raw-html(raw)
+   :format: html
+
 ==================
 Document Structure
 ==================
 
-:math:`\LaTeX` documents have two main parts: the preamble, and the body.
+:raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>`
+
+LaTeX documents have two main parts: the preamble, and the body.
 
 Useful Structures
 =================
 The Required Command
 --------------------
-There is one required command for every :math:`\LaTeX` document, :code:`\documentclass`.
-Specifying the class of the document tells :math:`\LaTeX` the basic formatting desired for the
+There is one required command for every LaTeX document, :code:`\documentclass`.
+Specifying the class of the document tells LaTeX the basic formatting desired for the
 document. There are many document classes, and they are covered on the document classes page.
 
 Body
 ----
 The body of a document begins with the :code:`\begin{document}` command and ends with
-the :code:`\end{document}` command. :math:`\LaTeX` treats everything between those
+the :code:`\end{document}` command. LaTeX treats everything between those
 :code:`\begin` and :code:`\end` statements as the :code:`document` environment.
 
-Except comments, everything written the body of a :math:`\LaTeX` document will be
+Except comments, everything written the body of a LaTeX document will be
 processed during typesetting.
 
 
@@ -54,7 +59,10 @@ The preamble contains packages, new commands, and formatting information. Packag
 
 Packages
 --------
-Once LaTeX knows what kind of document you are working in, relevant packages should be loaded. The order of packages loaded can matter, particularly if they alter some of the same settings. In this case, the package loaded last usually gets the final say. Packages are loaded with the :code:`\usepackage{thepackage}` command. 
+Once :raw-html:`L<sup>a</sup>T<sub>e</sub>X` knows what kind of document you are working in, relevant packages should be loaded. The order of packages loaded can matter, particularly if they alter some of the same settings. In this case, the package loaded last usually gets the final say. Packages are loaded with the
+
+
+:code:`\usepackage{thepackage}` command. 
 
 The :code:`usepackage` command also takes an optional argument which allows for changing some settings on the package. For example, the :code:`geometry` package allows margins to be set using this method. If you want your document to have margins of 1 inch rather than the default by loading the package with :code:`\usepackage[margin=1in]{geometry}`.
 
@@ -62,7 +70,7 @@ More information on packages is included in the packages page.
 
 New Commands
 ------------
-New commands are declared with :code:`\newcommand{}{}` which has two mandatory arguments. The first argument specifies how the command is called, and the second are how LaTeX should interpret the command. Say we like the way :math:`\varepsilon` looks better than :math:`\epsilon`, but don't want to have to type :code:`\varepsilon` every time. By using :code:`\newcommand{\e}{\varepsilon}`, we can create :math:`\varepsilon` by just typing :code:`\e`.
+New commands are declared with :code:`\newcommand{}{}`, a command which has two mandatory arguments. The first argument specifies how the command is called, and the second are how LaTeX should interpret the command. Say we like the way :math:`\varepsilon` looks better than :math:`\epsilon`, but don't want to have to type :code:`\varepsilon` every time. By using :code:`\newcommand{\e}{\varepsilon}`, we can create :math:`\varepsilon` by just typing :code:`\e`.
 
 The :code:`\newcommand{}{}` also takes an optional argument which specifies the number of arguments. More information on new commands is available in the new command lesson.
 
@@ -71,7 +79,7 @@ Formatting
 Generally, the last part of the preamble should be formatting. Now that packages are
 loaded and new commands have been created, there are many options to fiddle with and
 none will be overridden by loading packages after specifying custom formatting. Everything
-in :math:`\LaTeX` can be customized. Fortunately, specifying the document class
+in LaTeX can be customized. Fortunately, specifying the document class
 prevents declaring the base formatting from being necessary. Sometimes, packages
 allow for easier access to formatting, such as creating custom list levels and
 formatting. More information on formatting is in the formatting lesson.
@@ -89,14 +97,14 @@ code after :code:`\end{document}` include debugging, testing, and temporary code
 
 Debugging and Testing
 ---------------------
-Sometimes, :math:`\LaTeX` gives obscure errors and references lines which don't
-actually contain errors. This is because :math:`\LaTeX` usually doesn't encounter the
+Sometimes, LaTeX gives obscure errors and references lines which don't
+actually contain errors. This is because LaTeX usually doesn't encounter the
 errors until it tries to piece together code, such as at the end of an environment,
 most commonly when writing math.
 
 Putting :code:`\end{document}` inside of an environment does cause an error itself.
-However, :math:`\LaTeX` will have processed all code up to that point so the original
-error will still cause an issue. This is because when :math:`\LaTeX` encounters :code:`\end`,
+However, LaTeX will have processed all code up to that point so the original
+error will still cause an issue. This is because when LaTeX encounters :code:`\end`,
 it will typeset everything up to that point. If the only error is that :code:`\end{document}`
 is inside an environment, then :code:`\end{document}` is before the error. If not, then
 :code:`\end{document}` is after the error. This allows for a line-by-line search to

@@ -1,3 +1,6 @@
+.. role:: raw-html(raw)
+   :format: html
+
 
 =========================================
 Introduction to Data Analysis for Physics
