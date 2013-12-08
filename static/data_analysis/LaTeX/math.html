@@ -238,11 +238,14 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Mathematics in LaTeX</a><ul>
+<li><a class="reference internal" href="#">Mathematics in LaTeX</a></li>
 <li><a class="reference internal" href="#basic-typesetting">Basic Typesetting</a></li>
-<li><a class="reference internal" href="#advanced-mathematics">Advanced Mathematics</a></li>
+<li><a class="reference internal" href="#advanced-mathematics">Advanced Mathematics</a><ul>
+<li><a class="reference internal" href="#equation-line-numbering">Equation Line Numbering</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#latex-math-kwon-do">LaTeX Math-kwon-do</a></li>
+<li><a class="reference internal" href="#latex-super-math-aiyan">LaTeX Super-Math-aiyan</a></li>
 </ul>
 </ul>
 </li>
@@ -287,50 +290,80 @@
   
   <div class="section" id="mathematics-in-latex">
 <h1>Mathematics in LaTeX<a class="headerlink" href="#mathematics-in-latex" title="Permalink to this headline">¶</a></h1>
-<p><span class="math">\(\LaTeX\)</span> has a math mode designed to format mathematics. It can be invoked on the
-same line as text by enclosing the mathematics in dollar signs: <tt class="code docutils literal"><span class="pre">$your</span> <span class="pre">math</span> <span class="pre">here$</span></tt>.</p>
-<div class="highlight-python"><pre>\documentclass{article}
-\begin{document}
-The positive real root of $x^4-16=0$ is $x=2$.
-\end{document}</pre>
+<p>LaTeX has a math mode designed to format mathematics. It can be invoked on the
+same line as text by enclosing the mathematics in dollar signs: <tt class="code docutils literal"><span class="pre">$your</span>
+<span class="pre">math</span> <span class="pre">here$</span></tt>. This is called &#8220;inline&#8221; math.</p>
+<div class="highlight-python"><pre>The positive real root of $x^4-16=0$ is $x=2$.</pre>
 </div>
 <p>The positive real root of <span class="math">\(x^4-16=0\)</span> is <span class="math">\(x=2\)</span>.</p>
-<div class="section" id="basic-typesetting">
-<h2>Basic Typesetting<a class="headerlink" href="#basic-typesetting" title="Permalink to this headline">¶</a></h2>
-<p>The most common typesetting needs in mathematics is the superscript and the subscript.
-These can be accessed using the caret <tt class="code docutils literal"><span class="pre">^</span></tt> and the underscore <tt class="code docutils literal"><span class="pre">_</span></tt>.</p>
-<div class="highlight-python"><pre>Consider the sequence $(x_i)$ where $x_i = 2^x$</pre>
 </div>
+<div class="section" id="basic-typesetting">
+<h1>Basic Typesetting<a class="headerlink" href="#basic-typesetting" title="Permalink to this headline">¶</a></h1>
+<p>The most common typesetting needs in mathematics is the superscript and the
+subscript. These can be accessed using the caret <tt class="code docutils literal"><span class="pre">^</span></tt> and the underscore
+<tt class="code docutils literal"><span class="pre">_</span></tt>.</p>
+<div class="highlight-python"><pre>Consider the sequence $(x_i)$ where $x_i = 2^x$.</pre>
+</div>
+<p>Consider the sequence <span class="math">\((x_i)\)</span> where <span class="math">\(x_i = 2^x\)</span>.</p>
 <p>These only work for a single character, so</p>
 <div class="highlight-python"><pre>A gigabyte contains $2^30$ bytes. Let $x_ij=x_ji$.</pre>
 </div>
 <p>actually returns: A gigabyte contains <span class="math">\(2^30\)</span> bytes. Let <span class="math">\(x_ij=x_ji\)</span></p>
-<p>To tell <span class="math">\(\LaTeX\)</span> that more than one character should be typeset as a superscript
+<p>To tell LaTeX that more than one character should be typeset as a superscript
 or subscript, enclose the desired text in braces.</p>
-<div class="highlight-python"><pre>A gigabyte contains $2^{30}$ bytes. Consider a matrix $A$ where $a_{ij}=a_{ji}$.</pre>
+<div class="highlight-python"><pre>A gigabyte contains $2^{30}$ bytes. Consider a matrix $A$ where
+$a_{ij}=a_{ji}$.</pre>
 </div>
-<p>This gives the expected result of: A gigabyte contains <span class="math">\(2^{30}\)</span> bytes.
+<p>This gives the desired result: A gigabyte contains <span class="math">\(2^{30}\)</span> bytes.
 Let <span class="math">\(x_{ij}=x_{ji}\)</span>.</p>
-<p>There is a native equation environment, displaymath, which can be invoked by encasing
-math inside double dollar signs or <tt class="code docutils literal"><span class="pre">\[</span></tt>, and <tt class="code docutils literal"><span class="pre">\]</span></tt>.</p>
-<div class="highlight-python"><pre>\documentclass{article}
-\begin{document}
+<p>There is a native equation environment, displaymath, which can be invoked by
+encasing math inside double dollar signs or <tt class="code docutils literal"><span class="pre">\[</span></tt>, and <tt class="code docutils literal"><span class="pre">\]</span></tt>. It can
+typeset up to one line of math at a time.</p>
+<div class="highlight-python"><pre>\begin{document}
 $$e=\sum_{i=0}^\infty \frac{1}{i!}$$
 \[
 \sum_{i=0}^\infty x^i = \frac{1}{1-x}
-\]
-\end{document}</pre>
+\]</pre>
 </div>
 <p>Both invoke the displaymath environment, and so are nearly identical. The only
-difference is that <tt class="code docutils literal"><span class="pre">\$\$</span></tt> math <tt class="code docutils literal"><span class="pre">\$\$</span></tt> makes a call to <span class="math">\(\TeX\)</span> and
-<tt class="code docutils literal"><span class="pre">\[`stuff</span> <span class="pre">:code:</span></tt>]` makes a call to <span class="math">\(\LaTeX\)</span>. It is not recommended to
-use these environments except when minimal control is needed. The environments provided
-by the amsmath package are much more robust and flexible.</p>
+difference is that <tt class="code docutils literal"><span class="pre">\$\$</span></tt> math <tt class="code docutils literal"><span class="pre">\$\$</span></tt> makes a call to TeX and
+<tt class="code docutils literal"><span class="pre">\[`stuff</span> <span class="pre">:code:</span></tt>]` makes a call to LaTeX It is not recommended to use
+these environments except when minimal control is needed. The environments
+provided by the <tt class="code docutils literal"><span class="pre">amsmath</span></tt> package are much more robust and flexible. The
+most common replacement environment from <tt class="code docutils literal"><span class="pre">amsmath</span></tt> is <tt class="code docutils literal"><span class="pre">align</span></tt>, or
+<tt class="code docutils literal"><span class="pre">align*</span></tt> if you do not want individual lines to be numbered. As with all
+environments, these are opened and closed with <tt class="code docutils literal"><span class="pre">\begin{}</span></tt> and
+<tt class="code docutils literal"><span class="pre">\end{}</span></tt>. Just place the desired environment name between the braces. For
+example:</p>
+<div class="highlight-python"><pre>\begin{align*}
+e=\sum_{i=0}^\infty \frac{1}{i!}
+\end{align*}</pre>
+</div>
+<p>produces:</p>
+<p>Everything that works in <tt class="code docutils literal"><span class="pre">displaymath</span></tt> works in <tt class="code docutils literal"><span class="pre">align</span></tt>. The main
+advantage of <tt class="code docutils literal"><span class="pre">align</span></tt> is that it can display many lines of mathematics at
+once.</p>
 </div>
 <div class="section" id="advanced-mathematics">
-<h2>Advanced Mathematics<a class="headerlink" href="#advanced-mathematics" title="Permalink to this headline">¶</a></h2>
-<p>The amsmath and mathtools packages are essential whenever more than just the basics are required.</p>
+<h1>Advanced Mathematics<a class="headerlink" href="#advanced-mathematics" title="Permalink to this headline">¶</a></h1>
+<p>The <tt class="code docutils literal"><span class="pre">amsmath</span></tt> package is essential whenever more than just the
+basics are required. As mentioned above, most people use <tt class="code docutils literal"><span class="pre">amsmath</span></tt> for
+the <tt class="code docutils literal"><span class="pre">align*</span></tt> environment. Since <tt class="code docutils literal"><span class="pre">amsmath</span></tt> is not natively included
+in LaTeX, you must include the line <tt class="code docutils literal"><span class="pre">\usepackage{amsmath}</span></tt> in the
+preamble in order to use any of its functionality.</p>
+<div class="section" id="equation-line-numbering">
+<h2>Equation Line Numbering<a class="headerlink" href="#equation-line-numbering" title="Permalink to this headline">¶</a></h2>
 </div>
+</div>
+<div class="section" id="latex-math-kwon-do">
+<h1>LaTeX Math-kwon-do<a class="headerlink" href="#latex-math-kwon-do" title="Permalink to this headline">¶</a></h1>
+<p>Sometimes even amsmath cannot handle what you want it to do. In these cases,
+<tt class="code docutils literal"><span class="pre">mathtools</span></tt> may have what you need.</p>
+</div>
+<div class="section" id="latex-super-math-aiyan">
+<h1>LaTeX Super-Math-aiyan<a class="headerlink" href="#latex-super-math-aiyan" title="Permalink to this headline">¶</a></h1>
+<p>This section is for the LaTeX mathematics version of Super-Saiyans. To
+understand this, you will need to understand environments, new commands,</p>
 </div>
 
 

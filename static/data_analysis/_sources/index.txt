@@ -32,11 +32,11 @@ Introduction
    Mathematica/structure.rst
    Mathematica/lists.rst
 
-The LaTeXtbook
-::::::::::::::
+The :raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>tbook` 
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    
    LaTeX/latex.rst
    LaTeX/docstructure.rst
