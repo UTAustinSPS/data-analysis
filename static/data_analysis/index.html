@@ -80,7 +80,7 @@
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 <script type="text/javascript">
   eBookConfig = {};
-  eBookConfig.host = 'http://192.168.0.10:80' ? 'http://192.168.0.10:80' : 'http://127.0.0.1:8000';
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
   eBookConfig.app = eBookConfig.host+'/runestone';
   eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
   eBookConfig.course = 'data_analysis';
@@ -201,11 +201,11 @@
           <ul class="dropdown-menu user-menu">
             <li><span class='loggedinuser'></span></li>
             <li class="divider"></li>
-            <li><a href='http://192.168.0.10:80/runestone/admin/index'>Instructor's Page</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
             <li class="divider"></li>
-            <li><a href="http://192.168.0.10:80/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
-            <li><a href="http://192.168.0.10:80/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
-            <li><a href="http://192.168.0.10:80/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
             <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
           </ul>
         </li>
@@ -350,57 +350,14 @@
 <h2>The LaTeXtbook<a class="headerlink" href="#the-latextbook" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<<<<<<< HEAD
 <li class="toctree-l1"><a class="reference internal" href="LaTeX/latex.html">LaTeX</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LaTeX/docstructure.html">Document Structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LaTeX/packages.html">Packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LaTeX/math.html">Mathematics in LaTeX</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LaTeX/tables.html">Tables, Arrays, and Matrices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LaTeX/symbols.html">Symbols</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LaTeX/newcommand.html">New Commands (\newcommand)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LaTeX/newcommand.html">New Commands</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LaTeX/include.html">Inputting and Including External Files</a></li>
-=======
-<li class="toctree-l1"><a class="reference internal" href="LaTeX/latex.html">Introduction (What&#8217;s a LaTeX?)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="LaTeX/latex.html#what-is-used-for">What is Used For?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaTeX/latex.html#what-does-it-look-like">What Does it Look Like?</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="LaTeX/docstructure.html">Document Structure</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="LaTeX/docstructure.html#useful-structures">Useful Structures</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaTeX/docstructure.html#the-preamble">The Preamble</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaTeX/docstructure.html#after-the-end-document">After the \end{document}</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="LaTeX/packages.html">Packages</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="LaTeX/packages.html#common-packages-and-what-they-do">Common Packages and What they Do</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaTeX/packages.html#optional-package-arguments">Optional Package Arguments</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="LaTeX/math.html">Mathematics in LaTeX</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="LaTeX/math.html#basic-typesetting">Basic Typesetting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaTeX/math.html#advanced-mathematics">Advanced Mathematics</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="LaTeX/tables.html">Tables, Arrays, and Matrices</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="LaTeX/tables.html#the-tabular-and-array-environments">The Tabular and Array Environments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaTeX/tables.html#the-matrix-environment">The Matrix Environment</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="LaTeX/symbols.html">Symbols</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LaTeX/newcommand.html">New Commands</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="LaTeX/newcommand.html#zero-argument-commands">Zero Argument Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaTeX/newcommand.html#argument-commands">Argument Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaTeX/newcommand.html#optional-argument-commands">Optional Argument Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaTeX/newcommand.html#looping-commands">Looping Commands</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="LaTeX/include.html">Inputting and Including External Files</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="LaTeX/include.html#differences-between-include-and-input">Differences between include and input</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaTeX/include.html#how-to-use">How to Use</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaTeX/include.html#common-problems">Common Problems</a></li>
-</ul>
-</li>
->>>>>>> f88251aa4f3e76ac4e575a1236b4c6a891c16949
 </ul>
 </div>
 </div>
