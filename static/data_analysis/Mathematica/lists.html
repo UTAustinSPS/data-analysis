@@ -74,7 +74,7 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
-    <link rel="next" title="Introduction (What’s a LaTeX?)" href="../LaTeX/latex.html" />
+    <link rel="next" title="Functions and Graphing" href="functions_graphs.html" />
     <link rel="prev" title="Document Structure and Syntax" href="structure.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -257,8 +257,8 @@
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Introduction (What&#8217;s a LaTeX?)' data-toggle="tooltip" >
-    <a href="../LaTeX/latex.html" >
+  <li id="relations-next" title='Next Chapter - Functions and Graphing' data-toggle="tooltip" >
+    <a href="functions_graphs.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -356,6 +356,7 @@ for producing sequences:</p>
 <span class="n">Table</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">}}]</span>
 <span class="nb">list</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">};</span>
 <span class="n">Table</span><span class="p">[</span><span class="nb">list</span><span class="p">[[</span><span class="n">i</span><span class="p">]]</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="n">Length</span><span class="p">[</span><span class="nb">list</span><span class="p">]}]</span>
+<span class="n">Table</span><span class="p">[{</span><span class="n">i</span><span class="p">,</span> <span class="nb">list</span><span class="p">[[</span><span class="n">i</span><span class="p">]]</span><span class="o">^</span><span class="mi">2</span><span class="p">},</span> <span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="n">Length</span><span class="p">[</span><span class="nb">list</span><span class="p">]}]</span>
 </pre></div>
 </div>
 <p>is</p>
@@ -363,6 +364,7 @@ for producing sequences:</p>
 <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">}</span>
 <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
 <span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">}</span>
+<span class="p">{{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">},</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">},</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">16</span><span class="p">}}</span>
 </pre></div>
 </div>
 <p>Essentially, <tt class="code docutils literal"><span class="pre">Table</span></tt> accepts some function over the domain given and will then

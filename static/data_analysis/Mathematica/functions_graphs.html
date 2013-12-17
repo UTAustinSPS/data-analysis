@@ -241,7 +241,9 @@
 <li><a class="reference internal" href="#">Functions and Graphing</a></li>
 <li><a class="reference internal" href="#functions">Functions</a></li>
 <li><a class="reference internal" href="#graphing">Graphing</a><ul>
-<li><a class="reference internal" href="#basic-graphing-utilities">Basic Graphing Utilities</a></li>
+<li><a class="reference internal" href="#basic-2d-graphs">Basic 2D Graphs</a></li>
+<li><a class="reference internal" href="#basic-3d-graphs">Basic 3D Graphs</a></li>
+<li><a class="reference internal" href="#basic-1d-graphs">Basic &#8220;1D&#8221; Graphs</a></li>
 </ul>
 </li>
 </ul>
@@ -341,10 +343,11 @@ by using:</p>
 </pre></div>
 </div>
 <p>Where we have defined <tt class="code docutils literal"><span class="pre">f[x_]:=</span> <span class="pre">...</span></tt>. <em>e.g.</em>, <tt class="code docutils literal"><span class="pre">f[x_]:=x^2</span></tt> will have
-<tt class="code docutils literal"><span class="pre">D[f[x],</span> <span class="pre">x]=2x</span></tt>. Of course, because these are dummy functions, we can
+<tt class="code docutils literal"><span class="pre">D[f[x],</span> <span class="pre">x]=2x</span></tt>. Of course, because these are functions of whatever variable
+we apply, we can
 use any variable name we want in the derivative: <tt class="code docutils literal"><span class="pre">D[f[y],</span> <span class="pre">y]</span></tt> = <tt class="code docutils literal"><span class="pre">2y</span></tt>.</p>
-<p>We can also take integrals (both definite and indefinite).</p>
-<p>We&#8217;ll use the same command in both cases. To take the indefinite integral, we&#8217;ll use:</p>
+<p>We can also take integrals (both definite and indefinite), using the same command
+in both cases. To take the indefinite integral, we&#8217;ll use:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">Integrate</span><span class="p">[</span><span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">x</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -362,8 +365,8 @@ we can use:</p>
 <p>Until this point, we have largely just dealt with numbers and functions. Now, let&#8217;s take
 a look at expressing data more graphically, and how to customize the display for different
 scenarios.</p>
-<div class="section" id="basic-graphing-utilities">
-<h2>Basic Graphing Utilities<a class="headerlink" href="#basic-graphing-utilities" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="basic-2d-graphs">
+<h2>Basic 2D Graphs<a class="headerlink" href="#basic-2d-graphs" title="Permalink to this headline">¶</a></h2>
 <p>First, let&#8217;s look at graphing functions in two-dimensions, with some basic customization
 features. The simplest is <tt class="code docutils literal"><span class="pre">Plot[f[x],</span> <span class="pre">{x,</span> <span class="pre">a,</span> <span class="pre">b}]</span></tt>, which will plot the function
 <span class="math">\(f(x)\)</span> from <span class="math">\(x=a\)</span> to <span class="math">\(x=b\)</span>, with <span class="math">\(x\)</span> on the horizontal axis
@@ -392,8 +395,10 @@ with the <tt class="code docutils literal"><span class="pre">Plot</span></tt> fu
 </div>
 <p>We can further add a title to the graph (<tt class="code docutils literal"><span class="pre">PlotLabel-&gt;&quot;My</span> <span class="pre">Title&quot;</span></tt>), define a different
 range for the plot (<tt class="code docutils literal"><span class="pre">PlotRange</span> <span class="pre">-&gt;</span> <span class="pre">{{xmin,</span> <span class="pre">xmax},</span> <span class="pre">{ymin,</span> <span class="pre">ymax}}</span></tt>), select the
-color and style of the line (<tt class="code docutils literal"><span class="pre">PlotStyle-&gt;[Green,</span> <span class="pre">Dashed,</span> <span class="pre">Thin]</span></tt>), and label the functions
-we&#8217;re graphing (<tt class="code docutils literal"><span class="pre">PlotLegends-&gt;&quot;Expressions&quot;</span></tt> - a special option that gives the function
+color and style of the line (<tt class="code docutils literal"><span class="pre">PlotStyle-&gt;[Green,</span> <span class="pre">Dashed,</span> <span class="pre">Thin]</span></tt> - some colors are
+pre-defined, but we can use <tt class="code docutils literal"><span class="pre">RGBColor[red,green,blue]</span></tt> and
+<tt class="code docutils literal"><span class="pre">RGBColor[red,green,blue,alpha]</span></tt> to create custom colors), and label the functions
+we&#8217;re graphing (<tt class="code docutils literal"><span class="pre">PlotLegends-&gt;&quot;Expressions&quot;</span></tt> - a special option that prints the function
 definitions). We can actually plot more than one function at a time too by providing a list
 of functions as the first argument (all functions of the same variable). If we do that,
 then for the <tt class="code docutils literal"><span class="pre">PlotStyle</span></tt>, we will find it helpful to provide instead a list of the styles.
@@ -412,7 +417,130 @@ So, for example, we could have:</p>
 <img alt="sin(x) and cos(x)" src="../_images/sinx_special.png" />
 <p class="caption">Plot for <span class="math">\(f(x)=\sin(x),~g(x)=\cos(x)\)</span>, with options specified above.</p>
 </div>
-<p>asdf</p>
+<p>There are several other useful plotting functions for other applications.</p>
+<p><tt class="code docutils literal"><span class="pre">ListPlot</span></tt> is for plotting specific data in one of two formats. The first is a simple
+list of numbers <span class="math">\(\{a_1,~a_2,~...,~a_n\}\)</span>, assuming that it corresponds to points
+<span class="math">\(\{(1,~a_1),~(2,~a_2),~...,~(n,~a_n)\}\)</span>. The second (often more useful)
+is a set of points <span class="math">\(\{(a_1,~f(a_1)),~(a_2,~f(a_2)),~...,~(a_n,~f(a_n))\}\)</span>.
+As we saw in the section on <a class="reference external" href="lists.html#tables">Tables</a>, we can easily create lists of points
+(which are just 2-element lists), with <tt class="code docutils literal"><span class="pre">Table[{i,</span> <span class="pre">f[i]},</span> <span class="pre">{i,</span> <span class="pre">imin,</span> <span class="pre">imax}]</span></tt>.
+So, for example, we can have:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">ListPlot</span><span class="p">[</span><span class="n">Table</span><span class="p">[{</span><span class="n">i</span><span class="p">,</span> <span class="n">Sin</span><span class="p">[</span><span class="n">i</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="mi">1000</span><span class="p">]},</span> <span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">}]]</span>
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="sin(x^2)" src="../_images/list_sin.png" />
+<p class="caption">Plot of <span class="math">\(\sin\left(\frac{x^2}{1000}\right)\)</span>.</p>
+</div>
+<p>Like with the <tt class="code docutils literal"><span class="pre">Plot</span></tt> function, we can have many lists of points as the first argument to
+the function. For a more interesting example:</p>
+<div class="highlight-python"><pre>list = Table[Table[{a, a^2 + 50 Sin[c*a]}, {a, 0, 20}], {c, 0, 3}];
+ListPlot[list,
+    PlotLegends -&gt; {"data 1", "data 2", "data 3", "data 4"},
+    PlotStyle -&gt; PointSize[Medium] (*Makes points bigger*)]</pre>
+</div>
+<div class="figure align-center">
+<img alt="Many list plots" src="../_images/list_simple.png" />
+<p class="caption">Plot of functions <span class="math">\(f_c(a)=a^2+50\sin(c*a)\)</span> over <span class="math">\(a\in[0,20],~c\in[0,3]\)</span>.</p>
+</div>
+<p>With the <tt class="code docutils literal"><span class="pre">ListLinePlot</span></tt> function, we get all the features of the <tt class="code docutils literal"><span class="pre">ListPlot</span></tt>,
+but with consecutive points connected:</p>
+<div class="highlight-python"><pre>ListLinePlot[list,
+    PlotLegends -&gt; {"data 1", "data 2", "data 3", "data 4"}]</pre>
+</div>
+<div class="figure align-center">
+<img alt="Many list plots" src="../_images/listline_simple.png" />
+<p class="caption">Plot of functions <span class="math">\(f_c(a)=a^2+50\sin(c*a)\)</span> over <span class="math">\(a\in[0,20],~c\in[0,3]\)</span>.</p>
+</div>
+<p>This is nice, but here we have another option at our disposal, <tt class="code docutils literal"><span class="pre">InterpolationOrder</span></tt>.
+If this is greater than 0, <em>Mathematica</em> will apply a smoothing fit to the data (in practice,
+2 gives a reasonable fit, and above 8 makes little visual difference):</p>
+<div class="highlight-python"><pre>ListLinePlot[list,
+    PlotLegends -&gt; {"data 1", "data 2", "data 3", "data 4"},
+    PlotStyle -&gt; Thick,
+    InterpolationOrder -&gt; 4]</pre>
+</div>
+<div class="figure align-center">
+<img alt="Many list plots" src="../_images/listline_interp.png" />
+<p class="caption">Plot of functions <span class="math">\(f_c(a)=a^2+50\sin(c*a)\)</span> over <span class="math">\(a\in[0,20],~c\in[0,3]\)</span>.</p>
+</div>
+<p>Other function plotters are applicable to other formulations. For example, we can have
+polar plots of the form <span class="math">\(r(\theta)=\cdots\)</span> with the <tt class="code docutils literal"><span class="pre">PolarPlot</span></tt> function:</p>
+<div class="highlight-python"><pre>PolarPlot[{Cos[3 t], -Cos[3 t]}, {t, 0, 10}, PlotStyle -&gt; {Blue, Red}]</pre>
+</div>
+<div class="figure align-center">
+<img alt="PolarPlot" src="../_images/polar_sin.png" />
+<p class="caption">Plot of functions <span class="math">\(r_1(\theta)=\cos(3\theta),~r_2(\theta)=-\cos(3\theta),\)</span>
+over <span class="math">\(\theta\in[0,10]\)</span>.</p>
+</div>
+<p><tt class="code docutils literal"><span class="pre">ParametricPlot</span></tt> accepts pairs of functions that together describe points. For
+example, we might have <span class="math">\(x(t)=\cos(t),~y(t)=\sin(t)\)</span>. We can plot that easily:</p>
+<div class="highlight-python"><pre>ParametricPlot[{Cos[t], Sin[t]}, {t, Pi/4, 7 Pi/4}]</pre>
+</div>
+<div class="figure align-center">
+<img alt="ParametricPlot" src="../_images/para_line.png" />
+<p class="caption">Plot of <span class="math">\(x(t)=\cos(t),~y(t)=\sin(t),~t\in[\pi/4,~7\pi/4]\)</span>.</p>
+</div>
+<p>We can have multiple pairs of functions, as with other plotting functions above, but
+one extra feature we have is to actually have two-parameter functions, plotting over both.
+Using a slightly modified example, <span class="math">\(x(t,~u)=u\cos(t),~y(t,~u)=u\sin(t)\)</span>, we can
+obtain plots like:</p>
+<div class="highlight-python"><pre>ParametricPlot[{u Cos[t], u Sin[t]}, {t, Pi/4, 7 Pi/4}, {u, 7, 10}]</pre>
+</div>
+<div class="figure align-center">
+<img alt="ParametricPlot" src="../_images/para_region.png" />
+<p class="caption">Plot of <span class="math">\(x(t,~u)=u\cos(t),~y(t,~u)=u\sin(t),~t\in[\pi/4,~7\pi/4],~u\in[7,10]\)</span>.</p>
+</div>
+<p>Lastly, we have the <tt class="code docutils literal"><span class="pre">ContourPlot</span></tt>, which has a few variants, each based around the
+idea of finding level curves of functions of two variables. If you have ever used a
+topographical map while hiking, this will seem familiar. For an example, let&#8217;s start with
+a simple, not-so-interesting function <span class="math">\(f(x,~y)=(x-1)^2+(y+2)^2\)</span>. That has a vertex
+centered at <span class="math">\((1,~-2)\)</span>, but grows radially outward from there:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">ContourPlot</span><span class="p">[(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="p">{</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">},</span> <span class="p">{</span><span class="n">y</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">}]</span>
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="ContourPlot" src="../_images/cont_simple.png" />
+<p class="caption">Plot of <span class="math">\(f(x,~y)=(x-1)^2+(y+2)^2,~x,y\in[-5,5]\)</span>.</p>
+</div>
+<p>In the default form, at least, this is largely uninteresting, just showing that the function
+grows bigger as it deviates from <span class="math">\((1,~-2)\)</span>. But, if we apply some more information, we
+can get customized information. In a moment, we&#8217;ll look at 3-dimensional graphs, which will
+help to visualize the actual function, but let&#8217;s now take
+<span class="math">\(f(x,~y)=|\sin(x)\sin(y)|\)</span>. We should expect peaks of this function wherever both
+<span class="math">\(\sin(x)\)</span> and <span class="math">\(\sin(y)\)</span> are at their extrema (<span class="math">\(-1,~1\)</span>),
+since in all other cases, <span class="math">\(f\)</span> will be less than <span class="math">\(1\)</span>. But we know that
+<span class="math">\(\forall{x,y}:f(x,~y)\in[0,~1]\)</span> (that notation means
+&#8220;for all x and y, f is in that range&#8221;),
+so why don&#8217;t we see, for example, where <span class="math">\(f\)</span> is some specific values:</p>
+<div class="highlight-python"><pre>f[x_, y_] := Abs[Sin[x] Sin[y]]
+ContourPlot[
+  {f[x, y] == .005,
+  f[x, y] == .05,
+  f[x, y] == .25,
+  f[x, y] == .45,
+  f[x, y] == .65,
+  f[x, y] == .85,
+  f[x, y] == .95},
+ {x, -2 Pi, 2 Pi},
+ {y, -2 Pi, 2 Pi},
+ PlotLegends -&gt; "Expressions"]</pre>
+</div>
+<div class="figure align-center">
+<img alt="ContourPlot" src="../_images/cont_vals.png" />
+<p class="caption">Plot of <span class="math">\(f(x,~y)=|\sin(x)\sin(y)|,~x,y\in[-2\pi,2\pi]\)</span>.</p>
+</div>
+<p>It should be noted that all of these graphing functions have other options available, which
+can always be found at the
+<a class="reference external" href="http://reference.wolfram.com/mathematica/guide/Mathematica.html">*Mathematica* Reference</a>
+or using <em>Mathematica&#8217;s</em> help features.</p>
+</div>
+<div class="section" id="basic-3d-graphs">
+<h2>Basic 3D Graphs<a class="headerlink" href="#basic-3d-graphs" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="basic-1d-graphs">
+<h2>Basic &#8220;1D&#8221; Graphs<a class="headerlink" href="#basic-1d-graphs" title="Permalink to this headline">¶</a></h2>
+<p>Histogram, SmoothHistogram</p>
 </div>
 </div>
 

@@ -78,6 +78,7 @@ for producing sequences:
 	Table[i, {i, {3, 2, 4}}]
 	list = {2, 3, 4};
 	Table[list[[i]]^2, {i, Length[list]}]
+	Table[{i, list[[i]]^2}, {i, Length[list]}]
 
 is
 
@@ -87,6 +88,7 @@ is
 	{1, 4, 9, 16, 25}
 	{3, 2, 4}
 	{4, 9, 16}
+	{{1, 4}, {2, 9}, {3, 16}}
 
 Essentially, :code:`Table` accepts some function over the domain given and will then
 create the list of the elements in the sequence over the given elements in the domain.

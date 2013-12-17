@@ -71,12 +71,12 @@ functions which take functions as arguments.
 		D[f[x], x]
 
 	Where we have defined :code:`f[x_]:= ...`. *e.g.*, :code:`f[x_]:=x^2` will have
-	:code:`D[f[x], x]=2x`. Of course, because these are dummy functions, we can
+	:code:`D[f[x], x]=2x`. Of course, because these are functions of whatever variable
+	we apply, we can
 	use any variable name we want in the derivative: :code:`D[f[y], y]` = :code:`2y`.
 
-	We can also take integrals (both definite and indefinite).
-
-	We'll use the same command in both cases. To take the indefinite integral, we'll use:
+	We can also take integrals (both definite and indefinite), using the same command
+	in both cases. To take the indefinite integral, we'll use:
 
 	::
 
@@ -98,8 +98,8 @@ Until this point, we have largely just dealt with numbers and functions. Now, le
 a look at expressing data more graphically, and how to customize the display for different
 scenarios.
 
-Basic Graphing Utilities
-------------------------
+Basic 2D Graphs
+---------------
 First, let's look at graphing functions in two-dimensions, with some basic customization
 features. The simplest is :code:`Plot[f[x], {x, a, b}]`, which will plot the function
 :math:`f(x)` from :math:`x=a` to :math:`x=b`, with :math:`x` on the horizontal axis
@@ -137,8 +137,10 @@ which will create:
 
 We can further add a title to the graph (:code:`PlotLabel->"My Title"`), define a different
 range for the plot (:code:`PlotRange -> {{xmin, xmax}, {ymin, ymax}}`), select the
-color and style of the line (:code:`PlotStyle->[Green, Dashed, Thin]`), and label the functions
-we're graphing (:code:`PlotLegends->"Expressions"` - a special option that gives the function
+color and style of the line (:code:`PlotStyle->[Green, Dashed, Thin]` - some colors are
+pre-defined, but we can use :code:`RGBColor[red,green,blue]` and
+:code:`RGBColor[red,green,blue,alpha]` to create custom colors), and label the functions
+we're graphing (:code:`PlotLegends->"Expressions"` - a special option that prints the function
 definitions). We can actually plot more than one function at a time too by providing a list
 of functions as the first argument (all functions of the same variable). If we do that,
 then for the :code:`PlotStyle`, we will find it helpful to provide instead a list of the styles.
@@ -162,4 +164,172 @@ So, for example, we could have:
 
 	Plot for :math:`f(x)=\sin(x),~g(x)=\cos(x)`, with options specified above.
 
-asdf
+There are several other useful plotting functions for other applications.
+
+:code:`ListPlot` is for plotting specific data in one of two formats. The first is a simple
+list of numbers :math:`\{a_1,~a_2,~...,~a_n\}`, assuming that it corresponds to points
+:math:`\{(1,~a_1),~(2,~a_2),~...,~(n,~a_n)\}`. The second (often more useful)
+is a set of points :math:`\{(a_1,~f(a_1)),~(a_2,~f(a_2)),~...,~(a_n,~f(a_n))\}`.
+As we saw in the section on `Tables <lists.html#tables>`_, we can easily create lists of points
+(which are just 2-element lists), with :code:`Table[{i, f[i]}, {i, imin, imax}]`.
+So, for example, we can have:
+
+::
+
+	 ListPlot[Table[{i, Sin[i^2/1000]}, {i, 0, 200}]]
+
+.. figure:: Figures/list_sin.png
+	:alt: sin(x^2)
+	:align: center
+
+	Plot of :math:`\sin\left(\frac{x^2}{1000}\right)`.
+
+Like with the :code:`Plot` function, we can have many lists of points as the first argument to
+the function. For a more interesting example:
+
+::
+
+    list = Table[Table[{a, a^2 + 50 Sin[c*a]}, {a, 0, 20}], {c, 0, 3}];
+    ListPlot[list, 
+        PlotLegends -> {"data 1", "data 2", "data 3", "data 4"}, 
+        PlotStyle -> PointSize[Medium] (*Makes points bigger*)]
+
+.. figure:: Figures/list_simple.png
+	:alt: Many list plots
+	:align: center
+
+	Plot of functions :math:`f_c(a)=a^2+50\sin(c*a)` over :math:`a\in[0,20],~c\in[0,3]`.
+
+With the :code:`ListLinePlot` function, we get all the features of the :code:`ListPlot`,
+but with consecutive points connected:
+
+::
+
+    ListLinePlot[list, 
+        PlotLegends -> {"data 1", "data 2", "data 3", "data 4"}]
+
+.. figure:: Figures/listline_simple.png
+	:alt: Many list plots
+	:align: center
+
+	Plot of functions :math:`f_c(a)=a^2+50\sin(c*a)` over :math:`a\in[0,20],~c\in[0,3]`.
+
+This is nice, but here we have another option at our disposal, :code:`InterpolationOrder`.
+If this is greater than 0, *Mathematica* will apply a smoothing fit to the data (in practice,
+2 gives a reasonable fit, and above 8 makes little visual difference):
+
+::
+
+    ListLinePlot[list, 
+        PlotLegends -> {"data 1", "data 2", "data 3", "data 4"}, 
+        PlotStyle -> Thick,
+        InterpolationOrder -> 4]
+
+.. figure:: Figures/listline_interp.png
+	:alt: Many list plots
+	:align: center
+
+	Plot of functions :math:`f_c(a)=a^2+50\sin(c*a)` over :math:`a\in[0,20],~c\in[0,3]`.
+
+Other function plotters are applicable to other formulations. For example, we can have
+polar plots of the form :math:`r(\theta)=\cdots` with the :code:`PolarPlot` function:
+
+::
+
+    PolarPlot[{Cos[3 t], -Cos[3 t]}, {t, 0, 10}, PlotStyle -> {Blue, Red}]
+
+.. figure:: Figures/polar_sin.png
+	:alt: PolarPlot
+	:align: center
+
+	Plot of functions :math:`r_1(\theta)=\cos(3\theta),~r_2(\theta)=-\cos(3\theta),`
+	over :math:`\theta\in[0,10]`.
+
+:code:`ParametricPlot` accepts pairs of functions that together describe points. For
+example, we might have :math:`x(t)=\cos(t),~y(t)=\sin(t)`. We can plot that easily:
+
+::
+
+	ParametricPlot[{Cos[t], Sin[t]}, {t, Pi/4, 7 Pi/4}]
+
+.. figure:: Figures/para_line.png
+	:alt: ParametricPlot
+	:align: center
+
+	Plot of :math:`x(t)=\cos(t),~y(t)=\sin(t),~t\in[\pi/4,~7\pi/4]`.
+
+We can have multiple pairs of functions, as with other plotting functions above, but
+one extra feature we have is to actually have two-parameter functions, plotting over both.
+Using a slightly modified example, :math:`x(t,~u)=u\cos(t),~y(t,~u)=u\sin(t)`, we can
+obtain plots like:
+
+::
+
+	ParametricPlot[{u Cos[t], u Sin[t]}, {t, Pi/4, 7 Pi/4}, {u, 7, 10}]
+
+.. figure:: Figures/para_region.png
+	:alt: ParametricPlot
+	:align: center
+
+	Plot of :math:`x(t,~u)=u\cos(t),~y(t,~u)=u\sin(t),~t\in[\pi/4,~7\pi/4],~u\in[7,10]`.
+
+Lastly, we have the :code:`ContourPlot`, which has a few variants, each based around the
+idea of finding level curves of functions of two variables. If you have ever used a
+topographical map while hiking, this will seem familiar. For an example, let's start with
+a simple, not-so-interesting function :math:`f(x,~y)=(x-1)^2+(y+2)^2`. That has a vertex
+centered at :math:`(1,~-2)`, but grows radially outward from there:
+
+::
+
+	ContourPlot[(x - 1)^2 + (y + 2)^2, {x, -5, 5}, {y, -5, 5}]
+
+.. figure:: Figures/cont_simple.png
+	:alt: ContourPlot
+	:align: center
+
+	Plot of :math:`f(x,~y)=(x-1)^2+(y+2)^2,~x,y\in[-5,5]`.
+
+In the default form, at least, this is largely uninteresting, just showing that the function
+grows bigger as it deviates from :math:`(1,~-2)`. But, if we apply some more information, we
+can get customized information. In a moment, we'll look at 3-dimensional graphs, which will
+help to visualize the actual function, but let's now take 
+:math:`f(x,~y)=|\sin(x)\sin(y)|`. We should expect peaks of this function wherever both
+:math:`\sin(x)` and :math:`\sin(y)` are at their extrema (:math:`-1,~1`),
+since in all other cases, :math:`f` will be less than :math:`1`. But we know that
+:math:`\forall{x,y}:f(x,~y)\in[0,~1]` (that notation means
+"for all x and y, f is in that range"),
+so why don't we see, for example, where :math:`f` is some specific values:
+
+:: 
+
+    f[x_, y_] := Abs[Sin[x] Sin[y]]
+    ContourPlot[
+      {f[x, y] == .005,
+      f[x, y] == .05,
+      f[x, y] == .25,
+      f[x, y] == .45,
+      f[x, y] == .65,
+      f[x, y] == .85,
+      f[x, y] == .95},
+     {x, -2 Pi, 2 Pi},
+     {y, -2 Pi, 2 Pi},
+     PlotLegends -> "Expressions"]
+
+.. figure:: Figures/cont_vals.png
+	:alt: ContourPlot
+	:align: center
+
+	Plot of :math:`f(x,~y)=|\sin(x)\sin(y)|,~x,y\in[-2\pi,2\pi]`.
+
+It should be noted that all of these graphing functions have other options available, which
+can always be found at the
+`*Mathematica* Reference <http://reference.wolfram.com/mathematica/guide/Mathematica.html>`_
+or using *Mathematica's* help features.
+
+
+Basic 3D Graphs
+---------------
+
+Basic "1D" Graphs
+-----------------
+Histogram, SmoothHistogram
