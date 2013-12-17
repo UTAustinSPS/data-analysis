@@ -28,6 +28,7 @@ Introduction
    Mathematica/mathematica.rst
    Mathematica/structure.rst
    Mathematica/lists.rst
+   Mathematica/functions_graphs.rst
 
 The LaTeXtbook
 ::::::::::::::

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Document Structure and Syntax &mdash; Introduction to Data Analysis for Physics</title>
+    <title>Functions and Graphing &mdash; Introduction to Data Analysis for Physics</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -74,8 +74,8 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
-    <link rel="next" title="Lists, Tables, and Matrices" href="lists.html" />
-    <link rel="prev" title="Introduction" href="mathematica.html" />
+    <link rel="next" title="Introduction (What’s a LaTeX?)" href="../LaTeX/latex.html" />
+    <link rel="prev" title="Lists, Tables, and Matrices" href="lists.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -238,13 +238,10 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Document Structure and Syntax</a><ul>
-<li><a class="reference internal" href="#basic-constructs">Basic Constructs</a></li>
-<li><a class="reference internal" href="#order-matters">Order Matters</a></li>
-<li><a class="reference internal" href="#building-on-output">Building on Output</a></li>
-<li><a class="reference internal" href="#approximations">Approximations</a></li>
-<li><a class="reference internal" href="#evaluating-symbolic-expressions">Evaluating Symbolic Expressions</a></li>
-<li><a class="reference internal" href="#other-constructs">Other Constructs</a></li>
+<li><a class="reference internal" href="#">Functions and Graphing</a></li>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#graphing">Graphing</a><ul>
+<li><a class="reference internal" href="#basic-graphing-utilities">Basic Graphing Utilities</a></li>
 </ul>
 </li>
 </ul>
@@ -254,14 +251,14 @@
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Introduction" data-toggle="tooltip">
-    <a href="mathematica.html" >
+  <li id="relations-prev" title="Previous Chapter - Lists, Tables, and Matrices" data-toggle="tooltip">
+    <a href="lists.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Lists, Tables, and Matrices' data-toggle="tooltip" >
-    <a href="lists.html" >
+  <li id="relations-next" title='Next Chapter - Introduction (What&#8217;s a LaTeX?)' data-toggle="tooltip" >
+    <a href="../LaTeX/latex.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -289,156 +286,133 @@
 
 <div class="container">
   
-  <div class="section" id="document-structure-and-syntax">
-<h1>Document Structure and Syntax<a class="headerlink" href="#document-structure-and-syntax" title="Permalink to this headline">¶</a></h1>
-<p><em>Mathematica</em> largely lacks the kind of structures one might find in other languages. Instead of
-having sections like <span class="math">\(\LaTeX\)</span>, it simply has blocks of code you can execute. And unlike
-languages like <em>Python</em>, <em>C</em> or <em>Java</em>, <em>Mathematica</em> will simply execute whatever block of code
-is in focus. This eliminates the need for the &#8220;boilerplate&#8221; code that comes in many languages
-of having to set up a particular &#8220;main&#8221; function to execute, by instead allowing the user
-to essentially say &#8220;execute these lines&#8221;.</p>
-<div class="section" id="basic-constructs">
-<h2>Basic Constructs<a class="headerlink" href="#basic-constructs" title="Permalink to this headline">¶</a></h2>
-<p>As already seen, assignment of variables is quite easy, with the statement</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+  <div class="section" id="functions-and-graphing">
+<h1>Functions and Graphing<a class="headerlink" href="#functions-and-graphing" title="Permalink to this headline">¶</a></h1>
+</div>
+<hr class="docutils" />
+<div class="section" id="functions">
+<h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
+<p>We&#8217;ve talked about a data-based way of looking at storage in <em>Mathematica</em> with lists, matrices,
+tables, etc. But one other form of &#8220;storage&#8221; we can consider is functions. <em>Mathematica</em>
+allows us to define functions in a very similar way to how we might write down a function
+in mathematics. If we want to define some function <span class="math">\(f(x)=x^2+\frac{11}{x}\)</span>, we can
+simply write:</p>
+<div class="highlight-python"><pre>f[x_] := x^2+11/x</pre>
+</div>
+<p>There are some important differences here. The first is the underscore (<tt class="code docutils literal"><span class="pre">_</span></tt>) character
+on the left-hand side that is absent on the right-hand side. That tells <em>Mathematica</em> that
+the <tt class="code docutils literal"><span class="pre">x</span></tt> in the function definition is a dummy variable.</p>
+<div class="sidebar">
+<p class="first sidebar-title">The Smart Dummy Variable</p>
+<p>As we saw above, we want to define functions with variables with an underscore at the end.
+What happens if we leave that out? Or what if we leave out the colon in before the
+equals sign? Well, we then effectively create different expressions
+based on the variables we use to define the &#8220;function&#8221;. For example:</p>
+<div class="highlight-python"><pre>ClearAll[f,g,h,i,x,y,z,i,p,u];
+f[x] = x^2
+g[y] := y + 5
+g[z] := z + 7
+h[u_] = u * 8
+i = 7 * p</pre>
+</div>
+<p>Each &#8220;function&#8221; has a different behavior.</p>
+<p><tt class="code docutils literal"><span class="pre">f</span></tt> applied to anything other than the variable <tt class="code docutils literal"><span class="pre">x</span></tt> will not be evaluated.
+This is because we only defined the function for <tt class="code docutils literal"><span class="pre">x</span></tt>. If we try to evaluate
+<tt class="code docutils literal"><span class="pre">f[x]</span></tt>, we do get <tt class="code docutils literal"><span class="pre">x^2</span></tt>. But if instead we first define <tt class="code docutils literal"><span class="pre">x=2</span></tt>, <tt class="code docutils literal"><span class="pre">f[x]</span></tt>
+can no longer be evaluated, since <tt class="code docutils literal"><span class="pre">f</span></tt> is not defined for argument 2.</p>
+<p class="last">f/g??????????????????</p>
+</div>
+<p>We can easily apply functions to other functions as well:</p>
+<div class="highlight-python"><pre>g[x_]:=x/11;
+g[f[x]]</pre>
+</div>
+<p>will print:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="mi">11</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span>
 </pre></div>
 </div>
-<p>being read as &#8220;x is given the value 5&#8221;. Unlike mathematics where <span class="math">\(x=4\)</span> is the same as
-<span class="math">\(4=x\)</span>, in <em>Mathematica</em>, order matters. When we want to assign a variable, it must be
-on the left-hand side, with the value on the right. We&#8217;ll look at solving equations later, but
-for now, we&#8217;ll just allow variable assignment as written above.</p>
-<p>Most statements in <em>Mathematica</em> produce some kind of output
-(the above would output the value 5), but this can be hidden by ending the statement with a semicolon:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<p>We can base functions on other functions (built-in or user-created) too. There are many built-in
+functions which take functions as arguments.</p>
+<div class="note admonition">
+<p class="first admonition-title">Example: Calculus</p>
+<p>One particularly useful realm for user-created functions is taking their integrals and
+derivatives. We can take a derivative <span class="math">\(\frac{d}{dx}\)</span> of a function <span class="math">\(f(x)\)</span>
+by using:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">D</span><span class="p">[</span><span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">x</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>We can at any point redefine variables (just do another assignment) or &#8220;clear&#8221; them, which will
-turn them into a symbol again, using the <tt class="code docutils literal"><span class="pre">Clear[x]</span></tt> command, where <tt class="code docutils literal"><span class="pre">x</span></tt> is the
-variable we want to clear.</p>
-<p>We can easily create functions and expressions of other variables:</p>
-<div class="highlight-python"><pre>f[x_] := x^2
-e = x ^ 2</pre>
-</div>
-<p>f is now the function <span class="math">\(f(x)=x^2\)</span> and e is an expression. The difference is that if we have defined
-a variable &#8220;x&#8221;, e will be that value squared. But f is still the function that squares its argument, rather
-than giving the square of some pre-defined variable x. For example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">f</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
-<span class="n">g</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-<span class="n">g</span>
-<span class="n">f</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
-<span class="n">f</span><span class="p">[</span><span class="n">y</span><span class="p">]</span>
-<span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+<p>Where we have defined <tt class="code docutils literal"><span class="pre">f[x_]:=</span> <span class="pre">...</span></tt>. <em>e.g.</em>, <tt class="code docutils literal"><span class="pre">f[x_]:=x^2</span></tt> will have
+<tt class="code docutils literal"><span class="pre">D[f[x],</span> <span class="pre">x]=2x</span></tt>. Of course, because these are dummy functions, we can
+use any variable name we want in the derivative: <tt class="code docutils literal"><span class="pre">D[f[y],</span> <span class="pre">y]</span></tt> = <tt class="code docutils literal"><span class="pre">2y</span></tt>.</p>
+<p>We can also take integrals (both definite and indefinite).</p>
+<p>We&#8217;ll use the same command in both cases. To take the indefinite integral, we&#8217;ll use:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Integrate</span><span class="p">[</span><span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">x</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>if executed sequentially will output:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="mi">25</span>
-<span class="n">x</span><span class="o">^</span><span class="mi">2</span>
-<span class="mi">9</span>
-<span class="mi">16</span>
-<span class="n">y</span><span class="o">^</span><span class="mi">2</span>
-<span class="mi">9</span>
+<p>That will, for example, given <tt class="code docutils literal"><span class="pre">f[x_]:=x^2</span></tt>, have
+<tt class="code docutils literal"><span class="pre">Integrate[f[x],</span> <span class="pre">x]=x^3/3</span></tt>. If we&#8217;d rather take the definite integral,
+we can use:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Integrate</span><span class="p">[</span><span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="p">{</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">}]</span>
 </pre></div>
 </div>
-<p>One handy part of <em>Mathematica</em> is that it supports the use of variables as input to functions (as seen with
-<tt class="code docutils literal"><span class="pre">f[y]</span></tt> above). In that way, it can also handle function composition:</p>
-<div class="highlight-python"><pre>u[x_] := x^2;
-v[x_] := x + 1;
-u[v[y]]</pre>
-</div>
-<p>has the output:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">(</span><span class="n">y</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span>
-</pre></div>
+<p class="last">where <tt class="code docutils literal"><span class="pre">a</span></tt> and <tt class="code docutils literal"><span class="pre">b</span></tt> are the limits of integration: <span class="math">\(\int_a^bf(x)dx\)</span>.</p>
 </div>
 </div>
-<div class="section" id="order-matters">
-<h2>Order Matters<a class="headerlink" href="#order-matters" title="Permalink to this headline">¶</a></h2>
-<p>Although <em>Mathematica</em> allows the user to execute lines in any order, this can lead to complications.
-For example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-<span class="n">x</span> <span class="o">^</span> <span class="mi">2</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-</pre></div>
+<div class="section" id="graphing">
+<h1>Graphing<a class="headerlink" href="#graphing" title="Permalink to this headline">¶</a></h1>
+<p>Until this point, we have largely just dealt with numbers and functions. Now, let&#8217;s take
+a look at expressing data more graphically, and how to customize the display for different
+scenarios.</p>
+<div class="section" id="basic-graphing-utilities">
+<h2>Basic Graphing Utilities<a class="headerlink" href="#basic-graphing-utilities" title="Permalink to this headline">¶</a></h2>
+<p>First, let&#8217;s look at graphing functions in two-dimensions, with some basic customization
+features. The simplest is <tt class="code docutils literal"><span class="pre">Plot[f[x],</span> <span class="pre">{x,</span> <span class="pre">a,</span> <span class="pre">b}]</span></tt>, which will plot the function
+<span class="math">\(f(x)\)</span> from <span class="math">\(x=a\)</span> to <span class="math">\(x=b\)</span>, with <span class="math">\(x\)</span> on the horizontal axis
+and <span class="math">\(f(x)\)</span> on the vertical axis, selecting an automatic, appropriate range
+for <span class="math">\(f(x)\)</span>. For example, for <span class="math">\(f(x)=\sin(x),~x\in[0, 2\pi]\)</span>,
+we have <tt class="code docutils literal"><span class="pre">Plot[Sin[x],</span> <span class="pre">{x,</span> <span class="pre">0,</span> <span class="pre">2</span> <span class="pre">Pi}]</span></tt>, which will produce:</p>
+<div class="figure align-center">
+<img alt="sin(x)" src="../_images/sinx_simple.png" />
+<p class="caption">Simple plot for <span class="math">\(f(x)=\sin(x)\)</span>.</p>
 </div>
-<p>In the above example, if the statements are executed in the order above (as in most other
-programming languages), the value 25 would be printed. But, if we instead execute the last statement
-then the middle statement, the value 4 would be printed. As such, it is typically useful to not re-use
-variables within a program, or at the very least to separate the blocks of code such that you
-always fix the value before using it.</p>
-<p>Fortunately, the <em>Mathematica</em> application shows you the order in which statements were run by indexing
-each line of code with <tt class="code docutils literal"><span class="pre">In[EXEC_NUM]</span></tt> and each line of output with <tt class="code docutils literal"><span class="pre">Out[EXEC_NUM]</span></tt>. That way, when
-using the language, you can backtrack what the values of variables/output should be.</p>
-<p>However, in this textbook, unless otherwise noted, we will use the convention that all lines are executed
-and executed sequentially down the page.</p>
+<p>While we might be able to tell what&#8217;s going on in the graph above, that&#8217;s not
+always going to be the case. For example, we might want to have some basic labels on the
+graph, for the axes and for a title. Turns out, this is very easy to do with our friend from
+the
+<a class="reference external" href="structure.html#evaluating-symbolic-expressions">Evaluating Symbolic Expressions</a>
+section, the rule operator (<tt class="code docutils literal"><span class="pre">-&gt;</span></tt>). Many functions allow for optional arguments
+using the name of the argument and the rule operator to the desired value. For example,
+with the <tt class="code docutils literal"><span class="pre">Plot</span></tt> function above, we might want to label axes. We do that with the
+<tt class="code docutils literal"><span class="pre">AxesLabel</span></tt> argument:</p>
+<div class="highlight-python"><pre>Plot[Sin[x], {x, 0, 2 Pi}, AxesLabel-&gt;{"x","f(x)"}]</pre>
 </div>
-<div class="section" id="building-on-output">
-<h2>Building on Output<a class="headerlink" href="#building-on-output" title="Permalink to this headline">¶</a></h2>
-<p>One construct that can be prone to errors, but can also make things easier to write if you&#8217;re careful
-is similar to the &#8220;Ans&#8221; feature on many Texas Instruments graphing calculators, which allows you to
-load previous results. In <em>Mathematica</em>, this is done with the <tt class="code docutils literal"><span class="pre">%</span></tt> operator:</p>
-<div class="highlight-python"><pre>5
-%^2
-%%^3
-%%%^3</pre>
+<p>which will create:</p>
+<div class="figure align-center">
+<img alt="sin(x)" src="../_images/sinx_axes.png" />
+<p class="caption">Plot for <span class="math">\(f(x)=\sin(x)\)</span>, with labeled axes.</p>
 </div>
-<p>This would print:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="mi">5</span>
-<span class="mi">25</span>
-<span class="mi">125</span>
-<span class="mi">625</span>
-</pre></div>
+<p>We can further add a title to the graph (<tt class="code docutils literal"><span class="pre">PlotLabel-&gt;&quot;My</span> <span class="pre">Title&quot;</span></tt>), define a different
+range for the plot (<tt class="code docutils literal"><span class="pre">PlotRange</span> <span class="pre">-&gt;</span> <span class="pre">{{xmin,</span> <span class="pre">xmax},</span> <span class="pre">{ymin,</span> <span class="pre">ymax}}</span></tt>), select the
+color and style of the line (<tt class="code docutils literal"><span class="pre">PlotStyle-&gt;[Green,</span> <span class="pre">Dashed,</span> <span class="pre">Thin]</span></tt>), and label the functions
+we&#8217;re graphing (<tt class="code docutils literal"><span class="pre">PlotLegends-&gt;&quot;Expressions&quot;</span></tt> - a special option that gives the function
+definitions). We can actually plot more than one function at a time too by providing a list
+of functions as the first argument (all functions of the same variable). If we do that,
+then for the <tt class="code docutils literal"><span class="pre">PlotStyle</span></tt>, we will find it helpful to provide instead a list of the styles.
+So, for example, we could have:</p>
+<div class="highlight-python"><pre>Plot[{Sin[x], Cos[x]},
+ {x, 0, 2 Pi},
+ AxesLabel -&gt; {"x", "f(x)"} ,
+ PlotLabel -&gt; "My Title",
+ PlotRange -&gt; {{0, 3 Pi}, {-1.5, 1.5}},
+ PlotStyle -&gt; {
+    {RGBColor[0.900082, 0.425655, 0.093112], Dashed, Thin},
+    {RGBColor[0, 1, 0], DotDashed, Thick}},
+ PlotLegends -&gt; "Expressions"]</pre>
 </div>
-<p>You can also use <tt class="code docutils literal"><span class="pre">\%n</span></tt>, which gives the output of the <span class="math">\(n^\textrm{th}\)</span> execution, which is
-even more prone to errors.</p>
+<div class="figure align-center">
+<img alt="sin(x) and cos(x)" src="../_images/sinx_special.png" />
+<p class="caption">Plot for <span class="math">\(f(x)=\sin(x),~g(x)=\cos(x)\)</span>, with options specified above.</p>
 </div>
-<div class="section" id="approximations">
-<h2>Approximations<a class="headerlink" href="#approximations" title="Permalink to this headline">¶</a></h2>
-<p>We will look at making physical approximations and solving problems numerically later on, but one useful
-function to know about is the <tt class="code docutils literal"><span class="pre">N</span></tt> function. The canonical example of the use of the N function is this:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">pi_approx</span> <span class="o">=</span> <span class="n">N</span><span class="p">[</span><span class="n">Pi</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>which will take the built-in value <span class="math">\(\textrm{Pi}=\pi\)</span> with 8 digit precision and assigns that value
-to &#8220;pi_approx&#8221;. It is a powerful tool to get down to actual values instead of more abstract expressions.</p>
-</div>
-<div class="section" id="evaluating-symbolic-expressions">
-<h2>Evaluating Symbolic Expressions<a class="headerlink" href="#evaluating-symbolic-expressions" title="Permalink to this headline">¶</a></h2>
-<p>When we have an expression, such as <tt class="code docutils literal"><span class="pre">x^2</span></tt>, we need not have <tt class="code docutils literal"><span class="pre">x</span></tt> defined (as seen above) for <em>Mathematica</em>
-to run. In fact, <em>Mathematica</em> gives us considerable flexibility if we choose not to define <tt class="code docutils literal"><span class="pre">x</span></tt>, and
-instead use the &#8220;replacement&#8221; operator (<tt class="code docutils literal"><span class="pre">/.</span></tt>) instead:</p>
-<div class="highlight-python"><pre>g = x^2 + y
-g/.x-&gt;5
-g/.x-&gt;5/.y-&gt;2
-g/.{x-&gt;5, y-&gt;2}</pre>
-</div>
-<p>would output:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span>
-<span class="mi">25</span> <span class="o">+</span> <span class="n">y</span>
-<span class="mi">27</span>
-<span class="mi">27</span>
-</pre></div>
-</div>
-<p><tt class="code docutils literal"><span class="pre">/.</span></tt> is telling mathematica that you want to apply a particular set of values to variables in
-the expression. The rule operator (<tt class="code docutils literal"><span class="pre">-&gt;</span></tt>) is stating that the variable on the left hand side should take the value
-on the right hand side. You can apply many such substitutions one after another (
-<tt class="code docutils literal"><span class="pre">g/.x-&gt;5/.y-&gt;2</span></tt>) or
-apply many at once using curly braces (<tt class="code docutils literal"><span class="pre">g/.{x-&gt;5,</span> <span class="pre">y-&gt;2}</span></tt>).</p>
-</div>
-<div class="section" id="other-constructs">
-<h2>Other Constructs<a class="headerlink" href="#other-constructs" title="Permalink to this headline">¶</a></h2>
-<p>Two other constructs that will come in handy are comments and strings.</p>
-<p>Comments are human-readable elements of the file that are not evaluated. They
-are created by having a <tt class="code docutils literal"><span class="pre">(*</span></tt> then as much text as you want until a <tt class="code docutils literal"><span class="pre">*)</span></tt>. For example,</p>
-<div class="highlight-python"><pre>(*Here is some information about why I'm assigning x the value y...*)
-x=y
-(*It can span multiple
-lines too.*)</pre>
-</div>
-<p>Another useful consruct are strings. Strings are a way of passing text to <em>Mathematica</em>. We&#8217;ll
-end up using strings for display purposes later, but the way we construct them is simple.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="s">&quot;This is a string, demarked by double-quotes on either side&quot;</span>
-</pre></div>
-</div>
+<p>asdf</p>
 </div>
 </div>
 

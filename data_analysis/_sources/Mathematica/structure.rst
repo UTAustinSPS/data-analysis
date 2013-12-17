@@ -15,7 +15,12 @@ As already seen, assignment of variables is quite easy, with the statement
 
 	x = 5
 
-being read as "x is given the value 5". Most statements in *Mathematica* produce some kind of output
+being read as "x is given the value 5". Unlike mathematics where :math:`x=4` is the same as
+:math:`4=x`, in *Mathematica*, order matters. When we want to assign a variable, it must be
+on the left-hand side, with the value on the right. We'll look at solving equations later, but
+for now, we'll just allow variable assignment as written above.
+
+Most statements in *Mathematica* produce some kind of output
 (the above would output the value 5), but this can be hidden by ending the statement with a semicolon:
 
 ::
@@ -138,7 +143,7 @@ Evaluating Symbolic Expressions
 -------------------------------
 When we have an expression, such as :code:`x^2`, we need not have :code:`x` defined (as seen above) for *Mathematica*
 to run. In fact, *Mathematica* gives us considerable flexibility if we choose not to define :code:`x`, and
-instead use the "replacement" operator instead:
+instead use the "replacement" operator (:code:`/.`) instead:
 
 ::
 
@@ -157,7 +162,29 @@ would output:
 	27
 
 :code:`/.` is telling mathematica that you want to apply a particular set of values to variables in 
-the expression. The :code:`->` operator is stating that the variable on the left hand side should take the value
+the expression. The rule operator (:code:`->`) is stating that the variable on the left hand side should take the value
 on the right hand side. You can apply many such substitutions one after another (
 :code:`g/.x->5/.y->2`) or
 apply many at once using curly braces (:code:`g/.{x->5, y->2}`).
+
+Other Constructs
+----------------
+Two other constructs that will come in handy are comments and strings.
+
+Comments are human-readable elements of the file that are not evaluated. They
+are created by having a :code:`(*` then as much text as you want until a :code:`*)`. For example,
+
+::
+
+	(*Here is some information about why I'm assigning x the value y...*)
+	x=y
+	(*It can span multiple
+	lines too.*)
+
+Another useful consruct are strings. Strings are a way of passing text to *Mathematica*. We'll
+end up using strings for display purposes later, but the way we construct them is simple.
+
+::
+
+	x = "This is a string, demarked by double-quotes on either side"
+
