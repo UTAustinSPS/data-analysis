@@ -15,21 +15,39 @@ project_name = "data_analysis"
 master_url = 'http://192.168.0.10:80'
 master_app = 'runestone'
 
-options(
-    sphinx = Bunch(docroot=".",),
+if 'win' in sys.platform.lower():
+  options(
+      sphinx = Bunch(docroot=".",),
 
-    build = Bunch(
-        builddir="../static/"+project_name,
-        sourcedir="_sources",
-        outdir="../static/"+project_name,
-        confdir=".",
-        template_args={'course_id':project_name,
-                       'login_required':'false',
-                       'appname':master_app,
-                       'loglevel':10,
-                       'course_url':master_url }
-    )
-)
+      build = Bunch(
+          builddir="..\\static\\"+project_name,
+          sourcedir="_sources",
+          outdir="..\\static\\"+project_name,
+          confdir=".",
+          template_args={'course_id':project_name,
+                         'login_required':'false',
+                         'appname':master_app,
+                         'loglevel':10,
+                         'course_url':master_url }
+      )
+  )
+
+else:
+  options(
+      sphinx = Bunch(docroot=".",),
+
+      build = Bunch(
+          builddir="../static/"+project_name,
+          sourcedir="_sources",
+          outdir="../static/"+project_name,
+          confdir=".",
+          template_args={'course_id':project_name,
+                         'login_required':'false',
+                         'appname':master_app,
+                         'loglevel':10,
+                         'course_url':master_url }
+      )
+  )
 
 if project_name == "<project_name>":
   print "Please edit pavement.py and give your project a name"

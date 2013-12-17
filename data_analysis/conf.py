@@ -37,7 +37,11 @@ copyright = u'2013, University of Texas at Austin Society of Physics Students an
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['ActiveIndexFiles/*']
+exclude_patterns = []
+if 'win' in sys.platform.lower():
+  exclude_patterns = ["ActiveIndexFiles\\*"]
+else:
+  exclude_patterns = ['ActiveIndexFiles/*']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
@@ -99,7 +103,18 @@ html_short_title ='Physics Data Analysis'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static',
+html_static_path = []
+if 'win' in sys.platform.lower():
+  html_static_path = ['_static',
+                    '..\\common\\js',
+                    '..\\common\\css',
+                    '..\\common\\ext\\skulpt\\dist',
+                    '..\\common\\ext\\js-parsons',
+                    '..\\common\\ext\\codelens\\v3',
+                    '..\\common\\bootstrap',
+                    '..\\common\\images']
+else:
+  html_static_path = ['_static',
                     '../common/js',
                     '../common/css',
                     '../common/ext/skulpt/dist',
