@@ -81,7 +81,7 @@
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 <script type="text/javascript">
   eBookConfig = {};
-  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.host = 'http://192.168.0.10:80' ? 'http://192.168.0.10:80' : 'http://127.0.0.1:8000';
   eBookConfig.app = eBookConfig.host+'/runestone';
   eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
   eBookConfig.course = 'data_analysis';
@@ -202,11 +202,11 @@
           <ul class="dropdown-menu user-menu">
             <li><span class='loggedinuser'></span></li>
             <li class="divider"></li>
-            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li><a href='http://192.168.0.10:80/runestone/admin/index'>Instructor's Page</a></li>
             <li class="divider"></li>
-            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
-            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
-            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li><a href="http://192.168.0.10:80/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://192.168.0.10:80/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://192.168.0.10:80/runestone/default/user/register" id="registerlink">Register</a></li>
             <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
           </ul>
         </li>
@@ -288,22 +288,11 @@
 
 <div class="container">
   
-<<<<<<< HEAD
   <div class="section" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="what-s-a-span-class-latex-l-sup-a-sup-t-sub-e-sub-x-span">
 <h2>What&#8217;s a <span class="raw-html"><span class="latex">L<sup>A</sup>T<sub>E</sub>X</span></span>?<a class="headerlink" href="#what-s-a-span-class-latex-l-sup-a-sup-t-sub-e-sub-x-span" title="Permalink to this headline">¶</a></h2>
 <p><span class="raw-html"><span class="latex">L<sup>A</sup>T<sub>E</sub>X</span></span> (&#8220;lah-tech&#8221; or &#8220;lay-tech&#8221;) is a text markup language - one that allows the author to precisely specify how layout and content are combined. More precisely, LaTeX is a set of macros for <span class="raw-html"><span class="latex">T<sub>E</sub>X</span></span> the Turing Award winning typesetting program by Dr. Donald Knuth. It is</p>
-=======
-  <div class="section" id="latex">
-<h1>LaTeX<a class="headerlink" href="#latex" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="introduction-what-s-a-latex">
-<h2>Introduction (What&#8217;s a LaTeX?)<a class="headerlink" href="#introduction-what-s-a-latex" title="Permalink to this headline">¶</a></h2>
-<p>LaTeX (&#8220;lah-tech&#8221; or &#8220;lay-tech&#8221;) is a markup language - one that allows the author to
-more precisely (and easily) specify how layout and content are combined. <span class="math">\(\LaTeX\)</span> (which should
-be written that way whenever possible) is based on Turing Award Winner Dr. Donald Knuth&#8217;s <span class="math">\(\TeX\)</span>
-typesetting system which is:</p>
->>>>>>> e35eac381c2bb0bf7f75654a41350a491fff1af7
 <ul class="simple">
 <li>Built for a &#8220;minimal amount of effort&#8221; for the author to produce high-quality documents</li>
 <li>Totally platform- and time-independent for resultant documents</li>
@@ -365,12 +354,8 @@ Hello World!
 \end{document}</pre>
 </div>
 <p>Which produces something like</p>
-<<<<<<< HEAD
 <img alt="Sample Document" src="../_images/looklike.jpg" />
 <p>Notice that some content for the document was specified <em>before</em> the document began. LaTeX stored some information in variables, which were later called. The line <tt class="code docutils literal"><span class="pre">\title{This</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">title}</span></tt> stored <tt class="code docutils literal"><span class="pre">This</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">title</span></tt> as the title of the document. The thing happens with the <tt class="code docutils literal"><span class="pre">\author{}</span></tt> and <tt class="code docutils literal"><span class="pre">\date{}</span></tt> commands. Those variables are stored once, and may be called throughout the document. In this case, they are called with the <tt class="code docutils literal"><span class="pre">\maketitle</span></tt> command.</p>
-=======
-<img alt="Sample Document" src="LaTeX/Figures/looklike.jpg" />
->>>>>>> e35eac381c2bb0bf7f75654a41350a491fff1af7
 </div>
 </div>
 </div>

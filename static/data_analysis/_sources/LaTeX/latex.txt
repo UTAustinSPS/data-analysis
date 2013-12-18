@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .. role:: raw-html(raw)
    :format: html
 
@@ -8,17 +7,6 @@ Introduction
 What's a :raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>`?
 ============================================================================
 :raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>` ("lah-tech" or "lay-tech") is a text markup language - one that allows the author to precisely specify how layout and content are combined. More precisely, LaTeX is a set of macros for :raw-html:`<span class="latex">T<sub>E</sub>X</span>` the Turing Award winning typesetting program by Dr. Donald Knuth. It is
-=======
-==============================
-LaTeX
-==============================
-Introduction (What's a LaTeX?)
-==============================
-LaTeX ("lah-tech" or "lay-tech") is a markup language - one that allows the author to
-more precisely (and easily) specify how layout and content are combined. :math:`\LaTeX` (which should
-be written that way whenever possible) is based on Turing Award Winner Dr. Donald Knuth's :math:`\TeX`
-typesetting system which is:
->>>>>>> e35eac381c2bb0bf7f75654a41350a491fff1af7
 
 - Built for a "minimal amount of effort" for the author to produce high-quality documents
 - Totally platform- and time-independent for resultant documents
@@ -91,10 +79,7 @@ A more complex document might look like this:
      \end{subsection}
    
   \end{document}
-<<<<<<< HEAD
 
-=======
->>>>>>> e35eac381c2bb0bf7f75654a41350a491fff1af7
 
 Which produces something like
 
