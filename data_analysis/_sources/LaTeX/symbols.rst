@@ -115,8 +115,12 @@ Many arrow commands have a counterpart which is referenced by capitalizing the f
     ============= ==================== =============== ====================== ================= ========================= ============ =====================
     \\hat{a}      :math:`\hat{a}`      \\check{a}      :math:`\check{a}`      \\dot{a}          :math:`\dot{a}`           \\ddot{a}    :math:`\ddot{a}`
     \\bar{a}      :math:`\bar{a}`      \\vec{a}        :math:`\vec{a}`        \\tilde{a}        :math:`\tilde{a}`         
+<<<<<<< HEAD
     ============= ==================== =============== ====================== ================= ========================= ============ =====================
 
+=======
+    ============= ==================== =============== ====================== ================= ========================= ============== =====================
+>>>>>>> e35eac381c2bb0bf7f75654a41350a491fff1af7
 
 
 Many arrow commands have a counterpart which is referenced by capitalizing the first letter.
