@@ -1,10 +1,10 @@
 Symbols
 =======
 
-This is not intended to be an exhaustive list of `LaTeX symbols`_, just the ones which
-are most likely to be useful. Nearly all of these symbols must be typed while in math mode.
+This is not intended to be an `exhaustive list of LaTeX symbols`_, just the ones which
+are most likely to be useful. Nearly all of these symbols must be typed while in math mode. Beware clicking the above link; it may take a while for the 164 page list of latex symbols to load.
 
-.. _LaTeX symbols: http://www.tex.ac.uk/tex-archive/info/symbols/comprehensive/symbols-a4.pdf
+.. _exhaustive list of LaTeX symbols: http://www.tex.ac.uk/tex-archive/info/symbols/comprehensive/symbols-a4.pdf
 
 These symbols can be accessed without any special commands:
 
@@ -115,7 +115,12 @@ Many arrow commands have a counterpart which is referenced by capitalizing the f
     ============= ==================== =============== ====================== ================= ========================= ============ =====================
     \\hat{a}      :math:`\hat{a}`      \\check{a}      :math:`\check{a}`      \\dot{a}          :math:`\dot{a}`           \\ddot{a}    :math:`\ddot{a}`
     \\bar{a}      :math:`\bar{a}`      \\vec{a}        :math:`\vec{a}`        \\tilde{a}        :math:`\tilde{a}`         
+<<<<<<< HEAD
+    ============= ==================== =============== ====================== ================= ========================= ============ =====================
+
+=======
     ============= ==================== =============== ====================== ================= ========================= ============== =====================
+>>>>>>> e35eac381c2bb0bf7f75654a41350a491fff1af7
 
 
 Many arrow commands have a counterpart which is referenced by capitalizing the first letter.
