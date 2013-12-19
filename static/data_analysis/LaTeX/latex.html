@@ -81,7 +81,7 @@
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 <script type="text/javascript">
   eBookConfig = {};
-  eBookConfig.host = 'http://192.168.0.10:80' ? 'http://192.168.0.10:80' : 'http://127.0.0.1:8000';
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
   eBookConfig.app = eBookConfig.host+'/runestone';
   eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
   eBookConfig.course = 'data_analysis';
@@ -202,11 +202,11 @@
           <ul class="dropdown-menu user-menu">
             <li><span class='loggedinuser'></span></li>
             <li class="divider"></li>
-            <li><a href='http://192.168.0.10:80/runestone/admin/index'>Instructor's Page</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
             <li class="divider"></li>
-            <li><a href="http://192.168.0.10:80/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
-            <li><a href="http://192.168.0.10:80/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
-            <li><a href="http://192.168.0.10:80/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
             <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
           </ul>
         </li>
@@ -354,12 +354,8 @@ Hello World!
 \end{document}</pre>
 </div>
 <p>Which produces something like</p>
-<<<<<<< HEAD
-<img alt="Sample Document" src="LaTeX\Figures/looklike.jpg" />
-=======
 <img alt="Sample Document" src="../_images/looklike.jpg" />
 <p>Notice that some content for the document was specified <em>before</em> the document began. LaTeX stored some information in variables, which were later called. The line <tt class="code docutils literal"><span class="pre">\title{This</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">title}</span></tt> stored <tt class="code docutils literal"><span class="pre">This</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">title</span></tt> as the title of the document. The thing happens with the <tt class="code docutils literal"><span class="pre">\author{}</span></tt> and <tt class="code docutils literal"><span class="pre">\date{}</span></tt> commands. Those variables are stored once, and may be called throughout the document. In this case, they are called with the <tt class="code docutils literal"><span class="pre">\maketitle</span></tt> command.</p>
->>>>>>> latexbranch
 </div>
 </div>
 </div>
