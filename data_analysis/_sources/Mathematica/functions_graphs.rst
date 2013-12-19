@@ -20,26 +20,29 @@ the :code:`x` in the function definition is a dummy variable.
 .. sidebar:: The Smart Dummy Variable
 
 	As we saw above, we want to define functions with variables with an underscore at the end.
-	What happens if we leave that out? Or what if we leave out the colon in before the
-	equals sign? Well, we then effectively create different expressions
+	What happens if we leave that out? Well, we then effectively create different expressions
 	based on the variables we use to define the "function". For example:
 	::
 
-		ClearAll[f,g,h,i,x,y,z,i,p,u];
 		f[x] = x^2
-		g[y] := y + 5
-		g[z] := z + 7
-		h[u_] = u * 8
-		i = 7 * p
+		g = 7 * y
 
-	Each "function" has a different behavior. 
+	Both "functions" have a unique behavior. 
 
 	:code:`f` applied to anything other than the variable :code:`x` will not be evaluated.
-	This is because we only defined the function for :code:`x`. If we try to evaluate
-	:code:`f[x]`, we do get :code:`x^2`. But if instead we first define :code:`x=2`, :code:`f[x]`
-	can no longer be evaluated, since :code:`f` is not defined for argument 2.
+	This is because we only defined the function for the variable :code:`x`. If we try 
+	to evaluate :code:`f[x]`, we do get :code:`x^2`. But if instead we first define
+	:code:`x=2`, :code:`f[x]` can no longer be evaluated, since :code:`f[2]` is not defined.
 
-	f/g??????????????????
+	:code:`g` is different still. It is not actually a normal function, but instead a
+	substitution expression based on the current value of :code:`y`. If :code:`y`
+	is not defined, we can use this as an expression (for example, applying a
+	substitution :code:`g/.y->5` to it), but if :code:`y` is defined, then :code:`g`
+	is exactly the value :math:`7\cdot{y}`.
+
+	There are further subtleties (the difference between :code:`=` and :code:`:=`, for example),
+	but always using the full function definition :code:`func[x_, y_] := \cdots` is the best
+	way to go.
 
 
 

@@ -52,11 +52,120 @@
     </button>
 
     <div>
-     <a class="brand-logo" style='background: transparent url("{{pathto('_static/img/logo_small.png', 1)}}") no-repeat 0px 0px;' href="{{ pathto(master_doc) }}">&nbsp; </a>
+     <a class="brand-logo" style='background: transparent url("{{pathto('_static/img/logo_small.png', 1)}}") no-repeat 0px 0px;' href="/{{appname}}/default/user/login">&nbsp; </a>
       <a class="navbar-brand" href="{{ pathto(master_doc) }}">{% if theme_navbar_title -%}{{ theme_navbar_title|e }}{%- else -%}{{ project|e }}{%- endif -%}</a>
     </div>
 
     <div class="nav-collapse collapse navbar-responsive-collapse">
+
+      <ul class="nav navbar-nav pull-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            {% if 'overview' in course_id: %}
+                <li><a href='/{{appname}}/static/{{course_id}}/overview.html'>Table of Contents</a></li>
+            {% else: %}
+                <li><a href='{{ pathto(master_doc) }}'>Table of Contents</a></li>
+            {% endif %}
+            <li><a href='/{{appname}}/static/{{course_id}}/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="{{ pathto('search') }}" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit"">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='{{course_url}}/{{appname}}/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="{{course_url}}/{{appname}}/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="{{course_url}}/{{appname}}/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="{{course_url}}/{{appname}}/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/{{appname}}/static/{{course_id}}/navhelp.html'>Navigation Help</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
 
       <ul class="nav navbar-nav">
         <li class="divider-vertical"></li>
@@ -125,10 +234,14 @@
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <a href="#">Back to top</a>
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      {% if theme_source_link_position == "footer" %}
+        <br />
+        {% include "sourcelink.html" %}
+      {% endif %}
     </p>
     <p>
-    <!--{%- if show_copyright %}
+    {%- if show_copyright %}
       {%- if hasdoc('copyright') %}
         {% trans path=pathto('copyright'), copyright=copyright|e %}&copy; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
       {%- else %}
@@ -137,7 +250,7 @@
     {%- endif %}
     {%- if last_updated %}
       {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}<br/>
-    {%- endif %}-->
+    {%- endif %}
     {%- if show_sphinx %}
       {% trans sphinx_version=sphinx_version|e %}Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
     {%- endif %}
@@ -146,11 +259,11 @@
 </footer>
 
 <script type="text/javascript" charset="utf-8">
-    //$(document).ready(addUserToFooter);
+    $(document).ready(addUserToFooter);
     $(document).ready(addNavbarLoginLink);
     $(document).ready(createEditors);
-    //$(document).ready(getNumUsers);
-    //$(document).ready(getOnlineUsers);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
     $(document).ready(createScratchActivecode());
     $(document).ready(styleUnittestResults());
 </script>
