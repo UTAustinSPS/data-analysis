@@ -1,9 +1,8 @@
 Functions and Graphing
 ======================
-======================
 
 Functions
-=========
+---------
 We've talked about a data-based way of looking at storage in *Mathematica* with lists, matrices,
 tables, etc. But one other form of "storage" we can consider is functions. *Mathematica*
 allows us to define functions in a very similar way to how we might write down a function
@@ -95,8 +94,8 @@ functions which take functions as arguments.
 
 	where :code:`a` and :code:`b` are the limits of integration: :math:`\int_a^bf(x)dx`.
 
-Graphing
-========
+Introduction to Graphing
+------------------------
 Until this point, we have largely just dealt with numbers and functions. Now, let's take
 a look at expressing data more graphically, and how to customize the display for different
 scenarios.
@@ -259,7 +258,7 @@ example, we might have :math:`x(t)=\cos(t),~y(t)=\sin(t)`. We can plot that easi
 	:alt: ParametricPlot
 	:align: center
 
-	Plot of :math:`x(t)=\cos(t),~y(t)=\sin(t),~t\in[\pi/4,~7\pi/4]`.
+	Plot of :math:`x(t)=\cos(t),~y(t)=\sin(t);~t\in[\pi/4,~7\pi/4]`.
 
 We can have multiple pairs of functions, as with other plotting functions above, but
 one extra feature we have is to actually have two-parameter functions, plotting over both.
@@ -274,9 +273,9 @@ obtain plots like:
 	:alt: ParametricPlot
 	:align: center
 
-	Plot of :math:`x(t,~u)=u\cos(t),~y(t,~u)=u\sin(t),~t\in[\pi/4,~7\pi/4],~u\in[7,10]`.
+	Plot of :math:`x(t,~u)=u\cos(t),~y(t,~u)=u\sin(t);~t\in[\pi/4,~7\pi/4],~u\in[7,10]`.
 
-Lastly, we have the :code:`ContourPlot`, which has a few variants, each based around the
+We have the :code:`ContourPlot`, which has a few variants, each based around the
 idea of finding level curves of functions of two variables. If you have ever used a
 topographical map while hiking, this will seem familiar. For an example, let's start with
 a simple, not-so-interesting function :math:`f(x,~y)=(x-1)^2+(y+2)^2`. That has a vertex
@@ -290,7 +289,7 @@ centered at :math:`(1,~-2)`, but grows radially outward from there:
 	:alt: ContourPlot
 	:align: center
 
-	Plot of :math:`f(x,~y)=(x-1)^2+(y+2)^2,~x,y\in[-5,5]`.
+	Plot of :math:`f(x,~y)=(x-1)^2+(y+2)^2;~x,y\in[-5,5]`.
 
 In the default form, at least, this is largely uninteresting, just showing that the function
 grows bigger as it deviates from :math:`(1,~-2)`. But, if we apply some more information, we
@@ -322,17 +321,194 @@ so why don't we see, for example, where :math:`f` is some specific values:
 	:alt: ContourPlot
 	:align: center
 
-	Plot of :math:`f(x,~y)=|\sin(x)\sin(y)|,~x,y\in[-2\pi,2\pi]`.
+	Plot of :math:`f(x,~y)=|\sin(x)\sin(y)|;~x,y\in[-2\pi,2\pi]`.
+
+One other plot that is also interesting is the :code:`RegionPlot`. This plot does not
+take a function, but rather a conditional expression. If true, the point is plotted. If not,
+the point is blank. For example:
+
+::
+
+	RegionPlot[Or[Sqrt[x^2 + y^2] <= 10, x^2 > 144],
+	  {x, -15, 15}, {y, -15, 15}]
+
+.. figure:: Figures/region_2d.png
+	:alt: RegionPlot
+	:align: center
+
+	Plot of the region statisfying either :math:`x^2+y^2\leq{100}` or
+	:math:`|x|\geq{12}`.
+
+.. seealso:: Mathematical Logic
+	
+	On some occasions, we may want to employ logic in addition to more familiar
+	functions on real and complex numbers. While likely not needed for this course, it
+	may help when dealing with complicated functions or with future programming projects
+	in research, industry, and beyond. See the appendix for
+	`Mathematical Logic <../Math/logic.html>`_.
 
 It should be noted that all of these graphing functions have other options available, which
 can always be found at the
 `*Mathematica* Reference <http://reference.wolfram.com/mathematica/guide/Mathematica.html>`_
 or using *Mathematica's* help features.
 
+.. admonition:: Business Graphs
+	:class: note
+
+	Pie charts, etc.
 
 Basic 3D Graphs
 ---------------
+We can do many of the things we did above in three-dimensional plots as well. The easiest
+example is :code:`Plot3D`:
+
+::
+
+	Plot3D[Sin[x y], {x, 0, 2 Pi}, {y, 0, 2 Pi}]
+
+.. figure:: Figures/3dsin.png
+	:alt: Plot3D
+	:align: center
+
+	Plot of :math:`f(x,~y)=\sin(x\cdot y);~x,y\in[0,~2\pi]`
+
+We have many of the same options as in the 3D case. We can label the whole plot with
+:code:`PlotLabel`, label the independent variable axes with :code:`AxesLabel`, and set the
+colors of graphs with :code:`PlotStyle`. But, we have a few additional options. We can
+easily add a gradient to the plot (the default is shown above). The built-in ones can be
+created with :code:`ColorFunction->"name"` where :code:`"name"` is one of the elements
+seen below.
+
+.. figure:: Figures/3d_colors.png
+	:alt: Plot3D Colors
+	:align: center
+
+	Colors available for :code:`ColorFunction`.
+
+In those cases, the function is a function of the plotted value only (not of the independent
+variables). However, we can create custom color functions by using the :code:`RGBColor` function.
+We create a new Function in three variables (the three axes - the first then second independent
+axes then the value of the plot at that point, scaled for 
+) that involves some other color function,
+for example :code:`RGBColor`: 
+
+::
+
+	Plot3D[Sin[x], {x, 0, 2 Pi}, {y, 0, 2 Pi},
+	  ColorFunction ->
+	  Function[{x, y, z},
+	    RGBColor[x, 0, 0]], (*Just produce red colors as a function of x*)
+	  AxesLabel -> Automatic]
+
+.. figure:: Figures/red_fn.png
+	:alt: Plot3D Red
+	:align: center
+
+	Plot of :math:`f(x,~y)=\sin(x);~x,y\in[0,~2 Pi]`, with color as a function of :math:`x`.
+
+We can make these as complicated as possible, but generally want to make color easy
+to work with if used as a gradient. The built-in functions have built-in plot legends as well:
+
+::
+
+	Plot3D[(x-2)^3 - .5(y-1)^3, {x, 0, 2 Pi}, {y, 0, 2 Pi},
+	  ColorFunction -> "BeachColors",
+	  AxesLabel -> Automatic,
+	  PlotLegends -> Automatic]
+
+.. figure:: Figures/color_fn.png
+	:alt: Plot3D with Legend
+	:align: center
+
+	Plot of :math:`f(x,~y)=(x-2)^3-\frac{1}{2}(y-1)^3;~x,y\in[0,2\pi]` with color legend.
+
+We have a 3D-version of :code:`ListPlot` as well, with :code:`ListPointPlot3D` (
+:code:`ListPlot3D` gives a surface based on points on the surface rather than just points).
+For example:
+
+::
+
+	ListPointPlot3D[Table[{i/10, Sin[i], Cos[i]}, {i, 0, 50, .05}],
+	  PlotStyle -> PointSize[Medium],
+	  BoxRatios -> Automatic (*Used to make the box scale better than default thin 
+	  rectangular prism*)]
+
+.. figure:: Figures/spiral.png
+	:alt: ListPointPlot3D
+	:align: center
+
+	Plot of spiral :math:`\left(\frac{i}{10},~\sin(i),~\cos(i)\right);~i\in[0,50]`.
+
+We have a 3D-version of :code:`RadialPlot` with :code:`SphericalPlot3D`, where we have
+a function :math:`r(\theta,~\phi)` as the radius as a function of angles.
+
+::
+
+	SphericalPlot3D[t p, {t, 0, 2 Pi}, {p, 0, Pi}]
+
+.. figure:: Figures/spherical.png
+	:alt: SphericalPlot3D
+	:align: center
+
+	Plot of :math:`r(\theta,~\phi)=\theta\phi;~\theta\in[0,~2\pi],~\phi\in[0,~\pi]`.
+
+We have two versions of parametric plots in 3D. The first allows for three functions
+:math:`x(t),~y(t),~z(t)`, such as:
+
+::
+
+	ParametricPlot3D[{{t, Sin[t], Cos[t]}}, {t, 0, 10},
+	  BoxRatios -> Automatic]
+
+.. figure:: Figures/para_spiral.png
+	:alt: ParametricPlot3D
+	:align: center
+
+	Plot of :math:`x(t)=t,~y(t)=\sin(t),~z(t)=\cos(t);~t\in[0,~10]`.
+
+But we can also have functions of two variables :math:`x(u,~v),~y(u,~v),~z(u,~v)`:
+
+::
+
+	ParametricPlot3D[{{v, u Sin[v], u Cos[v]}},
+	  {u, 8, 10},
+	  {v, 0, 8 Pi},
+	  BoxRatios -> Automatic,
+	  PlotStyle -> Blue]
+
+.. figure:: Figures/wide_spiral.png
+	:alt: ParametricPlot3D
+	:align: center
+
+	Plot of :math:`\left(v,~u\sin(v),~u\cos(v)\right);~u\in[8,10],~v\in[0,~8\pi]`.
+
+We have a :code:`RegionPlot` analogue in 3D as well with :code:`RegionPlot3D`.
+
+::
+
+	RegionPlot3D[
+	  And[x^2 + y^2 >= 36,
+	    x^2 + y^2 + z^2 <= 64],
+	  {x, -9, 9},
+	  {y, -9, 9},
+	  {z, -5, 5},
+	  ColorFunction -> "BrightBands"]
+
+.. figure:: Figures/intersect.png
+	:alt: RegionPlot3D
+	:align: center
+
+	Plot of the intersection of regions :math:`x^2+y^2\geq36` and
+	:math:`x^2+y^2+z^2\leq64`.
+
+
+We have a plot unique to 3D plots based on the notion of rotating a 2D curve in 3D space. RevolutionPlot3D
 
 Basic "1D" Graphs
 -----------------
 Histogram, SmoothHistogram
+
+
+Combining Plots
+---------------
+Show

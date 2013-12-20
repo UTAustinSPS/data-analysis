@@ -155,4 +155,4 @@ gives the eigenvalues of the matrix :math:`m`.
 	If you keep hearing the term "eigenvalues" or "eigenvectors" around the physics department
 	but aren't sure what they are, there's a quick tutorial in the appendix about it.
 	You might need to brush up on matrices a little beforehand. The tutorial
-	can be found `here <../Math/eigenvalues.html>`_).
+	can be found `here <../Math/eigenvalues.html>`_.

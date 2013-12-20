@@ -4,11 +4,18 @@
 
 Introduction to the Introduction
 --------------------------------
-Welcome! This is a course designed to teach the basics of the :math:`\LaTeX` and *Mathematica* programming
+Welcome! This is a course designed to teach the basics of the *Mathematica* and :math:`\LaTeX` programming
 languages in order to better prepare you for UT Austin's PHY 353L (Modern Physics Laboratory) course.
 
 This document is maintained by the UT Austin chapters of the Society of Physics Students and Sigma Pi Sigma,
 but was initially created for the Spring 2014 offering of PHY 110C by Evan Ott and Will Beason.
+
+*Mathematica* is a proprietary languaged developed by the *Wolfram* corporation and is both fairly easy
+to use, and is the basis for the popular `Wolfram|Alpha <http://www.wolframalpha.com>`_ website. It is by
+far not the fastest language for analyzing data, but abstracts many parts that become relevant in languages
+like *C* or *Python*. *Mathematica* is extremely flexible and supports large-scale projects, but in many
+cases is used for simple one-time applications. It also has typesetting abilities (including presentation-mode)
+but in practice it is generally used for its analysis capabilities, with results exported to other programs.
 
 :math:`\LaTeX` is typically used as a "markup" language, which is to say that it takes the place of other
 document formatters like *Microsoft Word* in order to create a presentable document in a fairly standard way.
@@ -22,20 +29,11 @@ names of these languages. However, if not available (in code, use ``\LaTeX`` and
 ``\TeX``), then "LaTeX" and "TeX" will work in a pinch. Lastly, :math:`\LaTeX`
 may be pronounced "lay'-tech" or "lah'-tech".
 
-*Mathematica* is a proprietary languaged developed by the *Wolfram* corporation and is both fairly easy
-to use, and is the basis for the popular `Wolfram|Alpha <http://www.wolframalpha.com>`_ website. It is by
-far not the fastest language for analyzing data, but abstracts many parts that become relevant in languages
-like *C* or *Python*. *Mathematica* is extremely flexible and supports large-scale projects, but in many
-cases is used for simple one-time applications. It also has typesetting abilities (including presentation-mode)
-but in practice it is generally used for its analysis capabilities, with results exported to other programs.
-
 The Course
 ----------
-This course will first go through the beginnings of the :math:`\LaTeX` language, then introduce concepts in
-*Mathematica*, followed by several sections on how the two may be combined to produce a clean, elegant,
+This course will first introduce concepts in *Mathematica* then go through the beginnings of the :math:`\LaTeX` language, followed by several sections on how the two may be combined to produce a clean, elegant,
 and interesting final document. Throughout this course, there will be questions to answer, some coding-based
-some more traditional question formats. Assignments will be given for students registered for the *DemTex*
-program at UT and will be available through the course website listed in the syllabus.
+some more traditional question formats.
 
 The Syllabus
 ------------

@@ -74,7 +74,7 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
-    <link rel="next" title="Introduction" href="../LaTeX/latex.html" />
+    <link rel="next" title="&lt;no title&gt;" href="animations.html" />
     <link rel="prev" title="Lists, Tables, and Matrices" href="lists.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -119,7 +119,9 @@
     </button>
 
     <div>
-     <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="../index.html">&nbsp; </a>
+      <a href="../index.html">
+      <img title="Data Analysis for Physics" src="_static/img/logo_small.png"
+       style="max-width:60px; max-height:60px;float:left"></a>
       <a class="navbar-brand" href="../index.html">Introduction to Data Analysis for Physics</a>
     </div>
 
@@ -131,12 +133,13 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Functions and Graphing</a></li>
+<li><a class="reference internal" href="#">Functions and Graphing</a><ul>
 <li><a class="reference internal" href="#functions">Functions</a></li>
-<li><a class="reference internal" href="#graphing">Graphing</a><ul>
+<li><a class="reference internal" href="#introduction-to-graphing">Introduction to Graphing</a></li>
 <li><a class="reference internal" href="#basic-2d-graphs">Basic 2D Graphs</a></li>
 <li><a class="reference internal" href="#basic-3d-graphs">Basic 3D Graphs</a></li>
 <li><a class="reference internal" href="#basic-1d-graphs">Basic &#8220;1D&#8221; Graphs</a></li>
+<li><a class="reference internal" href="#combining-plots">Combining Plots</a></li>
 </ul>
 </li>
 </ul>
@@ -153,10 +156,10 @@
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Introduction' data-toggle="tooltip" >
-    <a href="../LaTeX/latex.html" >
+  <li id="relations-next" title='Next Chapter - &lt;no title&gt;' data-toggle="tooltip" >
+    <a href="animations.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
-      <p class=";max-width:150px;">Introduction</p>
+      <p class=";max-width:150px;">&amp;lt;no title&amp;gt;</p>
     </a>
   </li>
   <li style="divider-vertical"></li>
@@ -185,10 +188,8 @@
   
   <div class="section" id="functions-and-graphing">
 <h1>Functions and Graphing<a class="headerlink" href="#functions-and-graphing" title="Permalink to this headline">¶</a></h1>
-</div>
-<hr class="docutils" />
 <div class="section" id="functions">
-<h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
 <p>We&#8217;ve talked about a data-based way of looking at storage in <em>Mathematica</em> with lists, matrices,
 tables, etc. But one other form of &#8220;storage&#8221; we can consider is functions. <em>Mathematica</em>
 allows us to define functions in a very similar way to how we might write down a function
@@ -258,11 +259,12 @@ we can use:</p>
 <p class="last">where <tt class="code docutils literal"><span class="pre">a</span></tt> and <tt class="code docutils literal"><span class="pre">b</span></tt> are the limits of integration: <span class="math">\(\int_a^bf(x)dx\)</span>.</p>
 </div>
 </div>
-<div class="section" id="graphing">
-<h1>Graphing<a class="headerlink" href="#graphing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction-to-graphing">
+<h2>Introduction to Graphing<a class="headerlink" href="#introduction-to-graphing" title="Permalink to this headline">¶</a></h2>
 <p>Until this point, we have largely just dealt with numbers and functions. Now, let&#8217;s take
 a look at expressing data more graphically, and how to customize the display for different
 scenarios.</p>
+</div>
 <div class="section" id="basic-2d-graphs">
 <h2>Basic 2D Graphs<a class="headerlink" href="#basic-2d-graphs" title="Permalink to this headline">¶</a></h2>
 <p>First, let&#8217;s look at graphing functions in two-dimensions, with some basic customization
@@ -377,7 +379,7 @@ example, we might have <span class="math">\(x(t)=\cos(t),~y(t)=\sin(t)\)</span>.
 </div>
 <div class="figure align-center">
 <img alt="ParametricPlot" src="../_images/para_line.png" />
-<p class="caption">Plot of <span class="math">\(x(t)=\cos(t),~y(t)=\sin(t),~t\in[\pi/4,~7\pi/4]\)</span>.</p>
+<p class="caption">Plot of <span class="math">\(x(t)=\cos(t),~y(t)=\sin(t);~t\in[\pi/4,~7\pi/4]\)</span>.</p>
 </div>
 <p>We can have multiple pairs of functions, as with other plotting functions above, but
 one extra feature we have is to actually have two-parameter functions, plotting over both.
@@ -387,9 +389,9 @@ obtain plots like:</p>
 </div>
 <div class="figure align-center">
 <img alt="ParametricPlot" src="../_images/para_region.png" />
-<p class="caption">Plot of <span class="math">\(x(t,~u)=u\cos(t),~y(t,~u)=u\sin(t),~t\in[\pi/4,~7\pi/4],~u\in[7,10]\)</span>.</p>
+<p class="caption">Plot of <span class="math">\(x(t,~u)=u\cos(t),~y(t,~u)=u\sin(t);~t\in[\pi/4,~7\pi/4],~u\in[7,10]\)</span>.</p>
 </div>
-<p>Lastly, we have the <tt class="code docutils literal"><span class="pre">ContourPlot</span></tt>, which has a few variants, each based around the
+<p>We have the <tt class="code docutils literal"><span class="pre">ContourPlot</span></tt>, which has a few variants, each based around the
 idea of finding level curves of functions of two variables. If you have ever used a
 topographical map while hiking, this will seem familiar. For an example, let&#8217;s start with
 a simple, not-so-interesting function <span class="math">\(f(x,~y)=(x-1)^2+(y+2)^2\)</span>. That has a vertex
@@ -399,7 +401,7 @@ centered at <span class="math">\((1,~-2)\)</span>, but grows radially outward fr
 </div>
 <div class="figure align-center">
 <img alt="ContourPlot" src="../_images/cont_simple.png" />
-<p class="caption">Plot of <span class="math">\(f(x,~y)=(x-1)^2+(y+2)^2,~x,y\in[-5,5]\)</span>.</p>
+<p class="caption">Plot of <span class="math">\(f(x,~y)=(x-1)^2+(y+2)^2;~x,y\in[-5,5]\)</span>.</p>
 </div>
 <p>In the default form, at least, this is largely uninteresting, just showing that the function
 grows bigger as it deviates from <span class="math">\((1,~-2)\)</span>. But, if we apply some more information, we
@@ -426,19 +428,148 @@ ContourPlot[
 </div>
 <div class="figure align-center">
 <img alt="ContourPlot" src="../_images/cont_vals.png" />
-<p class="caption">Plot of <span class="math">\(f(x,~y)=|\sin(x)\sin(y)|,~x,y\in[-2\pi,2\pi]\)</span>.</p>
+<p class="caption">Plot of <span class="math">\(f(x,~y)=|\sin(x)\sin(y)|;~x,y\in[-2\pi,2\pi]\)</span>.</p>
+</div>
+<p>One other plot that is also interesting is the <tt class="code docutils literal"><span class="pre">RegionPlot</span></tt>. This plot does not
+take a function, but rather a conditional expression. If true, the point is plotted. If not,
+the point is blank. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">RegionPlot</span><span class="p">[</span><span class="n">Or</span><span class="p">[</span><span class="n">Sqrt</span><span class="p">[</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">^</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">144</span><span class="p">],</span>
+  <span class="p">{</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">},</span> <span class="p">{</span><span class="n">y</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">}]</span>
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="RegionPlot" src="../_images/region_2d.png" />
+<p class="caption">Plot of the region statisfying either <span class="math">\(x^2+y^2\leq{100}\)</span> or
+<span class="math">\(|x|\geq{12}\)</span>.</p>
+</div>
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p>Mathematical Logic</p>
+<p class="last">On some occasions, we may want to employ logic in addition to more familiar
+functions on real and complex numbers. While likely not needed for this course, it
+may help when dealing with complicated functions or with future programming projects
+in research, industry, and beyond. See the appendix for
+<a class="reference external" href="../Math/logic.html">Mathematical Logic</a>.</p>
 </div>
 <p>It should be noted that all of these graphing functions have other options available, which
 can always be found at the
 <a class="reference external" href="http://reference.wolfram.com/mathematica/guide/Mathematica.html">*Mathematica* Reference</a>
 or using <em>Mathematica&#8217;s</em> help features.</p>
+<div class="note admonition">
+<p class="first admonition-title">Business Graphs</p>
+<p class="last">Pie charts, etc.</p>
+</div>
 </div>
 <div class="section" id="basic-3d-graphs">
 <h2>Basic 3D Graphs<a class="headerlink" href="#basic-3d-graphs" title="Permalink to this headline">¶</a></h2>
+<p>We can do many of the things we did above in three-dimensional plots as well. The easiest
+example is <tt class="code docutils literal"><span class="pre">Plot3D</span></tt>:</p>
+<div class="highlight-python"><pre>Plot3D[Sin[x y], {x, 0, 2 Pi}, {y, 0, 2 Pi}]</pre>
+</div>
+<div class="figure align-center">
+<img alt="Plot3D" src="../_images/3dsin.png" />
+<p class="caption">Plot of <span class="math">\(f(x,~y)=\sin(x\cdot y);~x,y\in[0,~2\pi]\)</span></p>
+</div>
+<p>We have many of the same options as in the 3D case. We can label the whole plot with
+<tt class="code docutils literal"><span class="pre">PlotLabel</span></tt>, label the independent variable axes with <tt class="code docutils literal"><span class="pre">AxesLabel</span></tt>, and set the
+colors of graphs with <tt class="code docutils literal"><span class="pre">PlotStyle</span></tt>. But, we have a few additional options. We can
+easily add a gradient to the plot (the default is shown above). The built-in ones can be
+created with <tt class="code docutils literal"><span class="pre">ColorFunction-&gt;&quot;name&quot;</span></tt> where <tt class="code docutils literal"><span class="pre">&quot;name&quot;</span></tt> is one of the elements
+seen below.</p>
+<div class="figure align-center">
+<img alt="Plot3D Colors" src="../_images/3d_colors.png" />
+<p class="caption">Colors available for <tt class="code docutils literal"><span class="pre">ColorFunction</span></tt>.</p>
+</div>
+<p>In those cases, the function is a function of the plotted value only (not of the independent
+variables). However, we can create custom color functions by using the <tt class="code docutils literal"><span class="pre">RGBColor</span></tt> function.
+We create a new Function in three variables (the three axes - the first then second independent
+axes then the value of the plot at that point, scaled for
+) that involves some other color function,
+for example <tt class="code docutils literal"><span class="pre">RGBColor</span></tt>:</p>
+<div class="highlight-python"><pre>Plot3D[Sin[x], {x, 0, 2 Pi}, {y, 0, 2 Pi},
+  ColorFunction -&gt;
+  Function[{x, y, z},
+    RGBColor[x, 0, 0]], (*Just produce red colors as a function of x*)
+  AxesLabel -&gt; Automatic]</pre>
+</div>
+<div class="figure align-center">
+<img alt="Plot3D Red" src="../_images/red_fn.png" />
+<p class="caption">Plot of <span class="math">\(f(x,~y)=\sin(x);~x,y\in[0,~2 Pi]\)</span>, with color as a function of <span class="math">\(x\)</span>.</p>
+</div>
+<p>We can make these as complicated as possible, but generally want to make color easy
+to work with if used as a gradient. The built-in functions have built-in plot legends as well:</p>
+<div class="highlight-python"><pre>Plot3D[(x-2)^3 - .5(y-1)^3, {x, 0, 2 Pi}, {y, 0, 2 Pi},
+  ColorFunction -&gt; "BeachColors",
+  AxesLabel -&gt; Automatic,
+  PlotLegends -&gt; Automatic]</pre>
+</div>
+<div class="figure align-center">
+<img alt="Plot3D with Legend" src="../_images/color_fn.png" />
+<p class="caption">Plot of <span class="math">\(f(x,~y)=(x-2)^3-\frac{1}{2}(y-1)^3;~x,y\in[0,2\pi]\)</span> with color legend.</p>
+</div>
+<p>We have a 3D-version of <tt class="code docutils literal"><span class="pre">ListPlot</span></tt> as well, with <tt class="code docutils literal"><span class="pre">ListPointPlot3D</span></tt> (
+<tt class="code docutils literal"><span class="pre">ListPlot3D</span></tt> gives a surface based on points on the surface rather than just points).
+For example:</p>
+<div class="highlight-python"><pre>ListPointPlot3D[Table[{i/10, Sin[i], Cos[i]}, {i, 0, 50, .05}],
+  PlotStyle -&gt; PointSize[Medium],
+  BoxRatios -&gt; Automatic (*Used to make the box scale better than default thin
+  rectangular prism*)]</pre>
+</div>
+<div class="figure align-center">
+<img alt="ListPointPlot3D" src="../_images/spiral.png" />
+<p class="caption">Plot of spiral <span class="math">\(\left(\frac{i}{10},~\sin(i),~\cos(i)\right);~i\in[0,50]\)</span>.</p>
+</div>
+<p>We have a 3D-version of <tt class="code docutils literal"><span class="pre">RadialPlot</span></tt> with <tt class="code docutils literal"><span class="pre">SphericalPlot3D</span></tt>, where we have
+a function <span class="math">\(r(\theta,~\phi)\)</span> as the radius as a function of angles.</p>
+<div class="highlight-python"><pre>SphericalPlot3D[t p, {t, 0, 2 Pi}, {p, 0, Pi}]</pre>
+</div>
+<div class="figure align-center">
+<img alt="SphericalPlot3D" src="../_images/spherical.png" />
+<p class="caption">Plot of <span class="math">\(r(\theta,~\phi)=\theta\phi;~\theta\in[0,~2\pi],~\phi\in[0,~\pi]\)</span>.</p>
+</div>
+<p>We have two versions of parametric plots in 3D. The first allows for three functions
+<span class="math">\(x(t),~y(t),~z(t)\)</span>, such as:</p>
+<div class="highlight-python"><pre>ParametricPlot3D[{{t, Sin[t], Cos[t]}}, {t, 0, 10},
+  BoxRatios -&gt; Automatic]</pre>
+</div>
+<div class="figure align-center">
+<img alt="ParametricPlot3D" src="../_images/para_spiral.png" />
+<p class="caption">Plot of <span class="math">\(x(t)=t,~y(t)=\sin(t),~z(t)=\cos(t);~t\in[0,~10]\)</span>.</p>
+</div>
+<p>But we can also have functions of two variables <span class="math">\(x(u,~v),~y(u,~v),~z(u,~v)\)</span>:</p>
+<div class="highlight-python"><pre>ParametricPlot3D[{{v, u Sin[v], u Cos[v]}},
+  {u, 8, 10},
+  {v, 0, 8 Pi},
+  BoxRatios -&gt; Automatic,
+  PlotStyle -&gt; Blue]</pre>
+</div>
+<div class="figure align-center">
+<img alt="ParametricPlot3D" src="../_images/wide_spiral.png" />
+<p class="caption">Plot of <span class="math">\(\left(v,~u\sin(v),~u\cos(v)\right);~u\in[8,10],~v\in[0,~8\pi]\)</span>.</p>
+</div>
+<p>We have a <tt class="code docutils literal"><span class="pre">RegionPlot</span></tt> analogue in 3D as well with <tt class="code docutils literal"><span class="pre">RegionPlot3D</span></tt>.</p>
+<div class="highlight-python"><pre>RegionPlot3D[
+  And[x^2 + y^2 &gt;= 36,
+    x^2 + y^2 + z^2 &lt;= 64],
+  {x, -9, 9},
+  {y, -9, 9},
+  {z, -5, 5},
+  ColorFunction -&gt; "BrightBands"]</pre>
+</div>
+<div class="figure align-center">
+<img alt="RegionPlot3D" src="../_images/intersect.png" />
+<p class="caption">Plot of the intersection of regions <span class="math">\(x^2+y^2\geq36\)</span> and
+<span class="math">\(x^2+y^2+z^2\leq64\)</span>.</p>
+</div>
+<p>We have a plot unique to 3D plots based on the notion of rotating a 2D curve in 3D space. RevolutionPlot3D</p>
 </div>
 <div class="section" id="basic-1d-graphs">
 <h2>Basic &#8220;1D&#8221; Graphs<a class="headerlink" href="#basic-1d-graphs" title="Permalink to this headline">¶</a></h2>
 <p>Histogram, SmoothHistogram</p>
+</div>
+<div class="section" id="combining-plots">
+<h2>Combining Plots<a class="headerlink" href="#combining-plots" title="Permalink to this headline">¶</a></h2>
+<p>Show</p>
 </div>
 </div>
 

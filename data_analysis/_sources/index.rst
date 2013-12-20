@@ -9,7 +9,7 @@ Introduction to Data Analysis for Physics
 
 .. sidebar:: Authors
 
-   The original authors of this document are Evan Ott and Will Beason.
+   The original authors of this textbook are Evan Ott and Will Beason.
 
 
 .. Here is were you specify the content and order of your new book.
@@ -32,6 +32,8 @@ Introduction
    Mathematica/structure.rst
    Mathematica/lists.rst
    Mathematica/functions_graphs.rst
+   Mathematica/animations.rst
+   Mathematica/export.rst
 
 The :raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>tbook` 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -54,6 +56,7 @@ Appendix
 .. toctree::
    :maxdepth: 1
 
+   Math/logic.rst
    Math/eigenvalues.rst
 
 ..
