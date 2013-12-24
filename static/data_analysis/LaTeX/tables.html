@@ -107,7 +107,7 @@
 
 
 <!-- Begin navbar -->
-<div id="navbar" class="navbar navbar-fixed-top">
+<div id="navbar" class="navbar navbar-fixed-top" style="z-index:9999999">
 
   <div class="container">
 
@@ -120,7 +120,7 @@
 
     <div>
       <a href="../index.html">
-      <img title="Data Analysis for Physics" src="_static/img/logo_small.png"
+      <img title="Data Analysis for Physics" src="../_static/img/logo_small.png"
        style="max-width:60px; max-height:60px;float:left"></a>
       <a class="navbar-brand" href="../index.html">Introduction to Data Analysis for Physics</a>
     </div>
@@ -152,14 +152,14 @@
   <li id="relations-prev" title="Previous Chapter - Mathematics in LaTeX" data-toggle="tooltip">
     <a href="math.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
-      <p style=";max-width:150px;">Mathematics in LaTeX</p>
+      <p style=";max-width:130px;">Mathematics in LaTeX</p>
     </a>
   </li>
   
   <li id="relations-next" title='Next Chapter - Symbols' data-toggle="tooltip" >
     <a href="symbols.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
-      <p class=";max-width:150px;">Symbols</p>
+      <p style=";max-width:130px;">Symbols</p>
     </a>
   </li>
   <li style="divider-vertical"></li>
@@ -184,7 +184,7 @@
 </div>
 
 
-<div class="container">
+<div id="mainbody" class="container">
   
   <div class="section" id="tables-arrays-and-matrices">
 <h1>Tables, Arrays, and Matrices<a class="headerlink" href="#tables-arrays-and-matrices" title="Permalink to this headline">¶</a></h1>
@@ -241,6 +241,11 @@ The identity matrix, $\begin{smallmatrix}1&amp;0\\0&amp;1\end{smallmatrix}$</pre
     //$(document).ready(getOnlineUsers);
     $(document).ready(createScratchActivecode());
     $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  $("#mainbody").children().first().css("margin-top",
+    $("#navbar").css("height"))
 </script>
 
 <script type="text/javascript">

@@ -107,7 +107,7 @@
 
 
 <!-- Begin navbar -->
-<div id="navbar" class="navbar navbar-fixed-top">
+<div id="navbar" class="navbar navbar-fixed-top" style="z-index:9999999">
 
   <div class="container">
 
@@ -120,7 +120,7 @@
 
     <div>
       <a href="../index.html">
-      <img title="Data Analysis for Physics" src="_static/img/logo_small.png"
+      <img title="Data Analysis for Physics" src="../_static/img/logo_small.png"
        style="max-width:60px; max-height:60px;float:left"></a>
       <a class="navbar-brand" href="../index.html">Introduction to Data Analysis for Physics</a>
     </div>
@@ -150,14 +150,14 @@
   <li id="relations-prev" title="Previous Chapter - Contact Information" data-toggle="tooltip">
     <a href="../syllabus.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
-      <p style=";max-width:150px;">Contact Information</p>
+      <p style=";max-width:130px;">Contact Information</p>
     </a>
   </li>
   
   <li id="relations-next" title='Next Chapter - Document Structure and Syntax' data-toggle="tooltip" >
     <a href="structure.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
-      <p class=";max-width:150px;">Document Structure and Syntax</p>
+      <p style=";max-width:130px;">Document Structure and Syntax</p>
     </a>
   </li>
   <li style="divider-vertical"></li>
@@ -182,7 +182,7 @@
 </div>
 
 
-<div class="container">
+<div id="mainbody" class="container">
   
   <h1><i>Mathematica</i></h1><div class="section" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
@@ -260,6 +260,11 @@ of all the built-in parts of the language <a class="reference external" href="ht
     //$(document).ready(getOnlineUsers);
     $(document).ready(createScratchActivecode());
     $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  $("#mainbody").children().first().css("margin-top",
+    $("#navbar").css("height"))
 </script>
 
 <script type="text/javascript">

@@ -107,7 +107,7 @@
 
 
 <!-- Begin navbar -->
-<div id="navbar" class="navbar navbar-fixed-top">
+<div id="navbar" class="navbar navbar-fixed-top" style="z-index:9999999">
 
   <div class="container">
 
@@ -120,7 +120,7 @@
 
     <div>
       <a href="../index.html">
-      <img title="Data Analysis for Physics" src="_static/img/logo_small.png"
+      <img title="Data Analysis for Physics" src="../_static/img/logo_small.png"
        style="max-width:60px; max-height:60px;float:left"></a>
       <a class="navbar-brand" href="../index.html">Introduction to Data Analysis for Physics</a>
     </div>
@@ -150,14 +150,14 @@
   <li id="relations-prev" title="Previous Chapter - Symbols" data-toggle="tooltip">
     <a href="symbols.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
-      <p style=";max-width:150px;">Symbols</p>
+      <p style=";max-width:130px;">Symbols</p>
     </a>
   </li>
   
   <li id="relations-next" title='Next Chapter - Inputting and Including External Files' data-toggle="tooltip" >
     <a href="include.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
-      <p class=";max-width:150px;">Inputting and Including External Files</p>
+      <p style=";max-width:130px;">Inputting and Including External Files</p>
     </a>
   </li>
   <li style="divider-vertical"></li>
@@ -182,7 +182,7 @@
 </div>
 
 
-<div class="container">
+<div id="mainbody" class="container">
   
   <div class="section" id="new-commands">
 <h1>New Commands<a class="headerlink" href="#new-commands" title="Permalink to this headline">¶</a></h1>
@@ -313,6 +313,11 @@ then [{{}}] would be replaced with [2].</p>
     //$(document).ready(getOnlineUsers);
     $(document).ready(createScratchActivecode());
     $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  $("#mainbody").children().first().css("margin-top",
+    $("#navbar").css("height"))
 </script>
 
 <script type="text/javascript">

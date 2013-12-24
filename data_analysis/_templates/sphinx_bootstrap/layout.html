@@ -40,7 +40,7 @@
 {% macro navBar() %}
 
 <!-- Begin navbar -->
-<div id="navbar" class="navbar navbar-fixed-top">
+<div id="navbar" class="navbar navbar-fixed-top" style="z-index:9999999">
 
   <div class="container">
 
@@ -53,7 +53,7 @@
 
     <div>
       <a href="{{ pathto(master_doc) }}">
-      <img title="Data Analysis for Physics" src="_static/img/logo_small.png"
+      <img title="Data Analysis for Physics" src="{{pathto('_static/img/logo_small.png',2)}}"
        style="max-width:60px; max-height:60px;float:left"></a>
       <a class="navbar-brand" href="{{ pathto(master_doc) }}">{% if theme_navbar_title -%}{{ theme_navbar_title|e }}{%- else -%}{{ project|e }}{%- endif -%}</a>
     </div>
@@ -118,7 +118,7 @@
 {%- block content %}
 {{ navBar() }}
 
-<div class="container">
+<div id="mainbody" class="container">
   {% block body %}{% endblock %}
 </div>
 {%- endblock %}
@@ -155,6 +155,11 @@
     //$(document).ready(getOnlineUsers);
     $(document).ready(createScratchActivecode());
     $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  $("#mainbody").children().first().css("margin-top",
+    $("#navbar").css("height"))
 </script>
 
 <script type="text/javascript">

@@ -74,7 +74,7 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="logic.html" />
+    <link rel="prev" title="Logic" href="logic.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -106,7 +106,7 @@
 
 
 <!-- Begin navbar -->
-<div id="navbar" class="navbar navbar-fixed-top">
+<div id="navbar" class="navbar navbar-fixed-top" style="z-index:9999999">
 
   <div class="container">
 
@@ -119,7 +119,7 @@
 
     <div>
       <a href="../index.html">
-      <img title="Data Analysis for Physics" src="_static/img/logo_small.png"
+      <img title="Data Analysis for Physics" src="../_static/img/logo_small.png"
        style="max-width:60px; max-height:60px;float:left"></a>
       <a class="navbar-brand" href="../index.html">Introduction to Data Analysis for Physics</a>
     </div>
@@ -145,10 +145,10 @@
         
         
           
-  <li id="relations-prev" title="Previous Chapter - &lt;no title&gt;" data-toggle="tooltip">
+  <li id="relations-prev" title="Previous Chapter - Logic" data-toggle="tooltip">
     <a href="logic.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
-      <p style=";max-width:150px;">&amp;lt;no title&amp;gt;</p>
+      <p style=";max-width:130px;">Logic</p>
     </a>
   </li>
   
@@ -175,7 +175,7 @@
 </div>
 
 
-<div class="container">
+<div id="mainbody" class="container">
   
   <div class="section" id="eigenvalue-problems">
 <h1>Eigenvalue Problems<a class="headerlink" href="#eigenvalue-problems" title="Permalink to this headline">¶</a></h1>
@@ -427,6 +427,11 @@ However, if we apply Euler&#8217;s formula (the one relevant to the euation abov
     //$(document).ready(getOnlineUsers);
     $(document).ready(createScratchActivecode());
     $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  $("#mainbody").children().first().css("margin-top",
+    $("#navbar").css("height"))
 </script>
 
 <script type="text/javascript">

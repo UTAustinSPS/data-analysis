@@ -150,7 +150,8 @@ determinant :math:`|m|`, :code:`m . m` computes the matrix product
 :math:`m^n=m\times m\times m\times \ldots \times m`, and :code:`EigenValues[m]`
 gives the eigenvalues of the matrix :math:`m`.
 
-.. seealso:: Eigenvalues
+.. admonition:: Eigenvalues
+	:class: note
 	
 	If you keep hearing the term "eigenvalues" or "eigenvectors" around the physics department
 	but aren't sure what they are, there's a quick tutorial in the appendix about it.

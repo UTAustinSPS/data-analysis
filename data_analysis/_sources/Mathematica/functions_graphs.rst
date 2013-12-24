@@ -58,6 +58,14 @@ will print:
 	
 	x^2/11+1/x
 
+
+.. admonition:: Practice Problem: Functions
+
+	To make sure you can create functions, try creating a function :math:`h(u,~v)=(v,~u^2)`,
+	(so :math:`h` takes two arguments then produces a 2D point - think back to 
+	`Lists <lists.html#lists>`_!). Afterward, separately set :code:`u=5;v=2`. Then
+	evaluate :math:`h(3,~2)` and make sure you get :math:`(2,~9)`.
+
 We can base functions on other functions (built-in or user-created) too. There are many built-in
 functions which take functions as arguments.
 
@@ -93,6 +101,14 @@ functions which take functions as arguments.
 		Integrate[f[x], {x, a, b}]
 
 	where :code:`a` and :code:`b` are the limits of integration: :math:`\int_a^bf(x)dx`.
+
+
+.. admonition:: Practice Problem: Calculus
+
+	For practice with calculus functions, try evaluating
+	:math:`\frac{d\ln{x}}{dx},~\int\sin^2(x)dx` in *Mathematica* and make sure
+	you get :math:`\frac{1}{x},~\frac{x}{2}-\frac{\sin(2x)}{4}`.
+
 
 Introduction to Graphing
 ------------------------
@@ -166,6 +182,18 @@ So, for example, we could have:
 
 	Plot for :math:`f(x)=\sin(x),~g(x)=\cos(x)`, with options specified above.
 
+.. admonition:: Practice Problem: Simple Plots
+
+	For practice, try creating the plot below. The functions are listed in the legend
+	on the plot, but you might find use of the :code:`Thickness` function which takes
+	a single value to determine the line thickness.
+
+	.. figure:: Figures/assgn_simple_plot.png
+		:alt: Practice Plot
+		:align: center
+
+		Plot to imitate.
+
 There are several other useful plotting functions for other applications.
 
 :code:`ListPlot` is for plotting specific data in one of two formats. The first is a simple
@@ -191,6 +219,7 @@ the function. For a more interesting example:
 
 ::
 
+	(*Create four lists of points for 0<=a<=20*)
     list = Table[Table[{a, a^2 + 50 Sin[c*a]}, {a, 0, 20}], {c, 0, 3}];
     ListPlot[list, 
         PlotLegends -> {"data 1", "data 2", "data 3", "data 4"}, 
@@ -339,8 +368,9 @@ the point is blank. For example:
 	Plot of the region statisfying either :math:`x^2+y^2\leq{100}` or
 	:math:`|x|\geq{12}`.
 
-.. seealso:: Mathematical Logic
-	
+.. admonition:: See Also: Mathematical Logic
+	:class: note
+
 	On some occasions, we may want to employ logic in addition to more familiar
 	functions on real and complex numbers. While likely not needed for this course, it
 	may help when dealing with complicated functions or with future programming projects
@@ -352,10 +382,31 @@ can always be found at the
 `*Mathematica* Reference <http://reference.wolfram.com/mathematica/guide/Mathematica.html>`_
 or using *Mathematica's* help features.
 
-.. admonition:: Business Graphs
+.. admonition:: More Plots: Business Graphs
 	:class: note
 
-	Pie charts, etc.
+	While less frequently used in science, "business graphs" (pie charts, simple bar
+	graphs, etc.) are provided in *Mathematica*. For example:
+
+	::
+
+		BarChart[{{1, 2, 3}, {2, 3, 1}, {3, 4, 1}, {1, 1, 8}}]
+		PieChart[{1, 1, .5, 1.7}]
+		PieChart3D[{1, 1, .5, 1.7}]
+
+	.. figure:: Figures/bus_bar.png
+		:align: center
+
+	.. figure:: Figures/bus_pie.png
+		:align: center
+
+	.. figure:: Figures/bus_pie_3d.png
+		:align: center
+
+	For more, search in *Mathematica*'s documentation for the "Charting And Information
+	Visualization" guide (in *Mathematica*, can use "guide/ChartingAndInformationVisualization"
+	in the search bar).
+
 
 Basic 3D Graphs
 ---------------
@@ -502,13 +553,302 @@ We have a :code:`RegionPlot` analogue in 3D as well with :code:`RegionPlot3D`.
 	:math:`x^2+y^2+z^2\leq64`.
 
 
-We have a plot unique to 3D plots based on the notion of rotating a 2D curve in 3D space. RevolutionPlot3D
+We have a plot unique to 3D plots based on the notion of rotating a 2D curve in 3D space.
+:code:`RevolutionPlot3D` has several variants, the simplest of which takes a single function
+:math:`z(r);~r^2=x^2+y^2`:
+
+::
+
+	Plot[Cos[r]^2/r, {r, 0, 8 Pi},
+	  PlotRange -> Automatic]
+	RevolutionPlot3D[ Cos[r]^2/r, {r, 0, 8 Pi},
+	  BoxRatios -> Automatic]
+
+.. figure:: Figures/2d_rev.png
+	:alt: Plot for revolution
+	:align: center
+
+	Plot of :math:`f(x)=\frac{\cos^2(x)}{x}`.
+
+.. figure:: Figures/3d_rev.png
+	:alt: RevolutionPlot3D
+	:align: center
+
+	Plot of :math:`z(r)=\frac{\cos^2(r)}{r};~r^2=x^2+y^2`.
+
+.. admonition:: Practice with 3D Plots
+
+	Pick one of the code segments above and run it in *Mathematica*. Then, start
+	playing. Change the function, click and drag the graph to view it from
+	other angles, add labels, change the color scheme, add a legend. If you run
+	into problems, use the Help feature on the graphing function (often,
+	an option that works on one plot may need to be altered slightly to work on the
+	other plot - use the "Details and Options" section of the documentation 
+	for each function to find out more).
+
+For other variants of :code:`RevolutionPlot3D` or any other plots, again, refer to
+*Mathematica*'s documentation, or in *Mathematica*, use the "Basic Math Assistant"
+Pallete in the "Basic Commands" section for "2D" or "3D" then on
+the "More" option for "Visualizing Functions" or "Visualizing Data". There, you will
+find many templates of these built-in graphing functions.
 
 Basic "1D" Graphs
 -----------------
-Histogram, SmoothHistogram
+Sometimes (read: most of the time) we have sampled data for the same set of values
+for our independent variables and arrive at different "answers". We'll have more on why that
+occurs later, but it stems from both our inability to measure things in a laboratory with
+infinite precision (including our "control" variables!) and natural fluctuations in the
+world around us from thermal energy and other sources, which leads us to a distribution
+in our results. We often want to check that the observed distribution fits the distribution we
+expect (many times, for reasons we'll discuss later, we'll assume a Gaussian distribution).
+To do that, we can turn to a "1D" graph like a histogram which plots the relative
+frequency of results (put another way, how often of particular results occur) versus
+the result values [I say "1D" because we only provide a list of numbers, not points so the
+data is one-dimensional even though the plot is not].
+In *Mathematica*, this is done with :code:`Histogram`. Some examples:
 
+::
+
+	Histogram[{
+	  1, 1, 1, 1, 1, 1,
+	  2, 2, 2, 2,
+	  3, 3, 3, 3, 3, 3, 3}]
+	Histogram[{
+	  1, 1, 1, 1, 1, 1,
+	  2, 2, 2, 2,
+	  3, 3, 3, 3, 3, 3, 3,
+	  5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5},
+	  {1} (* set size of "bin" to 1*)]
+
+.. figure:: Figures/hist_small.png
+	:alt: simple Histogram
+	:align: center
+
+	Plot of first dataset as a :code:`Histogram`.
+
+.. figure:: Figures/hist_more.png
+	:alt: simple Histogram
+	:align: center
+
+	Plot of second dataset as a :code:`Histogram`, with size of bin specified.
+
+We can also have *Mathematica* smooth our data to provide an estimate of the shape
+of the distribution with :code:`SmoothHistogram`.
+
+We will explore more on Gaussian Distributions and histograms in the section on
+`Gaussian Distributions <../Analysis/gaussian.html>`_.
 
 Combining Plots
 ---------------
-Show
+While we have seen how to combine similar plots (often just providing a list of functions
+to plot or two sets of data to the same plotting function), we might want to be smarter about
+our graphs, perhaps having an expected distribution plotted against real data. We can use the
+:code:`Show` command to combine as many plots as we'd like. For example:
+
+::
+
+	table={
+	  {0, 0.0491203},
+	  {1, 1.07251},
+	  {2, 2.09226},
+	  {3, 3.15284},
+	  {4, 4.13291},
+	  {5, 5.02879},
+	  {6, 6.08815},
+	  {7, 7.21867},
+	  {8, 8.00343},
+	  {9, 9.06134},
+	  {10, 10.0896}};
+	Show[
+	  Plot[x, {x, 0, 10}],
+	  ListPlot[table, 
+	    PlotStyle -> {PointSize[Medium], Red}]
+	]
+
+.. figure:: Figures/show.png
+	:alt: Show
+	:align: center
+
+	Plot of observed data and expected values using the :code:`Show` function.
+
+We can take things much farther too, by wrapping this in a :code:`Legended` function,
+which allows us to easily label any type of data and have all those labels in a single spot.
+The following example is a little cumbersome, but is a good one for jumping in and trying things
+out for yourself. It's more heavily commented for readability. This uses the more general
+:code:`Directive` command, which allows you to make a line multiple things at once (thick,
+a color, dotted, etc.) in the most predictable way.
+
+::
+	
+	(*Fancy way of generating random data from a Normal Distribution*)
+	list = RandomVariate[NormalDistribution[0, 1], 50];
+
+	Legended[ (*Apply the graphic, then the legend*)
+	(*the graphic*)
+	Show[
+	  	(*Plot data as a histogram of relative frequencies*)
+	    Histogram[list, Automatic, "Probability", 
+	    	ChartStyle -> RGBColor[.41, .65, 1]], (*set the color of bins to blue*)
+
+		(*Plot smoothed data*)
+		SmoothHistogram[list, Automatic, 
+			PlotStyle -> Directive[Thick, Green]], (*Set color to green AND make line thick*)
+
+		(*Plot actual Normal distribution - don't worry about the specifics here.*)
+		Plot[PDF[NormalDistribution[0, 1], x], {x, -8, 8}, 
+			PlotStyle -> Directive[Thick, Red]]], (*Set color to red and make line thick*)
+
+	(*End of the graphic, now for the legend*)
+  	Column[{ (*Create a new column to the right of what we just drew*)
+		(*listing multiple items within a column will make them appear as rows within the column*)
+
+		(*create a box symbol with the given color, and label it "data"*)
+		SwatchLegend[{RGBColor[.41, .65, 1]}, {"data"}],
+
+		(*create a line legend that's thick ang green with the given name*)
+		LineLegend[{Directive[Thick, Green]}, {"smoothed data"}],
+
+		(*Last legend element, end of Legended plot*)
+		LineLegend[{Directive[Thick, Red]}, {"Normal Distribution"}]}]]
+
+.. figure:: Figures/show_adv.png
+	:alt: Show with several features
+	:align: center
+
+	Plot of data drawn from a Normal distribution along with projected distribution from data
+	and the actual distribution for reference, all in a :code:`Legended` chart.
+
+.. admonition:: Practice Combining Graphs
+	:class: note
+
+	Try adding other plots to the one above and then labeling them. For example, see if you
+	can add in a plot for :math:`f(x)=x^2;~x\in[-2,20]`, but then re-scale the image to
+	make sure you can clearly the existing graph information (hint: you can add a
+	:code:`PlotRange` in exactly one function and have it work - you might want to provide
+	the range though, rather than using the :code:`Automatic` version).
+
+Vector Field Diagrams
+---------------------
+We may have data that requires more dimensions to be displayed (for example,
+maybe we are tracking a particle's velocity in 2D with respect to its 2D position).
+For this, we can turn to the :code:`VectorPlot` function and its list-based and 3D cousins.
+First, an example:
+
+::
+
+	VectorPlot[{y, -x}, {x, -5, 5}, {y, -5, 5}]
+
+.. figure:: Figures/vec2d.png
+	:alt: VectorPlot
+	:align: center
+
+	Vector-field plot for :math:`\frac{dx}{dt}=y,~\frac{dy}{dt}=-x`
+
+:code:`VectorPlot` plots a vector at sampled points in the 2D domain as specified by the
+2D function. The actual sizes of arrows are not necessarily useful, but their relative sizes
+are correct, giving a qualititave indication of strength of the velocity at the given points.
+
+It has a handy feature of adding stream lines to the plot, doing a numerical approximation of
+the path that would be taken for a selection of points (user-specified or sampled):
+
+::
+
+	VectorPlot[{10 Sin[y], -x^3}, {x, -5, 5}, {y, -5, 5},
+		StreamPoints -> {{2, 3}, (*Plot paths that cross specific points*)
+		  {-3, .1},
+		  {0, 1}}]
+
+.. figure:: Figures/vecstream.png
+	:alt: VectorPlot with streams
+	:align: center
+
+	Vector-field plot for :math:`\frac{dx}{dt}=10\sin(y),~\frac{dy}{dt}=-x^3`.
+
+We can use a :code:`StreamPlot` to look just at stream lines, rather than the field, providing
+possible trajectories rather than just the vector field values:
+
+::
+
+	StreamPlot[{10 Sin[y], -x^3}, {x, -5, 5}, {y, -5, 5}]
+
+.. figure:: Figures/stream.png
+	:alt: StreamPlot
+	:align: center
+
+	Stream-line plot for :math:`\frac{dx}{dt}=10\sin(y),~\frac{dy}{dt}=-x^3`.
+
+We have a :code:`ListVectorPlot` that takes a list of
+:math:`((x,~y),~(\frac{dx}{dt},~\frac{dy}{dt}))` to produce a plot. The 3D version
+is :code:`ListVectorPlot3D` which takes 
+:math:`((x,~y,~z),~(\frac{dx}{dt},~\frac{dy}{dt},~\frac{dz}{dt}))`:
+
+::
+
+	ListVectorPlot3D[
+	  Table[{{x, y, z}, {x Tan[y], -x^3  y, z}},
+	    {x, -5, 5},
+	    {y, -5, 5},
+	    {z, -5, 5}]]
+
+.. figure:: Figures/listvec.png
+	:alt: ListVectorPlot3D
+	:align: center
+
+	3D vector-field plot for
+	:math:`\frac{dx}{dt}=x\tan(y),~\frac{dy}{dt}=-x^3,~\frac{dz}{dt}=z`.
+
+Error Bars
+----------
+We'll talk about the importance of error in measurement later, but
+first we can see how to present error in our data. There are few
+built-in ways to do this in *Mathematica*, however, advanced users may find it
+useful to create their own functions to draw error bars on data. We'll
+focus on the built-in ones. For this, we need the "ErrorBarPlots" package:
+
+::
+
+	Needs["ErrorBarPlots`"]
+
+We then get a single :code:`ListPlot` variant called :code:`ErrorListPlot`. It only
+accepts data in the form :code:`{{{x1,y1},ErrorBar[...]},{{x2,y2},ErrorBar[...]},...}`,
+where the :code:`ErrorBar` is:
+
+::
+
+	ErrorBar[valv] (*valv is positive/negative error in vertical axis*)
+	ErrorBar[valh, valv] (*Each is pos/neg error, first horizontal then vertical*)
+
+Where the values given are either real numbers or a 2-element list that gives
+:code:`{neg_error, pos_error}` (to work properly, the first value should actually be
+negative and the second positive). For example, using the :code:`RandomReal` function that
+generates random values over the range :math:`[0,1)`:
+
+::
+
+	ErrorListPlot[
+		Table[{{i, Sqrt[i]}, 
+			ErrorBar[{-RandomReal[]/5, RandomReal[]/5},
+				{-RandomReal[]/5, RandomReal[]/5}]},
+			{i, 1, 16}],
+		PlotStyle -> Directive[PointSize[0], Blue]]
+
+.. figure:: Figures/error.png
+	:alt: ErrorListPlot
+	:align: center
+
+	Example :code:`ErrorListPlot`.
+
+.. admonition:: Practice Plotting Errors
+	
+	To practice putting plots together, using many of the sections above
+	(`Combining Graphs <#combining-plots>`_,
+	`Error Bars <#error-bars>`_, and other basic concepts), try to reproduce
+	the following graphic:
+
+	.. figure:: Figures/practice_error.png
+		:alt: Practice combining errors with data
+		:align: center
+
+		Plot to reproduce. The :code:`PointLegend` function may prove useful. The
+		function is just :math:`f(x)=x^2`, and the size of error bars is not
+		critical, just labeling and creating the right dataset.

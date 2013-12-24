@@ -106,7 +106,7 @@
 
 
 <!-- Begin navbar -->
-<div id="navbar" class="navbar navbar-fixed-top">
+<div id="navbar" class="navbar navbar-fixed-top" style="z-index:9999999">
 
   <div class="container">
 
@@ -142,6 +142,9 @@
 <li><a class="reference internal" href="#the-span-class-latex-l-sup-a-sup-t-sub-e-sub-x-span-tbook">The <span class="raw-html"><span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>tbook</span></a><ul>
 </ul>
 </li>
+<li><a class="reference internal" href="#analysis">Analysis</a><ul>
+</ul>
+</li>
 <li><a class="reference internal" href="#appendix">Appendix</a><ul>
 </ul>
 </li>
@@ -157,7 +160,7 @@
   <li id="relations-next" title='Next Chapter - Introduction to the Introduction' data-toggle="tooltip" >
     <a href="intro.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
-      <p class=";max-width:150px;">Introduction to the Introduction</p>
+      <p style=";max-width:130px;">Introduction to the Introduction</p>
     </a>
   </li>
   <li style="divider-vertical"></li>
@@ -182,7 +185,7 @@
 </div>
 
 
-<div class="container">
+<div id="mainbody" class="container">
   
   <div class="section" id="introduction-to-data-analysis-for-physics">
 <h1>Introduction to Data Analysis for Physics<a class="headerlink" href="#introduction-to-data-analysis-for-physics" title="Permalink to this headline">¶</a></h1>
@@ -232,6 +235,7 @@
 <li class="toctree-l2"><a class="reference internal" href="Mathematica/structure.html#approximations">Approximations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Mathematica/structure.html#evaluating-symbolic-expressions">Evaluating Symbolic Expressions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Mathematica/structure.html#other-constructs">Other Constructs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/structure.html#packages">Packages</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Mathematica/lists.html">Lists, Tables, and Matrices</a><ul>
@@ -247,6 +251,23 @@
 <li class="toctree-l2"><a class="reference internal" href="Mathematica/functions_graphs.html#basic-3d-graphs">Basic 3D Graphs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Mathematica/functions_graphs.html#basic-1d-graphs">Basic &#8220;1D&#8221; Graphs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Mathematica/functions_graphs.html#combining-plots">Combining Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/functions_graphs.html#vector-field-diagrams">Vector Field Diagrams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/functions_graphs.html#error-bars">Error Bars</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Mathematica/export.html">Exporting Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/export.html#exporting-images">Exporting Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/export.html#exporting-non-static-images">Exporting Non-Static Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/export.html#id1">Exporting Data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Mathematica/import.html">Importing Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/import.html#importing-exported-objects">Importing Exported Objects</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Mathematica/animations.html">Animations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/animations.html#manipulate">Manipulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/animations.html#animate">Animate</a></li>
 </ul>
 </li>
 </ul>
@@ -304,10 +325,23 @@
 </ul>
 </div>
 </div>
+<div class="section" id="analysis">
+<h2>Analysis<a class="headerlink" href="#analysis" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Analysis/gaussian.html">The Gaussian Distribution</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Analysis/gaussian.html#the-function">The Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Analysis/gaussian.html#applications">Applications</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 <div class="section" id="appendix">
 <h2>Appendix<a class="headerlink" href="#appendix" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="Math/logic.html">Logic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Math/eigenvalues.html">Eigenvalue Problems</a></li>
 </ul>
 </div>
@@ -337,6 +371,11 @@
     //$(document).ready(getOnlineUsers);
     $(document).ready(createScratchActivecode());
     $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  $("#mainbody").children().first().css("margin-top",
+    $("#navbar").css("height"))
 </script>
 
 <script type="text/javascript">

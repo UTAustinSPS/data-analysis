@@ -32,8 +32,9 @@ Introduction
    Mathematica/structure.rst
    Mathematica/lists.rst
    Mathematica/functions_graphs.rst
-   Mathematica/animations.rst
    Mathematica/export.rst
+   Mathematica/import.rst
+   Mathematica/animations.rst
 
 The :raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>tbook` 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -49,6 +50,14 @@ The :raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>tbook`
    LaTeX/symbols.rst
    LaTeX/newcommand.rst
    LaTeX/include.rst
+
+Analysis
+::::::::
+
+.. toctree::
+   :maxdepth: 2
+
+   Analysis/gaussian.rst
 
 Appendix
 ::::::::

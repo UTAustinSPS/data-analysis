@@ -188,3 +188,17 @@ end up using strings for display purposes later, but the way we construct them i
 
 	x = "This is a string, demarked by double-quotes on either side"
 
+Packages
+--------
+On rare occasions, functions we'd like to have are part of *Mathematica* but not available
+by default. To make them available, we can use the :code:`Needs` function, which will
+load a "package" (collection of functions) so that we can use them. For example,
+to load the "ErrorBarPlots" function, we'll use:
+
+::
+
+	Needs["ErrorBarPlots`"]
+
+Note that in addition to the double-quotes, we need the "backquote" or "backtick" character.
+This is different from a single quote :code:`'`, and is usually found at the upper-left
+portion of a QWERTY keyboard with the tilde (:code:`~`) character.

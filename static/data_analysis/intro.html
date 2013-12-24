@@ -107,7 +107,7 @@
 
 
 <!-- Begin navbar -->
-<div id="navbar" class="navbar navbar-fixed-top">
+<div id="navbar" class="navbar navbar-fixed-top" style="z-index:9999999">
 
   <div class="container">
 
@@ -148,14 +148,14 @@
   <li id="relations-prev" title="Previous Chapter - Introduction to Data Analysis for Physics" data-toggle="tooltip">
     <a href="index.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
-      <p style=";max-width:150px;">Introduction to Data Analysis for Physics</p>
+      <p style=";max-width:130px;">Introduction to Data Analysis for Physics</p>
     </a>
   </li>
   
   <li id="relations-next" title='Next Chapter - Contact Information' data-toggle="tooltip" >
     <a href="syllabus.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
-      <p class=";max-width:150px;">Contact Information</p>
+      <p style=";max-width:130px;">Contact Information</p>
     </a>
   </li>
   <li style="divider-vertical"></li>
@@ -180,7 +180,7 @@
 </div>
 
 
-<div class="container">
+<div id="mainbody" class="container">
   
   <h1 style="text-align: center">Introduction to Data Analysis for Physics</h1><div class="section" id="introduction-to-the-introduction">
 <h1>Introduction to the Introduction<a class="headerlink" href="#introduction-to-the-introduction" title="Permalink to this headline">¶</a></h1>
@@ -256,6 +256,11 @@ some more traditional question formats.</p>
     //$(document).ready(getOnlineUsers);
     $(document).ready(createScratchActivecode());
     $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  $("#mainbody").children().first().css("margin-top",
+    $("#navbar").css("height"))
 </script>
 
 <script type="text/javascript">

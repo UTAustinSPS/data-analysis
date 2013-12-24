@@ -108,7 +108,7 @@
 
 
 <!-- Begin navbar -->
-<div id="navbar" class="navbar navbar-fixed-top">
+<div id="navbar" class="navbar navbar-fixed-top" style="z-index:9999999">
 
   <div class="container">
 
@@ -156,14 +156,14 @@
   <li id="relations-prev" title="Previous Chapter - Introduction to the Introduction" data-toggle="tooltip">
     <a href="intro.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
-      <p style=";max-width:150px;">Introduction to the Introduction</p>
+      <p style=";max-width:130px;">Introduction to the Introduction</p>
     </a>
   </li>
   
   <li id="relations-next" title='Next Chapter - Introduction' data-toggle="tooltip" >
     <a href="Mathematica/mathematica.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
-      <p class=";max-width:150px;">Introduction</p>
+      <p style=";max-width:130px;">Introduction</p>
     </a>
   </li>
   <li style="divider-vertical"></li>
@@ -188,7 +188,7 @@
 </div>
 
 
-<div class="container">
+<div id="mainbody" class="container">
   
   <h1>Course Syllabus Spring '13</h1><div class="section" id="contact-information">
 <h1>Contact Information<a class="headerlink" href="#contact-information" title="Permalink to this headline">¶</a></h1>
@@ -405,6 +405,11 @@ situation that might behave in this way?</p>
     //$(document).ready(getOnlineUsers);
     $(document).ready(createScratchActivecode());
     $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  $("#mainbody").children().first().css("margin-top",
+    $("#navbar").css("height"))
 </script>
 
 <script type="text/javascript">

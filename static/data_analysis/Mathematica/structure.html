@@ -107,7 +107,7 @@
 
 
 <!-- Begin navbar -->
-<div id="navbar" class="navbar navbar-fixed-top">
+<div id="navbar" class="navbar navbar-fixed-top" style="z-index:9999999">
 
   <div class="container">
 
@@ -120,7 +120,7 @@
 
     <div>
       <a href="../index.html">
-      <img title="Data Analysis for Physics" src="_static/img/logo_small.png"
+      <img title="Data Analysis for Physics" src="../_static/img/logo_small.png"
        style="max-width:60px; max-height:60px;float:left"></a>
       <a class="navbar-brand" href="../index.html">Introduction to Data Analysis for Physics</a>
     </div>
@@ -140,6 +140,7 @@
 <li><a class="reference internal" href="#approximations">Approximations</a></li>
 <li><a class="reference internal" href="#evaluating-symbolic-expressions">Evaluating Symbolic Expressions</a></li>
 <li><a class="reference internal" href="#other-constructs">Other Constructs</a></li>
+<li><a class="reference internal" href="#packages">Packages</a></li>
 </ul>
 </li>
 </ul>
@@ -152,14 +153,14 @@
   <li id="relations-prev" title="Previous Chapter - Introduction" data-toggle="tooltip">
     <a href="mathematica.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
-      <p style=";max-width:150px;">Introduction</p>
+      <p style=";max-width:130px;">Introduction</p>
     </a>
   </li>
   
   <li id="relations-next" title='Next Chapter - Lists, Tables, and Matrices' data-toggle="tooltip" >
     <a href="lists.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
-      <p class=";max-width:150px;">Lists, Tables, and Matrices</p>
+      <p style=";max-width:130px;">Lists, Tables, and Matrices</p>
     </a>
   </li>
   <li style="divider-vertical"></li>
@@ -184,7 +185,7 @@
 </div>
 
 
-<div class="container">
+<div id="mainbody" class="container">
   
   <div class="section" id="document-structure-and-syntax">
 <h1>Document Structure and Syntax<a class="headerlink" href="#document-structure-and-syntax" title="Permalink to this headline">¶</a></h1>
@@ -337,6 +338,19 @@ end up using strings for display purposes later, but the way we construct them i
 </pre></div>
 </div>
 </div>
+<div class="section" id="packages">
+<h2>Packages<a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h2>
+<p>On rare occasions, functions we&#8217;d like to have are part of <em>Mathematica</em> but not available
+by default. To make them available, we can use the <tt class="code docutils literal"><span class="pre">Needs</span></tt> function, which will
+load a &#8220;package&#8221; (collection of functions) so that we can use them. For example,
+to load the &#8220;ErrorBarPlots&#8221; function, we&#8217;ll use:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Needs</span><span class="p">[</span><span class="s">&quot;ErrorBarPlots`&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Note that in addition to the double-quotes, we need the &#8220;backquote&#8221; or &#8220;backtick&#8221; character.
+This is different from a single quote <tt class="code docutils literal"><span class="pre">'</span></tt>, and is usually found at the upper-left
+portion of a QWERTY keyboard with the tilde (<tt class="code docutils literal"><span class="pre">~</span></tt>) character.</p>
+</div>
 </div>
 
 
@@ -362,6 +376,11 @@ end up using strings for display purposes later, but the way we construct them i
     //$(document).ready(getOnlineUsers);
     $(document).ready(createScratchActivecode());
     $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  $("#mainbody").children().first().css("margin-top",
+    $("#navbar").css("height"))
 </script>
 
 <script type="text/javascript">

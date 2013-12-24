@@ -107,7 +107,7 @@
 
 
 <!-- Begin navbar -->
-<div id="navbar" class="navbar navbar-fixed-top">
+<div id="navbar" class="navbar navbar-fixed-top" style="z-index:9999999">
 
   <div class="container">
 
@@ -120,7 +120,7 @@
 
     <div>
       <a href="../index.html">
-      <img title="Data Analysis for Physics" src="_static/img/logo_small.png"
+      <img title="Data Analysis for Physics" src="../_static/img/logo_small.png"
        style="max-width:60px; max-height:60px;float:left"></a>
       <a class="navbar-brand" href="../index.html">Introduction to Data Analysis for Physics</a>
     </div>
@@ -149,14 +149,14 @@
   <li id="relations-prev" title="Previous Chapter - Document Structure and Syntax" data-toggle="tooltip">
     <a href="structure.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
-      <p style=";max-width:150px;">Document Structure and Syntax</p>
+      <p style=";max-width:130px;">Document Structure and Syntax</p>
     </a>
   </li>
   
   <li id="relations-next" title='Next Chapter - Functions and Graphing' data-toggle="tooltip" >
     <a href="functions_graphs.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
-      <p class=";max-width:150px;">Functions and Graphing</p>
+      <p style=";max-width:130px;">Functions and Graphing</p>
     </a>
   </li>
   <li style="divider-vertical"></li>
@@ -181,7 +181,7 @@
 </div>
 
 
-<div class="container">
+<div id="mainbody" class="container">
   
   <div class="section" id="lists-tables-and-matrices">
 <h1>Lists, Tables, and Matrices<a class="headerlink" href="#lists-tables-and-matrices" title="Permalink to this headline">¶</a></h1>
@@ -312,9 +312,8 @@ determinant <span class="math">\(|m|\)</span>, <tt class="code docutils literal"
 <span class="math">\((AB)_{i,j}=\sum_{k=1}^{n}A_{i,k}B_{k,j}\)</span>), <tt class="code docutils literal"><span class="pre">MatrixPower[m,</span> <span class="pre">n]</span></tt> computes
 <span class="math">\(m^n=m\times m\times m\times \ldots \times m\)</span>, and <tt class="code docutils literal"><span class="pre">EigenValues[m]</span></tt>
 gives the eigenvalues of the matrix <span class="math">\(m\)</span>.</p>
-<div class="admonition-see-also admonition seealso">
-<p class="first admonition-title">See also</p>
-<p>Eigenvalues</p>
+<div class="note admonition">
+<p class="first admonition-title">Eigenvalues</p>
 <p class="last">If you keep hearing the term &#8220;eigenvalues&#8221; or &#8220;eigenvectors&#8221; around the physics department
 but aren&#8217;t sure what they are, there&#8217;s a quick tutorial in the appendix about it.
 You might need to brush up on matrices a little beforehand. The tutorial
@@ -346,6 +345,11 @@ can be found <a class="reference external" href="../Math/eigenvalues.html">here<
     //$(document).ready(getOnlineUsers);
     $(document).ready(createScratchActivecode());
     $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  $("#mainbody").children().first().css("margin-top",
+    $("#navbar").css("height"))
 </script>
 
 <script type="text/javascript">
