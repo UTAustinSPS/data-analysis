@@ -687,7 +687,7 @@ a color, dotted, etc.) in the most predictable way.
 	(*the graphic*)
 	Show[
 	  	(*Plot data as a histogram of relative frequencies*)
-	    Histogram[list, Automatic, "Probability", 
+	    Histogram[list, Automatic, "PDF", 
 	    	ChartStyle -> RGBColor[.41, .65, 1]], (*set the color of bins to blue*)
 
 		(*Plot smoothed data*)

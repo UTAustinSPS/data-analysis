@@ -36,11 +36,11 @@ to have *Mathematica* installed or at least the *Mathematica* CDF viewer).
 [To create a web-embeddable CDF, select the code (or graph) you want, then select
 "File">"CDF Export">"Web Embeddable" and follow the menus]
 
-.. figure:: Figures/manipulate.cdf
+.. figure:: ../Analysis/Figures/manipulate.cdf
 	:width: 0px
 	:height: 0px
 
-.. figure:: Figures/manipulate.png
+.. figure:: ../Analysis/Figures/manipulate.png
 	:width: 0px
 	:height: 0px
 

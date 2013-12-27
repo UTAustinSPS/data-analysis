@@ -1,0 +1,1018 @@
+<?xml version='1.0'?>
+<!DOCTYPE Expression SYSTEM 'http://www.wolfram.com/XML/notebookml1.dtd'>
+<Expression xmlns:mathematica='http://www.wolfram.com/XML/'
+    xmlns='http://www.wolfram.com/XML/'>
+ <Function>
+  <Symbol>List</Symbol>
+  <Function>
+   <Symbol>List</Symbol>
+   <String>t</String>
+   <String>sin(t^2)</String>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>0.</Number>
+   <Number Precision=''>0.</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>0.05</Number>
+   <Number Precision=''>0.0024999973958341475</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>0.1</Number>
+   <Number Precision=''>0.009999833334166666</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>0.15000000000000002</Number>
+   <Number Precision=''>0.022498101610553625</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>0.2</Number>
+   <Number Precision=''>0.03998933418663417</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>0.25</Number>
+   <Number Precision=''>0.0624593178423802</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>0.30000000000000004</Number>
+   <Number Precision=''>0.08987854919801107</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>0.35000000000000003</Number>
+   <Number Precision=''>0.12219385219266277</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>0.4</Number>
+   <Number Precision=''>0.159318206614246</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>0.45</Number>
+   <Number Precision=''>0.20111887384607305</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>0.5</Number>
+   <Number Precision=''>0.24740395925452294</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>0.55</Number>
+   <Number Precision=''>0.2979076218961341</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>0.6000000000000001</Number>
+   <Number Precision=''>0.35227423327509005</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>0.65</Number>
+   <Number Precision=''>0.41004189878176384</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>0.7000000000000001</Number>
+   <Number Precision=''>0.47062588817115814</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>0.75</Number>
+   <Number Precision=''>0.5333026735360201</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>0.8</Number>
+   <Number Precision=''>0.5971954413623921</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>0.8500000000000001</Number>
+   <Number Precision=''>0.661262123760472</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>0.9</Number>
+   <Number Precision=''>0.7242871743701426</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>0.9500000000000001</Number>
+   <Number Precision=''>0.784878485034067</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>1.</Number>
+   <Number Precision=''>0.8414709848078965</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>1.05</Number>
+   <Number Precision=''>0.8923385641622101</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>1.1</Number>
+   <Number Precision=''>0.935616001553386</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>1.1500000000000001</Number>
+   <Number Precision=''>0.969332510867995</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>1.2000000000000002</Number>
+   <Number Precision=''>0.9914583481916865</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>1.25</Number>
+   <Number Precision=''>0.9999655856782489</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>1.3</Number>
+   <Number Precision=''>0.9929036510941185</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>1.35</Number>
+   <Number Precision=''>0.9684895202833552</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>1.4000000000000001</Number>
+   <Number Precision=''>0.925211520788168</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>1.4500000000000002</Number>
+   <Number Precision=''>0.8619445551742111</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>1.5</Number>
+   <Number Precision=''>0.7780731968879212</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>1.55</Number>
+   <Number Precision=''>0.6736175873612533</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>1.6</Number>
+   <Number Precision=''>0.5493554364271263</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>1.6500000000000001</Number>
+   <Number Precision=''>0.4069317973510637</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>1.7000000000000002</Number>
+   <Number Precision=''>0.24894678667315215</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>1.75</Number>
+   <Number Precision=''>0.07901021674738969</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>1.8</Number>
+   <Number Precision=''>-0.09824859374510868</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>1.85</Number>
+   <Number Precision=''>-0.2772275448877369</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>1.9000000000000001</Number>
+   <Number Precision=''>-0.45146575216142354</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>1.9500000000000002</Number>
+   <Number Precision=''>-0.6138333961077812</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>2.</Number>
+   <Number Precision=''>-0.7568024953079282</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>2.0500000000000003</Number>
+   <Number Precision=''>-0.8727986995173498</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>2.1</Number>
+   <Number Precision=''>-0.9546277716602164</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>2.15</Number>
+   <Number Precision=''>-0.9959627051561948</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>2.2</Number>
+   <Number Precision=''>-0.9918687573109125</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>2.25</Number>
+   <Number Precision=''>-0.9393346386757316</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>2.3000000000000003</Number>
+   <Number Precision=''>-0.8377694801650973</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>2.35</Number>
+   <Number Precision=''>-0.6894180186192824</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>2.4000000000000004</Number>
+   <Number Precision=''>-0.49964188311690094</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>2.45</Number>
+   <Number Precision=''>-0.2770142018097643</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>2.5</Number>
+   <Number Precision=''>-0.03317921654755682</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>2.5500000000000003</Number>
+   <Number Precision=''>0.21756078235932805</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>2.6</Number>
+   <Number Precision=''>0.45895148637769106</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>2.6500000000000004</Number>
+   <Number Precision=''>0.6737816755242824</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>2.7</Number>
+   <Number Precision=''>0.8451334116572178</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>2.75</Number>
+   <Number Precision=''>0.9578191473488313</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>2.8000000000000003</Number>
+   <Number Precision=''>0.9999022585479752</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>2.85</Number>
+   <Number Precision=''>0.9641650367263099</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>2.9000000000000004</Number>
+   <Number Precision=''>0.8493633785054664</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>2.95</Number>
+   <Number Precision=''>0.661095543640024</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>3.</Number>
+   <Number Precision=''>0.4121184852417566</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>3.0500000000000003</Number>
+   <Number Precision=''>0.12197347385747734</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>3.1</Number>
+   <Number Precision=''>-0.18416477940067516</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>3.1500000000000004</Number>
+   <Number Precision=''>-0.47742519779099357</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>3.2</Number>
+   <Number Precision=''>-0.7278778703497378</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>3.25</Number>
+   <Number Precision=''>-0.907679875544648</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>3.3000000000000003</Number>
+   <Number Precision=''>-0.9944322093031955</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>3.35</Number>
+   <Number Precision=''>-0.9743626611911743</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>3.4000000000000004</Number>
+   <Number Precision=''>-0.8448959437760252</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>3.45</Number>
+   <Number Precision=''>-0.6161700068662674</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>3.5</Number>
+   <Number Precision=''>-0.3111193549811273</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>3.5500000000000003</Number>
+   <Number Precision=''>0.036121526010231</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>3.6</Number>
+   <Number Precision=''>0.38354275541260996</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>3.6500000000000004</Number>
+   <Number Precision=''>0.6861107308592113</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>3.7</Number>
+   <Number Precision=''>0.9016757700663918</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>3.75</Number>
+   <Number Precision=''>0.997213718805399</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>3.8000000000000003</Number>
+   <Number Precision=''>0.954495430240921</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>3.85</Number>
+   <Number Precision=''>0.7742082868003135</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>3.9000000000000004</Number>
+   <Number Precision=''>0.4776371449140111</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>3.95</Number>
+   <Number Precision=''>0.10526787409549862</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>4.</Number>
+   <Number Precision=''>-0.2879033166650653</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>4.05</Number>
+   <Number Precision=''>-0.6400295561618877</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>4.1000000000000005</Number>
+   <Number Precision=''>-0.8921293646943791</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>4.15</Number>
+   <Number Precision=''>-0.9984178463774194</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>4.2</Number>
+   <Number Precision=''>-0.9354591409916635</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>4.25</Number>
+   <Number Precision=''>-0.7082780210511411</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>4.3</Number>
+   <Number Precision=''>-0.35185858693217353</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>4.3500000000000005</Number>
+   <Number Precision=''>0.0728794083907507</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>4.4</Number>
+   <Number Precision=''>0.48856476577252106</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>4.45</Number>
+   <Number Precision=''>0.8151244977936785</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>4.5</Number>
+   <Number Precision=''>0.9855251115651197</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>4.55</Number>
+   <Number Precision=''>0.960459678867088</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>4.6000000000000005</Number>
+   <Number Precision=''>0.7387060297037705</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>4.65</Number>
+   <Number Precision=''>0.36035513176732753</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>4.7</Number>
+   <Number Precision=''>-0.09869051400970977</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>4.75</Number>
+   <Number Precision=''>-0.5407693215265723</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>4.800000000000001</Number>
+   <Number Precision=''>-0.8668511558263153</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>4.8500000000000005</Number>
+   <Number Precision=''>-0.9992221507186314</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>4.9</Number>
+   <Number Precision=''>-0.9012913640886221</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>4.95</Number>
+   <Number Precision=''>-0.5893396602390484</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>5.</Number>
+   <Number Precision=''>-0.13235175009777303</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>5.050000000000001</Number>
+   <Number Precision=''>0.36139051731505667</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>5.1000000000000005</Number>
+   <Number Precision=''>0.7689894082787521</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>5.15</Number>
+   <Number Precision=''>0.9836574101361402</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>5.2</Number>
+   <Number Precision=''>0.9439284932184278</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>5.25</Number>
+   <Number Precision=''>0.653223420570844</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>5.300000000000001</Number>
+   <Number Precision=''>0.18329174154022612</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>5.3500000000000005</Number>
+   <Number Precision=''>-0.3411745328184095</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>5.4</Number>
+   <Number Precision=''>-0.7743366607419202</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>5.45</Number>
+   <Number Precision=''>-0.9898455439102971</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>5.5</Number>
+   <Number Precision=''>-0.9191536942035773</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>5.550000000000001</Number>
+   <Number Precision=''>-0.5756726449037528</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>5.6000000000000005</Number>
+   <Number Precision=''>-0.05589738616432275</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>5.65</Number>
+   <Number Precision=''>0.48518389647178806</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>5.7</Number>
+   <Number Precision=''>0.8791489899453786</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>5.75</Number>
+   <Number Precision=''>0.9971302863248458</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>5.800000000000001</Number>
+   <Number Precision=''>0.7940962483324946</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>5.8500000000000005</Number>
+   <Number Precision=''>0.32878729256341077</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>5.9</Number>
+   <Number Precision=''>-0.24980688359658182</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>5.95</Number>
+   <Number Precision=''>-0.7479583753739893</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>6.</Number>
+   <Number Precision=''>-0.9917788534431158</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>6.050000000000001</Number>
+   <Number Precision=''>-0.8896653928126486</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>6.1000000000000005</Number>
+   <Number Precision=''>-0.4698420526176865</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>6.15</Number>
+   <Number Precision=''>0.12307530518145239</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>6.2</Number>
+   <Number Precision=''>0.6749435215575963</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>6.25</Number>
+   <Number Precision=''>0.9785679217677679</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>6.300000000000001</Number>
+   <Number Precision=''>0.913051491767992</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>6.3500000000000005</Number>
+   <Number Precision=''>0.49532116552278155</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>6.4</Number>
+   <Number Precision=''>-0.11901274726403187</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>6.45</Number>
+   <Number Precision=''>-0.6902217794009379</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>6.5</Number>
+   <Number Precision=''>-0.9869870631127111</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>6.550000000000001</Number>
+   <Number Precision=''>-0.8818621799026987</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>6.6000000000000005</Number>
+   <Number Precision=''>-0.40985687785389</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>6.65</Number>
+   <Number Precision=''>0.23789965719375347</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>6.7</Number>
+   <Number Precision=''>0.7880917916587175</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>6.75</Number>
+   <Number Precision=''>0.9999557589892294</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>6.800000000000001</Number>
+   <Number Precision=''>0.7732114347673533</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>6.8500000000000005</Number>
+   <Number Precision=''>0.20003123878634793</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>6.9</Number>
+   <Number Precision=''>-0.4671902346630188</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>6.95</Number>
+   <Number Precision=''>-0.9240757088287519</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>7.</Number>
+   <Number Precision=''>-0.9537526527594719</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>7.050000000000001</Number>
+   <Number Precision=''>-0.5337107340185699</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>7.1000000000000005</Number>
+   <Number Precision=''>0.14401501842971587</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>7.15</Number>
+   <Number Precision=''>0.7558933282789987</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>7.2</Number>
+   <Number Precision=''>0.9999930762845921</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>7.25</Number>
+   <Number Precision=''>0.7476890325643288</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>7.300000000000001</Number>
+   <Number Precision=''>0.1168078443303508</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>7.3500000000000005</Number>
+   <Number Precision=''>-0.5773055082270646</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>7.4</Number>
+   <Number Precision=''>-0.9763597535157826</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>7.45</Number>
+   <Number Precision=''>-0.8655100513924976</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>7.5</Number>
+   <Number Precision=''>-0.2942472117115055</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>7.550000000000001</Number>
+   <Number Precision=''>0.43841305695770594</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>7.6000000000000005</Number>
+   <Number Precision=''>0.936085476062282</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>7.65</Number>
+   <Number Precision=''>0.9198745127418498</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>7.7</Number>
+   <Number Precision=''>0.3896581901529575</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>7.75</Number>
+   <Number Precision=''>-0.3637025466869774</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>7.800000000000001</Number>
+   <Number Precision=''>-0.912657531744421</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>7.8500000000000005</Number>
+   <Number Precision=''>-0.9353874275768831</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>7.9</Number>
+   <Number Precision=''>-0.40945177135458294</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>7.95</Number>
+   <Number Precision=''>0.36221850510731257</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>8.</Number>
+   <Number Precision=''>0.9200260381967907</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>8.05</Number>
+   <Number Precision=''>0.9211191622752101</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>8.1</Number>
+   <Number Precision=''>0.3554969790593136</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>8.15</Number>
+   <Number Precision=''>-0.43411376403922136</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>8.200000000000001</Number>
+   <Number Precision=''>-0.9540742851179644</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>8.25</Number>
+   <Number Precision=''>-0.8686834535624746</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>8.3</Number>
+   <Number Precision=''>-0.2231437735665153</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>8.35</Number>
+   <Number Precision=''>0.5707850394421407</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>8.4</Number>
+   <Number Precision=''>0.9920932548732733</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>8.450000000000001</Number>
+   <Number Precision=''>0.7540003988013996</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>8.5</Number>
+   <Number Precision=''>0.006630983970279104</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>8.55</Number>
+   <Number Precision=''>-0.7485475905742056</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>8.6</Number>
+   <Number Precision=''>-0.9912251107046486</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>8.65</Number>
+   <Number Precision=''>-0.544441960072283</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>8.700000000000001</Number>
+   <Number Precision=''>0.2876539149415404</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>8.75</Number>
+   <Number Precision=''>0.9185024220131432</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>8.8</Number>
+   <Number Precision=''>0.891124037451796</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>8.85</Number>
+   <Number Precision=''>0.21560986317871486</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>8.9</Number>
+   <Number Precision=''>-0.6211299334496524</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>8.950000000000001</Number>
+   <Number Precision=''>-0.9999670925012932</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>9.</Number>
+   <Number Precision=''>-0.6298879942744539</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>9.05</Number>
+   <Number Precision=''>0.21929420361274835</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>9.1</Number>
+   <Number Precision=''>0.9038101310046799</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>9.15</Number>
+   <Number Precision=''>0.8914347930151257</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>9.200000000000001</Number>
+   <Number Precision=''>0.18198191386852236</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>9.25</Number>
+   <Number Precision=''>-0.6739173763202644</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>9.3</Number>
+   <Number Precision=''>-0.995376152797119</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>9.35</Number>
+   <Number Precision=''>-0.5159311625482662</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>9.4</Number>
+   <Number Precision=''>0.3851826163613446</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>9.450000000000001</Number>
+   <Number Precision=''>0.9730033300256304</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>9.5</Number>
+   <Number Precision=''>0.7553492856626052</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>9.55</Number>
+   <Number Precision=''>-0.09616421171909198</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>9.600000000000001</Number>
+   <Number Precision=''>-0.8693141763748272</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>9.65</Number>
+   <Number Precision=''>-0.9023881190991562</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>9.700000000000001</Number>
+   <Number Precision=''>-0.15712578382038972</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>9.75</Number>
+   <Number Precision=''>0.7275337960753449</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>9.8</Number>
+   <Number Precision=''>0.975585686614278</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>9.850000000000001</Number>
+   <Number Precision=''>0.3586975915891131</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>9.9</Number>
+   <Number Precision=''>-0.5815459490412923</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>9.950000000000001</Number>
+   <Number Precision=''>-0.9991041595693394</Number>
+  </Function>
+  <Function>
+   <Symbol>List</Symbol>
+   <Number Precision=''>10.</Number>
+   <Number Precision=''>-0.5063656411097588</Number>
+  </Function>
+ </Function>
+</Expression>

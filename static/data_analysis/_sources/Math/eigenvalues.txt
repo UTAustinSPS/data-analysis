@@ -308,3 +308,4 @@ For the most familar form, we take :math:`A^2=C^2+D^2,~A\cos\phi=C,~A\sin\phi=D`
 
 	x(t)=A\cos(wt-\phi)
 
+FIXME add QM example?

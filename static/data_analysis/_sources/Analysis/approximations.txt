@@ -1,0 +1,39 @@
+Approximations
+==============
+FIXME INTRO GOES HERE
+
+Taylor Expansion
+----------------
+FIXME intro, theory
+
+For a well-behaved function :math:`f(x)`, we can create a Taylor expansion around
+:math:`x=x_0` by:
+
+.. math::
+
+	f(x)=f(x_0)+(x-x_0)f'(x_0)+(x-x_0)^2\frac{f''(x_0)}{2!}+\cdots=
+	\sum_{i=0}^\infty\frac{1}{i!}(x-x_0)^i\frac{d^if(x_0)}{dx^i}
+
+We can apply this in many ways, most of which hinge on the fact that each successive
+term will have smaller and smaller impact for :math:`x\approx{x_0}`.
+
+First-Order Approximation
+-------------------------
+"First-order approximation" is a phrase ubiquitous to physics. Problems are often
+solved "to first order" or results approximated to first order. But what does it mean?
+Well, it's quite simple. A "first-order approximation" is simply shorthand for
+a "first-order Taylor polynomial approximation". Using the Taylor expansion
+of a relevant function, we let :math:`f(x)=f(x_0)+(x-x_0)f'(x_0)`, often considering
+the case where :math:`x_0=0`. Some examples follow (some taken to second-order
+when degree 1 has coefficient 0).
+
+.. table:: Table 1: Useful Taylor Polynomial Approximations
+
+	================================ =============================================== ===========
+	Function                         Approximation                                   :math:`x_0`
+	================================ =============================================== ===========
+	:math:`\frac{1}{\sqrt{k\pm{x}}}` :math:`\frac{1}{\sqrt{k}}\mp\frac{x}{2k^{3/2}}` 0
+	:math:`\sin{x}`                  :math:`x`                                       0
+	:math:`\cos{x}`                  :math:`1-\frac{x^2}{2}`                         0            
+	================================ =============================================== ===========
+

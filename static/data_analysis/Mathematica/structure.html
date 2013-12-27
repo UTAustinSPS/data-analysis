@@ -141,6 +141,7 @@
 <li><a class="reference internal" href="#evaluating-symbolic-expressions">Evaluating Symbolic Expressions</a></li>
 <li><a class="reference internal" href="#other-constructs">Other Constructs</a></li>
 <li><a class="reference internal" href="#packages">Packages</a></li>
+<li><a class="reference internal" href="#modules">Modules</a></li>
 </ul>
 </li>
 </ul>
@@ -350,6 +351,27 @@ to load the &#8220;ErrorBarPlots&#8221; function, we&#8217;ll use:</p>
 <p>Note that in addition to the double-quotes, we need the &#8220;backquote&#8221; or &#8220;backtick&#8221; character.
 This is different from a single quote <tt class="code docutils literal"><span class="pre">'</span></tt>, and is usually found at the upper-left
 portion of a QWERTY keyboard with the tilde (<tt class="code docutils literal"><span class="pre">~</span></tt>) character.</p>
+</div>
+<div class="section" id="modules">
+<h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
+<p>After working with <em>Mathematica</em> for a while, you will notice that variables are
+defined everywhere. If using complicated programming constructs, we might find it useful
+to redefine values for a single function. For that, we can use a <tt class="code docutils literal"><span class="pre">Module</span></tt>.
+We define the local variables, placing all our code inside the module:</p>
+<blockquote>
+<div>f[<a href="#id1"><span class="problematic" id="id2">x_</span></a>]:=x^2
+g[<a href="#id3"><span class="problematic" id="id4">x_</span></a>]:= Module[{f}, f[x]]
+g[2]</div></blockquote>
+<p>prints</p>
+<blockquote>
+<div>f$8675309[2]</div></blockquote>
+<p>The number after the dollar sign and before the brackets is not important and will change during
+each evaluation But what this shows is that no matter if <tt class="code docutils literal"><span class="pre">f</span></tt> is already defined,
+we can redefine it without affecting any of the externally defined versions. This is good for
+shorthand when building complicated functions, and is necessary for creating re-usable functions
+for application to many projects (such as creating a package, which is not part of
+this course, but can be found in <em>Mathematica</em> with the help URL
+&#8220;tutorial/SettingUpMathematicaPackages&#8221;).</p>
 </div>
 </div>
 

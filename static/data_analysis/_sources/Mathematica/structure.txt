@@ -202,3 +202,30 @@ to load the "ErrorBarPlots" function, we'll use:
 Note that in addition to the double-quotes, we need the "backquote" or "backtick" character.
 This is different from a single quote :code:`'`, and is usually found at the upper-left
 portion of a QWERTY keyboard with the tilde (:code:`~`) character.
+
+Modules
+-------
+After working with *Mathematica* for a while, you will notice that variables are
+defined everywhere. If using complicated programming constructs, we might find it useful
+to redefine values for a single function. For that, we can use a :code:`Module`.
+We define the local variables, placing all our code inside the module:
+
+..
+
+	f[x_]:=x^2
+	g[x_]:= Module[{f}, f[x]]
+	g[2]
+
+prints
+
+..
+
+	f$8675309[2]
+
+The number after the dollar sign and before the brackets is not important and will change during
+each evaluation But what this shows is that no matter if :code:`f` is already defined,
+we can redefine it without affecting any of the externally defined versions. This is good for
+shorthand when building complicated functions, and is necessary for creating re-usable functions
+for application to many projects (such as creating a package, which is not part of
+this course, but can be found in *Mathematica* with the help URL
+"tutorial/SettingUpMathematicaPackages").

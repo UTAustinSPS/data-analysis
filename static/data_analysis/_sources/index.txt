@@ -58,6 +58,10 @@ Analysis
    :maxdepth: 2
 
    Analysis/gaussian.rst
+   Analysis/curve_fit.rst
+   Analysis/approximations.rst
+   Analysis/fourier.rst
+   Analysis/error.rst
 
 Appendix
 ::::::::
@@ -65,8 +69,8 @@ Appendix
 .. toctree::
    :maxdepth: 1
 
-   Math/logic.rst
    Math/eigenvalues.rst
+   Math/logic.rst
 
 ..
    To Do for LaTeX (feel free to add):

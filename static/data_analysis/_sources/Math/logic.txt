@@ -1,3 +1,3 @@
 Logic
 =====
-sadfasdf
+FIXME and or, quantifiers
