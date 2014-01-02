@@ -32,6 +32,7 @@ Introduction
    Mathematica/structure.rst
    Mathematica/lists.rst
    Mathematica/functions_graphs.rst
+   Mathematica/assumptions.rst
    Mathematica/export.rst
    Mathematica/import.rst
    Mathematica/animations.rst

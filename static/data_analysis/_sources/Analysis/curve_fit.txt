@@ -142,7 +142,7 @@ the resulting equations for all the coefficients.
 		a \\ b
 		\end{array}\right)=
 		\left(\begin{array}{cc}
-		1 & 0.272727 \\ 15 & 6 \end{array}\right)^-1
+		1 & 0.272727 \\ 15 & 6 \end{array}\right)^{-1}
 		\left(\begin{array}{c}
 		5.8906 \\ 94.3021
 		\end{array}\right)=

@@ -134,6 +134,7 @@
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
 <li><a class="reference internal" href="#">Approximations</a><ul>
+<li><a class="reference internal" href="#motivation">Motivation</a></li>
 <li><a class="reference internal" href="#taylor-expansion">Taylor Expansion</a></li>
 <li><a class="reference internal" href="#first-order-approximation">First-Order Approximation</a></li>
 </ul>
@@ -184,17 +185,91 @@
   
   <div class="section" id="approximations">
 <h1>Approximations<a class="headerlink" href="#approximations" title="Permalink to this headline">¶</a></h1>
-<p>FIXME INTRO GOES HERE</p>
+<div class="section" id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
+<p>In physics, we wish we could explain, undeniably and unequivocably, why the universe
+works the way it does, but this is really not feasible. We have things like the
+Standard Model and the host of rules we learn in courses and then apply to experiments,
+but these really describe a &#8220;how&#8221; and not a &#8220;why&#8221; (as Indiana Jones
+once said, &#8220;if it&#8217;s truth you&#8217;re looking for... philosophy class is right down the hall&#8221;).
+We develop models to help characterize how things behave - a particle in a magnetic field,
+light near a black hole, planets in orbit. Often, though, we make approximations.</p>
+<p>For example, in introductory courses, we do all manner of problems on the surface
+of Earth involving the planet&#8217;s surface gravity acting on an experiment. In these
+problems, we often will do things like take the acceleration due to gravity
+to be constant, or that the objects under inspection in the lab have no gravitational
+effect on one another, or that air resistance is &#8220;negligible&#8221;, or that motion
+is non-relativistic, or that we have no friction. While a purist may cringe at these
+notions, in reality, given the right constraints, these are all reasonable. For example,
+the gravitational force between objects in a lab setting (say, 1kg balls separated by
+a meter) is many orders of magnitude (powers of ten) smaller than the gravitational
+force between the objects and the Earth (something like 10 orders of magnitude). In
+most cases, this means if we ignore that contribution, we might expect a a deviation
+in our result from what we calculate at maybe the 10th decimal place. The fact of the
+matter is, we often can&#8217;t measure things that precisely, and may not even desire to do so.
+If acceleration due to gravity is <span class="math">\(9.81\frac{m}{s^2}\)</span> rather than <span class="math">\(9.82\frac{m}{s^2}\)</span>,
+we probably won&#8217;t notice. It doesn&#8217;t change results, so we don&#8217;t mind. Even in cases where
+we might start to see differences, a simpler model may allow us to do more (taking
+more complicated integrals, etc.), even if we start getting answers that could be
+wrong by 10%. Often, we&#8217;d rather have a good approximation of reality and get an
+answer quickly (or at all) than to arrive at something we can&#8217;t calculate save
+numerical methods.</p>
+<p>We can make many physical approximations to a system for ease in understanding, but
+if we want a reliable model, we may include more information, but turn to
+mathematics to help our understanding. For a simple pendulum, we take that
+the force on a simple weight on a string is <span class="math">\(mg\sin\theta\)</span>, but then
+use the &#8220;small angle approximation&#8221; and say this is very nearly <span class="math">\(mg\theta\)</span>.
+We dig through the math, sove a differential equation (or, just know the solution)
+and arrive at the solution that <span class="math">\(\theta(t)=A\sin(\omega t),~L\omega^2=g\)</span>.
+If we hadn&#8217;t used that approximation for this fairly easy-to-describe situation,
+we end up having to use the inverse of an elliptic integral
+(the inverse of <span class="math">\(F(\phi,m)=\int_0^\phi(1-m\sin^2\theta)^{-1/2}d\theta\)</span>, given
+<span class="math">\(m\)</span>). Try it yourself or ask a computer, and you&#8217;ll find that we cannot evaluate
+the expression exactly. It&#8217;s not a matter of not being smart enough nor having the fastest
+computer - there is no analytical form. So, we rely on pre-computed tables, or having
+a computer numerically approximate the solution. This is fine, but means that
+even for a simple pendulum, we have no exact solution (and that&#8217;s in a frictionless
+vacuum!).</p>
+<p>Instead, we learn techniques for making approximations and learn when they can be applied.
+The small angle approxmimation is great and makes life easy, but is it valid when
+<span class="math">\(\theta=.1\)</span>? <span class="math">\(\theta=.5\)</span>? <span class="math">\(\theta=1.5\)</span>? And how do we decide
+what is valid and not?</p>
+<p>The short answer is, &#8220;it depends.&#8221; We often care about order of magnitude only,
+or we might want to be accurate within a factor of 2, or maybe we need
+to be correct within 10% (or less). We may select our level of approximation
+based on the instrumentation we have available. If we have 1 significant figure,
+maybe we can tolerate an order of magnitude argument in the end result - we&#8217;ll
+truncate our result to a single significant figure anyway (we cannot reasonably
+report more significant digits than our worst measurement), so maybe our mathematical
+model can tolerate simpler expressions that we can evaluate analytically to hopefully
+characterize overall trends in behavior.</p>
+</div>
 <div class="section" id="taylor-expansion">
 <h2>Taylor Expansion<a class="headerlink" href="#taylor-expansion" title="Permalink to this headline">¶</a></h2>
-<p>FIXME intro, theory</p>
-<p>For a well-behaved function <span class="math">\(f(x)\)</span>, we can create a Taylor expansion around
-<span class="math">\(x=x_0\)</span> by:</p>
+<p>One of the most powerful tools we have as physicists is the Taylor series expansion.
+First, we&#8217;ll address the theory and where such an expansion is valid, then talk
+about some applications.</p>
+<p>Assume we have a function <span class="math">\(f(x)\)</span> that has infinite continuous derivatives near a point
+<span class="math">\(x=x_0\)</span>, where <span class="math">\(x_0-\delta_-&lt;x&lt;x_0+\delta_+\)</span> bounds the region where the function
+has infinite continuous derivatives (in many cases, this region is all of the real numbers).
+Then, for <span class="math">\(x\in(x_0-\delta_-,~x_0+\delta_+)\)</span></p>
 <div class="math">
-\[f(x)=f(x_0)+(x-x_0)f'(x_0)+(x-x_0)^2\frac{f''(x_0)}{2!}+\cdots=
-\sum_{i=0}^\infty\frac{1}{i!}(x-x_0)^i\frac{d^if(x_0)}{dx^i}\]</div>
-<p>We can apply this in many ways, most of which hinge on the fact that each successive
-term will have smaller and smaller impact for <span class="math">\(x\approx{x_0}\)</span>.</p>
+\[\begin{split}f(x)&amp;=\sum_{i=0}^n\left(\frac{(x-x_0)^i}{i!}\frac{d^if(x)}{dx^i}\middle|_{x=x_0}\right)
++R_{n+1}(x)\\
+R_{n+1}(x)&amp;=\frac{(x-x_0)^{n+1}}{(n+1)!}\frac{d^{n+1}f(x)}{dx^{n+1}}|_{x=c}\end{split}\]</div>
+<p>for some <span class="math">\(c\)</span> between <span class="math">\(x\)</span> and <span class="math">\(x_0\)</span> (note that if <span class="math">\(f(x)\)</span> has
+<span class="math">\(n+1\)</span> continuous derivatives, this still holds, but the choice of <span class="math">\(c\)</span> is
+not necessarily clear). If we take the limit as <span class="math">\(n\rightarrow\infty\)</span>, we
+arrive at the familiar infinite Taylor series:</p>
+<div class="math">
+\[f(x)=\sum_{i=0}^\infty\left(\frac{(x-x_0)^i}{i!}\frac{d^if(x)}{dx^i}\middle|_{x=x_0}\right)=
+f(x_0)+(x-x_0)f'(x_0)+(x-x_0)^2\frac{f''(x_0)}{2!}+\cdots\]</div>
+<p>While this formulation of <span class="math">\(f(x)\)</span> is useful for many reasons, one that is most useful
+is our ability to truncate to just the first few terms of the summation, noting that
+we introduce error on the order of <span class="math">\(R_{n+1}(x)\)</span>, which for values near <span class="math">\(x=x_0\)</span>
+can be extremely small. So, we can use an approximated version of <span class="math">\(f(x)\)</span> to learn
+about the behavior of the function, often avoiding impossible integrals or other
+mathematical hurdles.</p>
 </div>
 <div class="section" id="first-order-approximation">
 <h2>First-Order Approximation<a class="headerlink" href="#first-order-approximation" title="Permalink to this headline">¶</a></h2>
@@ -208,9 +283,9 @@ when degree 1 has coefficient 0).</p>
 <table border="1" class="docutils">
 <caption>Table 1: Useful Taylor Polynomial Approximations</caption>
 <colgroup>
-<col width="36%" />
-<col width="52%" />
-<col width="12%" />
+<col width="41%" />
+<col width="48%" />
+<col width="11%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Function</th>
@@ -219,8 +294,8 @@ when degree 1 has coefficient 0).</p>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td><span class="math">\(\frac{1}{\sqrt{k\pm{x}}}\)</span></td>
-<td><span class="math">\(\frac{1}{\sqrt{k}}\mp\frac{x}{2k^{3/2}}\)</span></td>
+<tr class="row-even"><td><span class="math">\((1\pm x)^n\)</span></td>
+<td><span class="math">\(1\pm{nx}\)</span></td>
 <td>0</td>
 </tr>
 <tr class="row-odd"><td><span class="math">\(\sin{x}\)</span></td>
@@ -234,6 +309,120 @@ when degree 1 has coefficient 0).</p>
 <tr class="row-odd"><td><span class="math">\(e^{kx}\)</span></td>
 <td><span class="math">\(1+kx\)</span></td>
 <td>0</td>
+</tr>
+<tr class="row-even"><td><span class="math">\(\ln{x}\)</span></td>
+<td><span class="math">\(-1+x\)</span></td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\ln(1-x)\)</span></td>
+<td><span class="math">\(-x\)</span></td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td><span class="math">\(x^x\)</span></td>
+<td><span class="math">\(1+x\ln{x}\)</span></td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\Gamma(x)\)</span> (Gamma function)</td>
+<td><span class="math">\(1-\gamma(x-1);~\gamma=0.5772157...\)</span></td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td><span class="math">\(\zeta(x)\)</span> (Riemann-zeta function)</td>
+<td><span class="math">\(-\frac{1}{2}\left(1 + \ln(2\pi)x\right)\)</span></td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\textrm{erf}(x)\)</span> (Error function)</td>
+<td><span class="math">\(\frac{2x}{\sqrt{\pi}}\)</span></td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>For an example of how good these approximations are, we can numerically solve
+for when the function and the approximation differ by more than 10%:</p>
+<table border="1" class="docutils">
+<caption>Table 2: Calculation of 10% Error for <span class="math">\({\Large\frac{f_\approx(x)-f(x)}{f(x)}}=0.1,~x=x_0+\Delta{x}\)</span></caption>
+<colgroup>
+<col width="29%" />
+<col width="14%" />
+<col width="32%" />
+<col width="24%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><span class="math">\(f(x)\)</span></th>
+<th class="head"><span class="math">\(x_0\)</span></th>
+<th class="head"><span class="math">\(f_\approx(x)\)</span></th>
+<th class="head"><span class="math">\(|\Delta{x}|\)</span></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><span class="math">\(\sin{x}\)</span></td>
+<td>0</td>
+<td><span class="math">\(x\)</span></td>
+<td><span class="math">\(0.749\)</span></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\sin{x}\)</span></td>
+<td>0</td>
+<td><span class="math">\(x-x^3/6\)</span></td>
+<td><span class="math">\(1.664\)</span></td>
+</tr>
+<tr class="row-even"><td><span class="math">\(\cos{x}\)</span></td>
+<td>0</td>
+<td><span class="math">\(1-x^2/2\)</span></td>
+<td><span class="math">\(1.053\)</span></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\((1+x)^2\)</span></td>
+<td>0</td>
+<td><span class="math">\(1+2x\)</span></td>
+<td><span class="math">\(0.462\)</span></td>
+</tr>
+<tr class="row-even"><td><span class="math">\((1+x)^3\)</span></td>
+<td>0</td>
+<td><span class="math">\(1+3x\)</span></td>
+<td><span class="math">\(0.243\)</span></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\((1+x)^4\)</span></td>
+<td>0</td>
+<td><span class="math">\(1+4x\)</span></td>
+<td><span class="math">\(0.166\)</span></td>
+</tr>
+<tr class="row-even"><td><span class="math">\((1+x)^{-1}\)</span></td>
+<td>0</td>
+<td><span class="math">\(1-x\)</span></td>
+<td><span class="math">\(0.316\)</span></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\((1+x)^{-2}\)</span></td>
+<td>0</td>
+<td><span class="math">\(1-2x\)</span></td>
+<td><span class="math">\(0.173\)</span></td>
+</tr>
+<tr class="row-even"><td><span class="math">\((1+x)^{-3}\)</span></td>
+<td>0</td>
+<td><span class="math">\(1-3x\)</span></td>
+<td><span class="math">\(0.120\)</span></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\ln{x}\)</span></td>
+<td>1</td>
+<td><span class="math">\(-1+x\)</span></td>
+<td><span class="math">\(0.193\)</span></td>
+</tr>
+<tr class="row-even"><td><span class="math">\(\ln{1-x}\)</span></td>
+<td>0</td>
+<td><span class="math">\(-x\)</span></td>
+<td><span class="math">\(0.206\)</span></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(x^x\)</span></td>
+<td>0</td>
+<td><span class="math">\(1+x\ln{x}\)</span></td>
+<td><span class="math">\(1.445\)</span></td>
+</tr>
+<tr class="row-even"><td><span class="math">\(\Gamma(x)\)</span></td>
+<td>1</td>
+<td><span class="math">\(1-\gamma(x-1)\)</span></td>
+<td><span class="math">\(0.342\)</span></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\textrm{erf}(x)\)</span></td>
+<td>0</td>
+<td><span class="math">\(2x/\sqrt{\pi}\)</span></td>
+<td><span class="math">\(0.545\)</span></td>
 </tr>
 </tbody>
 </table>

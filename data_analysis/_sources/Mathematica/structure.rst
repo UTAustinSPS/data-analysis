@@ -210,7 +210,7 @@ defined everywhere. If using complicated programming constructs, we might find i
 to redefine values for a single function. For that, we can use a :code:`Module`.
 We define the local variables, placing all our code inside the module:
 
-..
+::
 
 	f[x_]:=x^2
 	g[x_]:= Module[{f}, f[x]]
@@ -218,10 +218,11 @@ We define the local variables, placing all our code inside the module:
 
 prints
 
-..
+::
 
 	f$8675309[2]
 
+rather than 4.
 The number after the dollar sign and before the brackets is not important and will change during
 each evaluation But what this shows is that no matter if :code:`f` is already defined,
 we can redefine it without affecting any of the externally defined versions. This is good for

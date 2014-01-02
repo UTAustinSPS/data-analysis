@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Exporting Data &mdash; Introduction to Data Analysis for Physics</title>
+    <title>Applying Assumptions &mdash; Introduction to Data Analysis for Physics</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -74,8 +74,8 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
-    <link rel="next" title="Importing Data" href="import.html" />
-    <link rel="prev" title="Applying Assumptions" href="assumptions.html" />
+    <link rel="next" title="Exporting Data" href="export.html" />
+    <link rel="prev" title="Functions and Graphing" href="functions_graphs.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -133,12 +133,7 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Exporting Data</a><ul>
-<li><a class="reference internal" href="#exporting-images">Exporting Images</a></li>
-<li><a class="reference internal" href="#exporting-non-static-images">Exporting Non-Static Images</a></li>
-<li><a class="reference internal" href="#id1">Exporting Data</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">Applying Assumptions</a></li>
 </ul>
 </ul>
 </li>
@@ -146,17 +141,17 @@
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Applying Assumptions" data-toggle="tooltip">
-    <a href="assumptions.html" >
+  <li id="relations-prev" title="Previous Chapter - Functions and Graphing" data-toggle="tooltip">
+    <a href="functions_graphs.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
-      <p style=";max-width:130px;">Applying Assumptions</p>
+      <p style=";max-width:130px;">Functions and Graphing</p>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Importing Data' data-toggle="tooltip" >
-    <a href="import.html" >
+  <li id="relations-next" title='Next Chapter - Exporting Data' data-toggle="tooltip" >
+    <a href="export.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
-      <p style=";max-width:130px;">Importing Data</p>
+      <p style=";max-width:130px;">Exporting Data</p>
     </a>
   </li>
   <li style="divider-vertical"></li>
@@ -183,63 +178,106 @@
 
 <div id="mainbody" class="container">
   
-  <div class="section" id="exporting-data">
-<h1>Exporting Data<a class="headerlink" href="#exporting-data" title="Permalink to this headline">¶</a></h1>
-<p><em>Mathematica</em> has great utilities for exporting data from the application to images,
-audio files, movies, and more. The image component is the most useful for drafting
-documents, of course, but others can be useful when applying <em>Mathematica</em> to other
-problems. For example, if we create an animation (of a dataset through time, or
-of a simulation), we can easily export it to a format that can be included in a PowerPoint
-presentation or uploaded to YouTube.</p>
-<p>The <tt class="code docutils literal"><span class="pre">Export</span></tt> function is surprisingly simple to use, which makes it ever more effective.
-It is used as <tt class="code docutils literal"><span class="pre">Export[&quot;filename&quot;,</span> <span class="pre">graphic,</span> <span class="pre">&quot;format&quot;]</span></tt>, where the <tt class="code docutils literal"><span class="pre">filename</span></tt>
-is the full path (for ease in finding it later) to the file you want to create, for example
-&#8220;/home/my_user/mathematica_files/picture.png&#8221;, <tt class="code docutils literal"><span class="pre">graphic</span></tt> is the image (or movie,
-audio clip, etc.) that you want to save (example to follow), and <tt class="code docutils literal"><span class="pre">format</span></tt> is one
-of the valid file formats (run <tt class="code docutils literal"><span class="pre">$ExportFormats</span></tt> to see which are enabled).</p>
-<div class="section" id="exporting-images">
-<h2>Exporting Images<a class="headerlink" href="#exporting-images" title="Permalink to this headline">¶</a></h2>
-<p>For a simple example, we have:</p>
-<div class="highlight-python"><pre>Plot[x^2, {x,0,8}]
-Export["/home/user/mydirectory/plot.png", %, "PNG"]</pre>
-</div>
-<p>which will create a PNG (better resolution than JPG and is still cross-platform) version
-of the plot and store it in the file specified (which is how each of the images in the
-<em>Mathematica</em> portion of this textbook have been created).</p>
-</div>
-<div class="section" id="exporting-non-static-images">
-<h2>Exporting Non-Static Images<a class="headerlink" href="#exporting-non-static-images" title="Permalink to this headline">¶</a></h2>
-<p>If we want to export something other than a single static image, we have to update
-our command slightly. For movies, GIFs, etc. we can simply put the single frames in a list,
-optionally providing a duration for frames (in seconds):</p>
-<div class="highlight-python"><pre>table = Table[
-        Plot[x^4 + a x^3 - a^2 x + a, {x, -10, 10},
-        PlotRange -&gt; {{-7, 7}, {-40, 150}}], {a, 0, 8, .1}];
-Export["filename.gif", table, "GIF", "DisplayDurations" -&gt; .01]</pre>
-</div>
-<div class="figure align-center">
-<img alt="GIF exporting" src="../_images/export_ani.gif" />
-<p class="caption">Animated GIF for a polynomial <span class="math">\(x^4+ax^3-a^2x+a;~a\in[0,8]\)</span>.</p>
-</div>
-</div>
-<div class="section" id="id1">
-<h2>Exporting Data<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>If instead of images we want to export data, we can do this as well. For example, we can export
-a matrix to a CSV (comma-separated values) file. We can even add headers to the data. For example,
-if we had <tt class="code docutils literal"><span class="pre">data=Table[{i,</span> <span class="pre">i^2,</span> <span class="pre">i^3,</span> <span class="pre">Prime[i]},</span> <span class="pre">{i,-20,20}]</span></tt>, we can add headers then create the file with:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">data</span><span class="o">=</span><span class="n">Table</span><span class="p">[{</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="n">i</span><span class="o">^</span><span class="mi">3</span><span class="p">,</span> <span class="n">Prime</span><span class="p">[</span><span class="n">i</span><span class="p">]},</span> <span class="p">{</span><span class="n">i</span><span class="p">,</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">}];</span>
-<span class="n">PrependTo</span><span class="p">[</span><span class="n">data</span><span class="p">,</span> <span class="p">{</span><span class="s">&quot;value&quot;</span><span class="p">,</span> <span class="s">&quot;square&quot;</span><span class="p">,</span> <span class="s">&quot;cube&quot;</span><span class="p">,</span> <span class="s">&quot;prime&quot;</span><span class="p">}];</span>
-<span class="n">Export</span><span class="p">[</span><span class="s">&quot;prime_example.csv&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="s">&quot;CSV&quot;</span><span class="p">]</span>
+  <div class="section" id="applying-assumptions">
+<h1>Applying Assumptions<a class="headerlink" href="#applying-assumptions" title="Permalink to this headline">¶</a></h1>
+<p>In some cases, we run into problems evaluating functions on symbolic expressions.
+For example, if we want to evaluate <span class="math">\(\int_0^1e^{x^k}dx\)</span> as a function of <span class="math">\(k\)</span>,
+we can do:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Clear</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
+<span class="n">Integrate</span><span class="p">[</span><span class="n">Exp</span><span class="p">[</span><span class="n">x</span><span class="o">^</span><span class="n">k</span><span class="p">],</span> <span class="p">{</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">}]</span>
 </pre></div>
 </div>
-<p>The data is <a class="reference external" href="../_static/data/prime_example.csv">here</a> for reference.</p>
-<p>We can export data as well to formats for
-later use in <em>MATLAB</em> or other languages, and even automatically create archives of multiple
-files (TAR files, GZIP files, ZIP files). For an updated listing of possible options and
-examples on how to use each (typically, the single image export is sufficient for any
-given graph), check out the &#8220;Listing of All Formats&#8221; page in the <em>Mathematica</em> documentation
-(<em>Mathematica</em> URL: guide/ListingOfAllFormats).</p>
+<p>which gives</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">ConditionalExpression</span><span class="p">[</span>
+        <span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">k</span><span class="p">)</span> <span class="p">(</span><span class="n">Gamma</span><span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="n">k</span><span class="p">]</span> <span class="o">-</span> <span class="n">Gamma</span><span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="n">k</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]))</span><span class="o">/</span><span class="n">k</span><span class="p">,</span>
+        <span class="n">Re</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
 </div>
+<p>This tells us that that integral evaluates to the first expression if the real part of <span class="math">\(k\)</span>
+is greater than 0. If we know nothing about <span class="math">\(k\)</span>, then this is the best we can do. But, if
+we knew something about <span class="math">\(k\)</span>, for example, that <span class="math">\(k&gt;1\)</span>, we can incorporate that
+information into the integral, sometimes obtaining better results:</p>
+<div class="highlight-python"><pre>Integrate[Exp[x ^k], {x, 0, 1}, Assumptions -&gt; {k &gt; 1}]</pre>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">k</span><span class="p">)</span> <span class="p">(</span><span class="n">Gamma</span><span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="n">k</span><span class="p">]</span> <span class="o">-</span> <span class="n">Gamma</span><span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="n">k</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]))</span><span class="o">/</span><span class="n">k</span>
+</pre></div>
+</div>
+<p>While not much of an improvement, the expression is at least cleaner to use and look at. In more
+complicated scenarios, we can take an unsolvable problem and make it solvable.</p>
+<div class="note admonition">
+<p class="first admonition-title">Example: Hydrogen Atom</p>
+<p>One great example (perhaps familiar to those who have taken quantum mechanics) employs
+the solution to the hydrogen atom. A derivation of the solution can be found
+in sections 4.1 and 4.2 in <em>Introduction to Quantum Mechanics (Second Edition)</em> by
+David J. Griffiths. The wavefunction for hydrogen is based on three &#8220;quantum numbers&#8221;
+<span class="math">\(n,~l,~m\)</span> specifying an electron orbital, as may be familiar from chemistry courses.
+In terms of spherical coordinates <span class="math">\(r,~\theta,~\phi\)</span>, we have:</p>
+<div class="math">
+\[\small
+\psi_{nlm}(r,~\theta,~\phi)=
+\sqrt{\left(\frac{2}{na_0}^3\right)
+\frac{(n-l-1)!}{2n[(n+l)!]^3}}
+e^{-r/na_0}
+\left(\frac{2r}{ra_0}\right)^l
+\left[L_{n-l-1}^{2l+1}(2r/na_0)\right]
+Y_l^m(\theta,~\phi)\]</div>
+<p>which is a function of the Bohr radius (<span class="math">\(a_0\)</span>),
+Laguerre polynomials (<span class="math">\(L_{q-p}^{p}(x)\)</span>),
+and spherical harmonics (<span class="math">\(Y_l^m(\theta,~\phi)\)</span>) [yes, this very
+complicated function is the solution to the hydrogen atom, arguably
+the simplest real system].</p>
+<p>With such a (normalized) wave function, one thing we can do is calculate
+expected values of physical quantities with</p>
+<div class="math">
+\[\langle X\rangle=\int_\tau\psi^*X\psi d\tau\]</div>
+<p>where <span class="math">\(X\)</span> is the quantity (defined in quantum mechanical terms - see Griffiths),
+<span class="math">\(\tau\)</span> is the coordinate space, <span class="math">\(\psi^*\)</span> is the complex conjugate
+of the wavefunction, and <span class="math">\(\langle X\rangle\)</span> is the expected value of <span class="math">\(X\)</span>.</p>
+<p>In <em>Mathematica</em>, we can define the hydrogen wavefunction using built-in functions:</p>
+<div class="highlight-python"><pre>hydrogen[n_, l_, m_, r_, t_, p_] :=
+        Sqrt[(2/(n a0))^3   (n - l - 1)!/(2 n ((n + l)!)^3)] *
+        Exp[-r/(n a0)] *
+        (2 r/(n a0))^l*
+        LaguerreL[n - l - 1, 2 l + 1, 2 r/(n a0)]*
+        SphericalHarmonicY[l, m, t, p]</pre>
+</div>
+<p>then, for example, calculate <span class="math">\(\langle r\rangle\)</span> for the <span class="math">\(\psi_{200}\)</span>
+state with</p>
+<div class="highlight-python"><pre>Integrate[
+        r^2 Sin[t] *
+        Conjugate[hydrogen[2, 0, 0, r, t, p] ] *
+        r *
+        hydrogen[2, 0, 0, r, t, p],
+        {r, 0, Infinity},
+        {t, 0, Pi},
+        {p, 0, 2 Pi}]</pre>
+</div>
+<p>which gives the complicated</p>
+<div class="highlight-python"><pre>ConditionalExpression[-((3 a0^12 (3 - 14 Sign[a0]^2 +
+        3 Sign[a0]^4))/(
+        16 Abs[a0]^5 Re[a0]^6 Sign[a0]^14)),
+        Re[a0] &gt; 0]</pre>
+</div>
+<p>This is because we have not defined <span class="math">\(a_0\)</span>, the Bohr radius (<span class="math">\(a_0=0.0529nm\)</span>).
+It has been left undefined simply to allow for any choice of units in the calculation.
+But whatever units we choose, we know <span class="math">\(a_0&gt;0\)</span>. So, we can apply that assumption:</p>
+<div class="highlight-python"><pre>Integrate[
+        r^2 Sin[t] *
+        Conjugate[hydrogen[2, 0, 0, r, t, p] ] *
+        r *
+        hydrogen[2, 0, 0, r, t, p],
+        {r, 0, Infinity},
+        {t, 0, Pi},
+        {p, 0, 2 Pi},
+        Assumptions-&gt;{a0&gt;0}]</pre>
+</div>
+<p>which now gives simply</p>
+<div class="last highlight-python"><pre>(3 a0)/2</pre>
+</div>
+</div>
+<p><tt class="code docutils literal"><span class="pre">Integrate</span></tt>, <tt class="code docutils literal"><span class="pre">D</span></tt> and other math functions are the most common places to use the
+<tt class="code docutils literal"><span class="pre">Assumptions</span></tt> option, along with the <tt class="code docutils literal"><span class="pre">Simplify</span></tt> and <tt class="code docutils literal"><span class="pre">FullSimplify</span></tt> commands
+which can help reduce symbolic expressions, even when special functions are allowed.</p>
 </div>
 
 

@@ -358,14 +358,15 @@ portion of a QWERTY keyboard with the tilde (<tt class="code docutils literal"><
 defined everywhere. If using complicated programming constructs, we might find it useful
 to redefine values for a single function. For that, we can use a <tt class="code docutils literal"><span class="pre">Module</span></tt>.
 We define the local variables, placing all our code inside the module:</p>
-<blockquote>
-<div>f[<a href="#id1"><span class="problematic" id="id2">x_</span></a>]:=x^2
-g[<a href="#id3"><span class="problematic" id="id4">x_</span></a>]:= Module[{f}, f[x]]
-g[2]</div></blockquote>
+<div class="highlight-python"><pre>f[x_]:=x^2
+g[x_]:= Module[{f}, f[x]]
+g[2]</pre>
+</div>
 <p>prints</p>
-<blockquote>
-<div>f$8675309[2]</div></blockquote>
-<p>The number after the dollar sign and before the brackets is not important and will change during
+<div class="highlight-python"><pre>f$8675309[2]</pre>
+</div>
+<p>rather than 4.
+The number after the dollar sign and before the brackets is not important and will change during
 each evaluation But what this shows is that no matter if <tt class="code docutils literal"><span class="pre">f</span></tt> is already defined,
 we can redefine it without affecting any of the externally defined versions. This is good for
 shorthand when building complicated functions, and is necessary for creating re-usable functions
