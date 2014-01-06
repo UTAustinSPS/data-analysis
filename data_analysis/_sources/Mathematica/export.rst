@@ -4,8 +4,8 @@ Exporting Data
 audio files, movies, and more. The image component is the most useful for drafting
 documents, of course, but others can be useful when applying *Mathematica* to other
 problems. For example, if we create an animation (of a dataset through time, or
-of a simulation), we can easily export it to a format that can be included in a PowerPoint
-presentation or uploaded to YouTube.
+of a simulation), we can easily export it to a format that can be included in a *PowerPoint*
+presentation or uploaded to *YouTube*.
 
 The :code:`Export` function is surprisingly simple to use, which makes it ever more effective.
 It is used as :code:`Export["filename", graphic, "format"]`, where the :code:`filename`
@@ -38,7 +38,7 @@ optionally providing a duration for frames (in seconds):
 	table = Table[
    		Plot[x^4 + a x^3 - a^2 x + a, {x, -10, 10}, 
     		PlotRange -> {{-7, 7}, {-40, 150}}], {a, 0, 8, .1}];
-	Export["filename.gif", table, "GIF", "DisplayDurations" -> .01]
+	Export["export_ani.gif", table, "GIF", "DisplayDurations" -> .01]
 
 .. figure:: Figures/export_ani.gif
 	:alt: GIF exporting
@@ -65,4 +65,4 @@ later use in *MATLAB* or other languages, and even automatically create archives
 files (TAR files, GZIP files, ZIP files). For an updated listing of possible options and
 examples on how to use each (typically, the single image export is sufficient for any
 given graph), check out the "Listing of All Formats" page in the *Mathematica* documentation
-(*Mathematica* URL: guide/ListingOfAllFormats).
+(*Mathematica* URL "guide/ListingOfAllFormats").

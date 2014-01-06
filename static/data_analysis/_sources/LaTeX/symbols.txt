@@ -2,7 +2,8 @@ Symbols
 =======
 
 This is not intended to be an `exhaustive list of LaTeX symbols`_, just the ones which
-are most likely to be useful. Nearly all of these symbols must be typed while in math mode. Beware clicking the above link; it may take a while for the 164 page list of latex symbols to load.
+are most likely to be useful. Nearly all of these symbols must be typed while in math mode. Beware clicking the above link; it may take a while for the 164 page list of latex symbols to load. A smaller, but extremely useful list can be found
+`here <http://www.ph.utexas.edu/~sps/resources/Symbols.pdf>`_.
 
 .. _exhaustive list of LaTeX symbols: http://www.tex.ac.uk/tex-archive/info/symbols/comprehensive/symbols-a4.pdf
 
@@ -50,7 +51,7 @@ Many of these may be inverted with the \\not command. If used before many comman
 :math:`\LaTeX` renders the negated relation. For example, :code:`\not\subset` produces
 :math:`\not\subset` and :code:`\not\sim` produces :math:`\not\sim`. If a symbol does
 not have a negated version, then :math:`\LaTeX` will simply superimpose the not symbol,
-:math:`\not\;` on it. So :code:`\not a` will become :math:`\not a`.
+:math:`\not\;`, on it. So :code:`\not{a}` will become :math:`\not{a}`.
 
 
 .. table:: **Table 2: Logic**
@@ -79,7 +80,7 @@ including these two lines in the preamble  will automatically replace all instan
      \renewcommand{\iff}{\Leftrightarrow}
 
 
-The explanation for the above code can be found on the :code:`\newcommand` page.
+The explanation for the above code can be found on the `New Command <newcommand.html>`_ page.
 
 
 .. table:: **Table 3: Operators**
@@ -120,8 +121,6 @@ Many arrow commands have a counterpart which is referenced by capitalizing the f
 Many arrow commands have a counterpart which is referenced by capitalizing the first letter.
 For example, :code:`\uparrow` produces :math:`\uparrow` and :code:`\Uparrow` produces
 :math:`\Uparrow`
-
-Miscellaneous math symbols.
 
 .. table:: **Table 7: General Math Symbols**
 

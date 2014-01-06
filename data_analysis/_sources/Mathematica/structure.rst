@@ -2,7 +2,7 @@ Document Structure and Syntax
 =============================
 *Mathematica* largely lacks the kind of structures one might find in other languages. Instead of
 having sections like :math:`\LaTeX`, it simply has blocks of code you can execute. And unlike
-languages like *Python*, *C* or *Java*, *Mathematica* will simply execute whatever block of code
+languages like *Python*, *C*, or *Java*, *Mathematica* will simply execute whatever block of code
 is in focus. This eliminates the need for the "boilerplate" code that comes in many languages
 of having to set up a particular "main" function to execute, by instead allowing the user
 to essentially say "execute these lines".
@@ -38,18 +38,20 @@ We can easily create functions and expressions of other variables:
 	f[x_] := x^2
 	e = x ^ 2
 
-f is now the function :math:`f(x)=x^2` and e is an expression. The difference is that if we have defined
-a variable "x", e will be that value squared. But f is still the function that squares its argument, rather
-than giving the square of some pre-defined variable x. For example:
+:code:`f` is now the function :math:`f(x)=x^2` and :code:`e` is an expression. The difference is that if we have defined
+a variable :code:`x`, :code:`e` will be that value squared. But :code:`f` is still the function that squares its argument, rather
+than giving the square of some pre-defined variable :code:`x`. For example:
 
 ::
 
 	f[5]
-	g
+	e
 	x = 3;
-	g
+	e
 	f[4]
 	f[y]
+	f[x]
+	Clear[x];
 	f[x]
 
 if executed sequentially will output:
@@ -62,6 +64,7 @@ if executed sequentially will output:
 	16
 	y^2
 	9
+	x^2
 
 One handy part of *Mathematica* is that it supports the use of variables as input to functions (as seen with
 :code:`f[y]` above). In that way, it can also handle function composition:
@@ -188,12 +191,30 @@ end up using strings for display purposes later, but the way we construct them i
 
 	x = "This is a string, demarked by double-quotes on either side"
 
+We can make a string from an expression :code:`expr` with :code:`ToString[expr]`, and
+*concatenate*, or join together strings with :code:`<>`. For example:
+
+::
+
+	x = 5 ^ 2;
+	y = "5 ^ 2 is " <> ToString[x];
+	Print[y]
+
+prints :code:`5 ^ 2 is 25` as expected (the :code:`Print` function prints the value, but
+just as text, not as full output that could be used in another expression).
+
+Finally, we do have some options for what kinds of information we place in our Notebook file
+in *Mathematica*. The default is Input (including comments), but we can use the "Format"
+option from the menu bar then "Style" to make the current cell a different type, such as Title
+or Text. These are great for longer comments, or for presenting your work directly from
+*Mathematica* (rather than copying results to something like *PowerPoint*).
+
 Packages
 --------
 On rare occasions, functions we'd like to have are part of *Mathematica* but not available
 by default. To make them available, we can use the :code:`Needs` function, which will
 load a "package" (collection of functions) so that we can use them. For example,
-to load the "ErrorBarPlots" function, we'll use:
+to load the "ErrorBarPlots" package, we'll use:
 
 ::
 
@@ -230,3 +251,22 @@ shorthand when building complicated functions, and is necessary for creating re-
 for application to many projects (such as creating a package, which is not part of
 this course, but can be found in *Mathematica* with the help URL
 "tutorial/SettingUpMathematicaPackages").
+
+Special Characters
+------------------
+Sometimes for readability, we may want to include a special character, such as 
+delta (:math:`\delta`) in code to make things more readable. If we wanted
+to look at the behavior of a function at :math:`f(x\pm\delta{x})`, wouldn't it be
+nice if we could just use :math:`\delta{x}` as a variable? It turns out that we can.
+*Mathematica* has Greek, Hebrew, extended Latin and other characters built in. We can access
+them by name using :code:`\[delta]`, for example, or by using the "Esc" key on the keyboard,
+such as "Esc"+ :code:`delta` +"Esc". Most characters are just symbols to be used like any
+other character, but some have additional properties. For example, :code:`\[Transpose]`
+can be used as
+
+::
+
+	{{1,2},{3,4}}\[Transpose]
+
+which, when copied into *Mathematica*, will look like :math:`\{\{1,2\},\{3,4\}\}^\top`.
+For more, look at the *Mathematica* URL "tutorial/LettersAndLetterLikeForms".

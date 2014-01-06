@@ -149,3 +149,42 @@ for when the function and the approximation differ by more than 10%:
 	:math:`\textrm{erf}(x)` 0           :math:`2x/\sqrt{\pi}`     :math:`0.545`
 	======================= =========== ========================= ===================
 
+Series Expansion in *Mathematica*
+---------------------------------
+*Mathematica* has a function :code:`Series` which will produce a series expansion
+of a given order around a point. For example,
+
+::
+
+	Series[Cos[x],{x,0,2}]
+
+creates a second-order expansion of :math:`\cos(x)` around :math:`x=0` as
+:math:`1-\frac{x^2}{2}+O[x]^3`, with the last term indicating that terms of order
+3 or higher have been omitted. To use this function, we need one extra step (to take
+away that "omission" term), which is to wrap the series in a :code:`Normal`, which turns it
+into a normal polynomial:
+
+::
+
+	fn[x_] := Module[{y}, Normal[Series[Cos[y], {y, 0, 2}]] /. {y -> x}]
+
+Here, :code:`fn` first creates a module so we have :code:`y` as a symbolic
+expression to use, then does the series expansion in terms of :code:`y`, drops
+the higher order terms with :code:`Normal`, then replaces :code:`y` by the
+value of :code:`x` given to the function (which could be symbolic):
+
+::
+
+	Clear[x]
+	fn[x]
+	x=0;
+	fn[x]
+	fn[1]
+
+outputs
+
+::
+
+	1 - x^2/2
+	1
+	1/2

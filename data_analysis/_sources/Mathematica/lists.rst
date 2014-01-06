@@ -34,13 +34,13 @@ We can perform operations on lists as well, many of which can be extremely power
 ::
 
 	{1, 2, 3, 4, 5}^2
-	Length[{4}]
-	Total[{1,2,3,4,5}]
-	Mean[{0,1,2}]
-	Norm[{1,1,1,1}]
-	Dot[{0,1},{1,0}]
-	Union[{1,2,3},{3,4,5}]
-	{0, 2, 4} + {4, 2, 0}
+	Length[{4}] (*Length of list*)
+	Total[{1,2,3,4,5}] (*Sum of all elements*)
+	Mean[{0,1,2}] (*Arithmetic average of list*)
+	Norm[{1,1,1,1}] (*The norm of the list - think the norm of a vector*)
+	Dot[{0,1},{1,0}] (*Dot product of the given vectors*)
+	Union[{1,2,3},{3,4,5}] (*Union of the two sets*)
+	{0, 2, 4} + {4, 2, 0} (*Vector addition*)
 
 prints
 ::
@@ -92,9 +92,9 @@ is
 
 Essentially, :code:`Table` accepts some function over the domain given and will then
 create the list of the elements in the sequence over the given elements in the domain.
-The second example shows that given :code:`{i, N}`, the range is :math:`i\in[1, N]`.
+The second example shows that given :code:`{i, N}`, the domain is :math:`i\in[1, N]`.
 The third example shows that the elements to use can be given explicitly as well.
-The last example combines what we learned about lists above to show how easily
+The last examples combine what we learned about lists above to show how easily
 different concepts and structures in *Mathematica* can be combined.
 
 Matrices
@@ -145,7 +145,7 @@ where :code:`Transpose[m]` computes the matrix transpose :math:`m^\intercal`
 to its complex conjugate, giving :math:`m^\dagger`), :code:`Det[m]` computes the
 determinant :math:`|m|`, :code:`m . m` computes the matrix product
 (generally, when :math:`A` has dimensions :math:`m\times{n}`, :math:`B` has dimensions
-:math:`n\times{p}`, and :math:`AB=A\times{B}` has dimensions :math:`m\times{p}`, such that
+:math:`n\times{p}`, this gives :math:`AB=A\times{B}` which has dimensions :math:`m\times{p}`, such that
 :math:`(AB)_{i,j}=\sum_{k=1}^{n}A_{i,k}B_{k,j}`), :code:`MatrixPower[m, n]` computes
 :math:`m^n=m\times m\times m\times \ldots \times m`, and :code:`EigenValues[m]`
 gives the eigenvalues of the matrix :math:`m`.

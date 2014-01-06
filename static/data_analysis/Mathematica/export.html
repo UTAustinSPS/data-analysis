@@ -189,8 +189,8 @@
 audio files, movies, and more. The image component is the most useful for drafting
 documents, of course, but others can be useful when applying <em>Mathematica</em> to other
 problems. For example, if we create an animation (of a dataset through time, or
-of a simulation), we can easily export it to a format that can be included in a PowerPoint
-presentation or uploaded to YouTube.</p>
+of a simulation), we can easily export it to a format that can be included in a <em>PowerPoint</em>
+presentation or uploaded to <em>YouTube</em>.</p>
 <p>The <tt class="code docutils literal"><span class="pre">Export</span></tt> function is surprisingly simple to use, which makes it ever more effective.
 It is used as <tt class="code docutils literal"><span class="pre">Export[&quot;filename&quot;,</span> <span class="pre">graphic,</span> <span class="pre">&quot;format&quot;]</span></tt>, where the <tt class="code docutils literal"><span class="pre">filename</span></tt>
 is the full path (for ease in finding it later) to the file you want to create, for example
@@ -215,7 +215,7 @@ optionally providing a duration for frames (in seconds):</p>
 <div class="highlight-python"><pre>table = Table[
         Plot[x^4 + a x^3 - a^2 x + a, {x, -10, 10},
         PlotRange -&gt; {{-7, 7}, {-40, 150}}], {a, 0, 8, .1}];
-Export["filename.gif", table, "GIF", "DisplayDurations" -&gt; .01]</pre>
+Export["export_ani.gif", table, "GIF", "DisplayDurations" -&gt; .01]</pre>
 </div>
 <div class="figure align-center">
 <img alt="GIF exporting" src="../_images/export_ani.gif" />
@@ -238,7 +238,7 @@ later use in <em>MATLAB</em> or other languages, and even automatically create a
 files (TAR files, GZIP files, ZIP files). For an updated listing of possible options and
 examples on how to use each (typically, the single image export is sufficient for any
 given graph), check out the &#8220;Listing of All Formats&#8221; page in the <em>Mathematica</em> documentation
-(<em>Mathematica</em> URL: guide/ListingOfAllFormats).</p>
+(<em>Mathematica</em> URL &#8220;guide/ListingOfAllFormats&#8221;).</p>
 </div>
 </div>
 

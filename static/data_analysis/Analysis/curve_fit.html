@@ -137,6 +137,7 @@
 <li><a class="reference internal" href="#residuals">Residuals</a></li>
 <li><a class="reference internal" href="#least-squares-fitting">Least-Squares Fitting</a></li>
 <li><a class="reference internal" href="#the-findfit-function">The FindFit Function</a></li>
+<li><a class="reference internal" href="#interpolation">Interpolation</a></li>
 </ul>
 </li>
 </ul>
@@ -383,6 +384,130 @@ the separated functions would be an elementary function that is
 parameterized by the single associated variable (<span class="math">\(y\)</span> or <span class="math">\(\tau\)</span>),
 with no other numbers to guess, such as <span class="math">\(\tan(y)\tau^{-1}\)</span>.</p>
 </div>
+</div>
+<div class="section" id="interpolation">
+<h2>Interpolation<a class="headerlink" href="#interpolation" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="code docutils literal"><span class="pre">FindFit</span></tt> function is great when we have a model, and in practice, this is
+often the case. However, one other method we can use is interpolation. This is a process
+where we find a function (perhaps a piecewise one) that fits our data, to approximate
+values within the range of our data. For example, we could draw a straight line
+between points. This sounds like it could be hazardous in representing
+the data, but this does depend on how close together the data is
+and how precise we need to be, as seen in the following:</p>
+<div class="figure align-center">
+<img alt="GIF of sine" src="../_images/joined_sample.gif" />
+<p class="caption"><span class="math">\(\sin(x)\)</span> as sampled with different intervals between points.</p>
+</div>
+<p>Mathematically speaking, when we take this straight line fit on <span class="math">\(N\)</span>
+points, we create <span class="math">\(N-1\)</span> line segments that start at one point, then
+go to the next. We could, of course, create <tt class="code docutils literal"><span class="pre">N-2</span></tt> sections, creating a quadratic
+fit based on the current point and next two points, then plotting that
+from the current point to the next. We can do this all the way up to a single section
+that is a fit of order <span class="math">\(N-1\)</span>, which will be everywhere smooth and differentiable.
+As an example, see the following:</p>
+<div class="figure align-center">
+<img alt="GIF of InterpolationOrder" src="../_images/interp_sample.gif" />
+<p class="caption">Data fitted at different values for <tt class="code docutils literal"><span class="pre">InterpolationOrder</span></tt></p>
+</div>
+<p>We&#8217;ll look at how to do these fits in <em>Mathematica</em> shortly, but first, we can look at
+the math behind the fitting functions. If we take the &#8220;interpolation order&#8221; to be
+the order of the fit between points and represent it by <span class="math">\(m\)</span>, we create a polynomial
+using points <span class="math">\(x_i,~x_{i+1},~...,~x_{i+m}\)</span> (in the single-variable case - these
+functions and processes generalize) of order <span class="math">\(m\)</span>:</p>
+<div class="math">
+\[f_i(x)=a_{i,0}x^0+a_{i,1}x^1+a_{i,2}x^2+\cdots+a_{i,m}x^m\]</div>
+<p>If we have the data for each point <span class="math">\(\left(x_i,~y_i\right)\)</span>,
+with <span class="math">\(m\)</span> points, we can
+solve for the coefficients using</p>
+<div class="math">
+\[\sum_{j=0}^ma_{i,j}x_{i+k}^j=y_{i+k},~k\in[0,m]\]</div>
+<p>or, more usefully,</p>
+<div class="math">
+\[\begin{split}\left(\begin{array}{ccccc}
+x_i^0 &amp; x_i^1 &amp; x_i^2 &amp;  &amp; x_i^m \\
+x_{i+1}^0 &amp; x_{i+1}^1 &amp; x_{i+1}^2 &amp; \cdots &amp; x_{i+1}^m \\
+x_{i+2}^0 &amp; x_{i+2}^1 &amp; x_{i+2}^2 &amp; &amp; x_{i+2}^m\\
+  &amp; \vdots &amp; &amp; \ddots &amp; \vdots \\
+x_{i+m}^0 &amp; x_{i+m}^1 &amp; x_{i+m}^2 &amp; \cdots &amp; x_{i+m}^m
+\end{array}\right)
+\left(\begin{array}{c}
+a_{i,0} \\ a_{i,1} \\ a_{i,2} \\ \vdots \\ a_{i,m}
+\end{array}\right)=
+\left(\begin{array}{c}
+y_i \\ y_{i+1} \\ y_{i+2} \\ \vdots \\ y_{i+m}
+\end{array}\right)\end{split}\]</div>
+<p>With this formulation, we can invert the square matrix and compute the coefficients:</p>
+<div class="math">
+\[\begin{split}\left(\begin{array}{c}
+a_{i,0} \\ a_{i,1} \\ a_{i,2} \\ \vdots \\ a_{i,m}
+\end{array}\right)=
+\left(\begin{array}{ccccc}
+x_i^0 &amp; x_i^1 &amp; x_i^2 &amp;  &amp; x_i^m \\
+x_{i+1}^0 &amp; x_{i+1}^1 &amp; x_{i+1}^2 &amp; \cdots &amp; x_{i+1}^m \\
+x_{i+2}^0 &amp; x_{i+2}^1 &amp; x_{i+2}^2 &amp; &amp; x_{i+2}^m\\
+  &amp; \vdots &amp; &amp; \ddots &amp; \vdots \\
+x_{i+m}^0 &amp; x_{i+m}^1 &amp; x_{i+m}^2 &amp; \cdots &amp; x_{i+m}^m
+\end{array}\right)^{-1}
+\left(\begin{array}{c}
+y_i \\ y_{i+1} \\ y_{i+2} \\ \vdots \\ y_{i+m}
+\end{array}\right)\end{split}\]</div>
+<p>In the linear case (<span class="math">\(f_i(x)=a_{i,0}+a_{i,1}x\)</span>), this gives:</p>
+<div class="math">
+\[\begin{split}\left(\begin{array}{c}
+a_{i,0} \\ a_{i,1}
+\end{array}\right)=
+\left(\begin{array}{c}
+\frac{x_{i+1}y_i-x_iy_{i+1}}{x_{i+1}-x_i}\\
+\frac{y_{i+1}-y_i}{x_{i+1}-x_i}
+\end{array}\right)\end{split}\]</div>
+<p>We can plot the function <span class="math">\(f_i(x)\)</span> over the domain <span class="math">\(x\in[x_i,x_{i+1}]\)</span>,
+then repeat this process for each other segment, giving a function</p>
+<div class="math">
+\[\begin{split}f(x)=\left\{\begin{array}{ccc}
+f_1(x) &amp; &amp; x_1\leq{x}&lt;x_2\\
+f_2(x) &amp; &amp; x_2\leq{x}&lt;x_3\\
+&amp; \vdots &amp; \\
+f_i(x) &amp; &amp; x_i\leq{x}&lt;x_{i+1}\\
+&amp; \vdots &amp; \\
+f_{n-m}(x) &amp; &amp; x_{n-m}\leq{x}\leq{x_n}
+\end{array}\right.\end{split}\]</div>
+<p>In <em>Mathematica</em>, there are several related functions for interpolation, the one
+that is most related to the discussion above being, conveniently, <tt class="code docutils literal"><span class="pre">Interpolation</span></tt>.
+<tt class="code docutils literal"><span class="pre">Interpolation</span></tt> takes the data, either as
+<tt class="code docutils literal"><span class="pre">{{x1,</span> <span class="pre">f1},</span> <span class="pre">{x2,</span> <span class="pre">f2},</span> <span class="pre">...,</span> <span class="pre">{xn,</span> <span class="pre">fn}}</span></tt>, or
+<tt class="code docutils literal"><span class="pre">{{{x1,</span> <span class="pre">y1,</span> <span class="pre">...},</span> <span class="pre">f1},</span> <span class="pre">{{x2,</span> <span class="pre">y2,</span> <span class="pre">...},</span> <span class="pre">f2},</span> <span class="pre">...,</span> <span class="pre">{{xn,</span> <span class="pre">yn,</span> <span class="pre">...},</span> <span class="pre">fn}}</span></tt>
+and produces a regular function in the number of variables given (the default
+interpolation order is 3, but easily changed as seen below). For example,</p>
+<div class="highlight-python"><pre>t = Table[{x, Sin[2x]}, {x, 0, 2 Pi, .5}];
+
+(*Creates single-variable function, given order i*)
+fn = Interpolation[t, InterpolationOrder -&gt; i]
+
+(*Code for each frame below*)
+Show[
+        ListPlot[t, PlotStyle -&gt; PointSize[Medium]],
+        Plot[
+                {fn[x], Sin[2x]},
+                {x, 0, 2 Pi},
+                PlotLegends -&gt; {"Fitted Curve", "Sin[2x]"}],
+        PlotRange -&gt; {{0, 2 Pi}, {-1, 1}},
+        PlotLabel -&gt; "InterpolationOrder-&gt;" &lt;&gt; ToString[i]]</pre>
+</div>
+<div class="figure align-center">
+<img alt="Piecewise Interpolation Example" src="../_images/pointwise.gif" />
+<p class="caption">Plots for fitting data to <span class="math">\(f(x)=\sin(2x)\)</span>.</p>
+</div>
+<p>We can also use <tt class="code docutils literal"><span class="pre">InterpolatingPolynomial[data,</span> <span class="pre">{var1,</span> <span class="pre">...}]</span></tt> to do this, which
+will create a single polynomial (degree <span class="math">\(N-1\)</span> where <span class="math">\(N\)</span> is the number of
+points in our dataset in the single variable case) defined in terms of the variables
+given. In other words,</p>
+<div class="highlight-python"><pre>f1[x_] := Module[{y}, InterpolatingPolynomial[t, y] /. {y -&gt; x}]
+f2[x_] := Interpolation[t, InterpolationOrder -&gt; Length[t] - 1][x]</pre>
+</div>
+<p>represent the same underlying function. The former does all the math in an arbitrary
+local variable <tt class="code docutils literal"><span class="pre">y</span></tt>, then substitutes for <tt class="code docutils literal"><span class="pre">y</span></tt>, the value of <tt class="code docutils literal"><span class="pre">x</span></tt>, which could
+be symbolic. The latter creates the function of an arbitrary variable of its own, to which
+we then apply the argument given to us then return the result.</p>
 </div>
 </div>
 

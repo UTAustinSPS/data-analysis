@@ -583,7 +583,7 @@ continuous (not always the case, of course).</li>
 all numbers between 0 and 1 along the number line (real numbers), including 0 but excluding 1.
 So, we might have a statement such as</p>
 <div class="math">
-\[\forall{x\in\mathbb{N}}\forall{y\in\mathbb{R}}\exists{z\in\mathbb{R}}:x+y=z\]</div>
+\[\forall{x\in\mathbb{N}}~\forall{y\in\mathbb{R}}~\exists{z\in\mathbb{R}}:x+y=z\]</div>
 <p>which just says that if we take any natural number <span class="math">\(x\)</span> and any real number <span class="math">\(y\)</span>
 and add them, we get another real number <span class="math">\(z\)</span>.</p>
 <p>In these formulae, we have the consideration of scope, much as we have seen in
@@ -603,20 +603,30 @@ and let <span class="math">\(xRy\)</span> represent applying the function to arg
 (think if <span class="math">\(R\)</span> is <span class="math">\(&lt;\)</span>, then we&#8217;d say <span class="math">\(x&lt;y\)</span>).</p>
 <ul class="simple">
 <li>Reflexivity: <span class="math">\(\forall{x}:xRx\)</span>. For example, <span class="math">\(=\)</span> since <span class="math">\(x=x\)</span> is
-trivially true for any <span class="math">\(x\)</span>. But, <span class="math">\(xRy\equiv x^2&gt;y\)</span> is not reflexive over the
+trivially true for any <span class="math">\(x\)</span>. But, <span class="math">\(xRy\equiv (x^2&gt;y)\)</span> is not reflexive over the
 real numbers, since for <span class="math">\(0&lt;x&lt;1,~x^2&lt;x\)</span>.</li>
-<li>Symmetry: <span class="math">\(\forall{x}\forall{y}:xRy\rightarrow{yRx}\)</span>. For example,
-<span class="math">\(xRy\equiv x&lt;5\wedge y&lt;5\)</span> is symmetric, but <span class="math">\(xRy\equiv x&lt;y\)</span> is not,
-since if <span class="math">\(2&lt;5\)</span> is true, we know that <span class="math">\(5&lt;2\)</span> is false.</li>
-<li>Asymmetry: <span class="math">\(\forall{x}\forall{y}:xRy\rightarrow\neg{yRx}\)</span>. For example,
-<span class="math">\(xRy\equiv{x&lt;y}\)</span> is asymmetric. But, <span class="math">\(xRy\equiv{x=y}\)</span> is not.</li>
-<li>Antisymmetry: <span class="math">\(\forall{x}\forall{y}:xRy\wedge yRx\rightarrow x=y\)</span>. For example,
-<span class="math">\(xRy\equiv{x\leq{y}}\)</span> is antisymmetric. But, <span class="math">\(xRy\equiv x&lt;5\wedge y&lt;5\)</span> is not.</li>
-<li>Transitivity: <span class="math">\(\forall{x}\forall{y}\forall{z}:xRy\wedge yRz\rightarrow xRz\)</span>. For example,
-<span class="math">\(xRy\equiv{x&lt;y}\)</span> is transitive. But, <span class="math">\(xRy\equiv{\gcd(x,y)=1}\)</span> is not (
+<li>Symmetry: <span class="math">\(\forall{x}\forall{y}:(xRy\rightarrow{yRx})\)</span>. For example,
+<span class="math">\(xRy\equiv (x&lt;5)\wedge (y&lt;5)\)</span> is symmetric (if we swap the arguments when both
+are less than 5, we still get <span class="math">\(\top\)</span>), but <span class="math">\(xRy\equiv x&lt;y\)</span> is not symmetric,
+since <span class="math">\(2&lt;5\)</span> is true, but <span class="math">\(5&lt;2\)</span> is false.</li>
+<li>Asymmetry: <span class="math">\(\forall{x}\forall{y}:(xRy\rightarrow\neg{yRx})\)</span>. For example,
+<span class="math">\(xRy\equiv{x&lt;y}\)</span> is asymmetric (when we have <span class="math">\(x&lt;y\)</span>, we know if we
+swap the arguments, we get the opposite result - and we have no trouble
+with <span class="math">\(xRx\)</span> since it is always false). But, <span class="math">\(xRy\equiv{x=y}\)</span> is not asymmetric
+since if we swap arguments, we get the same result as before.</li>
+<li>Antisymmetry: <span class="math">\(\forall{x}\forall{y}:(xRy\wedge yRx)\rightarrow x=y\)</span>. For example,
+<span class="math">\(xRy\equiv{x\leq{y}}\)</span> is antisymmetric since if
+both <span class="math">\(x\leq{y}\)</span> and <span class="math">\(y\leq{x}\)</span>, <span class="math">\(x\)</span> and <span class="math">\(y\)</span> must be the same.
+But, <span class="math">\(xRy\equiv (x&lt;5)\wedge (y&lt;5)\)</span> is not antisymmetric since we have
+<span class="math">\({\small{2}}R\small{4}\)</span> and <span class="math">\({\small{4}}R\small{2}\)</span>, but <span class="math">\(2\ne4\)</span>.</li>
+<li>Transitivity: <span class="math">\(\forall{x}\forall{y}\forall{z}:(xRy\wedge yRz)\rightarrow xRz\)</span>.
+For example, <span class="math">\(xRy\equiv(x&lt;y)\)</span> is transitive since if <span class="math">\(x&lt;y\)</span> and <span class="math">\(y&lt;z\)</span> it must
+be true that <span class="math">\(x&lt;z\)</span>. But, <span class="math">\(xRy\equiv(\gcd(x,y)=1)\)</span> is not (
 <span class="math">\(\gcd(2,3)=1,~\gcd(3,10)=1\)</span> but <span class="math">\(\gcd(2,10)=2\)</span>).</li>
-<li>Totality: <span class="math">\(\forall{x}\forall{y}:xRy\vee{yRx}\)</span>. For example, <span class="math">\(xRy\equiv{x\leq{y}}\)</span>
-is total. But, <span class="math">\(xRy\equiv{x&lt;y}\)</span> is not (<span class="math">\(5&lt;5\)</span> is false).</li>
+<li>Totality: <span class="math">\(\forall{x}\forall{y}:(xRy\vee{yRx})\)</span>. For example, <span class="math">\(xRy\equiv(x\leq{y})\)</span>
+is total since we are essentially saying that
+<span class="math">\(x&lt;y\)</span> or <span class="math">\(y&lt;x\)</span> or <span class="math">\(y=x\)</span> which is certainly the case for
+the real numbers. But, <span class="math">\(xRy\equiv(x&lt;y)\)</span> is not (<span class="math">\(5&lt;5\)</span> is false).</li>
 </ul>
 <p>There are other such properties of binary relations as well. Equivalence relations are
 those that are reflexive, symmetric, and transitive (like <span class="math">\(=\)</span>). Partial order relations

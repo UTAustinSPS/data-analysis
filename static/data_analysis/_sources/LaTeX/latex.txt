@@ -6,7 +6,7 @@ Introduction
 ============
 What's a :raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>`?
 ============================================================================
-:raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>` ("lah-tech" or "lay-tech") is a text markup language - one that allows the author to precisely specify how layout and content are combined. More precisely, LaTeX is a set of macros for :raw-html:`<span class="latex">T<sub>E</sub>X</span>` the Turing Award winning typesetting program by Dr. Donald Knuth. It is
+:raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>` ("lah-tech" or "lay-tech") is a text markup language - one that allows the author to precisely specify how layout and content are combined. More precisely, LaTeX is a set of macros for :raw-html:`<span class="latex">T<sub>E</sub>X</span>`, the Turing Award winning typesetting program by Dr. Donald Knuth. It is
 
 - Built for a "minimal amount of effort" for the author to produce high-quality documents
 - Totally platform- and time-independent for resultant documents
@@ -38,6 +38,8 @@ images, and other special features. A simple document looks like the following.
 
 
 This produces the following document:
+
+.. image:: Figures/hello_world.jpg
 
 
 The first line says what kind of article we are working with. It contains formatting information like margins, spacing, and font. It also gives information about how the document is structured. Every document needs to have a document class. Usually, this is the first line of a LaTeX document.
@@ -88,23 +90,10 @@ Which produces something like
 
 
 
-Notice that some content for the document was specified *before* the document began. LaTeX stored some information in variables, which were later called. The line :code:`\title{This is a title}` stored :code:`This is a title` as the title of the document. The thing happens with the :code:`\author{}` and :code:`\date{}` commands. Those variables are stored once, and may be called throughout the document. In this case, they are called with the :code:`\maketitle` command.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Notice that some content for the document was specified *before* the document began. LaTeX
+stored some information in variables, which were later called. The line
+:code:`\title{This is a title}` stored :code:`This is a title` as the title of the document.
+The same thing happens with the :code:`\author{}` and :code:`\date{}` commands. Those
+variables are stored once, and may be called throughout the document. In this case,
+they are called with the :code:`\maketitle` command.
 

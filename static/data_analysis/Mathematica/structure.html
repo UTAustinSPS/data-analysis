@@ -142,6 +142,7 @@
 <li><a class="reference internal" href="#other-constructs">Other Constructs</a></li>
 <li><a class="reference internal" href="#packages">Packages</a></li>
 <li><a class="reference internal" href="#modules">Modules</a></li>
+<li><a class="reference internal" href="#special-characters">Special Characters</a></li>
 </ul>
 </li>
 </ul>
@@ -192,7 +193,7 @@
 <h1>Document Structure and Syntax<a class="headerlink" href="#document-structure-and-syntax" title="Permalink to this headline">¶</a></h1>
 <p><em>Mathematica</em> largely lacks the kind of structures one might find in other languages. Instead of
 having sections like <span class="math">\(\LaTeX\)</span>, it simply has blocks of code you can execute. And unlike
-languages like <em>Python</em>, <em>C</em> or <em>Java</em>, <em>Mathematica</em> will simply execute whatever block of code
+languages like <em>Python</em>, <em>C</em>, or <em>Java</em>, <em>Mathematica</em> will simply execute whatever block of code
 is in focus. This eliminates the need for the &#8220;boilerplate&#8221; code that comes in many languages
 of having to set up a particular &#8220;main&#8221; function to execute, by instead allowing the user
 to essentially say &#8220;execute these lines&#8221;.</p>
@@ -218,15 +219,17 @@ variable we want to clear.</p>
 <div class="highlight-python"><pre>f[x_] := x^2
 e = x ^ 2</pre>
 </div>
-<p>f is now the function <span class="math">\(f(x)=x^2\)</span> and e is an expression. The difference is that if we have defined
-a variable &#8220;x&#8221;, e will be that value squared. But f is still the function that squares its argument, rather
-than giving the square of some pre-defined variable x. For example:</p>
+<p><tt class="code docutils literal"><span class="pre">f</span></tt> is now the function <span class="math">\(f(x)=x^2\)</span> and <tt class="code docutils literal"><span class="pre">e</span></tt> is an expression. The difference is that if we have defined
+a variable <tt class="code docutils literal"><span class="pre">x</span></tt>, <tt class="code docutils literal"><span class="pre">e</span></tt> will be that value squared. But <tt class="code docutils literal"><span class="pre">f</span></tt> is still the function that squares its argument, rather
+than giving the square of some pre-defined variable <tt class="code docutils literal"><span class="pre">x</span></tt>. For example:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">f</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
-<span class="n">g</span>
+<span class="n">e</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-<span class="n">g</span>
+<span class="n">e</span>
 <span class="n">f</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
 <span class="n">f</span><span class="p">[</span><span class="n">y</span><span class="p">]</span>
+<span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+<span class="n">Clear</span><span class="p">[</span><span class="n">x</span><span class="p">];</span>
 <span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -237,6 +240,7 @@ than giving the square of some pre-defined variable x. For example:</p>
 <span class="mi">16</span>
 <span class="n">y</span><span class="o">^</span><span class="mi">2</span>
 <span class="mi">9</span>
+<span class="n">x</span><span class="o">^</span><span class="mi">2</span>
 </pre></div>
 </div>
 <p>One handy part of <em>Mathematica</em> is that it supports the use of variables as input to functions (as seen with
@@ -338,13 +342,27 @@ end up using strings for display purposes later, but the way we construct them i
 <div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="s">&quot;This is a string, demarked by double-quotes on either side&quot;</span>
 </pre></div>
 </div>
+<p>We can make a string from an expression <tt class="code docutils literal"><span class="pre">expr</span></tt> with <tt class="code docutils literal"><span class="pre">ToString[expr]</span></tt>, and
+<em>concatenate</em>, or join together strings with <tt class="code docutils literal"><span class="pre">&lt;&gt;</span></tt>. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">^</span> <span class="mi">2</span><span class="p">;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="s">&quot;5 ^ 2 is &quot;</span> <span class="o">&lt;&gt;</span> <span class="n">ToString</span><span class="p">[</span><span class="n">x</span><span class="p">];</span>
+<span class="n">Print</span><span class="p">[</span><span class="n">y</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>prints <tt class="code docutils literal"><span class="pre">5</span> <span class="pre">^</span> <span class="pre">2</span> <span class="pre">is</span> <span class="pre">25</span></tt> as expected (the <tt class="code docutils literal"><span class="pre">Print</span></tt> function prints the value, but
+just as text, not as full output that could be used in another expression).</p>
+<p>Finally, we do have some options for what kinds of information we place in our Notebook file
+in <em>Mathematica</em>. The default is Input (including comments), but we can use the &#8220;Format&#8221;
+option from the menu bar then &#8220;Style&#8221; to make the current cell a different type, such as Title
+or Text. These are great for longer comments, or for presenting your work directly from
+<em>Mathematica</em> (rather than copying results to something like <em>PowerPoint</em>).</p>
 </div>
 <div class="section" id="packages">
 <h2>Packages<a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h2>
 <p>On rare occasions, functions we&#8217;d like to have are part of <em>Mathematica</em> but not available
 by default. To make them available, we can use the <tt class="code docutils literal"><span class="pre">Needs</span></tt> function, which will
 load a &#8220;package&#8221; (collection of functions) so that we can use them. For example,
-to load the &#8220;ErrorBarPlots&#8221; function, we&#8217;ll use:</p>
+to load the &#8220;ErrorBarPlots&#8221; package, we&#8217;ll use:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">Needs</span><span class="p">[</span><span class="s">&quot;ErrorBarPlots`&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -373,6 +391,22 @@ shorthand when building complicated functions, and is necessary for creating re-
 for application to many projects (such as creating a package, which is not part of
 this course, but can be found in <em>Mathematica</em> with the help URL
 &#8220;tutorial/SettingUpMathematicaPackages&#8221;).</p>
+</div>
+<div class="section" id="special-characters">
+<h2>Special Characters<a class="headerlink" href="#special-characters" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes for readability, we may want to include a special character, such as
+delta (<span class="math">\(\delta\)</span>) in code to make things more readable. If we wanted
+to look at the behavior of a function at <span class="math">\(f(x\pm\delta{x})\)</span>, wouldn&#8217;t it be
+nice if we could just use <span class="math">\(\delta{x}\)</span> as a variable? It turns out that we can.
+<em>Mathematica</em> has Greek, Hebrew, extended Latin and other characters built in. We can access
+them by name using <tt class="code docutils literal"><span class="pre">\[delta]</span></tt>, for example, or by using the &#8220;Esc&#8221; key on the keyboard,
+such as &#8220;Esc&#8221;+ <tt class="code docutils literal"><span class="pre">delta</span></tt> +&#8221;Esc&#8221;. Most characters are just symbols to be used like any
+other character, but some have additional properties. For example, <tt class="code docutils literal"><span class="pre">\[Transpose]</span></tt>
+can be used as</p>
+<div class="highlight-python"><pre>{{1,2},{3,4}}\[Transpose]</pre>
+</div>
+<p>which, when copied into <em>Mathematica</em>, will look like <span class="math">\(\{\{1,2\},\{3,4\}\}^\top\)</span>.
+For more, look at the <em>Mathematica</em> URL &#8220;tutorial/LettersAndLetterLikeForms&#8221;.</p>
 </div>
 </div>
 

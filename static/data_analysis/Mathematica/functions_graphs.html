@@ -222,7 +222,7 @@ is not defined, we can use this as an expression (for example, applying a
 substitution <tt class="code docutils literal"><span class="pre">g/.y-&gt;5</span></tt> to it), but if <tt class="code docutils literal"><span class="pre">y</span></tt> is defined, then <tt class="code docutils literal"><span class="pre">g</span></tt>
 is exactly the value <span class="math">\(7\cdot{y}\)</span>.</p>
 <p class="last">There are further subtleties (the difference between <tt class="code docutils literal"><span class="pre">=</span></tt> and <tt class="code docutils literal"><span class="pre">:=</span></tt>, for example),
-but always using the full function definition <tt class="code docutils literal"><span class="pre">func[x_,</span> <span class="pre">y_]</span> <span class="pre">:=</span> <span class="pre">\cdots</span></tt> is the best
+but always using the full function definition <tt class="code docutils literal"><span class="pre">func[x_,</span> <span class="pre">y_]</span> <span class="pre">:=</span> <span class="pre">...</span></tt> is the best
 way to go.</p>
 </div>
 <p>We can easily apply functions to other functions as well:</p>
@@ -241,7 +241,7 @@ g[f[x]]</pre>
 evaluate <span class="math">\(h(3,~2)\)</span> and make sure you get <span class="math">\((2,~9)\)</span>.</p>
 </div>
 <p>We can base functions on other functions (built-in or user-created) too. There are many built-in
-functions which take functions as arguments.</p>
+functions which take functions as arguments, which we discuss throughout the book.</p>
 <div class="note admonition">
 <p class="first admonition-title">Example: Calculus</p>
 <p>One particularly useful realm for user-created functions is taking their integrals and
@@ -335,7 +335,8 @@ So, for example, we could have:</p>
 <div class="admonition-practice-problem-simple-plots admonition">
 <p class="first admonition-title">Practice Problem: Simple Plots</p>
 <p>For practice, try creating the plot below. The functions are listed in the legend
-on the plot, but you might find use of the <tt class="code docutils literal"><span class="pre">Thickness</span></tt> function which takes
+on the plot, but you might find use of the <tt class="code docutils literal"><span class="pre">Thickness</span></tt> function (instead of
+just <tt class="code docutils literal"><span class="pre">Thick</span></tt> or <tt class="code docutils literal"><span class="pre">Thin</span></tt>) which takes
 a single value to determine the line thickness.</p>
 <div class="last figure align-center">
 <img alt="Practice Plot" src="../_images/assgn_simple_plot.png" />
@@ -359,11 +360,11 @@ So, for example, we can have:</p>
 </div>
 <p>Like with the <tt class="code docutils literal"><span class="pre">Plot</span></tt> function, we can have many lists of points as the first argument to
 the function. For a more interesting example:</p>
-<div class="highlight-python"><pre>    (*Create four lists of points for 0&lt;=a&lt;=20*)
+<div class="highlight-python"><pre>(*Create four lists of points for 0&lt;=a&lt;=20*)
 list = Table[Table[{a, a^2 + 50 Sin[c*a]}, {a, 0, 20}], {c, 0, 3}];
 ListPlot[list,
-    PlotLegends -&gt; {"data 1", "data 2", "data 3", "data 4"},
-    PlotStyle -&gt; PointSize[Medium] (*Makes points bigger*)]</pre>
+        PlotLegends -&gt; {"data 1", "data 2", "data 3", "data 4"},
+        PlotStyle -&gt; PointSize[Medium] (*Makes points bigger*)]</pre>
 </div>
 <div class="figure align-center">
 <img alt="Many list plots" src="../_images/list_simple.png" />
@@ -378,13 +379,17 @@ but with consecutive points connected:</p>
 <img alt="Many list plots" src="../_images/listline_simple.png" />
 <p class="caption">Plot of functions <span class="math">\(f_c(a)=a^2+50\sin(c*a)\)</span> over <span class="math">\(a\in[0,20],~c\in[0,3]\)</span>.</p>
 </div>
-<p>This is nice, but here we have another option at our disposal, <tt class="code docutils literal"><span class="pre">InterpolationOrder</span></tt>.
-If this is greater than 0, <em>Mathematica</em> will apply a smoothing fit to the data (in practice,
-2 gives a reasonable fit, and above 8 makes little visual difference):</p>
+<p>As we will see in the section on <a class="reference external" href="../Analysis/curve_fit.html#interpolation">Interpolation</a>,
+we can interpolate our data, creating a fitting function. One other place we can use
+this feature of <em>Mathematica</em> is the <tt class="code docutils literal"><span class="pre">ListLinePlot</span></tt> which will perform the interpolation
+and graph it all at once with the <tt class="code docutils literal"><span class="pre">InterpolationOrder</span></tt> option.
+If this is greater than 0, <em>Mathematica</em> will apply a smoothing fit to the data of
+the degree specified between points (in practice,
+3 usually gives a reasonable fit, and above 8 rarely makes visual difference):</p>
 <div class="highlight-python"><pre>ListLinePlot[list,
-    PlotLegends -&gt; {"data 1", "data 2", "data 3", "data 4"},
-    PlotStyle -&gt; Thick,
-    InterpolationOrder -&gt; 4]</pre>
+        PlotLegends -&gt; {"data 1", "data 2", "data 3", "data 4"},
+        PlotStyle -&gt; Thick,
+        InterpolationOrder -&gt; 4]</pre>
 </div>
 <div class="figure align-center">
 <img alt="Many list plots" src="../_images/listline_interp.png" />
@@ -744,8 +749,8 @@ Column[{ (*Create a new column to the right of what we just drew*)
 <p class="caption">Plot of data drawn from a Normal distribution along with projected distribution from data
 and the actual distribution for reference, all in a <tt class="code docutils literal"><span class="pre">Legended</span></tt> chart.</p>
 </div>
-<div class="note admonition">
-<p class="first admonition-title">Practice Combining Graphs</p>
+<div class="admonition-practice-problem-combining-graphs admonition">
+<p class="first admonition-title">Practice Problem: Combining Graphs</p>
 <p class="last">Try adding other plots to the one above and then labeling them. For example, see if you
 can add in a plot for <span class="math">\(f(x)=x^2;~x\in[-2,20]\)</span>, but then re-scale the image to
 make sure you can clearly the existing graph information (hint: you can add a

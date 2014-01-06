@@ -6,12 +6,12 @@ While being able to create functions, tables, and graphs is nice, in a laborator
 we really need to be able to work with data from lab equipment. Many software packages
 exist that interface with electronics (National Instruments' *LabVIEW* is a prime
 example), and are able to provide text files with data. Sometimes this is in a
-"human-readable" format, but often it is in a simple format, such as TSV (tab-separated
+"human-readable" format, but often it is in a computer-friendly format, such as TSV (tab-separated
 values), CSV (comma-separated values), or even XLS (Microsoft *Excel* format). Some may have
 headers in the data (a first row that names what each column represents), others may
 not. Here are some examples for reference:
 
-.. table:: **Table 1: Examples of Data Files**
+.. table:: **Table 1: Examples of Data Files with Same Data**
 
 	====== ============================================ ======================================
 	Format Without Header                               With Header

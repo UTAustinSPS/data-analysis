@@ -211,15 +211,14 @@ data[[2;;4]]</pre>
 </pre></div>
 </div>
 <p>We can perform operations on lists as well, many of which can be extremely powerful:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span><span class="o">^</span><span class="mi">2</span>
-<span class="n">Length</span><span class="p">[{</span><span class="mi">4</span><span class="p">}]</span>
-<span class="n">Total</span><span class="p">[{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}]</span>
-<span class="n">Mean</span><span class="p">[{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">}]</span>
-<span class="n">Norm</span><span class="p">[{</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">}]</span>
-<span class="n">Dot</span><span class="p">[{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">},{</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">}]</span>
-<span class="n">Union</span><span class="p">[{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}]</span>
-<span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span> <span class="o">+</span> <span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">}</span>
-</pre></div>
+<div class="highlight-python"><pre>{1, 2, 3, 4, 5}^2
+Length[{4}] (*Length of list*)
+Total[{1,2,3,4,5}] (*Sum of all elements*)
+Mean[{0,1,2}] (*Arithmetic average of list*)
+Norm[{1,1,1,1}] (*The norm of the list - think the norm of a vector*)
+Dot[{0,1},{1,0}] (*Dot product of the given vectors*)
+Union[{1,2,3},{3,4,5}] (*Union of the two sets*)
+{0, 2, 4} + {4, 2, 0} (*Vector addition*)</pre>
 </div>
 <p>prints</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">}</span>
@@ -266,9 +265,9 @@ for producing sequences:</p>
 </div>
 <p>Essentially, <tt class="code docutils literal"><span class="pre">Table</span></tt> accepts some function over the domain given and will then
 create the list of the elements in the sequence over the given elements in the domain.
-The second example shows that given <tt class="code docutils literal"><span class="pre">{i,</span> <span class="pre">N}</span></tt>, the range is <span class="math">\(i\in[1, N]\)</span>.
+The second example shows that given <tt class="code docutils literal"><span class="pre">{i,</span> <span class="pre">N}</span></tt>, the domain is <span class="math">\(i\in[1, N]\)</span>.
 The third example shows that the elements to use can be given explicitly as well.
-The last example combines what we learned about lists above to show how easily
+The last examples combine what we learned about lists above to show how easily
 different concepts and structures in <em>Mathematica</em> can be combined.</p>
 </div>
 <div class="section" id="matrices">
@@ -308,7 +307,7 @@ different concepts and structures in <em>Mathematica</em> can be combined.</p>
 to its complex conjugate, giving <span class="math">\(m^\dagger\)</span>), <tt class="code docutils literal"><span class="pre">Det[m]</span></tt> computes the
 determinant <span class="math">\(|m|\)</span>, <tt class="code docutils literal"><span class="pre">m</span> <span class="pre">.</span> <span class="pre">m</span></tt> computes the matrix product
 (generally, when <span class="math">\(A\)</span> has dimensions <span class="math">\(m\times{n}\)</span>, <span class="math">\(B\)</span> has dimensions
-<span class="math">\(n\times{p}\)</span>, and <span class="math">\(AB=A\times{B}\)</span> has dimensions <span class="math">\(m\times{p}\)</span>, such that
+<span class="math">\(n\times{p}\)</span>, this gives <span class="math">\(AB=A\times{B}\)</span> which has dimensions <span class="math">\(m\times{p}\)</span>, such that
 <span class="math">\((AB)_{i,j}=\sum_{k=1}^{n}A_{i,k}B_{k,j}\)</span>), <tt class="code docutils literal"><span class="pre">MatrixPower[m,</span> <span class="pre">n]</span></tt> computes
 <span class="math">\(m^n=m\times m\times m\times \ldots \times m\)</span>, and <tt class="code docutils literal"><span class="pre">EigenValues[m]</span></tt>
 gives the eigenvalues of the matrix <span class="math">\(m\)</span>.</p>

@@ -249,3 +249,159 @@ documentation for :code:`FindFit`.
 	the separated functions would be an elementary function that is
 	parameterized by the single associated variable (:math:`y` or :math:`\tau`),
 	with no other numbers to guess, such as :math:`\tan(y)\tau^{-1}`.
+
+Interpolation
+-------------
+The :code:`FindFit` function is great when we have a model, and in practice, this is
+often the case. However, one other method we can use is interpolation. This is a process
+where we find a function (perhaps a piecewise one) that fits our data, to approximate
+values within the range of our data. For example, we could draw a straight line
+between points. This sounds like it could be hazardous in representing
+the data, but this does depend on how close together the data is
+and how precise we need to be, as seen in the following:
+
+.. figure:: Figures/joined_sample.gif
+	:alt: GIF of sine
+	:align: center
+
+	:math:`\sin(x)` as sampled with different intervals between points.
+
+Mathematically speaking, when we take this straight line fit on :math:`N`
+points, we create :math:`N-1` line segments that start at one point, then
+go to the next. We could, of course, create :code:`N-2` sections, creating a quadratic
+fit based on the current point and next two points, then plotting that
+from the current point to the next. We can do this all the way up to a single section
+that is a fit of order :math:`N-1`, which will be everywhere smooth and differentiable.
+As an example, see the following:
+
+.. figure:: Figures/interp_sample.gif
+	:alt: GIF of InterpolationOrder
+	:align: center
+
+	Data fitted at different values for :code:`InterpolationOrder`
+
+We'll look at how to do these fits in *Mathematica* shortly, but first, we can look at
+the math behind the fitting functions. If we take the "interpolation order" to be
+the order of the fit between points and represent it by :math:`m`, we create a polynomial
+using points :math:`x_i,~x_{i+1},~...,~x_{i+m}` (in the single-variable case - these
+functions and processes generalize) of order :math:`m`:
+
+.. math::
+
+	f_i(x)=a_{i,0}x^0+a_{i,1}x^1+a_{i,2}x^2+\cdots+a_{i,m}x^m
+
+If we have the data for each point :math:`\left(x_i,~y_i\right)`,
+with :math:`m` points, we can
+solve for the coefficients using
+
+.. math::
+
+	\sum_{j=0}^ma_{i,j}x_{i+k}^j=y_{i+k},~k\in[0,m]
+
+or, more usefully,
+
+.. math::
+
+	\left(\begin{array}{ccccc}
+	x_i^0 & x_i^1 & x_i^2 &  & x_i^m \\
+	x_{i+1}^0 & x_{i+1}^1 & x_{i+1}^2 & \cdots & x_{i+1}^m \\
+	x_{i+2}^0 & x_{i+2}^1 & x_{i+2}^2 & & x_{i+2}^m\\
+	  & \vdots & & \ddots & \vdots \\
+	x_{i+m}^0 & x_{i+m}^1 & x_{i+m}^2 & \cdots & x_{i+m}^m
+	\end{array}\right)
+	\left(\begin{array}{c}
+	a_{i,0} \\ a_{i,1} \\ a_{i,2} \\ \vdots \\ a_{i,m}
+	\end{array}\right)=
+	\left(\begin{array}{c}
+	y_i \\ y_{i+1} \\ y_{i+2} \\ \vdots \\ y_{i+m}
+	\end{array}\right)
+
+With this formulation, we can invert the square matrix and compute the coefficients:
+
+.. math::
+
+	\left(\begin{array}{c}
+	a_{i,0} \\ a_{i,1} \\ a_{i,2} \\ \vdots \\ a_{i,m}
+	\end{array}\right)=
+	\left(\begin{array}{ccccc}
+	x_i^0 & x_i^1 & x_i^2 &  & x_i^m \\
+	x_{i+1}^0 & x_{i+1}^1 & x_{i+1}^2 & \cdots & x_{i+1}^m \\
+	x_{i+2}^0 & x_{i+2}^1 & x_{i+2}^2 & & x_{i+2}^m\\
+	  & \vdots & & \ddots & \vdots \\
+	x_{i+m}^0 & x_{i+m}^1 & x_{i+m}^2 & \cdots & x_{i+m}^m
+	\end{array}\right)^{-1}
+	\left(\begin{array}{c}
+	y_i \\ y_{i+1} \\ y_{i+2} \\ \vdots \\ y_{i+m}
+	\end{array}\right)
+
+In the linear case (:math:`f_i(x)=a_{i,0}+a_{i,1}x`), this gives:
+
+.. math::
+
+	\left(\begin{array}{c}
+	a_{i,0} \\ a_{i,1} 
+	\end{array}\right)=
+	\left(\begin{array}{c}
+	\frac{x_{i+1}y_i-x_iy_{i+1}}{x_{i+1}-x_i}\\
+	\frac{y_{i+1}-y_i}{x_{i+1}-x_i}
+	\end{array}\right)
+
+We can plot the function :math:`f_i(x)` over the domain :math:`x\in[x_i,x_{i+1}]`,
+then repeat this process for each other segment, giving a function
+
+.. math::
+
+	f(x)=\left\{\begin{array}{ccc}
+	f_1(x) & & x_1\leq{x}<x_2\\
+	f_2(x) & & x_2\leq{x}<x_3\\
+	& \vdots & \\
+	f_i(x) & & x_i\leq{x}<x_{i+1}\\
+	& \vdots & \\
+	f_{n-m}(x) & & x_{n-m}\leq{x}\leq{x_n}
+	\end{array}\right.
+
+In *Mathematica*, there are several related functions for interpolation, the one
+that is most related to the discussion above being, conveniently, :code:`Interpolation`.
+:code:`Interpolation` takes the data, either as
+:code:`{{x1, f1}, {x2, f2}, ..., {xn, fn}}`, or
+:code:`{{{x1, y1, ...}, f1}, {{x2, y2, ...}, f2}, ..., {{xn, yn, ...}, fn}}`
+and produces a regular function in the number of variables given (the default
+interpolation order is 3, but easily changed as seen below). For example,
+
+::
+
+	t = Table[{x, Sin[2x]}, {x, 0, 2 Pi, .5}];
+
+	(*Creates single-variable function, given order i*)
+	fn = Interpolation[t, InterpolationOrder -> i]
+
+	(*Code for each frame below*)
+	Show[
+		ListPlot[t, PlotStyle -> PointSize[Medium]],
+		Plot[
+			{fn[x], Sin[2x]},
+			{x, 0, 2 Pi},
+			PlotLegends -> {"Fitted Curve", "Sin[2x]"}],
+		PlotRange -> {{0, 2 Pi}, {-1, 1}},
+		PlotLabel -> "InterpolationOrder->" <> ToString[i]]
+
+.. figure:: Figures/pointwise.gif
+	:alt: Piecewise Interpolation Example
+	:align: center
+
+	Plots for fitting data to :math:`f(x)=\sin(2x)`.
+
+We can also use :code:`InterpolatingPolynomial[data, {var1, ...}]` to do this, which
+will create a single polynomial (degree :math:`N-1` where :math:`N` is the number of 
+points in our dataset in the single variable case) defined in terms of the variables
+given. In other words,
+
+::
+
+	f1[x_] := Module[{y}, InterpolatingPolynomial[t, y] /. {y -> x}]
+	f2[x_] := Interpolation[t, InterpolationOrder -> Length[t] - 1][x]
+
+represent the same underlying function. The former does all the math in an arbitrary
+local variable :code:`y`, then substitutes for :code:`y`, the value of :code:`x`, which could
+be symbolic. The latter creates the function of an arbitrary variable of its own, to which
+we then apply the argument given to us then return the result.

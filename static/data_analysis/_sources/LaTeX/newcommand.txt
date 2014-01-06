@@ -37,7 +37,7 @@ The format of :code:`\newcommand` is
 
    \newcommand{cmd}[args]{def}
 
-The cmd represents a command name beginning with a :code:`\`. The command must be unique,
+The cmd represents a command name beginning with a :code:`\ `. The command must be unique,
 and cannot begin with :code:`\end`. The arg represents an optional argument which can
 take any value from 1 to 9, so a command may take up to 9 arguments. The def
 represents the text substituted.

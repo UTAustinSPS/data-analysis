@@ -234,7 +234,7 @@ So, we might have a statement such as
 
 .. math::
 	
-	\forall{x\in\mathbb{N}}\forall{y\in\mathbb{R}}\exists{z\in\mathbb{R}}:x+y=z
+	\forall{x\in\mathbb{N}}~\forall{y\in\mathbb{R}}~\exists{z\in\mathbb{R}}:x+y=z
 
 which just says that if we take any natural number :math:`x` and any real number :math:`y`
 and add them, we get another real number :math:`z`.
@@ -256,20 +256,30 @@ and let :math:`xRy` represent applying the function to arguments :math:`x` and :
 (think if :math:`R` is :math:`<`, then we'd say :math:`x<y`).
 
 - Reflexivity: :math:`\forall{x}:xRx`. For example, :math:`=` since :math:`x=x` is
-  trivially true for any :math:`x`. But, :math:`xRy\equiv x^2>y` is not reflexive over the
+  trivially true for any :math:`x`. But, :math:`xRy\equiv (x^2>y)` is not reflexive over the
   real numbers, since for :math:`0<x<1,~x^2<x`.
-- Symmetry: :math:`\forall{x}\forall{y}:xRy\rightarrow{yRx}`. For example,
-  :math:`xRy\equiv x<5\wedge y<5` is symmetric, but :math:`xRy\equiv x<y` is not,
-  since if :math:`2<5` is true, we know that :math:`5<2` is false.
-- Asymmetry: :math:`\forall{x}\forall{y}:xRy\rightarrow\neg{yRx}`. For example,
-  :math:`xRy\equiv{x<y}` is asymmetric. But, :math:`xRy\equiv{x=y}` is not.
-- Antisymmetry: :math:`\forall{x}\forall{y}:xRy\wedge yRx\rightarrow x=y`. For example,
-  :math:`xRy\equiv{x\leq{y}}` is antisymmetric. But, :math:`xRy\equiv x<5\wedge y<5` is not.
-- Transitivity: :math:`\forall{x}\forall{y}\forall{z}:xRy\wedge yRz\rightarrow xRz`. For example,
-  :math:`xRy\equiv{x<y}` is transitive. But, :math:`xRy\equiv{\gcd(x,y)=1}` is not (
+- Symmetry: :math:`\forall{x}\forall{y}:(xRy\rightarrow{yRx})`. For example,
+  :math:`xRy\equiv (x<5)\wedge (y<5)` is symmetric (if we swap the arguments when both
+  are less than 5, we still get :math:`\top`), but :math:`xRy\equiv x<y` is not symmetric,
+  since :math:`2<5` is true, but :math:`5<2` is false.
+- Asymmetry: :math:`\forall{x}\forall{y}:(xRy\rightarrow\neg{yRx})`. For example,
+  :math:`xRy\equiv{x<y}` is asymmetric (when we have :math:`x<y`, we know if we
+  swap the arguments, we get the opposite result - and we have no trouble
+  with :math:`xRx` since it is always false). But, :math:`xRy\equiv{x=y}` is not asymmetric
+  since if we swap arguments, we get the same result as before.
+- Antisymmetry: :math:`\forall{x}\forall{y}:(xRy\wedge yRx)\rightarrow x=y`. For example,
+  :math:`xRy\equiv{x\leq{y}}` is antisymmetric since if
+  both :math:`x\leq{y}` and :math:`y\leq{x}`, :math:`x` and :math:`y` must be the same.
+  But, :math:`xRy\equiv (x<5)\wedge (y<5)` is not antisymmetric since we have 
+  :math:`{\small{2}}R\small{4}` and :math:`{\small{4}}R\small{2}`, but :math:`2\ne4`.
+- Transitivity: :math:`\forall{x}\forall{y}\forall{z}:(xRy\wedge yRz)\rightarrow xRz`.
+  For example, :math:`xRy\equiv(x<y)` is transitive since if :math:`x<y` and :math:`y<z` it must
+  be true that :math:`x<z`. But, :math:`xRy\equiv(\gcd(x,y)=1)` is not (
   :math:`\gcd(2,3)=1,~\gcd(3,10)=1` but :math:`\gcd(2,10)=2`).
-- Totality: :math:`\forall{x}\forall{y}:xRy\vee{yRx}`. For example, :math:`xRy\equiv{x\leq{y}}`
-  is total. But, :math:`xRy\equiv{x<y}` is not (:math:`5<5` is false).
+- Totality: :math:`\forall{x}\forall{y}:(xRy\vee{yRx})`. For example, :math:`xRy\equiv(x\leq{y})`
+  is total since we are essentially saying that
+  :math:`x<y` or :math:`y<x` or :math:`y=x` which is certainly the case for
+  the real numbers. But, :math:`xRy\equiv(x<y)` is not (:math:`5<5` is false).
 
 There are other such properties of binary relations as well. Equivalence relations are
 those that are reflexive, symmetric, and transitive (like :math:`=`). Partial order relations

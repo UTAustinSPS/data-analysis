@@ -40,7 +40,7 @@ the :code:`x` in the function definition is a dummy variable.
 	is exactly the value :math:`7\cdot{y}`.
 
 	There are further subtleties (the difference between :code:`=` and :code:`:=`, for example),
-	but always using the full function definition :code:`func[x_, y_] := \cdots` is the best
+	but always using the full function definition :code:`func[x_, y_] := ...` is the best
 	way to go.
 
 
@@ -67,7 +67,7 @@ will print:
 	evaluate :math:`h(3,~2)` and make sure you get :math:`(2,~9)`.
 
 We can base functions on other functions (built-in or user-created) too. There are many built-in
-functions which take functions as arguments.
+functions which take functions as arguments, which we discuss throughout the book.
 
 .. admonition:: Example: Calculus
 	:class: note
@@ -108,7 +108,6 @@ functions which take functions as arguments.
 	For practice with calculus functions, try evaluating
 	:math:`\frac{d\ln{x}}{dx},~\int\sin^2(x)dx` in *Mathematica* and make sure
 	you get :math:`\frac{1}{x},~\frac{x}{2}-\frac{\sin(2x)}{4}`.
-
 
 Introduction to Graphing
 ------------------------
@@ -185,7 +184,8 @@ So, for example, we could have:
 .. admonition:: Practice Problem: Simple Plots
 
 	For practice, try creating the plot below. The functions are listed in the legend
-	on the plot, but you might find use of the :code:`Thickness` function which takes
+	on the plot, but you might find use of the :code:`Thickness` function (instead of
+	just :code:`Thick` or :code:`Thin`) which takes
 	a single value to determine the line thickness.
 
 	.. figure:: Figures/assgn_simple_plot.png
@@ -220,10 +220,10 @@ the function. For a more interesting example:
 ::
 
 	(*Create four lists of points for 0<=a<=20*)
-    list = Table[Table[{a, a^2 + 50 Sin[c*a]}, {a, 0, 20}], {c, 0, 3}];
-    ListPlot[list, 
-        PlotLegends -> {"data 1", "data 2", "data 3", "data 4"}, 
-        PlotStyle -> PointSize[Medium] (*Makes points bigger*)]
+	list = Table[Table[{a, a^2 + 50 Sin[c*a]}, {a, 0, 20}], {c, 0, 3}];
+	ListPlot[list, 
+		PlotLegends -> {"data 1", "data 2", "data 3", "data 4"}, 
+		PlotStyle -> PointSize[Medium] (*Makes points bigger*)]
 
 .. figure:: Figures/list_simple.png
 	:alt: Many list plots
@@ -245,16 +245,20 @@ but with consecutive points connected:
 
 	Plot of functions :math:`f_c(a)=a^2+50\sin(c*a)` over :math:`a\in[0,20],~c\in[0,3]`.
 
-This is nice, but here we have another option at our disposal, :code:`InterpolationOrder`.
-If this is greater than 0, *Mathematica* will apply a smoothing fit to the data (in practice,
-2 gives a reasonable fit, and above 8 makes little visual difference):
+As we will see in the section on `Interpolation <../Analysis/curve_fit.html#interpolation>`_,
+we can interpolate our data, creating a fitting function. One other place we can use
+this feature of *Mathematica* is the :code:`ListLinePlot` which will perform the interpolation
+and graph it all at once with the :code:`InterpolationOrder` option.
+If this is greater than 0, *Mathematica* will apply a smoothing fit to the data of
+the degree specified between points (in practice,
+3 usually gives a reasonable fit, and above 8 rarely makes visual difference):
 
 ::
 
-    ListLinePlot[list, 
-        PlotLegends -> {"data 1", "data 2", "data 3", "data 4"}, 
-        PlotStyle -> Thick,
-        InterpolationOrder -> 4]
+	ListLinePlot[list, 
+		PlotLegends -> {"data 1", "data 2", "data 3", "data 4"}, 
+		PlotStyle -> Thick,
+		InterpolationOrder -> 4]
 
 .. figure:: Figures/listline_interp.png
 	:alt: Many list plots
@@ -718,8 +722,7 @@ a color, dotted, etc.) in the most predictable way.
 	Plot of data drawn from a Normal distribution along with projected distribution from data
 	and the actual distribution for reference, all in a :code:`Legended` chart.
 
-.. admonition:: Practice Combining Graphs
-	:class: note
+.. admonition:: Practice Problem: Combining Graphs
 
 	Try adding other plots to the one above and then labeling them. For example, see if you
 	can add in a plot for :math:`f(x)=x^2;~x\in[-2,20]`, but then re-scale the image to

@@ -212,7 +212,7 @@ or subscript, enclose the desired text in braces.</p>
 $a_{ij}=a_{ji}$.</pre>
 </div>
 <p>This gives the desired result: A gigabyte contains <span class="math">\(2^{30}\)</span> bytes.
-Let <span class="math">\(x_{ij}=x_{ji}\)</span>.</p>
+Let <span class="math">\(a_{ij}=a_{ji}\)</span>.</p>
 <p>There is a native equation environment, displaymath, which can be invoked by
 encasing math inside double dollar signs or <tt class="code docutils literal"><span class="pre">\[</span></tt>, and <tt class="code docutils literal"><span class="pre">\]</span></tt>. It can
 typeset up to one line of math at a time.</p>
@@ -223,8 +223,8 @@ $$e=\sum_{i=0}^\infty \frac{1}{i!}$$
 \]</pre>
 </div>
 <p>Both invoke the displaymath environment, and so are nearly identical. The only
-difference is that <tt class="code docutils literal"><span class="pre">\$\$</span></tt> math <tt class="code docutils literal"><span class="pre">\$\$</span></tt> makes a call to TeX and
-<tt class="code docutils literal"><span class="pre">\[`stuff</span> <span class="pre">:code:</span></tt>]` makes a call to LaTeX It is not recommended to use
+difference is that <tt class="code docutils literal"><span class="pre">$$</span></tt> math <tt class="code docutils literal"><span class="pre">$$</span></tt> makes a call to TeX and
+<tt class="code docutils literal"><span class="pre">\[</span></tt> stuff <tt class="code docutils literal"><span class="pre">\]</span></tt> makes a call to LaTeX. It is not recommended to use
 these environments except when minimal control is needed. The environments
 provided by the <tt class="code docutils literal"><span class="pre">amsmath</span></tt> package are much more robust and flexible. The
 most common replacement environment from <tt class="code docutils literal"><span class="pre">amsmath</span></tt> is <tt class="code docutils literal"><span class="pre">align</span></tt>, or
@@ -233,13 +233,17 @@ environments, these are opened and closed with <tt class="code docutils literal"
 <tt class="code docutils literal"><span class="pre">\end{}</span></tt>. Just place the desired environment name between the braces. For
 example:</p>
 <div class="highlight-python"><pre>\begin{align*}
-e=\sum_{i=0}^\infty \frac{1}{i!}
+e&amp;=\sum_{i=0}^\infty \frac{1}{i!}\\
+&amp;=\lim_{n\rightarrow\infty}\left(1+\frac{1}{n}\right)^n
 \end{align*}</pre>
 </div>
 <p>produces:</p>
+<div class="math">
+\[\begin{split}e&amp;=\sum_{i=0}^\infty \frac{1}{i!}\\
+&amp;=\lim_{n\rightarrow\infty}\left(1+\frac{1}{n}\right)^n\end{split}\]</div>
 <p>Everything that works in <tt class="code docutils literal"><span class="pre">displaymath</span></tt> works in <tt class="code docutils literal"><span class="pre">align</span></tt>. The main
 advantage of <tt class="code docutils literal"><span class="pre">align</span></tt> is that it can display many lines of mathematics at
-once.</p>
+once, aligning them based on the location of the <tt class="code docutils literal"><span class="pre">&amp;</span></tt> in each line.</p>
 </div>
 <div class="section" id="advanced-mathematics">
 <h1>Advanced Mathematics<a class="headerlink" href="#advanced-mathematics" title="Permalink to this headline">¶</a></h1>

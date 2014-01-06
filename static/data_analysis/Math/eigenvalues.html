@@ -343,7 +343,7 @@ we might think about taking the derivative of some vector. In fact, what about:<
 \[\begin{split}\frac{d}{dt}\left(\begin{array}{c}x \\ \dot{x}\end{array}\right)=
 \left(\begin{array}{c}\dot{x} \\ \ddot{x}\end{array}\right)\end{split}\]</div>
 <p>Is that really helping our case? Well, if we had some way to have the right-hand side be some square
-matrix times the vector we were taking the derivative of and have that be equal to a constant, we&#8217;d be home
+matrix times the vector we were taking the derivative of, we&#8217;d be home
 free. But all that does is set up a system of equations. Let&#8217;s see if we can figure out which system:</p>
 <div class="math">
 \[\begin{split}\frac{d}{dt}\left(\begin{array}{c}x \\ \dot{x}\end{array}\right)=
@@ -363,8 +363,8 @@ for all <span class="math">\(\dot{x}\)</span>, so we arrive at <span class="math
 \dot{x}\end{array}\right)=      \lambda\left(\begin{array}{c}x \\
 \dot{x}\end{array}\right)\)</span>? The meaning is not so obvious. However, we have now totally eliminated
 <span class="math">\(\ddot{x}\)</span> from our system of equations. That means that if we were to solve this new formulation,
-we would end up with equations based solely on <span class="math">\(w\)</span>, which is a constant, <span class="math">\(\lambda\)</span>, which
-is a scalar we&#8217;ll solve for, then <span class="math">\(x\)</span> and <span class="math">\(\dot{x}\)</span>. That sounds like a system of first-order
+we would end up with equations based solely on <span class="math">\(w\)</span>, which is a constant; <span class="math">\(\lambda\)</span>, which
+is a scalar we&#8217;ll solve for; then <span class="math">\(x\)</span> and <span class="math">\(\dot{x}\)</span>. That sounds like a system of first-order
 differential equations, which we&#8217;ll likely be able to solve - certainly more easily than trying to solve
 the first formulation of the problem which was a second-order differential equation. So, let&#8217;s use the hammer
 that is the eigenvalue problem process on the nail of this problem and see if it helps us out.</p>
@@ -386,7 +386,7 @@ similar, for the moment, let&#8217;s try to solve for the eigenvectors at the sa
 \end{array}\end{split}\]</div>
 <p>This is just a simple equation that says that the derivative of some function is a constant times that
 function. At this point, our hammer has done its job, now it&#8217;s time to stain, coat, and finish the
-masterpiece. While not trivial the above gives the elementary result:</p>
+masterpiece. While not trivial, the above gives the elementary result:</p>
 <div class="math">
 \[x_\pm=A_{\pm}e^{\pm{iwt}}\]</div>
 <p>That&#8217;s good, but can we get a better result? Let&#8217;s go back to our first statement of the problem. We can
@@ -395,11 +395,11 @@ we also get that <span class="math">\(\ddot{x_H}=-w^2x_H\)</span>. That means th
 and is more general than <span class="math">\(x_+\)</span> or <span class="math">\(x_-\)</span>. That means that the general solution to our
 problem is:</p>
 <div class="math">
-\[x_H=Ae^{iwt}+Be^{-iwt}\]</div>
-<p>where <span class="math">\(A\)</span> and <span class="math">\(B\)</span> would be determined through initial conditions or other information.
-However, if we apply Euler&#8217;s formula (the one relevant to the euation above [
+\[x_H=A_+e^{iwt}+A_-e^{-iwt}\]</div>
+<p>where <span class="math">\(A_+\)</span> and <span class="math">\(A_-\)</span> would be determined through initial conditions or other information.
+However, if we apply Euler&#8217;s formula (the one relevant to the equation above [
 <span class="math">\(e^{\pm{ix}}=\cos(x)\pm{i}\sin(x)\)</span>
-]), and let <span class="math">\(C=A+B,~D=(A-B)i\)</span>, we arrive at the solution:</p>
+]), and let <span class="math">\(C=A_++A_-,~D=(A_+-A_-)i\)</span>, we arrive at the solution:</p>
 <div class="math">
 \[x_H=C\cos(wt)+D\sin(wt)\]</div>
 <p>For the most familar form, we take <span class="math">\(A^2=C^2+D^2,~A\cos\phi=C,~A\sin\phi=D\)</span>, then
@@ -407,7 +407,6 @@ However, if we apply Euler&#8217;s formula (the one relevant to the euation abov
 <span class="math">\(\cos(\alpha-\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta\)</span>, we finally arrive at:</p>
 <div class="math">
 \[x(t)=A\cos(wt-\phi)\]</div>
-<p>FIXME add QM example?</p>
 </div>
 </div>
 

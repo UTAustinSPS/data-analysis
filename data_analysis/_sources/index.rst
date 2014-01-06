@@ -61,7 +61,6 @@ Analysis
    Analysis/gaussian.rst
    Analysis/curve_fit.rst
    Analysis/approximations.rst
-   Analysis/fourier.rst
    Analysis/error.rst
 
 Appendix
@@ -72,9 +71,17 @@ Appendix
 
    Math/eigenvalues.rst
    Math/logic.rst
+   Math/misc.rst
 
 ..
    To Do for LaTeX (feel free to add):
+   in latex.rst or docstructure.rst, add in info about backslash, getting Greek letters, possibly that there is a difference between math and non-math
+   Document Classes (fix in docstructure.rst)
+   Formatting? (fix in docstructure.rst)
+   Environments? (fix in docstructure.rst)
+   Bibliographies (fix in docstructure.rst)
+   tables.rst --> "Columns", array environment
+   newcommand.rst --> reference to looping
    Lists
    Basics: Spaces, Groups, Environments, Commands, Comments, 
    |

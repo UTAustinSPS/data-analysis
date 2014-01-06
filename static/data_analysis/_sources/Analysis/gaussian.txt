@@ -78,9 +78,25 @@ integrated to create a step function that is zero if :math:`x<\mu` and 1 if :mat
 
 Applications
 ------------
-FIXME
+As we can see in the `Error Analysis <error.html>`_ section, the concepts of a mean and
+standard deviation are critical to our understanding of how to model uncertainty when reporting
+results. Furthermore, when we report a result, we often use the mean and standard deviation
+to determine if our experiment has shown something new (though we might use a t-distribution
+instead of a Normal distribution, which is similar in shape but not formulation),
+based on how far the result
+is from the mean relative to the standard deviation. This sort of reasoning is needed for 
+problems where we are trying to discover something - determining whether some thing exists.
+When looking at a known system but trying to determine values (calculating the speed of light,
+for example), we can use a Gaussian to model error by propagating the standard deviation
+appropriately.
 
- 
+There are some systems that follow a Normal distribution naturally, such as the ground state
+of the quantum harmonic oscillator (a topic in PHY 373), velocities in an ideal gas, and other
+cases. More often than not, we may approximate a curve as a Normal curve for ease in calculation.
+
+As an interactive way to get an intuitive feel for how samples drawn from a Normal distribution
+vary with respect to the number of elements sampled and the size of the standard deviation,
+see the following *Mathematica* CDF (hover over to generate new samples).
 
 .. raw:: html
 
