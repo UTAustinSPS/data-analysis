@@ -5,7 +5,10 @@ having sections like :math:`\LaTeX`, it simply has blocks of code you can execut
 languages like *Python*, *C*, or *Java*, *Mathematica* will simply execute whatever block of code
 is in focus. This eliminates the need for the "boilerplate" code that comes in many languages
 of having to set up a particular "main" function to execute, by instead allowing the user
-to essentially say "execute these lines".
+to essentially say "execute these lines". To execute code in *Mathematica*, just hit
+"Shift+Enter" with the code in focus (you'll see sections as you type). You don't need
+to have the code highlighted to do so. You can have multiple lines to execute at once
+by using just "Enter" between them, editing like normal text.
 
 Basic Constructs
 ----------------

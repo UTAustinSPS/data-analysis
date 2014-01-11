@@ -22,6 +22,7 @@ To access the elements of :code:`data`, we apply the indexing operator:
 	data[[1]]
 	data[[1;;2]]
 	data[[2;;4]]
+	data[[{1,3,5}]]
 
 prints
 ::
@@ -29,6 +30,7 @@ prints
 	21
 	{21, 24}
 	{24, 25, 32}
+	{21, 25, 31}
 
 We can perform operations on lists as well, many of which can be extremely powerful:
 ::

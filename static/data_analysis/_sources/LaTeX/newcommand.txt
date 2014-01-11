@@ -46,7 +46,7 @@ Zero Argument Commands
 ----------------------
 
 Ofttimes, it is easier to reduce a common symbol to a simple sequence than the full
-command. For real analysis, the symbols :math:`\mathbb{R}` and `\mathbb{Z}` are common
+command. For real analysis, the symbols :math:`\mathbb{R}` and :math:`\mathbb{Z}` are common
 and it can be a chore to type (and remember) the commands :code:`\mathbb{R}` and
 :code:`\mathbb{Z}`. Since :code:`\R` and :code:`\Z` are not natively commands, the
 lengthy symbol calls can be assigned to these much shorter commands if the following

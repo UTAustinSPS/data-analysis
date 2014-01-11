@@ -1,0 +1,109 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2904,         99]
+NotebookOptionsPosition[      2585,         84]
+NotebookOutlinePosition[      2930,         99]
+CellTagsIndexPosition[      2887,         96]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Problem", " ", "1"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"f", "[", "x_", "]"}], ":=", 
+    RowBox[{"1", "-", 
+     RowBox[{
+      RowBox[{"x", "^", "2"}], "/", "2"}]}]}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"g", "[", "x_", "]"}], ":=", 
+    RowBox[{"Sqrt", "[", 
+     RowBox[{
+      RowBox[{"-", "2"}], 
+      RowBox[{"(", 
+       RowBox[{"x", "-", "1"}], ")"}]}], "]"}]}], "\[IndentingNewLine]", 
+   RowBox[{"f", "[", 
+    RowBox[{"g", "[", "x", "]"}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"myList", "=", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "4", ",", "8", ",", "5", ",", "7"}], 
+      "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Norm", "[", 
+     RowBox[{"g", "[", "myList", "]"}], "]"}], "^", "2"}]}]}]], "Input",
+ CellChangeTimes->{{3.59845348896074*^9, 3.598453569671356*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Problem", " ", "2"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"myList2", "=", 
+     RowBox[{"{", 
+      RowBox[{
+      "0", ",", "1", ",", "4", ",", "9", ",", "16", ",", "25", ",", "36", ",",
+        "49"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"myList2", "[", 
+    RowBox[{"[", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "4", ",", "7"}], "}"}], "]"}], "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"myList2", "[", 
+    RowBox[{"[", 
+     RowBox[{"1", ";;", "4"}], "]"}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"Sqrt", "[", "myList2", "]"}], "+", "1"}], ")"}], "^", 
+    "2"}]}]}]], "Input",
+ CellChangeTimes->{{3.5984536006271267`*^9, 3.598453673468293*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Problem", " ", "3"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"a", "=", "\"\<Students create something interesting\>\""}], 
+   ";"}]}]], "Input",
+ CellChangeTimes->{{3.5984536799406633`*^9, 3.598453720043957*^9}}]
+},
+WindowSize->{707, 817},
+WindowMargins->{{Automatic, 199}, {39, Automatic}},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 934, 27, 132, "Input"],
+Cell[1494, 49, 804, 24, 112, "Input"],
+Cell[2301, 75, 280, 7, 52, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

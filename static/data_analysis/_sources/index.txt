@@ -22,6 +22,13 @@ Introduction
 
    intro.rst
 
+Assignments
+:::::::::::
+.. toctree::
+   :maxdepth: 2
+
+   assignments.rst
+
 *Mathematica*
 :::::::::::::
 
@@ -80,7 +87,8 @@ Appendix
    Formatting? (fix in docstructure.rst)
    Environments? (fix in docstructure.rst)
    Bibliographies (fix in docstructure.rst)
-   Tables.rst --> "Columns", array environment
+   tables.rst --> "Columns", array environment
+   newcommand.rst --> reference to looping
    Lists
    Basics: Spaces, Groups, Environments, Commands, Comments, 
    |

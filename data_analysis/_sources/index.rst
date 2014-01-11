@@ -22,6 +22,13 @@ Introduction
 
    intro.rst
 
+Assignments
+:::::::::::
+.. toctree::
+   :maxdepth: 2
+
+   assignments.rst
+
 *Mathematica*
 :::::::::::::
 

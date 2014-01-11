@@ -202,12 +202,14 @@ time interval). We can do this fairly simply:</p>
 <p>To access the elements of <tt class="code docutils literal"><span class="pre">data</span></tt>, we apply the indexing operator:</p>
 <div class="highlight-python"><pre>data[[1]]
 data[[1;;2]]
-data[[2;;4]]</pre>
+data[[2;;4]]
+data[[{1,3,5}]]</pre>
 </div>
 <p>prints</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="mi">21</span>
 <span class="p">{</span><span class="mi">21</span><span class="p">,</span> <span class="mi">24</span><span class="p">}</span>
 <span class="p">{</span><span class="mi">24</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">32</span><span class="p">}</span>
+<span class="p">{</span><span class="mi">21</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">31</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>We can perform operations on lists as well, many of which can be extremely powerful:</p>

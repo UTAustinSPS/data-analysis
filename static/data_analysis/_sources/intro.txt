@@ -32,8 +32,7 @@ may be pronounced "lay'-tech" or "lah'-tech".
 The Course
 ----------
 This course will first introduce concepts in *Mathematica* then go through the beginnings of the :math:`\LaTeX` language, followed by several sections on how the two may be combined to produce a clean, elegant,
-and interesting final document. Throughout this course, there will be questions to answer, some coding-based
-some more traditional question formats.
+and interesting final document. See the `Assignments <assignments.html>`_ section for the readings.
 
 The Syllabus
 ------------
