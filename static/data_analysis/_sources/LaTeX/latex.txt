@@ -28,6 +28,14 @@ What Does it Look Like?
 LaTeX documents are mostly the text you want to display, with additional information for formatting,
 images, and other special features. A simple document looks like the following.
 
+.. sidebar:: Hello World
+
+	.. image:: Figures/helloworld.png
+	   :scale: 25%
+	
+	|
+
+
 ::
    
    \documentclass{article}
@@ -37,18 +45,20 @@ images, and other special features. A simple document looks like the following.
 
 
 
-This produces the following document:
-
-.. image:: Figures/hello_world.jpg
-
-
 The first line says what kind of article we are working with. It contains formatting information like margins, spacing, and font. It also gives information about how the document is structured. Every document needs to have a document class. Usually, this is the first line of a LaTeX document.
 
 The second line is the beginning of the content which will be typeset. The third line is the content of the document. The last line says to stop typesetting, and ignore everything afterwards.
 
-Since specifying the document class and beginning/ending the document are required for every document, in general those will not be included in examples if not relevant.
 
-A more complex document might look like this:
+A more complex document might look like the below. Click on the image to get a better view.
+
+.. sidebar:: A More Complex Example
+
+	.. image:: Figures/latexsimple.png
+	   :scale: 42%
+	   :alt: Sample Document
+
+	|
 
 ::
 
@@ -83,17 +93,14 @@ A more complex document might look like this:
   \end{document}
 
 
-Which produces something like
-
-.. image:: Figures/looklike.jpg
-   :alt: Sample Document
 
 
 
-Notice that some content for the document was specified *before* the document began. LaTeX
-stored some information in variables, which were later called. The line
-:code:`\title{This is a title}` stored :code:`This is a title` as the title of the document.
-The same thing happens with the :code:`\author{}` and :code:`\date{}` commands. Those
-variables are stored once, and may be called throughout the document. In this case,
-they are called with the :code:`\maketitle` command.
+Notice that some content for the document was specified *before* the document began. LaTeX stored some information in variables, which were later called. The line :code:`\title{This is a title}` stored :code:`This is a title` as the title of the document. The same thing happens with the :code:`\author{}` and :code:`\date{}` commands. Those variables are stored once, and may be called throughout the document. In this case, they are called with the :code:`\maketitle` command.
+
+The :code:`\begin{abstract}` calls the :code:`abstract` environment, which is automatically formatted for use in scientific journals. The :code:`\section` and :code:`\subsection` commands are formatted to give structure to the body of the document. As will be shown later, they populate the table of contents of the document (if :code:`\tableofcontents` is used). If large text is desired, but not the creation of new sections, refer to the formatting lesson.
+
+Example Conventions
+===================
+Since specifying the document class and beginning/ending the document are required for every document, in general those will not be included in examples if not relevant. For all cases, unless noted otherwise, documents 
 
