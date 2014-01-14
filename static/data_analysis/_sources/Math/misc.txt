@@ -53,7 +53,7 @@ In particular, :math:`\delta(x)` satisfies the following:
 
 .. math::
 
-	\int_{-\infty}^\infty\delta(x)dx=1
+	\int_{-\infty}^\infty\delta(x)dx=1\\
 	\int_{-\infty}^\infty\delta(x-c)f(x)dx=f(c)
 
 Function Arguments as a Vector

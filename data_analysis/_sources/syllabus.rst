@@ -6,22 +6,27 @@ Contact Information
 -------------------
 Student Facilitator 1: Evan Ott
 
-Student Facilitator 1 Email: `evan.ott@utexas.edu <mailto:evan.ott@utexas.edu>`_
+Student Facilitator 1 Email: `evan.ott@utexas.edu <mailto:evan.ott@utexas.edu>`__
 
 Student Facilitator 2: Will Beason
 
-Student Facilitator 2 Email: `beason@utexas.edu <mailto:beason@utexas.edu>`_
+Student Facilitator 2 Email: `beason@utexas.edu <mailto:beason@utexas.edu>`__
 
-Office Hours: TBA
+Office Hours: W 2-4, Location TBA
 
+|
 
 Faculty Supervisor: Dr. Greg Sitz
 
-Faculty Supervisor Email: `gositz@physics.utexas.edu <mailto:gositz@physics.utexas.edu>`_
+Faculty Supervisor Email: `gositz@physics.utexas.edu <mailto:gositz@physics.utexas.edu>`__
 
 Office Hours: TBA
 
-`Class Homepage and Textbook <http://www.cs.utexas.edu/~evanott/PHY110C_Textbook/static/data_analysis/index.html>`_
+|
+
+`Class Homepage and Textbook <http://www.cs.utexas.edu/~evanott/PHY110C_Textbook/static/data_analysis/index.html>`__
+
+Email for Assignment Submission: `data.analysis.physics@gmail.com <mailto:data.analysis.physics@gmail.com>`__
 
 Course Description
 ------------------
@@ -99,8 +104,11 @@ The final project will be an individual project, although general discussion
 and help with programming errors is perfectly acceptable and encouraged.
 
 	Weekly Assignments (total): 50 pts
+
 	Final Project: 24 pts
+
 	Solution Presentation and Discussion: 26 pts
+
 	*There will be no final exam for this course*
 
 Weekly assignments are due the day before class at 5pm. Students are encouraged to complete as much of
@@ -190,8 +198,8 @@ the University, policies on academic dishonesty will be strictly enforced. For f
 information please visit the Student Judicial Services Web site: 
 `http://deanofstudents.utexas.edu/sjs <http://deanofstudents.utexas.edu/sjs>`_.
 
-About the Student Facilitator
------------------------------
+About Student Facilitator 1
+---------------------------
 Evan Ott is a physics and computer science major and the 2012-2014 president of UT's chapter
 of the Society of Physics Students. He has previously team-taught a 4-week seminar on
 :math:`\LaTeX` (materials available `here <http://www.ph.utexas.edu/~sps/pages/resources.html?modalID=LaTeXModal>`_)
