@@ -1,3 +1,4 @@
+============================
 Tables, Arrays, and Matrices
 ============================
 In text mode, tables are created using the :code:`tabular` environment. The analagous structure for math mode is the :code:`array` environment. There is also an envoronment in math mode specifically for matrices, :code:`matrix`.

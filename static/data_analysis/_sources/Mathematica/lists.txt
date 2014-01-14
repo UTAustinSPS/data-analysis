@@ -64,7 +64,7 @@ the arithmetic average of the elements, :code:`Norm` is the mathematical norm
 :math:`||list||`, :code:`Dot` takes the the dot (inner) product of the two lists, and
 :code:`Union` treats the lists as sets and takes the union. Many other useful functions
 exist (many can be found
-`here <http://reference.wolfram.com/mathematica/guide/ListManipulation.html>`_). The last
+`here <http://reference.wolfram.com/mathematica/guide/ListManipulation.html>`__). The last
 example above shows that the addition operator for lists can also be applied
 to add each :math:`i^\textrm{th}` element and return the resultant list.
 
@@ -158,4 +158,4 @@ gives the eigenvalues of the matrix :math:`m`.
 	If you keep hearing the term "eigenvalues" or "eigenvectors" around the physics department
 	but aren't sure what they are, there's a quick tutorial in the appendix about it.
 	You might need to brush up on matrices a little beforehand. The tutorial
-	can be found `here <../Math/eigenvalues.html>`_.
+	can be found `here <../Math/eigenvalues.html>`__.
