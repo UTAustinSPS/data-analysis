@@ -118,10 +118,6 @@ Many arrow commands have a counterpart which is referenced by capitalizing the f
     \\bar{a}      :math:`\bar{a}`      \\vec{a}        :math:`\vec{a}`        \\tilde{a}        :math:`\tilde{a}`         
     ============= ==================== =============== ====================== ================= ========================= ============ =====================
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 2c2135931828ab5cb7b036639bc38b3b607cfc44
 Many arrow commands have a counterpart which is referenced by capitalizing the first letter.
 For example, :code:`\uparrow` produces :math:`\uparrow` and :code:`\Uparrow` produces
 :math:`\Uparrow`
