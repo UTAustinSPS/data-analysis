@@ -1,0 +1,349 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Importing Data &mdash; Introduction to Data Analysis for Physics</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0-rc1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0-rc1/css/bootstrap-glyphicons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../../runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/js/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/js/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.js"></script>
+    <script type="text/javascript" src="../_static/builtin.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0-rc1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
+    <link rel="next" title="Animations" href="animations.html" />
+    <link rel="prev" title="Exporting Data" href="export.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'data_analysis';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-fixed-top" style="z-index:9999999">
+
+  <div class="container">
+
+    <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+    <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <div>
+      <a href="../index.html">
+      <img title="Data Analysis for Physics" src="../_static/img/logo_small.png"
+       style="max-width:60px; max-height:60px;float:left"></a>
+      <a class="navbar-brand" href="../index.html">Introduction to Data Analysis for Physics</a>
+    </div>
+
+    <div class="nav-collapse collapse navbar-responsive-collapse">
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Importing Data</a><ul>
+<li><a class="reference internal" href="#file-formats">File Formats</a></li>
+<li><a class="reference internal" href="#from-file-to-usable">From File to Usable</a></li>
+<li><a class="reference internal" href="#annoying-formats">&#8220;Annoying&#8221; Formats</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Exporting Data" data-toggle="tooltip">
+    <a href="export.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+      <p style=";max-width:130px;">Exporting Data</p>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Animations' data-toggle="tooltip" >
+    <a href="animations.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+      <p style=";max-width:130px;">Animations</p>
+    </a>
+  </li>
+  <li style="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div id="mainbody" class="container">
+  
+  <div class="section" id="importing-data">
+<h1>Importing Data<a class="headerlink" href="#importing-data" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="file-formats">
+<h2>File Formats<a class="headerlink" href="#file-formats" title="Permalink to this headline">¶</a></h2>
+<p>While being able to create functions, tables, and graphs is nice, in a laboratory setting,
+we really need to be able to work with data from lab equipment. Many software packages
+exist that interface with electronics (National Instruments&#8217; <em>LabVIEW</em> is a prime
+example), and are able to provide text files with data. Sometimes this is in a
+&#8220;human-readable&#8221; format, but often it is in a computer-friendly format, such as TSV (tab-separated
+values), CSV (comma-separated values), or even XLS (Microsoft <em>Excel</em> format). Some may have
+headers in the data (a first row that names what each column represents), others may
+not. Here are some examples for reference:</p>
+<table border="1" class="docutils">
+<caption><strong>Table 1: Examples of Data Files with Same Data</strong></caption>
+<colgroup>
+<col width="7%" />
+<col width="50%" />
+<col width="43%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Format</th>
+<th class="head">Without Header</th>
+<th class="head">With Header</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>CSV</td>
+<td><a class="reference download internal" href="../_downloads/without.csv"><tt class="xref download docutils literal"><span class="pre">without.csv</span></tt></a></td>
+<td><a class="reference download internal" href="../_downloads/with.csv"><tt class="xref download docutils literal"><span class="pre">with.csv</span></tt></a></td>
+</tr>
+<tr class="row-odd"><td>JSON</td>
+<td><a class="reference download internal" href="../_downloads/without.json"><tt class="xref download docutils literal"><span class="pre">without.json</span></tt></a></td>
+<td><a class="reference download internal" href="../_downloads/with.json"><tt class="xref download docutils literal"><span class="pre">with.json</span></tt></a></td>
+</tr>
+<tr class="row-even"><td>TSV</td>
+<td><a class="reference download internal" href="../_downloads/without.tsv"><tt class="xref download docutils literal"><span class="pre">without.tsv</span></tt></a></td>
+<td><a class="reference download internal" href="../_downloads/with.tsv"><tt class="xref download docutils literal"><span class="pre">with.tsv</span></tt></a></td>
+</tr>
+<tr class="row-odd"><td>XLS</td>
+<td><a class="reference download internal" href="../_downloads/without.xls"><tt class="xref download docutils literal"><span class="pre">without.xls</span></tt></a></td>
+<td><a class="reference download internal" href="../_downloads/with.xls"><tt class="xref download docutils literal"><span class="pre">with.xls</span></tt></a></td>
+</tr>
+<tr class="row-even"><td>XLSX</td>
+<td><a class="reference download internal" href="../_downloads/without.xlsx"><tt class="xref download docutils literal"><span class="pre">without.xlsx</span></tt></a></td>
+<td><a class="reference download internal" href="../_downloads/with.xlsx"><tt class="xref download docutils literal"><span class="pre">with.xlsx</span></tt></a></td>
+</tr>
+<tr class="row-odd"><td>XML</td>
+<td><a class="reference download internal" href="../_downloads/without.xml"><tt class="xref download docutils literal"><span class="pre">without.xml</span></tt></a></td>
+<td><a class="reference download internal" href="../_downloads/with.xml"><tt class="xref download docutils literal"><span class="pre">with.xml</span></tt></a></td>
+</tr>
+</tbody>
+</table>
+<p>The CSV, TSV, XLS, and XLSX files should be easily opened in <em>Excel</em> or other spreadsheet
+software. The JSON and XML should be viewable in a web browser (these are less-likely to
+occur in a lab setting, but are fairly ubiquitous in some spheres).</p>
+</div>
+<div class="section" id="from-file-to-usable">
+<h2>From File to Usable<a class="headerlink" href="#from-file-to-usable" title="Permalink to this headline">¶</a></h2>
+<p>Once we have our data, we can easily import it to <em>Mathematica</em> with the <tt class="code docutils literal"><span class="pre">Import</span></tt> command
+if it is one of the examples above or other well-defined type (as with exporting,
+in <em>Mathematica</em>&#8216;s help, look at &#8220;guide/ListingOfAllFormats&#8221;). For example, for any of the above,
+we can write</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">table</span> <span class="o">=</span> <span class="n">Import</span><span class="p">[</span><span class="s">&quot;filename&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>and <tt class="code docutils literal"><span class="pre">table</span></tt> will then have all the data in a 2-column list. If the data has a header,
+it can be accessed with <tt class="code docutils literal"><span class="pre">table[[1]]</span></tt>. And the header can be removed with
+<tt class="code docutils literal"><span class="pre">table</span> <span class="pre">=</span> <span class="pre">table[[2;;Length[table]]]</span></tt>. We can now do the usual things like plot the data
+with <tt class="code docutils literal"><span class="pre">ListPlot</span></tt>, etc.</p>
+</div>
+<div class="section" id="annoying-formats">
+<h2>&#8220;Annoying&#8221; Formats<a class="headerlink" href="#annoying-formats" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes we might have a format that isn&#8217;t built-in, and doesn&#8217;t have clean &#8220;delimeters&#8221; (that
+is, special symbols to mark the end of each entry in a list of entries). We might have a system
+that has entries that ar 4 space-separated values that are then separated by spaces.
+That would give a data file like <a class="reference download internal" href="../_downloads/annoying.txt"><tt class="xref download docutils literal"><span class="pre">this</span></tt></a>. Normal formats
+can&#8217;t tell the difference between entries because they aren&#8217;t based on having
+multiple lines, each with a single entry, or a similar construct. In this case, we can
+use <tt class="code docutils literal"><span class="pre">ReadList</span></tt>. This function allows us to set a custom set of delimeters, and even
+the types of data for each entry.</p>
+<div class="highlight-python"><pre>ReadList["annoying.txt",
+        {Number, Number, Number, Number},
+        WordSeparators -&gt; {" "},
+        RecordSeparators -&gt; {" "}]</pre>
+</div>
+<p>Reads in <tt class="code docutils literal"><span class="pre">{{0.,</span> <span class="pre">1.,</span> <span class="pre">12.,</span> <span class="pre">2.2},</span> <span class="pre">{1.2,</span> <span class="pre">4.2,</span> <span class="pre">0.2,</span> <span class="pre">2.4},</span> <span class="pre">{2.4,</span> <span class="pre">6.4,</span> <span class="pre">1.2,</span> <span class="pre">1.4}}</span></tt>.</p>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+    </p>
+    <p>
+    <!--
+        &copy; Copyright 2013, University of Texas at Austin Society of Physics Students and Sigma Pi Sigma.-->
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    //$(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    //$(document).ready(getNumUsers);
+    //$(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  $("#mainbody").children().first().css("margin-top",
+    $("#navbar").css("height"))
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-small btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-small btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-small btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-small btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

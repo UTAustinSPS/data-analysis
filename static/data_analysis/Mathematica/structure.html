@@ -107,7 +107,7 @@
 
 
 <!-- Begin navbar -->
-<div id="navbar" class="navbar navbar-fixed-top">
+<div id="navbar" class="navbar navbar-fixed-top" style="z-index:9999999">
 
   <div class="container">
 
@@ -119,12 +119,15 @@
     </button>
 
     <div>
-     <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+      <a href="../index.html">
+      <img title="Data Analysis for Physics" src="../_static/img/logo_small.png"
+       style="max-width:60px; max-height:60px;float:left"></a>
       <a class="navbar-brand" href="../index.html">Introduction to Data Analysis for Physics</a>
     </div>
 
     <div class="nav-collapse collapse navbar-responsive-collapse">
 
+<<<<<<< HEAD
       <ul class="nav navbar-nav pull-right">
 
         <li class="divider-vertical"></li>
@@ -232,6 +235,8 @@
 
       </ul>
 
+=======
+>>>>>>> 2c2135931828ab5cb7b036639bc38b3b607cfc44
       <ul class="nav navbar-nav">
         <li class="divider-vertical"></li>
         
@@ -244,6 +249,10 @@
 <li><a class="reference internal" href="#building-on-output">Building on Output</a></li>
 <li><a class="reference internal" href="#approximations">Approximations</a></li>
 <li><a class="reference internal" href="#evaluating-symbolic-expressions">Evaluating Symbolic Expressions</a></li>
+<li><a class="reference internal" href="#other-constructs">Other Constructs</a></li>
+<li><a class="reference internal" href="#packages">Packages</a></li>
+<li><a class="reference internal" href="#modules">Modules</a></li>
+<li><a class="reference internal" href="#special-characters">Special Characters</a></li>
 </ul>
 </li>
 </ul>
@@ -256,15 +265,17 @@
   <li id="relations-prev" title="Previous Chapter - Introduction" data-toggle="tooltip">
     <a href="mathematica.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+      <p style=";max-width:130px;">Introduction</p>
     </a>
   </li>
   
   <li id="relations-next" title='Next Chapter - Lists, Tables, and Matrices' data-toggle="tooltip" >
     <a href="lists.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+      <p style=";max-width:130px;">Lists, Tables, and Matrices</p>
     </a>
   </li>
-  <li class="divider-vertical"></li>
+  <li style="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -286,23 +297,30 @@
 </div>
 
 
-<div class="container">
+<div id="mainbody" class="container">
   
   <div class="section" id="document-structure-and-syntax">
 <h1>Document Structure and Syntax<a class="headerlink" href="#document-structure-and-syntax" title="Permalink to this headline">¶</a></h1>
 <p><em>Mathematica</em> largely lacks the kind of structures one might find in other languages. Instead of
 having sections like <span class="math">\(\LaTeX\)</span>, it simply has blocks of code you can execute. And unlike
-languages like <em>Python</em>, <em>C</em> or <em>Java</em>, <em>Mathematica</em> will simply execute whatever block of code
+languages like <em>Python</em>, <em>C</em>, or <em>Java</em>, <em>Mathematica</em> will simply execute whatever block of code
 is in focus. This eliminates the need for the &#8220;boilerplate&#8221; code that comes in many languages
 of having to set up a particular &#8220;main&#8221; function to execute, by instead allowing the user
-to essentially say &#8220;execute these lines&#8221;.</p>
+to essentially say &#8220;execute these lines&#8221;. To execute code in <em>Mathematica</em>, just hit
+&#8220;Shift+Enter&#8221; with the code in focus (you&#8217;ll see sections as you type). You don&#8217;t need
+to have the code highlighted to do so. You can have multiple lines to execute at once
+by using just &#8220;Enter&#8221; between them, editing like normal text.</p>
 <div class="section" id="basic-constructs">
 <h2>Basic Constructs<a class="headerlink" href="#basic-constructs" title="Permalink to this headline">¶</a></h2>
 <p>As already seen, assignment of variables is quite easy, with the statement</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
 </pre></div>
 </div>
-<p>being read as &#8220;x is given the value 5&#8221;. Most statements in <em>Mathematica</em> produce some kind of output
+<p>being read as &#8220;x is given the value 5&#8221;. Unlike mathematics where <span class="math">\(x=4\)</span> is the same as
+<span class="math">\(4=x\)</span>, in <em>Mathematica</em>, order matters. When we want to assign a variable, it must be
+on the left-hand side, with the value on the right. We&#8217;ll look at solving equations later, but
+for now, we&#8217;ll just allow variable assignment as written above.</p>
+<p>Most statements in <em>Mathematica</em> produce some kind of output
 (the above would output the value 5), but this can be hidden by ending the statement with a semicolon:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 </pre></div>
@@ -314,15 +332,17 @@ variable we want to clear.</p>
 <div class="highlight-python"><pre>f[x_] := x^2
 e = x ^ 2</pre>
 </div>
-<p>f is now the function <span class="math">\(f(x)=x^2\)</span> and e is an expression. The difference is that if we have defined
-a variable &#8220;x&#8221;, e will be that value squared. But f is still the function that squares its argument, rather
-than giving the square of some pre-defined variable x. For example:</p>
+<p><tt class="code docutils literal"><span class="pre">f</span></tt> is now the function <span class="math">\(f(x)=x^2\)</span> and <tt class="code docutils literal"><span class="pre">e</span></tt> is an expression. The difference is that if we have defined
+a variable <tt class="code docutils literal"><span class="pre">x</span></tt>, <tt class="code docutils literal"><span class="pre">e</span></tt> will be that value squared. But <tt class="code docutils literal"><span class="pre">f</span></tt> is still the function that squares its argument, rather
+than giving the square of some pre-defined variable <tt class="code docutils literal"><span class="pre">x</span></tt>. For example:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">f</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
-<span class="n">g</span>
+<span class="n">e</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-<span class="n">g</span>
+<span class="n">e</span>
 <span class="n">f</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
 <span class="n">f</span><span class="p">[</span><span class="n">y</span><span class="p">]</span>
+<span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+<span class="n">Clear</span><span class="p">[</span><span class="n">x</span><span class="p">];</span>
 <span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -333,6 +353,7 @@ than giving the square of some pre-defined variable x. For example:</p>
 <span class="mi">16</span>
 <span class="n">y</span><span class="o">^</span><span class="mi">2</span>
 <span class="mi">9</span>
+<span class="n">x</span><span class="o">^</span><span class="mi">2</span>
 </pre></div>
 </div>
 <p>One handy part of <em>Mathematica</em> is that it supports the use of variables as input to functions (as seen with
@@ -400,7 +421,7 @@ to &#8220;pi_approx&#8221;. It is a powerful tool to get down to actual values i
 <h2>Evaluating Symbolic Expressions<a class="headerlink" href="#evaluating-symbolic-expressions" title="Permalink to this headline">¶</a></h2>
 <p>When we have an expression, such as <tt class="code docutils literal"><span class="pre">x^2</span></tt>, we need not have <tt class="code docutils literal"><span class="pre">x</span></tt> defined (as seen above) for <em>Mathematica</em>
 to run. In fact, <em>Mathematica</em> gives us considerable flexibility if we choose not to define <tt class="code docutils literal"><span class="pre">x</span></tt>, and
-instead use the &#8220;replacement&#8221; operator instead:</p>
+instead use the &#8220;replacement&#8221; operator (<tt class="code docutils literal"><span class="pre">/.</span></tt>) instead:</p>
 <div class="highlight-python"><pre>g = x^2 + y
 g/.x-&gt;5
 g/.x-&gt;5/.y-&gt;2
@@ -414,10 +435,91 @@ g/.{x-&gt;5, y-&gt;2}</pre>
 </pre></div>
 </div>
 <p><tt class="code docutils literal"><span class="pre">/.</span></tt> is telling mathematica that you want to apply a particular set of values to variables in
-the expression. The <tt class="code docutils literal"><span class="pre">-&gt;</span></tt> operator is stating that the variable on the left hand side should take the value
+the expression. The rule operator (<tt class="code docutils literal"><span class="pre">-&gt;</span></tt>) is stating that the variable on the left hand side should take the value
 on the right hand side. You can apply many such substitutions one after another (
 <tt class="code docutils literal"><span class="pre">g/.x-&gt;5/.y-&gt;2</span></tt>) or
 apply many at once using curly braces (<tt class="code docutils literal"><span class="pre">g/.{x-&gt;5,</span> <span class="pre">y-&gt;2}</span></tt>).</p>
+</div>
+<div class="section" id="other-constructs">
+<h2>Other Constructs<a class="headerlink" href="#other-constructs" title="Permalink to this headline">¶</a></h2>
+<p>Two other constructs that will come in handy are comments and strings.</p>
+<p>Comments are human-readable elements of the file that are not evaluated. They
+are created by having a <tt class="code docutils literal"><span class="pre">(*</span></tt> then as much text as you want until a <tt class="code docutils literal"><span class="pre">*)</span></tt>. For example,</p>
+<div class="highlight-python"><pre>(*Here is some information about why I'm assigning x the value y...*)
+x=y
+(*It can span multiple
+lines too.*)</pre>
+</div>
+<p>Another useful consruct are strings. Strings are a way of passing text to <em>Mathematica</em>. We&#8217;ll
+end up using strings for display purposes later, but the way we construct them is simple.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="s">&quot;This is a string, demarked by double-quotes on either side&quot;</span>
+</pre></div>
+</div>
+<p>We can make a string from an expression <tt class="code docutils literal"><span class="pre">expr</span></tt> with <tt class="code docutils literal"><span class="pre">ToString[expr]</span></tt>, and
+<em>concatenate</em>, or join together strings with <tt class="code docutils literal"><span class="pre">&lt;&gt;</span></tt>. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">^</span> <span class="mi">2</span><span class="p">;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="s">&quot;5 ^ 2 is &quot;</span> <span class="o">&lt;&gt;</span> <span class="n">ToString</span><span class="p">[</span><span class="n">x</span><span class="p">];</span>
+<span class="n">Print</span><span class="p">[</span><span class="n">y</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>prints <tt class="code docutils literal"><span class="pre">5</span> <span class="pre">^</span> <span class="pre">2</span> <span class="pre">is</span> <span class="pre">25</span></tt> as expected (the <tt class="code docutils literal"><span class="pre">Print</span></tt> function prints the value, but
+just as text, not as full output that could be used in another expression).</p>
+<p>Finally, we do have some options for what kinds of information we place in our Notebook file
+in <em>Mathematica</em>. The default is Input (including comments), but we can use the &#8220;Format&#8221;
+option from the menu bar then &#8220;Style&#8221; to make the current cell a different type, such as Title
+or Text. These are great for longer comments, or for presenting your work directly from
+<em>Mathematica</em> (rather than copying results to something like <em>PowerPoint</em>).</p>
+</div>
+<div class="section" id="packages">
+<h2>Packages<a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h2>
+<p>On rare occasions, functions we&#8217;d like to have are part of <em>Mathematica</em> but not available
+by default. To make them available, we can use the <tt class="code docutils literal"><span class="pre">Needs</span></tt> function, which will
+load a &#8220;package&#8221; (collection of functions) so that we can use them. For example,
+to load the &#8220;ErrorBarPlots&#8221; package, we&#8217;ll use:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Needs</span><span class="p">[</span><span class="s">&quot;ErrorBarPlots`&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Note that in addition to the double-quotes, we need the &#8220;backquote&#8221; or &#8220;backtick&#8221; character.
+This is different from a single quote <tt class="code docutils literal"><span class="pre">'</span></tt>, and is usually found at the upper-left
+portion of a QWERTY keyboard with the tilde (<tt class="code docutils literal"><span class="pre">~</span></tt>) character.</p>
+</div>
+<div class="section" id="modules">
+<h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
+<p>After working with <em>Mathematica</em> for a while, you will notice that variables are
+defined everywhere. If using complicated programming constructs, we might find it useful
+to redefine values for a single function. For that, we can use a <tt class="code docutils literal"><span class="pre">Module</span></tt>.
+We define the local variables, placing all our code inside the module:</p>
+<div class="highlight-python"><pre>f[x_]:=x^2
+g[x_]:= Module[{f}, f[x]]
+g[2]</pre>
+</div>
+<p>prints</p>
+<div class="highlight-python"><pre>f$8675309[2]</pre>
+</div>
+<p>rather than 4.
+The number after the dollar sign and before the brackets is not important and will change during
+each evaluation But what this shows is that no matter if <tt class="code docutils literal"><span class="pre">f</span></tt> is already defined,
+we can redefine it without affecting any of the externally defined versions. This is good for
+shorthand when building complicated functions, and is necessary for creating re-usable functions
+for application to many projects (such as creating a package, which is not part of
+this course, but can be found in <em>Mathematica</em> with the help URL
+&#8220;tutorial/SettingUpMathematicaPackages&#8221;).</p>
+</div>
+<div class="section" id="special-characters">
+<h2>Special Characters<a class="headerlink" href="#special-characters" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes for readability, we may want to include a special character, such as
+delta (<span class="math">\(\delta\)</span>) in code to make things more readable. If we wanted
+to look at the behavior of a function at <span class="math">\(f(x\pm\delta{x})\)</span>, wouldn&#8217;t it be
+nice if we could just use <span class="math">\(\delta{x}\)</span> as a variable? It turns out that we can.
+<em>Mathematica</em> has Greek, Hebrew, extended Latin and other characters built in. We can access
+them by name using <tt class="code docutils literal"><span class="pre">\[delta]</span></tt>, for example, or by using the &#8220;Esc&#8221; key on the keyboard,
+such as &#8220;Esc&#8221;+ <tt class="code docutils literal"><span class="pre">delta</span></tt> +&#8221;Esc&#8221;. Most characters are just symbols to be used like any
+other character, but some have additional properties. For example, <tt class="code docutils literal"><span class="pre">\[Transpose]</span></tt>
+can be used as</p>
+<div class="highlight-python"><pre>{{1,2},{3,4}}\[Transpose]</pre>
+</div>
+<p>which, when copied into <em>Mathematica</em>, will look like <span class="math">\(\{\{1,2\},\{3,4\}\}^\top\)</span>.
+For more, look at the <em>Mathematica</em> URL &#8220;tutorial/LettersAndLetterLikeForms&#8221;.</p>
 </div>
 </div>
 
@@ -426,24 +528,29 @@ apply many at once using curly braces (<tt class="code docutils literal"><span c
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
-      
+      <a href="#">Back to top</a>
     </p>
     <p>
-        &copy; Copyright 2013, University of Texas at Austin Society of Physics Students and Sigma Pi Sigma.
+    <!--
+        &copy; Copyright 2013, University of Texas at Austin Society of Physics Students and Sigma Pi Sigma.-->
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </p>
   </div>
 </footer>
 
 <script type="text/javascript" charset="utf-8">
-    $(document).ready(addUserToFooter);
+    //$(document).ready(addUserToFooter);
     $(document).ready(addNavbarLoginLink);
     $(document).ready(createEditors);
-    $(document).ready(getNumUsers);
-    $(document).ready(getOnlineUsers);
+    //$(document).ready(getNumUsers);
+    //$(document).ready(getOnlineUsers);
     $(document).ready(createScratchActivecode());
     $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  $("#mainbody").children().first().css("margin-top",
+    $("#navbar").css("height"))
 </script>
 
 <script type="text/javascript">

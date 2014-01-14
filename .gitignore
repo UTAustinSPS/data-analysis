@@ -50,3 +50,8 @@ models/1.py
 /paverconfig.py
 
 /build_info
+
+*.aux
+*.log
+*.out
+*.synctex.gz

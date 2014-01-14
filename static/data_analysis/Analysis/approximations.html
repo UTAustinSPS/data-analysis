@@ -1,0 +1,539 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Approximations &mdash; Introduction to Data Analysis for Physics</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0-rc1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0-rc1/css/bootstrap-glyphicons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../../runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/js/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/js/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.js"></script>
+    <script type="text/javascript" src="../_static/builtin.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0-rc1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
+    <link rel="next" title="Error Analysis" href="error.html" />
+    <link rel="prev" title="Curve Fitting" href="curve_fit.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'data_analysis';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-fixed-top" style="z-index:9999999">
+
+  <div class="container">
+
+    <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+    <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <div>
+      <a href="../index.html">
+      <img title="Data Analysis for Physics" src="../_static/img/logo_small.png"
+       style="max-width:60px; max-height:60px;float:left"></a>
+      <a class="navbar-brand" href="../index.html">Introduction to Data Analysis for Physics</a>
+    </div>
+
+    <div class="nav-collapse collapse navbar-responsive-collapse">
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Approximations</a><ul>
+<li><a class="reference internal" href="#motivation">Motivation</a></li>
+<li><a class="reference internal" href="#taylor-expansion">Taylor Expansion</a></li>
+<li><a class="reference internal" href="#first-order-approximation">First-Order Approximation</a></li>
+<li><a class="reference internal" href="#series-expansion-in-mathematica">Series Expansion in <em>Mathematica</em></a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Curve Fitting" data-toggle="tooltip">
+    <a href="curve_fit.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+      <p style=";max-width:130px;">Curve Fitting</p>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Error Analysis' data-toggle="tooltip" >
+    <a href="error.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+      <p style=";max-width:130px;">Error Analysis</p>
+    </a>
+  </li>
+  <li style="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div id="mainbody" class="container">
+  
+  <div class="section" id="approximations">
+<h1>Approximations<a class="headerlink" href="#approximations" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
+<p>In physics, we wish we could explain, undeniably and unequivocably, why the universe
+works the way it does, but this is really not feasible. We have things like the
+Standard Model and the host of rules we learn in courses and then apply to experiments,
+but these really describe a &#8220;how&#8221; and not a &#8220;why&#8221; (as Indiana Jones
+once said, &#8220;if it&#8217;s truth you&#8217;re looking for... philosophy class is right down the hall&#8221;).
+We develop models to help characterize how things behave - a particle in a magnetic field,
+light near a black hole, planets in orbit. Often, though, we make approximations.</p>
+<p>For example, in introductory courses, we do all manner of problems on the surface
+of Earth involving the planet&#8217;s surface gravity acting on an experiment. In these
+problems, we often will do things like take the acceleration due to gravity
+to be constant, or that the objects under inspection in the lab have no gravitational
+effect on one another, or that air resistance is &#8220;negligible&#8221;, or that motion
+is non-relativistic, or that we have no friction. While a purist may cringe at these
+notions, in reality, given the right constraints, these are all reasonable. For example,
+the gravitational force between objects in a lab setting (say, 1kg balls separated by
+a meter) is many orders of magnitude (powers of ten) smaller than the gravitational
+force between the objects and the Earth (something like 10 orders of magnitude). In
+most cases, this means if we ignore that contribution, we might expect a a deviation
+in our result from what we calculate at maybe the 10th decimal place. The fact of the
+matter is, we often can&#8217;t measure things that precisely, and may not even desire to do so.
+If acceleration due to gravity is <span class="math">\(9.81\frac{m}{s^2}\)</span> rather than <span class="math">\(9.82\frac{m}{s^2}\)</span>,
+we probably won&#8217;t notice. It doesn&#8217;t change results, so we don&#8217;t mind. Even in cases where
+we might start to see differences, a simpler model may allow us to do more (taking
+more complicated integrals, etc.), even if we start getting answers that could be
+wrong by 10%. Often, we&#8217;d rather have a good approximation of reality and get an
+answer quickly (or at all) than to arrive at something we can&#8217;t calculate save
+numerical methods.</p>
+<p>We can make many physical approximations to a system for ease in understanding, but
+if we want a reliable model, we may include more information, but turn to
+mathematics to help our understanding. For a simple pendulum, we take that
+the force on a simple weight on a string is <span class="math">\(mg\sin\theta\)</span>, but then
+use the &#8220;small angle approximation&#8221; and say this is very nearly <span class="math">\(mg\theta\)</span>.
+We dig through the math, sove a differential equation (or, just know the solution)
+and arrive at the solution that <span class="math">\(\theta(t)=A\sin(\omega t),~L\omega^2=g\)</span>.
+If we hadn&#8217;t used that approximation for this fairly easy-to-describe situation,
+we end up having to use the inverse of an elliptic integral
+(the inverse of <span class="math">\(F(\phi,m)=\int_0^\phi(1-m\sin^2\theta)^{-1/2}d\theta\)</span>, given
+<span class="math">\(m\)</span>). Try it yourself or ask a computer, and you&#8217;ll find that we cannot evaluate
+the expression exactly. It&#8217;s not a matter of not being smart enough nor having the fastest
+computer - there is no analytical form. So, we rely on pre-computed tables, or having
+a computer numerically approximate the solution. This is fine, but means that
+even for a simple pendulum, we have no exact solution (and that&#8217;s in a frictionless
+vacuum!).</p>
+<p>Instead, we learn techniques for making approximations and learn when they can be applied.
+The small angle approxmimation is great and makes life easy, but is it valid when
+<span class="math">\(\theta=.1\)</span>? <span class="math">\(\theta=.5\)</span>? <span class="math">\(\theta=1.5\)</span>? And how do we decide
+what is valid and not?</p>
+<p>The short answer is, &#8220;it depends.&#8221; We often care about order of magnitude only,
+or we might want to be accurate within a factor of 2, or maybe we need
+to be correct within 10% (or less). We may select our level of approximation
+based on the instrumentation we have available. If we have 1 significant figure,
+maybe we can tolerate an order of magnitude argument in the end result - we&#8217;ll
+truncate our result to a single significant figure anyway (we cannot reasonably
+report more significant digits than our worst measurement), so maybe our mathematical
+model can tolerate simpler expressions that we can evaluate analytically to hopefully
+characterize overall trends in behavior.</p>
+</div>
+<div class="section" id="taylor-expansion">
+<h2>Taylor Expansion<a class="headerlink" href="#taylor-expansion" title="Permalink to this headline">¶</a></h2>
+<p>One of the most powerful tools we have as physicists is the Taylor series expansion.
+First, we&#8217;ll address the theory and where such an expansion is valid, then talk
+about some applications.</p>
+<p>Assume we have a function <span class="math">\(f(x)\)</span> that has infinite continuous derivatives near a point
+<span class="math">\(x=x_0\)</span>, where <span class="math">\(x_0-\delta_-&lt;x&lt;x_0+\delta_+\)</span> bounds the region where the function
+has infinite continuous derivatives (in many cases, this region is all of the real numbers).
+Then, for <span class="math">\(x\in(x_0-\delta_-,~x_0+\delta_+)\)</span></p>
+<div class="math">
+\[\begin{split}f(x)&amp;=\sum_{i=0}^n\left(\frac{(x-x_0)^i}{i!}\frac{d^if(x)}{dx^i}\middle|_{x=x_0}\right)
++R_{n+1}(x)\\
+R_{n+1}(x)&amp;=\frac{(x-x_0)^{n+1}}{(n+1)!}\frac{d^{n+1}f(x)}{dx^{n+1}}|_{x=c}\end{split}\]</div>
+<p>for some <span class="math">\(c\)</span> between <span class="math">\(x\)</span> and <span class="math">\(x_0\)</span> (note that if <span class="math">\(f(x)\)</span> has
+<span class="math">\(n+1\)</span> continuous derivatives, this still holds, but the choice of <span class="math">\(c\)</span> is
+not necessarily clear). If we take the limit as <span class="math">\(n\rightarrow\infty\)</span>, we
+arrive at the familiar infinite Taylor series:</p>
+<div class="math">
+\[f(x)=\sum_{i=0}^\infty\left(\frac{(x-x_0)^i}{i!}\frac{d^if(x)}{dx^i}\middle|_{x=x_0}\right)=
+f(x_0)+(x-x_0)f'(x_0)+(x-x_0)^2\frac{f''(x_0)}{2!}+\cdots\]</div>
+<p>While this formulation of <span class="math">\(f(x)\)</span> is useful for many reasons, one that is most useful
+is our ability to truncate to just the first few terms of the summation, noting that
+we introduce error on the order of <span class="math">\(R_{n+1}(x)\)</span>, which for values near <span class="math">\(x=x_0\)</span>
+can be extremely small. So, we can use an approximated version of <span class="math">\(f(x)\)</span> to learn
+about the behavior of the function, often avoiding impossible integrals or other
+mathematical hurdles.</p>
+</div>
+<div class="section" id="first-order-approximation">
+<h2>First-Order Approximation<a class="headerlink" href="#first-order-approximation" title="Permalink to this headline">¶</a></h2>
+<p>&#8220;First-order approximation&#8221; is a phrase ubiquitous to physics. Problems are often
+solved &#8220;to first order&#8221; or results approximated to first order. But what does it mean?
+Well, it&#8217;s quite simple. A &#8220;first-order approximation&#8221; is simply shorthand for
+a &#8220;first-order Taylor polynomial approximation&#8221;. Using the Taylor expansion
+of a relevant function, we let <span class="math">\(f(x)=f(x_0)+(x-x_0)f'(x_0)\)</span>, often considering
+the case where <span class="math">\(x_0=0\)</span>. Some examples follow (some taken to second-order
+when degree 1 has coefficient 0).</p>
+<table border="1" class="docutils">
+<caption>Table 1: Useful Taylor Polynomial Approximations</caption>
+<colgroup>
+<col width="41%" />
+<col width="48%" />
+<col width="11%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Approximation</th>
+<th class="head"><span class="math">\(x_0\)</span></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><span class="math">\((1\pm x)^n\)</span></td>
+<td><span class="math">\(1\pm{nx}\)</span></td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\sin{x}\)</span></td>
+<td><span class="math">\(x\)</span></td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td><span class="math">\(\cos{x}\)</span></td>
+<td><span class="math">\(1-\frac{x^2}{2}\)</span></td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(e^{kx}\)</span></td>
+<td><span class="math">\(1+kx\)</span></td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td><span class="math">\(\ln{x}\)</span></td>
+<td><span class="math">\(-1+x\)</span></td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\ln(1-x)\)</span></td>
+<td><span class="math">\(-x\)</span></td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td><span class="math">\(x^x\)</span></td>
+<td><span class="math">\(1+x\ln{x}\)</span></td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\Gamma(x)\)</span> (Gamma function)</td>
+<td><span class="math">\(1-\gamma(x-1);~\gamma=0.5772157...\)</span></td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td><span class="math">\(\zeta(x)\)</span> (Riemann-zeta function)</td>
+<td><span class="math">\(-\frac{1}{2}\left(1 + \ln(2\pi)x\right)\)</span></td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\textrm{erf}(x)\)</span> (Error function)</td>
+<td><span class="math">\(\frac{2x}{\sqrt{\pi}}\)</span></td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>For an example of how good these approximations are, we can numerically solve
+for when the function and the approximation differ by more than 10%:</p>
+<table border="1" class="docutils">
+<caption>Table 2: Calculation of 10% Error for <span class="math">\({\Large\frac{f_\approx(x)-f(x)}{f(x)}}=0.1,~x=x_0+\Delta{x}\)</span></caption>
+<colgroup>
+<col width="29%" />
+<col width="14%" />
+<col width="32%" />
+<col width="24%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><span class="math">\(f(x)\)</span></th>
+<th class="head"><span class="math">\(x_0\)</span></th>
+<th class="head"><span class="math">\(f_\approx(x)\)</span></th>
+<th class="head"><span class="math">\(|\Delta{x}|\)</span></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><span class="math">\(\sin{x}\)</span></td>
+<td>0</td>
+<td><span class="math">\(x\)</span></td>
+<td><span class="math">\(0.749\)</span></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\sin{x}\)</span></td>
+<td>0</td>
+<td><span class="math">\(x-x^3/6\)</span></td>
+<td><span class="math">\(1.664\)</span></td>
+</tr>
+<tr class="row-even"><td><span class="math">\(\cos{x}\)</span></td>
+<td>0</td>
+<td><span class="math">\(1-x^2/2\)</span></td>
+<td><span class="math">\(1.053\)</span></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\((1+x)^2\)</span></td>
+<td>0</td>
+<td><span class="math">\(1+2x\)</span></td>
+<td><span class="math">\(0.462\)</span></td>
+</tr>
+<tr class="row-even"><td><span class="math">\((1+x)^3\)</span></td>
+<td>0</td>
+<td><span class="math">\(1+3x\)</span></td>
+<td><span class="math">\(0.243\)</span></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\((1+x)^4\)</span></td>
+<td>0</td>
+<td><span class="math">\(1+4x\)</span></td>
+<td><span class="math">\(0.166\)</span></td>
+</tr>
+<tr class="row-even"><td><span class="math">\((1+x)^{-1}\)</span></td>
+<td>0</td>
+<td><span class="math">\(1-x\)</span></td>
+<td><span class="math">\(0.316\)</span></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\((1+x)^{-2}\)</span></td>
+<td>0</td>
+<td><span class="math">\(1-2x\)</span></td>
+<td><span class="math">\(0.173\)</span></td>
+</tr>
+<tr class="row-even"><td><span class="math">\((1+x)^{-3}\)</span></td>
+<td>0</td>
+<td><span class="math">\(1-3x\)</span></td>
+<td><span class="math">\(0.120\)</span></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\ln{x}\)</span></td>
+<td>1</td>
+<td><span class="math">\(-1+x\)</span></td>
+<td><span class="math">\(0.193\)</span></td>
+</tr>
+<tr class="row-even"><td><span class="math">\(\ln{1-x}\)</span></td>
+<td>0</td>
+<td><span class="math">\(-x\)</span></td>
+<td><span class="math">\(0.206\)</span></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(x^x\)</span></td>
+<td>0</td>
+<td><span class="math">\(1+x\ln{x}\)</span></td>
+<td><span class="math">\(1.445\)</span></td>
+</tr>
+<tr class="row-even"><td><span class="math">\(\Gamma(x)\)</span></td>
+<td>1</td>
+<td><span class="math">\(1-\gamma(x-1)\)</span></td>
+<td><span class="math">\(0.342\)</span></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\textrm{erf}(x)\)</span></td>
+<td>0</td>
+<td><span class="math">\(2x/\sqrt{\pi}\)</span></td>
+<td><span class="math">\(0.545\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="series-expansion-in-mathematica">
+<h2>Series Expansion in <em>Mathematica</em><a class="headerlink" href="#series-expansion-in-mathematica" title="Permalink to this headline">¶</a></h2>
+<p><em>Mathematica</em> has a function <tt class="code docutils literal"><span class="pre">Series</span></tt> which will produce a series expansion
+of a given order around a point. For example,</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Series</span><span class="p">[</span><span class="n">Cos</span><span class="p">[</span><span class="n">x</span><span class="p">],{</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">}]</span>
+</pre></div>
+</div>
+<p>creates a second-order expansion of <span class="math">\(\cos(x)\)</span> around <span class="math">\(x=0\)</span> as
+<span class="math">\(1-\frac{x^2}{2}+O[x]^3\)</span>, with the last term indicating that terms of order
+3 or higher have been omitted. To use this function, we need one extra step (to take
+away that &#8220;omission&#8221; term), which is to wrap the series in a <tt class="code docutils literal"><span class="pre">Normal</span></tt>, which turns it
+into a normal polynomial:</p>
+<div class="highlight-python"><pre>fn[x_] := Module[{y}, Normal[Series[Cos[y], {y, 0, 2}]] /. {y -&gt; x}]</pre>
+</div>
+<p>Here, <tt class="code docutils literal"><span class="pre">fn</span></tt> first creates a module so we have <tt class="code docutils literal"><span class="pre">y</span></tt> as a symbolic
+expression to use, then does the series expansion in terms of <tt class="code docutils literal"><span class="pre">y</span></tt>, drops
+the higher order terms with <tt class="code docutils literal"><span class="pre">Normal</span></tt>, then replaces <tt class="code docutils literal"><span class="pre">y</span></tt> by the
+value of <tt class="code docutils literal"><span class="pre">x</span></tt> given to the function (which could be symbolic):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Clear</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+<span class="n">fn</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+<span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="n">fn</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+<span class="n">fn</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>outputs</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span>
+<span class="mi">1</span>
+<span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+    </p>
+    <p>
+    <!--
+        &copy; Copyright 2013, University of Texas at Austin Society of Physics Students and Sigma Pi Sigma.-->
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    //$(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    //$(document).ready(getNumUsers);
+    //$(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  $("#mainbody").children().first().css("margin-top",
+    $("#navbar").css("height"))
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-small btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-small btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-small btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-small btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

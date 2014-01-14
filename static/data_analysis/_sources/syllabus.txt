@@ -8,10 +8,16 @@ Student Facilitator: Evan Ott
 
 Student Facilitator Email: `evan.ott@utexas.edu <mailto:evan.ott@utexas.edu>`_
 
+Office Hours: TBA
+
 
 Faculty Supervisor: Dr. Greg Sitz
 
 Faculty Supervisor Email: `gositz@physics.utexas.edu <mailto:gositz@physics.utexas.edu>`_
+
+Office Hours: TBA
+
+`Class Homepage and Textbook <http://www.cs.utexas.edu/~evanott/PHY110C_Textbook/static/data_analysis/index.html>`_
 
 Course Description
 ------------------
@@ -30,7 +36,7 @@ By the end of this course, you will be able to:
 1. Use *Mathematica* to analyze scietific data and create graphical representations of that data
 
 2. Use :math:`\LaTeX` to construct scientific documents including images, tables, and hyperlinks,
-completing assignments under different constraints to familiarize yourself with the language
+   completing assignments under different constraints to familiarize yourself with the language
 
 3. Combine the skills listed above in a final project
 
@@ -40,8 +46,8 @@ This course will largely follow the 'flipped-classroom' model, involving reading
 assignments to be completed outside of class in an effort to make class-time as interactive and
 helpful as possible. Each week, students will complete a reading assignment from an online
 textbook created for this course by the Evan Ott and Will Beason and edited by the Society of Physics
-Students. This textbook will largely
-be technical in nature, presenting new features of :math:`\LaTeX` and *Mathematica* each week. Students will
+Students (see the link above). This textbook is largely
+technical in nature, presenting new features of :math:`\LaTeX` and *Mathematica* each week. Students will
 read the sections of the textbook before class, then begin a programming assignment that will be
 due the following week over that material. First-drafts of the programming assignments will be
 due the day before class.
@@ -49,9 +55,9 @@ due the day before class.
 During class, students will first present solutions to the assignment they completed for that week
 and discuss the merits and failings of particular methodologies used, in a variant of the Moore
 model of teaching. Particularly toward the end of the semester, students will engage in a debate over
-technologies employed in solutions (is a 3D graph with one axis of time more relatable than a 2D
-animated graph? are in-line equations better for space or too difficult to read? is using built-in
-distribution functions more enlightening than re-writing them in a more convenient way?).
+technologies employed in solutions (is a 3D graph with one axis of time more relatable than multiple 2D
+graphs? are in-line equations better for space or too difficult to read? is using built-in
+distribution functions more enlightening than re-writing them in a more convenient form?).
 
 The student facilitator will then review topics that proved most challenging for students based on
 the first-drafts submitted the previous day and help with troubleshooting errors. Then, each week,
@@ -93,7 +99,7 @@ and help with programming errors is perfectly acceptable and encouraged.
 	Solution Presentation and Discussion: 26 pts
 	*There will be no final exam for this course*
 
-Weekly assignments are due the day before class. Students are encouraged to complete as much of
+Weekly assignments are due the day before class at 5pm. Students are encouraged to complete as much of
 the assignment as possible by this time so that class-time can be used to discuss solutions and
 technical problems. No penalty will be imposed on late assignments, and assignments may be
 resubmitted with no penalty until the final class day. Grades for these assignments will be
@@ -143,29 +149,27 @@ it should serve as a guide to the topics to be discussed through the semester.
 
 Example Class Agenda - Week 4
 -----------------------------
-1. Students are to have read textbook information on '*Mathematica*: Reading in data, simple
-analysis' before coming to class
 
-2. Rough drafts of '*Mathematica*: Simple programs' assignment solutions due the day before class
-
-3. 1-2 Students present solutions to '*Mathematica*: Simple programs' homework (10-15 min)
-
-	a. Class discusses extent to which solutions address the tasks from the assignment
-	b. Class discusses relative merits of technologies presenters employed versus other potential 	solutions
-
-4. Student facilitator leads discussion of '*Mathematica*: Simple programs' solutions in terms of
-identified issues (10 min)
-
-5. Student facilitator presents over '*Mathematica*: Reading in data, simple analysis'
-material (10-15 min)
-	
-	a. Presenter(s), class, and student facilitator help address questions from classmates
-
-6. Student facilitator distributes homework assignment over '*Mathematica*: Reading in data,
-simple analysis' and answers questions about it. Student facilitator assigns the
-'*Mathematica*: More advanced data analysis' reading (5 min)
-
-7. *If time permits*, students begin work on next week's assignment, working collaboratively (5-15 min)
+1. Students are to have read textbook information on '*Mathematica*:
+   Reading in data, simple analysis' before coming to class
+2. Rough drafts of "*Mathematica*: Simple programs' assignment solutions due the day before class
+3. 1-2 Students present solutions to '*Mathematica*: Simple programs'
+   homework (10-15 min)
+	a. Class discusses extent to which solutions address the tasks
+	   from the assignment
+	b. Class discusses relative merits of technologies presenters 
+	   employed versus other potential solutions
+4. Student facilitator leads discussion of '*Mathematica*: Simple programs'
+   solutions in terms of identified issues (10 min)
+5. Student facilitator presents over '*Mathematica*: Reading in data,
+   simple analysis' material (10-15 min)
+	a. Presenter(s), class, and student facilitator help address
+	   questions from classmates
+6. Student facilitator distributes homework assignment over '*Mathematica*:
+   Reading in data, simple analysis' and answers questions about it. 
+   Student facilitator assigns the '*Mathematica*: More advanced data analysis' reading (5 min)
+7. *If time permits*, students begin work on next week's assignment, 
+   working collaboratively (5-15 min)
 
 Students with Disabilities
 --------------------------

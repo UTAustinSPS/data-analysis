@@ -1,0 +1,735 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Mathematical Logic &mdash; Introduction to Data Analysis for Physics</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0-rc1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0-rc1/css/bootstrap-glyphicons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../../runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/js/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/js/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.js"></script>
+    <script type="text/javascript" src="../_static/builtin.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0-rc1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
+    <link rel="next" title="Miscellaneous Math" href="misc.html" />
+    <link rel="prev" title="Eigenvalue Problems" href="eigenvalues.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'data_analysis';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-fixed-top" style="z-index:9999999">
+
+  <div class="container">
+
+    <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+    <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <div>
+      <a href="../index.html">
+      <img title="Data Analysis for Physics" src="../_static/img/logo_small.png"
+       style="max-width:60px; max-height:60px;float:left"></a>
+      <a class="navbar-brand" href="../index.html">Introduction to Data Analysis for Physics</a>
+    </div>
+
+    <div class="nav-collapse collapse navbar-responsive-collapse">
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Mathematical Logic</a><ul>
+<li><a class="reference internal" href="#boolean-algebra">Boolean Algebra</a></li>
+<li><a class="reference internal" href="#adding-predicates">Adding Predicates</a></li>
+<li><a class="reference internal" href="#adding-numbers">Adding Numbers</a></li>
+<li><a class="reference internal" href="#quantifiers-domains-and-bound-variables">Quantifiers, Domains, and Bound Variables</a></li>
+<li><a class="reference internal" href="#properties-of-relations">Properties of Relations</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Eigenvalue Problems" data-toggle="tooltip">
+    <a href="eigenvalues.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+      <p style=";max-width:130px;">Eigenvalue Problems</p>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Miscellaneous Math' data-toggle="tooltip" >
+    <a href="misc.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+      <p style=";max-width:130px;">Miscellaneous Math</p>
+    </a>
+  </li>
+  <li style="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div id="mainbody" class="container">
+  
+  <div class="section" id="mathematical-logic">
+<h1>Mathematical Logic<a class="headerlink" href="#mathematical-logic" title="Permalink to this headline">¶</a></h1>
+<p>While not part of this course, sometimes we find it useful for optimization&#8217;s sake, to
+apply conditions to functions (particularly for something like the <tt class="code docutils literal"><span class="pre">RegionPlot</span></tt>,
+or for evaluating complicated functions like integrals). While logic can be broken into
+many sub-fields, each rich with history and modern research, we&#8217;ll focus on a small
+subset that&#8217;s relevant here, with a less-formal introduction than one might
+find in a discrete mathematics, number theory, or set theory textbook.</p>
+<div class="section" id="boolean-algebra">
+<h2>Boolean Algebra<a class="headerlink" href="#boolean-algebra" title="Permalink to this headline">¶</a></h2>
+<p>Some of the useful constructs are those found in Boolean algebra. In Boolean algebra,
+we have values true (denoted <span class="math">\(\top\)</span>) and false (denoted <span class="math">\(\perp\)</span>). These
+comprise the entire domain, but we can create functions on these nevertheless.
+To describe them, we&#8217;ll often use a &#8220;truth table&#8221; which essentially shows the
+rules for how the functions behave based on the values of the arguments.</p>
+<p>For example, let&#8217;s look at conjunction (otherwise known as &#8220;and&#8221;, and denoted <span class="math">\(\wedge\)</span>):</p>
+<table border="1" class="docutils">
+<caption>Truth Table for Conjunction</caption>
+<colgroup>
+<col width="30%" />
+<col width="30%" />
+<col width="41%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><span class="math">\(A\)</span></th>
+<th class="head"><span class="math">\(B\)</span></th>
+<th class="head"><span class="math">\(A\wedge{B}\)</span></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+</tr>
+<tr class="row-even"><td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Thus, <span class="math">\(A\wedge{B}\)</span> is only true when both <span class="math">\(A\)</span> and <span class="math">\(B\)</span> are true, and false
+otherwise. We also have disjunction (known as &#8220;or&#8221;, denoted <span class="math">\(\vee\)</span>), implication
+(denoted <span class="math">\(\rightarrow\)</span>, generally stated in English as <span class="math">\(A\rightarrow{B}\)</span> meaning
+&#8220;if A is true, then B is true&#8221;), negation (known as &#8220;not&#8221;, denoted <span class="math">\(\neg\)</span>), and
+biconditional (known as &#8220;equality&#8221;, denoted <span class="math">\(\leftrightarrow\)</span> or <span class="math">\(=\)</span> or
+<span class="math">\(\equiv\)</span>):</p>
+<table border="1" class="docutils">
+<caption>Truth Table for Other Functions</caption>
+<colgroup>
+<col width="12%" />
+<col width="12%" />
+<col width="17%" />
+<col width="21%" />
+<col width="14%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><span class="math">\(A\)</span></th>
+<th class="head"><span class="math">\(B\)</span></th>
+<th class="head"><span class="math">\(A\vee{B}\)</span></th>
+<th class="head"><span class="math">\(A\rightarrow{B}\)</span></th>
+<th class="head"><span class="math">\(\neg{A}\)</span></th>
+<th class="head"><span class="math">\(A\leftrightarrow{B}\)</span></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+</tr>
+<tr class="row-even"><td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>We can, of course, combine these functions. They do have an order of operations, with
+negation evaluated first, then conjunction and disjunction (at the same time), then
+implication and equality. As in more familiar algebraic rules, we can employ parentheses
+to group operations so that they are evaluated in the order we desire. For example:</p>
+<table border="1" class="docutils">
+<caption>Example Truth Table Calculation</caption>
+<colgroup>
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="13%" />
+<col width="20%" />
+<col width="34%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><span class="math">\(A\)</span></th>
+<th class="head"><span class="math">\(B\)</span></th>
+<th class="head"><span class="math">\(C\)</span></th>
+<th class="head"><span class="math">\(A\vee{B}\)</span></th>
+<th class="head"><span class="math">\((A\vee{B})\vee{C}\)</span></th>
+<th class="head"><span class="math">\(\neg\left((A\vee{B})\vee{C}\right)\)</span></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+</tr>
+<tr class="row-even"><td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+</tr>
+<tr class="row-even"><td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+</tr>
+<tr class="row-even"><td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>One way to create functions as seen above is to use what is known as disjunctive normal
+form. We use many terms of conjunctions (possibly negating individual variables) that are
+then &#8220;or&#8221;ed together. For example, <span class="math">\(A\vee (B\wedge\neg{C})\vee\neg{B}\)</span>. For any function,
+we can easily create a DNF function that has the same behavior:</p>
+<ol class="arabic simple">
+<li>Create a truth table for the function.</li>
+<li>For each row that evaluates to true, create a term that is the conjunction
+of all the variables (if true in that row, add the non-negated version;
+if false, add the negated version).</li>
+<li>Create the disjunction of all the terms.</li>
+</ol>
+<p>Using the process above, we can, for example create a function for truth table</p>
+<table border="1" class="docutils">
+<caption>Unknown Function</caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="35%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><span class="math">\(A\)</span></th>
+<th class="head"><span class="math">\(B\)</span></th>
+<th class="head"><span class="math">\(f(A,B)\)</span></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+</tr>
+<tr class="row-even"><td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Thus, <span class="math">\(f(A,B)=(A\wedge{B})\vee(A\wedge\neg{B})\)</span>.</p>
+<p>We can simplify expressions using a few rules (some of which could be derived from
+others, but presented for ease of evaluation)</p>
+<ol class="arabic simple">
+<li><span class="math">\(A\wedge\neg{A}=\perp\)</span></li>
+<li><span class="math">\(A\vee\neg{A}=\top\)</span></li>
+<li><span class="math">\(A\wedge(B\vee{C})=(A\wedge{B})\vee(A\wedge{C})\)</span></li>
+<li><span class="math">\(A\vee(B\wedge{C})=(A\vee{B})\wedge(A\vee{C})\)</span></li>
+<li><span class="math">\(A\vee{B}\vee{C}=(A\vee{B})\vee{C}=A\vee(B\vee{C})\)</span></li>
+<li><span class="math">\(A\wedge{B}\wedge{C}=(A\wedge{B})\wedge{C}=A\wedge(B\wedge{C})\)</span></li>
+<li><span class="math">\(A\vee{B}=B\vee{A}\)</span></li>
+<li><span class="math">\(A\wedge{B}=B\wedge{A}\)</span></li>
+<li><span class="math">\(A\vee\top=\top\)</span></li>
+<li><span class="math">\(A\wedge\top=A\)</span></li>
+<li><span class="math">\(A\vee\perp=A\)</span></li>
+<li><span class="math">\(A\wedge\perp=\perp\)</span></li>
+<li><span class="math">\(A\rightarrow{B}=B\vee\neg{A}\)</span></li>
+<li><span class="math">\((A\leftrightarrow{B})=(A\wedge{B})\vee(\neg{A}\wedge\neg{B})\)</span></li>
+<li><span class="math">\(\neg(A\wedge{B})=\neg{A}\vee\neg{B}\)</span></li>
+<li><span class="math">\(\neg(A\vee{B})=\neg{A}\wedge\neg{B}\)</span></li>
+<li><span class="math">\(\neg(\neg{A})=A\)</span></li>
+</ol>
+<p>Thus, our function is</p>
+<div class="math">
+\[\begin{split}f(A,B)&amp;=(A\wedge{B})\vee(A\wedge\neg{B})\\
+&amp;=A\wedge(B\vee\neg{B})~~~~{\small{\textrm{(rule 3)}}}\\
+&amp;=A\wedge\top~~~~{\small{\textrm{(rule 2)}}}\\
+&amp;=A~~~~{\small{\textrm{(rule 10)}}}\end{split}\]</div>
+<div class="admonition-practice-problem-creating-boolean-expressions admonition">
+<p class="first admonition-title">Practice Problem: Creating Boolean Expressions</p>
+<p>Find a combination of the functions above that produces the following truth table:</p>
+<table border="1" class="docutils">
+<caption>Problem</caption>
+<colgroup>
+<col width="24%" />
+<col width="24%" />
+<col width="24%" />
+<col width="29%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><span class="math">\(A\)</span></th>
+<th class="head"><span class="math">\(B\)</span></th>
+<th class="head"><span class="math">\(C\)</span></th>
+<th class="head"><span class="math">\(f(A,B,C)\)</span></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+</tr>
+<tr class="row-even"><td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+</tr>
+<tr class="row-even"><td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+</tr>
+<tr class="row-even"><td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\top\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+<td><span class="math">\(\perp\)</span></td>
+</tr>
+</tbody>
+</table>
+<p class="last">Hint: We can easily craft a DNF solution then simplify it, especially including
+rules for things like implication or biconditional.</p>
+</div>
+</div>
+<div class="section" id="adding-predicates">
+<h2>Adding Predicates<a class="headerlink" href="#adding-predicates" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have the rules for evaluating the truth of a logical statement, we might
+find it more useful to delve to the other side of the problem - how do we create
+the variables used in a Boolean expression as used above? We can create predicates,
+that is, functions that take some arbitrary value and return true or false. For example,
+we could have a function <span class="math">\(Sunny(d)\)</span> which is true if <span class="math">\(d\)</span> is a day and the weather
+was sunny on that day. We don&#8217;t necessarily care how such a function is implimented
+(maybe it sends a survey and waits for replies, maybe it uses the National Weather
+Service, maybe it just guesses), but we can start learning more complicated things, by
+adding predicate-based rules.</p>
+<p>For example, if we have our <span class="math">\(Sunny(d)\)</span> predicate, another predicate named
+<span class="math">\(Hot(d)\)</span> which is true iff (read &#8220;if and only if&#8221;) <span class="math">\(d\)</span> is a day
+and it was hot that day, a further predicate <span class="math">\(Hat(d)\)</span> that is true
+iff people should wear a hat on day <span class="math">\(d\)</span>, we can add a rule:</p>
+<div class="math">
+\[Sunny(d)\wedge{Hot(d)}\rightarrow{Hat(d)}\]</div>
+<p>which says that if it is sunny and hot, then people should wear hats. Note: by the
+way we have defined impliation, this does not mean the converse (if people
+should wear hats, it is sunny and hot). This may not seem profound, but if we could
+contact the weather service any time we wanted, but had no idea when to wear a hat,
+we would now be able to protect ourselves from the sun better. In practice, when we have
+rules that are true for reasons outside of the ones for Boolean expressions listed above
+(like for the hat example, we knew we should wear one when it is sunny and hot to
+protect ourselves from the sun), we can add these rules and start &#8220;learning&#8221; things by
+creating new theorems that are useful.</p>
+</div>
+<div class="section" id="adding-numbers">
+<h2>Adding Numbers<a class="headerlink" href="#adding-numbers" title="Permalink to this headline">¶</a></h2>
+<p>For us, the most useful application for predicates is working with numbers. We have many
+relations defined for numbers: <span class="math">\(&lt;\)</span>, <span class="math">\(&gt;\)</span>, <span class="math">\(\leq\)</span>, <span class="math">\(\geq\)</span>,
+and <span class="math">\(=\)</span> which take in two numbers and return true or false;
+<span class="math">\(+\)</span>, <span class="math">\(-\)</span>, <span class="math">\(*\)</span>, <span class="math">\(/\)</span>, <span class="math">\(^\wedge\)</span>, <span class="math">\(\%\)</span> and many
+more that take in numbers and produce other numbers. So, we might
+have a predicate <span class="math">\(P(x,y)=(x\leq{y})\vee(x*y&lt;0)\)</span>.</p>
+</div>
+<div class="section" id="quantifiers-domains-and-bound-variables">
+<h2>Quantifiers, Domains, and Bound Variables<a class="headerlink" href="#quantifiers-domains-and-bound-variables" title="Permalink to this headline">¶</a></h2>
+<p>Before we can talk about properties of relations (helpful for proving things), we must
+introduce the concept of quantifiers. There are exactly two of them, and they are fairly
+straightforward.</p>
+<p><span class="math">\(\forall\)</span> is the &#8220;universal quantifier&#8221; that means &#8220;for all&#8221;. So, we might have
+a statement <span class="math">\(\forall{x}:(x&lt;0)\vee(x\geq0)\)</span>. That means, for all <span class="math">\(x\)</span> in the
+domain we are working with (the real numbers, natural numbers, rational numbers, etc.),
+<span class="math">\(x\)</span> is either less than zero or greater or equal to zero (which tells us
+nothing about the value of <span class="math">\(x\)</span>, but is a true statement).</p>
+<p><span class="math">\(\exists\)</span> is the &#8220;existential quantifier&#8221; that means &#8220;there exists&#8221;. Here, we might
+have a statement <span class="math">\(\exists{x}:x^2=25\)</span>. That means that there exists an <span class="math">\(x\)</span>
+in the domain that, when squared, equals 25. Note that both <span class="math">\(x=5\)</span> and <span class="math">\(x=-5\)</span>
+satisfy this (depending on whether we allow negative numbers). The existence quantifier
+just cares that there is at least one case in which the expression is true.</p>
+<p>Instead of assuming a domain based on the problem at hand, we can specify it exactly
+using <span class="math">\(\in\)</span>. <span class="math">\(\in\)</span> is true iff the argument on the left-hand side is
+a an element of the set given as the argument on the right-hand side.
+Some sets that are useful are:</p>
+<ul class="simple">
+<li><span class="math">\(\mathbb{N}\)</span>, the natural numbers. These are the numbers starting at 0
+or 1 (depending on whether you&#8217;re a physicists, mathematician, or computer scientist),
+that are generated by the successor relation <span class="math">\({\textrm{succ}}(n)=n+1\)</span>. So,
+<span class="math">\(\mathbb{N}=\{0,1,2,...\}\)</span>. Note, that the natural numbers do not include
+an &#8220;infinity&#8221; (<span class="math">\(\infty\)</span>): <span class="math">\(\infty\)</span> must satisfy
+<span class="math">\(\forall{x\in\mathbb{N}}:x\leq\infty\)</span>, stating that <span class="math">\(\infty\)</span> must be the
+largest of the natural numbers. But, with our successor relation, we just add 1, and
+make a bigger one. Thus, each natural number must be finite.</li>
+<li><span class="math">\(\mathbb{Z}\)</span>, the integers. These are the numbers created by extending the natural
+numbers to the negatives (many ways to generate them). So,
+<span class="math">\(\mathbb{Z}=\{..., -2, -1, 0, 1, 2, ...\}\)</span>, similarly not including positive or
+negative infinity.</li>
+<li><span class="math">\(\mathbb{Q}\)</span>, the rational numbers. These are the numbers of the form
+<span class="math">\(\frac{p}{q}\)</span> where <span class="math">\(p\in\mathbb{Z}\)</span> and <span class="math">\(q\in(\mathbb{Z}\backslash\{0\})\)</span>
+(meaning <span class="math">\(q\)</span> is any integer except 0).</li>
+<li><span class="math">\(\mathbb{R}\)</span>, the real numbers. These are any number along the continuous number line.
+So along with any rational number, we include numbers that cannot be expressed as fractions
+such as <span class="math">\(\pi\)</span>, <span class="math">\(\sqrt{2}\)</span>, or <span class="math">\(e\)</span>. For physics, this is usually the
+domain we are interested in, as physical quantities are generally taken to be
+continuous (not always the case, of course).</li>
+</ul>
+<p>We can also employ the idea of a range of values such as <span class="math">\([0,1)\)</span> which is the set of
+all numbers between 0 and 1 along the number line (real numbers), including 0 but excluding 1.
+So, we might have a statement such as</p>
+<div class="math">
+\[\forall{x\in\mathbb{N}}~\forall{y\in\mathbb{R}}~\exists{z\in\mathbb{R}}:x+y=z\]</div>
+<p>which just says that if we take any natural number <span class="math">\(x\)</span> and any real number <span class="math">\(y\)</span>
+and add them, we get another real number <span class="math">\(z\)</span>.</p>
+<p>In these formulae, we have the consideration of scope, much as we have seen in
+<em>Mathematica</em> with local variables in a <tt class="code docutils literal"><span class="pre">Module</span></tt> (see
+<a class="reference external" href="../Mathematica/structure.html#Modules">Modules</a>). When we introduce a variable
+using a quantifier, that defines where it is &#8220;bound&#8221; in that if we say
+<span class="math">\(\forall{x\in[0,1)}:P(x,y)\)</span>, <span class="math">\(x\)</span> is bound to the statement, and is
+given to be in the range <span class="math">\([0,1]\)</span>. <span class="math">\(y\)</span>, however, is &#8220;free&#8221;, in that we
+have placed no restriction on it in this statement, meaning that the statement is
+dependent upon the value given to <span class="math">\(y\)</span>.</p>
+</div>
+<div class="section" id="properties-of-relations">
+<h2>Properties of Relations<a class="headerlink" href="#properties-of-relations" title="Permalink to this headline">¶</a></h2>
+<p>We can talk about properties for the binary relations above (such as <span class="math">\(&lt;\)</span>) using the
+language we&#8217;ve built up. Let <span class="math">\(R\)</span> be a binary relation that produces a truth value
+and let <span class="math">\(xRy\)</span> represent applying the function to arguments <span class="math">\(x\)</span> and <span class="math">\(y\)</span>
+(think if <span class="math">\(R\)</span> is <span class="math">\(&lt;\)</span>, then we&#8217;d say <span class="math">\(x&lt;y\)</span>).</p>
+<ul class="simple">
+<li>Reflexivity: <span class="math">\(\forall{x}:xRx\)</span>. For example, <span class="math">\(=\)</span> since <span class="math">\(x=x\)</span> is
+trivially true for any <span class="math">\(x\)</span>. But, <span class="math">\(xRy\equiv (x^2&gt;y)\)</span> is not reflexive over the
+real numbers, since for <span class="math">\(0&lt;x&lt;1,~x^2&lt;x\)</span>.</li>
+<li>Symmetry: <span class="math">\(\forall{x}\forall{y}:(xRy\rightarrow{yRx})\)</span>. For example,
+<span class="math">\(xRy\equiv (x&lt;5)\wedge (y&lt;5)\)</span> is symmetric (if we swap the arguments when both
+are less than 5, we still get <span class="math">\(\top\)</span>), but <span class="math">\(xRy\equiv x&lt;y\)</span> is not symmetric,
+since <span class="math">\(2&lt;5\)</span> is true, but <span class="math">\(5&lt;2\)</span> is false.</li>
+<li>Asymmetry: <span class="math">\(\forall{x}\forall{y}:(xRy\rightarrow\neg{yRx})\)</span>. For example,
+<span class="math">\(xRy\equiv{x&lt;y}\)</span> is asymmetric (when we have <span class="math">\(x&lt;y\)</span>, we know if we
+swap the arguments, we get the opposite result - and we have no trouble
+with <span class="math">\(xRx\)</span> since it is always false). But, <span class="math">\(xRy\equiv{x=y}\)</span> is not asymmetric
+since if we swap arguments, we get the same result as before.</li>
+<li>Antisymmetry: <span class="math">\(\forall{x}\forall{y}:(xRy\wedge yRx)\rightarrow x=y\)</span>. For example,
+<span class="math">\(xRy\equiv{x\leq{y}}\)</span> is antisymmetric since if
+both <span class="math">\(x\leq{y}\)</span> and <span class="math">\(y\leq{x}\)</span>, <span class="math">\(x\)</span> and <span class="math">\(y\)</span> must be the same.
+But, <span class="math">\(xRy\equiv (x&lt;5)\wedge (y&lt;5)\)</span> is not antisymmetric since we have
+<span class="math">\({\small{2}}R\small{4}\)</span> and <span class="math">\({\small{4}}R\small{2}\)</span>, but <span class="math">\(2\ne4\)</span>.</li>
+<li>Transitivity: <span class="math">\(\forall{x}\forall{y}\forall{z}:(xRy\wedge yRz)\rightarrow xRz\)</span>.
+For example, <span class="math">\(xRy\equiv(x&lt;y)\)</span> is transitive since if <span class="math">\(x&lt;y\)</span> and <span class="math">\(y&lt;z\)</span> it must
+be true that <span class="math">\(x&lt;z\)</span>. But, <span class="math">\(xRy\equiv(\gcd(x,y)=1)\)</span> is not (
+<span class="math">\(\gcd(2,3)=1,~\gcd(3,10)=1\)</span> but <span class="math">\(\gcd(2,10)=2\)</span>).</li>
+<li>Totality: <span class="math">\(\forall{x}\forall{y}:(xRy\vee{yRx})\)</span>. For example, <span class="math">\(xRy\equiv(x\leq{y})\)</span>
+is total since we are essentially saying that
+<span class="math">\(x&lt;y\)</span> or <span class="math">\(y&lt;x\)</span> or <span class="math">\(y=x\)</span> which is certainly the case for
+the real numbers. But, <span class="math">\(xRy\equiv(x&lt;y)\)</span> is not (<span class="math">\(5&lt;5\)</span> is false).</li>
+</ul>
+<p>There are other such properties of binary relations as well. Equivalence relations are
+those that are reflexive, symmetric, and transitive (like <span class="math">\(=\)</span>). Partial order relations
+are those that are reflexive, antisymmetric, and transitive (like <span class="math">\(=\)</span> and <span class="math">\(\leq\)</span>).
+Total order relations are those that are partial orders and total.</p>
+<p>While each of these properties are obvious for familiar examples, they are worth considering when
+trying to create relations to apply assumptions or bound problems. If we don&#8217;t do so carefully,
+sometimes <em>Mathematica</em> may not be able to solve problems in a useful way. A small example
+is</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Solve</span><span class="p">[</span><span class="n">Cos</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>which gives</p>
+<div class="highlight-python"><pre>{{x -&gt; ConditionalExpression[-(\[Pi]/2) + 2 \[Pi] C[1], C[1] \[Element] Integers]},
+{x -&gt; ConditionalExpression[\[Pi]/2 + 2 \[Pi] C[1], C[1] \[Element] Integers]}}</pre>
+</div>
+<p>But, if we restrict the problem:</p>
+<div class="highlight-python"><pre>Solve[{Cos[x] == 0, x &gt; 0, x &lt; 2 Pi}, x]</pre>
+</div>
+<p>which gives <tt class="code docutils literal"><span class="pre">{{x</span> <span class="pre">-&gt;</span> <span class="pre">\[Pi]/2},</span> <span class="pre">{x</span> <span class="pre">-&gt;</span> <span class="pre">(3</span> <span class="pre">\[Pi])/2}}</span></tt>. In this case, <em>Mathematica</em> could
+solve the original problem, but did so very generally, overcomplicating the expression
+if we just want a couple solutions for <span class="math">\(x\in(0,2\pi)\)</span>.</p>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+    </p>
+    <p>
+    <!--
+        &copy; Copyright 2013, University of Texas at Austin Society of Physics Students and Sigma Pi Sigma.-->
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    //$(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    //$(document).ready(getNumUsers);
+    //$(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  $("#mainbody").children().first().css("margin-top",
+    $("#navbar").css("height"))
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-small btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-small btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-small btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-small btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

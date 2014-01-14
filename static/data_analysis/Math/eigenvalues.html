@@ -74,7 +74,8 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
-    <link rel="prev" title="Inputting and Including External Files" href="../LaTeX/include.html" />
+    <link rel="next" title="Mathematical Logic" href="logic.html" />
+    <link rel="prev" title="Error Analysis" href="../Analysis/error.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -106,7 +107,7 @@
 
 
 <!-- Begin navbar -->
-<div id="navbar" class="navbar navbar-fixed-top">
+<div id="navbar" class="navbar navbar-fixed-top" style="z-index:9999999">
 
   <div class="container">
 
@@ -118,118 +119,13 @@
     </button>
 
     <div>
-     <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+      <a href="../index.html">
+      <img title="Data Analysis for Physics" src="../_static/img/logo_small.png"
+       style="max-width:60px; max-height:60px;float:left"></a>
       <a class="navbar-brand" href="../index.html">Introduction to Data Analysis for Physics</a>
     </div>
 
     <div class="nav-collapse collapse navbar-responsive-collapse">
-
-      <ul class="nav navbar-nav pull-right">
-
-        <li class="divider-vertical"></li>
-
-        <!-- social media dropdown -->
-        <li class="dropdown">
-          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
-          </a>
-          <ul class="dropdown-menu social-menu">
-              <li>
-                <div>
-                  <b>Runestone in social media:</b>
-                </div>
-                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
-              </li>
-
-              <li class="divider"></li>
-              <li>
-                <div>
-                  <b>Help support us:</b>
-                </div>
-                <div class="gittip">
-                  <iframe style="border:0;"
-                    src="https://www.gittip.com/bnmnetp/widget.html"
-                    width="48pt" height="22pt" class="gittip-button">
-                  </iframe>
-                </div>
-              </li>
-          </ul>
-        </li>
-        <!-- end social media dropdown -->
-
-        <li class="divider-vertical"></li>
-
-        <!-- search dropdown -->
-        <li class="dropdown">
-          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
-          </a>
-          <ul class='dropdown-menu'>
-            
-                <li><a href='../index.html'>Table of Contents</a></li>
-            
-            <li><a href='/runestone/static/data_analysis/genindex.html'>Book Index</a></li>
-            <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
-            <li class="divider"></li>
-            <li style="width: 240px;">
-              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
-                <div class="input-group">
-                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
-                  <span class="input-group-btn">
-                    <button class="btn btn-primary" style="margin:0;" type="submit"">
-                      <i class="glyphicon glyphicon-search"></i>
-                    </button>
-                  </span>
-                </div><!-- /input-group -->
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="default" />
-              </form>
-            </li>
-          </ul>
-        </li>
-        <!-- end search dropdown -->
-
-        <li class="divider-vertical"></li>
-
-        <!-- user account dropdown -->
-        <li class="dropdown">
-          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
-          </a>
-          <ul class="dropdown-menu user-menu">
-            <li><span class='loggedinuser'></span></li>
-            <li class="divider"></li>
-            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
-            <li class="divider"></li>
-            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
-            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
-            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
-            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
-          </ul>
-        </li>
-        <!-- end user account dropdown -->
-
-        <li class="divider-vertical"></li>
-
-        <!-- help menu dropdown -->
-        <li class="dropdown">
-          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
-          </a>
-          <ul class="dropdown-menu user-menu">
-            <li><a href='/runestone/static/data_analysis/navhelp.html'>Navigation Help</a></li>
-            <li class="divider"></li>
-            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
-            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
-          </ul>
-        </li>
-        <!-- end help menu dropdown -->
-
-        <li class="divider-vertical"></li>
-
-      </ul>
 
       <ul class="nav navbar-nav">
         <li class="divider-vertical"></li>
@@ -250,14 +146,20 @@
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Inputting and Including External Files" data-toggle="tooltip">
-    <a href="../LaTeX/include.html" >
+  <li id="relations-prev" title="Previous Chapter - Error Analysis" data-toggle="tooltip">
+    <a href="../Analysis/error.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+      <p style=";max-width:130px;">Error Analysis</p>
     </a>
   </li>
   
-    <li class="divider-vertical"></li>
-  
+  <li id="relations-next" title='Next Chapter - Mathematical Logic' data-toggle="tooltip" >
+    <a href="logic.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+      <p style=";max-width:130px;">Mathematical Logic</p>
+    </a>
+  </li>
+  <li style="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -279,7 +181,7 @@
 </div>
 
 
-<div class="container">
+<div id="mainbody" class="container">
   
   <div class="section" id="eigenvalue-problems">
 <h1>Eigenvalue Problems<a class="headerlink" href="#eigenvalue-problems" title="Permalink to this headline">¶</a></h1>
@@ -441,7 +343,7 @@ we might think about taking the derivative of some vector. In fact, what about:<
 \[\begin{split}\frac{d}{dt}\left(\begin{array}{c}x \\ \dot{x}\end{array}\right)=
 \left(\begin{array}{c}\dot{x} \\ \ddot{x}\end{array}\right)\end{split}\]</div>
 <p>Is that really helping our case? Well, if we had some way to have the right-hand side be some square
-matrix times the vector we were taking the derivative of and have that be equal to a constant, we&#8217;d be home
+matrix times the vector we were taking the derivative of, we&#8217;d be home
 free. But all that does is set up a system of equations. Let&#8217;s see if we can figure out which system:</p>
 <div class="math">
 \[\begin{split}\frac{d}{dt}\left(\begin{array}{c}x \\ \dot{x}\end{array}\right)=
@@ -461,8 +363,8 @@ for all <span class="math">\(\dot{x}\)</span>, so we arrive at <span class="math
 \dot{x}\end{array}\right)=      \lambda\left(\begin{array}{c}x \\
 \dot{x}\end{array}\right)\)</span>? The meaning is not so obvious. However, we have now totally eliminated
 <span class="math">\(\ddot{x}\)</span> from our system of equations. That means that if we were to solve this new formulation,
-we would end up with equations based solely on <span class="math">\(w\)</span>, which is a constant, <span class="math">\(\lambda\)</span>, which
-is a scalar we&#8217;ll solve for, then <span class="math">\(x\)</span> and <span class="math">\(\dot{x}\)</span>. That sounds like a system of first-order
+we would end up with equations based solely on <span class="math">\(w\)</span>, which is a constant; <span class="math">\(\lambda\)</span>, which
+is a scalar we&#8217;ll solve for; then <span class="math">\(x\)</span> and <span class="math">\(\dot{x}\)</span>. That sounds like a system of first-order
 differential equations, which we&#8217;ll likely be able to solve - certainly more easily than trying to solve
 the first formulation of the problem which was a second-order differential equation. So, let&#8217;s use the hammer
 that is the eigenvalue problem process on the nail of this problem and see if it helps us out.</p>
@@ -484,7 +386,7 @@ similar, for the moment, let&#8217;s try to solve for the eigenvectors at the sa
 \end{array}\end{split}\]</div>
 <p>This is just a simple equation that says that the derivative of some function is a constant times that
 function. At this point, our hammer has done its job, now it&#8217;s time to stain, coat, and finish the
-masterpiece. While not trivial the above gives the elementary result:</p>
+masterpiece. While not trivial, the above gives the elementary result:</p>
 <div class="math">
 \[x_\pm=A_{\pm}e^{\pm{iwt}}\]</div>
 <p>That&#8217;s good, but can we get a better result? Let&#8217;s go back to our first statement of the problem. We can
@@ -493,11 +395,11 @@ we also get that <span class="math">\(\ddot{x_H}=-w^2x_H\)</span>. That means th
 and is more general than <span class="math">\(x_+\)</span> or <span class="math">\(x_-\)</span>. That means that the general solution to our
 problem is:</p>
 <div class="math">
-\[x_H=Ae^{iwt}+Be^{-iwt}\]</div>
-<p>where <span class="math">\(A\)</span> and <span class="math">\(B\)</span> would be determined through initial conditions or other information.
-However, if we apply Euler&#8217;s formula (the one relevant to the euation above [
+\[x_H=A_+e^{iwt}+A_-e^{-iwt}\]</div>
+<p>where <span class="math">\(A_+\)</span> and <span class="math">\(A_-\)</span> would be determined through initial conditions or other information.
+However, if we apply Euler&#8217;s formula (the one relevant to the equation above [
 <span class="math">\(e^{\pm{ix}}=\cos(x)\pm{i}\sin(x)\)</span>
-]), and let <span class="math">\(C=A+B,~D=(A-B)i\)</span>, we arrive at the solution:</p>
+]), and let <span class="math">\(C=A_++A_-,~D=(A_+-A_-)i\)</span>, we arrive at the solution:</p>
 <div class="math">
 \[x_H=C\cos(wt)+D\sin(wt)\]</div>
 <p>For the most familar form, we take <span class="math">\(A^2=C^2+D^2,~A\cos\phi=C,~A\sin\phi=D\)</span>, then
@@ -513,24 +415,29 @@ However, if we apply Euler&#8217;s formula (the one relevant to the euation abov
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
-      
+      <a href="#">Back to top</a>
     </p>
     <p>
-        &copy; Copyright 2013, University of Texas at Austin Society of Physics Students and Sigma Pi Sigma.
+    <!--
+        &copy; Copyright 2013, University of Texas at Austin Society of Physics Students and Sigma Pi Sigma.-->
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </p>
   </div>
 </footer>
 
 <script type="text/javascript" charset="utf-8">
-    $(document).ready(addUserToFooter);
+    //$(document).ready(addUserToFooter);
     $(document).ready(addNavbarLoginLink);
     $(document).ready(createEditors);
-    $(document).ready(getNumUsers);
-    $(document).ready(getOnlineUsers);
+    //$(document).ready(getNumUsers);
+    //$(document).ready(getOnlineUsers);
     $(document).ready(createScratchActivecode());
     $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  $("#mainbody").children().first().css("margin-top",
+    $("#navbar").css("height"))
 </script>
 
 <script type="text/javascript">

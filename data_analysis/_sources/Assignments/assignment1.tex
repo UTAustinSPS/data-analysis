@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage[latin1]{inputenc}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\newcommand{\ket}[1]{\ensuremath{\left|#1\right\rangle}}
+\newcommand{\bra}[1]{\ensuremath{\left\langle#1\right|}}
+\newcommand{\braket}[2]{\ensuremath{\left\langle #1 \middle| #2 \right\rangle}}
+\newcommand{\obar}[1]{\ensuremath{\overline{ #1 }}}
+% enumerate is numbered \begin{enumerate}[(I)] is cap roman in parens
+% itemize is bulleted \begin{itemize}
+% subfigures:
+% \begin{subfigure}[b]{0.5\textwidth} \includegraphics{asdf.jpg} \caption{} \label{subfig:asdf} \end{subfigure}
+\hypersetup{colorlinks=true, urlcolor=blue, linkcolor=blue, citecolor=red}
+\graphicspath{ {C:/Users/Evan/Desktop/} }
+\title{Assignment 1: \\ Introduction to \emph{Mathematica}\\
+\large \emph{Introduction to Data Analysis for Physics}}
+\author{Evan Ott and Will Beason}
+\date{Spring 2014}
+\setcounter{secnumdepth}{0}
+\usepackage[parfill]{parskip}
+\begin{document}
+\maketitle
+\section{Submission Requirements}
+This week, submit the assignment to \href{mailto:data.analysis.physics@gmail.com}{data.analysis.physics@gmail.com} by Wednesday at 5pm. Doing so will let
+us review the assignment ahead of time so we can appropriately address questions and challenges during class. Turning in homework on time (even if incomplete) is absolutely
+preferred to not turning it in until later. This will be the format each week. You may, of course,
+turn it in late at no penalty, but you are \emph{strongly} encouraged to complete these assignments as they are given as to not fall behind. We will cover a broad
+range of topics, many of which will build on each other.
+
+This week, just submit the \emph{Mathematica} document you create (typically a .nb file).
+
+As you find practice problems in the book, you are encouraged to try them out (some will take a few moments, others more time), but they are not assigned. We'll
+be happy to take a look at them, answer questions, etc. however, whenever you choose!
+\section{Problem 1}
+First, let's create some functions! Let $f(x)=1-x^2/2$. Then, create $f(g(x))=x$ (you'll need to do a little math - just a little - be sure to show that the function is correct).
+Then run the $g$ function on a list \begin{verbatim}myList=(1, 2, 4, 8, 5, 7)\end{verbatim}, then take the square of the norm. What is the answer?
+\section{Problem 2}
+Use the following code, then write the correct sequence of indexing and mathematical operations to produce the output below.
+
+Code:
+\begin{verbatim}
+myList2 = {0, 1, 4, 9 , 16, 25, 36, 49}
+\end{verbatim}
+
+Output:
+\begin{verbatim}
+{1, 9, 36}
+{0, 1, 4, 9}
+{1, 4, 9, 16, 25, 36, 49, 64}
+\end{verbatim}
+\section{Problem 3}
+Do something interesting! Take some time to explore the few topics discussed this week. Do something you find interesting and show it to us!
+
+\end{document}

@@ -75,13 +75,13 @@
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
     <link rel="next" title="Document Structure" href="docstructure.html" />
-    <link rel="prev" title="Lists, Tables, and Matrices" href="../Mathematica/lists.html" />
+    <link rel="prev" title="Animations" href="../Mathematica/animations.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 <script type="text/javascript">
   eBookConfig = {};
-  eBookConfig.host = 'http://192.168.0.10:80' ? 'http://192.168.0.10:80' : 'http://127.0.0.1:8000';
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
   eBookConfig.app = eBookConfig.host+'/runestone';
   eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
   eBookConfig.course = 'data_analysis';
@@ -107,7 +107,7 @@
 
 
 <!-- Begin navbar -->
-<div id="navbar" class="navbar navbar-fixed-top">
+<div id="navbar" class="navbar navbar-fixed-top" style="z-index:9999999">
 
   <div class="container">
 
@@ -119,118 +119,13 @@
     </button>
 
     <div>
-     <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+      <a href="../index.html">
+      <img title="Data Analysis for Physics" src="../_static/img/logo_small.png"
+       style="max-width:60px; max-height:60px;float:left"></a>
       <a class="navbar-brand" href="../index.html">Introduction to Data Analysis for Physics</a>
     </div>
 
     <div class="nav-collapse collapse navbar-responsive-collapse">
-
-      <ul class="nav navbar-nav pull-right">
-
-        <li class="divider-vertical"></li>
-
-        <!-- social media dropdown -->
-        <li class="dropdown">
-          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
-          </a>
-          <ul class="dropdown-menu social-menu">
-              <li>
-                <div>
-                  <b>Runestone in social media:</b>
-                </div>
-                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
-              </li>
-
-              <li class="divider"></li>
-              <li>
-                <div>
-                  <b>Help support us:</b>
-                </div>
-                <div class="gittip">
-                  <iframe style="border:0;"
-                    src="https://www.gittip.com/bnmnetp/widget.html"
-                    width="48pt" height="22pt" class="gittip-button">
-                  </iframe>
-                </div>
-              </li>
-          </ul>
-        </li>
-        <!-- end social media dropdown -->
-
-        <li class="divider-vertical"></li>
-
-        <!-- search dropdown -->
-        <li class="dropdown">
-          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
-          </a>
-          <ul class='dropdown-menu'>
-            
-                <li><a href='../index.html'>Table of Contents</a></li>
-            
-            <li><a href='/runestone/static/data_analysis/genindex.html'>Book Index</a></li>
-            <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
-            <li class="divider"></li>
-            <li style="width: 240px;">
-              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
-                <div class="input-group">
-                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
-                  <span class="input-group-btn">
-                    <button class="btn btn-primary" style="margin:0;" type="submit"">
-                      <i class="glyphicon glyphicon-search"></i>
-                    </button>
-                  </span>
-                </div><!-- /input-group -->
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="default" />
-              </form>
-            </li>
-          </ul>
-        </li>
-        <!-- end search dropdown -->
-
-        <li class="divider-vertical"></li>
-
-        <!-- user account dropdown -->
-        <li class="dropdown">
-          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
-          </a>
-          <ul class="dropdown-menu user-menu">
-            <li><span class='loggedinuser'></span></li>
-            <li class="divider"></li>
-            <li><a href='http://192.168.0.10:80/runestone/admin/index'>Instructor's Page</a></li>
-            <li class="divider"></li>
-            <li><a href="http://192.168.0.10:80/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
-            <li><a href="http://192.168.0.10:80/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
-            <li><a href="http://192.168.0.10:80/runestone/default/user/register" id="registerlink">Register</a></li>
-            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
-          </ul>
-        </li>
-        <!-- end user account dropdown -->
-
-        <li class="divider-vertical"></li>
-
-        <!-- help menu dropdown -->
-        <li class="dropdown">
-          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
-          </a>
-          <ul class="dropdown-menu user-menu">
-            <li><a href='/runestone/static/data_analysis/navhelp.html'>Navigation Help</a></li>
-            <li class="divider"></li>
-            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
-            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
-          </ul>
-        </li>
-        <!-- end help menu dropdown -->
-
-        <li class="divider-vertical"></li>
-
-      </ul>
 
       <ul class="nav navbar-nav">
         <li class="divider-vertical"></li>
@@ -253,18 +148,20 @@
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Lists, Tables, and Matrices" data-toggle="tooltip">
-    <a href="../Mathematica/lists.html" >
+  <li id="relations-prev" title="Previous Chapter - Animations" data-toggle="tooltip">
+    <a href="../Mathematica/animations.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+      <p style=";max-width:130px;">Animations</p>
     </a>
   </li>
   
   <li id="relations-next" title='Next Chapter - Document Structure' data-toggle="tooltip" >
     <a href="docstructure.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+      <p style=";max-width:130px;">Document Structure</p>
     </a>
   </li>
-  <li class="divider-vertical"></li>
+  <li style="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -286,13 +183,13 @@
 </div>
 
 
-<div class="container">
+<div id="mainbody" class="container">
   
   <div class="section" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="what-s-a-span-class-latex-l-sup-a-sup-t-sub-e-sub-x-span">
 <h2>What&#8217;s a <span class="raw-html"><span class="latex">L<sup>A</sup>T<sub>E</sub>X</span></span>?<a class="headerlink" href="#what-s-a-span-class-latex-l-sup-a-sup-t-sub-e-sub-x-span" title="Permalink to this headline">¶</a></h2>
-<p><span class="raw-html"><span class="latex">L<sup>A</sup>T<sub>E</sub>X</span></span> (&#8220;lah-tech&#8221; or &#8220;lay-tech&#8221;) is a text markup language - one that allows the author to precisely specify how layout and content are combined. More precisely, LaTeX is a set of macros for <span class="raw-html"><span class="latex">T<sub>E</sub>X</span></span> the Turing Award winning typesetting program by Dr. Donald Knuth. It is</p>
+<p><span class="raw-html"><span class="latex">L<sup>A</sup>T<sub>E</sub>X</span></span> (&#8220;lah-tech&#8221; or &#8220;lay-tech&#8221;) is a text markup language - one that allows the author to precisely specify how layout and content are combined. More precisely, LaTeX is a set of macros for <span class="raw-html"><span class="latex">T<sub>E</sub>X</span></span>, the Turing Award winning typesetting program by Dr. Donald Knuth. It is</p>
 <ul class="simple">
 <li>Built for a &#8220;minimal amount of effort&#8221; for the author to produce high-quality documents</li>
 <li>Totally platform- and time-independent for resultant documents</li>
@@ -319,6 +216,7 @@ Hello World!
 \end{document}</pre>
 </div>
 <p>This produces the following document:</p>
+<img alt="../_images/hello_world.jpg" src="../_images/hello_world.jpg" />
 <p>The first line says what kind of article we are working with. It contains formatting information like margins, spacing, and font. It also gives information about how the document is structured. Every document needs to have a document class. Usually, this is the first line of a LaTeX document.</p>
 <p>The second line is the beginning of the content which will be typeset. The third line is the content of the document. The last line says to stop typesetting, and ignore everything afterwards.</p>
 <p>Since specifying the document class and beginning/ending the document are required for every document, in general those will not be included in examples if not relevant.</p>
@@ -355,7 +253,12 @@ Hello World!
 </div>
 <p>Which produces something like</p>
 <img alt="Sample Document" src="../_images/looklike.jpg" />
-<p>Notice that some content for the document was specified <em>before</em> the document began. LaTeX stored some information in variables, which were later called. The line <tt class="code docutils literal"><span class="pre">\title{This</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">title}</span></tt> stored <tt class="code docutils literal"><span class="pre">This</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">title</span></tt> as the title of the document. The thing happens with the <tt class="code docutils literal"><span class="pre">\author{}</span></tt> and <tt class="code docutils literal"><span class="pre">\date{}</span></tt> commands. Those variables are stored once, and may be called throughout the document. In this case, they are called with the <tt class="code docutils literal"><span class="pre">\maketitle</span></tt> command.</p>
+<p>Notice that some content for the document was specified <em>before</em> the document began. LaTeX
+stored some information in variables, which were later called. The line
+<tt class="code docutils literal"><span class="pre">\title{This</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">title}</span></tt> stored <tt class="code docutils literal"><span class="pre">This</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">title</span></tt> as the title of the document.
+The same thing happens with the <tt class="code docutils literal"><span class="pre">\author{}</span></tt> and <tt class="code docutils literal"><span class="pre">\date{}</span></tt> commands. Those
+variables are stored once, and may be called throughout the document. In this case,
+they are called with the <tt class="code docutils literal"><span class="pre">\maketitle</span></tt> command.</p>
 </div>
 </div>
 </div>
@@ -365,24 +268,29 @@ Hello World!
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
-      
+      <a href="#">Back to top</a>
     </p>
     <p>
-        &copy; Copyright 2013, University of Texas at Austin Society of Physics Students and Sigma Pi Sigma.
+    <!--
+        &copy; Copyright 2013, University of Texas at Austin Society of Physics Students and Sigma Pi Sigma.-->
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </p>
   </div>
 </footer>
 
 <script type="text/javascript" charset="utf-8">
-    $(document).ready(addUserToFooter);
+    //$(document).ready(addUserToFooter);
     $(document).ready(addNavbarLoginLink);
     $(document).ready(createEditors);
-    $(document).ready(getNumUsers);
-    $(document).ready(getOnlineUsers);
+    //$(document).ready(getNumUsers);
+    //$(document).ready(getOnlineUsers);
     $(document).ready(createScratchActivecode());
     $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  $("#mainbody").children().first().css("margin-top",
+    $("#navbar").css("height"))
 </script>
 
 <script type="text/javascript">

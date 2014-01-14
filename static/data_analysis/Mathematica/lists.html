@@ -74,14 +74,14 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
-    <link rel="next" title="Introduction" href="../LaTeX/latex.html" />
+    <link rel="next" title="Functions and Graphing" href="functions_graphs.html" />
     <link rel="prev" title="Document Structure and Syntax" href="structure.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 <script type="text/javascript">
   eBookConfig = {};
-  eBookConfig.host = 'http://192.168.0.10:80' ? 'http://192.168.0.10:80' : 'http://127.0.0.1:8000';
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
   eBookConfig.app = eBookConfig.host+'/runestone';
   eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
   eBookConfig.course = 'data_analysis';
@@ -107,7 +107,7 @@
 
 
 <!-- Begin navbar -->
-<div id="navbar" class="navbar navbar-fixed-top">
+<div id="navbar" class="navbar navbar-fixed-top" style="z-index:9999999">
 
   <div class="container">
 
@@ -119,118 +119,13 @@
     </button>
 
     <div>
-     <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+      <a href="../index.html">
+      <img title="Data Analysis for Physics" src="../_static/img/logo_small.png"
+       style="max-width:60px; max-height:60px;float:left"></a>
       <a class="navbar-brand" href="../index.html">Introduction to Data Analysis for Physics</a>
     </div>
 
     <div class="nav-collapse collapse navbar-responsive-collapse">
-
-      <ul class="nav navbar-nav pull-right">
-
-        <li class="divider-vertical"></li>
-
-        <!-- social media dropdown -->
-        <li class="dropdown">
-          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
-          </a>
-          <ul class="dropdown-menu social-menu">
-              <li>
-                <div>
-                  <b>Runestone in social media:</b>
-                </div>
-                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
-              </li>
-
-              <li class="divider"></li>
-              <li>
-                <div>
-                  <b>Help support us:</b>
-                </div>
-                <div class="gittip">
-                  <iframe style="border:0;"
-                    src="https://www.gittip.com/bnmnetp/widget.html"
-                    width="48pt" height="22pt" class="gittip-button">
-                  </iframe>
-                </div>
-              </li>
-          </ul>
-        </li>
-        <!-- end social media dropdown -->
-
-        <li class="divider-vertical"></li>
-
-        <!-- search dropdown -->
-        <li class="dropdown">
-          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
-          </a>
-          <ul class='dropdown-menu'>
-            
-                <li><a href='../index.html'>Table of Contents</a></li>
-            
-            <li><a href='/runestone/static/data_analysis/genindex.html'>Book Index</a></li>
-            <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
-            <li class="divider"></li>
-            <li style="width: 240px;">
-              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
-                <div class="input-group">
-                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
-                  <span class="input-group-btn">
-                    <button class="btn btn-primary" style="margin:0;" type="submit"">
-                      <i class="glyphicon glyphicon-search"></i>
-                    </button>
-                  </span>
-                </div><!-- /input-group -->
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="default" />
-              </form>
-            </li>
-          </ul>
-        </li>
-        <!-- end search dropdown -->
-
-        <li class="divider-vertical"></li>
-
-        <!-- user account dropdown -->
-        <li class="dropdown">
-          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
-          </a>
-          <ul class="dropdown-menu user-menu">
-            <li><span class='loggedinuser'></span></li>
-            <li class="divider"></li>
-            <li><a href='http://192.168.0.10:80/runestone/admin/index'>Instructor's Page</a></li>
-            <li class="divider"></li>
-            <li><a href="http://192.168.0.10:80/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
-            <li><a href="http://192.168.0.10:80/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
-            <li><a href="http://192.168.0.10:80/runestone/default/user/register" id="registerlink">Register</a></li>
-            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
-          </ul>
-        </li>
-        <!-- end user account dropdown -->
-
-        <li class="divider-vertical"></li>
-
-        <!-- help menu dropdown -->
-        <li class="dropdown">
-          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
-          </a>
-          <ul class="dropdown-menu user-menu">
-            <li><a href='/runestone/static/data_analysis/navhelp.html'>Navigation Help</a></li>
-            <li class="divider"></li>
-            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
-            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
-          </ul>
-        </li>
-        <!-- end help menu dropdown -->
-
-        <li class="divider-vertical"></li>
-
-      </ul>
 
       <ul class="nav navbar-nav">
         <li class="divider-vertical"></li>
@@ -254,15 +149,17 @@
   <li id="relations-prev" title="Previous Chapter - Document Structure and Syntax" data-toggle="tooltip">
     <a href="structure.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+      <p style=";max-width:130px;">Document Structure and Syntax</p>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Introduction' data-toggle="tooltip" >
-    <a href="../LaTeX/latex.html" >
+  <li id="relations-next" title='Next Chapter - Functions and Graphing' data-toggle="tooltip" >
+    <a href="functions_graphs.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+      <p style=";max-width:130px;">Functions and Graphing</p>
     </a>
   </li>
-  <li class="divider-vertical"></li>
+  <li style="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -284,7 +181,7 @@
 </div>
 
 
-<div class="container">
+<div id="mainbody" class="container">
   
   <div class="section" id="lists-tables-and-matrices">
 <h1>Lists, Tables, and Matrices<a class="headerlink" href="#lists-tables-and-matrices" title="Permalink to this headline">¶</a></h1>
@@ -305,24 +202,25 @@ time interval). We can do this fairly simply:</p>
 <p>To access the elements of <tt class="code docutils literal"><span class="pre">data</span></tt>, we apply the indexing operator:</p>
 <div class="highlight-python"><pre>data[[1]]
 data[[1;;2]]
-data[[2;;4]]</pre>
+data[[2;;4]]
+data[[{1,3,5}]]</pre>
 </div>
 <p>prints</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="mi">21</span>
 <span class="p">{</span><span class="mi">21</span><span class="p">,</span> <span class="mi">24</span><span class="p">}</span>
 <span class="p">{</span><span class="mi">24</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">32</span><span class="p">}</span>
+<span class="p">{</span><span class="mi">21</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">31</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>We can perform operations on lists as well, many of which can be extremely powerful:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span><span class="o">^</span><span class="mi">2</span>
-<span class="n">Length</span><span class="p">[{</span><span class="mi">4</span><span class="p">}]</span>
-<span class="n">Total</span><span class="p">[{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}]</span>
-<span class="n">Mean</span><span class="p">[{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">}]</span>
-<span class="n">Norm</span><span class="p">[{</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">}]</span>
-<span class="n">Dot</span><span class="p">[{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">},{</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">}]</span>
-<span class="n">Union</span><span class="p">[{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}]</span>
-<span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span> <span class="o">+</span> <span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">}</span>
-</pre></div>
+<div class="highlight-python"><pre>{1, 2, 3, 4, 5}^2
+Length[{4}] (*Length of list*)
+Total[{1,2,3,4,5}] (*Sum of all elements*)
+Mean[{0,1,2}] (*Arithmetic average of list*)
+Norm[{1,1,1,1}] (*The norm of the list - think the norm of a vector*)
+Dot[{0,1},{1,0}] (*Dot product of the given vectors*)
+Union[{1,2,3},{3,4,5}] (*Union of the two sets*)
+{0, 2, 4} + {4, 2, 0} (*Vector addition*)</pre>
 </div>
 <p>prints</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">}</span>
@@ -356,6 +254,7 @@ for producing sequences:</p>
 <span class="n">Table</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">}}]</span>
 <span class="nb">list</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">};</span>
 <span class="n">Table</span><span class="p">[</span><span class="nb">list</span><span class="p">[[</span><span class="n">i</span><span class="p">]]</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="n">Length</span><span class="p">[</span><span class="nb">list</span><span class="p">]}]</span>
+<span class="n">Table</span><span class="p">[{</span><span class="n">i</span><span class="p">,</span> <span class="nb">list</span><span class="p">[[</span><span class="n">i</span><span class="p">]]</span><span class="o">^</span><span class="mi">2</span><span class="p">},</span> <span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="n">Length</span><span class="p">[</span><span class="nb">list</span><span class="p">]}]</span>
 </pre></div>
 </div>
 <p>is</p>
@@ -363,13 +262,14 @@ for producing sequences:</p>
 <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">}</span>
 <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
 <span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">}</span>
+<span class="p">{{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">},</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">},</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">16</span><span class="p">}}</span>
 </pre></div>
 </div>
 <p>Essentially, <tt class="code docutils literal"><span class="pre">Table</span></tt> accepts some function over the domain given and will then
 create the list of the elements in the sequence over the given elements in the domain.
-The second example shows that given <tt class="code docutils literal"><span class="pre">{i,</span> <span class="pre">N}</span></tt>, the range is <span class="math">\(i\in[1, N]\)</span>.
+The second example shows that given <tt class="code docutils literal"><span class="pre">{i,</span> <span class="pre">N}</span></tt>, the domain is <span class="math">\(i\in[1, N]\)</span>.
 The third example shows that the elements to use can be given explicitly as well.
-The last example combines what we learned about lists above to show how easily
+The last examples combine what we learned about lists above to show how easily
 different concepts and structures in <em>Mathematica</em> can be combined.</p>
 </div>
 <div class="section" id="matrices">
@@ -409,17 +309,16 @@ different concepts and structures in <em>Mathematica</em> can be combined.</p>
 to its complex conjugate, giving <span class="math">\(m^\dagger\)</span>), <tt class="code docutils literal"><span class="pre">Det[m]</span></tt> computes the
 determinant <span class="math">\(|m|\)</span>, <tt class="code docutils literal"><span class="pre">m</span> <span class="pre">.</span> <span class="pre">m</span></tt> computes the matrix product
 (generally, when <span class="math">\(A\)</span> has dimensions <span class="math">\(m\times{n}\)</span>, <span class="math">\(B\)</span> has dimensions
-<span class="math">\(n\times{p}\)</span>, and <span class="math">\(AB=A\times{B}\)</span> has dimensions <span class="math">\(m\times{p}\)</span>, such that
+<span class="math">\(n\times{p}\)</span>, this gives <span class="math">\(AB=A\times{B}\)</span> which has dimensions <span class="math">\(m\times{p}\)</span>, such that
 <span class="math">\((AB)_{i,j}=\sum_{k=1}^{n}A_{i,k}B_{k,j}\)</span>), <tt class="code docutils literal"><span class="pre">MatrixPower[m,</span> <span class="pre">n]</span></tt> computes
 <span class="math">\(m^n=m\times m\times m\times \ldots \times m\)</span>, and <tt class="code docutils literal"><span class="pre">EigenValues[m]</span></tt>
 gives the eigenvalues of the matrix <span class="math">\(m\)</span>.</p>
-<div class="admonition-see-also admonition seealso">
-<p class="first admonition-title">See also</p>
-<p>Eigenvalues</p>
+<div class="note admonition">
+<p class="first admonition-title">Eigenvalues</p>
 <p class="last">If you keep hearing the term &#8220;eigenvalues&#8221; or &#8220;eigenvectors&#8221; around the physics department
 but aren&#8217;t sure what they are, there&#8217;s a quick tutorial in the appendix about it.
 You might need to brush up on matrices a little beforehand. The tutorial
-can be found <a class="reference external" href="../Math/eigenvalues.html">here</a>).</p>
+can be found <a class="reference external" href="../Math/eigenvalues.html">here</a>.</p>
 </div>
 </div>
 </div>
@@ -429,24 +328,29 @@ can be found <a class="reference external" href="../Math/eigenvalues.html">here<
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
-      
+      <a href="#">Back to top</a>
     </p>
     <p>
-        &copy; Copyright 2013, University of Texas at Austin Society of Physics Students and Sigma Pi Sigma.
+    <!--
+        &copy; Copyright 2013, University of Texas at Austin Society of Physics Students and Sigma Pi Sigma.-->
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </p>
   </div>
 </footer>
 
 <script type="text/javascript" charset="utf-8">
-    $(document).ready(addUserToFooter);
+    //$(document).ready(addUserToFooter);
     $(document).ready(addNavbarLoginLink);
     $(document).ready(createEditors);
-    $(document).ready(getNumUsers);
-    $(document).ready(getOnlineUsers);
+    //$(document).ready(getNumUsers);
+    //$(document).ready(getOnlineUsers);
     $(document).ready(createScratchActivecode());
     $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  $("#mainbody").children().first().css("margin-top",
+    $("#navbar").css("height"))
 </script>
 
 <script type="text/javascript">

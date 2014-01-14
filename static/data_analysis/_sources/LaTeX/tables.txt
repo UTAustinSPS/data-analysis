@@ -16,7 +16,7 @@ Packages for Tables
 
 :code:`longtable`
 -----------------
-Sometimes the native :code:`tabular` environment just doesn't cut it. For example, LaTeX typesets the entire :code:`tabular` environment in one page, but sometimes it is okay for tables to be split between pages or to go on for multiple pages. In this case, declar :code:`\usepackage{tabular}` in the preamble and use :code:`\begin{longtable}` and :code:`\end{longtable}` just as you would with the :code:`tabular` environment.
+Sometimes the native :code:`tabular` environment just doesn't cut it. For example, LaTeX typesets the entire :code:`tabular` environment in one page, but sometimes it is okay for tables to be split between pages or to go on for multiple pages. In this case, declare :code:`\usepackage{tabular}` in the preamble and use :code:`\begin{longtable}` and :code:`\end{longtable}` just as you would with the :code:`tabular` environment.
 
 
 

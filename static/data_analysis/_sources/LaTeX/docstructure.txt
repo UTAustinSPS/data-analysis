@@ -48,7 +48,7 @@ allows margins to be set using this method. If you want your document to have
 margins of 1 inch rather than the default by loading the package with 
 :code:`\usepackage[margin=1in]{geometry}`.
 
-More information on packages is included in the packages page.
+More information on packages is included in the `Packages <packages.html>`_ page.
 
 New Commands
 ------------
@@ -61,8 +61,8 @@ to type :code:`\varepsilon` every time. By using
 typing :code:`\e`.
 
 The :code:`\newcommand{}{}` also takes an optional argument which specifies the 
-number of arguments. More information on new commands is available in the new 
-command lesson.
+number of arguments. More information on new commands is available in the
+`New Command <newcommand.html>`_ lesson.
 
 Formatting
 ----------
@@ -93,7 +93,7 @@ the document.
 
 As indicated by the way it is called, :code:`document` is actually considered 
 an *environment* within LaTeX. See the environments lesson for more 
-informaiton. Except comments, everything written the body of a LaTeX document 
+information. Except comments, everything written the body of a LaTeX document 
 will be processed during typesetting.
 
 Sections, Subsections, and Subsubsections, Oh My!
@@ -130,12 +130,13 @@ paragraphs to have titles, and look like this:
    \subparagraph{Hey, }
    I'm just a subparagraph.
 
+.. image:: Figures/pars.jpg
 
 Using these commands to specify paragraphs is generally unnecessary since most 
 documents don't need to be this structured. A paragraph break can be specified 
-by inserting a plank line between paragraphs. If you want to keep the paragraph 
+by inserting a blank line between paragraphs. If you want to keep the paragraph 
 heading styling, but want to start the paragraph on it's own line, just insert 
-an empty space as so.
+a new line as so:
 
 ::
    

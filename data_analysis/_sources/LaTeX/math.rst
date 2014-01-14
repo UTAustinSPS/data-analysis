@@ -39,7 +39,7 @@ or subscript, enclose the desired text in braces.
    $a_{ij}=a_{ji}$.
 
 This gives the desired result: A gigabyte contains :math:`2^{30}` bytes.
-Let :math:`x_{ij}=x_{ji}`.
+Let :math:`a_{ij}=a_{ji}`.
 
 There is a native equation environment, displaymath, which can be invoked by 
 encasing math inside double dollar signs or :code:`\[`, and :code:`\]`. It can 
@@ -54,8 +54,8 @@ typeset up to one line of math at a time.
    \]
 
 Both invoke the displaymath environment, and so are nearly identical. The only
-difference is that :code:`\$\$` math :code:`\$\$` makes a call to TeX and 
-:code:`\[`stuff :code:`\]` makes a call to LaTeX It is not recommended to use 
+difference is that :code:`$$` math :code:`$$` makes a call to TeX and 
+:code:`\[` stuff :code:`\]` makes a call to LaTeX. It is not recommended to use 
 these environments except when minimal control is needed. The environments 
 provided by the :code:`amsmath` package are much more robust and flexible. The 
 most common replacement environment from :code:`amsmath` is :code:`align`, or 
@@ -66,14 +66,20 @@ example:
 ::
 
    \begin{align*}
-   e=\sum_{i=0}^\infty \frac{1}{i!}
+   e&=\sum_{i=0}^\infty \frac{1}{i!}\\
+   &=\lim_{n\rightarrow\infty}\left(1+\frac{1}{n}\right)^n
    \end{align*}
 
 produces:
 
+.. math::
+
+   e&=\sum_{i=0}^\infty \frac{1}{i!}\\
+   &=\lim_{n\rightarrow\infty}\left(1+\frac{1}{n}\right)^n
+
 Everything that works in :code:`displaymath` works in :code:`align`. The main 
 advantage of :code:`align` is that it can display many lines of mathematics at 
-once.
+once, aligning them based on the location of the :code:`&` in each line.
    
 Advanced Mathematics
 ====================

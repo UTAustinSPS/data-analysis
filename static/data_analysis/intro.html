@@ -107,7 +107,7 @@
 
 
 <!-- Begin navbar -->
-<div id="navbar" class="navbar navbar-fixed-top">
+<div id="navbar" class="navbar navbar-fixed-top" style="z-index:9999999">
 
   <div class="container">
 
@@ -119,118 +119,13 @@
     </button>
 
     <div>
-     <a class="brand-logo" style='background: transparent url("_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+      <a href="index.html">
+      <img title="Data Analysis for Physics" src="_static/img/logo_small.png"
+       style="max-width:60px; max-height:60px;float:left"></a>
       <a class="navbar-brand" href="index.html">Introduction to Data Analysis for Physics</a>
     </div>
 
     <div class="nav-collapse collapse navbar-responsive-collapse">
-
-      <ul class="nav navbar-nav pull-right">
-
-        <li class="divider-vertical"></li>
-
-        <!-- social media dropdown -->
-        <li class="dropdown">
-          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
-          </a>
-          <ul class="dropdown-menu social-menu">
-              <li>
-                <div>
-                  <b>Runestone in social media:</b>
-                </div>
-                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
-              </li>
-
-              <li class="divider"></li>
-              <li>
-                <div>
-                  <b>Help support us:</b>
-                </div>
-                <div class="gittip">
-                  <iframe style="border:0;"
-                    src="https://www.gittip.com/bnmnetp/widget.html"
-                    width="48pt" height="22pt" class="gittip-button">
-                  </iframe>
-                </div>
-              </li>
-          </ul>
-        </li>
-        <!-- end social media dropdown -->
-
-        <li class="divider-vertical"></li>
-
-        <!-- search dropdown -->
-        <li class="dropdown">
-          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
-          </a>
-          <ul class='dropdown-menu'>
-            
-                <li><a href='index.html'>Table of Contents</a></li>
-            
-            <li><a href='/runestone/static/data_analysis/genindex.html'>Book Index</a></li>
-            <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
-            <li class="divider"></li>
-            <li style="width: 240px;">
-              <form class="navbar-search" style="margin:10px;" action="search.html" method="get">
-                <div class="input-group">
-                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
-                  <span class="input-group-btn">
-                    <button class="btn btn-primary" style="margin:0;" type="submit"">
-                      <i class="glyphicon glyphicon-search"></i>
-                    </button>
-                  </span>
-                </div><!-- /input-group -->
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="default" />
-              </form>
-            </li>
-          </ul>
-        </li>
-        <!-- end search dropdown -->
-
-        <li class="divider-vertical"></li>
-
-        <!-- user account dropdown -->
-        <li class="dropdown">
-          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
-          </a>
-          <ul class="dropdown-menu user-menu">
-            <li><span class='loggedinuser'></span></li>
-            <li class="divider"></li>
-            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
-            <li class="divider"></li>
-            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
-            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
-            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
-            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
-          </ul>
-        </li>
-        <!-- end user account dropdown -->
-
-        <li class="divider-vertical"></li>
-
-        <!-- help menu dropdown -->
-        <li class="dropdown">
-          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
-          </a>
-          <ul class="dropdown-menu user-menu">
-            <li><a href='/runestone/static/data_analysis/navhelp.html'>Navigation Help</a></li>
-            <li class="divider"></li>
-            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
-            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
-          </ul>
-        </li>
-        <!-- end help menu dropdown -->
-
-        <li class="divider-vertical"></li>
-
-      </ul>
 
       <ul class="nav navbar-nav">
         <li class="divider-vertical"></li>
@@ -253,15 +148,17 @@
   <li id="relations-prev" title="Previous Chapter - Introduction to Data Analysis for Physics" data-toggle="tooltip">
     <a href="index.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+      <p style=";max-width:130px;">Introduction to Data Analysis for Physics</p>
     </a>
   </li>
   
   <li id="relations-next" title='Next Chapter - Contact Information' data-toggle="tooltip" >
     <a href="syllabus.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+      <p style=";max-width:130px;">Contact Information</p>
     </a>
   </li>
-  <li class="divider-vertical"></li>
+  <li style="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -283,14 +180,20 @@
 </div>
 
 
-<div class="container">
+<div id="mainbody" class="container">
   
   <h1 style="text-align: center">Introduction to Data Analysis for Physics</h1><div class="section" id="introduction-to-the-introduction">
 <h1>Introduction to the Introduction<a class="headerlink" href="#introduction-to-the-introduction" title="Permalink to this headline">¶</a></h1>
-<p>Welcome! This is a course designed to teach the basics of the <span class="math">\(\LaTeX\)</span> and <em>Mathematica</em> programming
+<p>Welcome! This is a course designed to teach the basics of the <em>Mathematica</em> and <span class="math">\(\LaTeX\)</span> programming
 languages in order to better prepare you for UT Austin&#8217;s PHY 353L (Modern Physics Laboratory) course.</p>
 <p>This document is maintained by the UT Austin chapters of the Society of Physics Students and Sigma Pi Sigma,
 but was initially created for the Spring 2014 offering of PHY 110C by Evan Ott and Will Beason.</p>
+<p><em>Mathematica</em> is a proprietary languaged developed by the <em>Wolfram</em> corporation and is both fairly easy
+to use, and is the basis for the popular <a class="reference external" href="http://www.wolframalpha.com">Wolfram|Alpha</a> website. It is by
+far not the fastest language for analyzing data, but abstracts many parts that become relevant in languages
+like <em>C</em> or <em>Python</em>. <em>Mathematica</em> is extremely flexible and supports large-scale projects, but in many
+cases is used for simple one-time applications. It also has typesetting abilities (including presentation-mode)
+but in practice it is generally used for its analysis capabilities, with results exported to other programs.</p>
 <p><span class="math">\(\LaTeX\)</span> is typically used as a &#8220;markup&#8221; language, which is to say that it takes the place of other
 document formatters like <em>Microsoft Word</em> in order to create a presentable document in a fairly standard way.
 Although <em>Word</em> is now competitive about cross-platform stability, <span class="math">\(\LaTeX\)</span> is the standard for most physics journals.
@@ -302,20 +205,11 @@ be able to have more control. And yes, <span class="math">\(\LaTeX\)</span> and 
 names of these languages. However, if not available (in code, use <tt class="docutils literal"><span class="pre">\LaTeX</span></tt> and
 <tt class="docutils literal"><span class="pre">\TeX</span></tt>), then &#8220;LaTeX&#8221; and &#8220;TeX&#8221; will work in a pinch. Lastly, <span class="math">\(\LaTeX\)</span>
 may be pronounced &#8220;lay&#8217;-tech&#8221; or &#8220;lah&#8217;-tech&#8221;.</p>
-<p><em>Mathematica</em> is a proprietary languaged developed by the <em>Wolfram</em> corporation and is both fairly easy
-to use, and is the basis for the popular <a class="reference external" href="http://www.wolframalpha.com">Wolfram|Alpha</a> website. It is by
-far not the fastest language for analyzing data, but abstracts many parts that become relevant in languages
-like <em>C</em> or <em>Python</em>. <em>Mathematica</em> is extremely flexible and supports large-scale projects, but in many
-cases is used for simple one-time applications. It also has typesetting abilities (including presentation-mode)
-but in practice it is generally used for its analysis capabilities, with results exported to other programs.</p>
 </div>
 <div class="section" id="the-course">
 <h1>The Course<a class="headerlink" href="#the-course" title="Permalink to this headline">¶</a></h1>
-<p>This course will first go through the beginnings of the <span class="math">\(\LaTeX\)</span> language, then introduce concepts in
-<em>Mathematica</em>, followed by several sections on how the two may be combined to produce a clean, elegant,
-and interesting final document. Throughout this course, there will be questions to answer, some coding-based
-some more traditional question formats. Assignments will be given for students registered for the <em>DemTex</em>
-program at UT and will be available through the course website listed in the syllabus.</p>
+<p>This course will first introduce concepts in <em>Mathematica</em> then go through the beginnings of the <span class="math">\(\LaTeX\)</span> language, followed by several sections on how the two may be combined to produce a clean, elegant,
+and interesting final document. See the <a class="reference external" href="assignments.html">Assignments</a> section for the readings.</p>
 </div>
 <div class="section" id="the-syllabus">
 <h1>The Syllabus<a class="headerlink" href="#the-syllabus" title="Permalink to this headline">¶</a></h1>
@@ -343,24 +237,29 @@ program at UT and will be available through the course website listed in the syl
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
-      
+      <a href="#">Back to top</a>
     </p>
     <p>
-        &copy; Copyright 2013, University of Texas at Austin Society of Physics Students and Sigma Pi Sigma.
+    <!--
+        &copy; Copyright 2013, University of Texas at Austin Society of Physics Students and Sigma Pi Sigma.-->
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </p>
   </div>
 </footer>
 
 <script type="text/javascript" charset="utf-8">
-    $(document).ready(addUserToFooter);
+    //$(document).ready(addUserToFooter);
     $(document).ready(addNavbarLoginLink);
     $(document).ready(createEditors);
-    $(document).ready(getNumUsers);
-    $(document).ready(getOnlineUsers);
+    //$(document).ready(getNumUsers);
+    //$(document).ready(getOnlineUsers);
     $(document).ready(createScratchActivecode());
     $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  $("#mainbody").children().first().css("margin-top",
+    $("#navbar").css("height"))
 </script>
 
 <script type="text/javascript">
