@@ -133,7 +133,7 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Tables, Arrays, and Matrices</a></li>
+<li><a class="reference internal" href="#">Tables, Arrays, and Matrices</a><ul>
 <li><a class="reference internal" href="#the-tabular-environment">The Tabular Environment</a><ul>
 <li><a class="reference internal" href="#packages-for-tables">Packages for Tables</a><ul>
 <li><a class="reference internal" href="#longtable"><tt class="code docutils literal"><span class="pre">longtable</span></tt></a></li>
@@ -142,6 +142,8 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#the-matrix-environment">The Matrix Environment</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -189,21 +191,20 @@
   <div class="section" id="tables-arrays-and-matrices">
 <h1>Tables, Arrays, and Matrices<a class="headerlink" href="#tables-arrays-and-matrices" title="Permalink to this headline">¶</a></h1>
 <p>In text mode, tables are created using the <tt class="code docutils literal"><span class="pre">tabular</span></tt> environment. The analagous structure for math mode is the <tt class="code docutils literal"><span class="pre">array</span></tt> environment. There is also an envoronment in math mode specifically for matrices, <tt class="code docutils literal"><span class="pre">matrix</span></tt>.</p>
-</div>
 <div class="section" id="the-tabular-environment">
-<h1>The Tabular Environment<a class="headerlink" href="#the-tabular-environment" title="Permalink to this headline">¶</a></h1>
+<h2>The Tabular Environment<a class="headerlink" href="#the-tabular-environment" title="Permalink to this headline">¶</a></h2>
 <p>Like any environment, the tabular environment is started with <tt class="code docutils literal"><span class="pre">\begin{tabular}{}</span></tt> and ended with <tt class="code docutils literal"><span class="pre">\end{tabular}</span></tt>. It takes one mandatory arguments and one optional argument. The mandatory argument tells LaTeX how to format the columns.</p>
 <p>Columns</p>
 <div class="section" id="packages-for-tables">
-<h2>Packages for Tables<a class="headerlink" href="#packages-for-tables" title="Permalink to this headline">¶</a></h2>
+<h3>Packages for Tables<a class="headerlink" href="#packages-for-tables" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="longtable">
-<h3><tt class="code docutils literal"><span class="pre">longtable</span></tt><a class="headerlink" href="#longtable" title="Permalink to this headline">¶</a></h3>
+<h4><tt class="code docutils literal"><span class="pre">longtable</span></tt><a class="headerlink" href="#longtable" title="Permalink to this headline">¶</a></h4>
 <p>Sometimes the native <tt class="code docutils literal"><span class="pre">tabular</span></tt> environment just doesn&#8217;t cut it. For example, LaTeX typesets the entire <tt class="code docutils literal"><span class="pre">tabular</span></tt> environment in one page, but sometimes it is okay for tables to be split between pages or to go on for multiple pages. In this case, declare <tt class="code docutils literal"><span class="pre">\usepackage{tabular}</span></tt> in the preamble and use <tt class="code docutils literal"><span class="pre">\begin{longtable}</span></tt> and <tt class="code docutils literal"><span class="pre">\end{longtable}</span></tt> just as you would with the <tt class="code docutils literal"><span class="pre">tabular</span></tt> environment.</p>
 </div>
 </div>
 </div>
 <div class="section" id="the-matrix-environment">
-<h1>The Matrix Environment<a class="headerlink" href="#the-matrix-environment" title="Permalink to this headline">¶</a></h1>
+<h2>The Matrix Environment<a class="headerlink" href="#the-matrix-environment" title="Permalink to this headline">¶</a></h2>
 <p>This works much like the previous two environments, but the matrix environemt is specifically designed for mathematical matrices. Note that there are several modified versions of the matrix environment which may come in handy.</p>
 <div class="highlight-python"><pre>\begin{matrix}{1&amp;0\\0&amp;1}\end{matrix}
 \begin{pmatrix}{1&amp;0\\0&amp;1}\end{matrix}
@@ -215,6 +216,7 @@
 <p>The smallmatrix environment is useful for creating inline matrices which do not disrupt line spacing.</p>
 <div class="highlight-python"><pre>The identity matrix, $\begin{matrix}1&amp;0\\0&amp;1\end{matrix}$
 The identity matrix, $\begin{smallmatrix}1&amp;0\\0&amp;1\end{smallmatrix}$</pre>
+</div>
 </div>
 </div>
 
