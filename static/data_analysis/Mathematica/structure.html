@@ -210,6 +210,9 @@ by using just &#8220;Enter&#8221; between them, editing like normal text.</p>
 <span class="math">\(4=x\)</span>, in <em>Mathematica</em>, order matters. When we want to assign a variable, it must be
 on the left-hand side, with the value on the right. We&#8217;ll look at solving equations later, but
 for now, we&#8217;ll just allow variable assignment as written above.</p>
+<p>Variables must start with a letter (or special character - see below), but can be as long
+as you&#8217;d like, including numbers after the first character. Punctuation generally cannot
+be used as a variable name.</p>
 <p>Most statements in <em>Mathematica</em> produce some kind of output
 (the above would output the value 5), but this can be hidden by ending the statement with a semicolon:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
@@ -353,7 +356,8 @@ end up using strings for display purposes later, but the way we construct them i
 </pre></div>
 </div>
 <p>prints <tt class="code docutils literal"><span class="pre">5</span> <span class="pre">^</span> <span class="pre">2</span> <span class="pre">is</span> <span class="pre">25</span></tt> as expected (the <tt class="code docutils literal"><span class="pre">Print</span></tt> function prints the value, but
-just as text, not as full output that could be used in another expression).</p>
+just as text, not as full output that could be used in another expression - to see the
+same text as Output, we could have left off the semicolon on the definition for <tt class="code docutils literal"><span class="pre">y</span></tt>).</p>
 <p>Finally, we do have some options for what kinds of information we place in our Notebook file
 in <em>Mathematica</em>. The default is Input (including comments), but we can use the &#8220;Format&#8221;
 option from the menu bar then &#8220;Style&#8221; to make the current cell a different type, such as Title

@@ -23,7 +23,7 @@ it is needed to edit CDFs).
 Access
 ------
 If you are a physics student at UT, you can obtain it using a site licence paid for by the university (for Windows, Mac, or Linux). See the
-`Physics Department Software Page <http://www.ph.utexas.edu/~help/software.php>`_ for more.
+`Physics Department Software Page <https://www.ph.utexas.edu/software/>`_ for more (need UT EID).
 
 Otherwise, if you are a UT student, various computer labs, including the PMCL in RLM have *Mathematica* installed
 already. You can also purchase a 1-year license for your own machine

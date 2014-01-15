@@ -1,6 +1,6 @@
 .. raw:: html
 
-   <h1>Course Syllabus Spring '13</h1>
+   <h1>Course Syllabus Spring '14</h1>
 
 Contact Information
 -------------------
@@ -24,7 +24,7 @@ Office Hours: W 3-4, H 10:30-11:30 in RLM 10.313
 
 |
 
-Class: H 8:30-9:30 in RLM 5.112 currently, but moving to CPE soon (room TBA)
+Class: H 8:30-9:30 in CPE 2.206
 
 Class Homepage and Textbook: `http://www.cs.utexas.edu/~evanott/PHY110C_Textbook/static/data_analysis/index.html <http://www.cs.utexas.edu/~evanott/PHY110C_Textbook/static/data_analysis/index.html>`__
 

@@ -21,7 +21,11 @@ As already seen, assignment of variables is quite easy, with the statement
 being read as "x is given the value 5". Unlike mathematics where :math:`x=4` is the same as
 :math:`4=x`, in *Mathematica*, order matters. When we want to assign a variable, it must be
 on the left-hand side, with the value on the right. We'll look at solving equations later, but
-for now, we'll just allow variable assignment as written above.
+for now, we'll just allow variable assignment as written above. 
+
+Variables must start with a letter (or special character - see below), but can be as long
+as you'd like, including numbers after the first character. Punctuation generally cannot
+be used as a variable name.
 
 Most statements in *Mathematica* produce some kind of output
 (the above would output the value 5), but this can be hidden by ending the statement with a semicolon:
@@ -204,7 +208,8 @@ We can make a string from an expression :code:`expr` with :code:`ToString[expr]`
 	Print[y]
 
 prints :code:`5 ^ 2 is 25` as expected (the :code:`Print` function prints the value, but
-just as text, not as full output that could be used in another expression).
+just as text, not as full output that could be used in another expression - to see the
+same text as Output, we could have left off the semicolon on the definition for :code:`y`).
 
 Finally, we do have some options for what kinds of information we place in our Notebook file
 in *Mathematica*. The default is Input (including comments), but we can use the "Format"
