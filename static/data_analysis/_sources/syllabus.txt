@@ -20,11 +20,13 @@ Faculty Supervisor: Dr. Greg Sitz
 
 Faculty Supervisor Email: `gositz@physics.utexas.edu <mailto:gositz@physics.utexas.edu>`__
 
-Office Hours: TBA
+Office Hours: W 3-4, H 10:30-11:30 in RLM 10.313
 
 |
 
-`Class Homepage and Textbook <http://www.cs.utexas.edu/~evanott/PHY110C_Textbook/static/data_analysis/index.html>`__
+Class: H 8:30-9:30 in RLM 5.112 currently, but moving to CPE soon (room TBA)
+
+Class Homepage and Textbook: `http://www.cs.utexas.edu/~evanott/PHY110C_Textbook/static/data_analysis/index.html <http://www.cs.utexas.edu/~evanott/PHY110C_Textbook/static/data_analysis/index.html>`__
 
 Email for Assignment Submission: `data.analysis.physics@gmail.com <mailto:data.analysis.physics@gmail.com>`__
 
@@ -165,7 +167,7 @@ Example Class Agenda - Week 4
 1. Students are to have read textbook information on '*Mathematica*:
    Reading in data, simple analysis' before coming to class
 2. Rough drafts of "*Mathematica*: Simple programs' assignment solutions due the day before class
-3. 1-2 Students present solutions to '*Mathematica*: Simple programs'
+3. Students present solutions to '*Mathematica*: Simple programs'
    homework (10-15 min)
 	a. Class discusses extent to which solutions address the tasks
 	   from the assignment
@@ -209,6 +211,15 @@ assistant for Dr. Sacha Kopp’s UGS 303: Originality in the Arts and Sciences a
 Science of the Times. In his time as SPS president, he has consistently worked to help
 provide resources to better connect students with technical skills applicable to both
 research and industry.
+
+About Student Facilitator 2
+---------------------------
+Will Beason is a senior double majoring in Mathematics and Physics. His primary interests
+are cybernetics and information theory, and he hopes to either go to graduate school or
+get a job relating to these subjects after graduation. He has given several talks on
+data analysis, and is currently acting as a data analysis consultant for MeasureCP.
+He also runs a blog at `will.ketobot.com <http://will.ketobot.com>`__ where he attempts to apply the theories
+behind his interests to the world.
 
 Example Assignment (near end of semester)
 -----------------------------------------
