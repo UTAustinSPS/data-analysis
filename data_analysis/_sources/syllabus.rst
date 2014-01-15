@@ -7,9 +7,13 @@
 
 Contact Information
 -------------------
-Student Facilitator: Evan Ott
+Student Facilitator 1: Evan Ott
 
-Student Facilitator Email: `evan.ott@utexas.edu <mailto:evan.ott@utexas.edu>`_
+Student Facilitator 1 Email: `evan.ott@utexas.edu <mailto:evan.ott@utexas.edu>`_
+
+Student Facilitator 2: Will Beason
+
+Student Facilitator 2 Email: `beason@utexas.edu <mailto:beason@utexas.edu>`_
 
 Office Hours: TBA
 
