@@ -162,4 +162,30 @@ and
 
 So, we can report our result for :math:`g` in the compact form:
 :math:`10.16\pm0.11 \frac{m}{s^2}`, which says that the mean is 10.16 m/s^2 and
-the standard deviation is 0.11 m/s^2.
+the standard deviation is 0.11 m/s^2. This seems pretty close to the correct answer
+of :math:`g=9.8 \frac{m}{s^2}`, but we are ~3.3 standard deviations from it! For most
+of science, 3 standard deviations is considered to be significantly different (
+99.73% of results should be within 3 standard deviations) [discovery of new particles
+such as the Higgs boson usually requires 5 standard deviations!]. But why should our
+result be different? Have we found that we've been measuring gravity incorrectly
+lo these many years? Or is something else at work?
+
+Thus brings up the discussion of sources of error. One is that we neglected air
+resistance in the calculation above. It's reasonable that the watermelon was nearing
+terminal velocity by the time it hit the ground, which means that the descent should
+have taken a little longer (we assumed constant acceleration, but near the
+end, it begins traveling at constant velocity). But if we corrected for this,
+since it took longer than our model predicts, :math:`g_{obs}` should have been smaller
+than :math:`g`! So although that is a source of error, it's not one that explains the
+error we observed. What does explain the error is much less interesting - that we used
+humans to time the descent, and even with a countdown to the drop, there will always
+be a slighly delayed reaction in timing the drop. As such, with even a tenth
+of a second delay (giving :math:`\langle{t}\rangle=3.38s`), :math:`g_{obs}` is
+now less than :math:`g`. If we could quantify our delay, we could correct for it,
+then continue to determine where we went wrong. If the reaction time puts us under,
+then what happens if we take the more complicated model where we have constant
+force of gravity, but an air resistance dependent on velocity (or velocity squared)?
+Can we make further corrections to our model to attain a better and better result?
+Often, the answer is yes, but we may not always have the data to do so. For example,
+we would need to characterize the air drag and quantify the reaction delay, which
+is data we just don't have (not difficult to get, but not collected).
