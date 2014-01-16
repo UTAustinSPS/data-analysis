@@ -64,6 +64,6 @@ input (reading files, etc.) and output (graphs, tables, etc.), as well as incorp
 
 Other Information Sources
 -------------------------
-Wolfram has a tutorial on the "Core Language" `here <http://www.wolfram.com/learningcenter/tutorialcollection/CoreLanguage/>`_. It is available for purchase in print or free download. It covers many
+Wolfram has a tutorial on the "Core Language" `here <http://www.wolfram.com/learningcenter/tutorialcollection/CoreLanguage/>`__. It is available for purchase in print or free download. It covers many
 topics that will be referenced here. Their *Mathematica* site also maintains documentation
-of all the built-in parts of the language `here <http://reference.wolfram.com/mathematica/guide/Mathematica.html>`_, which are duplicated in *Mathematica*'s Help menus.
+of all the built-in parts of the language `here <http://reference.wolfram.com/mathematica/guide/Mathematica.html>`__, which are duplicated in *Mathematica*'s Help menus.
