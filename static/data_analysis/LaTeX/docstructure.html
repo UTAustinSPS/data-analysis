@@ -134,7 +134,7 @@
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
 <li><a class="reference internal" href="#">Document Structure</a><ul>
-<li><a class="reference internal" href="#the-required-command">The Required Command</a></li>
+<li><a class="reference internal" href="#document-classes">Document Classes</a></li>
 <li><a class="reference internal" href="#the-preamble">The Preamble</a><ul>
 <li><a class="reference internal" href="#packages">Packages</a></li>
 <li><a class="reference internal" href="#new-commands">New Commands</a></li>
@@ -207,12 +207,87 @@ be called later or import commands without having to define them yourself.
 Here you can define commands, styles and environments which you will later use.</p>
 <p>The <strong>body</strong> has the structure and content of the document. This is where
 exposition, lists, figures, and nearly everything else in the document goes.</p>
-<div class="section" id="the-required-command">
-<h2>The Required Command<a class="headerlink" href="#the-required-command" title="Permalink to this headline">¶</a></h2>
-<p>There is one required command for every LaTeX document,
-<tt class="code docutils literal"><span class="pre">\documentclass{}</span></tt>. Specifying the class of the document tells LaTeX the
-basic formatting desired for the document. There are many document classes, and
-they are covered on the document classes page.</p>
+<div class="section" id="document-classes">
+<h2>Document Classes<a class="headerlink" href="#document-classes" title="Permalink to this headline">¶</a></h2>
+<p>There is one required command for every LaTeX document, <tt class="code docutils literal"><span class="pre">\documentclass{}</span></tt>. Specifying the class of the document tells LaTeX the basic formatting desired for the document. Very few commands will work before the document class is declared, so it should be done as early as possible. There are many document classes available for LaTeX. Each can be edited heavily, but one must be used as the basis for any document. Below are some of the most common:</p>
+<table border="1" class="docutils">
+<caption><strong>Table 1: Document Classes</strong></caption>
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Class</strong></th>
+<th class="head"><strong>Use</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>article</td>
+<td>By far the most common document class. Formats the document for use in publications.</td>
+</tr>
+<tr class="row-odd"><td>report</td>
+<td>For articles that need more structure, especially if they are longer.</td>
+</tr>
+<tr class="row-even"><td>book</td>
+<td>Formats the document to be printed as a book.</td>
+</tr>
+<tr class="row-odd"><td>letter</td>
+<td>Makes very professional-looking letters.</td>
+</tr>
+<tr class="row-even"><td>beamer</td>
+<td>A class for creating presentations in LaTeX.</td>
+</tr>
+</tbody>
+</table>
+<p>To declare the class of a document to be <tt class="code docutils literal"><span class="pre">article</span></tt>, use <tt class="code docutils literal"><span class="pre">\documentclass{article}</span></tt> in the preamble. Document classes also include many options which can be changed when the class is declared. These are optional, and so are declared in the optional argument of the <tt class="code docutils literal"><span class="pre">\documentclass</span></tt> command. Below, the standard setting for <tt class="code docutils literal"><span class="pre">article</span></tt> is italicized among some of the other possible options. If you wish to use the default setting, do not bother specifying it.</p>
+<table border="1" class="docutils">
+<caption><strong>Table 2: Document Class Options</strong></caption>
+<colgroup>
+<col width="9%" />
+<col width="21%" />
+<col width="69%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Option</strong></th>
+<th class="head"><strong>Possible Settings</strong></th>
+<th class="head"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Font Size</td>
+<td>10pt, <em>11pt</em>, 12pt</td>
+<td>The size of standard text</td>
+</tr>
+<tr class="row-odd"><td>Paper Type</td>
+<td>a4paper, <em>letterpaper</em></td>
+<td>The type of paper for printing</td>
+</tr>
+<tr class="row-even"><td>Title Page</td>
+<td>titlepage, <em>notitlepage</em></td>
+<td>Whether to force a new page after the title</td>
+</tr>
+<tr class="row-odd"><td>Columns</td>
+<td><em>onecolumn</em>, twocolumn</td>
+<td>The number of columns in the document</td>
+</tr>
+<tr class="row-even"><td>Page Sides</td>
+<td><em>oneside</em>, twoside</td>
+<td>Whether the document is intended to be printed single- or double-sided</td>
+</tr>
+<tr class="row-odd"><td>Orientation</td>
+<td><em>portrait</em>, landscape</td>
+<td>How the document is oriented on paper</td>
+</tr>
+<tr class="row-even"><td>Draft</td>
+<td>draft</td>
+<td>Makes typesetting problems apparent with a mark in the right margin; disables images</td>
+</tr>
+</tbody>
+</table>
+<p>The order of the options is arbitrary. So a letter with 10 point font on A4 paper to be printed with the landscape orientation is specified with</p>
+<div class="highlight-python"><pre>\documentclass[10pt, landscape, a4paper]{letter}</pre>
+</div>
+<p>A more thourough treatment is available on <a class="reference external" href="http://en.wikibooks.org/wiki/LaTeX/Document_Structure#Document_classes">the LaTeX wikibook</a>.</p>
 </div>
 <div class="section" id="the-preamble">
 <h2>The Preamble<a class="headerlink" href="#the-preamble" title="Permalink to this headline">¶</a></h2>
@@ -309,7 +384,7 @@ I'm a paragraph!
 \subparagraph{Hey, }
 I'm just a subparagraph.</pre>
 </div>
-<img alt="LaTeX\Figures/pars.jpg" src="LaTeX\Figures/pars.jpg" />
+<img alt="../_images/pars.jpg" src="../_images/pars.jpg" />
 <p>Using these commands to specify paragraphs is generally unnecessary since most
 documents don&#8217;t need to be this structured. A paragraph break can be specified
 by inserting a blank line between paragraphs. If you want to keep the paragraph

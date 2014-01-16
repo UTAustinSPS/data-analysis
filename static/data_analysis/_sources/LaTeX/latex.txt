@@ -43,11 +43,9 @@ images, and other special features. A simple document looks like the following.
    Hello World!
    \end{document}
 
+The first line says what kind of document we are working with by specifying the document's class as :code:`article`. The article class formatting information like margins, spacing, and font. It also gives information about how the document is structured and defines macros. Every document needs to have a document class. Usually, this is the first line of a LaTeX document.
 
-
-The first line says what kind of article we are working with. It contains formatting information like margins, spacing, and font. It also gives information about how the document is structured. Every document needs to have a document class. Usually, this is the first line of a LaTeX document.
-
-The second line is the beginning of the content which will be typeset. The third line is the content of the document. The last line says to stop typesetting, and ignore everything afterwards.
+The second line marks the beginning of the content which will be typeset. The third line is the content of the document, "Hello World!". The last line says to stop typesetting, and ignore everything afterwards.
 
 
 A more complex document might look like the below. Click on the image to get a better view.
@@ -102,5 +100,63 @@ The :code:`\begin{abstract}` calls the :code:`abstract` environment, which is au
 
 Example Conventions
 ===================
-Since specifying the document class and beginning/ending the document are required for every document, in general those will not be included in examples if not relevant. For all cases, unless noted otherwise, documents 
+Since specifying the document class and beginning/ending the document are required for every document, in general those will not be included in examples if not relevant. For all cases, unless noted otherwise, documents will assume the below.
+
+::
+
+  \documentclass{article}
+  
+  \begin{document}
+  \end{document}
+
+
+As displayed in the previous sections, examples will be cropped to show only the relevant portions of the rendered page rather than the entire document. For simple cases, this can be done in LaTeX with the :code:`preview` package.
+
+::
+
+  % Preamble
+  \documentclass{minimal}
+  \usepackage[active, tightpage, pdftex]{preview}
+  \setlength\PreviewBorder{20pt}
+
+  % Body
+  \begin{preview}
+  % Insert Content Here
+  \end{preview}
+
+
+The preview package and environment is useful for debugging, too, as only the content within the :code:`preview` environment is typeset. If no errors arise when typesetting a part of the document, then the problem is (probably) not in those lines of code.
+
+
+The Power of Templates
+======================
+Before going off to write your own LaTeX documents, you may want to create a template document to base your others on. They can get quite long, and it is easier to copy and paste from an old document rather than remembering to type all of the commands and include all of the necessary packages every time. Several samples of templates for various uses are included on the templates page.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
