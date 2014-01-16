@@ -34,6 +34,8 @@ list them as part of the required reading.
 **Assignment due before class this week:** Only the reading! Might browse through the whole book
 if you want to see what's ahead, and to see some pretty examples.
 
+**Presentation:** :download:`Week1.pdf <Assignments/Week1.pdf>`
+
 Week Two (Jan. 23)
 ==================
 "Introduction to *Mathematica*: Simple programs, graphing"
