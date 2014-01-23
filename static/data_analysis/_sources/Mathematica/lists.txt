@@ -121,6 +121,31 @@ is the row vector :math:`\left(\begin{array}{ccc}1 & 2 & 3\end{array}\right)` an
 
 is the column vector :math:`\left(\begin{array}{c}1\\2\\3\end{array}\right)`.
 
+We can take selections of the data with indices as normal
+
+::
+
+	mat = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+	mat[[{1, 3}, 2;;3]]
+
+gives
+
+::
+
+	{{2, 3}, {8, 9}}
+
+But we can also do transformations with :code:`All` which selects all the possible values:
+
+::
+
+	mat[[1, All]]
+
+gives
+
+::
+
+	{1, 2, 3}	
+
 We have many operations on matrices at our disposal too. For example:
 
 ::

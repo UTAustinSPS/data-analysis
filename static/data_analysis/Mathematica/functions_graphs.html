@@ -332,6 +332,10 @@ So, for example, we could have:</p>
 <img alt="sin(x) and cos(x)" src="../_images/sinx_special.png" />
 <p class="caption">Plot for <span class="math">\(f(x)=\sin(x),~g(x)=\cos(x)\)</span>, with options specified above.</p>
 </div>
+<p>Additional things we can do include wrapping strings (<tt class="code docutils literal"><span class="pre">PlotLabel</span></tt> or
+<tt class="code docutils literal"><span class="pre">AxesLabel</span></tt>, etc.) in <tt class="code docutils literal"><span class="pre">Style</span></tt> functions: <tt class="code docutils literal"><span class="pre">PlotLabel-&gt;Style[&quot;title&quot;,</span> <span class="pre">Bold]</span></tt>,
+which can update the text, rather than the lines/points on the graph. Furthermore, we can
+list several options: <tt class="code docutils literal"><span class="pre">Style[&quot;text&quot;,</span> <span class="pre">Bold,</span> <span class="pre">Orange,</span> <span class="pre">Small,</span> <span class="pre">...]</span></tt>.</p>
 <div class="admonition-practice-problem-simple-plots admonition">
 <p class="first admonition-title">Practice Problem: Simple Plots</p>
 <p>For practice, try creating the plot below. The functions are listed in the legend

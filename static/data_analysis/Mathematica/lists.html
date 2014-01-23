@@ -287,6 +287,22 @@ different concepts and structures in <em>Mathematica</em> can be combined.</p>
 </pre></div>
 </div>
 <p>is the column vector <span class="math">\(\left(\begin{array}{c}1\\2\\3\end{array}\right)\)</span>.</p>
+<p>We can take selections of the data with indices as normal</p>
+<div class="highlight-python"><pre>mat = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+mat[[{1, 3}, 2;;3]]</pre>
+</div>
+<p>gives</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">},</span> <span class="p">{</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">}}</span>
+</pre></div>
+</div>
+<p>But we can also do transformations with <tt class="code docutils literal"><span class="pre">All</span></tt> which selects all the possible values:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">mat</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="n">All</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>gives</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+</pre></div>
+</div>
 <p>We have many operations on matrices at our disposal too. For example:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">m</span> <span class="o">=</span> <span class="p">{{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">},</span> <span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">},</span> <span class="p">{</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">}};</span>
 <span class="n">Transpose</span><span class="p">[</span><span class="n">m</span><span class="p">]</span>

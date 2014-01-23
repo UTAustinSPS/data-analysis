@@ -52,3 +52,19 @@ Week Two (Jan. 23)
   - `Basic 2D Graphs <Mathematica/functions_graphs.html#basic-2d-graphs>`_
 
 **Assignment due before class this week:** :download:`Assignment 1 <Assignments/assignment1.pdf>`.
+
+Week Three (Jan. 30)
+====================
+"Introduction to *Mathematica*: Simple programs"
+------------------------------------------------
+
+**Reading due by class:**
+
+- `Applying Assumptions <Mathematica/assumptions.html>`_
+- `Importing Data <Mathematica/import.html>`_
+- `Exporting Data <Mathematica/export.html>`_
+- `Functions and Graphing <Mathematica/functions_graphs.html>`_
+- `Animations <Mathematica/animations.html>`_
+
+
+**Assignment due before class this week:** :download:`Assignment 2 <Assignments/assignment2.pdf>`.

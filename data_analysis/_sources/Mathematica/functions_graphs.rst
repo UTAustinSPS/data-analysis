@@ -181,6 +181,12 @@ So, for example, we could have:
 
 	Plot for :math:`f(x)=\sin(x),~g(x)=\cos(x)`, with options specified above.
 
+Additional things we can do include wrapping strings (:code:`PlotLabel` or
+:code:`AxesLabel`, etc.) in :code:`Style` functions: :code:`PlotLabel->Style["title", Bold]`,
+which can update the text, rather than the lines/points on the graph. Furthermore, we can
+list several options: :code:`Style["text", Bold, Orange, Small, ...]`.
+
+
 .. admonition:: Practice Problem: Simple Plots
 
 	For practice, try creating the plot below. The functions are listed in the legend
