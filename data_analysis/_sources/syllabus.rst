@@ -15,7 +15,7 @@ Student Facilitator 2: Will Beason
 
 Student Facilitator 2 Email: `beason@utexas.edu <mailto:beason@utexas.edu>`__
 
-Office Hours: W 2-4, Location TBA
+Office Hours: W 2-4, BIO 301
 
 |
 

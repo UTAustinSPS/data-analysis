@@ -134,7 +134,7 @@ This would print:
 	125
 	625
 
-You can also use :code:`\%n`, which gives the output of the :math:`n^\textrm{th}` execution, which is
+You can also use :code:`%n`, which gives the output of the :math:`n^\textrm{th}` execution, which is
 even more prone to errors.
 
 Approximations
@@ -171,7 +171,7 @@ would output:
 	27
 	27
 
-:code:`/.` is telling mathematica that you want to apply a particular set of values to variables in 
+:code:`/.` is telling *Mathematica* that you want to apply a particular set of values to variables in 
 the expression. The rule operator (:code:`->`) is stating that the variable on the left hand side should take the value
 on the right hand side. You can apply many such substitutions one after another (
 :code:`g/.x->5/.y->2`) or

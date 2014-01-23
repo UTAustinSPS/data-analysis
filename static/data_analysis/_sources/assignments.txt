@@ -53,6 +53,8 @@ Week Two (Jan. 23)
 
 **Assignment due before class this week:** :download:`Assignment 1 <Assignments/assignment1.pdf>`.
 
+**Presentation:** :download:`Week2.pdf <Assignments/Week2.pdf>`
+
 Week Three (Jan. 30)
 ====================
 "Introduction to *Mathematica*: Simple programs"
