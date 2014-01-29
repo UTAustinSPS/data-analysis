@@ -51,6 +51,7 @@ The :raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>tbook`
    :maxdepth: 2
    
    LaTeX/latex.rst
+   LaTeX/installation.rst
    LaTeX/docstructure.rst
    LaTeX/packages.rst
    LaTeX/math.rst
