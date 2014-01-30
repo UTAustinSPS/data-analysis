@@ -70,3 +70,25 @@ Week Three (Jan. 30)
 
 
 **Assignment due before class this week:** :download:`Assignment 2 <Assignments/assignment2.pdf>`.
+
+Week Four (Jan. 30)
+===================
+"*Mathematica*: Reading in data, simple analysis"
+-------------------------------------------------
+
+This weeks marks the brief shift into applying the structures we've learned about with
+*Mathematica* to real problems rather than little toys. Most assignments (including the
+one due this week) that have a *Mathematica* component will now have some data associated with
+them that you will then use to perform analysis. This week, the assignment is more about graphing
+the raw data, but we'll soon move to applying fits to the data, plotting those, plotting
+error bars, etc. We'll take a break from *Mathematica* in a couple weeks to learn about
+*LaTeX* so we can present our results in a more formal way.
+
+**Reading due by class:**
+
+- `Curve Fitting <Analysis/curve_fit.html>`_
+- `Approximations <Analysis/approximations.html>`_
+
+**Assignment due before class this week:** :download:`Assignment 3 <Assignments/assignment3.pdf>`.
+
+**Data file for assignment (9 MB):** :download:`Assignment 3 Data <Assignments/assignment3data.csv>`.
