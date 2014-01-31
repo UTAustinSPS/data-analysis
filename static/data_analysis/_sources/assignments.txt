@@ -71,7 +71,7 @@ Week Three (Jan. 30)
 
 **Assignment due before class this week:** :download:`Assignment 2 <Assignments/assignment2.pdf>`.
 
-Week Four (Jan. 30)
+Week Four (Feb. 6)
 ===================
 "*Mathematica*: Reading in data, simple analysis"
 -------------------------------------------------
