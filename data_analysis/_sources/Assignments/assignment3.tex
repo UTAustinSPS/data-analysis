@@ -49,8 +49,8 @@ assumption made, but with multiple simple solutions.
 
 \section{Problem 2}
 For this problem, you'll need the data at \url{http://www.cs.utexas.edu/~evanott/PHY110C_Textbook/static/data_analysis/_downloads/assignment3data.csv} (9 MB). This is data
-for a simple (read: bad) gravity simulation for the Sun, Halley's Comet, the 8 planets, and Pluto (the 9th planet and everyone knows it). The first column is a time, then, in groups
-of 3, is the x, y, and z coordinates of each of the objects (not necessarily in the order above).
+for a simple (read: bad) gravity simulation for the Sun, Halley's Comet, the 8 planets, and Pluto (the 9th planet and everyone knows it). The columns are in groups
+of 3, as the x, y, and z coordinates of each of the objects (not necessarily in the order above), and each row represents an advance of 1800 seconds.
 
 \subsection{a}
 Find a way to determine which object is which. In my case, I made a manipulable plot that showed the position of each particle at the time I wanted. I also fixed the plot range so that
@@ -64,7 +64,7 @@ The masses of the objects (in kg) are (in order of Halley's Comet, Mercury, Venu
 5.685*10^26, 8.6625*10^25, 1.0278*10^26, 1.324*10^22, 1.989*10^30}
 \end{verbatim}
 
-Using this, can you calculate the net momentum at the start (first two timesteps which are in seconds) of the simulation (x, y, z are in meters)? Furthermore, test other times to see if total momentum has
+Using this, can you calculate the net momentum at the start (first two timesteps which are separated by 1800 seconds) of the simulation (x, y, z are in meters)? Furthermore, test other times to see if total momentum has
 been conserved (2-3 additional points throughout the simulation is sufficient). 
 
 To figure out the instantaneous momentum of one object relative to the reference frame we're in (arbitrary
