@@ -92,3 +92,18 @@ error bars, etc. We'll take a break from *Mathematica* in a couple weeks to lear
 **Assignment due before class this week:** :download:`Assignment 3 <Assignments/assignment3.pdf>`.
 
 **Data file for assignment (9 MB):** :download:`Assignment 3 Data <Assignments/assignment3data.csv>`.
+
+Week Five (Feb. 13)
+===================
+"*Mathematica*: More advanced data analysis"
+-------------------------------------------------
+
+This is the last week of *Mathematica* for a while! We'll begin looking at LaTeX next!
+
+**Reading due by class:**
+
+- Coming soon...
+
+**Assignment due before class this week:** :download:`Assignment 4 <Assignments/assignment4.pdf>`.
+
+**Data file for assignment (600 KB):** :download:`Halley's Comet Data <Assignments/halley_data.csv>`.

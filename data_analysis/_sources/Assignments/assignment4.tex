@@ -1,0 +1,100 @@
+\documentclass{article}
+\usepackage[latin1]{inputenc}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\newcommand{\ket}[1]{\ensuremath{\left|#1\right\rangle}}
+\newcommand{\bra}[1]{\ensuremath{\left\langle#1\right|}}
+\newcommand{\braket}[2]{\ensuremath{\left\langle #1 \middle| #2 \right\rangle}}
+\newcommand{\obar}[1]{\ensuremath{\overline{ #1 }}}
+
+\newcommand{\M}[0]{\emph{Mathematica}~}
+% enumerate is numbered \begin{enumerate}[(I)] is cap roman in parens
+% itemize is bulleted \begin{itemize}
+% subfigures:
+% \begin{subfigure}[b]{0.5\textwidth} \includegraphics{asdf.jpg} \caption{} \label{subfig:asdf} \end{subfigure}
+\hypersetup{colorlinks=true, urlcolor=blue, linkcolor=blue, citecolor=red}
+\graphicspath{ {C:/Users/Evan/Desktop/} }
+\title{Assignment 4: \\ Introduction to \emph{Mathematica}\\
+\large \emph{Introduction to Data Analysis for Physics}}
+\author{Evan Ott and Will Beason}
+\date{Spring 2014}
+\setcounter{secnumdepth}{0}
+\usepackage[parfill]{parskip}
+\begin{document}
+\maketitle
+\section{Submission Requirements}
+Submit the assignment to \href{mailto:data.analysis.physics@gmail.com}{data.analysis.physics@gmail.com} by Wednesday at 5pm. Just submit the \M
+document you create (typically a .nb file).
+
+\section{Problem 1}
+In the Error Analysis section of the textbook (which we haven't gone through yet), there's an example that shows that acceleration due to gravity on the surface of the
+Earth is just about constant (\url{http://www.cs.utexas.edu/~evanott/PHY110C_Textbook/static/data_analysis/Analysis/error.html#example-watermelon-drop}).
+
+Let's use \M to see if we can prove this. From Newton, we know that for us near Earth: $$|a_g(r)|=G\frac{M}{r^2}$$ with radius of the Earth being around 6370km. If we consider
+our ``elevation'', $e$, to be our distance above or below this ``mean Earth radius'' given by $$R_\oplus=6.370\times10^6m$$ such that our real radius to the center of the earth is $$r=e+R_\oplus$$
+we can make a Taylor series expansion to see how much gravity changes as a function of elevation. Note that $M=5.97\times10^{24}kg$ and $G=6.67\times10^{-11}Nm^2kg^{-2}$.
+
+Remember that when you use the \texttt{Series} command, you may need to make the result a regular, computable function by using \texttt{Normal} on the result.
+
+\subsection{a}
+Use \texttt{Series[...]} to make a first-order approximation to $|a_g(e)|$. What is the acceleration due to gravity in Austin ($e=150m$)? Denver ($e=1609m$)? Mount Everest ($e=8848m$)?
+
+\subsection{b}
+Compare your first-order approximations to the ``true'' values computed with $|a_g(r)|=G\frac{M}{r^2}$. Do they over- or under-estimate acceleration due to gravity? By what factor?
+
+\subsection{c}
+Repeat steps {\bf{a}} and {\bf{c}} for a zeroth-order approximation and second-order approximation. From this, what can you conclude about the approximation of using
+$a_g=9.81\frac{m}{s^2}$ near the surface of Earth - perhaps the most fundamental, often unexplained, approximation in introductory physics courses?
+
+\subsection{d}
+No problem here, but if this problem made you wonder about how Earth's gravitational field \emph{actually} varies, check out ``New ultrahigh-resolution picture of Earth's gravity field'' in
+\emph{Geophysical Research Letters} by Hirt et al (2013). The figures show in particular how gravity varies over Mount Everest. In the supplemental information, Figure 3 shows how gravity
+varies in units of $10^{-5}ms^{-2}$ over the planet. The following link will use the UT proxy service to open the article (so you can look at it with EID even if you're not on the campus WiFi).
+\url{http://onlinelibrary.wiley.com.ezproxy.lib.utexas.edu/enhanced/doi/10.1002/grl.50838/}
+
+\section{Problem 2}
+With this problem, we're going to build on what we did last week with the planetary simulation, but only looking at one part: Halley's comet. The data is on the website for just Halley's comet
+with sun always centered at $(0,0,0)$, giving a 2D representation of the problem. The data is just $(x,y)$ for the comet, again with each row being separated by $1800s$. In this problem,
+We'll be using a well-known model for orbits of a comet and see how well it fits our data.
+
+Using the gravitational force $F(r)=GMm/r^2$, and assuming polar coordinates $$r^2=x^2+y^2,~\tan(\phi)=\frac{y}{x}$$ we can\cite{taylor} determine that the radius as a function
+of angle for a comet is: $$r(\phi)=\frac{c}{1+\epsilon\cos(\phi)}$$ where $c$ is a length-scale constant, and $\epsilon$ is the unitless eccentricity.
+
+\subsection{a}
+Transform your data so that you have a listing of points $(\phi, r)$ rather than $(x,y)$. The coordinate transformations above are not quite good enough to specify which solution
+for $\phi$ is preferred. In this case, we want $\phi$ to always be increasing, so once you have calculated values of $\phi$, you may want to use \texttt{Mod[myAngleList + 2Pi, Pi]}, which,
+for the values provided, will ensure that $\phi$ increases and that there are no jumps in the data (to do this for a larger data set would require a more complicated correction function,
+but here, this is sufficient). Once you have that, use a \texttt{ListPlot} on the $(x,y)$ version and a \texttt{ListPolarPlot} on the $(\phi,r)$ data (preferably overlaying them with the
+\texttt{Show} function) to ensure that you have transformed the data correctly (graphs should be identical).
+
+\subsection{b}
+Use the \texttt{FindFit} function to get fitted values for $c$ and $e$ in $r(\phi)=\frac{c}{1+\epsilon\cos(\phi)}$. You should be able to use the default least-squares method of 
+curve fitting. Plot this fitted function against the data - does it appear to match well by visual inspection?
+
+\subsection{c}
+Using the following:
+\begin{align*}
+m_{\textrm{Halley}}=M_H&=2.2*10^{14}kg\\
+m_{\textrm{sun}}=M_\odot&=1.989*10^{30}kg\\
+G&=6.67\times10^{-11}Nm^2kg^{-2}\\
+a&=\frac{c}{1-e^2}\\
+\tau^2&=\frac{4\pi^2}{GM_\odot}a^3
+\end{align*}
+calculate the period of orbit for Halley's comet based on your data (above, period is simply $\tau$). Does it match well with our knowledge of Halley's comet arriving every 75-76 years?
+
+\subsection{d}
+Finally, let's consider whether our model seems to accurately portray what's going on in the simulation. Consider the difference between data and fitted function $r_{obs}-r(\phi)$ for each
+point in the dataset. Looking at this quantity versus $\phi$, $t$, or $r_{obs}$, is there a visible pattern to the residuals? How big is this difference in comparison to the actual
+value of the radius ($(r_{obs}-r(\phi))/r_{obs}$)? Is it negligible?
+
+\begin{thebibliography}{9}
+\bibitem{taylor}
+Taylor, John R. \emph{Classical Mechanics}, Section 8.6 ``Kepler Orbits'' (2005)
+\end{thebibliography}
+\end{document}
