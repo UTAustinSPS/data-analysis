@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[   2431762,      40356]
-NotebookOptionsPosition[   2428737,      40253]
-NotebookOutlinePosition[   2429082,      40268]
-CellTagsIndexPosition[   2429039,      40265]
+NotebookDataLength[   2437638,      40529]
+NotebookOptionsPosition[   2434369,      40418]
+NotebookOutlinePosition[   2434713,      40433]
+CellTagsIndexPosition[   2434670,      40430]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -4715,7 +4715,7 @@ Cell[BoxData[
           Background->None],
          Appearance->Automatic,
          ButtonFunction:>OutputSizeLimit`ButtonFunction[
-          Identity, 646, 26945209489848721708, 5/2],
+          Identity, 737, 26945209489848721708, 5/2],
          Enabled->True,
          Evaluator->Automatic,
          Method->"Queued"], "\[ThinSpace]", 
@@ -4732,7 +4732,7 @@ Cell[BoxData[
           Background->None],
          Appearance->Automatic,
          ButtonFunction:>OutputSizeLimit`ButtonFunction[
-          Identity, 646, 26945209489848721708, 5 2],
+          Identity, 737, 26945209489848721708, 5 2],
          Enabled->True,
          Evaluator->Automatic,
          Method->"Queued"], "\[ThinSpace]", 
@@ -4749,7 +4749,7 @@ Cell[BoxData[
           Background->None],
          Appearance->Automatic,
          ButtonFunction:>OutputSizeLimit`ButtonFunction[
-          Identity, 646, 26945209489848721708, Infinity],
+          Identity, 737, 26945209489848721708, Infinity],
          Enabled->True,
          Evaluator->Automatic,
          Method->"Queued"], "\[ThinSpace]", 
@@ -4794,8 +4794,9 @@ Cell[BoxData[
     FrameMargins->5],
    Deploy,
    DefaultBaseStyle->"Deploy"],
-  Out[646]]], "Output",
- CellChangeTimes->{{3.600662714723024*^9, 3.6006627561243916`*^9}}]
+  Out[737]]], "Output",
+ CellChangeTimes->{{3.600662714723024*^9, 3.6006627561243916`*^9}, 
+   3.6006681123377495`*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -40249,10 +40250,174 @@ Cell[BoxData[
 
 Cell[BoxData["73.82917850840758`"], "Output",
  CellChangeTimes->{{3.60066539470331*^9, 3.600665415052474*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["halley2d"], "Input",
+ CellChangeTimes->{{3.600668154675171*^9, 3.600668156950301*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   PanelBox[GridBox[{
+      {
+       StyleBox[
+        StyleBox[
+         DynamicBox[ToBoxes[
+           FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"], 
+           StandardForm],
+          ImageSizeCache->{299., {3., 9.}}],
+         StripOnInput->False,
+         DynamicUpdating->True], "Panel",
+        StripOnInput->False,
+        Background->None]},
+      {
+       ItemBox[
+        TagBox[
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"8.8353`*^10", ",", "0.`"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"8.835294846961`*^10", ",", "1.3381174184`*^8"}], "}"}], 
+           ",", 
+           RowBox[{"{", 
+            RowBox[{"8.835279387878`*^10", ",", "2.6762325549`*^8"}], "}"}], 
+           ",", 
+           RowBox[{"\[LeftSkeleton]", "14918", "\[RightSkeleton]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "5.7607925235294`*^11"}], ",", 
+             "4.4913623363474`*^11"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "5.7611243695929`*^11"}], ",", 
+             "4.4914582933171`*^11"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "5.761456316457001`*^11"}], ",", 
+             "4.491554275763`*^11"}], "}"}]}], "}"}],
+         Short[#, 5]& ],
+        Background->GrayLevel[1],
+        BaseStyle->{Deployed -> False},
+        Frame->True,
+        FrameStyle->GrayLevel[0, 0.2],
+        StripOnInput->False]},
+      {
+       RowBox[{
+        ButtonBox[
+         StyleBox[
+          StyleBox[
+           DynamicBox[ToBoxes[
+             FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+             StandardForm],
+            ImageSizeCache->{54., {1., 9.}}],
+           StripOnInput->False,
+           DynamicUpdating->True], "Panel",
+          StripOnInput->False,
+          Background->None],
+         Appearance->Automatic,
+         ButtonFunction:>OutputSizeLimit`ButtonFunction[
+          Identity, 738, 26945209489848721708, 5/2],
+         Enabled->True,
+         Evaluator->Automatic,
+         Method->"Queued"], "\[ThinSpace]", 
+        ButtonBox[
+         StyleBox[
+          StyleBox[
+           DynamicBox[ToBoxes[
+             FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+             StandardForm],
+            ImageSizeCache->{60., {1., 9.}}],
+           StripOnInput->False,
+           DynamicUpdating->True], "Panel",
+          StripOnInput->False,
+          Background->None],
+         Appearance->Automatic,
+         ButtonFunction:>OutputSizeLimit`ButtonFunction[
+          Identity, 738, 26945209489848721708, 5 2],
+         Enabled->True,
+         Evaluator->Automatic,
+         Method->"Queued"], "\[ThinSpace]", 
+        ButtonBox[
+         StyleBox[
+          StyleBox[
+           DynamicBox[ToBoxes[
+             FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+             StandardForm],
+            ImageSizeCache->{92., {3., 9.}}],
+           StripOnInput->False,
+           DynamicUpdating->True], "Panel",
+          StripOnInput->False,
+          Background->None],
+         Appearance->Automatic,
+         ButtonFunction:>OutputSizeLimit`ButtonFunction[
+          Identity, 738, 26945209489848721708, Infinity],
+         Enabled->True,
+         Evaluator->Automatic,
+         Method->"Queued"], "\[ThinSpace]", 
+        ButtonBox[
+         StyleBox[
+          StyleBox[
+           DynamicBox[ToBoxes[
+             FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+             StandardForm],
+            ImageSizeCache->{78., {1., 9.}}],
+           StripOnInput->False,
+           DynamicUpdating->True], "Panel",
+          StripOnInput->False,
+          Background->None],
+         Appearance->Automatic,
+         ButtonFunction:>FrontEndExecute[{
+            FrontEnd`SetOptions[
+            FrontEnd`$FrontEnd, 
+             FrontEnd`PreferencesSettings -> {"Page" -> "Evaluation"}], 
+            FrontEnd`FrontEndToken["PreferencesDialog"]}],
+         Evaluator->None,
+         Method->"Preemptive"]}]}
+     },
+     DefaultBaseStyle->"Column",
+     GridBoxAlignment->{
+      "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+       "RowsIndexed" -> {}},
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}},
+     GridBoxItemSize->{
+      "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.5599999999999999]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[1.2]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    DefaultBaseStyle->{},
+    FrameMargins->5],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  Out[738]]], "Output",
+ CellChangeTimes->{3.600668157567337*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{
+  "\"\<C:/Users/Evan/GitProjects/runestone/data_analysis/_sources/Assignments/\
+halley_data.csv\>\"", ",", "halley2d"}], "]"}]], "Input",
+ CellChangeTimes->{{3.600668159646456*^9, 3.600668193495392*^9}}],
+
+Cell[BoxData["\<\"C:/Users/Evan/GitProjects/runestone/data_analysis/_sources/\
+Assignments/halley_data.csv\"\>"], "Output",
+ CellChangeTimes->{3.6006681946954603`*^9}]
 }, Open  ]]
 },
 WindowSize->{707, 817},
-WindowMargins->{{Automatic, 112}, {36, Automatic}},
+WindowMargins->{{Automatic, 517}, {Automatic, 0}},
 FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
 StyleDefinitions->"Default.nb"
 ]
@@ -40289,74 +40454,82 @@ Cell[278889, 4637, 141, 3, 33, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[279067, 4645, 286, 8, 31, "Input"],
-Cell[279356, 4655, 5030, 142, 168, "Output"]
+Cell[279356, 4655, 5058, 143, 224, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[284423, 4802, 138, 2, 31, "Input"],
-Cell[284564, 4806, 269247, 4419, 240, "Output"]
+Cell[284451, 4803, 138, 2, 31, "Input"],
+Cell[284592, 4807, 269247, 4419, 240, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[553848, 9230, 1412, 43, 72, "Input"],
-Cell[555263, 9275, 5036, 141, 168, "Output"]
+Cell[553876, 9231, 1412, 43, 72, "Input"],
+Cell[555291, 9276, 5036, 141, 168, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[560336, 9421, 536, 14, 52, "Input"],
-Cell[560875, 9437, 861194, 14133, 260, 856403, 14053, "CachedBoxData", \
+Cell[560364, 9422, 536, 14, 52, "Input"],
+Cell[560903, 9438, 861194, 14133, 260, 856403, 14053, "CachedBoxData", \
 "BoxData", "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1422106, 23575, 146, 4, 31, "Input"],
-Cell[1422255, 23581, 268349, 4404, 227, "Output"]
+Cell[1422134, 23576, 146, 4, 31, "Input"],
+Cell[1422283, 23582, 268349, 4404, 227, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1690641, 27990, 669, 17, 31, "Input"],
-Cell[1691313, 28009, 332, 7, 33, "Output"]
+Cell[1690669, 27991, 669, 17, 31, "Input"],
+Cell[1691341, 28010, 332, 7, 33, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1691682, 28021, 1173, 34, 103, "Input"],
-Cell[1692858, 28057, 286919, 4713, 319, "Output"]
+Cell[1691710, 28022, 1173, 34, 103, "Input"],
+Cell[1692886, 28058, 286919, 4713, 319, "Output"]
 }, Open  ]],
-Cell[1979792, 32773, 442, 12, 67, "Input"],
+Cell[1979820, 32774, 442, 12, 67, "Input"],
 Cell[CellGroupData[{
-Cell[1980259, 32789, 1146, 30, 112, "Input"],
-Cell[1981408, 32821, 280532, 4604, 251, "Output"]
+Cell[1980287, 32790, 1146, 30, 112, "Input"],
+Cell[1981436, 32822, 280532, 4604, 219, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2261977, 37430, 122, 2, 31, "Input"],
-Cell[2262102, 37434, 144499, 2375, 217, 139744, 2296, "CachedBoxData", \
+Cell[2262005, 37431, 122, 2, 31, "Input"],
+Cell[2262130, 37435, 144499, 2375, 217, 139744, 2296, "CachedBoxData", \
 "BoxData", "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2406638, 39814, 462, 14, 75, "Input"],
-Cell[2407103, 39830, 18717, 317, 224, "Output"]
+Cell[2406666, 39815, 462, 14, 75, "Input"],
+Cell[2407131, 39831, 18717, 317, 224, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2425857, 40152, 428, 12, 31, "Input"],
-Cell[2426288, 40166, 118, 1, 31, "Output"]
+Cell[2425885, 40153, 428, 12, 31, "Input"],
+Cell[2426316, 40167, 118, 1, 31, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2426443, 40172, 304, 7, 31, "Input"],
-Cell[2426750, 40181, 83, 1, 31, "Output"]
+Cell[2426471, 40173, 304, 7, 31, "Input"],
+Cell[2426778, 40182, 83, 1, 31, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2426870, 40187, 193, 4, 31, "Input"],
-Cell[2427066, 40193, 120, 1, 31, "Output"]
+Cell[2426898, 40188, 193, 4, 31, "Input"],
+Cell[2427094, 40194, 120, 1, 31, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2427223, 40199, 137, 2, 31, "Input"],
-Cell[2427363, 40203, 90, 1, 31, "Output"]
+Cell[2427251, 40200, 137, 2, 31, "Input"],
+Cell[2427391, 40204, 90, 1, 31, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2427490, 40209, 137, 2, 31, "Input"],
-Cell[2427630, 40213, 92, 1, 31, "Output"]
+Cell[2427518, 40210, 137, 2, 31, "Input"],
+Cell[2427658, 40214, 92, 1, 31, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2427759, 40219, 215, 6, 31, "Input"],
-Cell[2427977, 40227, 91, 1, 31, "Output"]
+Cell[2427787, 40220, 215, 6, 31, "Input"],
+Cell[2428005, 40228, 91, 1, 31, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2428105, 40233, 503, 14, 31, "Input"],
-Cell[2428611, 40249, 110, 1, 31, "Output"]
+Cell[2428133, 40234, 503, 14, 31, "Input"],
+Cell[2428639, 40250, 110, 1, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2428786, 40256, 100, 1, 31, "Input"],
+Cell[2428889, 40259, 5004, 142, 168, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2433930, 40406, 253, 5, 72, "Input"],
+Cell[2434186, 40413, 167, 2, 108, "Output"]
 }, Open  ]]
 }
 ]

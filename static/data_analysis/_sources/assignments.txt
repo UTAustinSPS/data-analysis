@@ -71,6 +71,8 @@ Week Three (Jan. 30)
 
 **Assignment due before class this week:** :download:`Assignment 2 <Assignments/assignment2.pdf>`.
 
+**Presentation:** :download:`Week3.pdf <Assignments/Week3.pdf>`
+
 Week Four (Feb. 6)
 ===================
 "*Mathematica*: Reading in data, simple analysis"
@@ -92,6 +94,11 @@ error bars, etc. We'll take a break from *Mathematica* in a couple weeks to lear
 **Assignment due before class this week:** :download:`Assignment 3 <Assignments/assignment3.pdf>`.
 
 **Data file for assignment (9 MB):** :download:`Assignment 3 Data <Assignments/assignment3data.csv>`.
+
+**Presentation:** :download:`Week4.pdf <Assignments/Week4.pdf>`
+
+**Examples from class:** :download:`Week4Examples.nb <Assignments/Week4Examples.nb>`
+
 
 Week Five (Feb. 13)
 ===================

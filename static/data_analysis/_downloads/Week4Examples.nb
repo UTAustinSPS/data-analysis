@@ -1,0 +1,403 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     12088,        394]
+NotebookOptionsPosition[     11014,        356]
+NotebookOutlinePosition[     11359,        371]
+CellTagsIndexPosition[     11316,        368]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Least-Squares / FindFit", "Section",
+ CellChangeTimes->{{3.6006597953530455`*^9, 3.6006598021884365`*^9}}],
+
+Cell[TextData[{
+ "Below, data is generated for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"x", "-", "2"}], ")"}], "2"], "-", "1"}], "="}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["x", "2"], "-", 
+     RowBox[{"4", "x"}], "+", "3"}], ",", " ", 
+    RowBox[{
+     RowBox[{"but", " ", "fitted", " ", "to", " ", 
+      SuperscriptBox["ax", "2"]}], "+", "bx"}], ",", " ", 
+    RowBox[{"then", " ", 
+     RowBox[{"plotted", "."}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text",
+ CellChangeTimes->{{3.600658536289031*^9, 3.6006586584130163`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"t", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"x", "-", "2"}], ")"}], "^", "2"}], "-", "1"}]}], "}"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "10"}], ",", "10"}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"fn", "[", "x_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"a", " ", 
+    RowBox[{"x", "^", "2"}]}], "+", 
+   RowBox[{"b", " ", "x"}]}]}], "\n", 
+ RowBox[{
+  RowBox[{"fit", "=", 
+   RowBox[{"FindFit", "[", 
+    RowBox[{"t", ",", 
+     RowBox[{"fn", "[", "x", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"a", ",", "b"}], "}"}], ",", 
+     RowBox[{"{", "x", "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"fn", "[", "x", "]"}], "/.", "fit"}], "\n", 
+ RowBox[{"Show", "[", 
+  RowBox[{
+   RowBox[{"ListPlot", "[", "t", "]"}], ",", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"fn", "[", "x", "]"}], "/.", "fit"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "10"}], ",", "10"}], "}"}]}], "]"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}], "\n"}], "Input",
+ CellChangeTimes->{{3.6006584004792633`*^9, 3.6006584004882636`*^9}}],
+
+Cell["\<\
+Here, we plot difference between model and observed value as a function of \
+independent variable.\
+\>", "Text",
+ CellChangeTimes->{{3.6006586717947817`*^9, 3.600658731121175*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"rx", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"t", "[", 
+        RowBox[{"[", 
+         RowBox[{"i", ",", "1"}], "]"}], "]"}], ",", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"t", "[", 
+          RowBox[{"[", 
+           RowBox[{"i", ",", "2"}], "]"}], "]"}], "-", 
+         RowBox[{"fn", "[", 
+          RowBox[{"t", "[", 
+           RowBox[{"[", 
+            RowBox[{"i", ",", "1"}], "]"}], "]"}], "]"}]}], "/.", "fit"}]}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", 
+       RowBox[{"Length", "[", "t", "]"}]}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{"ListPlot", "[", "rx", "]"}]}], "Input",
+ CellChangeTimes->{{3.600658414285053*^9, 3.6006584290178957`*^9}}],
+
+Cell["\<\
+Here, we plot difference between model and observed value as a function of \
+observed value.\
+\>", "Text",
+ CellChangeTimes->{{3.600658710480994*^9, 3.6006587368075*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ry", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"t", "[", 
+        RowBox[{"[", 
+         RowBox[{"i", ",", "2"}], "]"}], "]"}], ",", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"t", "[", 
+          RowBox[{"[", 
+           RowBox[{"i", ",", "2"}], "]"}], "]"}], "-", 
+         RowBox[{"fn", "[", 
+          RowBox[{"t", "[", 
+           RowBox[{"[", 
+            RowBox[{"i", ",", "1"}], "]"}], "]"}], "]"}]}], "/.", "fit"}]}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", 
+       RowBox[{"Length", "[", "t", "]"}]}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{"ListPlot", "[", "ry", "]"}]}], "Input",
+ CellChangeTimes->{{3.600658438875459*^9, 3.6006584435847287`*^9}}],
+
+Cell[TextData[{
+ "We want \[Sum]",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      SubscriptBox["f", "i"], " ", "-", " ", 
+      RowBox[{
+       OverscriptBox["f", "^"], "(", 
+       SubscriptBox["x", "i"], ")"}]}], ")"}], "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " to be minimized for the fit."
+}], "Text",
+ CellChangeTimes->{{3.6006587504162784`*^9, 3.6006588616886425`*^9}, {
+  3.600658903389028*^9, 3.6006589046110983`*^9}}],
+
+Cell["For multivariate, we can have:", "Text",
+ CellChangeTimes->{{3.6006589090323505`*^9, 3.600658914887686*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{
+   "Import", "[", 
+    "\"\<http://www.cs.utexas.edu/~evanott/PHY110C_Textbook/static/data_\
+analysis/_downloads/prac_multi.csv\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPointPlot3D", "[", 
+  RowBox[{"data", ",", 
+   RowBox[{"AxesLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<t\>\"", ",", "\"\<x\>\"", ",", "\"\<f(t,x)\>\""}], 
+     "}"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.6006589204960065`*^9, 3.60065892842446*^9}, {
+  3.600659546052786*^9, 3.600659546274799*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ClearAll", "[", 
+   RowBox[{"a", ",", "x", ",", "k", ",", "t"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"FindFit", "[", 
+  RowBox[{"data", ",", 
+   RowBox[{
+    RowBox[{"Cos", "[", 
+     RowBox[{"a", " ", "x"}], "]"}], 
+    RowBox[{"Exp", "[", 
+     RowBox[{"k", " ", "t"}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "k"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "t"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.6006590510614743`*^9, 3.600659125217716*^9}, {
+  3.6006592560972013`*^9, 3.6006592571252604`*^9}, {3.600659674750147*^9, 
+  3.6006596908890705`*^9}}],
+
+Cell[TextData[{
+ "But real data is different. This is because doing this is actually a very \
+hard problem. Just because ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " converges doesn\[CloseCurlyQuote]t mean it\[CloseCurlyQuote]s doing \
+something meaningful. Be skeptical!"
+}], "Text",
+ CellChangeTimes->{{3.600659529387833*^9, 3.600659617912896*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{
+   RowBox[{"ListPointPlot3D", "[", "data", "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Plot3D", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Cos", "[", 
+       RowBox[{"0.2", " ", "x"}], "]"}], " ", 
+      RowBox[{"Exp", "[", 
+       RowBox[{
+        RowBox[{"-", ".05"}], "t"}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "0", ",", "40"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "20"}], ",", "20"}], "}"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"AxesLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<t\>\"", ",", "\"\<x\>\"", ",", "\"\<f(t,x)\>\""}], 
+     "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.600659143590767*^9, 3.6006592277255793`*^9}, {
+  3.600659265925764*^9, 3.600659386517661*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Interpolation/Extrapolation", "Section",
+ CellChangeTimes->{{3.600659809610861*^9, 3.6006598192894144`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "t", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"t", "=", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"x", ",", 
+        RowBox[{"Sin", "[", 
+         RowBox[{"2", "x"}], "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "0", ",", 
+        RowBox[{"2", " ", "Pi"}], ",", ".5"}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Creates", " ", "single"}], "-", 
+     RowBox[{"variable", " ", "function"}]}], ",", 
+    RowBox[{"given", " ", "order", " ", "i"}]}], "*)"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Show", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"ListPlot", "[", 
+      RowBox[{"t", ",", 
+       RowBox[{"PlotStyle", "\[Rule]", 
+        RowBox[{"PointSize", "[", "Medium", "]"}]}]}], "]"}], ",", 
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Interpolation", "[", 
+           RowBox[{"t", ",", 
+            RowBox[{"InterpolationOrder", "\[Rule]", "i"}]}], "]"}], "[", "x",
+           "]"}], ",", 
+         RowBox[{"Sin", "[", 
+          RowBox[{"2", "x"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "0", ",", 
+         RowBox[{"2", " ", "Pi"}]}], "}"}], ",", 
+       RowBox[{"PlotLegends", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"\"\<Fitted Curve\>\"", ",", "\"\<Sin[2x]\>\""}], "}"}]}]}], 
+      "]"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", 
+          RowBox[{"2", " ", "Pi"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "1"}], ",", "1"}], "}"}]}], "}"}]}], ",", 
+     RowBox[{"PlotLabel", "\[Rule]", 
+      RowBox[{"\"\<InterpolationOrder->\>\"", "<>", 
+       RowBox[{"ToString", "[", "i", "]"}]}]}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "0", ",", "8", ",", "1"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.6006598207614985`*^9, 3.600659920123182*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Interpolation", "[", 
+   RowBox[{"t", ",", 
+    RowBox[{"InterpolationOrder", "\[Rule]", "i"}]}], "]"}], "[", 
+  RowBox[{"2", "Pi"}], "]"}]], "Input",
+ CellChangeTimes->{{3.600659955270192*^9, 3.600659984565868*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Series", "Section",
+ CellChangeTimes->{{3.6006602006072245`*^9, 3.6006602042284317`*^9}}],
+
+Cell["\<\
+Creates a second-degree approximation around x=0.\
+\>", "Text",
+ CellChangeTimes->{{3.60066861271237*^9, 3.600668621762887*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Series", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"1", "+", "x"}], ")"}], "^", "n"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "2"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6006602055285063`*^9, 3.6006602336791162`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Normal", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.6006602500810547`*^9, 3.6006602521931753`*^9}}]
+}, Open  ]]
+},
+WindowSize->{707, 817},
+WindowMargins->{{Automatic, 592}, {Automatic, -5}},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 112, 1, 79, "Section"],
+Cell[694, 25, 715, 24, 32, "Text"],
+Cell[1412, 51, 1294, 42, 132, "Input"],
+Cell[2709, 95, 190, 4, 49, "Text"],
+Cell[2902, 101, 790, 24, 52, "Input"],
+Cell[3695, 127, 180, 4, 30, "Text"],
+Cell[3878, 133, 790, 24, 52, "Input"],
+Cell[4671, 159, 482, 15, 36, "Text"],
+Cell[5156, 176, 114, 1, 30, "Text"],
+Cell[5273, 179, 569, 15, 92, "Input"],
+Cell[5845, 196, 640, 18, 52, "Input"],
+Cell[6488, 216, 360, 8, 49, "Text"],
+Cell[6851, 226, 831, 23, 72, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7719, 254, 114, 1, 79, "Section"],
+Cell[7836, 257, 2214, 63, 232, "Input"],
+Cell[10053, 322, 251, 6, 31, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10341, 333, 95, 1, 79, "Section"],
+Cell[10439, 336, 138, 3, 30, "Text"],
+Cell[10580, 341, 286, 8, 31, "Input"],
+Cell[10869, 351, 129, 2, 31, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
