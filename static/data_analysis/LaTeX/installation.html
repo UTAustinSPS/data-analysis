@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Importing Data &mdash; Introduction to Data Analysis for Physics</title>
+    <title>Installation &mdash; Introduction to Data Analysis for Physics</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -74,8 +74,8 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
-    <link rel="next" title="Animations" href="animations.html" />
-    <link rel="prev" title="Exporting Data" href="export.html" />
+    <link rel="next" title="Document Structure" href="docstructure.html" />
+    <link rel="prev" title="Introduction" href="latex.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -133,10 +133,14 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Importing Data</a><ul>
-<li><a class="reference internal" href="#file-formats">File Formats</a></li>
-<li><a class="reference internal" href="#from-file-to-usable">From File to Usable</a></li>
-<li><a class="reference internal" href="#annoying-formats">&#8220;Annoying&#8221; Formats</a></li>
+<li><a class="reference internal" href="#">Installation</a><ul>
+<li><a class="reference internal" href="#texworks-features">TeXworks Features</a><ul>
+<li><a class="reference internal" href="#side-by-side-view">Side-by-Side View</a></li>
+<li><a class="reference internal" href="#document-code-navigation">Document-Code Navigation</a></li>
+<li><a class="reference internal" href="#templates">Templates</a></li>
+<li><a class="reference internal" href="#removing-aux-files">Removing Aux Files</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -146,17 +150,17 @@
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Exporting Data" data-toggle="tooltip">
-    <a href="export.html" >
+  <li id="relations-prev" title="Previous Chapter - Introduction" data-toggle="tooltip">
+    <a href="latex.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
-      <p style=";max-width:130px;">Exporting Data</p>
+      <p style=";max-width:130px;">Introduction</p>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Animations' data-toggle="tooltip" >
-    <a href="animations.html" >
+  <li id="relations-next" title='Next Chapter - Document Structure' data-toggle="tooltip" >
+    <a href="docstructure.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
-      <p style=";max-width:130px;">Animations</p>
+      <p style=";max-width:130px;">Document Structure</p>
     </a>
   </li>
   <li style="divider-vertical"></li>
@@ -183,92 +187,33 @@
 
 <div id="mainbody" class="container">
   
-  <div class="section" id="importing-data">
-<h1>Importing Data<a class="headerlink" href="#importing-data" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="file-formats">
-<h2>File Formats<a class="headerlink" href="#file-formats" title="Permalink to this headline">¶</a></h2>
-<p>While being able to create functions, tables, and graphs is nice, in a laboratory setting,
-we really need to be able to work with data from lab equipment. Many software packages
-exist that interface with electronics (National Instruments&#8217; <em>LabVIEW</em> is a prime
-example), and are able to provide text files with data. Sometimes this is in a
-&#8220;human-readable&#8221; format, but often it is in a computer-friendly format, such as TSV (tab-separated
-values), CSV (comma-separated values), or even XLS (Microsoft <em>Excel</em> format). Some may have
-headers in the data (a first row that names what each column represents), others may
-not. Here are some examples for reference:</p>
-<table border="1" class="docutils">
-<caption><strong>Table 1: Examples of Data Files with Same Data</strong></caption>
-<colgroup>
-<col width="7%" />
-<col width="50%" />
-<col width="43%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Format</th>
-<th class="head">Without Header</th>
-<th class="head">With Header</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>CSV</td>
-<td><a class="reference download internal" href="../_downloads/without.csv"><tt class="xref download docutils literal"><span class="pre">without.csv</span></tt></a></td>
-<td><a class="reference download internal" href="../_downloads/with.csv"><tt class="xref download docutils literal"><span class="pre">with.csv</span></tt></a></td>
-</tr>
-<tr class="row-odd"><td>JSON</td>
-<td><a class="reference download internal" href="../_downloads/without.json"><tt class="xref download docutils literal"><span class="pre">without.json</span></tt></a></td>
-<td><a class="reference download internal" href="../_downloads/with.json"><tt class="xref download docutils literal"><span class="pre">with.json</span></tt></a></td>
-</tr>
-<tr class="row-even"><td>TSV</td>
-<td><a class="reference download internal" href="../_downloads/without.tsv"><tt class="xref download docutils literal"><span class="pre">without.tsv</span></tt></a></td>
-<td><a class="reference download internal" href="../_downloads/with.tsv"><tt class="xref download docutils literal"><span class="pre">with.tsv</span></tt></a></td>
-</tr>
-<tr class="row-odd"><td>XLS</td>
-<td><a class="reference download internal" href="../_downloads/without.xls"><tt class="xref download docutils literal"><span class="pre">without.xls</span></tt></a></td>
-<td><a class="reference download internal" href="../_downloads/with.xls"><tt class="xref download docutils literal"><span class="pre">with.xls</span></tt></a></td>
-</tr>
-<tr class="row-even"><td>XLSX</td>
-<td><a class="reference download internal" href="../_downloads/without.xlsx"><tt class="xref download docutils literal"><span class="pre">without.xlsx</span></tt></a></td>
-<td><a class="reference download internal" href="../_downloads/with.xlsx"><tt class="xref download docutils literal"><span class="pre">with.xlsx</span></tt></a></td>
-</tr>
-<tr class="row-odd"><td>XML</td>
-<td><a class="reference download internal" href="../_downloads/without.xml"><tt class="xref download docutils literal"><span class="pre">without.xml</span></tt></a></td>
-<td><a class="reference download internal" href="../_downloads/with.xml"><tt class="xref download docutils literal"><span class="pre">with.xml</span></tt></a></td>
-</tr>
-</tbody>
-</table>
-<p>The CSV, TSV, XLS, and XLSX files should be easily opened in <em>Excel</em> or other spreadsheet
-software. The JSON and XML should be viewable in a web browser (these are less-likely to
-occur in a lab setting, but are fairly ubiquitous in some spheres).</p>
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>LaTeX can be a pain to install if done manually. At a bare minimum, you need a LaTeX distribution with which you can interact via the command line. We recommend using a front-end. Having a front-end can make LaTeXing easier by providing more meaningful error messages and presenting the document in a more human-readable format.</p>
+<p>For this class, I recommend going with TeXworks. You need to install <a class="reference external" href="http://www.tug.org/texlive/acquire-netinstall.html">TeX Live</a>, then <a class="reference external" href="http://www.tug.org/texworks/">TeXworks</a>. These websites provide some guidance, but if you have any trouble installing or understanding the instructions, email me at <a class="reference external" href="mailto:willbeason&#37;&#52;&#48;gmail&#46;com">willbeason<span>&#64;</span>gmail<span>&#46;</span>com</a>.</p>
+<div class="section" id="texworks-features">
+<h2>TeXworks Features<a class="headerlink" href="#texworks-features" title="Permalink to this headline">¶</a></h2>
+<p>The reason we chose TeXworks is because it comes with a lot of learner-friendly features. Some of these are not enabled by default, including a spell-check, context-sensitive code highlighting, and automatic indentation. (Indentation is ignored when typesetting, but it can make your code more readable.) There are many options you can adjust with Edit -&gt; Preferences.... I like to enable Line numbers, set Syntax coloring to LaTeX, Whitespace only auto-indentation, and enable English spellchecking. Line numbers is particularly useful since error codes refer to the line number where the typesetting program ran into a problem (not necessarily where the error is, but always after it).</p>
+<div class="section" id="side-by-side-view">
+<h3>Side-by-Side View<a class="headerlink" href="#side-by-side-view" title="Permalink to this headline">¶</a></h3>
+<p>Interacting with TeXworks should normally look like this, with code and current document side-by-side.</p>
+<p>When starting a new document, TeXworks does not automatically do this. Once you have a minimum valid document, typeset and your environment should look like the above. To typeset, either push the green arrow at the top-left corner or use the keyboard shortcut Ctrl-T.</p>
 </div>
-<div class="section" id="from-file-to-usable">
-<h2>From File to Usable<a class="headerlink" href="#from-file-to-usable" title="Permalink to this headline">¶</a></h2>
-<p>Once we have our data, we can easily import it to <em>Mathematica</em> with the <tt class="code docutils literal"><span class="pre">Import</span></tt> command
-if it is one of the examples above or other well-defined type (as with exporting,
-in <em>Mathematica</em>&#8216;s help, look at &#8220;guide/ListingOfAllFormats&#8221;). For example, for any of the above,
-we can write</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">table</span> <span class="o">=</span> <span class="n">Import</span><span class="p">[</span><span class="s">&quot;filename&quot;</span><span class="p">]</span>
-</pre></div>
+<div class="section" id="document-code-navigation">
+<h3>Document-Code Navigation<a class="headerlink" href="#document-code-navigation" title="Permalink to this headline">¶</a></h3>
+<p>Let&#8217;s say you&#8217;re looking at the pdf on the right side, and want to know what code made some part of the document. Rather than having to piece through the document, you can just right click the object in the pdf, then click &#8220;Jump to Source&#8221;. If you want to see what a line of code produces, right click the code, then click &#8220;Jump to PDF&#8221;. Note that since the relationships between code and pdf are made as the document is typeset, if you change the document after typesetting then some of the relationships will be wrong.</p>
 </div>
-<p>and <tt class="code docutils literal"><span class="pre">table</span></tt> will then have all the data in a 2-column list. If the data has a header,
-it can be accessed with <tt class="code docutils literal"><span class="pre">table[[1]]</span></tt>. And the header can be removed with
-<tt class="code docutils literal"><span class="pre">table</span> <span class="pre">=</span> <span class="pre">table[[2;;Length[table]]]</span></tt>. We can now do the usual things like plot the data
-with <tt class="code docutils literal"><span class="pre">ListPlot</span></tt>, etc.</p>
+<div class="section" id="templates">
+<h3>Templates<a class="headerlink" href="#templates" title="Permalink to this headline">¶</a></h3>
+<p>Unlike many LaTeX front-ends, making templates for easy re-use is simple. Just save the .tex file in the appropriate folder, listed below. The template is accessible from the menu with File -&gt; New From Template....</p>
+<p>Windows - C:Users&lt;username&gt;TeXworkstemplatesBasic LaTeX documents</p>
+<p>Mac -   ~/Library/TeXworks/templates/Basic LaTeX documents/</p>
+<p>Linux - ~/.TeXworks/templates/Basic LaTeX documents/</p>
 </div>
-<div class="section" id="annoying-formats">
-<h2>&#8220;Annoying&#8221; Formats<a class="headerlink" href="#annoying-formats" title="Permalink to this headline">¶</a></h2>
-<p>Sometimes we might have a format that isn&#8217;t built-in, and doesn&#8217;t have clean &#8220;delimeters&#8221; (that
-is, special symbols to mark the end of each entry in a list of entries). We might have a system
-that has entries that ar 4 space-separated values that are then separated by spaces.
-That would give a data file like <a class="reference download internal" href="../_downloads/annoying.txt"><tt class="xref download docutils literal"><span class="pre">this</span></tt></a>. Normal formats
-can&#8217;t tell the difference between entries because they aren&#8217;t based on having
-multiple lines, each with a single entry, or a similar construct. In this case, we can
-use <tt class="code docutils literal"><span class="pre">ReadList</span></tt>. This function allows us to set a custom set of delimeters, and even
-the types of data for each entry.</p>
-<div class="highlight-python"><pre>ReadList["annoying.txt",
-        {Number, Number, Number, Number},
-        WordSeparators -&gt; {" "},
-        RecordSeparators -&gt; {" "}]</pre>
+<div class="section" id="removing-aux-files">
+<h3>Removing Aux Files<a class="headerlink" href="#removing-aux-files" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes, LaTeX hiccups and your .aux files can become corrupted. If this is the case, just do File -&gt; Remove Aux Files... and select the offenders.</p>
 </div>
-<p>Reads in <tt class="code docutils literal"><span class="pre">{{0.,</span> <span class="pre">1.,</span> <span class="pre">12.,</span> <span class="pre">2.2},</span> <span class="pre">{1.2,</span> <span class="pre">4.2,</span> <span class="pre">0.2,</span> <span class="pre">2.4},</span> <span class="pre">{2.4,</span> <span class="pre">6.4,</span> <span class="pre">1.2,</span> <span class="pre">1.4}}</span></tt>.</p>
 </div>
 </div>
 

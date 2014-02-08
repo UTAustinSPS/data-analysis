@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Mathematics in LaTeX &mdash; Introduction to Data Analysis for Physics</title>
+    <title>Commands and Special Characters &mdash; Introduction to Data Analysis for Physics</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -74,8 +74,8 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
-    <link rel="next" title="Tables, Arrays, and Matrices" href="tables.html" />
-    <link rel="prev" title="Packages" href="packages.html" />
+    <link rel="next" title="Packages" href="packages.html" />
+    <link rel="prev" title="Document Structure" href="docstructure.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -133,14 +133,19 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Mathematics in LaTeX</a><ul>
-<li><a class="reference internal" href="#basic-typesetting">Basic Typesetting</a></li>
-<li><a class="reference internal" href="#advanced-mathematics">Advanced Mathematics</a><ul>
-<li><a class="reference internal" href="#equation-line-numbering">Equation Line Numbering</a></li>
+<li><a class="reference internal" href="#">Commands and Special Characters</a><ul>
+<li><a class="reference internal" href="#using-commands">Using Commands</a></li>
+<li><a class="reference internal" href="#special-characters">Special Characters</a><ul>
+<li><a class="reference internal" href="#backslash">Backslash</a></li>
+<li><a class="reference internal" href="#curly-braces">Curly Braces</a></li>
+<li><a class="reference internal" href="#dollar-sign">Dollar Sign</a></li>
+<li><a class="reference internal" href="#caret-and-underscore">Caret and Underscore</a></li>
+<li><a class="reference internal" href="#percent">Percent</a></li>
+<li><a class="reference internal" href="#tilde">Tilde</a></li>
+<li><a class="reference internal" href="#poundsign">Poundsign</a></li>
+<li><a class="reference internal" href="#ampersand">Ampersand</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#latex-math-kwon-do">LaTeX Math-kwon-do</a></li>
-<li><a class="reference internal" href="#latex-super-math-aiyan">LaTeX Super-Math-aiyan</a></li>
 </ul>
 </li>
 </ul>
@@ -150,17 +155,17 @@
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Packages" data-toggle="tooltip">
-    <a href="packages.html" >
+  <li id="relations-prev" title="Previous Chapter - Document Structure" data-toggle="tooltip">
+    <a href="docstructure.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
-      <p style=";max-width:130px;">Packages</p>
+      <p style=";max-width:130px;">Document Structure</p>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Tables, Arrays, and Matrices' data-toggle="tooltip" >
-    <a href="tables.html" >
+  <li id="relations-next" title='Next Chapter - Packages' data-toggle="tooltip" >
+    <a href="packages.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
-      <p style=";max-width:130px;">Tables, Arrays, and Matrices</p>
+      <p style=";max-width:130px;">Packages</p>
     </a>
   </li>
   <li style="divider-vertical"></li>
@@ -187,85 +192,56 @@
 
 <div id="mainbody" class="container">
   
-  <div class="section" id="mathematics-in-latex">
-<h1>Mathematics in LaTeX<a class="headerlink" href="#mathematics-in-latex" title="Permalink to this headline">¶</a></h1>
-<p>LaTeX has a math mode designed to format mathematics. It can be invoked on the
-same line as text by enclosing the mathematics in dollar signs: <tt class="code docutils literal"><span class="pre">$your</span>
-<span class="pre">math</span> <span class="pre">here$</span></tt>. This is called &#8220;inline&#8221; math.</p>
-<div class="highlight-python"><pre>The positive real root of $x^4-16=0$ is $x=2$.</pre>
+  <div class="section" id="commands-and-special-characters">
+<h1>Commands and Special Characters<a class="headerlink" href="#commands-and-special-characters" title="Permalink to this headline">¶</a></h1>
+<p>Commands are what LaTeX uses to translate plain text into a formatted document. Also known as control sequences, commands usually begin with a backslash, <tt class="code docutils literal"><span class="pre">\</span> </tt>.</p>
+<div class="section" id="using-commands">
+<h2>Using Commands<a class="headerlink" href="#using-commands" title="Permalink to this headline">¶</a></h2>
+<p>Commands generally fall into one of two categories: commands which take arguments, and those which do not. Most commands which do not take arguments are symbols, such as <tt class="code docutils literal"><span class="pre">\epsilon</span></tt>. Others, such as the ubiquitous <tt class="code docutils literal"><span class="pre">\begin</span></tt>, always take an argument. Some, like the <tt class="code docutils literal"><span class="pre">\newcommand</span></tt> command, take two required arguments and one optional argument. The optional argument is in square brackets, as shown later in this lesson.</p>
 </div>
-<p>The positive real root of <span class="math">\(x^4-16=0\)</span> is <span class="math">\(x=2\)</span>.</p>
-<div class="section" id="basic-typesetting">
-<h2>Basic Typesetting<a class="headerlink" href="#basic-typesetting" title="Permalink to this headline">¶</a></h2>
-<p>The most common typesetting needs in mathematics is the superscript and the
-subscript. These can be accessed using the caret <tt class="code docutils literal"><span class="pre">^</span></tt> and the underscore
-<tt class="code docutils literal"><span class="pre">_</span></tt>.</p>
-<div class="highlight-python"><pre>Consider the sequence $(x_i)$ where $x_i = 2^x$.</pre>
+<div class="section" id="special-characters">
+<h2>Special Characters<a class="headerlink" href="#special-characters" title="Permalink to this headline">¶</a></h2>
+<p>Nine special characters within LaTeX are</p>
+<div class="highlight-python"><pre>\ { } $ ^ _ % ~ # &amp;</pre>
 </div>
-<p>Consider the sequence <span class="math">\((x_i)\)</span> where <span class="math">\(x_i = 2^x\)</span>.</p>
-<p>These only work for a single character, so</p>
-<div class="highlight-python"><pre>A gigabyte contains $2^30$ bytes. Let $x_ij=x_ji$.</pre>
+<p>See the symbols page for the correct ways to typeset these in documents. If used incorrectly can cause LaTeX to give very cryptic errors.</p>
+<div class="section" id="backslash">
+<h3>Backslash<a class="headerlink" href="#backslash" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="code docutils literal"><span class="pre">\</span> </tt> is used to designate a command. Alphabetic characters and curly and square braces following the backslash are parsed into a command. See below for details. The double backslash, <tt class="code docutils literal"><span class="pre">\\</span></tt>, is used to start new lines. It is bad form to use it to start new lines in text mode - only use it in the align environment. To start new paragraphs, just insert a blank line. If the succeeding line should not be indented, use <tt class="code docutils literal"><span class="pre">\noindent</span></tt> before the first word of the line.</p>
 </div>
-<p>actually returns: A gigabyte contains <span class="math">\(2^30\)</span> bytes. Let <span class="math">\(x_ij=x_ji\)</span></p>
-<p>To tell LaTeX that more than one character should be typeset as a superscript
-or subscript, enclose the desired text in braces.</p>
-<div class="highlight-python"><pre>A gigabyte contains $2^{30}$ bytes. Consider a matrix $A$ where
-$a_{ij}=a_{ji}$.</pre>
+<div class="section" id="curly-braces">
+<h3>Curly Braces<a class="headerlink" href="#curly-braces" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="code docutils literal"><span class="pre">{</span></tt> and <tt class="code docutils literal"><span class="pre">}</span></tt> create tokens from the enclosed text. Normally, each character is a single token passed to the interpreter one at a time. When placed in curly braces, the text within the curly braces becomes one token. For example in <tt class="code docutils literal"><span class="pre">\begin{align}</span></tt>, they tell the <tt class="code docutils literal"><span class="pre">begin</span></tt> command to begin the <tt class="code docutils literal"><span class="pre">align</span></tt> environment by passing a token containing the information <tt class="code docutils literal"><span class="pre">align</span></tt>. In order to typeset fractions (which requires the <tt class="code docutils literal"><span class="pre">\frac</span></tt> command), curly braces need to be placed around numerators and denominators of more than one character or else the interpreter will assume only the first and second non whitespace characters following <tt class="code docutils literal"><span class="pre">\frac</span></tt> are the numerator and denominator respectively. So <tt class="code docutils literal"><span class="pre">\frac1234</span></tt> creates <span class="math">\(\frac1234\)</span>, while <tt class="code docutils literal"><span class="pre">\frac{12}{34}</span></tt> creates <span class="math">\(\frac{12}{34}\)</span>. This is because rather than accepting 1 and 2 as tokens, the curly braces pass 12 and 34 as tokens to fill the two arguments which <tt class="code docutils literal"><span class="pre">\frac</span></tt> takes. While it is faster to type <tt class="code docutils literal"><span class="pre">\frac</span> <span class="pre">xy</span></tt>, it is preferred to use <tt class="code docutils literal"><span class="pre">\frac{x}{y}</span></tt> to improve readability. Note that the <tt class="code docutils literal"><span class="pre">xy</span></tt> in the former requires a space after <tt class="code docutils literal"><span class="pre">\frac</span></tt>, as otherwise the interpreter will search for the <tt class="code docutils literal"><span class="pre">\fracxy</span></tt> command, which does not exist.</p>
 </div>
-<p>This gives the desired result: A gigabyte contains <span class="math">\(2^{30}\)</span> bytes.
-Let <span class="math">\(a_{ij}=a_{ji}\)</span>.</p>
-<p>There is a native equation environment, displaymath, which can be invoked by
-encasing math inside double dollar signs or <tt class="code docutils literal"><span class="pre">\[</span></tt>, and <tt class="code docutils literal"><span class="pre">\]</span></tt>. It can
-typeset up to one line of math at a time.</p>
-<div class="highlight-python"><pre>\begin{document}
-$$e=\sum_{i=0}^\infty \frac{1}{i!}$$
-\[
-\sum_{i=0}^\infty x^i = \frac{1}{1-x}
-\]</pre>
+<div class="section" id="dollar-sign">
+<h3>Dollar Sign<a class="headerlink" href="#dollar-sign" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="code docutils literal"><span class="pre">$</span></tt> is mainly used to invoke inline math mode. Inline equations require dollar signs before and after. Think of them as binary switches, where each one changes the state of the switch. A very common error in LaTeX is to have an odd number, causing the interpreter to interpret math code as regular text and text as math. The dollar sign is a control sequence, a shorthand stand in for <tt class="code docutils literal"><span class="pre">\begin{math}</span></tt>. For every situation I have encountered, just using dollar signs is sufficient.</p>
 </div>
-<p>Both invoke the displaymath environment, and so are nearly identical. The only
-difference is that <tt class="code docutils literal"><span class="pre">$$</span></tt> math <tt class="code docutils literal"><span class="pre">$$</span></tt> makes a call to TeX and
-<tt class="code docutils literal"><span class="pre">\[</span></tt> stuff <tt class="code docutils literal"><span class="pre">\]</span></tt> makes a call to LaTeX. It is not recommended to use
-these environments except when minimal control is needed. The environments
-provided by the <tt class="code docutils literal"><span class="pre">amsmath</span></tt> package are much more robust and flexible. The
-most common replacement environment from <tt class="code docutils literal"><span class="pre">amsmath</span></tt> is <tt class="code docutils literal"><span class="pre">align</span></tt>, or
-<tt class="code docutils literal"><span class="pre">align*</span></tt> if you do not want individual lines to be numbered. As with all
-environments, these are opened and closed with <tt class="code docutils literal"><span class="pre">\begin{}</span></tt> and
-<tt class="code docutils literal"><span class="pre">\end{}</span></tt>. Just place the desired environment name between the braces. For
-example:</p>
-<div class="highlight-python"><pre>\begin{align*}
-e&amp;=\sum_{i=0}^\infty \frac{1}{i!}\\
-&amp;=\lim_{n\rightarrow\infty}\left(1+\frac{1}{n}\right)^n
-\end{align*}</pre>
+<div class="section" id="caret-and-underscore">
+<h3>Caret and Underscore<a class="headerlink" href="#caret-and-underscore" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="code docutils literal"><span class="pre">^</span></tt> and <tt class="code docutils literal"><span class="pre">_</span></tt> are used to create superscripts and subscripts respectively. They are considered control sequences, and act on the following token. They only work in math mode. Since LaTeX does not include native subscripts and superscripts in text mode, I use these commands as a workaround.</p>
+<div class="highlight-python"><pre>%Preamble
+\newcommand{\subs}[1]{$_{\text{#1}}$}
+\newcommand{\supe}[1]{$^{\text{#1}}$}</pre>
 </div>
-<p>produces:</p>
-<div class="math">
-\[\begin{split}e&amp;=\sum_{i=0}^\infty \frac{1}{i!}\\
-&amp;=\lim_{n\rightarrow\infty}\left(1+\frac{1}{n}\right)^n\end{split}\]</div>
-<p>Everything that works in <tt class="code docutils literal"><span class="pre">displaymath</span></tt> works in <tt class="code docutils literal"><span class="pre">align</span></tt>. The main
-advantage of <tt class="code docutils literal"><span class="pre">align</span></tt> is that it can display many lines of mathematics at
-once, aligning them based on the location of the <tt class="code docutils literal"><span class="pre">&amp;</span></tt> in each line.</p>
+<p>To use, pass the desired token to the appropriate command. For example, <tt class="code docutils literal"><span class="pre">a\subs{0}</span></tt> will produce <span class="math">\(\text{a}_\text{0}\)</span> and <tt class="code docutils literal"><span class="pre">a\supe{0}</span></tt> will produce <span class="math">\(\text{a}^\text{0}\)</span>.</p>
 </div>
-<div class="section" id="advanced-mathematics">
-<h2>Advanced Mathematics<a class="headerlink" href="#advanced-mathematics" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="code docutils literal"><span class="pre">amsmath</span></tt> package is essential whenever more than just the
-basics are required. As mentioned above, most people use <tt class="code docutils literal"><span class="pre">amsmath</span></tt> for
-the <tt class="code docutils literal"><span class="pre">align*</span></tt> environment. Since <tt class="code docutils literal"><span class="pre">amsmath</span></tt> is not natively included
-in LaTeX, you must include the line <tt class="code docutils literal"><span class="pre">\usepackage{amsmath}</span></tt> in the
-preamble in order to use any of its functionality.</p>
-<div class="section" id="equation-line-numbering">
-<h3>Equation Line Numbering<a class="headerlink" href="#equation-line-numbering" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="percent">
+<h3>Percent<a class="headerlink" href="#percent" title="Permalink to this headline">¶</a></h3>
+<p>The percent symbol creates comments. Everything following the percent sign on the same line will not be typeset.</p>
 </div>
+<div class="section" id="tilde">
+<h3>Tilde<a class="headerlink" href="#tilde" title="Permalink to this headline">¶</a></h3>
+<p>The tilde is a non-breaking space character. It is a typography tool which prevents the insertion of a line break between tokens. So <tt class="code docutils literal"><span class="pre">water~main</span></tt> will never allow the words water and main to be placed on separate lines. More accurately, between the tokens <tt class="code docutils literal"><span class="pre">r</span></tt> and <tt class="code docutils literal"><span class="pre">m</span></tt> as LaTeX will not normally break the words water and main into multiple lines. The non-breaking space also cannot be enlarged or shrunk, so it will force a standard space size. Normally, LaTeX automatically modifies individual spaces to justify the text.</p>
 </div>
-<div class="section" id="latex-math-kwon-do">
-<h2>LaTeX Math-kwon-do<a class="headerlink" href="#latex-math-kwon-do" title="Permalink to this headline">¶</a></h2>
-<p>Sometimes even amsmath cannot handle what you want it to do. In these cases,
-<tt class="code docutils literal"><span class="pre">mathtools</span></tt> may have what you need.</p>
+<div class="section" id="poundsign">
+<h3>Poundsign<a class="headerlink" href="#poundsign" title="Permalink to this headline">¶</a></h3>
+<p>The poundsign is essential for creating new commands, indicating where the arguments of a command to be placed. See the New Commands lesson for more information.</p>
 </div>
-<div class="section" id="latex-super-math-aiyan">
-<h2>LaTeX Super-Math-aiyan<a class="headerlink" href="#latex-super-math-aiyan" title="Permalink to this headline">¶</a></h2>
-<p>This section is for the LaTeX mathematics version of Super-Saiyans. To
-understand this, you will need to understand environments, new commands,</p>
+<div class="section" id="ampersand">
+<h3>Ampersand<a class="headerlink" href="#ampersand" title="Permalink to this headline">¶</a></h3>
+<p>This is used within the align environments defined in the <tt class="code docutils literal"><span class="pre">amsmath</span></tt> package. They allow equations to be precisely aligned. When just one ampersand is used in each line of equations, the characters immediately succeeding the ampersands will have their left sides lined up. There are more complex relations when more than one ampersand is used per line, and these are described in the <tt class="code docutils literal"><span class="pre">amsmath</span></tt> package lesson.</p>
+</div>
 </div>
 </div>
 
