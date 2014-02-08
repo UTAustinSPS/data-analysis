@@ -182,6 +182,16 @@ a new line as so:
 If you want a section/subsection/subsubsection to not have a number, insert an 
 asterisk in the command as so: :code:`\section*{Unnumbered}`.
 
+Page Breaking
+=============
+To start the following material on a new page, the :code:`\newpage` or the :code:`\clearpage` command may be used. :code:`\newpage` starts the succeeding material on the next page, while :code:`\clearpage` typesets all figures and tables before starting a new page. This distinction is required because normally LaTeX calcualtes optimal positions for tables and figures, usually placing them out of sequence with their position in the text, and sometimes pages before or after their location might indicate from the text in the code. So using :code:`\clearpage` ensures all figures and tables are typeset and the succeeding text acts as a coherent block.
+
+If creating a double-sided document, it can be useful to use :code:`\cleardoublepage`, which acts like :code:`\clearpage`, but waits until the next odd-numbered page to begin typesetting more material. If used on an even-numbered page, this means it just starts on the next page. If used on an odd-numbered page, LaTeX will make the following even page blank, and then begin typesetting material on the next odd page.
+
+Sometimes LaTeX chooses odd places for page breaks. To suggest a better place, use :code:`\pagebreak`. The command takes an optional argument which says how insistent you are that there may be a page break there, with 0 being a slight suggestion and 4 forcing LaTeX to create a new page. Especially in longer documents, using these generously between paragraphs can give you a lot of control over how LaTeX chooses page location. I generally go with :code:`\pagebreak[2]` between paragraphs if I do not want LaTeX to break up any paragraphs across pages.
+
+If there is a place you specifically do not want LaTeX to create a page break, use :code:`\nopagebreak` in much the similar way as :code:`\pagebreak`, as it takes an optional argument from 0 to 4. This can be useful to ensure sets of equations are all set on the same page.
+
 The Bibliography
 ================
 
