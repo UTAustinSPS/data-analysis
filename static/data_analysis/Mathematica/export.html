@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Exporting Data &mdash; Introduction to Data Analysis for Physics</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0-rc1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0-rc1/css/bootstrap-glyphicons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../../runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/js/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/js/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.js"></script>
+    <script type="text/javascript" src="../_static/builtin.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0-rc1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
+    <link rel="next" title="Importing Data" href="import.html" />
+    <link rel="prev" title="Applying Assumptions" href="assumptions.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://192.168.0.10:80' ? 'http://192.168.0.10:80' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'data_analysis';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-fixed-top" style="z-index:9999999">
+
+  <div class="container">
+
+    <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+    <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <div>
+      <a href="../index.html">
+      <img title="Data Analysis for Physics" src="../_static/img/logo_small.png"
+       style="max-width:60px; max-height:60px;float:left"></a>
+      <a class="navbar-brand" href="../index.html">Introduction to Data Analysis for Physics</a>
+    </div>
+
+    <div class="nav-collapse collapse navbar-responsive-collapse">
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Exporting Data</a><ul>
+<li><a class="reference internal" href="#exporting-images">Exporting Images</a></li>
+<li><a class="reference internal" href="#exporting-non-static-images">Exporting Non-Static Images</a></li>
+<li><a class="reference internal" href="#id1">Exporting Data</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Applying Assumptions" data-toggle="tooltip">
+    <a href="assumptions.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+      <p style=";max-width:130px;">Applying Assumptions</p>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Importing Data' data-toggle="tooltip" >
+    <a href="import.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+      <p style=";max-width:130px;">Importing Data</p>
+    </a>
+  </li>
+  <li style="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div id="mainbody" class="container">
+  
+  <div class="section" id="exporting-data">
+<h1>Exporting Data<a class="headerlink" href="#exporting-data" title="Permalink to this headline">¶</a></h1>
+<p><em>Mathematica</em> has great utilities for exporting data from the application to images,
+audio files, movies, and more. The image component is the most useful for drafting
+documents, of course, but others can be useful when applying <em>Mathematica</em> to other
+problems. For example, if we create an animation (of a dataset through time, or
+of a simulation), we can easily export it to a format that can be included in a <em>PowerPoint</em>
+presentation or uploaded to <em>YouTube</em>.</p>
+<p>The <tt class="code docutils literal"><span class="pre">Export</span></tt> function is surprisingly simple to use, which makes it ever more effective.
+It is used as <tt class="code docutils literal"><span class="pre">Export[&quot;filename&quot;,</span> <span class="pre">graphic,</span> <span class="pre">&quot;format&quot;]</span></tt>, where the <tt class="code docutils literal"><span class="pre">filename</span></tt>
+is the full path (for ease in finding it later) to the file you want to create, for example
+&#8220;/home/my_user/mathematica_files/picture.png&#8221;, <tt class="code docutils literal"><span class="pre">graphic</span></tt> is the image (or movie,
+audio clip, etc.) that you want to save (example to follow), and <tt class="code docutils literal"><span class="pre">format</span></tt> is one
+of the valid file formats (run <tt class="code docutils literal"><span class="pre">$ExportFormats</span></tt> to see which are enabled).</p>
+<div class="section" id="exporting-images">
+<h2>Exporting Images<a class="headerlink" href="#exporting-images" title="Permalink to this headline">¶</a></h2>
+<p>For a simple example, we have:</p>
+<div class="highlight-python"><pre>Plot[x^2, {x,0,8}]
+Export["/home/user/mydirectory/plot.png", %, "PNG"]</pre>
+</div>
+<p>which will create a PNG (better resolution than JPG and is still cross-platform) version
+of the plot and store it in the file specified (which is how each of the images in the
+<em>Mathematica</em> portion of this textbook have been created).</p>
+</div>
+<div class="section" id="exporting-non-static-images">
+<h2>Exporting Non-Static Images<a class="headerlink" href="#exporting-non-static-images" title="Permalink to this headline">¶</a></h2>
+<p>If we want to export something other than a single static image, we have to update
+our command slightly. For movies, GIFs, etc. we can simply put the single frames in a list,
+optionally providing a duration for frames (in seconds):</p>
+<div class="highlight-python"><pre>table = Table[
+        Plot[x^4 + a x^3 - a^2 x + a, {x, -10, 10},
+        PlotRange -&gt; {{-7, 7}, {-40, 150}}], {a, 0, 8, .1}];
+Export["export_ani.gif", table, "GIF", "DisplayDurations" -&gt; .01]</pre>
+</div>
+<div class="figure align-center">
+<img alt="GIF exporting" src="../_images/export_ani.gif" />
+<p class="caption">Animated GIF for a polynomial <span class="math">\(x^4+ax^3-a^2x+a;~a\in[0,8]\)</span>.</p>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Exporting Data<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>If instead of images we want to export data, we can do this as well. For example, we can export
+a matrix to a CSV (comma-separated values) file. We can even add headers to the data. For example,
+if we had <tt class="code docutils literal"><span class="pre">data=Table[{i,</span> <span class="pre">i^2,</span> <span class="pre">i^3,</span> <span class="pre">Prime[i]},</span> <span class="pre">{i,-20,20}]</span></tt>, we can add headers then create the file with:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">data</span><span class="o">=</span><span class="n">Table</span><span class="p">[{</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="n">i</span><span class="o">^</span><span class="mi">3</span><span class="p">,</span> <span class="n">Prime</span><span class="p">[</span><span class="n">i</span><span class="p">]},</span> <span class="p">{</span><span class="n">i</span><span class="p">,</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">}];</span>
+<span class="n">PrependTo</span><span class="p">[</span><span class="n">data</span><span class="p">,</span> <span class="p">{</span><span class="s">&quot;value&quot;</span><span class="p">,</span> <span class="s">&quot;square&quot;</span><span class="p">,</span> <span class="s">&quot;cube&quot;</span><span class="p">,</span> <span class="s">&quot;prime&quot;</span><span class="p">}];</span>
+<span class="n">Export</span><span class="p">[</span><span class="s">&quot;prime_example.csv&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="s">&quot;CSV&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The data is <a class="reference external" href="../_static/data/prime_example.csv">here</a> for reference.</p>
+<p>We can export data as well to formats for
+later use in <em>MATLAB</em> or other languages, and even automatically create archives of multiple
+files (TAR files, GZIP files, ZIP files). For an updated listing of possible options and
+examples on how to use each (typically, the single image export is sufficient for any
+given graph), check out the &#8220;Listing of All Formats&#8221; page in the <em>Mathematica</em> documentation
+(<em>Mathematica</em> URL &#8220;guide/ListingOfAllFormats&#8221;).</p>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+    </p>
+    <p>
+    <!--
+        &copy; Copyright 2013, University of Texas at Austin Society of Physics Students and Sigma Pi Sigma.-->
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    //$(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    //$(document).ready(getNumUsers);
+    //$(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  $("#mainbody").children().first().css("margin-top",
+    $("#navbar").css("height"))
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-small btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-small btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-small btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-small btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

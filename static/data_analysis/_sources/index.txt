@@ -9,7 +9,7 @@ Introduction to Data Analysis for Physics
 
 .. sidebar:: Authors
 
-   The original authors of this document are Evan Ott and Will Beason.
+   The original authors of this textbook are Evan Ott and Will Beason.
 
 
 .. Here is were you specify the content and order of your new book.
@@ -22,6 +22,13 @@ Introduction
 
    intro.rst
 
+Assignments
+:::::::::::
+.. toctree::
+   :maxdepth: 2
+
+   assignments.rst
+
 *Mathematica*
 :::::::::::::
 
@@ -31,6 +38,11 @@ Introduction
    Mathematica/mathematica.rst
    Mathematica/structure.rst
    Mathematica/lists.rst
+   Mathematica/functions_graphs.rst
+   Mathematica/assumptions.rst
+   Mathematica/export.rst
+   Mathematica/import.rst
+   Mathematica/animations.rst
 
 The :raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>tbook` 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -47,6 +59,17 @@ The :raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>tbook`
    LaTeX/newcommand.rst
    LaTeX/include.rst
 
+Analysis
+::::::::
+
+.. toctree::
+   :maxdepth: 2
+
+   Analysis/gaussian.rst
+   Analysis/curve_fit.rst
+   Analysis/approximations.rst
+   Analysis/error.rst
+
 Appendix
 ::::::::
 
@@ -54,9 +77,18 @@ Appendix
    :maxdepth: 1
 
    Math/eigenvalues.rst
+   Math/logic.rst
+   Math/misc.rst
 
 ..
    To Do for LaTeX (feel free to add):
+   in latex.rst or docstructure.rst, add in info about backslash, getting Greek letters, possibly that there is a difference between math and non-math
+   Document Classes (fix in docstructure.rst)
+   Formatting? (fix in docstructure.rst)
+   Environments? (fix in docstructure.rst)
+   Bibliographies (fix in docstructure.rst)
+   tables.rst --> "Columns", array environment
+   newcommand.rst --> reference to looping
    Lists
    Basics: Spaces, Groups, Environments, Commands, Comments, 
    |

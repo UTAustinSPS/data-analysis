@@ -37,7 +37,7 @@ The format of :code:`\newcommand` is
 
    \newcommand{cmd}[args]{def}
 
-The cmd represents a command name beginning with a :code:`\`. The command must be unique,
+The cmd represents a command name beginning with a :code:`\ `. The command must be unique,
 and cannot begin with :code:`\end`. The arg represents an optional argument which can
 take any value from 1 to 9, so a command may take up to 9 arguments. The def
 represents the text substituted.
@@ -46,7 +46,7 @@ Zero Argument Commands
 ----------------------
 
 Ofttimes, it is easier to reduce a common symbol to a simple sequence than the full
-command. For real analysis, the symbols :math:`\mathbb{R}` and `\mathbb{Z}` are common
+command. For real analysis, the symbols :math:`\mathbb{R}` and :math:`\mathbb{Z}` are common
 and it can be a chore to type (and remember) the commands :code:`\mathbb{R}` and
 :code:`\mathbb{Z}`. Since :code:`\R` and :code:`\Z` are not natively commands, the
 lengthy symbol calls can be assigned to these much shorter commands if the following

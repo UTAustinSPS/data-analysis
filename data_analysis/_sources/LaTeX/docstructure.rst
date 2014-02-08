@@ -14,12 +14,48 @@ Here you can define commands, styles and environments which you will later use.
 The **body** has the structure and content of the document. This is where 
 exposition, lists, figures, and nearly everything else in the document goes.
 
-The Required Command
-====================
-There is one required command for every LaTeX document, 
-:code:`\documentclass{}`. Specifying the class of the document tells LaTeX the 
-basic formatting desired for the document. There are many document classes, and 
-they are covered on the document classes page.
+Document Classes
+================
+There is one required command for every LaTeX document, :code:`\documentclass{}`. Specifying the class of the document tells LaTeX the basic formatting desired for the document. Very few commands will work before the document class is declared, so it should be done as early as possible. There are many document classes available for LaTeX. Each can be edited heavily, but one must be used as the basis for any document. Below are some of the most common:
+
+.. table:: **Table 1: Document Classes**
+
+    ========= ====================================================================================
+    **Class** **Use**
+    ========= ====================================================================================
+    article   By far the most common document class. Formats the document for use in publications.
+    report    For articles that need more structure, especially if they are longer.
+    book      Formats the document to be printed as a book.
+    letter    Makes very professional-looking letters.
+    beamer    A class for creating presentations in LaTeX.
+    ========= ====================================================================================
+
+
+To declare the class of a document to be :code:`article`, use :code:`\documentclass{article}` in the preamble. Document classes also include many options which can be changed when the class is declared. These are optional, and so are declared in the optional argument of the :code:`\documentclass` command. Below, the standard setting for :code:`article` is italicized among some of the other possible options. If you wish to use the default setting, do not bother specifying it.
+
+.. table:: **Table 2: Document Class Options**
+
+    =========== ========================== ====================================================================================
+    **Option**  **Possible Settings**      **Description**                                                                     
+    =========== ========================== ====================================================================================
+    Font Size   10pt, *11pt*, 12pt         The size of standard text                                                           
+    Paper Type  a4paper, *letterpaper*     The type of paper for printing                                                      
+    Title Page  titlepage, *notitlepage*   Whether to force a new page after the title                                         
+    Columns     *onecolumn*, twocolumn     The number of columns in the document                                               
+    Page Sides  *oneside*, twoside         Whether the document is intended to be printed single- or double-sided              
+    Orientation *portrait*, landscape      How the document is oriented on paper                                               
+    Draft       draft                      Makes typesetting problems apparent with a mark in the right margin; disables images
+    =========== ========================== ====================================================================================
+
+The order of the options is arbitrary. So a letter with 10 point font on A4 paper to be printed with the landscape orientation is specified with
+
+::
+
+   \documentclass[10pt, landscape, a4paper]{letter}
+
+
+
+A more thourough treatment is available on `the LaTeX wikibook <http://en.wikibooks.org/wiki/LaTeX/Document_Structure#Document_classes>`__.
 
 The Preamble
 ============
@@ -48,7 +84,7 @@ allows margins to be set using this method. If you want your document to have
 margins of 1 inch rather than the default by loading the package with 
 :code:`\usepackage[margin=1in]{geometry}`.
 
-More information on packages is included in the packages page.
+More information on packages is included in the `Packages <packages.html>`_ page.
 
 New Commands
 ------------
@@ -61,8 +97,8 @@ to type :code:`\varepsilon` every time. By using
 typing :code:`\e`.
 
 The :code:`\newcommand{}{}` also takes an optional argument which specifies the 
-number of arguments. More information on new commands is available in the new 
-command lesson.
+number of arguments. More information on new commands is available in the
+`New Command <newcommand.html>`_ lesson.
 
 Formatting
 ----------
@@ -93,7 +129,7 @@ the document.
 
 As indicated by the way it is called, :code:`document` is actually considered 
 an *environment* within LaTeX. See the environments lesson for more 
-informaiton. Except comments, everything written the body of a LaTeX document 
+information. Except comments, everything written the body of a LaTeX document 
 will be processed during typesetting.
 
 Sections, Subsections, and Subsubsections, Oh My!
@@ -130,12 +166,13 @@ paragraphs to have titles, and look like this:
    \subparagraph{Hey, }
    I'm just a subparagraph.
 
+.. image:: Figures/pars.jpg
 
 Using these commands to specify paragraphs is generally unnecessary since most 
 documents don't need to be this structured. A paragraph break can be specified 
-by inserting a plank line between paragraphs. If you want to keep the paragraph 
+by inserting a blank line between paragraphs. If you want to keep the paragraph 
 heading styling, but want to start the paragraph on it's own line, just insert 
-an empty space as so.
+a new line as so:
 
 ::
    

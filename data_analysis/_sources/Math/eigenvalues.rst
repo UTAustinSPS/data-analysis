@@ -219,7 +219,7 @@ we might think about taking the derivative of some vector. In fact, what about:
 	\left(\begin{array}{c}\dot{x} \\ \ddot{x}\end{array}\right)
 
 Is that really helping our case? Well, if we had some way to have the right-hand side be some square
-matrix times the vector we were taking the derivative of and have that be equal to a constant, we'd be home
+matrix times the vector we were taking the derivative of, we'd be home
 free. But all that does is set up a system of equations. Let's see if we can figure out which system:
 
 .. math::
@@ -246,8 +246,8 @@ Now, we have our formulation. But what would it mean for :math:`\left(\begin{arr
 \dot{x}\end{array}\right)=	\lambda\left(\begin{array}{c}x \\
 \dot{x}\end{array}\right)`? The meaning is not so obvious. However, we have now totally eliminated
 :math:`\ddot{x}` from our system of equations. That means that if we were to solve this new formulation,
-we would end up with equations based solely on :math:`w`, which is a constant, :math:`\lambda`, which
-is a scalar we'll solve for, then :math:`x` and :math:`\dot{x}`. That sounds like a system of first-order
+we would end up with equations based solely on :math:`w`, which is a constant; :math:`\lambda`, which
+is a scalar we'll solve for; then :math:`x` and :math:`\dot{x}`. That sounds like a system of first-order
 differential equations, which we'll likely be able to solve - certainly more easily than trying to solve
 the first formulation of the problem which was a second-order differential equation. So, let's use the hammer
 that is the eigenvalue problem process on the nail of this problem and see if it helps us out.
@@ -275,7 +275,7 @@ similar, for the moment, let's try to solve for the eigenvectors at the same tim
 
 This is just a simple equation that says that the derivative of some function is a constant times that
 function. At this point, our hammer has done its job, now it's time to stain, coat, and finish the 
-masterpiece. While not trivial the above gives the elementary result:
+masterpiece. While not trivial, the above gives the elementary result:
 
 .. math::
 
@@ -289,12 +289,12 @@ problem is:
 
 .. math::
 
-	x_H=Ae^{iwt}+Be^{-iwt}
+	x_H=A_+e^{iwt}+A_-e^{-iwt}
 
-where :math:`A` and :math:`B` would be determined through initial conditions or other information.
-However, if we apply Euler's formula (the one relevant to the euation above [
+where :math:`A_+` and :math:`A_-` would be determined through initial conditions or other information.
+However, if we apply Euler's formula (the one relevant to the equation above [
 :math:`e^{\pm{ix}}=\cos(x)\pm{i}\sin(x)`
-]), and let :math:`C=A+B,~D=(A-B)i`, we arrive at the solution:
+]), and let :math:`C=A_++A_-,~D=(A_+-A_-)i`, we arrive at the solution:
 
 .. math::
 
@@ -307,4 +307,3 @@ For the most familar form, we take :math:`A^2=C^2+D^2,~A\cos\phi=C,~A\sin\phi=D`
 .. math::
 
 	x(t)=A\cos(wt-\phi)
-

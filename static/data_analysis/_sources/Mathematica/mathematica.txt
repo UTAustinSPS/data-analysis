@@ -22,11 +22,17 @@ it is needed to edit CDFs).
 
 Access
 ------
-If you are a physics student at UT, you can obtain it using a site licence paid for by the university. See the
+If you are a physics student at UT, you can obtain it using a site licence paid for by the university (for Windows, Mac, or Linux). See the
 `Physics Department Software Page <http://www.ph.utexas.edu/~help/software.php>`_ for more.
 
 Otherwise, if you are a UT student, various computer labs, including the PMCL in RLM have *Mathematica* installed
-already. If you are not a UT student, you will need to purchase the software from `Wolfram <http://www.wolfram.com/mathematica/>`_.
+already. You can also purchase a 1-year license for your own machine
+through the `UT Campus Computer Store <http://campuscomputer.com/>`_ (only Windows and Mac) at
+a discounted rate (as of January 2014, $35).
+If you are not a UT student (just reading this book on your own),
+you may need to purchase the software from
+`Wolfram <http://www.wolfram.com/mathematica/>`_ (for individuals, as low as $149/year;
+for students, as low as $44.95/semester).
 
 Example
 -------
@@ -52,13 +58,12 @@ Which gives a result that looks like:
    :alt: Primes
 
 While *Mathematica* may not be the best language for extremely-large scale data processing (although
-it has cluster capabilities which will not be discussed here), the above example hopefully
+it has cluster capabilities when coupled with *gridMathematica* which will not be discussed here), the above example hopefully
 indicates how easy some tasks can be in the language. We will see later how to do more complicated
-input (reading files, etc.) and output (graphs, tables, etc.), as well as incorporate data analysis
-concepts like linear regression.
+input (reading files, etc.) and output (graphs, tables, etc.), as well as incorporate data analysis concepts.
 
 Other Information Sources
 -------------------------
-Wolfram has a tutorial on the "Core Language" `here <http://www.wolfram.com/learningcenter/tutorialcollection/CoreLanguage/>`_. It is available for purchase in print or free download. It covers many
+Wolfram has a tutorial on the "Core Language" `here <http://www.wolfram.com/learningcenter/tutorialcollection/CoreLanguage/>`__. It is available for purchase in print or free download. It covers many
 topics that will be referenced here. Their *Mathematica* site also maintains documentation
-of all the built-in parts of the language `here <http://reference.wolfram.com/mathematica/guide/Mathematica.html>`_.
+of all the built-in parts of the language `here <http://reference.wolfram.com/mathematica/guide/Mathematica.html>`__, which are duplicated in *Mathematica*'s Help menus.

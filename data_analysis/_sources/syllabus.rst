@@ -1,23 +1,43 @@
+.. role:: raw-html(raw)
+   :format: html
+
 .. raw:: html
 
    <h1>Course Syllabus Spring '13</h1>
 
 Contact Information
 -------------------
-Student Facilitator: Evan Ott
+Student Facilitator 1: Evan Ott
 
-Student Facilitator Email: `evan.ott@utexas.edu <mailto:evan.ott@utexas.edu>`_
+Student Facilitator 1 Email: `evan.ott@utexas.edu <mailto:evan.ott@utexas.edu>`__
 
+Student Facilitator 2: Will Beason
+
+Student Facilitator 2 Email: `beason@utexas.edu <mailto:beason@utexas.edu>`__
+
+Office Hours: W 2-4, Location TBA
+
+|
 
 Faculty Supervisor: Dr. Greg Sitz
 
-Faculty Supervisor Email: `gositz@physics.utexas.edu <mailto:gositz@physics.utexas.edu>`_
+Faculty Supervisor Email: `gositz@physics.utexas.edu <mailto:gositz@physics.utexas.edu>`__
+
+Office Hours: W 3-4, H 10:30-11:30 in RLM 10.313
+
+|
+
+Class: H 8:30-9:30 in RLM 5.112 currently, but moving to CPE soon (room TBA)
+
+Class Homepage and Textbook: `http://www.cs.utexas.edu/~evanott/PHY110C_Textbook/static/data_analysis/index.html <http://www.cs.utexas.edu/~evanott/PHY110C_Textbook/static/data_analysis/index.html>`__
+
+Email for Assignment Submission: `data.analysis.physics@gmail.com <mailto:data.analysis.physics@gmail.com>`__
 
 Course Description
 ------------------
 This course was devised by the UT-Austin chapter of the Society of Physics Students officers in order to introduce
 physics, math, astronomy, chemistry, and computer science students (and students interested in those and related
-subjects) to the :math:`\LaTeX` and *Mathematica* programming languages for use in data analysis. While designed with
+subjects) to the :raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>` and *Mathematica* programming languages for use in data analysis. While designed with
 preparation for PHY 353L in mind, the skills learned in this course apply to a broad array of courses and 
 fields of study and are directly applicable to both academic and industrial applications. Students enrolling
 in this course would benefit from prior exposure to programming, but no experience is required. This course
@@ -29,8 +49,8 @@ By the end of this course, you will be able to:
 
 1. Use *Mathematica* to analyze scietific data and create graphical representations of that data
 
-2. Use :math:`\LaTeX` to construct scientific documents including images, tables, and hyperlinks,
-completing assignments under different constraints to familiarize yourself with the language
+2. Use :raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>` to construct scientific documents including images, tables, and hyperlinks,
+   completing assignments under different constraints to familiarize yourself with the language
 
 3. Combine the skills listed above in a final project
 
@@ -40,8 +60,8 @@ This course will largely follow the 'flipped-classroom' model, involving reading
 assignments to be completed outside of class in an effort to make class-time as interactive and
 helpful as possible. Each week, students will complete a reading assignment from an online
 textbook created for this course by the Evan Ott and Will Beason and edited by the Society of Physics
-Students. This textbook will largely
-be technical in nature, presenting new features of :math:`\LaTeX` and *Mathematica* each week. Students will
+Students (see the link above). This textbook is largely
+technical in nature, presenting new features of :raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>` and *Mathematica* each week. Students will
 read the sections of the textbook before class, then begin a programming assignment that will be
 due the following week over that material. First-drafts of the programming assignments will be
 due the day before class.
@@ -49,9 +69,9 @@ due the day before class.
 During class, students will first present solutions to the assignment they completed for that week
 and discuss the merits and failings of particular methodologies used, in a variant of the Moore
 model of teaching. Particularly toward the end of the semester, students will engage in a debate over
-technologies employed in solutions (is a 3D graph with one axis of time more relatable than a 2D
-animated graph? are in-line equations better for space or too difficult to read? is using built-in
-distribution functions more enlightening than re-writing them in a more convenient way?).
+technologies employed in solutions (is a 3D graph with one axis of time more relatable than multiple 2D
+graphs? are in-line equations better for space or too difficult to read? is using built-in
+distribution functions more enlightening than re-writing them in a more convenient form?).
 
 The student facilitator will then review topics that proved most challenging for students based on
 the first-drafts submitted the previous day and help with troubleshooting errors. Then, each week,
@@ -67,15 +87,15 @@ Assignments
 Each week, students will be expected to complete assignments related to the objectives outlined
 above. These will need to be completed largely outside of class, although students are encouraged
 to bring personal computers to class for help with technical issues or for referencing their own
-work when discussing solutions. Software to be used in the course will include traditional :math:`\LaTeX`
-editors (use of *LyX* is discouraged in favor of students working directly with code), and the
+work when discussing solutions. Software to be used in the course will include traditional :raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>`
+editors (use of *Lyx* is discouraged in favor of students working directly with code), and the
 latest edition of *Mathematica*. As needed, instructions will be given on how to download any
 software required to complete assignments, but all required software is available for use in
 the Physics Microcomputer Laboratory in RLM 7.306 (`http://pmcl.ph.utexas.edu <http://pmcl.ph.utexas.edu/>`_).
 
 A final project will be given in lieu of the last two weekly assignments. This project will be
 cumulative, incorporating the data analysis skills learned in relation to the *Mathematica* portion
-of the course, and the typesetting skills learned in relation to the :math:`\LaTeX` portion.
+of the course, and the typesetting skills learned in relation to the :raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>` portion.
 
 A representative assignment covering the cumulative knowledge gained toward the end of the
 semester may be found below.
@@ -89,11 +109,14 @@ The final project will be an individual project, although general discussion
 and help with programming errors is perfectly acceptable and encouraged.
 
 	Weekly Assignments (total): 50 pts
+
 	Final Project: 24 pts
+
 	Solution Presentation and Discussion: 26 pts
+
 	*There will be no final exam for this course*
 
-Weekly assignments are due the day before class. Students are encouraged to complete as much of
+Weekly assignments are due the day before class at 5pm. Students are encouraged to complete as much of
 the assignment as possible by this time so that class-time can be used to discuss solutions and
 technical problems. No penalty will be imposed on late assignments, and assignments may be
 resubmitted with no penalty until the final class day. Grades for these assignments will be
@@ -123,49 +146,55 @@ it should serve as a guide to the topics to be discussed through the semester.
 
 **Week 5** - *Mathematica*: More advanced data analysis
 
-**Week 6** - Introduction to :math:`\LaTeX`: The language, how to download
+**Week 6** - Introduction to :raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>`: The language, how to download
 
-**Week 7** - Introduction to :math:`\LaTeX` (continued): My first document
+**Week 7** - Introduction to :raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>` (continued): My first document
 
-**Week 8** - :math:`\LaTeX`: More complex documents
+**Week 8** - :raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>`: More complex documents
 
-**Week 9** - :math:`\LaTeX`: Formatting and new concepts
+**Week 9** - :raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>`: Formatting and new concepts
 
-**Week 10** - :math:`\LaTeX`, *Mathematica*: Make-up week for covering additional topics
+**Week 10** - :raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>`, *Mathematica*: Make-up week for covering additional topics
 
-**Week 11** - :math:`\LaTeX`, *Mathematica*: Combining data analysis and articles
+**Week 11** - :raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>`, *Mathematica*: Combining data analysis and articles
 
-**Week 12** - :math:`\LaTeX`, *Mathematica*: Combining data analysis and articles (continued)
+**Week 12** - :raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>`, *Mathematica*: Combining data analysis and articles (continued)
 
-**Week 13** - :math:`\LaTeX`, *Mathematica*: Pushing limits
+**Week 13** - :raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>`, *Mathematica*: Pushing limits
 
-**Week 14** - :math:`\LaTeX`, *Mathematica*: Wrap-up
+**Week 14** - :raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>`, *Mathematica*: Wrap-up
 
 Example Class Agenda - Week 4
 -----------------------------
-1. Students are to have read textbook information on '*Mathematica*: Reading in data, simple
-analysis' before coming to class
 
-2. Rough drafts of '*Mathematica*: Simple programs' assignment solutions due the day before class
+1. Students are to have read textbook information on '*Mathematica*:
+   Reading in data, simple analysis' before coming to class
+
+2. Rough drafts of "*Mathematica*: Simple programs' assignment solutions due the day before class
 
 3. 1-2 Students present solutions to '*Mathematica*: Simple programs' homework (10-15 min)
 
-	a. Class discusses extent to which solutions address the tasks from the assignment
-	b. Class discusses relative merits of technologies presenters employed versus other potential 	solutions
+   a. Class discusses extent to which solutions address the tasks
+      from the assignment
 
-4. Student facilitator leads discussion of '*Mathematica*: Simple programs' solutions in terms of
-identified issues (10 min)
+   b. Class discusses relative merits of technologies presenters 
+      employed versus other potential solutions
 
-5. Student facilitator presents over '*Mathematica*: Reading in data, simple analysis'
-material (10-15 min)
-	
-	a. Presenter(s), class, and student facilitator help address questions from classmates
+4. Student facilitator leads discussion of '*Mathematica*: Simple programs'
+   solutions in terms of identified issues (10 min)
 
-6. Student facilitator distributes homework assignment over '*Mathematica*: Reading in data,
-simple analysis' and answers questions about it. Student facilitator assigns the
-'*Mathematica*: More advanced data analysis' reading (5 min)
+5. Student facilitator presents over '*Mathematica*: Reading in data,
+   simple analysis' material (10-15 min)
 
-7. *If time permits*, students begin work on next week's assignment, working collaboratively (5-15 min)
+   a. Presenter(s), class, and student facilitator help address
+      questions from classmates
+
+6. Student facilitator distributes homework assignment over '*Mathematica*:
+   Reading in data, simple analysis' and answers questions about it. 
+   Student facilitator assigns the '*Mathematica*: More advanced data analysis' reading (5 min)
+
+7. *If time permits*, students begin work on next week's assignment, 
+   working collaboratively (5-15 min)
 
 Students with Disabilities
 --------------------------
@@ -182,17 +211,26 @@ the University, policies on academic dishonesty will be strictly enforced. For f
 information please visit the Student Judicial Services Web site: 
 `http://deanofstudents.utexas.edu/sjs <http://deanofstudents.utexas.edu/sjs>`_.
 
-About the Student Facilitator
------------------------------
+About Student Facilitator 1
+---------------------------
 Evan Ott is a physics and computer science major and the 2012-2014 president of UT's chapter
 of the Society of Physics Students. He has previously team-taught a 4-week seminar on
-:math:`\LaTeX` (materials available `here <http://www.ph.utexas.edu/~sps/pages/resources.html?modalID=LaTeXModal>`_)
+:raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>` (materials available `here <http://www.ph.utexas.edu/~sps/pages/resources.html?modalID=LaTeXModal>`_)
 and coached his high school's computer science club for two years
 in *Java* leading them to win several competitions. He has served as an undergraduate teaching
 assistant for Dr. Sacha Kopp’s UGS 303: Originality in the Arts and Sciences and PHY 110C:
 Science of the Times. In his time as SPS president, he has consistently worked to help
 provide resources to better connect students with technical skills applicable to both
 research and industry.
+
+About Student Facilitator 2
+---------------------------
+Will Beason is a senior double majoring in Mathematics and Physics. His primary interests
+are cybernetics and information theory, and he hopes to either go to graduate school or
+get a job relating to these subjects after graduation. He has given several talks on
+data analysis, and is currently acting as a data analysis consultant for MeasureCP.
+He also runs a blog at `will.ketobot.com <http://will.ketobot.com>`__ where he attempts to apply the theories
+behind his interests to the world.
 
 Example Assignment (near end of semester)
 -----------------------------------------
@@ -214,4 +252,4 @@ statistical model versus time. Are there patterns that emerge? Use the curve-fit
 techniques to derive the evolution of the system over time. Can you think of a physical
 situation that might behave in this way?
 
-Finally, combine the graphs, relevant equations, and discussion in a :math:`\LaTeX` document.
+Finally, combine the graphs, relevant equations, and discussion in a :raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>` document.

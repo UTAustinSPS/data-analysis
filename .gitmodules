@@ -7,6 +7,3 @@
 [submodule "common/ext/skulpt"]
 	path = common/ext/skulpt
 	url = https://github.com/bnmnetp/skulpt
-[submodule "Java4Python"]
-	path = Java4Python
-	url = https://github.com/bnmnetp/Java4Python

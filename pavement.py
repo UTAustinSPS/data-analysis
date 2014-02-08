@@ -29,87 +29,6 @@ options(
         ),
 )
 
-@task
-@cmdopts([('all','a','rebuild everything')])
-def everyday(options):
-    # project-specific pavements have defaults set but we can override here
-    params = ["paver", "build", # task name
-              "--masterapp", master_app,
-              "--masterurl", master_url]
-    if 'all' in options.everyday:
-        params.append("-a")
-
-    os.chdir("everyday")
-    subprocess.call(params)
-    os.chdir("..")
-
-@task
-@cmdopts([('all','a','rebuild everything')])
-def thinkcspy(options):
-    # project-specific pavements have defaults set but we can override here
-    params = ["paver", "build", # task name
-              "--masterapp", master_app,
-              "--masterurl", master_url]
-    if 'all' in options.thinkcspy:
-        params.append("-a")
-
-    os.chdir("thinkcspy")
-    subprocess.call(params)
-    os.chdir("..")
-
-    if minify_js:
-        sh('./minifyjs.py %s' % "static/thinkcspy")
-
-@task
-@cmdopts([('all','a','rebuild everything')])
-def pythonds(options):
-    # project-specific pavements have defaults set but we can override here
-    params = ["paver", "build", # task name
-              "--masterapp", master_app,
-              "--masterurl", master_url]
-    if 'all' in options.pythonds:
-        params.append("-a")
-
-    os.chdir("pythonds")
-    subprocess.call(params)
-    os.chdir("..")
-
-    if minify_js:
-        sh('./minifyjs.py %s' % "static/pythonds")
-
-@task
-@cmdopts([('all','a','rebuild everything')])
-def overview(options):
-    # project-specific pavements have defaults set but we can override here
-    params = ["paver", "build", # task name
-              "--masterapp", master_app,
-              "--masterurl", master_url]
-    if 'all' in options.overview:
-        params.append("-a")
-
-    os.chdir("overview")
-    subprocess.call(params)
-    os.chdir("..")
-
-    if minify_js:
-        sh('./minifyjs.py %s' % "static/overview")
-
-@task
-@cmdopts([('all','a','rebuild everything')])
-def devcourse(options):
-    # project-specific pavements have defaults set but we can override here
-    params = ["paver", "build", # task name
-              "--masterapp", master_app,
-              "--masterurl", master_url]
-    if 'all' in options.devcourse:
-        params.append("-a")
-
-    os.chdir("devcourse")
-    subprocess.call(params)
-    os.chdir("..")
-
-    if minify_js:
-        sh('./minifyjs.py %s' % "static/devcourse")
 
 @task
 @cmdopts([('all','a','rebuild everything')])
@@ -132,13 +51,7 @@ def allbooks(options):
     if 'all' in options.allbooks:
         opts['all'] = True
 
-    options.thinkcspy = opts
-    options.pythonds = opts
-    options.overview = opts
     options.data_analysis = opts
 
-    thinkcspy(options)
-    pythonds(options)
     data_analysis(options)
-    overview(options)
 

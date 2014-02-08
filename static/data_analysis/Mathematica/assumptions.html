@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Applying Assumptions &mdash; Introduction to Data Analysis for Physics</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0-rc1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0-rc1/css/bootstrap-glyphicons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../../runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/js/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/js/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.js"></script>
+    <script type="text/javascript" src="../_static/builtin.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0-rc1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
+    <link rel="next" title="Exporting Data" href="export.html" />
+    <link rel="prev" title="Functions and Graphing" href="functions_graphs.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://192.168.0.10:80' ? 'http://192.168.0.10:80' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'data_analysis';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-fixed-top" style="z-index:9999999">
+
+  <div class="container">
+
+    <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+    <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <div>
+      <a href="../index.html">
+      <img title="Data Analysis for Physics" src="../_static/img/logo_small.png"
+       style="max-width:60px; max-height:60px;float:left"></a>
+      <a class="navbar-brand" href="../index.html">Introduction to Data Analysis for Physics</a>
+    </div>
+
+    <div class="nav-collapse collapse navbar-responsive-collapse">
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Applying Assumptions</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Functions and Graphing" data-toggle="tooltip">
+    <a href="functions_graphs.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+      <p style=";max-width:130px;">Functions and Graphing</p>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Exporting Data' data-toggle="tooltip" >
+    <a href="export.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+      <p style=";max-width:130px;">Exporting Data</p>
+    </a>
+  </li>
+  <li style="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div id="mainbody" class="container">
+  
+  <div class="section" id="applying-assumptions">
+<h1>Applying Assumptions<a class="headerlink" href="#applying-assumptions" title="Permalink to this headline">¶</a></h1>
+<p>In some cases, we run into problems evaluating functions on symbolic expressions.
+For example, if we want to evaluate <span class="math">\(\int_0^1e^{x^k}dx\)</span> as a function of <span class="math">\(k\)</span>,
+we can do:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Clear</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
+<span class="n">Integrate</span><span class="p">[</span><span class="n">Exp</span><span class="p">[</span><span class="n">x</span><span class="o">^</span><span class="n">k</span><span class="p">],</span> <span class="p">{</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">}]</span>
+</pre></div>
+</div>
+<p>which gives</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">ConditionalExpression</span><span class="p">[</span>
+        <span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">k</span><span class="p">)</span> <span class="p">(</span><span class="n">Gamma</span><span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="n">k</span><span class="p">]</span> <span class="o">-</span> <span class="n">Gamma</span><span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="n">k</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]))</span><span class="o">/</span><span class="n">k</span><span class="p">,</span>
+        <span class="n">Re</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>This tells us that that integral evaluates to the first expression if the real part of <span class="math">\(k\)</span>
+is greater than 0. If we know nothing about <span class="math">\(k\)</span>, then this is the best we can do. But, if
+we knew something about <span class="math">\(k\)</span>, for example, that <span class="math">\(k&gt;1\)</span>, we can incorporate that
+information into the integral, sometimes obtaining better results:</p>
+<div class="highlight-python"><pre>Integrate[Exp[x ^k], {x, 0, 1}, Assumptions -&gt; {k &gt; 1}]</pre>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">k</span><span class="p">)</span> <span class="p">(</span><span class="n">Gamma</span><span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="n">k</span><span class="p">]</span> <span class="o">-</span> <span class="n">Gamma</span><span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="n">k</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]))</span><span class="o">/</span><span class="n">k</span>
+</pre></div>
+</div>
+<p>While not much of an improvement, the expression is at least cleaner to use and look at. In more
+complicated scenarios, we can take an unsolvable problem and make it solvable.</p>
+<div class="note admonition">
+<p class="first admonition-title">Example: Hydrogen Atom</p>
+<p>One great example (perhaps familiar to those who have taken quantum mechanics) employs
+the solution to the hydrogen atom. A derivation of the solution can be found
+in sections 4.1 and 4.2 in <em>Introduction to Quantum Mechanics (Second Edition)</em> by
+David J. Griffiths. The wavefunction for hydrogen is based on three &#8220;quantum numbers&#8221;
+<span class="math">\(n,~l,~m\)</span> specifying an electron orbital, as may be familiar from chemistry courses.
+In terms of spherical coordinates <span class="math">\(r,~\theta,~\phi\)</span>, we have:</p>
+<div class="math">
+\[\small
+\psi_{nlm}(r,~\theta,~\phi)=
+\sqrt{\left(\frac{2}{na_0}^3\right)
+\frac{(n-l-1)!}{2n[(n+l)!]^3}}
+e^{-r/na_0}
+\left(\frac{2r}{ra_0}\right)^l
+\left[L_{n-l-1}^{2l+1}(2r/na_0)\right]
+Y_l^m(\theta,~\phi)\]</div>
+<p>which is a function of the Bohr radius (<span class="math">\(a_0\)</span>),
+Laguerre polynomials (<span class="math">\(L_{q-p}^{p}(x)\)</span>),
+and spherical harmonics (<span class="math">\(Y_l^m(\theta,~\phi)\)</span>) [yes, this very
+complicated function is the solution to the hydrogen atom, arguably
+the simplest real system].</p>
+<p>With such a (normalized) wave function, one thing we can do is calculate
+expected values of physical quantities with</p>
+<div class="math">
+\[\langle X\rangle=\int_\tau\psi^*X\psi d\tau\]</div>
+<p>where <span class="math">\(X\)</span> is the quantity (defined in quantum mechanical terms - see Griffiths),
+<span class="math">\(\tau\)</span> is the coordinate space, <span class="math">\(\psi^*\)</span> is the complex conjugate
+of the wavefunction, and <span class="math">\(\langle X\rangle\)</span> is the expected value of <span class="math">\(X\)</span>.</p>
+<p>In <em>Mathematica</em>, we can define the hydrogen wavefunction using built-in functions:</p>
+<div class="highlight-python"><pre>hydrogen[n_, l_, m_, r_, t_, p_] :=
+        Sqrt[(2/(n a0))^3   (n - l - 1)!/(2 n ((n + l)!)^3)] *
+        Exp[-r/(n a0)] *
+        (2 r/(n a0))^l*
+        LaguerreL[n - l - 1, 2 l + 1, 2 r/(n a0)]*
+        SphericalHarmonicY[l, m, t, p]</pre>
+</div>
+<p>then, for example, calculate <span class="math">\(\langle r\rangle\)</span> for the <span class="math">\(\psi_{200}\)</span>
+state with</p>
+<div class="highlight-python"><pre>Integrate[
+        r^2 Sin[t] *
+        Conjugate[hydrogen[2, 0, 0, r, t, p] ] *
+        r *
+        hydrogen[2, 0, 0, r, t, p],
+        {r, 0, Infinity},
+        {t, 0, Pi},
+        {p, 0, 2 Pi}]</pre>
+</div>
+<p>which gives the complicated</p>
+<div class="highlight-python"><pre>ConditionalExpression[-((3 a0^12 (3 - 14 Sign[a0]^2 +
+        3 Sign[a0]^4))/(
+        16 Abs[a0]^5 Re[a0]^6 Sign[a0]^14)),
+        Re[a0] &gt; 0]</pre>
+</div>
+<p>This is because we have not defined <span class="math">\(a_0\)</span>, the Bohr radius (<span class="math">\(a_0=0.0529nm\)</span>).
+It has been left undefined simply to allow for any choice of units in the calculation.
+But whatever units we choose, we know <span class="math">\(a_0&gt;0\)</span>. So, we can apply that assumption:</p>
+<div class="highlight-python"><pre>Integrate[
+        r^2 Sin[t] *
+        Conjugate[hydrogen[2, 0, 0, r, t, p] ] *
+        r *
+        hydrogen[2, 0, 0, r, t, p],
+        {r, 0, Infinity},
+        {t, 0, Pi},
+        {p, 0, 2 Pi},
+        Assumptions-&gt;{a0&gt;0}]</pre>
+</div>
+<p>which now gives simply</p>
+<div class="last highlight-python"><pre>(3 a0)/2</pre>
+</div>
+</div>
+<p><tt class="code docutils literal"><span class="pre">Integrate</span></tt>, <tt class="code docutils literal"><span class="pre">D</span></tt> and other math functions are the most common places to use the
+<tt class="code docutils literal"><span class="pre">Assumptions</span></tt> option, along with the <tt class="code docutils literal"><span class="pre">Simplify</span></tt> and <tt class="code docutils literal"><span class="pre">FullSimplify</span></tt> commands
+which can help reduce symbolic expressions, even when special functions are allowed.</p>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+    </p>
+    <p>
+    <!--
+        &copy; Copyright 2013, University of Texas at Austin Society of Physics Students and Sigma Pi Sigma.-->
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    //$(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    //$(document).ready(getNumUsers);
+    //$(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  $("#mainbody").children().first().css("margin-top",
+    $("#navbar").css("height"))
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-small btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-small btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-small btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-small btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

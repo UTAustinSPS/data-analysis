@@ -2,10 +2,13 @@ Document Structure and Syntax
 =============================
 *Mathematica* largely lacks the kind of structures one might find in other languages. Instead of
 having sections like :math:`\LaTeX`, it simply has blocks of code you can execute. And unlike
-languages like *Python*, *C* or *Java*, *Mathematica* will simply execute whatever block of code
+languages like *Python*, *C*, or *Java*, *Mathematica* will simply execute whatever block of code
 is in focus. This eliminates the need for the "boilerplate" code that comes in many languages
 of having to set up a particular "main" function to execute, by instead allowing the user
-to essentially say "execute these lines".
+to essentially say "execute these lines". To execute code in *Mathematica*, just hit
+"Shift+Enter" with the code in focus (you'll see sections as you type). You don't need
+to have the code highlighted to do so. You can have multiple lines to execute at once
+by using just "Enter" between them, editing like normal text.
 
 Basic Constructs
 ----------------
@@ -15,7 +18,12 @@ As already seen, assignment of variables is quite easy, with the statement
 
 	x = 5
 
-being read as "x is given the value 5". Most statements in *Mathematica* produce some kind of output
+being read as "x is given the value 5". Unlike mathematics where :math:`x=4` is the same as
+:math:`4=x`, in *Mathematica*, order matters. When we want to assign a variable, it must be
+on the left-hand side, with the value on the right. We'll look at solving equations later, but
+for now, we'll just allow variable assignment as written above.
+
+Most statements in *Mathematica* produce some kind of output
 (the above would output the value 5), but this can be hidden by ending the statement with a semicolon:
 
 ::
@@ -33,18 +41,20 @@ We can easily create functions and expressions of other variables:
 	f[x_] := x^2
 	e = x ^ 2
 
-f is now the function :math:`f(x)=x^2` and e is an expression. The difference is that if we have defined
-a variable "x", e will be that value squared. But f is still the function that squares its argument, rather
-than giving the square of some pre-defined variable x. For example:
+:code:`f` is now the function :math:`f(x)=x^2` and :code:`e` is an expression. The difference is that if we have defined
+a variable :code:`x`, :code:`e` will be that value squared. But :code:`f` is still the function that squares its argument, rather
+than giving the square of some pre-defined variable :code:`x`. For example:
 
 ::
 
 	f[5]
-	g
+	e
 	x = 3;
-	g
+	e
 	f[4]
 	f[y]
+	f[x]
+	Clear[x];
 	f[x]
 
 if executed sequentially will output:
@@ -57,6 +67,7 @@ if executed sequentially will output:
 	16
 	y^2
 	9
+	x^2
 
 One handy part of *Mathematica* is that it supports the use of variables as input to functions (as seen with
 :code:`f[y]` above). In that way, it can also handle function composition:
@@ -138,7 +149,7 @@ Evaluating Symbolic Expressions
 -------------------------------
 When we have an expression, such as :code:`x^2`, we need not have :code:`x` defined (as seen above) for *Mathematica*
 to run. In fact, *Mathematica* gives us considerable flexibility if we choose not to define :code:`x`, and
-instead use the "replacement" operator instead:
+instead use the "replacement" operator (:code:`/.`) instead:
 
 ::
 
@@ -157,7 +168,108 @@ would output:
 	27
 
 :code:`/.` is telling mathematica that you want to apply a particular set of values to variables in 
-the expression. The :code:`->` operator is stating that the variable on the left hand side should take the value
+the expression. The rule operator (:code:`->`) is stating that the variable on the left hand side should take the value
 on the right hand side. You can apply many such substitutions one after another (
 :code:`g/.x->5/.y->2`) or
 apply many at once using curly braces (:code:`g/.{x->5, y->2}`).
+
+Other Constructs
+----------------
+Two other constructs that will come in handy are comments and strings.
+
+Comments are human-readable elements of the file that are not evaluated. They
+are created by having a :code:`(*` then as much text as you want until a :code:`*)`. For example,
+
+::
+
+	(*Here is some information about why I'm assigning x the value y...*)
+	x=y
+	(*It can span multiple
+	lines too.*)
+
+Another useful consruct are strings. Strings are a way of passing text to *Mathematica*. We'll
+end up using strings for display purposes later, but the way we construct them is simple.
+
+::
+
+	x = "This is a string, demarked by double-quotes on either side"
+
+We can make a string from an expression :code:`expr` with :code:`ToString[expr]`, and
+*concatenate*, or join together strings with :code:`<>`. For example:
+
+::
+
+	x = 5 ^ 2;
+	y = "5 ^ 2 is " <> ToString[x];
+	Print[y]
+
+prints :code:`5 ^ 2 is 25` as expected (the :code:`Print` function prints the value, but
+just as text, not as full output that could be used in another expression).
+
+Finally, we do have some options for what kinds of information we place in our Notebook file
+in *Mathematica*. The default is Input (including comments), but we can use the "Format"
+option from the menu bar then "Style" to make the current cell a different type, such as Title
+or Text. These are great for longer comments, or for presenting your work directly from
+*Mathematica* (rather than copying results to something like *PowerPoint*).
+
+Packages
+--------
+On rare occasions, functions we'd like to have are part of *Mathematica* but not available
+by default. To make them available, we can use the :code:`Needs` function, which will
+load a "package" (collection of functions) so that we can use them. For example,
+to load the "ErrorBarPlots" package, we'll use:
+
+::
+
+	Needs["ErrorBarPlots`"]
+
+Note that in addition to the double-quotes, we need the "backquote" or "backtick" character.
+This is different from a single quote :code:`'`, and is usually found at the upper-left
+portion of a QWERTY keyboard with the tilde (:code:`~`) character.
+
+Modules
+-------
+After working with *Mathematica* for a while, you will notice that variables are
+defined everywhere. If using complicated programming constructs, we might find it useful
+to redefine values for a single function. For that, we can use a :code:`Module`.
+We define the local variables, placing all our code inside the module:
+
+::
+
+	f[x_]:=x^2
+	g[x_]:= Module[{f}, f[x]]
+	g[2]
+
+prints
+
+::
+
+	f$8675309[2]
+
+rather than 4.
+The number after the dollar sign and before the brackets is not important and will change during
+each evaluation But what this shows is that no matter if :code:`f` is already defined,
+we can redefine it without affecting any of the externally defined versions. This is good for
+shorthand when building complicated functions, and is necessary for creating re-usable functions
+for application to many projects (such as creating a package, which is not part of
+this course, but can be found in *Mathematica* with the help URL
+"tutorial/SettingUpMathematicaPackages").
+
+Special Characters
+------------------
+Sometimes for readability, we may want to include a special character, such as 
+delta (:math:`\delta`) in code to make things more readable. If we wanted
+to look at the behavior of a function at :math:`f(x\pm\delta{x})`, wouldn't it be
+nice if we could just use :math:`\delta{x}` as a variable? It turns out that we can.
+*Mathematica* has Greek, Hebrew, extended Latin and other characters built in. We can access
+them by name using :code:`\[delta]`, for example, or by using the "Esc" key on the keyboard,
+such as "Esc"+ :code:`delta` +"Esc". Most characters are just symbols to be used like any
+other character, but some have additional properties. For example, :code:`\[Transpose]`
+can be used as
+
+::
+
+	{{1,2},{3,4}}\[Transpose]
+
+which, when copied into *Mathematica*, will look like :math:`\{\{1,2\},\{3,4\}\}^\top`.
+For more, look at the *Mathematica* URL "tutorial/LettersAndLetterLikeForms".

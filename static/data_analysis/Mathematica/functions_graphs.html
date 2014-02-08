@@ -1,0 +1,933 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Functions and Graphing &mdash; Introduction to Data Analysis for Physics</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0-rc1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0-rc1/css/bootstrap-glyphicons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../../runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/js/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/js/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.js"></script>
+    <script type="text/javascript" src="../_static/builtin.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0-rc1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
+    <link rel="next" title="Applying Assumptions" href="assumptions.html" />
+    <link rel="prev" title="Lists, Tables, and Matrices" href="lists.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://192.168.0.10:80' ? 'http://192.168.0.10:80' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'data_analysis';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-fixed-top" style="z-index:9999999">
+
+  <div class="container">
+
+    <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+    <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <div>
+      <a href="../index.html">
+      <img title="Data Analysis for Physics" src="../_static/img/logo_small.png"
+       style="max-width:60px; max-height:60px;float:left"></a>
+      <a class="navbar-brand" href="../index.html">Introduction to Data Analysis for Physics</a>
+    </div>
+
+    <div class="nav-collapse collapse navbar-responsive-collapse">
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Functions and Graphing</a><ul>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#introduction-to-graphing">Introduction to Graphing</a></li>
+<li><a class="reference internal" href="#basic-2d-graphs">Basic 2D Graphs</a></li>
+<li><a class="reference internal" href="#basic-3d-graphs">Basic 3D Graphs</a></li>
+<li><a class="reference internal" href="#basic-1d-graphs">Basic &#8220;1D&#8221; Graphs</a></li>
+<li><a class="reference internal" href="#combining-plots">Combining Plots</a></li>
+<li><a class="reference internal" href="#vector-field-diagrams">Vector Field Diagrams</a></li>
+<li><a class="reference internal" href="#error-bars">Error Bars</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Lists, Tables, and Matrices" data-toggle="tooltip">
+    <a href="lists.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+      <p style=";max-width:130px;">Lists, Tables, and Matrices</p>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Applying Assumptions' data-toggle="tooltip" >
+    <a href="assumptions.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+      <p style=";max-width:130px;">Applying Assumptions</p>
+    </a>
+  </li>
+  <li style="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div id="mainbody" class="container">
+  
+  <div class="section" id="functions-and-graphing">
+<h1>Functions and Graphing<a class="headerlink" href="#functions-and-graphing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<p>We&#8217;ve talked about a data-based way of looking at storage in <em>Mathematica</em> with lists, matrices,
+tables, etc. But one other form of &#8220;storage&#8221; we can consider is functions. <em>Mathematica</em>
+allows us to define functions in a very similar way to how we might write down a function
+in mathematics. If we want to define some function <span class="math">\(f(x)=x^2+\frac{11}{x}\)</span>, we can
+simply write:</p>
+<div class="highlight-python"><pre>f[x_] := x^2+11/x</pre>
+</div>
+<p>There are some important differences here. The first is the underscore (<tt class="code docutils literal"><span class="pre">_</span></tt>) character
+on the left-hand side that is absent on the right-hand side. That tells <em>Mathematica</em> that
+the <tt class="code docutils literal"><span class="pre">x</span></tt> in the function definition is a dummy variable.</p>
+<div class="sidebar">
+<p class="first sidebar-title">The Smart Dummy Variable</p>
+<p>As we saw above, we want to define functions with variables with an underscore at the end.
+What happens if we leave that out? Well, we then effectively create different expressions
+based on the variables we use to define the &#8220;function&#8221;. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">*</span> <span class="n">y</span>
+</pre></div>
+</div>
+<p>Both &#8220;functions&#8221; have a unique behavior.</p>
+<p><tt class="code docutils literal"><span class="pre">f</span></tt> applied to anything other than the variable <tt class="code docutils literal"><span class="pre">x</span></tt> will not be evaluated.
+This is because we only defined the function for the variable <tt class="code docutils literal"><span class="pre">x</span></tt>. If we try
+to evaluate <tt class="code docutils literal"><span class="pre">f[x]</span></tt>, we do get <tt class="code docutils literal"><span class="pre">x^2</span></tt>. But if instead we first define
+<tt class="code docutils literal"><span class="pre">x=2</span></tt>, <tt class="code docutils literal"><span class="pre">f[x]</span></tt> can no longer be evaluated, since <tt class="code docutils literal"><span class="pre">f[2]</span></tt> is not defined.</p>
+<p><tt class="code docutils literal"><span class="pre">g</span></tt> is different still. It is not actually a normal function, but instead a
+substitution expression based on the current value of <tt class="code docutils literal"><span class="pre">y</span></tt>. If <tt class="code docutils literal"><span class="pre">y</span></tt>
+is not defined, we can use this as an expression (for example, applying a
+substitution <tt class="code docutils literal"><span class="pre">g/.y-&gt;5</span></tt> to it), but if <tt class="code docutils literal"><span class="pre">y</span></tt> is defined, then <tt class="code docutils literal"><span class="pre">g</span></tt>
+is exactly the value <span class="math">\(7\cdot{y}\)</span>.</p>
+<p class="last">There are further subtleties (the difference between <tt class="code docutils literal"><span class="pre">=</span></tt> and <tt class="code docutils literal"><span class="pre">:=</span></tt>, for example),
+but always using the full function definition <tt class="code docutils literal"><span class="pre">func[x_,</span> <span class="pre">y_]</span> <span class="pre">:=</span> <span class="pre">...</span></tt> is the best
+way to go.</p>
+</div>
+<p>We can easily apply functions to other functions as well:</p>
+<div class="highlight-python"><pre>g[x_]:=x/11;
+g[f[x]]</pre>
+</div>
+<p>will print:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="mi">11</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span>
+</pre></div>
+</div>
+<div class="admonition-practice-problem-functions admonition">
+<p class="first admonition-title">Practice Problem: Functions</p>
+<p class="last">To make sure you can create functions, try creating a function <span class="math">\(h(u,~v)=(v,~u^2)\)</span>,
+(so <span class="math">\(h\)</span> takes two arguments then produces a 2D point - think back to
+<a class="reference external" href="lists.html#lists">Lists</a>!). Afterward, separately set <tt class="code docutils literal"><span class="pre">u=5;v=2</span></tt>. Then
+evaluate <span class="math">\(h(3,~2)\)</span> and make sure you get <span class="math">\((2,~9)\)</span>.</p>
+</div>
+<p>We can base functions on other functions (built-in or user-created) too. There are many built-in
+functions which take functions as arguments, which we discuss throughout the book.</p>
+<div class="note admonition">
+<p class="first admonition-title">Example: Calculus</p>
+<p>One particularly useful realm for user-created functions is taking their integrals and
+derivatives. We can take a derivative <span class="math">\(\frac{d}{dx}\)</span> of a function <span class="math">\(f(x)\)</span>
+by using:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">D</span><span class="p">[</span><span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">x</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Where we have defined <tt class="code docutils literal"><span class="pre">f[x_]:=</span> <span class="pre">...</span></tt>. <em>e.g.</em>, <tt class="code docutils literal"><span class="pre">f[x_]:=x^2</span></tt> will have
+<tt class="code docutils literal"><span class="pre">D[f[x],</span> <span class="pre">x]=2x</span></tt>. Of course, because these are functions of whatever variable
+we apply, we can
+use any variable name we want in the derivative: <tt class="code docutils literal"><span class="pre">D[f[y],</span> <span class="pre">y]</span></tt> = <tt class="code docutils literal"><span class="pre">2y</span></tt>.</p>
+<p>We can also take integrals (both definite and indefinite), using the same command
+in both cases. To take the indefinite integral, we&#8217;ll use:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Integrate</span><span class="p">[</span><span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">x</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>That will, for example, given <tt class="code docutils literal"><span class="pre">f[x_]:=x^2</span></tt>, have
+<tt class="code docutils literal"><span class="pre">Integrate[f[x],</span> <span class="pre">x]=x^3/3</span></tt>. If we&#8217;d rather take the definite integral,
+we can use:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Integrate</span><span class="p">[</span><span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="p">{</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">}]</span>
+</pre></div>
+</div>
+<p class="last">where <tt class="code docutils literal"><span class="pre">a</span></tt> and <tt class="code docutils literal"><span class="pre">b</span></tt> are the limits of integration: <span class="math">\(\int_a^bf(x)dx\)</span>.</p>
+</div>
+<div class="admonition-practice-problem-calculus admonition">
+<p class="first admonition-title">Practice Problem: Calculus</p>
+<p class="last">For practice with calculus functions, try evaluating
+<span class="math">\(\frac{d\ln{x}}{dx},~\int\sin^2(x)dx\)</span> in <em>Mathematica</em> and make sure
+you get <span class="math">\(\frac{1}{x},~\frac{x}{2}-\frac{\sin(2x)}{4}\)</span>.</p>
+</div>
+</div>
+<div class="section" id="introduction-to-graphing">
+<h2>Introduction to Graphing<a class="headerlink" href="#introduction-to-graphing" title="Permalink to this headline">¶</a></h2>
+<p>Until this point, we have largely just dealt with numbers and functions. Now, let&#8217;s take
+a look at expressing data more graphically, and how to customize the display for different
+scenarios.</p>
+</div>
+<div class="section" id="basic-2d-graphs">
+<h2>Basic 2D Graphs<a class="headerlink" href="#basic-2d-graphs" title="Permalink to this headline">¶</a></h2>
+<p>First, let&#8217;s look at graphing functions in two-dimensions, with some basic customization
+features. The simplest is <tt class="code docutils literal"><span class="pre">Plot[f[x],</span> <span class="pre">{x,</span> <span class="pre">a,</span> <span class="pre">b}]</span></tt>, which will plot the function
+<span class="math">\(f(x)\)</span> from <span class="math">\(x=a\)</span> to <span class="math">\(x=b\)</span>, with <span class="math">\(x\)</span> on the horizontal axis
+and <span class="math">\(f(x)\)</span> on the vertical axis, selecting an automatic, appropriate range
+for <span class="math">\(f(x)\)</span>. For example, for <span class="math">\(f(x)=\sin(x),~x\in[0, 2\pi]\)</span>,
+we have <tt class="code docutils literal"><span class="pre">Plot[Sin[x],</span> <span class="pre">{x,</span> <span class="pre">0,</span> <span class="pre">2</span> <span class="pre">Pi}]</span></tt>, which will produce:</p>
+<div class="figure align-center">
+<img alt="sin(x)" src="../_images/sinx_simple.png" />
+<p class="caption">Simple plot for <span class="math">\(f(x)=\sin(x)\)</span>.</p>
+</div>
+<p>While we might be able to tell what&#8217;s going on in the graph above, that&#8217;s not
+always going to be the case. For example, we might want to have some basic labels on the
+graph, for the axes and for a title. Turns out, this is very easy to do with our friend from
+the
+<a class="reference external" href="structure.html#evaluating-symbolic-expressions">Evaluating Symbolic Expressions</a>
+section, the rule operator (<tt class="code docutils literal"><span class="pre">-&gt;</span></tt>). Many functions allow for optional arguments
+using the name of the argument and the rule operator to the desired value. For example,
+with the <tt class="code docutils literal"><span class="pre">Plot</span></tt> function above, we might want to label axes. We do that with the
+<tt class="code docutils literal"><span class="pre">AxesLabel</span></tt> argument:</p>
+<div class="highlight-python"><pre>Plot[Sin[x], {x, 0, 2 Pi}, AxesLabel-&gt;{"x","f(x)"}]</pre>
+</div>
+<p>which will create:</p>
+<div class="figure align-center">
+<img alt="sin(x)" src="../_images/sinx_axes.png" />
+<p class="caption">Plot for <span class="math">\(f(x)=\sin(x)\)</span>, with labeled axes.</p>
+</div>
+<p>We can further add a title to the graph (<tt class="code docutils literal"><span class="pre">PlotLabel-&gt;&quot;My</span> <span class="pre">Title&quot;</span></tt>), define a different
+range for the plot (<tt class="code docutils literal"><span class="pre">PlotRange</span> <span class="pre">-&gt;</span> <span class="pre">{{xmin,</span> <span class="pre">xmax},</span> <span class="pre">{ymin,</span> <span class="pre">ymax}}</span></tt>), select the
+color and style of the line (<tt class="code docutils literal"><span class="pre">PlotStyle-&gt;[Green,</span> <span class="pre">Dashed,</span> <span class="pre">Thin]</span></tt> - some colors are
+pre-defined, but we can use <tt class="code docutils literal"><span class="pre">RGBColor[red,green,blue]</span></tt> and
+<tt class="code docutils literal"><span class="pre">RGBColor[red,green,blue,alpha]</span></tt> to create custom colors), and label the functions
+we&#8217;re graphing (<tt class="code docutils literal"><span class="pre">PlotLegends-&gt;&quot;Expressions&quot;</span></tt> - a special option that prints the function
+definitions). We can actually plot more than one function at a time too by providing a list
+of functions as the first argument (all functions of the same variable). If we do that,
+then for the <tt class="code docutils literal"><span class="pre">PlotStyle</span></tt>, we will find it helpful to provide instead a list of the styles.
+So, for example, we could have:</p>
+<div class="highlight-python"><pre>Plot[{Sin[x], Cos[x]},
+ {x, 0, 2 Pi},
+ AxesLabel -&gt; {"x", "f(x)"} ,
+ PlotLabel -&gt; "My Title",
+ PlotRange -&gt; {{0, 3 Pi}, {-1.5, 1.5}},
+ PlotStyle -&gt; {
+    {RGBColor[0.900082, 0.425655, 0.093112], Dashed, Thin},
+    {RGBColor[0, 1, 0], DotDashed, Thick}},
+ PlotLegends -&gt; "Expressions"]</pre>
+</div>
+<div class="figure align-center">
+<img alt="sin(x) and cos(x)" src="../_images/sinx_special.png" />
+<p class="caption">Plot for <span class="math">\(f(x)=\sin(x),~g(x)=\cos(x)\)</span>, with options specified above.</p>
+</div>
+<div class="admonition-practice-problem-simple-plots admonition">
+<p class="first admonition-title">Practice Problem: Simple Plots</p>
+<p>For practice, try creating the plot below. The functions are listed in the legend
+on the plot, but you might find use of the <tt class="code docutils literal"><span class="pre">Thickness</span></tt> function (instead of
+just <tt class="code docutils literal"><span class="pre">Thick</span></tt> or <tt class="code docutils literal"><span class="pre">Thin</span></tt>) which takes
+a single value to determine the line thickness.</p>
+<div class="last figure align-center">
+<img alt="Practice Plot" src="../_images/assgn_simple_plot.png" />
+<p class="caption">Plot to imitate.</p>
+</div>
+</div>
+<p>There are several other useful plotting functions for other applications.</p>
+<p><tt class="code docutils literal"><span class="pre">ListPlot</span></tt> is for plotting specific data in one of two formats. The first is a simple
+list of numbers <span class="math">\(\{a_1,~a_2,~...,~a_n\}\)</span>, assuming that it corresponds to points
+<span class="math">\(\{(1,~a_1),~(2,~a_2),~...,~(n,~a_n)\}\)</span>. The second (often more useful)
+is a set of points <span class="math">\(\{(a_1,~f(a_1)),~(a_2,~f(a_2)),~...,~(a_n,~f(a_n))\}\)</span>.
+As we saw in the section on <a class="reference external" href="lists.html#tables">Tables</a>, we can easily create lists of points
+(which are just 2-element lists), with <tt class="code docutils literal"><span class="pre">Table[{i,</span> <span class="pre">f[i]},</span> <span class="pre">{i,</span> <span class="pre">imin,</span> <span class="pre">imax}]</span></tt>.
+So, for example, we can have:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">ListPlot</span><span class="p">[</span><span class="n">Table</span><span class="p">[{</span><span class="n">i</span><span class="p">,</span> <span class="n">Sin</span><span class="p">[</span><span class="n">i</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="mi">1000</span><span class="p">]},</span> <span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">}]]</span>
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="sin(x^2)" src="../_images/list_sin.png" />
+<p class="caption">Plot of <span class="math">\(\sin\left(\frac{x^2}{1000}\right)\)</span>.</p>
+</div>
+<p>Like with the <tt class="code docutils literal"><span class="pre">Plot</span></tt> function, we can have many lists of points as the first argument to
+the function. For a more interesting example:</p>
+<div class="highlight-python"><pre>(*Create four lists of points for 0&lt;=a&lt;=20*)
+list = Table[Table[{a, a^2 + 50 Sin[c*a]}, {a, 0, 20}], {c, 0, 3}];
+ListPlot[list,
+        PlotLegends -&gt; {"data 1", "data 2", "data 3", "data 4"},
+        PlotStyle -&gt; PointSize[Medium] (*Makes points bigger*)]</pre>
+</div>
+<div class="figure align-center">
+<img alt="Many list plots" src="../_images/list_simple.png" />
+<p class="caption">Plot of functions <span class="math">\(f_c(a)=a^2+50\sin(c*a)\)</span> over <span class="math">\(a\in[0,20],~c\in[0,3]\)</span>.</p>
+</div>
+<p>With the <tt class="code docutils literal"><span class="pre">ListLinePlot</span></tt> function, we get all the features of the <tt class="code docutils literal"><span class="pre">ListPlot</span></tt>,
+but with consecutive points connected:</p>
+<div class="highlight-python"><pre>ListLinePlot[list,
+    PlotLegends -&gt; {"data 1", "data 2", "data 3", "data 4"}]</pre>
+</div>
+<div class="figure align-center">
+<img alt="Many list plots" src="../_images/listline_simple.png" />
+<p class="caption">Plot of functions <span class="math">\(f_c(a)=a^2+50\sin(c*a)\)</span> over <span class="math">\(a\in[0,20],~c\in[0,3]\)</span>.</p>
+</div>
+<p>As we will see in the section on <a class="reference external" href="../Analysis/curve_fit.html#interpolation">Interpolation</a>,
+we can interpolate our data, creating a fitting function. One other place we can use
+this feature of <em>Mathematica</em> is the <tt class="code docutils literal"><span class="pre">ListLinePlot</span></tt> which will perform the interpolation
+and graph it all at once with the <tt class="code docutils literal"><span class="pre">InterpolationOrder</span></tt> option.
+If this is greater than 0, <em>Mathematica</em> will apply a smoothing fit to the data of
+the degree specified between points (in practice,
+3 usually gives a reasonable fit, and above 8 rarely makes visual difference):</p>
+<div class="highlight-python"><pre>ListLinePlot[list,
+        PlotLegends -&gt; {"data 1", "data 2", "data 3", "data 4"},
+        PlotStyle -&gt; Thick,
+        InterpolationOrder -&gt; 4]</pre>
+</div>
+<div class="figure align-center">
+<img alt="Many list plots" src="../_images/listline_interp.png" />
+<p class="caption">Plot of functions <span class="math">\(f_c(a)=a^2+50\sin(c*a)\)</span> over <span class="math">\(a\in[0,20],~c\in[0,3]\)</span>.</p>
+</div>
+<p>Other function plotters are applicable to other formulations. For example, we can have
+polar plots of the form <span class="math">\(r(\theta)=\cdots\)</span> with the <tt class="code docutils literal"><span class="pre">PolarPlot</span></tt> function:</p>
+<div class="highlight-python"><pre>PolarPlot[{Cos[3 t], -Cos[3 t]}, {t, 0, 10}, PlotStyle -&gt; {Blue, Red}]</pre>
+</div>
+<div class="figure align-center">
+<img alt="PolarPlot" src="../_images/polar_sin.png" />
+<p class="caption">Plot of functions <span class="math">\(r_1(\theta)=\cos(3\theta),~r_2(\theta)=-\cos(3\theta),\)</span>
+over <span class="math">\(\theta\in[0,10]\)</span>.</p>
+</div>
+<p><tt class="code docutils literal"><span class="pre">ParametricPlot</span></tt> accepts pairs of functions that together describe points. For
+example, we might have <span class="math">\(x(t)=\cos(t),~y(t)=\sin(t)\)</span>. We can plot that easily:</p>
+<div class="highlight-python"><pre>ParametricPlot[{Cos[t], Sin[t]}, {t, Pi/4, 7 Pi/4}]</pre>
+</div>
+<div class="figure align-center">
+<img alt="ParametricPlot" src="../_images/para_line.png" />
+<p class="caption">Plot of <span class="math">\(x(t)=\cos(t),~y(t)=\sin(t);~t\in[\pi/4,~7\pi/4]\)</span>.</p>
+</div>
+<p>We can have multiple pairs of functions, as with other plotting functions above, but
+one extra feature we have is to actually have two-parameter functions, plotting over both.
+Using a slightly modified example, <span class="math">\(x(t,~u)=u\cos(t),~y(t,~u)=u\sin(t)\)</span>, we can
+obtain plots like:</p>
+<div class="highlight-python"><pre>ParametricPlot[{u Cos[t], u Sin[t]}, {t, Pi/4, 7 Pi/4}, {u, 7, 10}]</pre>
+</div>
+<div class="figure align-center">
+<img alt="ParametricPlot" src="../_images/para_region.png" />
+<p class="caption">Plot of <span class="math">\(x(t,~u)=u\cos(t),~y(t,~u)=u\sin(t);~t\in[\pi/4,~7\pi/4],~u\in[7,10]\)</span>.</p>
+</div>
+<p>We have the <tt class="code docutils literal"><span class="pre">ContourPlot</span></tt>, which has a few variants, each based around the
+idea of finding level curves of functions of two variables. If you have ever used a
+topographical map while hiking, this will seem familiar. For an example, let&#8217;s start with
+a simple, not-so-interesting function <span class="math">\(f(x,~y)=(x-1)^2+(y+2)^2\)</span>. That has a vertex
+centered at <span class="math">\((1,~-2)\)</span>, but grows radially outward from there:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">ContourPlot</span><span class="p">[(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="p">{</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">},</span> <span class="p">{</span><span class="n">y</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">}]</span>
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="ContourPlot" src="../_images/cont_simple.png" />
+<p class="caption">Plot of <span class="math">\(f(x,~y)=(x-1)^2+(y+2)^2;~x,y\in[-5,5]\)</span>.</p>
+</div>
+<p>In the default form, at least, this is largely uninteresting, just showing that the function
+grows bigger as it deviates from <span class="math">\((1,~-2)\)</span>. But, if we apply some more information, we
+can get customized information. In a moment, we&#8217;ll look at 3-dimensional graphs, which will
+help to visualize the actual function, but let&#8217;s now take
+<span class="math">\(f(x,~y)=|\sin(x)\sin(y)|\)</span>. We should expect peaks of this function wherever both
+<span class="math">\(\sin(x)\)</span> and <span class="math">\(\sin(y)\)</span> are at their extrema (<span class="math">\(-1,~1\)</span>),
+since in all other cases, <span class="math">\(f\)</span> will be less than <span class="math">\(1\)</span>. But we know that
+<span class="math">\(\forall{x,y}:f(x,~y)\in[0,~1]\)</span> (that notation means
+&#8220;for all x and y, f is in that range&#8221;),
+so why don&#8217;t we see, for example, where <span class="math">\(f\)</span> is some specific values:</p>
+<div class="highlight-python"><pre>f[x_, y_] := Abs[Sin[x] Sin[y]]
+ContourPlot[
+  {f[x, y] == .005,
+  f[x, y] == .05,
+  f[x, y] == .25,
+  f[x, y] == .45,
+  f[x, y] == .65,
+  f[x, y] == .85,
+  f[x, y] == .95},
+ {x, -2 Pi, 2 Pi},
+ {y, -2 Pi, 2 Pi},
+ PlotLegends -&gt; "Expressions"]</pre>
+</div>
+<div class="figure align-center">
+<img alt="ContourPlot" src="../_images/cont_vals.png" />
+<p class="caption">Plot of <span class="math">\(f(x,~y)=|\sin(x)\sin(y)|;~x,y\in[-2\pi,2\pi]\)</span>.</p>
+</div>
+<p>One other plot that is also interesting is the <tt class="code docutils literal"><span class="pre">RegionPlot</span></tt>. This plot does not
+take a function, but rather a conditional expression. If true, the point is plotted. If not,
+the point is blank. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">RegionPlot</span><span class="p">[</span><span class="n">Or</span><span class="p">[</span><span class="n">Sqrt</span><span class="p">[</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">^</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">144</span><span class="p">],</span>
+  <span class="p">{</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">},</span> <span class="p">{</span><span class="n">y</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">}]</span>
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="RegionPlot" src="../_images/region_2d.png" />
+<p class="caption">Plot of the region statisfying either <span class="math">\(x^2+y^2\leq{100}\)</span> or
+<span class="math">\(|x|\geq{12}\)</span>.</p>
+</div>
+<div class="note admonition">
+<p class="first admonition-title">See Also: Mathematical Logic</p>
+<p class="last">On some occasions, we may want to employ logic in addition to more familiar
+functions on real and complex numbers. While likely not needed for this course, it
+may help when dealing with complicated functions or with future programming projects
+in research, industry, and beyond. See the appendix for
+<a class="reference external" href="../Math/logic.html">Mathematical Logic</a>.</p>
+</div>
+<p>It should be noted that all of these graphing functions have other options available, which
+can always be found at the
+<a class="reference external" href="http://reference.wolfram.com/mathematica/guide/Mathematica.html">*Mathematica* Reference</a>
+or using <em>Mathematica&#8217;s</em> help features.</p>
+<div class="note admonition">
+<p class="first admonition-title">More Plots: Business Graphs</p>
+<p>While less frequently used in science, &#8220;business graphs&#8221; (pie charts, simple bar
+graphs, etc.) are provided in <em>Mathematica</em>. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">BarChart</span><span class="p">[{{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">},</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">}}]</span>
+<span class="n">PieChart</span><span class="p">[{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">}]</span>
+<span class="n">PieChart3D</span><span class="p">[{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">}]</span>
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="../_images/bus_bar.png" src="../_images/bus_bar.png" />
+</div>
+<div class="figure align-center">
+<img alt="../_images/bus_pie.png" src="../_images/bus_pie.png" />
+</div>
+<div class="figure align-center">
+<img alt="../_images/bus_pie_3d.png" src="../_images/bus_pie_3d.png" />
+</div>
+<p class="last">For more, search in <em>Mathematica</em>&#8216;s documentation for the &#8220;Charting And Information
+Visualization&#8221; guide (in <em>Mathematica</em>, can use &#8220;guide/ChartingAndInformationVisualization&#8221;
+in the search bar).</p>
+</div>
+</div>
+<div class="section" id="basic-3d-graphs">
+<h2>Basic 3D Graphs<a class="headerlink" href="#basic-3d-graphs" title="Permalink to this headline">¶</a></h2>
+<p>We can do many of the things we did above in three-dimensional plots as well. The easiest
+example is <tt class="code docutils literal"><span class="pre">Plot3D</span></tt>:</p>
+<div class="highlight-python"><pre>Plot3D[Sin[x y], {x, 0, 2 Pi}, {y, 0, 2 Pi}]</pre>
+</div>
+<div class="figure align-center">
+<img alt="Plot3D" src="../_images/3dsin.png" />
+<p class="caption">Plot of <span class="math">\(f(x,~y)=\sin(x\cdot y);~x,y\in[0,~2\pi]\)</span></p>
+</div>
+<p>We have many of the same options as in the 3D case. We can label the whole plot with
+<tt class="code docutils literal"><span class="pre">PlotLabel</span></tt>, label the independent variable axes with <tt class="code docutils literal"><span class="pre">AxesLabel</span></tt>, and set the
+colors of graphs with <tt class="code docutils literal"><span class="pre">PlotStyle</span></tt>. But, we have a few additional options. We can
+easily add a gradient to the plot (the default is shown above). The built-in ones can be
+created with <tt class="code docutils literal"><span class="pre">ColorFunction-&gt;&quot;name&quot;</span></tt> where <tt class="code docutils literal"><span class="pre">&quot;name&quot;</span></tt> is one of the elements
+seen below.</p>
+<div class="figure align-center">
+<img alt="Plot3D Colors" src="../_images/3d_colors.png" />
+<p class="caption">Colors available for <tt class="code docutils literal"><span class="pre">ColorFunction</span></tt>.</p>
+</div>
+<p>In those cases, the function is a function of the plotted value only (not of the independent
+variables). However, we can create custom color functions by using the <tt class="code docutils literal"><span class="pre">RGBColor</span></tt> function.
+We create a new Function in three variables (the three axes - the first then second independent
+axes then the value of the plot at that point, scaled for
+) that involves some other color function,
+for example <tt class="code docutils literal"><span class="pre">RGBColor</span></tt>:</p>
+<div class="highlight-python"><pre>Plot3D[Sin[x], {x, 0, 2 Pi}, {y, 0, 2 Pi},
+  ColorFunction -&gt;
+  Function[{x, y, z},
+    RGBColor[x, 0, 0]], (*Just produce red colors as a function of x*)
+  AxesLabel -&gt; Automatic]</pre>
+</div>
+<div class="figure align-center">
+<img alt="Plot3D Red" src="../_images/red_fn.png" />
+<p class="caption">Plot of <span class="math">\(f(x,~y)=\sin(x);~x,y\in[0,~2 Pi]\)</span>, with color as a function of <span class="math">\(x\)</span>.</p>
+</div>
+<p>We can make these as complicated as possible, but generally want to make color easy
+to work with if used as a gradient. The built-in functions have built-in plot legends as well:</p>
+<div class="highlight-python"><pre>Plot3D[(x-2)^3 - .5(y-1)^3, {x, 0, 2 Pi}, {y, 0, 2 Pi},
+  ColorFunction -&gt; "BeachColors",
+  AxesLabel -&gt; Automatic,
+  PlotLegends -&gt; Automatic]</pre>
+</div>
+<div class="figure align-center">
+<img alt="Plot3D with Legend" src="../_images/color_fn.png" />
+<p class="caption">Plot of <span class="math">\(f(x,~y)=(x-2)^3-\frac{1}{2}(y-1)^3;~x,y\in[0,2\pi]\)</span> with color legend.</p>
+</div>
+<p>We have a 3D-version of <tt class="code docutils literal"><span class="pre">ListPlot</span></tt> as well, with <tt class="code docutils literal"><span class="pre">ListPointPlot3D</span></tt> (
+<tt class="code docutils literal"><span class="pre">ListPlot3D</span></tt> gives a surface based on points on the surface rather than just points).
+For example:</p>
+<div class="highlight-python"><pre>ListPointPlot3D[Table[{i/10, Sin[i], Cos[i]}, {i, 0, 50, .05}],
+  PlotStyle -&gt; PointSize[Medium],
+  BoxRatios -&gt; Automatic (*Used to make the box scale better than default thin
+  rectangular prism*)]</pre>
+</div>
+<div class="figure align-center">
+<img alt="ListPointPlot3D" src="../_images/spiral.png" />
+<p class="caption">Plot of spiral <span class="math">\(\left(\frac{i}{10},~\sin(i),~\cos(i)\right);~i\in[0,50]\)</span>.</p>
+</div>
+<p>We have a 3D-version of <tt class="code docutils literal"><span class="pre">RadialPlot</span></tt> with <tt class="code docutils literal"><span class="pre">SphericalPlot3D</span></tt>, where we have
+a function <span class="math">\(r(\theta,~\phi)\)</span> as the radius as a function of angles.</p>
+<div class="highlight-python"><pre>SphericalPlot3D[t p, {t, 0, 2 Pi}, {p, 0, Pi}]</pre>
+</div>
+<div class="figure align-center">
+<img alt="SphericalPlot3D" src="../_images/spherical.png" />
+<p class="caption">Plot of <span class="math">\(r(\theta,~\phi)=\theta\phi;~\theta\in[0,~2\pi],~\phi\in[0,~\pi]\)</span>.</p>
+</div>
+<p>We have two versions of parametric plots in 3D. The first allows for three functions
+<span class="math">\(x(t),~y(t),~z(t)\)</span>, such as:</p>
+<div class="highlight-python"><pre>ParametricPlot3D[{{t, Sin[t], Cos[t]}}, {t, 0, 10},
+  BoxRatios -&gt; Automatic]</pre>
+</div>
+<div class="figure align-center">
+<img alt="ParametricPlot3D" src="../_images/para_spiral.png" />
+<p class="caption">Plot of <span class="math">\(x(t)=t,~y(t)=\sin(t),~z(t)=\cos(t);~t\in[0,~10]\)</span>.</p>
+</div>
+<p>But we can also have functions of two variables <span class="math">\(x(u,~v),~y(u,~v),~z(u,~v)\)</span>:</p>
+<div class="highlight-python"><pre>ParametricPlot3D[{{v, u Sin[v], u Cos[v]}},
+  {u, 8, 10},
+  {v, 0, 8 Pi},
+  BoxRatios -&gt; Automatic,
+  PlotStyle -&gt; Blue]</pre>
+</div>
+<div class="figure align-center">
+<img alt="ParametricPlot3D" src="../_images/wide_spiral.png" />
+<p class="caption">Plot of <span class="math">\(\left(v,~u\sin(v),~u\cos(v)\right);~u\in[8,10],~v\in[0,~8\pi]\)</span>.</p>
+</div>
+<p>We have a <tt class="code docutils literal"><span class="pre">RegionPlot</span></tt> analogue in 3D as well with <tt class="code docutils literal"><span class="pre">RegionPlot3D</span></tt>.</p>
+<div class="highlight-python"><pre>RegionPlot3D[
+  And[x^2 + y^2 &gt;= 36,
+    x^2 + y^2 + z^2 &lt;= 64],
+  {x, -9, 9},
+  {y, -9, 9},
+  {z, -5, 5},
+  ColorFunction -&gt; "BrightBands"]</pre>
+</div>
+<div class="figure align-center">
+<img alt="RegionPlot3D" src="../_images/intersect.png" />
+<p class="caption">Plot of the intersection of regions <span class="math">\(x^2+y^2\geq36\)</span> and
+<span class="math">\(x^2+y^2+z^2\leq64\)</span>.</p>
+</div>
+<p>We have a plot unique to 3D plots based on the notion of rotating a 2D curve in 3D space.
+<tt class="code docutils literal"><span class="pre">RevolutionPlot3D</span></tt> has several variants, the simplest of which takes a single function
+<span class="math">\(z(r);~r^2=x^2+y^2\)</span>:</p>
+<div class="highlight-python"><pre>Plot[Cos[r]^2/r, {r, 0, 8 Pi},
+  PlotRange -&gt; Automatic]
+RevolutionPlot3D[ Cos[r]^2/r, {r, 0, 8 Pi},
+  BoxRatios -&gt; Automatic]</pre>
+</div>
+<div class="figure align-center">
+<img alt="Plot for revolution" src="../_images/2d_rev.png" />
+<p class="caption">Plot of <span class="math">\(f(x)=\frac{\cos^2(x)}{x}\)</span>.</p>
+</div>
+<div class="figure align-center">
+<img alt="RevolutionPlot3D" src="../_images/3d_rev.png" />
+<p class="caption">Plot of <span class="math">\(z(r)=\frac{\cos^2(r)}{r};~r^2=x^2+y^2\)</span>.</p>
+</div>
+<div class="admonition-practice-with-3d-plots admonition">
+<p class="first admonition-title">Practice with 3D Plots</p>
+<p class="last">Pick one of the code segments above and run it in <em>Mathematica</em>. Then, start
+playing. Change the function, click and drag the graph to view it from
+other angles, add labels, change the color scheme, add a legend. If you run
+into problems, use the Help feature on the graphing function (often,
+an option that works on one plot may need to be altered slightly to work on the
+other plot - use the &#8220;Details and Options&#8221; section of the documentation
+for each function to find out more).</p>
+</div>
+<p>For other variants of <tt class="code docutils literal"><span class="pre">RevolutionPlot3D</span></tt> or any other plots, again, refer to
+<em>Mathematica</em>&#8216;s documentation, or in <em>Mathematica</em>, use the &#8220;Basic Math Assistant&#8221;
+Pallete in the &#8220;Basic Commands&#8221; section for &#8220;2D&#8221; or &#8220;3D&#8221; then on
+the &#8220;More&#8221; option for &#8220;Visualizing Functions&#8221; or &#8220;Visualizing Data&#8221;. There, you will
+find many templates of these built-in graphing functions.</p>
+</div>
+<div class="section" id="basic-1d-graphs">
+<h2>Basic &#8220;1D&#8221; Graphs<a class="headerlink" href="#basic-1d-graphs" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes (read: most of the time) we have sampled data for the same set of values
+for our independent variables and arrive at different &#8220;answers&#8221;. We&#8217;ll have more on why that
+occurs later, but it stems from both our inability to measure things in a laboratory with
+infinite precision (including our &#8220;control&#8221; variables!) and natural fluctuations in the
+world around us from thermal energy and other sources, which leads us to a distribution
+in our results. We often want to check that the observed distribution fits the distribution we
+expect (many times, for reasons we&#8217;ll discuss later, we&#8217;ll assume a Gaussian distribution).
+To do that, we can turn to a &#8220;1D&#8221; graph like a histogram which plots the relative
+frequency of results (put another way, how often of particular results occur) versus
+the result values [I say &#8220;1D&#8221; because we only provide a list of numbers, not points so the
+data is one-dimensional even though the plot is not].
+In <em>Mathematica</em>, this is done with <tt class="code docutils literal"><span class="pre">Histogram</span></tt>. Some examples:</p>
+<div class="highlight-python"><pre>Histogram[{
+  1, 1, 1, 1, 1, 1,
+  2, 2, 2, 2,
+  3, 3, 3, 3, 3, 3, 3}]
+Histogram[{
+  1, 1, 1, 1, 1, 1,
+  2, 2, 2, 2,
+  3, 3, 3, 3, 3, 3, 3,
+  5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5},
+  {1} (* set size of "bin" to 1*)]</pre>
+</div>
+<div class="figure align-center">
+<img alt="simple Histogram" src="../_images/hist_small.png" />
+<p class="caption">Plot of first dataset as a <tt class="code docutils literal"><span class="pre">Histogram</span></tt>.</p>
+</div>
+<div class="figure align-center">
+<img alt="simple Histogram" src="../_images/hist_more.png" />
+<p class="caption">Plot of second dataset as a <tt class="code docutils literal"><span class="pre">Histogram</span></tt>, with size of bin specified.</p>
+</div>
+<p>We can also have <em>Mathematica</em> smooth our data to provide an estimate of the shape
+of the distribution with <tt class="code docutils literal"><span class="pre">SmoothHistogram</span></tt>.</p>
+<p>We will explore more on Gaussian Distributions and histograms in the section on
+<a class="reference external" href="../Analysis/gaussian.html">Gaussian Distributions</a>.</p>
+</div>
+<div class="section" id="combining-plots">
+<h2>Combining Plots<a class="headerlink" href="#combining-plots" title="Permalink to this headline">¶</a></h2>
+<p>While we have seen how to combine similar plots (often just providing a list of functions
+to plot or two sets of data to the same plotting function), we might want to be smarter about
+our graphs, perhaps having an expected distribution plotted against real data. We can use the
+<tt class="code docutils literal"><span class="pre">Show</span></tt> command to combine as many plots as we&#8217;d like. For example:</p>
+<div class="highlight-python"><pre>table={
+  {0, 0.0491203},
+  {1, 1.07251},
+  {2, 2.09226},
+  {3, 3.15284},
+  {4, 4.13291},
+  {5, 5.02879},
+  {6, 6.08815},
+  {7, 7.21867},
+  {8, 8.00343},
+  {9, 9.06134},
+  {10, 10.0896}};
+Show[
+  Plot[x, {x, 0, 10}],
+  ListPlot[table,
+    PlotStyle -&gt; {PointSize[Medium], Red}]
+]</pre>
+</div>
+<div class="figure align-center">
+<img alt="Show" src="../_images/show.png" />
+<p class="caption">Plot of observed data and expected values using the <tt class="code docutils literal"><span class="pre">Show</span></tt> function.</p>
+</div>
+<p>We can take things much farther too, by wrapping this in a <tt class="code docutils literal"><span class="pre">Legended</span></tt> function,
+which allows us to easily label any type of data and have all those labels in a single spot.
+The following example is a little cumbersome, but is a good one for jumping in and trying things
+out for yourself. It&#8217;s more heavily commented for readability. This uses the more general
+<tt class="code docutils literal"><span class="pre">Directive</span></tt> command, which allows you to make a line multiple things at once (thick,
+a color, dotted, etc.) in the most predictable way.</p>
+<div class="highlight-python"><pre>(*Fancy way of generating random data from a Normal Distribution*)
+list = RandomVariate[NormalDistribution[0, 1], 50];
+
+Legended[ (*Apply the graphic, then the legend*)
+(*the graphic*)
+Show[
+        (*Plot data as a histogram of relative frequencies*)
+    Histogram[list, Automatic, "PDF",
+        ChartStyle -&gt; RGBColor[.41, .65, 1]], (*set the color of bins to blue*)
+
+        (*Plot smoothed data*)
+        SmoothHistogram[list, Automatic,
+                PlotStyle -&gt; Directive[Thick, Green]], (*Set color to green AND make line thick*)
+
+        (*Plot actual Normal distribution - don't worry about the specifics here.*)
+        Plot[PDF[NormalDistribution[0, 1], x], {x, -8, 8},
+                PlotStyle -&gt; Directive[Thick, Red]]], (*Set color to red and make line thick*)
+
+(*End of the graphic, now for the legend*)
+Column[{ (*Create a new column to the right of what we just drew*)
+        (*listing multiple items within a column will make them appear as rows within the column*)
+
+        (*create a box symbol with the given color, and label it "data"*)
+        SwatchLegend[{RGBColor[.41, .65, 1]}, {"data"}],
+
+        (*create a line legend that's thick ang green with the given name*)
+        LineLegend[{Directive[Thick, Green]}, {"smoothed data"}],
+
+        (*Last legend element, end of Legended plot*)
+        LineLegend[{Directive[Thick, Red]}, {"Normal Distribution"}]}]]</pre>
+</div>
+<div class="figure align-center">
+<img alt="Show with several features" src="../_images/show_adv.png" />
+<p class="caption">Plot of data drawn from a Normal distribution along with projected distribution from data
+and the actual distribution for reference, all in a <tt class="code docutils literal"><span class="pre">Legended</span></tt> chart.</p>
+</div>
+<div class="admonition-practice-problem-combining-graphs admonition">
+<p class="first admonition-title">Practice Problem: Combining Graphs</p>
+<p class="last">Try adding other plots to the one above and then labeling them. For example, see if you
+can add in a plot for <span class="math">\(f(x)=x^2;~x\in[-2,20]\)</span>, but then re-scale the image to
+make sure you can clearly the existing graph information (hint: you can add a
+<tt class="code docutils literal"><span class="pre">PlotRange</span></tt> in exactly one function and have it work - you might want to provide
+the range though, rather than using the <tt class="code docutils literal"><span class="pre">Automatic</span></tt> version).</p>
+</div>
+</div>
+<div class="section" id="vector-field-diagrams">
+<h2>Vector Field Diagrams<a class="headerlink" href="#vector-field-diagrams" title="Permalink to this headline">¶</a></h2>
+<p>We may have data that requires more dimensions to be displayed (for example,
+maybe we are tracking a particle&#8217;s velocity in 2D with respect to its 2D position).
+For this, we can turn to the <tt class="code docutils literal"><span class="pre">VectorPlot</span></tt> function and its list-based and 3D cousins.
+First, an example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">VectorPlot</span><span class="p">[{</span><span class="n">y</span><span class="p">,</span> <span class="o">-</span><span class="n">x</span><span class="p">},</span> <span class="p">{</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">},</span> <span class="p">{</span><span class="n">y</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">}]</span>
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="VectorPlot" src="../_images/vec2d.png" />
+<p class="caption">Vector-field plot for <span class="math">\(\frac{dx}{dt}=y,~\frac{dy}{dt}=-x\)</span></p>
+</div>
+<p><tt class="code docutils literal"><span class="pre">VectorPlot</span></tt> plots a vector at sampled points in the 2D domain as specified by the
+2D function. The actual sizes of arrows are not necessarily useful, but their relative sizes
+are correct, giving a qualititave indication of strength of the velocity at the given points.</p>
+<p>It has a handy feature of adding stream lines to the plot, doing a numerical approximation of
+the path that would be taken for a selection of points (user-specified or sampled):</p>
+<div class="highlight-python"><pre>VectorPlot[{10 Sin[y], -x^3}, {x, -5, 5}, {y, -5, 5},
+        StreamPoints -&gt; {{2, 3}, (*Plot paths that cross specific points*)
+          {-3, .1},
+          {0, 1}}]</pre>
+</div>
+<div class="figure align-center">
+<img alt="VectorPlot with streams" src="../_images/vecstream.png" />
+<p class="caption">Vector-field plot for <span class="math">\(\frac{dx}{dt}=10\sin(y),~\frac{dy}{dt}=-x^3\)</span>.</p>
+</div>
+<p>We can use a <tt class="code docutils literal"><span class="pre">StreamPlot</span></tt> to look just at stream lines, rather than the field, providing
+possible trajectories rather than just the vector field values:</p>
+<div class="highlight-python"><pre>StreamPlot[{10 Sin[y], -x^3}, {x, -5, 5}, {y, -5, 5}]</pre>
+</div>
+<div class="figure align-center">
+<img alt="StreamPlot" src="../_images/stream.png" />
+<p class="caption">Stream-line plot for <span class="math">\(\frac{dx}{dt}=10\sin(y),~\frac{dy}{dt}=-x^3\)</span>.</p>
+</div>
+<p>We have a <tt class="code docutils literal"><span class="pre">ListVectorPlot</span></tt> that takes a list of
+<span class="math">\(((x,~y),~(\frac{dx}{dt},~\frac{dy}{dt}))\)</span> to produce a plot. The 3D version
+is <tt class="code docutils literal"><span class="pre">ListVectorPlot3D</span></tt> which takes
+<span class="math">\(((x,~y,~z),~(\frac{dx}{dt},~\frac{dy}{dt},~\frac{dz}{dt}))\)</span>:</p>
+<div class="highlight-python"><pre>ListVectorPlot3D[
+  Table[{{x, y, z}, {x Tan[y], -x^3  y, z}},
+    {x, -5, 5},
+    {y, -5, 5},
+    {z, -5, 5}]]</pre>
+</div>
+<div class="figure align-center">
+<img alt="ListVectorPlot3D" src="../_images/listvec.png" />
+<p class="caption">3D vector-field plot for
+<span class="math">\(\frac{dx}{dt}=x\tan(y),~\frac{dy}{dt}=-x^3,~\frac{dz}{dt}=z\)</span>.</p>
+</div>
+</div>
+<div class="section" id="error-bars">
+<h2>Error Bars<a class="headerlink" href="#error-bars" title="Permalink to this headline">¶</a></h2>
+<p>We&#8217;ll talk about the importance of error in measurement later, but
+first we can see how to present error in our data. There are few
+built-in ways to do this in <em>Mathematica</em>, however, advanced users may find it
+useful to create their own functions to draw error bars on data. We&#8217;ll
+focus on the built-in ones. For this, we need the &#8220;ErrorBarPlots&#8221; package:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Needs</span><span class="p">[</span><span class="s">&quot;ErrorBarPlots`&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>We then get a single <tt class="code docutils literal"><span class="pre">ListPlot</span></tt> variant called <tt class="code docutils literal"><span class="pre">ErrorListPlot</span></tt>. It only
+accepts data in the form <tt class="code docutils literal"><span class="pre">{{{x1,y1},ErrorBar[...]},{{x2,y2},ErrorBar[...]},...}</span></tt>,
+where the <tt class="code docutils literal"><span class="pre">ErrorBar</span></tt> is:</p>
+<div class="highlight-python"><pre>ErrorBar[valv] (*valv is positive/negative error in vertical axis*)
+ErrorBar[valh, valv] (*Each is pos/neg error, first horizontal then vertical*)</pre>
+</div>
+<p>Where the values given are either real numbers or a 2-element list that gives
+<tt class="code docutils literal"><span class="pre">{neg_error,</span> <span class="pre">pos_error}</span></tt> (to work properly, the first value should actually be
+negative and the second positive). For example, using the <tt class="code docutils literal"><span class="pre">RandomReal</span></tt> function that
+generates random values over the range <span class="math">\([0,1)\)</span>:</p>
+<div class="highlight-python"><pre>ErrorListPlot[
+        Table[{{i, Sqrt[i]},
+                ErrorBar[{-RandomReal[]/5, RandomReal[]/5},
+                        {-RandomReal[]/5, RandomReal[]/5}]},
+                {i, 1, 16}],
+        PlotStyle -&gt; Directive[PointSize[0], Blue]]</pre>
+</div>
+<div class="figure align-center">
+<img alt="ErrorListPlot" src="../_images/error.png" />
+<p class="caption">Example <tt class="code docutils literal"><span class="pre">ErrorListPlot</span></tt>.</p>
+</div>
+<div class="admonition-practice-plotting-errors admonition">
+<p class="first admonition-title">Practice Plotting Errors</p>
+<p>To practice putting plots together, using many of the sections above
+(<a class="reference external" href="#combining-plots">Combining Graphs</a>,
+<a class="reference external" href="#error-bars">Error Bars</a>, and other basic concepts), try to reproduce
+the following graphic:</p>
+<div class="last figure align-center">
+<img alt="Practice combining errors with data" src="../_images/practice_error.png" />
+<p class="caption">Plot to reproduce. The <tt class="code docutils literal"><span class="pre">PointLegend</span></tt> function may prove useful. The
+function is just <span class="math">\(f(x)=x^2\)</span>, and the size of error bars is not
+critical, just labeling and creating the right dataset.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+    </p>
+    <p>
+    <!--
+        &copy; Copyright 2013, University of Texas at Austin Society of Physics Students and Sigma Pi Sigma.-->
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    //$(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    //$(document).ready(getNumUsers);
+    //$(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  $("#mainbody").children().first().css("margin-top",
+    $("#navbar").css("height"))
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-small btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-small btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-small btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-small btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

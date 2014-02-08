@@ -106,7 +106,7 @@
 
 
 <!-- Begin navbar -->
-<div id="navbar" class="navbar navbar-fixed-top">
+<div id="navbar" class="navbar navbar-fixed-top" style="z-index:9999999">
 
   <div class="container">
 
@@ -118,118 +118,13 @@
     </button>
 
     <div>
-     <a class="brand-logo" style='background: transparent url("_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+      <a href="#">
+      <img title="Data Analysis for Physics" src="_static/img/logo_small.png"
+       style="max-width:60px; max-height:60px;float:left"></a>
       <a class="navbar-brand" href="#">Introduction to Data Analysis for Physics</a>
     </div>
 
     <div class="nav-collapse collapse navbar-responsive-collapse">
-
-      <ul class="nav navbar-nav pull-right">
-
-        <li class="divider-vertical"></li>
-
-        <!-- social media dropdown -->
-        <li class="dropdown">
-          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
-          </a>
-          <ul class="dropdown-menu social-menu">
-              <li>
-                <div>
-                  <b>Runestone in social media:</b>
-                </div>
-                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
-              </li>
-
-              <li class="divider"></li>
-              <li>
-                <div>
-                  <b>Help support us:</b>
-                </div>
-                <div class="gittip">
-                  <iframe style="border:0;"
-                    src="https://www.gittip.com/bnmnetp/widget.html"
-                    width="48pt" height="22pt" class="gittip-button">
-                  </iframe>
-                </div>
-              </li>
-          </ul>
-        </li>
-        <!-- end social media dropdown -->
-
-        <li class="divider-vertical"></li>
-
-        <!-- search dropdown -->
-        <li class="dropdown">
-          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
-          </a>
-          <ul class='dropdown-menu'>
-            
-                <li><a href='#'>Table of Contents</a></li>
-            
-            <li><a href='/runestone/static/data_analysis/genindex.html'>Book Index</a></li>
-            <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
-            <li class="divider"></li>
-            <li style="width: 240px;">
-              <form class="navbar-search" style="margin:10px;" action="search.html" method="get">
-                <div class="input-group">
-                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
-                  <span class="input-group-btn">
-                    <button class="btn btn-primary" style="margin:0;" type="submit"">
-                      <i class="glyphicon glyphicon-search"></i>
-                    </button>
-                  </span>
-                </div><!-- /input-group -->
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="default" />
-              </form>
-            </li>
-          </ul>
-        </li>
-        <!-- end search dropdown -->
-
-        <li class="divider-vertical"></li>
-
-        <!-- user account dropdown -->
-        <li class="dropdown">
-          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
-          </a>
-          <ul class="dropdown-menu user-menu">
-            <li><span class='loggedinuser'></span></li>
-            <li class="divider"></li>
-            <li><a href='http://192.168.0.10:80/runestone/admin/index'>Instructor's Page</a></li>
-            <li class="divider"></li>
-            <li><a href="http://192.168.0.10:80/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
-            <li><a href="http://192.168.0.10:80/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
-            <li><a href="http://192.168.0.10:80/runestone/default/user/register" id="registerlink">Register</a></li>
-            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
-          </ul>
-        </li>
-        <!-- end user account dropdown -->
-
-        <li class="divider-vertical"></li>
-
-        <!-- help menu dropdown -->
-        <li class="dropdown">
-          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
-          </a>
-          <ul class="dropdown-menu user-menu">
-            <li><a href='/runestone/static/data_analysis/navhelp.html'>Navigation Help</a></li>
-            <li class="divider"></li>
-            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
-            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
-          </ul>
-        </li>
-        <!-- end help menu dropdown -->
-
-        <li class="divider-vertical"></li>
-
-      </ul>
 
       <ul class="nav navbar-nav">
         <li class="divider-vertical"></li>
@@ -241,10 +136,16 @@
 <li><a class="reference internal" href="#introduction">Introduction</a><ul>
 </ul>
 </li>
+<li><a class="reference internal" href="#assignments">Assignments</a><ul>
+</ul>
+</li>
 <li><a class="reference internal" href="#mathematica"><em>Mathematica</em></a><ul>
 </ul>
 </li>
 <li><a class="reference internal" href="#the-span-class-latex-l-sup-a-sup-t-sub-e-sub-x-span-tbook">The <span class="raw-html"><span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>tbook</span></a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#analysis">Analysis</a><ul>
 </ul>
 </li>
 <li><a class="reference internal" href="#appendix">Appendix</a><ul>
@@ -262,9 +163,10 @@
   <li id="relations-next" title='Next Chapter - Introduction to the Introduction' data-toggle="tooltip" >
     <a href="intro.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+      <p style=";max-width:130px;">Introduction to the Introduction</p>
     </a>
   </li>
-  <li class="divider-vertical"></li>
+  <li style="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -286,13 +188,13 @@
 </div>
 
 
-<div class="container">
+<div id="mainbody" class="container">
   
   <div class="section" id="introduction-to-data-analysis-for-physics">
 <h1>Introduction to Data Analysis for Physics<a class="headerlink" href="#introduction-to-data-analysis-for-physics" title="Permalink to this headline">¶</a></h1>
 <div class="sidebar">
 <p class="first sidebar-title">Authors</p>
-<p class="last">The original authors of this document are Evan Ott and Will Beason.</p>
+<p class="last">The original authors of this textbook are Evan Ott and Will Beason.</p>
 </div>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
@@ -311,8 +213,21 @@
 <li class="toctree-l2"><a class="reference internal" href="syllabus.html#example-class-agenda-week-4">Example Class Agenda - Week 4</a></li>
 <li class="toctree-l2"><a class="reference internal" href="syllabus.html#students-with-disabilities">Students with Disabilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="syllabus.html#academic-integrity">Academic Integrity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syllabus.html#about-the-student-facilitator">About the Student Facilitator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syllabus.html#about-student-facilitator-1">About Student Facilitator 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syllabus.html#about-student-facilitator-2">About Student Facilitator 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="syllabus.html#example-assignment-near-end-of-semester">Example Assignment (near end of semester)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="assignments">
+<h2>Assignments<a class="headerlink" href="#assignments" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="assignments.html">Assignments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="assignments.html#week-one-jan-16">Week One (Jan. 16)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assignments.html#week-two-jan-23">Week Two (Jan. 23)</a></li>
 </ul>
 </li>
 </ul>
@@ -335,12 +250,45 @@
 <li class="toctree-l2"><a class="reference internal" href="Mathematica/structure.html#building-on-output">Building on Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Mathematica/structure.html#approximations">Approximations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Mathematica/structure.html#evaluating-symbolic-expressions">Evaluating Symbolic Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/structure.html#other-constructs">Other Constructs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/structure.html#packages">Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/structure.html#modules">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/structure.html#special-characters">Special Characters</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Mathematica/lists.html">Lists, Tables, and Matrices</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Mathematica/lists.html#lists">Lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Mathematica/lists.html#tables">Tables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Mathematica/lists.html#matrices">Matrices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Mathematica/functions_graphs.html">Functions and Graphing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/functions_graphs.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/functions_graphs.html#introduction-to-graphing">Introduction to Graphing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/functions_graphs.html#basic-2d-graphs">Basic 2D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/functions_graphs.html#basic-3d-graphs">Basic 3D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/functions_graphs.html#basic-1d-graphs">Basic &#8220;1D&#8221; Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/functions_graphs.html#combining-plots">Combining Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/functions_graphs.html#vector-field-diagrams">Vector Field Diagrams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/functions_graphs.html#error-bars">Error Bars</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Mathematica/assumptions.html">Applying Assumptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mathematica/export.html">Exporting Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/export.html#exporting-images">Exporting Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/export.html#exporting-non-static-images">Exporting Non-Static Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/export.html#id1">Exporting Data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Mathematica/import.html">Importing Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/import.html#file-formats">File Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/import.html#from-file-to-usable">From File to Usable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/import.html#annoying-formats">&#8220;Annoying&#8221; Formats</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Mathematica/animations.html">Animations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/animations.html#manipulate">Manipulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mathematica/animations.html#animate">Animate</a></li>
 </ul>
 </li>
 </ul>
@@ -352,10 +300,12 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="LaTeX/latex.html">Introduction</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="LaTeX/latex.html#what-s-a-span-class-latex-l-sup-a-sup-t-sub-e-sub-x-span">What&#8217;s a <span class="raw-html"><span class="latex">L<sup>A</sup>T<sub>E</sub>X</span></span>?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaTeX/latex.html#example-conventions">Example Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaTeX/latex.html#the-power-of-templates">The Power of Templates</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="LaTeX/docstructure.html">Document Structure</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="LaTeX/docstructure.html#the-required-command">The Required Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaTeX/docstructure.html#document-classes">Document Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaTeX/docstructure.html#the-preamble">The Preamble</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaTeX/docstructure.html#body">Body</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaTeX/docstructure.html#the-bibliography">The Bibliography</a></li>
@@ -367,20 +317,18 @@
 <li class="toctree-l2"><a class="reference internal" href="LaTeX/packages.html#optional-package-arguments">Optional Package Arguments</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="LaTeX/math.html">Mathematics in LaTeX</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LaTeX/math.html#basic-typesetting">Basic Typesetting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LaTeX/math.html#advanced-mathematics">Advanced Mathematics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="LaTeX/math.html#equation-line-numbering">Equation Line Numbering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LaTeX/math.html">Mathematics in LaTeX</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="LaTeX/math.html#basic-typesetting">Basic Typesetting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaTeX/math.html#advanced-mathematics">Advanced Mathematics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaTeX/math.html#latex-math-kwon-do">LaTeX Math-kwon-do</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaTeX/math.html#latex-super-math-aiyan">LaTeX Super-Math-aiyan</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="LaTeX/math.html#latex-math-kwon-do">LaTeX Math-kwon-do</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LaTeX/math.html#latex-super-math-aiyan">LaTeX Super-Math-aiyan</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LaTeX/tables.html">Tables, Arrays, and Matrices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LaTeX/tables.html#the-tabular-environment">The Tabular Environment</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="LaTeX/tables.html#packages-for-tables">Packages for Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LaTeX/tables.html">Tables, Arrays, and Matrices</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="LaTeX/tables.html#the-tabular-environment">The Tabular Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaTeX/tables.html#the-matrix-environment">The Matrix Environment</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="LaTeX/tables.html#the-matrix-environment">The Matrix Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LaTeX/symbols.html">Symbols</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LaTeX/newcommand.html">New Commands</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="LaTeX/newcommand.html#zero-argument-commands">Zero Argument Commands</a></li>
@@ -398,11 +346,44 @@
 </ul>
 </div>
 </div>
+<div class="section" id="analysis">
+<h2>Analysis<a class="headerlink" href="#analysis" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Analysis/gaussian.html">The Gaussian Distribution</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Analysis/gaussian.html#the-function">The Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Analysis/gaussian.html#applications">Applications</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Analysis/curve_fit.html">Curve Fitting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Analysis/curve_fit.html#residuals">Residuals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Analysis/curve_fit.html#least-squares-fitting">Least-Squares Fitting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Analysis/curve_fit.html#the-findfit-function">The FindFit Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Analysis/curve_fit.html#interpolation">Interpolation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Analysis/approximations.html">Approximations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Analysis/approximations.html#motivation">Motivation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Analysis/approximations.html#taylor-expansion">Taylor Expansion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Analysis/approximations.html#first-order-approximation">First-Order Approximation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Analysis/approximations.html#series-expansion-in-mathematica">Series Expansion in <em>Mathematica</em></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Analysis/error.html">Error Analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Analysis/error.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Analysis/error.html#example-watermelon-drop">Example: Watermelon Drop</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 <div class="section" id="appendix">
 <h2>Appendix<a class="headerlink" href="#appendix" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Math/eigenvalues.html">Eigenvalue Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Math/logic.html">Mathematical Logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Math/misc.html">Miscellaneous Math</a></li>
 </ul>
 </div>
 </div>
@@ -413,24 +394,29 @@
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
-      
+      <a href="#">Back to top</a>
     </p>
     <p>
-        &copy; Copyright 2013, University of Texas at Austin Society of Physics Students and Sigma Pi Sigma.
+    <!--
+        &copy; Copyright 2013, University of Texas at Austin Society of Physics Students and Sigma Pi Sigma.-->
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </p>
   </div>
 </footer>
 
 <script type="text/javascript" charset="utf-8">
-    $(document).ready(addUserToFooter);
+    //$(document).ready(addUserToFooter);
     $(document).ready(addNavbarLoginLink);
     $(document).ready(createEditors);
-    $(document).ready(getNumUsers);
-    $(document).ready(getOnlineUsers);
+    //$(document).ready(getNumUsers);
+    //$(document).ready(getOnlineUsers);
     $(document).ready(createScratchActivecode());
     $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  $("#mainbody").children().first().css("margin-top",
+    $("#navbar").css("height"))
 </script>
 
 <script type="text/javascript">

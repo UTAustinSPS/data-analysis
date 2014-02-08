@@ -75,7 +75,7 @@
     <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
     <link rel="top" title="Introduction to Data Analysis for Physics" href="index.html" />
     <link rel="up" title="Introduction to the Introduction" href="intro.html" />
-    <link rel="next" title="Introduction" href="Mathematica/mathematica.html" />
+    <link rel="next" title="Assignments" href="assignments.html" />
     <link rel="prev" title="Introduction to the Introduction" href="intro.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -108,7 +108,7 @@
 
 
 <!-- Begin navbar -->
-<div id="navbar" class="navbar navbar-fixed-top">
+<div id="navbar" class="navbar navbar-fixed-top" style="z-index:9999999">
 
   <div class="container">
 
@@ -120,118 +120,13 @@
     </button>
 
     <div>
-     <a class="brand-logo" style='background: transparent url("_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+      <a href="index.html">
+      <img title="Data Analysis for Physics" src="_static/img/logo_small.png"
+       style="max-width:60px; max-height:60px;float:left"></a>
       <a class="navbar-brand" href="index.html">Introduction to Data Analysis for Physics</a>
     </div>
 
     <div class="nav-collapse collapse navbar-responsive-collapse">
-
-      <ul class="nav navbar-nav pull-right">
-
-        <li class="divider-vertical"></li>
-
-        <!-- social media dropdown -->
-        <li class="dropdown">
-          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
-          </a>
-          <ul class="dropdown-menu social-menu">
-              <li>
-                <div>
-                  <b>Runestone in social media:</b>
-                </div>
-                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
-              </li>
-
-              <li class="divider"></li>
-              <li>
-                <div>
-                  <b>Help support us:</b>
-                </div>
-                <div class="gittip">
-                  <iframe style="border:0;"
-                    src="https://www.gittip.com/bnmnetp/widget.html"
-                    width="48pt" height="22pt" class="gittip-button">
-                  </iframe>
-                </div>
-              </li>
-          </ul>
-        </li>
-        <!-- end social media dropdown -->
-
-        <li class="divider-vertical"></li>
-
-        <!-- search dropdown -->
-        <li class="dropdown">
-          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
-          </a>
-          <ul class='dropdown-menu'>
-            
-                <li><a href='index.html'>Table of Contents</a></li>
-            
-            <li><a href='/runestone/static/data_analysis/genindex.html'>Book Index</a></li>
-            <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
-            <li class="divider"></li>
-            <li style="width: 240px;">
-              <form class="navbar-search" style="margin:10px;" action="search.html" method="get">
-                <div class="input-group">
-                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
-                  <span class="input-group-btn">
-                    <button class="btn btn-primary" style="margin:0;" type="submit"">
-                      <i class="glyphicon glyphicon-search"></i>
-                    </button>
-                  </span>
-                </div><!-- /input-group -->
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="default" />
-              </form>
-            </li>
-          </ul>
-        </li>
-        <!-- end search dropdown -->
-
-        <li class="divider-vertical"></li>
-
-        <!-- user account dropdown -->
-        <li class="dropdown">
-          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
-          </a>
-          <ul class="dropdown-menu user-menu">
-            <li><span class='loggedinuser'></span></li>
-            <li class="divider"></li>
-            <li><a href='http://192.168.0.10:80/runestone/admin/index'>Instructor's Page</a></li>
-            <li class="divider"></li>
-            <li><a href="http://192.168.0.10:80/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
-            <li><a href="http://192.168.0.10:80/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
-            <li><a href="http://192.168.0.10:80/runestone/default/user/register" id="registerlink">Register</a></li>
-            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
-          </ul>
-        </li>
-        <!-- end user account dropdown -->
-
-        <li class="divider-vertical"></li>
-
-        <!-- help menu dropdown -->
-        <li class="dropdown">
-          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
-          </a>
-          <ul class="dropdown-menu user-menu">
-            <li><a href='/runestone/static/data_analysis/navhelp.html'>Navigation Help</a></li>
-            <li class="divider"></li>
-            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
-            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
-          </ul>
-        </li>
-        <!-- end help menu dropdown -->
-
-        <li class="divider-vertical"></li>
-
-      </ul>
 
       <ul class="nav navbar-nav">
         <li class="divider-vertical"></li>
@@ -249,7 +144,8 @@
 <li><a class="reference internal" href="#example-class-agenda-week-4">Example Class Agenda - Week 4</a></li>
 <li><a class="reference internal" href="#students-with-disabilities">Students with Disabilities</a></li>
 <li><a class="reference internal" href="#academic-integrity">Academic Integrity</a></li>
-<li><a class="reference internal" href="#about-the-student-facilitator">About the Student Facilitator</a></li>
+<li><a class="reference internal" href="#about-student-facilitator-1">About Student Facilitator 1</a></li>
+<li><a class="reference internal" href="#about-student-facilitator-2">About Student Facilitator 2</a></li>
 <li><a class="reference internal" href="#example-assignment-near-end-of-semester">Example Assignment (near end of semester)</a></li>
 </ul>
 </ul>
@@ -261,15 +157,17 @@
   <li id="relations-prev" title="Previous Chapter - Introduction to the Introduction" data-toggle="tooltip">
     <a href="intro.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+      <p style=";max-width:130px;">Introduction to the Introduction</p>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Introduction' data-toggle="tooltip" >
-    <a href="Mathematica/mathematica.html" >
+  <li id="relations-next" title='Next Chapter - Assignments' data-toggle="tooltip" >
+    <a href="assignments.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+      <p style=";max-width:130px;">Assignments</p>
     </a>
   </li>
-  <li class="divider-vertical"></li>
+  <li style="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -291,20 +189,33 @@
 </div>
 
 
-<div class="container">
+<div id="mainbody" class="container">
   
   <h1>Course Syllabus Spring '13</h1><div class="section" id="contact-information">
 <h1>Contact Information<a class="headerlink" href="#contact-information" title="Permalink to this headline">¶</a></h1>
-<p>Student Facilitator: Evan Ott</p>
-<p>Student Facilitator Email: <a class="reference external" href="mailto:evan&#46;ott&#37;&#52;&#48;utexas&#46;edu">evan<span>&#46;</span>ott<span>&#64;</span>utexas<span>&#46;</span>edu</a></p>
+<p>Student Facilitator 1: Evan Ott</p>
+<p>Student Facilitator 1 Email: <a class="reference external" href="mailto:evan&#46;ott&#37;&#52;&#48;utexas&#46;edu">evan<span>&#46;</span>ott<span>&#64;</span>utexas<span>&#46;</span>edu</a></p>
+<p>Student Facilitator 2: Will Beason</p>
+<p>Student Facilitator 2 Email: <a class="reference external" href="mailto:beason&#37;&#52;&#48;utexas&#46;edu">beason<span>&#64;</span>utexas<span>&#46;</span>edu</a></p>
+<p>Office Hours: W 2-4, Location TBA</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <p>Faculty Supervisor: Dr. Greg Sitz</p>
 <p>Faculty Supervisor Email: <a class="reference external" href="mailto:gositz&#37;&#52;&#48;physics&#46;utexas&#46;edu">gositz<span>&#64;</span>physics<span>&#46;</span>utexas<span>&#46;</span>edu</a></p>
+<p>Office Hours: W 3-4, H 10:30-11:30 in RLM 10.313</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Class: H 8:30-9:30 in RLM 5.112 currently, but moving to CPE soon (room TBA)</p>
+<p>Class Homepage and Textbook: <a class="reference external" href="http://www.cs.utexas.edu/~evanott/PHY110C_Textbook/static/data_analysis/index.html">http://www.cs.utexas.edu/~evanott/PHY110C_Textbook/static/data_analysis/index.html</a></p>
+<p>Email for Assignment Submission: <a class="reference external" href="mailto:data&#46;analysis&#46;physics&#37;&#52;&#48;gmail&#46;com">data<span>&#46;</span>analysis<span>&#46;</span>physics<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
 </div>
 <div class="section" id="course-description">
 <h1>Course Description<a class="headerlink" href="#course-description" title="Permalink to this headline">¶</a></h1>
 <p>This course was devised by the UT-Austin chapter of the Society of Physics Students officers in order to introduce
 physics, math, astronomy, chemistry, and computer science students (and students interested in those and related
-subjects) to the <span class="math">\(\LaTeX\)</span> and <em>Mathematica</em> programming languages for use in data analysis. While designed with
+subjects) to the <span class="raw-html"><span class="latex">L<sup>A</sup>T<sub>E</sub>X</span></span> and <em>Mathematica</em> programming languages for use in data analysis. While designed with
 preparation for PHY 353L in mind, the skills learned in this course apply to a broad array of courses and
 fields of study and are directly applicable to both academic and industrial applications. Students enrolling
 in this course would benefit from prior exposure to programming, but no experience is required. This course
@@ -315,10 +226,8 @@ is being offered through the Physics Department at UT Austin as PHY 110C.</p>
 <p>By the end of this course, you will be able to:</p>
 <ol class="arabic simple">
 <li>Use <em>Mathematica</em> to analyze scietific data and create graphical representations of that data</li>
-</ol>
-<p>2. Use <span class="math">\(\LaTeX\)</span> to construct scientific documents including images, tables, and hyperlinks,
-completing assignments under different constraints to familiarize yourself with the language</p>
-<ol class="arabic simple" start="3">
+<li>Use <span class="raw-html"><span class="latex">L<sup>A</sup>T<sub>E</sub>X</span></span> to construct scientific documents including images, tables, and hyperlinks,
+completing assignments under different constraints to familiarize yourself with the language</li>
 <li>Combine the skills listed above in a final project</li>
 </ol>
 </div>
@@ -328,17 +237,17 @@ completing assignments under different constraints to familiarize yourself with 
 assignments to be completed outside of class in an effort to make class-time as interactive and
 helpful as possible. Each week, students will complete a reading assignment from an online
 textbook created for this course by the Evan Ott and Will Beason and edited by the Society of Physics
-Students. This textbook will largely
-be technical in nature, presenting new features of <span class="math">\(\LaTeX\)</span> and <em>Mathematica</em> each week. Students will
+Students (see the link above). This textbook is largely
+technical in nature, presenting new features of <span class="raw-html"><span class="latex">L<sup>A</sup>T<sub>E</sub>X</span></span> and <em>Mathematica</em> each week. Students will
 read the sections of the textbook before class, then begin a programming assignment that will be
 due the following week over that material. First-drafts of the programming assignments will be
 due the day before class.</p>
 <p>During class, students will first present solutions to the assignment they completed for that week
 and discuss the merits and failings of particular methodologies used, in a variant of the Moore
 model of teaching. Particularly toward the end of the semester, students will engage in a debate over
-technologies employed in solutions (is a 3D graph with one axis of time more relatable than a 2D
-animated graph? are in-line equations better for space or too difficult to read? is using built-in
-distribution functions more enlightening than re-writing them in a more convenient way?).</p>
+technologies employed in solutions (is a 3D graph with one axis of time more relatable than multiple 2D
+graphs? are in-line equations better for space or too difficult to read? is using built-in
+distribution functions more enlightening than re-writing them in a more convenient form?).</p>
 <p>The student facilitator will then review topics that proved most challenging for students based on
 the first-drafts submitted the previous day and help with troubleshooting errors. Then, each week,
 the student facilitator will review the week’s reading material. If time permits, students will
@@ -352,14 +261,14 @@ students to come ask questions or discuss the week&#8217;s reading.</p>
 <p>Each week, students will be expected to complete assignments related to the objectives outlined
 above. These will need to be completed largely outside of class, although students are encouraged
 to bring personal computers to class for help with technical issues or for referencing their own
-work when discussing solutions. Software to be used in the course will include traditional <span class="math">\(\LaTeX\)</span>
-editors (use of <em>LyX</em> is discouraged in favor of students working directly with code), and the
+work when discussing solutions. Software to be used in the course will include traditional <span class="raw-html"><span class="latex">L<sup>A</sup>T<sub>E</sub>X</span></span>
+editors (use of <em>Lyx</em> is discouraged in favor of students working directly with code), and the
 latest edition of <em>Mathematica</em>. As needed, instructions will be given on how to download any
 software required to complete assignments, but all required software is available for use in
 the Physics Microcomputer Laboratory in RLM 7.306 (<a class="reference external" href="http://pmcl.ph.utexas.edu/">http://pmcl.ph.utexas.edu</a>).</p>
 <p>A final project will be given in lieu of the last two weekly assignments. This project will be
 cumulative, incorporating the data analysis skills learned in relation to the <em>Mathematica</em> portion
-of the course, and the typesetting skills learned in relation to the <span class="math">\(\LaTeX\)</span> portion.</p>
+of the course, and the typesetting skills learned in relation to the <span class="raw-html"><span class="latex">L<sup>A</sup>T<sub>E</sub>X</span></span> portion.</p>
 <p>A representative assignment covering the cumulative knowledge gained toward the end of the
 semester may be found below.</p>
 </div>
@@ -371,11 +280,12 @@ but are expected to list the students with whom they consulted on each assignmen
 The final project will be an individual project, although general discussion
 and help with programming errors is perfectly acceptable and encouraged.</p>
 <blockquote>
-<div>Weekly Assignments (total): 50 pts
-Final Project: 24 pts
-Solution Presentation and Discussion: 26 pts
-<em>There will be no final exam for this course</em></div></blockquote>
-<p>Weekly assignments are due the day before class. Students are encouraged to complete as much of
+<div><p>Weekly Assignments (total): 50 pts</p>
+<p>Final Project: 24 pts</p>
+<p>Solution Presentation and Discussion: 26 pts</p>
+<p><em>There will be no final exam for this course</em></p>
+</div></blockquote>
+<p>Weekly assignments are due the day before class at 5pm. Students are encouraged to complete as much of
 the assignment as possible by this time so that class-time can be used to discuss solutions and
 technical problems. No penalty will be imposed on late assignments, and assignments may be
 resubmitted with no penalty until the final class day. Grades for these assignments will be
@@ -397,46 +307,42 @@ it should serve as a guide to the topics to be discussed through the semester.</
 <p><strong>Week 3</strong> - Introduction to <em>Mathematica</em> (continued): Simple programs</p>
 <p><strong>Week 4</strong> - <em>Mathematica</em>: Reading in data, simple analysis</p>
 <p><strong>Week 5</strong> - <em>Mathematica</em>: More advanced data analysis</p>
-<p><strong>Week 6</strong> - Introduction to <span class="math">\(\LaTeX\)</span>: The language, how to download</p>
-<p><strong>Week 7</strong> - Introduction to <span class="math">\(\LaTeX\)</span> (continued): My first document</p>
-<p><strong>Week 8</strong> - <span class="math">\(\LaTeX\)</span>: More complex documents</p>
-<p><strong>Week 9</strong> - <span class="math">\(\LaTeX\)</span>: Formatting and new concepts</p>
-<p><strong>Week 10</strong> - <span class="math">\(\LaTeX\)</span>, <em>Mathematica</em>: Make-up week for covering additional topics</p>
-<p><strong>Week 11</strong> - <span class="math">\(\LaTeX\)</span>, <em>Mathematica</em>: Combining data analysis and articles</p>
-<p><strong>Week 12</strong> - <span class="math">\(\LaTeX\)</span>, <em>Mathematica</em>: Combining data analysis and articles (continued)</p>
-<p><strong>Week 13</strong> - <span class="math">\(\LaTeX\)</span>, <em>Mathematica</em>: Pushing limits</p>
-<p><strong>Week 14</strong> - <span class="math">\(\LaTeX\)</span>, <em>Mathematica</em>: Wrap-up</p>
+<p><strong>Week 6</strong> - Introduction to <span class="raw-html"><span class="latex">L<sup>A</sup>T<sub>E</sub>X</span></span>: The language, how to download</p>
+<p><strong>Week 7</strong> - Introduction to <span class="raw-html"><span class="latex">L<sup>A</sup>T<sub>E</sub>X</span></span> (continued): My first document</p>
+<p><strong>Week 8</strong> - <span class="raw-html"><span class="latex">L<sup>A</sup>T<sub>E</sub>X</span></span>: More complex documents</p>
+<p><strong>Week 9</strong> - <span class="raw-html"><span class="latex">L<sup>A</sup>T<sub>E</sub>X</span></span>: Formatting and new concepts</p>
+<p><strong>Week 10</strong> - <span class="raw-html"><span class="latex">L<sup>A</sup>T<sub>E</sub>X</span></span>, <em>Mathematica</em>: Make-up week for covering additional topics</p>
+<p><strong>Week 11</strong> - <span class="raw-html"><span class="latex">L<sup>A</sup>T<sub>E</sub>X</span></span>, <em>Mathematica</em>: Combining data analysis and articles</p>
+<p><strong>Week 12</strong> - <span class="raw-html"><span class="latex">L<sup>A</sup>T<sub>E</sub>X</span></span>, <em>Mathematica</em>: Combining data analysis and articles (continued)</p>
+<p><strong>Week 13</strong> - <span class="raw-html"><span class="latex">L<sup>A</sup>T<sub>E</sub>X</span></span>, <em>Mathematica</em>: Pushing limits</p>
+<p><strong>Week 14</strong> - <span class="raw-html"><span class="latex">L<sup>A</sup>T<sub>E</sub>X</span></span>, <em>Mathematica</em>: Wrap-up</p>
 </div>
 <div class="section" id="example-class-agenda-week-4">
 <h1>Example Class Agenda - Week 4<a class="headerlink" href="#example-class-agenda-week-4" title="Permalink to this headline">¶</a></h1>
-<p>1. Students are to have read textbook information on &#8216;<em>Mathematica</em>: Reading in data, simple
-analysis&#8217; before coming to class</p>
-<ol class="arabic" start="2">
-<li><p class="first">Rough drafts of &#8216;<em>Mathematica</em>: Simple programs&#8217; assignment solutions due the day before class</p>
+<ol class="arabic simple">
+<li>Students are to have read textbook information on &#8216;<em>Mathematica</em>:
+Reading in data, simple analysis&#8217; before coming to class</li>
+<li>Rough drafts of &#8220;<em>Mathematica</em>: Simple programs&#8217; assignment solutions due the day before class</li>
+<li>1-2 Students present solutions to &#8216;<em>Mathematica</em>: Simple programs&#8217; homework (10-15 min)<ol class="loweralpha">
+<li>Class discusses extent to which solutions address the tasks
+from the assignment</li>
+<li>Class discusses relative merits of technologies presenters
+employed versus other potential solutions</li>
+</ol>
 </li>
-<li><p class="first">1-2 Students present solutions to &#8216;<em>Mathematica</em>: Simple programs&#8217; homework (10-15 min)</p>
-<blockquote>
-<div><ol class="loweralpha simple">
-<li>Class discusses extent to which solutions address the tasks from the assignment</li>
-<li>Class discusses relative merits of technologies presenters employed versus other potential   solutions</li>
+<li>Student facilitator leads discussion of &#8216;<em>Mathematica</em>: Simple programs&#8217;
+solutions in terms of identified issues (10 min)</li>
+<li>Student facilitator presents over &#8216;<em>Mathematica</em>: Reading in data,
+simple analysis&#8217; material (10-15 min)<ol class="loweralpha">
+<li>Presenter(s), class, and student facilitator help address
+questions from classmates</li>
 </ol>
-</div></blockquote>
 </li>
-</ol>
-<p>4. Student facilitator leads discussion of &#8216;<em>Mathematica</em>: Simple programs&#8217; solutions in terms of
-identified issues (10 min)</p>
-<p>5. Student facilitator presents over &#8216;<em>Mathematica</em>: Reading in data, simple analysis&#8217;
-material (10-15 min)</p>
-<blockquote>
-<div><ol class="loweralpha simple">
-<li>Presenter(s), class, and student facilitator help address questions from classmates</li>
-</ol>
-</div></blockquote>
-<p>6. Student facilitator distributes homework assignment over &#8216;<em>Mathematica</em>: Reading in data,
-simple analysis&#8217; and answers questions about it. Student facilitator assigns the
-&#8216;<em>Mathematica</em>: More advanced data analysis&#8217; reading (5 min)</p>
-<ol class="arabic simple" start="7">
-<li><em>If time permits</em>, students begin work on next week&#8217;s assignment, working collaboratively (5-15 min)</li>
+<li>Student facilitator distributes homework assignment over &#8216;<em>Mathematica</em>:
+Reading in data, simple analysis&#8217; and answers questions about it.
+Student facilitator assigns the &#8216;<em>Mathematica</em>: More advanced data analysis&#8217; reading (5 min)</li>
+<li><em>If time permits</em>, students begin work on next week&#8217;s assignment,
+working collaboratively (5-15 min)</li>
 </ol>
 </div>
 <div class="section" id="students-with-disabilities">
@@ -454,17 +360,26 @@ the University, policies on academic dishonesty will be strictly enforced. For f
 information please visit the Student Judicial Services Web site:
 <a class="reference external" href="http://deanofstudents.utexas.edu/sjs">http://deanofstudents.utexas.edu/sjs</a>.</p>
 </div>
-<div class="section" id="about-the-student-facilitator">
-<h1>About the Student Facilitator<a class="headerlink" href="#about-the-student-facilitator" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="about-student-facilitator-1">
+<h1>About Student Facilitator 1<a class="headerlink" href="#about-student-facilitator-1" title="Permalink to this headline">¶</a></h1>
 <p>Evan Ott is a physics and computer science major and the 2012-2014 president of UT&#8217;s chapter
 of the Society of Physics Students. He has previously team-taught a 4-week seminar on
-<span class="math">\(\LaTeX\)</span> (materials available <a class="reference external" href="http://www.ph.utexas.edu/~sps/pages/resources.html?modalID=LaTeXModal">here</a>)
+<span class="raw-html"><span class="latex">L<sup>A</sup>T<sub>E</sub>X</span></span> (materials available <a class="reference external" href="http://www.ph.utexas.edu/~sps/pages/resources.html?modalID=LaTeXModal">here</a>)
 and coached his high school&#8217;s computer science club for two years
 in <em>Java</em> leading them to win several competitions. He has served as an undergraduate teaching
 assistant for Dr. Sacha Kopp’s UGS 303: Originality in the Arts and Sciences and PHY 110C:
 Science of the Times. In his time as SPS president, he has consistently worked to help
 provide resources to better connect students with technical skills applicable to both
 research and industry.</p>
+</div>
+<div class="section" id="about-student-facilitator-2">
+<h1>About Student Facilitator 2<a class="headerlink" href="#about-student-facilitator-2" title="Permalink to this headline">¶</a></h1>
+<p>Will Beason is a senior double majoring in Mathematics and Physics. His primary interests
+are cybernetics and information theory, and he hopes to either go to graduate school or
+get a job relating to these subjects after graduation. He has given several talks on
+data analysis, and is currently acting as a data analysis consultant for MeasureCP.
+He also runs a blog at <a class="reference external" href="http://will.ketobot.com">will.ketobot.com</a> where he attempts to apply the theories
+behind his interests to the world.</p>
 </div>
 <div class="section" id="example-assignment-near-end-of-semester">
 <h1>Example Assignment (near end of semester)<a class="headerlink" href="#example-assignment-near-end-of-semester" title="Permalink to this headline">¶</a></h1>
@@ -482,7 +397,7 @@ in <strong>timeseries.txt</strong>, but future times seem to evolve the distribu
 statistical model versus time. Are there patterns that emerge? Use the curve-fitting
 techniques to derive the evolution of the system over time. Can you think of a physical
 situation that might behave in this way?</p>
-<p>Finally, combine the graphs, relevant equations, and discussion in a <span class="math">\(\LaTeX\)</span> document.</p>
+<p>Finally, combine the graphs, relevant equations, and discussion in a <span class="raw-html"><span class="latex">L<sup>A</sup>T<sub>E</sub>X</span></span> document.</p>
 </div>
 
 
@@ -490,24 +405,29 @@ situation that might behave in this way?</p>
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
-      
+      <a href="#">Back to top</a>
     </p>
     <p>
-        &copy; Copyright 2013, University of Texas at Austin Society of Physics Students and Sigma Pi Sigma.
+    <!--
+        &copy; Copyright 2013, University of Texas at Austin Society of Physics Students and Sigma Pi Sigma.-->
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </p>
   </div>
 </footer>
 
 <script type="text/javascript" charset="utf-8">
-    $(document).ready(addUserToFooter);
+    //$(document).ready(addUserToFooter);
     $(document).ready(addNavbarLoginLink);
     $(document).ready(createEditors);
-    $(document).ready(getNumUsers);
-    $(document).ready(getOnlineUsers);
+    //$(document).ready(getNumUsers);
+    //$(document).ready(getOnlineUsers);
     $(document).ready(createScratchActivecode());
     $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  $("#mainbody").children().first().css("margin-top",
+    $("#navbar").css("height"))
 </script>
 
 <script type="text/javascript">
