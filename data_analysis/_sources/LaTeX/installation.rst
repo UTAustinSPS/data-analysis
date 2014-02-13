@@ -11,15 +11,57 @@ For this class, I recommend going with TeXworks. You need to install `TeX Live <
 
 TeXworks Features
 =================
-The reason we chose TeXworks is because it comes with a lot of learner-friendly features. Some of these are not enabled by default, including a spell-check, context-sensitive code highlighting, and automatic indentation. (Indentation is ignored when typesetting, but it can make your code more readable.) There are many options you can adjust with Edit -> Preferences.... I like to enable Line numbers, set Syntax coloring to LaTeX, Whitespace only auto-indentation, and enable English spellchecking. Line numbers is particularly useful since error codes refer to the line number where the typesetting program ran into a problem (not necessarily where the error is, but always after it).
+The reason we chose TeXworks is because it comes with a lot of learner-friendly features. Some of these are not enabled by default, including a spell-check, context-sensitive code highlighting, and automatic indentation. (Indentation is ignored when typesetting, but it can make your code more readable.) There are many options you can adjust with Edit -> Preferences.... I like to enable Line numbers, set Syntax coloring to LaTeX, Whitespace only auto-indentation, and enable English spellchecking. Line numbers are particularly useful since error codes refer to the line number where the typesetting program ran into a problem (not necessarily where the error is, but always after it).
 
 Side-by-Side View
 -----------------
 Interacting with TeXworks should normally look like this, with code and current document side-by-side.
 
+.. image:: Figures/sidebyside.png
+   :scale: 80%
+   :alt: Side by Side view
 
 
 When starting a new document, TeXworks does not automatically do this. Once you have a minimum valid document, typeset and your environment should look like the above. To typeset, either push the green arrow at the top-left corner or use the keyboard shortcut Ctrl-T.
+
+Errors
+------
+One intimidating feature of LaTeX is its error codes. Sometimes they can be cryptic and point to things that aren't actually wrong. Some simple ones will be covered later. It is important to remember that LaTeX will throw the error message when it runs into a problem while typesetting, not necessarily in the same line as where the error in the code is.
+
+Error codes appear in :code:`Console output` while typesetting. Normally, this flashes on screen, a bunch of code flies by, and it disappears. If it didn't, usually it means something went wrong.
+
+Consider this code and error message:
+
+:: 
+   
+   Runaway argument?
+   {enumerate 
+   ! Paragraph ended before \begin was complete.
+   <to be read again> 
+   \par 
+   l.17 
+        
+   ? 
+
+
+It references line 17 (l.17). The words :code:`Runaway argument?` mean that LaTeX was trying to finish a control sequence but never finished getting input. As shown in the second line of the error, :code:`{enumerate` is missing a closing curly brace (a necessity for all arguments of commands). In this case, the error was actually on line 16, and line 17 was blank. The line currently reads :code:`\begin{enumerate` when it should read :code:`\begin{enumerate}`. LaTeX didn't realize there was a problem until a new line started.
+
+Unfortunately, LaTeX sometimes doesn't even realize there is a problem until it reaches the end of the document, givin unhelpful messages such as
+
+::
+   
+   Runaway argument?
+   { \par \par Create a document which meets the following description. \ETC.
+   ! File ended while scanning use of \@xdblarg.
+   <inserted text> 
+   \par 
+   <*> Assignment6.tex
+                      
+   ? 
+
+
+One way to troubleshoot this is with :code:`\end{document}`, and this method is covered in the Document Structure lesson.
+
 
 Document-Code Navigation
 ------------------------

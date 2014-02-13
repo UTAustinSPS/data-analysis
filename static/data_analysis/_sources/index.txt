@@ -52,7 +52,6 @@ The :raw-html:`<span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>tbook`
    
    LaTeX/installation.rst
    LaTeX/latex.rst
-   LaTeX/installation.rst
    LaTeX/docstructure.rst
    LaTeX/commands.rst
    LaTeX/packages.rst

@@ -74,14 +74,14 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
-    <link rel="next" title="Document Structure" href="docstructure.html" />
-    <link rel="prev" title="Introduction" href="latex.html" />
+    <link rel="next" title="Introduction" href="latex.html" />
+    <link rel="prev" title="Animations" href="../Mathematica/animations.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 <script type="text/javascript">
   eBookConfig = {};
-  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.host = 'http://192.168.0.10:80' ? 'http://192.168.0.10:80' : 'http://127.0.0.1:8000';
   eBookConfig.app = eBookConfig.host+'/runestone';
   eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
   eBookConfig.course = 'data_analysis';
@@ -136,6 +136,7 @@
 <li><a class="reference internal" href="#">Installation</a><ul>
 <li><a class="reference internal" href="#texworks-features">TeXworks Features</a><ul>
 <li><a class="reference internal" href="#side-by-side-view">Side-by-Side View</a></li>
+<li><a class="reference internal" href="#errors">Errors</a></li>
 <li><a class="reference internal" href="#document-code-navigation">Document-Code Navigation</a></li>
 <li><a class="reference internal" href="#templates">Templates</a></li>
 <li><a class="reference internal" href="#removing-aux-files">Removing Aux Files</a></li>
@@ -150,17 +151,17 @@
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Introduction" data-toggle="tooltip">
-    <a href="latex.html" >
+  <li id="relations-prev" title="Previous Chapter - Animations" data-toggle="tooltip">
+    <a href="../Mathematica/animations.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
-      <p style=";max-width:130px;">Introduction</p>
+      <p style=";max-width:130px;">Animations</p>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Document Structure' data-toggle="tooltip" >
-    <a href="docstructure.html" >
+  <li id="relations-next" title='Next Chapter - Introduction' data-toggle="tooltip" >
+    <a href="latex.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
-      <p style=";max-width:130px;">Document Structure</p>
+      <p style=";max-width:130px;">Introduction</p>
     </a>
   </li>
   <li style="divider-vertical"></li>
@@ -193,11 +194,39 @@
 <p>For this class, I recommend going with TeXworks. You need to install <a class="reference external" href="http://www.tug.org/texlive/acquire-netinstall.html">TeX Live</a>, then <a class="reference external" href="http://www.tug.org/texworks/">TeXworks</a>. These websites provide some guidance, but if you have any trouble installing or understanding the instructions, email me at <a class="reference external" href="mailto:willbeason&#37;&#52;&#48;gmail&#46;com">willbeason<span>&#64;</span>gmail<span>&#46;</span>com</a>.</p>
 <div class="section" id="texworks-features">
 <h2>TeXworks Features<a class="headerlink" href="#texworks-features" title="Permalink to this headline">¶</a></h2>
-<p>The reason we chose TeXworks is because it comes with a lot of learner-friendly features. Some of these are not enabled by default, including a spell-check, context-sensitive code highlighting, and automatic indentation. (Indentation is ignored when typesetting, but it can make your code more readable.) There are many options you can adjust with Edit -&gt; Preferences.... I like to enable Line numbers, set Syntax coloring to LaTeX, Whitespace only auto-indentation, and enable English spellchecking. Line numbers is particularly useful since error codes refer to the line number where the typesetting program ran into a problem (not necessarily where the error is, but always after it).</p>
+<p>The reason we chose TeXworks is because it comes with a lot of learner-friendly features. Some of these are not enabled by default, including a spell-check, context-sensitive code highlighting, and automatic indentation. (Indentation is ignored when typesetting, but it can make your code more readable.) There are many options you can adjust with Edit -&gt; Preferences.... I like to enable Line numbers, set Syntax coloring to LaTeX, Whitespace only auto-indentation, and enable English spellchecking. Line numbers are particularly useful since error codes refer to the line number where the typesetting program ran into a problem (not necessarily where the error is, but always after it).</p>
 <div class="section" id="side-by-side-view">
 <h3>Side-by-Side View<a class="headerlink" href="#side-by-side-view" title="Permalink to this headline">¶</a></h3>
 <p>Interacting with TeXworks should normally look like this, with code and current document side-by-side.</p>
+<a class="reference internal image-reference" href="../_images/sidebyside.png"><img alt="Side by Side view" src="../_images/sidebyside.png" style="width: 1152.0px; height: 720.0px;" /></a>
 <p>When starting a new document, TeXworks does not automatically do this. Once you have a minimum valid document, typeset and your environment should look like the above. To typeset, either push the green arrow at the top-left corner or use the keyboard shortcut Ctrl-T.</p>
+</div>
+<div class="section" id="errors">
+<h3>Errors<a class="headerlink" href="#errors" title="Permalink to this headline">¶</a></h3>
+<p>One intimidating feature of LaTeX is its error codes. Sometimes they can be cryptic and point to things that aren&#8217;t actually wrong. Some simple ones will be covered later. It is important to remember that LaTeX will throw the error message when it runs into a problem while typesetting, not necessarily in the same line as where the error in the code is.</p>
+<p>Error codes appear in <tt class="code docutils literal"><span class="pre">Console</span> <span class="pre">output</span></tt> while typesetting. Normally, this flashes on screen, a bunch of code flies by, and it disappears. If it didn&#8217;t, usually it means something went wrong.</p>
+<p>Consider this code and error message:</p>
+<div class="highlight-python"><pre>Runaway argument?
+{enumerate
+! Paragraph ended before \begin was complete.
+&lt;to be read again&gt;
+\par
+l.17
+
+?</pre>
+</div>
+<p>It references line 17 (l.17). The words <tt class="code docutils literal"><span class="pre">Runaway</span> <span class="pre">argument?</span></tt> mean that LaTeX was trying to finish a control sequence but never finished getting input. As shown in the second line of the error, <tt class="code docutils literal"><span class="pre">{enumerate</span></tt> is missing a closing curly brace (a necessity for all arguments of commands). In this case, the error was actually on line 16, and line 17 was blank. The line currently reads <tt class="code docutils literal"><span class="pre">\begin{enumerate</span></tt> when it should read <tt class="code docutils literal"><span class="pre">\begin{enumerate}</span></tt>. LaTeX didn&#8217;t realize there was a problem until a new line started.</p>
+<p>Unfortunately, LaTeX sometimes doesn&#8217;t even realize there is a problem until it reaches the end of the document, givin unhelpful messages such as</p>
+<div class="highlight-python"><pre>Runaway argument?
+{ \par \par Create a document which meets the following description. \ETC.
+! File ended while scanning use of \@xdblarg.
+&lt;inserted text&gt;
+\par
+&lt;*&gt; Assignment6.tex
+
+?</pre>
+</div>
+<p>One way to troubleshoot this is with <tt class="code docutils literal"><span class="pre">\end{document}</span></tt>, and this method is covered in the Document Structure lesson.</p>
 </div>
 <div class="section" id="document-code-navigation">
 <h3>Document-Code Navigation<a class="headerlink" href="#document-code-navigation" title="Permalink to this headline">¶</a></h3>

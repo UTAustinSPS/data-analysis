@@ -123,7 +123,11 @@ This is the last week of *Mathematica* for a while (not last week - sorry)! We'l
 
 **Reading due by class:**
 
-- :math:`\LaTeX` topics
+- `Installation <LaTeX/installation.html>`_
+- `Introduction to LaTeX <LaTeX/latex.html>`_
+- `Document Structure <LaTeX/docstructure.html>`_
+- `Commands and Special Characters <LaTeX/commands.html>`_
+- `Packages <LaTeX/packages.html>`_
 
 **Assignment due before class this week:** :download:`Assignment 5 <Assignments/assignment5.pdf>`.
 
