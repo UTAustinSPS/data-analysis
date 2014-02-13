@@ -156,9 +156,9 @@ and
 
 .. math::
 
-	\sigma_g&=\sigma_t^2\left(\frac{\partial g}{\partial t}
-	\middle|_{\langle{t}\rangle}\right)^2\\
-	&=(0.058s)^2\left(-5.78\frac{m}{s^3}\right)^2=0.11\frac{m}{s^2}
+	\sigma_g&=\sqrt{\sigma_t^2\left(\frac{\partial g}{\partial t}
+	\middle|_{\langle{t}\rangle}\right)^2}\\
+	&=\sqrt{(0.058s)^2\left(-5.78\frac{m}{s^3}\right)^2}=0.11\frac{m}{s^2}
 
 So, we can report our result for :math:`g` in the compact form:
 :math:`10.16\pm0.11 \frac{m}{s^2}`, which says that the mean is 10.16 m/s^2 and

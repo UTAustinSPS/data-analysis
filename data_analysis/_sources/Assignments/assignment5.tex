@@ -1,0 +1,83 @@
+\documentclass{article}
+\usepackage[latin1]{inputenc}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\newcommand{\ket}[1]{\ensuremath{\left|#1\right\rangle}}
+\newcommand{\bra}[1]{\ensuremath{\left\langle#1\right|}}
+\newcommand{\braket}[2]{\ensuremath{\left\langle #1 \middle| #2 \right\rangle}}
+\newcommand{\obar}[1]{\ensuremath{\overline{ #1 }}}
+
+\newcommand{\M}[0]{\emph{Mathematica}~}
+% enumerate is numbered \begin{enumerate}[(I)] is cap roman in parens
+% itemize is bulleted \begin{itemize}
+% subfigures:
+% \begin{subfigure}[b]{0.5\textwidth} \includegraphics{asdf.jpg} \caption{} \label{subfig:asdf} \end{subfigure}
+\hypersetup{colorlinks=true, urlcolor=blue, linkcolor=blue, citecolor=red}
+\graphicspath{ {C:/Users/Evan/Desktop/} }
+\title{Assignment 5: \\ Introduction to \emph{Mathematica}\\
+\large \emph{Introduction to Data Analysis for Physics}}
+\author{Evan Ott and Will Beason}
+\date{Spring 2014}
+\setcounter{secnumdepth}{0}
+\usepackage[parfill]{parskip}
+\begin{document}
+\maketitle
+\section{Submission Requirements}
+Submit the assignment to \href{mailto:data.analysis.physics@gmail.com}{data.analysis.physics@gmail.com} by Wednesday at 5pm. Just submit the \M
+document you create (typically a .nb file).
+
+\section{Problem 1}
+We're going to once again use the data for Halley's comet, this time focusing on using it to learn about error propagation. Reproduced below are the
+equations for mean, variance, and error propagation for independent variables (for context, review the textbook):
+
+\begin{align*}
+\langle x\rangle&=\frac{1}{N}\sum_{i=1}^Nx(i)\\
+\sigma_x^2&=\frac{1}{N-1}\sum_{i=1}^N(x(i)-\langle x\rangle)^2\\
+f(x_1,~x_2,~...,~x_M)&=\cdots\\
+\langle f\rangle&=\frac{1}{N}\sum_{i=1}^Nf(x_1(i),~x_2(i),~...,~x_M(i))\\
+\sigma_f^2&=\sum_{j=1}^M\left(\frac{\partial f}{\partial x_j}\middle|_{\langle x_1\rangle,~\langle x_2\rangle,~...,~\langle x_M\rangle}\right)^2\sigma_{x_j}^2
+\end{align*}
+
+\subsection{a}
+To practice this, with the data for Halley's comet in polar coordinates $(\phi,~r)$ as before (with the \texttt{phi}$\rangle$\texttt{Mod[phi+2Pi, Pi]} correction), let's calculate
+the mean observed eccentricity (which should be the same value as what you got in the last homework, or very nearly the same) and standard deviation of eccentricity. This time,
+we'll assume that the semi-major axis is $a=2.662\times10^{12}m$. This gives:
+$$r=\frac{a(1-\epsilon^2)}{1+\epsilon\cos(\phi)}$$
+or, solving for $\epsilon$ and taking the positive root of the quadratic equation (verify this):
+$$\epsilon(r,~\phi)=\frac{-r\cos(\phi)+\sqrt{r^2\cos^2(\phi)-4a(r-a)}}{2a}$$
+From this and the equations above, calculate $\langle\epsilon\rangle$ and $\sigma_\epsilon$. Are these values consistent with what you got from the curve-fitting assignment?
+
+\subsection{b}
+For a function $f$ over variables $x,~y,~...$, we defined $\langle f\rangle=\sum_if(x_i, y_i, ...)/N$, which is to say the mean of values of $f$
+computed from the different selections of observed quantities that
+we have in our dataset. But, what if we instead calculated $f(\langle x\rangle,~\langle y\rangle,~...)$? For the eccentricity calculation above, compute this quantity
+({\emph{i.e.,}} $\epsilon(\langle r\rangle, \langle\phi\rangle)$). Is it the same as $\langle f\rangle$? If not, how many standard deviations away is it? Can you think of a reason
+why these two quantities might not be the same? (hint: what if we had a variable that only had values -100 and 100 [nothing in-between]?)
+
+\subsection{c}
+In the last homework, we had {\emph{Mathematica}} calculate the eccentricity $\epsilon$ and length-scale $c$ of the orbit. From this, we calculated
+the semi-major axis using $a=c/(1-\epsilon^2)$. Still assuming $a=2.662\times10^{12}m$, calculate the mean and standard deviation of length-scale $c$ based on the mean and standard
+deviation of eccentricity you calculated above.
+
+\section{Problem 2}
+The last {\emph{Mathematica}} problem for a few weeks!
+
+For this one, we're just going to try a couple examples for using \texttt{ErrorListPlot}. First, for a function $f(n)=n^2+n-3$, let the standard deviation be constant $\sigma_f=3$. Plot points
+for this distribution for $n\in[-10,10]$. Then, try another plot where we have $g(t)=\sin(t-.15)$ and varying $\sigma_g(t)=.7\sqrt{|\sin{t}|}$ for many points in the range $0<t<\pi$ (more
+than 50). If you allow the visible range on the graph to be $-5<t<8$ and $-0.5<g<2$, you may find a shape similar to that of Starfleet from Star Trek (\url{http://i.stack.imgur.com/mVOSg.gif}).
+I promise I happened to compute a similar shape and fixed it up slightly.
+
+For this plot, remember that it's different from most. It takes
+\begin{verbatim}
+ErrorListPlot[{{{x1,y1}, ErrorBar[e1]}, {{x2,y2}, ErrorBar[e2]}, ... }
+\end{verbatim}
+
+In future assignments, we may take advantage of the fact that the \texttt{ErrorBar} function allows us to create error bars in both the horizontal and vertical axes, with
+sizes that can differ for each of the cardinal directions.
+\end{document}

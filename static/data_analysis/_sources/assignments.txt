@@ -105,12 +105,26 @@ Week Five (Feb. 13)
 "*Mathematica*: More advanced data analysis"
 -------------------------------------------------
 
-This is the last week of *Mathematica* for a while! We'll begin looking at LaTeX next!
+**Reading due by class:**
+
+- `Error Analysis <Analysis/error.html>`_
+- `Error Bars <Mathematica/functions_graphs.html#error-bars>`_
+
+**Assignment due before class this week:** :download:`Assignment 4 <Assignments/assignment4.pdf>`.
+
+**Data file for assignment (600 KB):** :download:`Halley's Comet Data <Assignments/halley_data.csv>`.
+
+Week Six (Feb. 20)
+==================
+"*Mathematica*: More advanced data analysis"
+-------------------------------------------------
+
+This is the last week of *Mathematica* for a while (not last week - sorry)! We'll begin looking at LaTeX next!
 
 **Reading due by class:**
 
-- Coming soon...
+- :math:`\LaTeX` topics
 
-**Assignment due before class this week:** :download:`Assignment 4 <Assignments/assignment4.pdf>`.
+**Assignment due before class this week:** :download:`Assignment 5 <Assignments/assignment5.pdf>`.
 
 **Data file for assignment (600 KB):** :download:`Halley's Comet Data <Assignments/halley_data.csv>`.
