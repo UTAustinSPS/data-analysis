@@ -98,6 +98,56 @@ Notice that some content for the document was specified *before* the document be
 
 The :code:`\begin{abstract}` calls the :code:`abstract` environment, which is automatically formatted for use in scientific journals. The :code:`\section` and :code:`\subsection` commands are formatted to give structure to the body of the document. As will be shown later, they populate the table of contents of the document (if :code:`\tableofcontents` is used). If large text is desired, but not the creation of new sections, refer to the formatting lesson.
 
+Mathematics
+===========
+By far, one of the most useful features of LaTeX is its ability to beautifully typeset equations. The following example shows of a few of the features LaTeX math modes have.
+
+.. sidebar:: Mathematics in LaTeX
+
+	.. image:: Figures/math.png
+	   :alt: Sample Document
+
+	|
+
+
+::
+   
+   
+   \documentclass{article}
+   \usepackage{amsmath}
+   \usepackage[paperwidth=5in]{geometry}
+   \usepackage[active, tightpage, pdftex]{preview}
+   \setlength\PreviewBorder{20pt}
+   
+   \begin{document}
+   
+   \begin{preview}
+   In LaTeX, math can be typeset inline using dollar signs. This can go from simple
+   expressions such as $x^2+1> 0$ to more complex ones such as $\sum_{i=0}^\infty
+   \frac{1}{2^i}=2$. Using single dollar signs around expressions invokes math mode.
+   
+   The align environment, included in the \textbf{amsmath} package is the standard
+   for creating equations. Many features of the environment are included in the
+   mathematics lesson. Below are the same expressions when typeset in the align
+   environment.
+   
+   \begin{align}
+   x^2+1>0\\
+   \sum_{i=0}^\infty \frac{1}{2^i}=2
+   \end{align}
+   
+   Notice that despite using the same code, LaTeX typeset both of the equations
+   differently. In Equation (1), the spacing between characters is increased. In
+   Equation (2), the fraction and summation are enlarged and the limits of the sum
+   are above and below the sigma. This happens because LaTeX typesets things
+   \textit{based on context}.
+   \end{preview}
+   
+   \end{document}
+
+
+
+
 Example Conventions
 ===================
 Since specifying the document class and beginning/ending the document are required for every document, in general those will not be included in examples if not relevant. For all cases, unless noted otherwise, documents will assume the below.
@@ -115,7 +165,7 @@ As displayed in the previous sections, examples will be cropped to show only the
 ::
 
   % Preamble
-  \documentclass{minimal}
+  \documentclass{article}
   \usepackage[active, tightpage, pdftex]{preview}
   \setlength\PreviewBorder{20pt}
 
@@ -130,7 +180,7 @@ The preview package and environment is useful for debugging, too, as only the co
 
 The Power of Templates
 ======================
-Before going off to write your own LaTeX documents, you may want to create a template document to base your others on. They can get quite long, and it is easier to copy and paste from an old document rather than remembering to type all of the commands and include all of the necessary packages every time. Several samples of templates for various uses are included on the templates page.
+Before going off to write your own LaTeX documents, you may want to create a template document to base your others on. They can get quite long, and it is easier to copy and paste from an old document rather than remembering to type all of the commands and include all of the necessary packages every time. Several samples of templates for various uses are included on the templates page. Refer to the installation page for instructions on making new templates with TeXworks.
 
 
 

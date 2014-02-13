@@ -74,8 +74,8 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
-    <link rel="next" title="Document Structure" href="docstructure.html" />
-    <link rel="prev" title="Animations" href="../Mathematica/animations.html" />
+    <link rel="next" title="Installation" href="installation.html" />
+    <link rel="prev" title="Installation" href="installation.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -139,6 +139,7 @@
 <li><a class="reference internal" href="#what-does-it-look-like">What Does it Look Like?</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#mathematics">Mathematics</a></li>
 <li><a class="reference internal" href="#example-conventions">Example Conventions</a></li>
 <li><a class="reference internal" href="#the-power-of-templates">The Power of Templates</a></li>
 </ul>
@@ -150,17 +151,17 @@
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Animations" data-toggle="tooltip">
-    <a href="../Mathematica/animations.html" >
+  <li id="relations-prev" title="Previous Chapter - Installation" data-toggle="tooltip">
+    <a href="installation.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
-      <p style=";max-width:130px;">Animations</p>
+      <p style=";max-width:130px;">Installation</p>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Document Structure' data-toggle="tooltip" >
-    <a href="docstructure.html" >
+  <li id="relations-next" title='Next Chapter - Installation' data-toggle="tooltip" >
+    <a href="installation.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
-      <p style=";max-width:130px;">Document Structure</p>
+      <p style=";max-width:130px;">Installation</p>
     </a>
   </li>
   <li style="divider-vertical"></li>
@@ -268,6 +269,49 @@ Hello World!
 <p>The <tt class="code docutils literal"><span class="pre">\begin{abstract}</span></tt> calls the <tt class="code docutils literal"><span class="pre">abstract</span></tt> environment, which is automatically formatted for use in scientific journals. The <tt class="code docutils literal"><span class="pre">\section</span></tt> and <tt class="code docutils literal"><span class="pre">\subsection</span></tt> commands are formatted to give structure to the body of the document. As will be shown later, they populate the table of contents of the document (if <tt class="code docutils literal"><span class="pre">\tableofcontents</span></tt> is used). If large text is desired, but not the creation of new sections, refer to the formatting lesson.</p>
 </div>
 </div>
+<div class="section" id="mathematics">
+<h2>Mathematics<a class="headerlink" href="#mathematics" title="Permalink to this headline">¶</a></h2>
+<p>By far, one of the most useful features of LaTeX is its ability to beautifully typeset equations. The following example shows of a few of the features LaTeX math modes have.</p>
+<div class="sidebar">
+<p class="first sidebar-title">Mathematics in LaTeX</p>
+<img alt="Sample Document" src="../_images/math.png" />
+<div class="last line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="highlight-python"><pre>\documentclass{article}
+\usepackage{amsmath}
+\usepackage[paperwidth=5in]{geometry}
+\usepackage[active, tightpage, pdftex]{preview}
+\setlength\PreviewBorder{20pt}
+
+\begin{document}
+
+\begin{preview}
+In LaTeX, math can be typeset inline using dollar signs. This can go from simple
+expressions such as $x^2+1&gt; 0$ to more complex ones such as $\sum_{i=0}^\infty
+\frac{1}{2^i}=2$. Using single dollar signs around expressions invokes math mode.
+
+The align environment, included in the \textbf{amsmath} package is the standard
+for creating equations. Many features of the environment are included in the
+mathematics lesson. Below are the same expressions when typeset in the align
+environment.
+
+\begin{align}
+x^2+1&gt;0\\
+\sum_{i=0}^\infty \frac{1}{2^i}=2
+\end{align}
+
+Notice that despite using the same code, LaTeX typeset both of the equations
+differently. In Equation (1), the spacing between characters is increased. In
+Equation (2), the fraction and summation are enlarged and the limits of the sum
+are above and below the sigma. This happens because LaTeX typesets things
+\textit{based on context}.
+\end{preview}
+
+\end{document}</pre>
+</div>
+</div>
 <div class="section" id="example-conventions">
 <h2>Example Conventions<a class="headerlink" href="#example-conventions" title="Permalink to this headline">¶</a></h2>
 <p>Since specifying the document class and beginning/ending the document are required for every document, in general those will not be included in examples if not relevant. For all cases, unless noted otherwise, documents will assume the below.</p>
@@ -278,7 +322,7 @@ Hello World!
 </div>
 <p>As displayed in the previous sections, examples will be cropped to show only the relevant portions of the rendered page rather than the entire document. For simple cases, this can be done in LaTeX with the <tt class="code docutils literal"><span class="pre">preview</span></tt> package.</p>
 <div class="highlight-python"><pre>% Preamble
-\documentclass{minimal}
+\documentclass{article}
 \usepackage[active, tightpage, pdftex]{preview}
 \setlength\PreviewBorder{20pt}
 
@@ -291,7 +335,7 @@ Hello World!
 </div>
 <div class="section" id="the-power-of-templates">
 <h2>The Power of Templates<a class="headerlink" href="#the-power-of-templates" title="Permalink to this headline">¶</a></h2>
-<p>Before going off to write your own LaTeX documents, you may want to create a template document to base your others on. They can get quite long, and it is easier to copy and paste from an old document rather than remembering to type all of the commands and include all of the necessary packages every time. Several samples of templates for various uses are included on the templates page.</p>
+<p>Before going off to write your own LaTeX documents, you may want to create a template document to base your others on. They can get quite long, and it is easier to copy and paste from an old document rather than remembering to type all of the commands and include all of the necessary packages every time. Several samples of templates for various uses are included on the templates page. Refer to the installation page for instructions on making new templates with TeXworks.</p>
 </div>
 </div>
 

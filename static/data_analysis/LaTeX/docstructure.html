@@ -74,8 +74,8 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
-    <link rel="next" title="Packages" href="packages.html" />
-    <link rel="prev" title="Introduction" href="latex.html" />
+    <link rel="next" title="Commands and Special Characters" href="commands.html" />
+    <link rel="prev" title="Installation" href="installation.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -146,6 +146,7 @@
 <li><a class="reference internal" href="#sections-subsections-and-subsubsections-oh-my">Sections, Subsections, and Subsubsections, Oh My!</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#page-breaking">Page Breaking</a></li>
 <li><a class="reference internal" href="#the-bibliography">The Bibliography</a></li>
 <li><a class="reference internal" href="#after-the-end-document">After the \end{document}</a><ul>
 <li><a class="reference internal" href="#debugging-and-testing">Debugging and Testing</a></li>
@@ -161,17 +162,17 @@
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Introduction" data-toggle="tooltip">
-    <a href="latex.html" >
+  <li id="relations-prev" title="Previous Chapter - Installation" data-toggle="tooltip">
+    <a href="installation.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
-      <p style=";max-width:130px;">Introduction</p>
+      <p style=";max-width:130px;">Installation</p>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Packages' data-toggle="tooltip" >
-    <a href="packages.html" >
+  <li id="relations-next" title='Next Chapter - Commands and Special Characters' data-toggle="tooltip" >
+    <a href="commands.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
-      <p style=";max-width:130px;">Packages</p>
+      <p style=";max-width:130px;">Commands and Special Characters</p>
     </a>
   </li>
   <li style="divider-vertical"></li>
@@ -396,6 +397,13 @@ I started on a new line!</pre>
 <p>If you want a section/subsection/subsubsection to not have a number, insert an
 asterisk in the command as so: <tt class="code docutils literal"><span class="pre">\section*{Unnumbered}</span></tt>.</p>
 </div>
+</div>
+<div class="section" id="page-breaking">
+<h2>Page Breaking<a class="headerlink" href="#page-breaking" title="Permalink to this headline">¶</a></h2>
+<p>To start the following material on a new page, the <tt class="code docutils literal"><span class="pre">\newpage</span></tt> or the <tt class="code docutils literal"><span class="pre">\clearpage</span></tt> command may be used. <tt class="code docutils literal"><span class="pre">\newpage</span></tt> starts the succeeding material on the next page, while <tt class="code docutils literal"><span class="pre">\clearpage</span></tt> typesets all figures and tables before starting a new page. This distinction is required because normally LaTeX calcualtes optimal positions for tables and figures, usually placing them out of sequence with their position in the text, and sometimes pages before or after their location might indicate from the text in the code. So using <tt class="code docutils literal"><span class="pre">\clearpage</span></tt> ensures all figures and tables are typeset and the succeeding text acts as a coherent block.</p>
+<p>If creating a double-sided document, it can be useful to use <tt class="code docutils literal"><span class="pre">\cleardoublepage</span></tt>, which acts like <tt class="code docutils literal"><span class="pre">\clearpage</span></tt>, but waits until the next odd-numbered page to begin typesetting more material. If used on an even-numbered page, this means it just starts on the next page. If used on an odd-numbered page, LaTeX will make the following even page blank, and then begin typesetting material on the next odd page.</p>
+<p>Sometimes LaTeX chooses odd places for page breaks. To suggest a better place, use <tt class="code docutils literal"><span class="pre">\pagebreak</span></tt>. The command takes an optional argument which says how insistent you are that there may be a page break there, with 0 being a slight suggestion and 4 forcing LaTeX to create a new page. Especially in longer documents, using these generously between paragraphs can give you a lot of control over how LaTeX chooses page location. I generally go with <tt class="code docutils literal"><span class="pre">\pagebreak[2]</span></tt> between paragraphs if I do not want LaTeX to break up any paragraphs across pages.</p>
+<p>If there is a place you specifically do not want LaTeX to create a page break, use <tt class="code docutils literal"><span class="pre">\nopagebreak</span></tt> in much the similar way as <tt class="code docutils literal"><span class="pre">\pagebreak</span></tt>, as it takes an optional argument from 0 to 4. This can be useful to ensure sets of equations are all set on the same page.</p>
 </div>
 <div class="section" id="the-bibliography">
 <h2>The Bibliography<a class="headerlink" href="#the-bibliography" title="Permalink to this headline">¶</a></h2>

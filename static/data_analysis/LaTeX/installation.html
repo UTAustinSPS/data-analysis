@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Packages &mdash; Introduction to Data Analysis for Physics</title>
+    <title>Installation &mdash; Introduction to Data Analysis for Physics</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -74,8 +74,8 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
-    <link rel="next" title="Mathematics in LaTeX" href="math.html" />
-    <link rel="prev" title="Commands and Special Characters" href="commands.html" />
+    <link rel="next" title="Document Structure" href="docstructure.html" />
+    <link rel="prev" title="Introduction" href="latex.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -133,9 +133,14 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Packages</a><ul>
-<li><a class="reference internal" href="#common-packages-and-what-they-do">Common Packages and What they Do</a></li>
-<li><a class="reference internal" href="#optional-package-arguments">Optional Package Arguments</a></li>
+<li><a class="reference internal" href="#">Installation</a><ul>
+<li><a class="reference internal" href="#texworks-features">TeXworks Features</a><ul>
+<li><a class="reference internal" href="#side-by-side-view">Side-by-Side View</a></li>
+<li><a class="reference internal" href="#document-code-navigation">Document-Code Navigation</a></li>
+<li><a class="reference internal" href="#templates">Templates</a></li>
+<li><a class="reference internal" href="#removing-aux-files">Removing Aux Files</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -145,17 +150,17 @@
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Commands and Special Characters" data-toggle="tooltip">
-    <a href="commands.html" >
+  <li id="relations-prev" title="Previous Chapter - Introduction" data-toggle="tooltip">
+    <a href="latex.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
-      <p style=";max-width:130px;">Commands and Special Characters</p>
+      <p style=";max-width:130px;">Introduction</p>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Mathematics in LaTeX' data-toggle="tooltip" >
-    <a href="math.html" >
+  <li id="relations-next" title='Next Chapter - Document Structure' data-toggle="tooltip" >
+    <a href="docstructure.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
-      <p style=";max-width:130px;">Mathematics in LaTeX</p>
+      <p style=";max-width:130px;">Document Structure</p>
     </a>
   </li>
   <li style="divider-vertical"></li>
@@ -182,98 +187,33 @@
 
 <div id="mainbody" class="container">
   
-  <div class="section" id="packages">
-<h1>Packages<a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h1>
-<p>Packages are sets of commands, environments, and formatting which expand <span class="math">\(\LaTeX\)</span>.</p>
-<div class="section" id="common-packages-and-what-they-do">
-<h2>Common Packages and What they Do<a class="headerlink" href="#common-packages-and-what-they-do" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
-<caption><strong>Table 1: Equalities, Inequalities, and Sets</strong></caption>
-<colgroup>
-<col width="17%" />
-<col width="83%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Package</th>
-<th class="head">What it does</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>amsfonts</td>
-<td>fonts for math typesetting</td>
-</tr>
-<tr class="row-odd"><td>amsmath</td>
-<td>math environments and symbols</td>
-</tr>
-<tr class="row-even"><td>amssymb</td>
-<td>symbols</td>
-</tr>
-<tr class="row-odd"><td>amsthm</td>
-<td>customizable environments for theorems and other similar objects</td>
-</tr>
-<tr class="row-even"><td>booktabs</td>
-<td>improvements to the various table typesetting enviornments</td>
-</tr>
-<tr class="row-odd"><td>enumitem</td>
-<td>list customization</td>
-</tr>
-<tr class="row-even"><td>fancyhdr</td>
-<td>page headers and footers</td>
-</tr>
-<tr class="row-odd"><td>geometry</td>
-<td>page formatting options</td>
-</tr>
-<tr class="row-even"><td>graphics</td>
-<td>the \includegraphics command, which allows for including graphics</td>
-</tr>
-<tr class="row-odd"><td>graphicx</td>
-<td>an expanded version of the graphics package</td>
-</tr>
-<tr class="row-even"><td>hyperref</td>
-<td>create hyperlinks to facilitate moving through the pdf</td>
-</tr>
-<tr class="row-odd"><td>kbordermatrix</td>
-<td>makes adding column and row labels to matrices easy</td>
-</tr>
-<tr class="row-even"><td>microtype</td>
-<td>plays with spacing between letters and words to reduce visual obtrusion</td>
-</tr>
-<tr class="row-odd"><td>natbib</td>
-<td>flexible version of the \cite command</td>
-</tr>
-<tr class="row-even"><td>pgffor</td>
-<td>for loops</td>
-</tr>
-<tr class="row-odd"><td>pgfplots</td>
-<td>high quality 2D and 3D plots</td>
-</tr>
-<tr class="row-even"><td>siunitx</td>
-<td>typesetting SI units made easy</td>
-</tr>
-<tr class="row-odd"><td>subfigure</td>
-<td>include multiple figures and tables in one figure</td>
-</tr>
-<tr class="row-even"><td>tikz</td>
-<td>diagram editor</td>
-</tr>
-<tr class="row-odd"><td>verbatim</td>
-<td>an environment to display raw text</td>
-</tr>
-<tr class="row-even"><td>xcolor</td>
-<td>colored text and symbols</td>
-</tr>
-<tr class="row-odd"><td>xspace</td>
-<td>smart spacing for macros, commands don&#8217;t unnecessarily eat whitespace</td>
-</tr>
-</tbody>
-</table>
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>LaTeX can be a pain to install if done manually. At a bare minimum, you need a LaTeX distribution with which you can interact via the command line. We recommend using a front-end. Having a front-end can make LaTeXing easier by providing more meaningful error messages and presenting the document in a more human-readable format.</p>
+<p>For this class, I recommend going with TeXworks. You need to install <a class="reference external" href="http://www.tug.org/texlive/acquire-netinstall.html">TeX Live</a>, then <a class="reference external" href="http://www.tug.org/texworks/">TeXworks</a>. These websites provide some guidance, but if you have any trouble installing or understanding the instructions, email me at <a class="reference external" href="mailto:willbeason&#37;&#52;&#48;gmail&#46;com">willbeason<span>&#64;</span>gmail<span>&#46;</span>com</a>.</p>
+<div class="section" id="texworks-features">
+<h2>TeXworks Features<a class="headerlink" href="#texworks-features" title="Permalink to this headline">¶</a></h2>
+<p>The reason we chose TeXworks is because it comes with a lot of learner-friendly features. Some of these are not enabled by default, including a spell-check, context-sensitive code highlighting, and automatic indentation. (Indentation is ignored when typesetting, but it can make your code more readable.) There are many options you can adjust with Edit -&gt; Preferences.... I like to enable Line numbers, set Syntax coloring to LaTeX, Whitespace only auto-indentation, and enable English spellchecking. Line numbers is particularly useful since error codes refer to the line number where the typesetting program ran into a problem (not necessarily where the error is, but always after it).</p>
+<div class="section" id="side-by-side-view">
+<h3>Side-by-Side View<a class="headerlink" href="#side-by-side-view" title="Permalink to this headline">¶</a></h3>
+<p>Interacting with TeXworks should normally look like this, with code and current document side-by-side.</p>
+<p>When starting a new document, TeXworks does not automatically do this. Once you have a minimum valid document, typeset and your environment should look like the above. To typeset, either push the green arrow at the top-left corner or use the keyboard shortcut Ctrl-T.</p>
 </div>
-<div class="section" id="optional-package-arguments">
-<h2>Optional Package Arguments<a class="headerlink" href="#optional-package-arguments" title="Permalink to this headline">¶</a></h2>
-<p>For the geometry package, it has an optional argument which can be filled with formatting options. By far, the most common use is</p>
-<div class="highlight-python"><pre>\usepackage[margin=1in]{geometry}</pre>
+<div class="section" id="document-code-navigation">
+<h3>Document-Code Navigation<a class="headerlink" href="#document-code-navigation" title="Permalink to this headline">¶</a></h3>
+<p>Let&#8217;s say you&#8217;re looking at the pdf on the right side, and want to know what code made some part of the document. Rather than having to piece through the document, you can just right click the object in the pdf, then click &#8220;Jump to Source&#8221;. If you want to see what a line of code produces, right click the code, then click &#8220;Jump to PDF&#8221;. Note that since the relationships between code and pdf are made as the document is typeset, if you change the document after typesetting then some of the relationships will be wrong.</p>
 </div>
-<p>Natively, <span class="math">\(\LaTeX\)</span> uses very wide margins, and the above command narrows them to increase the amount of content per page.</p>
+<div class="section" id="templates">
+<h3>Templates<a class="headerlink" href="#templates" title="Permalink to this headline">¶</a></h3>
+<p>Unlike many LaTeX front-ends, making templates for easy re-use is simple. Just save the .tex file in the appropriate folder, listed below. The template is accessible from the menu with File -&gt; New From Template....</p>
+<p>Windows - C:Users&lt;username&gt;TeXworkstemplatesBasic LaTeX documents</p>
+<p>Mac -   ~/Library/TeXworks/templates/Basic LaTeX documents/</p>
+<p>Linux - ~/.TeXworks/templates/Basic LaTeX documents/</p>
+</div>
+<div class="section" id="removing-aux-files">
+<h3>Removing Aux Files<a class="headerlink" href="#removing-aux-files" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes, LaTeX hiccups and your .aux files can become corrupted. If this is the case, just do File -&gt; Remove Aux Files... and select the offenders.</p>
+</div>
 </div>
 </div>
 
