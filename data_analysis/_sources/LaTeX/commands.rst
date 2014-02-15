@@ -6,7 +6,13 @@ Commands are what LaTeX uses to translate plain text into a formatted document. 
 
 Using Commands
 ==============
-Commands generally fall into one of two categories: commands which take arguments, and those which do not. Most commands which do not take arguments are symbols, such as :code:`\epsilon`. Others, such as the ubiquitous :code:`\begin`, always take an argument. Some, like the :code:`\newcommand` command, take two required arguments and one optional argument. The optional argument is in square brackets, as shown later in this lesson.
+Commands generally fall into one of two categories: commands which take arguments, and those which do not. Arguments are data given to the command in order for it to run. Most commands which do not take arguments are symbols, such as :code:`\epsilon`. Others, such as the ubiquitous :code:`\begin`, always take an argument. Some, like the :code:`\newcommand` command, take two required arguments and one optional argument.
+
+Optional arguments are included in square brackets. Optional arguments are not necessary for the command to be evaluated, and add more functionality to otherwise limited arguments.
+
+The square root command, :code:`\sqrt{x}`, can be made into an arbitrary root by using its optional argument :code:`\sqrt[10]{x}`. 
+
+
 
 Special Characters
 ==================
