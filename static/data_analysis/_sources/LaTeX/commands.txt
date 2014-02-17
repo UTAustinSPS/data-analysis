@@ -10,7 +10,7 @@ Commands generally fall into one of two categories: commands which take argument
 
 Optional arguments are included in square brackets. Optional arguments are not necessary for the command to be evaluated, and add more functionality to otherwise limited arguments.
 
-The square root command, :code:`\sqrt{x}` (:math:`\sqrt{x}`), can be made into an arbitrary root by using its optional argument :code:`\sqrt[10]{x}` (:code:`\sqrt[10]{x}`).
+The square root command, :code:`\sqrt{x}`, can be made into an arbitrary root by using its optional argument :code:`\sqrt[10]{x}`. 
 
 
 
