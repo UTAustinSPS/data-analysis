@@ -1,0 +1,123 @@
+%Hey class! If this document is not typesetting correctly, immediately email me
+%at willbeason@gmail.com.
+
+\documentclass[a4paper,10pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{hyperref}
+\usepackage{multirow}
+
+\renewcommand\thesection{Problem \arabic{section} of 1}
+
+\title{\vspace{-1in} Assignment 6:Introduction to
+\LaTeX\\\textit{\large{Documents and Settings}}}
+\author{Will Beason and Evan Ott}
+\date{Due: 27 February 2014}
+
+\begin{document}
+
+\maketitle
+
+\noindent\large{\textbf{Submission Requirements}}\normalsize
+
+Submit the assignment to
+\href{mailto:data.analysis.physics@gmail.com}{data.analysis.physics@gmail.com}
+by Wednesday at
+5pm. Just submit the \LaTeX\ document you create (typically a .tex
+file). Feel free to send questions to
+\href{mailto:willbeason@gmail.com}{willbeason@gmail.com} -- especially if you
+want to do something cool with your assignment.
+
+\section{}
+
+
+Create a document which meets the following description. I want everyone to have
+a different document, so experiment with possible settings!
+
+\begin{enumerate}
+
+\item Define the document class and use settings. The list below is not
+complete: try Googling for more or testing ones to see what happens. Recall that
+some settings are default, such as orienting the page portrait, and do not need
+to be declared. (Unless you're using document types that default to landscape,
+but these are rare.) Some like draft are binary and doesn't have an alternate
+setting: to indicate the document is not a draft, don't include ``draft'' when
+declaring the document class.
+
+\vspace{1em}
+
+\begin{tabular}{l||ccc|}
+\textbf{Setting Description}&\multicolumn{3}{c}{\textbf{Examples}}\\ \hline
+Font Size&10pt&11pt&12pt\\\hline
+Paper Type&a4paper&letterpaper&a5paper\\\hline
+Title Page&titlepage&notitlepage&\\\hline
+Columns&onecolumn&twocolumn&\\\hline
+Page Sides&oneside&twoside&\\\hline
+Orientation&portrait&landscape&\\\hline
+Draft&draft&&\\\hline
+\end{tabular}
+
+\vspace{1em}
+
+\item Use the \texttt{geometry} package. The below table has some settings to
+play around with. Some options take measurements. \LaTeX\ accepts many different
+units, but the most common are \texttt{pt}, \texttt{in}, \texttt{cm},
+\texttt{mm}. You don't need to use every option to load the package; in fact,
+none are necessary. Some settings modify multiple others - \texttt{twoside}
+automatically makes the inside margins larger.
+
+\vspace{1em}
+
+\begin{tabular}{p{1.7in}||p{1.8in}|p{1.8in}|}
+\textbf{Option(s)}&\textbf{Explanation}&\textbf{Sample Settings}\\ \hline
+\texttt{margin,hmargin,vmargin,}&Set all, horizontal, vertical,
+&\texttt{margin=1in}\\
+\texttt{lmargin,rmargin,}&left, right, top, or
+bottom&\texttt{hmargin=1.5cm,vmargin=2cm}\\
+\texttt{tmargin,bmargin}&margin sizes.&\texttt{lmargin=1.5in,rmargin=1in}
+\\\hline
+\texttt{twoside}&For a two-sided document, flips&\\
+&margins on even pages.&\texttt{twoside}\\ \hline
+\texttt{textwidth,textheight}&How wide the text area
+is.&\texttt{textwidth=5.5in}\\\hline
+\end{tabular}
+
+\vspace{1em}
+
+A full list of settings and more complete explanations can be found
+\href{ftp://ftp.tex.ac.uk/tex-archive/macros/latex/contrib/geometry/geometry.pdf}{in
+the documentation}.
+
+\vspace{1em}
+
+\item Include text content. This can be composed yourself or copied from
+Wikipedia (or anything in the public domain, just include a link in the document
+to your source). Divide the text into sections. Use at least one section,
+subsection, subsubsection, paragraph, and subparagraph. Try playing around with horizontal and vertical spacing.
+
+\item End the document.
+
+\end{enumerate}
+
+\noindent\large{\textbf{Hints}}\normalsize
+
+Remember you can always view the source of this document to get ideas. Every
+part of this assignment is in some way expressed in this document. Remember you
+can just push Ctrl+T to quickly typeset and enter side-by-side mode. For
+awesomepoints, use the \texttt{book} document class and include parts and
+chapters.
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

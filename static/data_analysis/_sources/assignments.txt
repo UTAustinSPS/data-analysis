@@ -127,8 +127,33 @@ This is the last week of *Mathematica* for a while (not last week - sorry)! We'l
 - `Introduction to LaTeX <LaTeX/latex.html>`_
 - `Document Structure <LaTeX/docstructure.html>`_
 - `Commands and Special Characters <LaTeX/commands.html>`_
-- `Packages <LaTeX/packages.html>`_
 
 **Assignment due before class this week:** :download:`Assignment 5 <Assignments/assignment5.pdf>`.
 
 **Data file for assignment (600 KB):** :download:`Halley's Comet Data <Assignments/halley_data.csv>`.
+
+Week Seven (Feb. 27)
+====================
+Intro to LaTeX
+--------------
+
+**Reading due by clas:**
+
+- `Packages <LaTeX/packages.html>`_
+- `Mathematics in LaTeX <LaTeX/math.html>`_
+- `Tables, Arrays, and Matrices <LaTeX/tables.html>`_
+
+**Assignment due before class this week:** :download:`Assignment 6 PDF <Assignments/Assignment6.pdf>` (:download:`Source <Assignments/Assignment6.tex>`)
+
+Try typesetting the source before beginning the assignment - if it doesn't let me know because you won't be able to complete the assignment otherwise.
+
+
+
+
+
+
+
+
+
+
+

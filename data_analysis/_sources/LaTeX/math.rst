@@ -92,15 +92,4 @@ preamble in order to use any of its functionality.
 
 Equation Line Numbering
 -----------------------
-
-
-
-LaTeX Math-kwon-do
-==================
-Sometimes even amsmath cannot handle what you want it to do. In these cases, 
-:code:`mathtools` may have what you need.
-
-LaTeX Super-Math-aiyan
-======================
-This section is for the LaTeX mathematics version of Super-Saiyans. To 
-understand this, you will need to understand environments, new commands, 
+The :code:`align` environment allows 

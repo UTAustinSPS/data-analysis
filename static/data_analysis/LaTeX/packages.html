@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Packages &mdash; Introduction to Data Analysis for Physics</title>
+    <title>Packages List &mdash; Introduction to Data Analysis for Physics</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -81,7 +81,7 @@
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 <script type="text/javascript">
   eBookConfig = {};
-  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.host = 'http://192.168.0.10:80' ? 'http://192.168.0.10:80' : 'http://127.0.0.1:8000';
   eBookConfig.app = eBookConfig.host+'/runestone';
   eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
   eBookConfig.course = 'data_analysis';
@@ -133,9 +133,17 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Packages</a><ul>
+<li><a class="reference internal" href="#">Packages List</a><ul>
 <li><a class="reference internal" href="#common-packages-and-what-they-do">Common Packages and What they Do</a></li>
 <li><a class="reference internal" href="#optional-package-arguments">Optional Package Arguments</a></li>
+<li><a class="reference internal" href="#package-explanations">Package explanations</a><ul>
+<li><a class="reference internal" href="#siunitx">siunitx</a></li>
+<li><a class="reference internal" href="#tikz">tikz</a></li>
+<li><a class="reference internal" href="#verbatim">verbatim</a></li>
+<li><a class="reference internal" href="#xcolor">xcolor</a></li>
+<li><a class="reference internal" href="#xspace">xspace</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -182,16 +190,16 @@
 
 <div id="mainbody" class="container">
   
-  <div class="section" id="packages">
-<h1>Packages<a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="packages-list">
+<h1>Packages List<a class="headerlink" href="#packages-list" title="Permalink to this headline">¶</a></h1>
 <p>Packages are sets of commands, environments, and formatting which expand <span class="math">\(\LaTeX\)</span>.</p>
 <div class="section" id="common-packages-and-what-they-do">
 <h2>Common Packages and What they Do<a class="headerlink" href="#common-packages-and-what-they-do" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <caption><strong>Table 1: Equalities, Inequalities, and Sets</strong></caption>
 <colgroup>
-<col width="17%" />
-<col width="83%" />
+<col width="16%" />
+<col width="84%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Package</th>
@@ -241,28 +249,31 @@
 <tr class="row-odd"><td>natbib</td>
 <td>flexible version of the \cite command</td>
 </tr>
-<tr class="row-even"><td>pgffor</td>
+<tr class="row-even"><td>placeins</td>
+<td>Includes \FloatBarrier, which allows you to keep figures from moving too much</td>
+</tr>
+<tr class="row-odd"><td>pgffor</td>
 <td>for loops</td>
 </tr>
-<tr class="row-odd"><td>pgfplots</td>
+<tr class="row-even"><td>pgfplots</td>
 <td>high quality 2D and 3D plots</td>
 </tr>
-<tr class="row-even"><td>siunitx</td>
+<tr class="row-odd"><td>siunitx</td>
 <td>typesetting SI units made easy</td>
 </tr>
-<tr class="row-odd"><td>subfigure</td>
+<tr class="row-even"><td>subfigure</td>
 <td>include multiple figures and tables in one figure</td>
 </tr>
-<tr class="row-even"><td>tikz</td>
+<tr class="row-odd"><td>tikz</td>
 <td>diagram editor</td>
 </tr>
-<tr class="row-odd"><td>verbatim</td>
+<tr class="row-even"><td>verbatim</td>
 <td>an environment to display raw text</td>
 </tr>
-<tr class="row-even"><td>xcolor</td>
+<tr class="row-odd"><td>xcolor</td>
 <td>colored text and symbols</td>
 </tr>
-<tr class="row-odd"><td>xspace</td>
+<tr class="row-even"><td>xspace</td>
 <td>smart spacing for macros, commands don&#8217;t unnecessarily eat whitespace</td>
 </tr>
 </tbody>
@@ -273,7 +284,59 @@
 <p>For the geometry package, it has an optional argument which can be filled with formatting options. By far, the most common use is</p>
 <div class="highlight-python"><pre>\usepackage[margin=1in]{geometry}</pre>
 </div>
-<p>Natively, <span class="math">\(\LaTeX\)</span> uses very wide margins, and the above command narrows them to increase the amount of content per page.</p>
+<p>Natively, LaTeX uses very wide margins, and the above command narrows them to increase the amount of content per page.</p>
+</div>
+<div class="section" id="package-explanations">
+<h2>Package explanations<a class="headerlink" href="#package-explanations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="siunitx">
+<h3>siunitx<a class="headerlink" href="#siunitx" title="Permalink to this headline">¶</a></h3>
+<p>Makes typesetting units very easy in math mode.</p>
+<p>For the examples, it is assumed the package is loaded.
+subfigure
+&#8212;&#8212;&#8212;</p>
+</div>
+<div class="section" id="tikz">
+<h3>tikz<a class="headerlink" href="#tikz" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://cremeronline.com/LaTeX/minimaltikz.pdf">This is the best introduction to tikz I have seen.</a>. The tikz package allows you
+draw diagrams with code. This can be handy for drawing simple diagrams, and one mastered the package opens up with its ability to
+procedurally generate diagrams.</p>
+</div>
+<div class="section" id="verbatim">
+<h3>verbatim<a class="headerlink" href="#verbatim" title="Permalink to this headline">¶</a></h3>
+<p>Adds the <tt class="code docutils literal"><span class="pre">verbatim</span></tt> environment. The verbatim environment is initialized like any other environment, with <tt class="code docutils literal"><span class="pre">\\begin{verbatim}</span></tt>.
+It is a special environment in that once in the environment, LaTeX will only recognize one command, <tt class="code docutils literal"><span class="pre">\\end{verbatim}</span></tt>. LaTeX will
+also read all text literally, so extra spaces and endlines will be typeset.</p>
+<p>For example:</p>
+<div class="highlight-python"><pre>\begin{verbatim}
+\begin{verbatim}
+\@@!^{
+\end{document}
+Some text
+\begin{document
+\end{verbatim}</pre>
+</div>
+<p>The above text produces no errors even though it would appear that it should cause problems. Since it is within the environment, even the second
+<tt class="code docutils literal"><span class="pre">\\begin{verbatim}</span></tt> is typeset as text.</p>
+<p>See <a class="reference external" href="https://en.wikibooks.org/wiki/LaTeX/Paragraph_Formatting#Verbatim_text">Verbatim text</a>
+for a fuller explanation.</p>
+</div>
+<div class="section" id="xcolor">
+<h3>xcolor<a class="headerlink" href="#xcolor" title="Permalink to this headline">¶</a></h3>
+<p>Allows you to make your documents colorful. After loading the package, you can use commands such as <tt class="code docutils literal"><span class="pre">\\textcolor{gree}{this</span> <span class="pre">text</span> <span class="pre">is</span> <span class="pre">green}</span></tt>
+or <tt class="code docutils literal"><span class="pre">{\\color{blue}{and</span> <span class="pre">this</span> <span class="pre">text</span> <span class="pre">is</span> <span class="pre">blue}}</span></tt>. This package has many commands, pre-defined colors, and even ways to define new colors. Check
+<a class="reference external" href="https://en.wikibooks.org/wiki/LaTeX/Colors">xcolor&#8217;s page on the LaTeX wikibook</a> for great coverage.</p>
+</div>
+<div class="section" id="xspace">
+<h3>xspace<a class="headerlink" href="#xspace" title="Permalink to this headline">¶</a></h3>
+<p>When LaTeX processes commands, it records everything from the backslash to the
+next non-alphabetic character. Unfortunately, this means some commands have
+unusual behavior when you try to put spaces after them. To remove this behavior,
+include xspace after commands. For example:</p>
+<div class="highlight-python"><pre>\newcommand{\UT}{University of Texas\xspace}</pre>
+</div>
+<p>The <a class="reference external" href="http://mirror.math.ku.edu/tex-archive/macros/latex/required/tools/xspace.pdf">documentation</a> is uncharacteristically well-written - check it out if you
+are interested. It begins with an excellent example showing how to use the xspace command when creating new commands.</p>
+</div>
 </div>
 </div>
 
