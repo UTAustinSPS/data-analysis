@@ -148,6 +148,16 @@ Intro to LaTeX
 Try typesetting the source before beginning the assignment - if it doesn't let me know because you won't be able to complete the assignment otherwise.
 
 
+Week Eight (Mar. 6)
+====================
+Mathematics in LaTeX
+--------------------
+
+The start of doing mathematics in LaTeX. Here's the `MIT lecture <http://web.mit.edu/rsi/www/pdfs/advmath.pdf>`__ with nearly everything you need to know for the assignment.
+
+
+**Assignment due before class this week:** :download:`Assignment 6 PDF <Assignments/Assignment7.pdf>`
+
 
 
 
