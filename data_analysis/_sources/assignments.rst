@@ -156,7 +156,7 @@ Mathematics in LaTeX
 The start of doing mathematics in LaTeX. Here's the `MIT lecture <http://web.mit.edu/rsi/www/pdfs/advmath.pdf>`__ with nearly everything you need to know for the assignment.
 
 
-**Assignment due before class this week:** :download:`Assignment 6 PDF <Assignments/Assignment7.pdf>`
+**Assignment due before class this week:** :download:`Assignment 7 PDF <Assignments/Assignment7.pdf>`
 
 
 
