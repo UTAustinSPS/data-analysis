@@ -46,19 +46,30 @@ To create the plot, I had to use \texttt{PlotStyle, PlotRange, AxesLabel, PlotLa
 
 \section{Problem 2}
 Combinatorics are an important facet of probability, which occasionally shows up for physics problems in quantum mechanics / thermodynamics / etc. The \texttt{Binomial[n,m]} function
-is the same as $$\left(\begin{array}{c}n\\m\end{array}\right)=\frac{n!}{m!(n-m)!}$$Create a 10x10 matrix with these values, with each row corresponding to a value of $n$ and each
-column corresponding to a value of $m$ such that the matrix element $$A_{i,j}=\left(\begin{array}{c}i\\j\end{array}\right)$$ Let's use matrix operations such as indexing and taking the
-\texttt{Total} of a list to investigate some properties. In \emph{Mathematica}, having $m>n$ produces 0 - feel free to use this to your advantage or ignore it, depending on how
-complicated you want to make things. This problem is meant for you to try many different selections of the data until you find one that's close. If you have to index it
-starting on the 3rd row for it to match the expression exactly (for example), that's perfectly acceptable. Any reasonable variation is fine.
+is the same as $$\left(\begin{array}{c}n\\m\end{array}\right)=\frac{n!}{m!(n-m)!}$$
+
+To better explore matrix operations (and maybe learn some combinatorics), let\rq{}s create a 10x10 matrix with binomial coefficients:
+
+$$A=\begin{pmatrix}
+1 & 0 & 0 & 0 & 0 & \\
+1 & 1 & 0 & 0 & 0 & \\
+1 & 2 & 1 & 0 & 0 & \cdots\\
+1 & 3 & 3 & 1 & 0 & \\
+1 & 4 & 6 & 4 & 1 & \\
+   &     &  \vdots & &    & \ddots
+\end{pmatrix}$$
+
+In other words, that $A_{r,c}=\begin{pmatrix}r-1 \\ c-1\end{pmatrix}$, where $r$ is the row (starting at 1) and $c$ is the column (starting at 1). Use the \texttt{Binomial}
+function to create this matrix (will need to also use the \texttt{Table} command). In the problems below, use the \texttt{Total} command with sections of the matrix to compute the
+following quantities. Each is left as a function of $k$, an integer corresponding to the total number of elements in the section. So, to check your work, just plug in different
+values of $k$ to make sure the quantity you\rq{}re trying to compute with the matrix matches the mathematical result of sums of the binomial distribution.
+(\textit{Note:} in \textit{Mathematica}, with the \texttt{Binomial[n,m]} function, if $m>n$, the function is just $0$)
 
 \subsection{a}
-Find an operation on the matrix that is equivalent to the expression $$\frac{k(k+1)}{2}$$
+$$\sum_{i=0}^k \begin{pmatrix}i\\1\end{pmatrix}=\frac{k(k+1)}{2}$$
 
 \subsection{b}
-Find an operation on the matrix that is equivalent to the expression $$2^k$$
-
-Note: Don't worry about proving this formally, just try it for a few values and make sure it works.
+$$\sum_{i=0}^k \begin{pmatrix}k \\ i\end{pmatrix}=2^k$$
 
 \section{Problem 3}
 With the data below, find a way to plot the relationship between the second grade (taken at the end of the semester for this fictional class) and the first grade multiplied by attendance

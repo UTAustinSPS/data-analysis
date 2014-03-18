@@ -165,9 +165,9 @@ New Commands and Figures
 ------------------------
 
 
-Lecture on new commands and figures: :download:`Lecture 8 PDF` <Assignments/Week8.pdf>
+Lecture on new commands and figures: :download:`Lecture 8 PDF <Assignments/Week8.pdf>`
 
-**Assignment due before class next week:** :download:`Assignment 8 PDF <Assignments/Assignment8.pdf>`
+**Assignment due before class this week:** :download:`Assignment 8 PDF <Assignments/Assignment8.pdf>`
 
 
 

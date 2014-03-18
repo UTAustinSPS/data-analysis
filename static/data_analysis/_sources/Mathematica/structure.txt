@@ -88,6 +88,18 @@ has the output:
 
 	(y + 1)^2
 
+Variable names can be any length, and can include numbers (after the first character).
+So the following are fine:
+
+::
+
+	yankeeDoodle = 2
+	Fi5hF1ngersANDcustard = 16
+
+Throughout the text, we frequently use single-character names for variables for length
+(such as using :code:`i` in a sum, or :code:`f[x]` for functions). Just remember, we can
+make variables as long as we want - these conventions are just for space.
+
 Order Matters
 -------------
 Although *Mathematica* allows the user to execute lines in any order, this can lead to complications.
@@ -236,26 +248,37 @@ Modules
 -------
 After working with *Mathematica* for a while, you will notice that variables are
 defined everywhere. If using complicated programming constructs, we might find it useful
-to redefine values for a single function. For that, we can use a :code:`Module`.
-We define the local variables, placing all our code inside the module:
+to redefine values for a single function. In general, this is a topic in computer science
+known as "scope". This means that we can have a variable :code:`x` in one section of code,
+but have a variable defined elsewhere *also named* :code:`x` with a different value.
+
+To see this idea of "scope" in *Mathematica*, we can use a :code:`Module`.
+We define the local variables (where the scope is just in one function, not "global" for the
+whole document) by placing all our code inside the module:
 
 ::
 
 	f[x_]:=x^2
-	g[x_]:= Module[{f}, f[x]]
-	g[2]
+	g[x_]:= Module[{f}, f[y_]:=2^y;f[x]]
+	g[x]
+	g[3]
+	f[x]
+	f[3]
 
 prints
 
 ::
 
-	f$8675309[2]
+	2^x
+	8
+	x^2
+	9
 
-rather than 4.
-The number after the dollar sign and before the brackets is not important and will change during
-each evaluation But what this shows is that no matter if :code:`f` is already defined,
-we can redefine it without affecting any of the externally defined versions. This is good for
-shorthand when building complicated functions, and is necessary for creating re-usable functions
+What this shows is that no matter if :code:`f` is already defined,
+we can redefine it without affecting any of the externally defined versions by using a
+:code:`Module`. This is good for
+shorthand when building complicated functions, and is necessary 
+for creating re-usable functions
 for application to many projects (such as creating a package, which is not part of
 this course, but can be found in *Mathematica* with the help URL
 "tutorial/SettingUpMathematicaPackages").
