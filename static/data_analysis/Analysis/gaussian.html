@@ -136,6 +136,7 @@
 <li><a class="reference internal" href="#">The Gaussian Distribution</a><ul>
 <li><a class="reference internal" href="#the-function">The Function</a></li>
 <li><a class="reference internal" href="#applications">Applications</a></li>
+<li><a class="reference internal" href="#combining-distributions">Combining Distributions</a></li>
 </ul>
 </li>
 </ul>
@@ -184,7 +185,7 @@
   
   <div class="section" id="the-gaussian-distribution">
 <h1>The Gaussian Distribution<a class="headerlink" href="#the-gaussian-distribution" title="Permalink to this headline">¶</a></h1>
-<p>The Gaussian distribution, otherwise known as the &#8220;normal distribution&#8221; or &#8220;bell curve&#8221;,
+<p>The Gaussian distribution, otherwise known as the &#8220;Normal distribution&#8221; or &#8220;bell curve&#8221;,
 is a powerful tool for data analysis, as it is ubiquitous, following from physical principles.</p>
 <div class="figure align-center">
 <img alt="Normal Distribution" src="../_images/paranormal.jpg" />
@@ -205,7 +206,7 @@ each of the values in our dataset.</p>
 parameters:</p>
 <div class="math">
 \[Gaussian Distribution Function\]\[G(x)={\mathcal{N}}_{\mu,~\sigma}(x)=
-\frac{1}{\sigma\sqrt{2\pi}}\exp{-\frac{(x-\mu)^2}{2\sigma^2}}\]</div>
+\frac{1}{\sigma\sqrt{2\pi}}\exp\left({-\frac{(x-\mu)^2}{2\sigma^2}}\right)\]</div>
 <p>(Here, I&#8217;m using <span class="math">\(G(x)\)</span> as shorthand for a fully parameterized normal distribution).</p>
 <p>As we saw in the <a class="reference external" href="../Mathematica/animations.html#manipulate">Manipulate</a> section,
 we plot <span class="math">\(G(x)\)</span> for various values of <span class="math">\(\mu\)</span> and <span class="math">\(\sigma\)</span> to get a feel for
@@ -223,9 +224,8 @@ cdf.embed('../_images/manipulate.cdf', 439, 369);
 </div>
 <p>But this still doesn&#8217;t tell us what this distribution means. In the form given above (we could
 easily provide <span class="math">\(f(x)=\int{G(x)dx}\)</span> instead, or other variant), we have a probability
-density function. That means that the probability of obtaining result <span class="math">\(x^*\)</span> is
-<span class="math">\(G(x^*)\)</span>. Furthermore, the probability of having a result <span class="math">\(x^*\in[a,b]\)</span> is
-exactly <span class="math">\(\int_a^bG(x)dx\)</span>. So, if we integrate over all possible values of <span class="math">\(x\)</span>,
+density function. Furthermore, the probability of having a result <span class="math">\(x^*\in[a,b]\)</span> is
+exactly <span class="math">\(P(a&lt;x^*&lt;b)=\int_a^bG(x)dx\)</span>. So, if we integrate over all possible values of <span class="math">\(x\)</span>,
 we should arrive at probability <span class="math">\(\int_{-\infty}^\infty G(x)dx=1\)</span>, which is indeed the case (
 the sum over the entire sample space of a probability density function needs to be <span class="math">\(1\)</span> - how
 could we have a notion of a &#8220;probability&#8221; if the odds of getting any result added up to anything
@@ -236,8 +236,9 @@ distribution are that the peak is at <span class="math">\(x=\mu\)</span>, and th
 <span class="math">\(x=\mu\pm\sigma\)</span>. As it is symmetric about <span class="math">\(x=\mu\)</span>, the probability
 <span class="math">\(x&lt;\mu\)</span> is <span class="math">\(P(x&lt;\mu)=\int_{-\infty}^\mu G(x)dx=.5=\int_\mu^\infty G(x)dx=P(x&gt;\mu)\)</span>.</p>
 <p>If we take the limit as the standard deviation goes to zero, we arrive at the Dirac delta function
-<span class="math">\(\delta(x-\mu)\)</span> that is zero everywhere except being infinite at <span class="math">\(x=\mu\)</span>. This can be
-integrated to create a step function that is zero if <span class="math">\(x&lt;\mu\)</span> and 1 if <span class="math">\(x\geq\mu\)</span>.</p>
+<span class="math">\(\delta(x-\mu)\)</span> that is zero everywhere except being infinite at <span class="math">\(x=\mu\)</span>. It
+satisfies the condition
+<span class="math">\(\int_{-\infty}^x\delta(x'-\mu)dx'=\left\{\begin{array}{lc}0 &amp; x&lt;\mu \\ 1 &amp; x\geq\mu\end{array}\right.\)</span>.</p>
 </div>
 <div class="section" id="applications">
 <h2>Applications<a class="headerlink" href="#applications" title="Permalink to this headline">¶</a></h2>
@@ -269,6 +270,11 @@ cdf.embed('../_images/normal_converge.cdf', 575, 400);
 <div class="figure">
 <img alt="../_images/normal_converge.png" src="../_images/normal_converge.png" style="width: 0px; height: 0px;" />
 </div>
+</div>
+<div class="section" id="combining-distributions">
+<h2>Combining Distributions<a class="headerlink" href="#combining-distributions" title="Permalink to this headline">¶</a></h2>
+<p>The Normal distribution is particularly powerful, because we can combine distributions.
+More info to come...</p>
 </div>
 </div>
 

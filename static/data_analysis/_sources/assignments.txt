@@ -169,9 +169,45 @@ Lecture on new commands and figures: :download:`Lecture 8 PDF <Assignments/Week8
 
 **Assignment due before class this week:** :download:`Assignment 8 PDF <Assignments/Assignment8.pdf>`
 
+Week Ten (Mar. 27)
+===================
+Tables, Arrays, and Matrices
+----------------------------
+
+Lecture on new commands and figures: :download:`Lecture 10 PDF <Assignments/Lecture10.pdf>`
+
+**Assignment due before class this week:** None
 
 
+Week Eleven (Apr. 3)
+====================
+Units and Chemistry
+--------------------
+
+Installation Problems?
+
+(Evan here) I had trouble getting :code:`siunitx` and :code:`mhchem` to work. If
+you're using MiKTeX (Windows), then you can use the package manager (in Windows 7 start menu,
+that's "MiKTeX <version>/Maintenance (Admin)/Package Manager (Admin)"). You'll need to
+install :code:`l3kernel` and :code:`l3packages` then :code:`siunitx` and :code:`mhchem`
+(just search for them by name - you might need to use the menu "Repository > Synchronize"
+to update the listings - then click them and click the "+").
+After that, things compiled normally. I had a lot of difficulty trying to download packages
+directly from CTAN.
+
+Lecture on new commands and figures: :download:`Lecture 11 PDF <Assignments/Lecture11.pdf>`
+
+**Assignment due before class this week:** :download:`Assignment 9 PDF <Assignments/Assignment9.pdf>`
 
 
+Final Project (May 2)
+=====================
+Hi, Evan here. The first option for the final project is available (subject
+to minor changes, but likely just for clarification). The other two
+should be done before next class (4/3). The second will be analyzing (generated) spectral
+data to determine the Hubble constant. The final option will be for those of you in Modern
+Lab to use data you already have.
 
+**Assignment information is here:** :download:`Final Project <Final/final_project.pdf>`
 
+**Basketball data is here:** :download:`basketball.csv <Final/basketball.csv>`

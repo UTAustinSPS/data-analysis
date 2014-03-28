@@ -4,7 +4,7 @@ To best learn about the curve fitting process, we'll go through a contrived exam
 show some of the relevant *Mathematica* features, then describe how the functions
 work and how to apply them in a lab scenario, introducing other useful mathematical
 constructs along the way to help you analyze your data.
-s
+
 Example
 -------
 One part of analyzing data that is frequently useful is where we have some set of
@@ -405,3 +405,7 @@ represent the same underlying function. The former does all the math in an arbit
 local variable :code:`y`, then substitutes for :code:`y`, the value of :code:`x`, which could
 be symbolic. The latter creates the function of an arbitrary variable of its own, to which
 we then apply the argument given to us then return the result.
+
+*Mathematica* Fitting Functions
+-------------------------------
+More info to come...

@@ -1,6 +1,6 @@
 The Gaussian Distribution
 =========================
-The Gaussian distribution, otherwise known as the "normal distribution" or "bell curve",
+The Gaussian distribution, otherwise known as the "Normal distribution" or "bell curve",
 is a powerful tool for data analysis, as it is ubiquitous, following from physical principles.
 
 .. figure:: Figures/paranormal.jpg
@@ -30,7 +30,7 @@ parameters:
 .. math:: Gaussian Distribution Function
 
 	G(x)={\mathcal{N}}_{\mu,~\sigma}(x)=
-	\frac{1}{\sigma\sqrt{2\pi}}\exp{-\frac{(x-\mu)^2}{2\sigma^2}}
+	\frac{1}{\sigma\sqrt{2\pi}}\exp\left({-\frac{(x-\mu)^2}{2\sigma^2}}\right)
 
 (Here, I'm using :math:`G(x)` as shorthand for a fully parameterized normal distribution).
 
@@ -57,9 +57,8 @@ how the function behaves:
 
 But this still doesn't tell us what this distribution means. In the form given above (we could
 easily provide :math:`f(x)=\int{G(x)dx}` instead, or other variant), we have a probability
-density function. That means that the probability of obtaining result :math:`x^*` is
-:math:`G(x^*)`. Furthermore, the probability of having a result :math:`x^*\in[a,b]` is
-exactly :math:`\int_a^bG(x)dx`. So, if we integrate over all possible values of :math:`x`,
+density function. Furthermore, the probability of having a result :math:`x^*\in[a,b]` is
+exactly :math:`P(a<x^*<b)=\int_a^bG(x)dx`. So, if we integrate over all possible values of :math:`x`,
 we should arrive at probability :math:`\int_{-\infty}^\infty G(x)dx=1`, which is indeed the case (
 the sum over the entire sample space of a probability density function needs to be :math:`1` - how
 could we have a notion of a "probability" if the odds of getting any result added up to anything
@@ -72,8 +71,9 @@ distribution are that the peak is at :math:`x=\mu`, and that the points of infle
 :math:`x<\mu` is :math:`P(x<\mu)=\int_{-\infty}^\mu G(x)dx=.5=\int_\mu^\infty G(x)dx=P(x>\mu)`.
 
 If we take the limit as the standard deviation goes to zero, we arrive at the Dirac delta function
-:math:`\delta(x-\mu)` that is zero everywhere except being infinite at :math:`x=\mu`. This can be
-integrated to create a step function that is zero if :math:`x<\mu` and 1 if :math:`x\geq\mu`.
+:math:`\delta(x-\mu)` that is zero everywhere except being infinite at :math:`x=\mu`. It
+satisfies the condition 
+:math:`\int_{-\infty}^x\delta(x'-\mu)dx'=\left\{\begin{array}{lc}0 & x<\mu \\ 1 & x\geq\mu\end{array}\right.`.
 
 
 Applications
@@ -114,3 +114,8 @@ see the following *Mathematica* CDF (hover over to generate new samples).
 .. figure:: Figures/normal_converge.png
 	:width: 0px
 	:height: 0px
+
+Combining Distributions
+-----------------------
+The Normal distribution is particularly powerful, because we can combine distributions.
+More info to come...
