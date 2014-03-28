@@ -57,6 +57,30 @@ Which gives a result that looks like:
 .. image:: Figures/primes.jpg
    :alt: Primes
 
+For an even cooler example, we can look at `this post <http://stackoverflow.com/questions/8479058/how-do-i-find-waldo-with-mathematica>`_ from StackOverflow, where users
+created a Waldo-finder in *Mathematica* (using techniques we won't discuss):
+
+::
+
+	waldo = Import["waldo.jpg"];
+	red = Fold[ImageSubtract, #[[1]], Rest[#]] &@ColorSeparate[waldo];
+	corr = ImageCorrelate[red, 
+   		Image@Join[ConstantArray[1, {2, 4}], ConstantArray[0, {2, 4}]], 
+   		NormalizedSquaredEuclideanDistance];
+	pos = Dilation[ColorNegate[Binarize[corr, .12]], DiskMatrix[30]];
+	found = ImageMultiply[waldo, 
+  		ImageAdd[ColorConvert[pos, "GrayLevel"], .35]]
+
+which takes an image like
+
+.. image:: Figures/waldo.jpg
+	:width: 400 px
+
+and creates
+
+.. image:: Figures/waldo_found.jpg
+	:width: 400 px
+
 While *Mathematica* may not be the best language for extremely-large scale data processing (although
 it has cluster capabilities when coupled with *gridMathematica* which will not be discussed here), the above example hopefully
 indicates how easy some tasks can be in the language. We will see later how to do more complicated

@@ -186,6 +186,20 @@ Additional things we can do include wrapping strings (:code:`PlotLabel` or
 which can update the text, rather than the lines/points on the graph. Furthermore, we can
 list several options: :code:`Style["text", Bold, Orange, Small, ...]`.
 
+.. admonition:: Interactive Color Choice
+	:class: note
+	
+	If we know what color we want, we can use a :code:`RGBColor` to create it, but if we
+	don't know, we can create a :code:`ColorSetter` to help us decide. :code:`ColorSetter[]`
+	creates a dialog box to select a specific color. That box can be copied into a place where
+	a :code:`RGBColor` is used to easily change colors of plots, etc. with a :code:`Setting` 
+	command.
+
+	.. figure:: Figures/interactive_color.png
+		:alt: ColorSetter
+		:align: center
+
+
 
 .. admonition:: Practice Problem: Simple Plots
 

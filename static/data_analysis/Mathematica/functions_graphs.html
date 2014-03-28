@@ -336,6 +336,17 @@ So, for example, we could have:</p>
 <tt class="code docutils literal"><span class="pre">AxesLabel</span></tt>, etc.) in <tt class="code docutils literal"><span class="pre">Style</span></tt> functions: <tt class="code docutils literal"><span class="pre">PlotLabel-&gt;Style[&quot;title&quot;,</span> <span class="pre">Bold]</span></tt>,
 which can update the text, rather than the lines/points on the graph. Furthermore, we can
 list several options: <tt class="code docutils literal"><span class="pre">Style[&quot;text&quot;,</span> <span class="pre">Bold,</span> <span class="pre">Orange,</span> <span class="pre">Small,</span> <span class="pre">...]</span></tt>.</p>
+<div class="note admonition">
+<p class="first admonition-title">Interactive Color Choice</p>
+<p>If we know what color we want, we can use a <tt class="code docutils literal"><span class="pre">RGBColor</span></tt> to create it, but if we
+don&#8217;t know, we can create a <tt class="code docutils literal"><span class="pre">ColorSetter</span></tt> to help us decide. <tt class="code docutils literal"><span class="pre">ColorSetter[]</span></tt>
+creates a dialog box to select a specific color. That box can be copied into a place where
+a <tt class="code docutils literal"><span class="pre">RGBColor</span></tt> is used to easily change colors of plots, etc. with a <tt class="code docutils literal"><span class="pre">Setting</span></tt>
+command.</p>
+<div class="last figure align-center">
+<img alt="ColorSetter" src="../_images/interactive_color.png" />
+</div>
+</div>
 <div class="admonition-practice-problem-simple-plots admonition">
 <p class="first admonition-title">Practice Problem: Simple Plots</p>
 <p>For practice, try creating the plot below. The functions are listed in the legend

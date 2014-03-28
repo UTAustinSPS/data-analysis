@@ -259,6 +259,15 @@ u[v[y]]</pre>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">(</span><span class="n">y</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span>
 </pre></div>
 </div>
+<p>Variable names can be any length, and can include numbers (after the first character).
+So the following are fine:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">yankeeDoodle</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">Fi5hF1ngersANDcustard</span> <span class="o">=</span> <span class="mi">16</span>
+</pre></div>
+</div>
+<p>Throughout the text, we frequently use single-character names for variables for length
+(such as using <tt class="code docutils literal"><span class="pre">i</span></tt> in a sum, or <tt class="code docutils literal"><span class="pre">f[x]</span></tt> for functions). Just remember, we can
+make variables as long as we want - these conventions are just for space.</p>
 </div>
 <div class="section" id="order-matters">
 <h2>Order Matters<a class="headerlink" href="#order-matters" title="Permalink to this headline">¶</a></h2>
@@ -381,20 +390,31 @@ portion of a QWERTY keyboard with the tilde (<tt class="code docutils literal"><
 <h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
 <p>After working with <em>Mathematica</em> for a while, you will notice that variables are
 defined everywhere. If using complicated programming constructs, we might find it useful
-to redefine values for a single function. For that, we can use a <tt class="code docutils literal"><span class="pre">Module</span></tt>.
-We define the local variables, placing all our code inside the module:</p>
+to redefine values for a single function. In general, this is a topic in computer science
+known as &#8220;scope&#8221;. This means that we can have a variable <tt class="code docutils literal"><span class="pre">x</span></tt> in one section of code,
+but have a variable defined elsewhere <em>also named</em> <tt class="code docutils literal"><span class="pre">x</span></tt> with a different value.</p>
+<p>To see this idea of &#8220;scope&#8221; in <em>Mathematica</em>, we can use a <tt class="code docutils literal"><span class="pre">Module</span></tt>.
+We define the local variables (where the scope is just in one function, not &#8220;global&#8221; for the
+whole document) by placing all our code inside the module:</p>
 <div class="highlight-python"><pre>f[x_]:=x^2
-g[x_]:= Module[{f}, f[x]]
-g[2]</pre>
+g[x_]:= Module[{f}, f[y_]:=2^y;f[x]]
+g[x]
+g[3]
+f[x]
+f[3]</pre>
 </div>
 <p>prints</p>
-<div class="highlight-python"><pre>f$8675309[2]</pre>
+<div class="highlight-python"><div class="highlight"><pre><span class="mi">2</span><span class="o">^</span><span class="n">x</span>
+<span class="mi">8</span>
+<span class="n">x</span><span class="o">^</span><span class="mi">2</span>
+<span class="mi">9</span>
+</pre></div>
 </div>
-<p>rather than 4.
-The number after the dollar sign and before the brackets is not important and will change during
-each evaluation But what this shows is that no matter if <tt class="code docutils literal"><span class="pre">f</span></tt> is already defined,
-we can redefine it without affecting any of the externally defined versions. This is good for
-shorthand when building complicated functions, and is necessary for creating re-usable functions
+<p>What this shows is that no matter if <tt class="code docutils literal"><span class="pre">f</span></tt> is already defined,
+we can redefine it without affecting any of the externally defined versions by using a
+<tt class="code docutils literal"><span class="pre">Module</span></tt>. This is good for
+shorthand when building complicated functions, and is necessary
+for creating re-usable functions
 for application to many projects (such as creating a package, which is not part of
 this course, but can be found in <em>Mathematica</em> with the help URL
 &#8220;tutorial/SettingUpMathematicaPackages&#8221;).</p>
