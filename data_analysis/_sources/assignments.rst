@@ -167,11 +167,31 @@ New Commands and Figures
 
 Lecture on new commands and figures: :download:`Lecture 8 PDF` <Assignments/Week8.pdf>
 
-**Assignment due before class next week:** :download:`Assignment 8 PDF <Assignments/Assignment8.pdf>`
+**Assignment due before class this week:** :download:`Assignment 8 PDF <Assignments/Assignment8.pdf>`
+
+
+
+Week Ten (Mar. 27)
+===================
+Tables, Arrays, and Matrices
+----------------------------
+
+
+Lecture on new commands and figures: :download:`Lecture 10 PDF` <Assignments/Lecture10.pdf>
+
+**Assignment due before class this week:** None
 
 
 
 
+Week Nine (Apr. 3)
+===================
+Units and Chemistry
+--------------------
 
+
+Lecture on new commands and figures: :download:`Lecture 11 PDF` <Assignments/Lecture11.pdf>
+
+**Assignment due before class this week:** :download:`Assignment 9 PDF <Assignments/Assignment9.pdf>`
 
 
