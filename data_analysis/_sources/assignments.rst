@@ -202,12 +202,16 @@ Lecture on new commands and figures: :download:`Lecture 11 PDF <Assignments/Lect
 
 Final Project (May 2)
 =====================
-Hi, Evan here. The first option for the final project is available (subject
-to minor changes, but likely just for clarification). The other two
-should be done before next class (4/3). The second will be analyzing (generated) spectral
-data to determine the Hubble constant. The final option will be for those of you in Modern
-Lab to use data you already have.
+The final projects are here! There are three options. The first is about basketball scores
+and is generally the more "fun" application of our techniques (which shows how versatile
+they are!). The second more closely resembles a Modern Lab project. You'll use simulated
+spectral data to look at the Hubble constant. Finally, the third option is an open-ended
+assignment to essentially produce, as we have done, a set of data, a *Mathematica* script
+to analyze it, and a :math:`\LaTeX` document detailing what you did. Please review the
+assignment carefully, but feel free to contact us with any questions.
 
 **Assignment information is here:** :download:`Final Project <Final/final_project.pdf>`
 
 **Basketball data is here:** :download:`basketball.csv <Final/basketball.csv>`
+
+**Hubble law data is here:** :download:`hubble.csv <Final/hubble.csv>`
