@@ -199,6 +199,18 @@ Lecture on new commands and figures: :download:`Lecture 11 PDF <Assignments/Lect
 
 **Assignment due before class this week:** :download:`Assignment 9 PDF <Assignments/Assignment9.pdf>`
 
+Week Twelve (Apr. 10)
+=====================
+BibTeX
+---------------------
+
+Interactive lesson on BibTeX.
+
+**Assignment due before class this week:** :download:`Assignment 10 PDF <Assignments/Assignment10.pdf>`
+
+Sample working BibTeX example: :download:`TeX file <Assignments/example.tex>` :download:`bibliography <Assignments/biblio.bib>`
+
+
 
 Final Project (May 2)
 =====================
