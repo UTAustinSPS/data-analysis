@@ -80,6 +80,7 @@ Appendix
 
    Math/eigenvalues.rst
    Math/logic.rst
+   Math/stats.rst
    Math/misc.rst
 
 ..

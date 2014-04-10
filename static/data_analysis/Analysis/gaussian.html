@@ -135,8 +135,21 @@
   <ul class="dropdown-menu localtoc"><ul>
 <li><a class="reference internal" href="#">The Gaussian Distribution</a><ul>
 <li><a class="reference internal" href="#the-function">The Function</a></li>
-<li><a class="reference internal" href="#applications">Applications</a></li>
 <li><a class="reference internal" href="#combining-distributions">Combining Distributions</a></li>
+<li><a class="reference internal" href="#z-scores-p-values-and-confidence-intervals-oh-my">Z-Scores, P-Values, and Confidence Intervals, Oh My!</a><ul>
+<li><a class="reference internal" href="#z-score">Z-Score</a></li>
+<li><a class="reference internal" href="#p-value">P-Value</a></li>
+<li><a class="reference internal" href="#confidence-interval">Confidence Interval</a></li>
+<li><a class="reference internal" href="#connection-to-mathematica">Connection to <em>Mathematica</em></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#significant-digits">Significant Digits</a><ul>
+<li><a class="reference internal" href="#standard-rules">Standard Rules</a></li>
+<li><a class="reference internal" href="#reporting-uncertainty">Reporting Uncertainty</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#applications">Applications</a></li>
+<li><a class="reference internal" href="#gaussian-like-distributions">Gaussian-like Distributions</a></li>
 </ul>
 </li>
 </ul>
@@ -240,6 +253,228 @@ distribution are that the peak is at <span class="math">\(x=\mu\)</span>, and th
 satisfies the condition
 <span class="math">\(\int_{-\infty}^x\delta(x'-\mu)dx'=\left\{\begin{array}{lc}0 &amp; x&lt;\mu \\ 1 &amp; x\geq\mu\end{array}\right.\)</span>.</p>
 </div>
+<div class="section" id="combining-distributions">
+<h2>Combining Distributions<a class="headerlink" href="#combining-distributions" title="Permalink to this headline">¶</a></h2>
+<p>Rarely, if ever, do we care about measuring just one thing. More realistically, we have
+some collection of <em>independent</em> variables and want to measure some quantity that depends
+on all of them. <strong>IFF</strong> the variables are independent, we can adopt the following model.</p>
+<p>For now, let&#8217;s assume we have two independent random variables <span class="math">\(x\)</span> and <span class="math">\(y\)</span> (see
+the <a class="reference external" href="stats.html">Probability and Statistics</a> section) (we&#8217;ll generalize in a moment).
+And let&#8217;s say we have some function <span class="math">\(f(x,y)\)</span>. If we want to know the mean of
+this function <span class="math">\(\mu_f\)</span>, we simply plug in the mean values for <span class="math">\(x\)</span> and <span class="math">\(y\)</span>:</p>
+<div class="math">
+\[\mu_f=f(\mu_x,~\mu_y)\]</div>
+<p>That&#8217;s all well and good, but we know that we should express some spread in our values for
+<span class="math">\(f\)</span>, based on the spread in <span class="math">\(x\)</span> and <span class="math">\(y\)</span>:</p>
+<div class="math">
+\[\sigma_f^2=\left(\frac{\partial f}{\partial x}\middle|_{x=\mu_x,~y=\mu_y}\right)^2\sigma_x^2
++\left(\frac{\partial f}{\partial y}\middle|_{x=\mu_x,~y=\mu_y}\right)^2\sigma_y^2\]</div>
+<div class="note admonition">
+<p class="first admonition-title">Examples of Combining Distributions</p>
+<p>As a simple example, let&#8217;s look at &#8220;average&#8221;: <span class="math">\(f(x,~y)=\frac{x+y}{2}\)</span>. Intuitively,
+the mean of adding these distributions and dividing by two is the average of the means:
+<span class="math">\(\mu_f=\frac{\mu_x+\mu_y}{2}\)</span>. However, the variance is a little more interesting.
+We have <span class="math">\(\frac{\partial f}{\partial x}=1/2\)</span> and
+<span class="math">\(\frac{\partial f}{\partial y}=1/2\)</span>. Using the equation above, this means
+that <span class="math">\(\sigma_f^2=(1/2)^2\sigma_x^2+(1/2)^2\sigma_y^2\)</span> or
+<span class="math">\(\sigma_f^2=\frac{\sigma_x^2+\sigma_y^2}{4}\)</span>. This says something interesting:
+the variance in our combined distribution may sometimes be smaller (the &#8220;/4&#8221; term
+indicates this might be possible). In fact, this is totally reasonable &#8211; we just
+have to remember that the mean will scale as well.</p>
+<p>To demonstrate this more simply, we can look at <span class="math">\(f(x)=x/10\)</span>. The mean
+is <span class="math">\(\mu_f=\mu_x/10\)</span>, and the variance is <span class="math">\(\sigma_f^2=\sigma_x^2/100\)</span>
+or <span class="math">\(\sigma_f=\sigma_x/10\)</span>. Thus, we have indeed reduced our variance, but
+it has scaled with the mean. If we could reduce it arbitrarily, that means
+our measurements get more precise when we do mathematical operations on them.
+That would be strange for a number of reasons, so it&#8217;s good the math checks out.</p>
+<p class="last">For one more interesting example, let&#8217;s look at <span class="math">\(f(x,~y)=x^2y\)</span>. First,
+we consider the partial derivatives:
+<span class="math">\(\frac{\partial f}{\partial x}=2xy\)</span> and <span class="math">\(\frac{\partial f}{\partial y}=x^2\)</span>.
+So our variance is: <span class="math">\(\sigma_f^2=4\mu_x^2\mu_y^2\sigma_x^2+\mu_x^4\sigma_y^2\)</span>.
+If we divide by <span class="math">\(\mu_f=\mu_x^2\mu_y\)</span>, we get:
+<span class="math">\(\sigma_f^2/\mu_f=4\mu_y\sigma_x^2+\mu_x^2\sigma_y^2\)</span>.</p>
+</div>
+<p>In general, if we have variables <span class="math">\(x_1,~x_2,~\cdots,~x_N\)</span>, then the variance in
+<span class="math">\(f(x_1,~x_2,~\cdots,~x_N)\)</span> is:</p>
+<div class="math">
+\[\sigma_f^2=\sum_{i=1}^N \sigma_{x_i}^2\left(\frac{\partial f}{\partial x_i}\middle|_{
+\mu_\overline{x}}\right)^2\]</div>
+<p>where <span class="math">\(|_{\mu_{\overline{x}}}\)</span> is shorthand for &#8220;evaluate at the average value for each variable&#8221;.</p>
+<div class="admonition-practice-problem-combining-distributions admonition">
+<p class="first admonition-title">Practice Problem: Combining Distributions</p>
+<p>Assuming variables are independent, work out what the variance is for:</p>
+<p><span class="math">\(f(x,~y)=x\cdot y\)</span></p>
+<p><span class="math">\(f(x,~y)=x/y\)</span></p>
+<p><span class="math">\(f(x,~y)=x^2+e^y\)</span></p>
+<p><span class="math">\(f(x,~y)=\sin(xy)\)</span></p>
+<p class="last"><span class="math">\(f(x_1,~x_2,~\cdots,~x_N)=\Sigma_{i=1}^Nx_i/N\)</span> (assuming <span class="math">\(\forall{i}:\mu_i=\mu\wedge\sigma_i=\sigma\)</span>) This one is
+critical &#8211; it tells us about what we can expect about the mean
+of taking many samples from one parent distribution.</p>
+</div>
+<p>Just a reminder, if variables are not independent, then all this logic goes out the
+window. Furthermore, we&#8217;re assuming a Gaussian-like distribution here.</p>
+</div>
+<div class="section" id="z-scores-p-values-and-confidence-intervals-oh-my">
+<h2>Z-Scores, P-Values, and Confidence Intervals, Oh My!<a class="headerlink" href="#z-scores-p-values-and-confidence-intervals-oh-my" title="Permalink to this headline">¶</a></h2>
+<p>There are many useful things we can report about samples taken from a Gaussian distribution.
+First, let&#8217;s take a look at what we claim to be the &#8220;normalizing transformation&#8221;:</p>
+<div class="math">
+\[z(x)=\frac{x-\mu_x}{\sigma_x}\]</div>
+<p>This yields a Normal distribution with <span class="math">\(\mu_z=0\)</span> and <span class="math">\(\sigma_z=1\)</span>.</p>
+<div class="admonition-practice-problem-normalization admonition">
+<p class="first admonition-title">Practice Problem: Normalization</p>
+<p class="last">Use the math above to prove <span class="math">\(\mu_z=0\)</span> and <span class="math">\(\sigma_z=1\)</span>.</p>
+</div>
+<div class="section" id="z-score">
+<h3>Z-Score<a class="headerlink" href="#z-score" title="Permalink to this headline">¶</a></h3>
+<p>We can then define a &#8220;z-score&#8221; for a point in our data (or for the mean of our sample,
+etc.): this is just the value we get if we apply the normalizing transformation. The z-score
+is then the number of standard deviations away from the mean the value is (including sign).
+Results for experiments often get quoted as the z-score (or equivalent metric with
+a non-Gaussian distribution), saying &#8220;<span class="math">\(5.9\sigma\)</span>&#8221;, as in, the data were 5.9 standard
+deviations away from the mean or that the z-score was 5.9 (glossing over some technicalities
+here, but for our intuition, this is &#8220;close enough&#8221;).</p>
+<p>This normalizing tranformation lets us talk about results in a general way. A good statistician
+knows that if we look at the distribution for <span class="math">\(z(x)\)</span> (assuming <span class="math">\(x\)</span> is Gaussian),
+the following are true:</p>
+<div class="math">
+\[\begin{split}P(-1&lt;z&lt;1)&amp;\approx0.68\\
+P(-2&lt;z&lt;2)&amp;\approx0.95\\
+P(-3&lt;z&lt;3)&amp;\approx0.997\\
+P(-5&lt;z&lt;5)&amp;\approx0.999999\end{split}\]</div>
+<p>This means that 68% of our data should be within one standard deviation, 95% be within
+2 standard deviations, etc. These numbers are taken by the same integral as before:</p>
+<div class="math">
+\[\begin{split}P(|z|&lt;z^*)=\int_{-z^*}^{z^*}\mathcal{N}_{0,1}(z)dz\end{split}\]</div>
+</div>
+<div class="section" id="p-value">
+<h3>P-Value<a class="headerlink" href="#p-value" title="Permalink to this headline">¶</a></h3>
+<p>A related quantity is the &#8220;p-value&#8221;. Depending on the problem, it is defined as:</p>
+<div class="math">
+\[\begin{split}p=&amp;1-P(|z|&lt;z^*)\\
+&amp;\mathrm{or}\\
+p=&amp;\frac{1-P(|z|&lt;z^*)}{2}\end{split}\]</div>
+<p>It&#8217;s clearly some sort of probability, but its meaning is
+a little subtle. <strong>NOTE: THE FOLLOWING SENTENCE HAS THE WRONG INTERPRETATION IT IN:</strong>
+the p-value is often quoted as the &#8220;chance our result is a statistical fluke.&#8221; That is
+absolutely false.</p>
+<p><strong>HERE BE CORRECT INTERPRETATIONS:</strong> the p-value is the probability <em>under the assumption
+of a &#8220;null hypothesis&#8221;</em> of obtaining a result as strange as we did. What does that mean?
+That says that we assume the population has some mean and standard deviation
+<span class="math">\(\mu_0\)</span> and <span class="math">\(\sigma_0\)</span>. Iff that assumption is correct, then our result
+should be observed <span class="math">\(p\)</span> percent of the time. As such, we often make cutoff points for
+the p-value observed in an experiment do decide if an effect is present. In social sciences,
+this is often <span class="math">\(\alpha=0.05\)</span> &#8211; the final check to see if our result
+is statistically significant is then <span class="math">\(p&lt;\alpha\)</span>. This says that out of every 20 experiments, we should expect
+(on average) for 1 to be as strange as our result <em>if the null hypothesis is valid</em>
+(meaning that <span class="math">\(\mu_0\)</span> and <span class="math">\(\sigma_0\)</span> accurately describe the situation). So, if we
+performed these 20 experiments and all 20 had a result this strange, this gives us pretty good
+indication that the null hypothesis is wrong. In that case, we may use our data to create a new
+hypothesis (maybe the <em>actual</em> mean and standard deviation are the ones in our experiment).
+Future tests would determine whether this hypothesis is correct, and so on.</p>
+<p>In physics, we often demand a stronger value for <span class="math">\(\alpha\)</span>. Particularly for
+major discoveries (Higgs boson, gravitational waves), this is <span class="math">\(\alpha=10^{-6}\)</span>,
+corresponding to a <span class="math">\(5\sigma\)</span> difference from the null hypothesis. Why? We often
+have 1 or maybe 2 experiments to test our hypotheses. CERN&#8217;s Large Hadron Collider
+is the only place we have the capacity to create 14 TeV proton beams. So their ATLAS
+and CMS detectors are our two experiments. We simply can&#8217;t run 20 different experiments,
+hoping to see the effect in all of them. So, we impose a higher standard so that we are
+pretty sure the null hypothesis is wrong before making any conclusions.</p>
+<p>If this confuses you, or if you&#8217;d like to read more, check out former UT Physics student
+Alex Reinhart&#8217;s book <em>Statistics Done Wrong</em>, particularly the section &#8220;The <em>p</em> value
+and the base rate fallacy&#8221; (available <a class="reference external" href="http://www.statisticsdonewrong.com/p-value.html">here</a>).
+The following XKCD cartoon (referenced in <em>Statistics Done Wrong</em> as well), may help give
+an idea about how the p-value can be misinterpreted by non-statisticians:</p>
+<a href="http://xkcd.com/882/" target="_blank">
+<img src="http://imgs.xkcd.com/comics/significant.png" width="600px">
+</a></div>
+<div class="section" id="confidence-interval">
+<h3>Confidence Interval<a class="headerlink" href="#confidence-interval" title="Permalink to this headline">¶</a></h3>
+<p>When reporting results, there are mainly 2 ways of representing the spread/error in our data:
+By reporting &#8220;<span class="math">\(\mu\pm\sigma\)</span>&#8221;, we let the reader do the math to figure out possible
+values. The other way is with a confidence interval. For this, we say &#8220;we have 99% confidence
+that the value is between <span class="math">\(\mu-z^*\sigma\)</span> and <span class="math">\(\mu+z^*\sigma\)</span>.&#8221; Again,
+each journal/field will have a prescribed confidence level, but we find the associated
+z-score for that certainty (inverting the calculation of <span class="math">\(P(|z|&lt;z^*)\)</span>) and report
+the values that far from the mean in each direction. This can be nice if we are trying to show
+that a value is non-zero. If 0 is included in the interval, then we can&#8217;t say with C% confidence
+that our result is different. If 0 is not included, we can say we have C% confidence our
+result is statistically significantly different.</p>
+</div>
+<div class="section" id="connection-to-mathematica">
+<h3>Connection to <em>Mathematica</em><a class="headerlink" href="#connection-to-mathematica" title="Permalink to this headline">¶</a></h3>
+<p>In various cases, we can have <em>Mathematica</em> run statistical tests on the models
+it fits for us. The <a class="reference external" href="Analysis/curve_fit.html#mathematica-fitting-functions">Fitting Functions</a>
+section has more on these actual functions. But if you manipulate the models correctly, you&#8217;ll
+find that it quotes p-values for fitted parameters. But you know that has to come
+from taking the integral of some kind of Gaussian distribution. Which one? It&#8217;s a little
+complicated, but nothing we can&#8217;t handle.</p>
+<p><em>Mathematica</em> uses some algorithm to pin down a value for a parameter. Then, it
+uses its best guess and the data to determine the standard error (essentially
+the same as the standard deviation in formulation). That error then says
+how far off the parameter&#8217;s estimation is likely to be from reality. In the
+simplest case, <em>Mathematica</em> assumes a null hypothesis that says the distribution
+has a mean of 0 and a standard deviation equal to the standard error. It then computes
+the z-score of the estimate (actually a t-statistic &#8211; formulated the same way, but
+for a distribution that isn&#8217;t quite a Gaussian &#8211; see below), and the associated
+p-value. As such, the p-value quoted here is the probability we expect to get
+a parameter fit this strange if the value for the parameter is actually 0 <em>and</em>
+the standard deviation (from error in experiment, simulation, etc.) is equal
+to the standard error.</p>
+<p>If you have ingrained in you the correct interpretation of a p-value, seeing an extremely
+small value in the model fit should not surprise you. The value of the parameter may be
+very large compared to 0 as scaled by the standard error. If our data has little spread,
+this value will be a strong predictor if our model is correct. If our data is highly
+variable, the bounds on the parameter will not be as tight, and it may be more difficult
+to show that the effect is actually present.</p>
+</div>
+</div>
+<div class="section" id="significant-digits">
+<h2>Significant Digits<a class="headerlink" href="#significant-digits" title="Permalink to this headline">¶</a></h2>
+<p>When we need to write down our final answer, we have to go beyond the standard rules
+of significant digits. The standard rules certainly help, and inform our ability to report
+values.</p>
+<div class="section" id="standard-rules">
+<h3>Standard Rules<a class="headerlink" href="#standard-rules" title="Permalink to this headline">¶</a></h3>
+<p>The number of significant digits in a value is all the digits subject to:
+* leading zeros don&#8217;t count
+* trailing zeros after a decimal point do count
+So, 0.004 has one significant figure while 0.40000 has 5.</p>
+<p>With this, if we multiply two numbers (N and M significant digits respectively), then
+the result should have <span class="math">\(\min(N,M)\)</span> significant figures. This means
+<span class="math">\(0.4\times\pi=1\)</span>. This may seem surprising. But that&#8217;s how we maintain integrity
+of how good our measurements are. For example, if we are doing normal rounding, the
+actual value could be anywhere from .35 to .4499.... In the latter case, we get 1.4,
+in the former, we get 1.1.</p>
+<p>If we add two numbers, we only get to keep up to the smallest power of ten in either addend.
+So <span class="math">\(4+\pi=7\)</span> while <span class="math">\(0.04+\pi=3.18\)</span>. This is radically different than in multiplication. In the latter example, we ended up with 3 significant figures. However,
+<span class="math">\(4+0.4=4\)</span>.</p>
+<p>In any case, we keep as many digits as we&#8217;d like throughout our calculations, but
+we must consider these rules when reporting final results. If you round in between
+steps, you&#8217;re likely to get off-track quickly.</p>
+</div>
+<div class="section" id="reporting-uncertainty">
+<h3>Reporting Uncertainty<a class="headerlink" href="#reporting-uncertainty" title="Permalink to this headline">¶</a></h3>
+<p>We apply these ideas when reporting values obtained from some sort of investigation.
+It makes no sense to say that &#8220;we achieved a result of <span class="math">\(0.1105\pm5.6\)</span>.&#8221; If we
+were to calculate the values one standard deviation away from the reported mean,
+we will only keep the digit in front of the decimal point. A more realistic representation
+would then be <span class="math">\(0.1\pm5.6\)</span> or possibly even <span class="math">\(0\pm6\)</span>. If we really can
+report the standard deviation to 2 decimal places, the former is clearly preferred.</p>
+<p>If you (unwisely) choose to not determine the number of significant digits in your
+mean and standard deviation calculations (it is tedious), a rule of thumb enters the fray.
+In that case, you might choose to report just the leading digit in standard deviation
+(so if <span class="math">\(\sigma=0.000415\)</span>, you&#8217;ll report it as <span class="math">\(4\times10^{-4}\)</span>). In that case,
+you&#8217;ll keep the digits in the mean from the left up to and including the first one affected
+by adding/subtracting the standard deviation. So <span class="math">\(3.315\pm0.224\)</span> becomes
+<span class="math">\(3.315\pm0.2\)</span> becomes <span class="math">\(3.3\pm0.2\)</span> (sometimes written as <span class="math">\(3.3(2)\)</span>).</p>
+<p>There are ethical considerations here. You want to report the results of your calculations
+to as precise an extent as you can calculate, but are limited by the precision of your
+experiment. Just because the signal appears to be there, if the noise is too great, you
+can&#8217;t be sure your perceived signal (as the mean) isn&#8217;t just part of the noise. Reporting
+too many digits is misleading, suggesting you did a better experiment than reality.</p>
+</div>
+</div>
 <div class="section" id="applications">
 <h2>Applications<a class="headerlink" href="#applications" title="Permalink to this headline">¶</a></h2>
 <p>As we can see in the <a class="reference external" href="error.html">Error Analysis</a> section, the concepts of a mean and
@@ -271,10 +506,9 @@ cdf.embed('../_images/normal_converge.cdf', 575, 400);
 <img alt="../_images/normal_converge.png" src="../_images/normal_converge.png" style="width: 0px; height: 0px;" />
 </div>
 </div>
-<div class="section" id="combining-distributions">
-<h2>Combining Distributions<a class="headerlink" href="#combining-distributions" title="Permalink to this headline">¶</a></h2>
-<p>The Normal distribution is particularly powerful, because we can combine distributions.
-More info to come...</p>
+<div class="section" id="gaussian-like-distributions">
+<h2>Gaussian-like Distributions<a class="headerlink" href="#gaussian-like-distributions" title="Permalink to this headline">¶</a></h2>
+<p>More info to come...</p>
 </div>
 </div>
 

@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Probability and Statistics &mdash; Introduction to Data Analysis for Physics</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0-rc1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0-rc1/css/bootstrap-glyphicons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../../runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/js/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/js/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.js"></script>
+    <script type="text/javascript" src="../_static/builtin.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0-rc1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <link rel="top" title="Introduction to Data Analysis for Physics" href="../index.html" />
+    <link rel="next" title="Miscellaneous Math" href="misc.html" />
+    <link rel="prev" title="Mathematical Logic" href="logic.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'data_analysis';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-fixed-top" style="z-index:9999999">
+
+  <div class="container">
+
+    <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+    <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <div>
+      <a href="../index.html">
+      <img title="Data Analysis for Physics" src="../_static/img/logo_small.png"
+       style="max-width:60px; max-height:60px;float:left"></a>
+      <a class="navbar-brand" href="../index.html">Introduction to Data Analysis for Physics</a>
+    </div>
+
+    <div class="nav-collapse collapse navbar-responsive-collapse">
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Probability and Statistics</a><ul>
+<li><a class="reference internal" href="#notation">Notation</a></li>
+<li><a class="reference internal" href="#independence">Independence</a></li>
+<li><a class="reference internal" href="#expectation-values">Expectation Values</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Mathematical Logic" data-toggle="tooltip">
+    <a href="logic.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+      <p style=";max-width:130px;">Mathematical Logic</p>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Miscellaneous Math' data-toggle="tooltip" >
+    <a href="misc.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+      <p style=";max-width:130px;">Miscellaneous Math</p>
+    </a>
+  </li>
+  <li style="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div id="mainbody" class="container">
+  
+  <div class="section" id="probability-and-statistics">
+<h1>Probability and Statistics<a class="headerlink" href="#probability-and-statistics" title="Permalink to this headline">¶</a></h1>
+<p>Here, we&#8217;d like to review a few topics in probability and statistics.</p>
+<div class="section" id="notation">
+<h2>Notation<a class="headerlink" href="#notation" title="Permalink to this headline">¶</a></h2>
+<p>Throughout this section, we&#8217;re going to use <span class="math">\(P(X)\)</span> as the &#8220;probability that X is true.&#8221;
+For example, <span class="math">\(P(x&lt;5)\)</span> might apply to some sort of distribution. In some cases, shorthand
+will be used: <span class="math">\(P(H)\)</span> might be &#8220;probability of a coin getting heads.&#8221;</p>
+<p>Now, we can make these more complicated. <span class="math">\(P(A\&amp;B)=P(AB)=P(A\wedge B)=P(A\cap B)\)</span> is the probability
+of having both <span class="math">\(A\)</span> and <span class="math">\(B\)</span> be true. <span class="math">\(P(A\vee B)=P(A+B)=P(A\cup B)\)</span> is the probability
+of having <span class="math">\(A\)</span> or <span class="math">\(B\)</span> (or both) be true. Finally, <span class="math">\(P(A|B)\)</span> is the probability
+of having <span class="math">\(A\)</span> be true <em>GIVEN</em> that <span class="math">\(B\)</span> is true. We&#8217;ll come back to that last one
+frequently.</p>
+</div>
+<div class="section" id="independence">
+<h2>Independence<a class="headerlink" href="#independence" title="Permalink to this headline">¶</a></h2>
+<p>An important aspect of probability is knowing whether variables are <em>independent</em>. There are
+two equivalent notions of this property. Events <span class="math">\(A\)</span> and <span class="math">\(B\)</span> are independent if and
+only if:</p>
+<div class="math">
+\[\begin{split}P(A|B)=P(A)&amp;~\mathrm{and}~P(B|A)=P(B)\\
+P(A\cap B)&amp;=P(A)P(B)\end{split}\]</div>
+<p>For an example, let&#8217;s take <span class="math">\(P(H\cap H)\)</span> - the odds of getting heads then heads with a fair
+coin. We expect these events to be independent. Flipping the coin once has no impact on the
+next flip. In fact, even with an unfair coin (say, <span class="math">\(P(H)=.6\)</span>), we can assume independence.</p>
+<div class="admonition-practice-problem-independence-considerations admonition">
+<p class="first admonition-title">Practice Problem: Independence Considerations</p>
+<p>Let&#8217;s consider a few situations. Determine whether events <span class="math">\(A\)</span> and <span class="math">\(B\)</span> are
+independent.</p>
+<ul class="last simple">
+<li><span class="math">\(A=\)</span> probability that it&#8217;s raining, <span class="math">\(B=\)</span> probability the grass is wet.</li>
+<li><span class="math">\(A=\)</span> probability that it&#8217;s raining, <span class="math">\(B=\)</span> probability the roads are slick.</li>
+<li><span class="math">\(A=\)</span> probability that a die rolls a 3, <span class="math">\(B=\)</span> probability a die rolls a 4.</li>
+<li><span class="math">\(A=\)</span> probability that your computer crashes, <span class="math">\(B=\)</span> probability the computer is more than 10 years old.</li>
+</ul>
+</div>
+<p>We can extend this notion of independence to more traditional variables too. In this case, we
+can say that if we have variables <span class="math">\(x\)</span> and <span class="math">\(y\)</span>, then for ALL <span class="math">\(a\)</span> and <span class="math">\(b\)</span>,
+<span class="math">\(x\)</span> and <span class="math">\(y\)</span> are independent iff <span class="math">\(x&lt;a\)</span> and <span class="math">\(y&lt;b\)</span> are independent. In
+effect, this means that if we measure <span class="math">\(x\)</span>, it has no bearing on what we&#8217;ll measure for <span class="math">\(y\)</span>.</p>
+<p>If we have a fair coin, then any time we flip it, we have a <span class="math">\(p=.5\)</span> probability
+of getting heads (and thus a <span class="math">\(q=1-p=.5\)</span> probability of getting tails). With this
+notion of independence, we note that <span class="math">\(P(H)=p=q=P(T)\)</span>, and furthermore that
+<span class="math">\(P(H|H)=P(H)\)</span>. Stated another way, if we get heads once, the chance our next
+flip is heads is the same as it is at any time.</p>
+<p>Our only two event outcomes are <span class="math">\(H\)</span> and <span class="math">\(T\)</span>, so <span class="math">\(P(H\cup T)=P(H)+P(T)=1\)</span>.</p>
+<p>If we have several flips in succession, the probability of a given sequence
+is just the probability of each flip multiplied together: <span class="math">\(P(HHTH)=P(H)\cdot P(H)\cdot P(T)\cdot P(H)\)</span>.</p>
+<p>Things get more interesting if we look at the total number of heads after N flips. We&#8217;ll
+come back to this in the next section.</p>
+<div class="admonition-practice-problem-casino-craps admonition">
+<p class="first admonition-title">Practice Problem: Casino Craps</p>
+<p>The game craps is based on the idea of rolling two dice, and totalling the values on the
+face-up side. For example, if one die shows a 3 and the other a 4, the &#8220;score&#8221; is 7. These
+dice rolls are independent events, so we could roll one die, record its value, then roll it
+again. So here, we have <span class="math">\(P(1)=P(2)=P(3)=P(4)=P(5)=P(6)=1/6\)</span>. And the events
+are independent so <span class="math">\(P(A|B)=P(A)\)</span>.</p>
+<p>Can we use this to come up with the probability of getting each possible score (2-12)? If we
+roll a die, then roll it again, we can note the odds of it getting a particular sequence as
+<span class="math">\(P(2\&amp;5)\)</span> (to get a 2 then a 5 for a total of 7). This is different from <span class="math">\(P(5\&amp;2)\)</span>
+which gets a 5 first then a 2, for the same total. What are the odds of getting a 4? Of a 7?</p>
+<p class="last">If you feel ambitious, using the rule for a &#8220;Pass line bet&#8221; (see the Wikipedia page
+<a class="reference external" href="http://en.wikipedia.org/wiki/Craps#Line_bets">here</a>), what&#8217;s the chance of winning after
+one turn? Losing after one turn? Winning in exactly 2 turns? The rest is tedious to calculate,
+but the odds are clearly never in your favor. It&#8217;s no wonder why Sky Masterson in <em>Guys and Dolls</em> sings a song about luck during the pivotal craps game in the show.</p>
+</div>
+</div>
+<div class="section" id="expectation-values">
+<h2>Expectation Values<a class="headerlink" href="#expectation-values" title="Permalink to this headline">¶</a></h2>
+<p>What some of the above amounts to is a kind of grander question. Instead of asking what
+the probabilty of all kinds of different scenarios is, we often just want an overall
+answer. This might be how often I should win a game. Or how much money I should make
+playing the lottery. Or where I expect a particle to be found. This is the notion of
+an expectation value.</p>
+<p>If I have N possible scenarios, I have a probability each one will occur and the value I measure
+if it occurs. To find my expected value, I multiply each of these and take the sum:</p>
+<div class="math">
+\[\langle F\rangle=\sum_{i=1}^NF_iP(i)\]</div>
+<p>For example, with rolling a die, the average value of a roll (which is not particularly useful in
+practice) is:</p>
+<div class="math">
+\[\begin{split}1*P(1)+2*P(2)&amp;+3*P(3)+4*P(4)+5*P(5)+6*P(6)=\\
+&amp;1/6(1+2+3+4+5+6)=\\
+&amp;21/6=3.5\end{split}\]</div>
+<p>Note that this expected value isn&#8217;t actually a possible value to see on a die roll.
+No standard die has a &#8220;3.5&#8221; on one side. But, on average, that&#8217;s what I anticipate
+to see. So if I rolled 100 dice and the average were 5, I would know that they are likely
+unfair. How unfair? Well, we can use our previous definition of standard deviation as
+<span class="math">\(\sigma_x^2=\left\langle x^2\right\rangle-\left\langle x \right\rangle^2\)</span>. In this
+case, <span class="math">\(x\)</span> is just the value seen on the die. So,
+<span class="math">\(\left\langle x\right\rangle=3.5\)</span>. Doing the same calculation for <span class="math">\(x^2\)</span> yields:</p>
+<div class="math">
+\[1*P(1)+4*P(2)+9*P(3)+16*P(4)+25*P(5)+36*P(6)=91/6\approx15.2\]</div>
+<p>So this gives a standard deviation as <span class="math">\(\sigma=\sqrt{15.2-3.5^2}=1.72\)</span>.</p>
+<p>If I took the average of many samples <span class="math">\(f=\Sigma_{i=1}^nx_i/n\)</span> all drawn from
+the same distribution, then my mean stays the same (<span class="math">\(\Sigma_{i=1}^n\mu/n=n\mu/n=\mu\)</span>)
+but the standard deviation will be <span class="math">\(\sigma/\sqrt{n}\)</span> (see the
+<a class="reference external" href="Analysis/gaussian.html#combining-distributions">Combining Distributions</a> section). So
+if we roll 100 dice, the average value is still 3.5, but with a deviation of
+0.17. That means if the mean of our sample of 100 dice is more than <span class="math">\(3*0.71=0.51\)</span> away from 3.5 (so
+smaller than 3 or greater than 4), we expect something to be seriously wrong (see the
+<a class="reference external" href="Analysis/gaussian.html#z-scores-p-values-and-confidence-intervals-oh-my">Z-scores</a> section).</p>
+<p>We can extend this <em>discrete</em> notion of events to a <em>continous</em> &#8220;probability density function&#8221;.
+Let&#8217;s say we have some variable <span class="math">\(x\)</span> that can have any value between <span class="math">\(-\infty\)</span> and
+<span class="math">\(\infty\)</span>. Then, the probability density function <span class="math">\(\rho(x)\)</span> satisfies:</p>
+<div class="math">
+\[\begin{split}1&amp;=\int_{-\infty}^\infty\rho(x)dx\\
+P(a&lt;x&lt;b)=\int_a^b\rho(x)dx\end{split}\]</div>
+<p>So, our notion of an expected value of some function <span class="math">\(f(x)\)</span> is:</p>
+<div class="math">
+\[\langle{f}\rangle=\int_{-\infty}^\infty f(x)\rho(x)dx\]</div>
+<div class="note admonition">
+<p class="first admonition-title">Classical Expectations</p>
+<p class="last">The math above works in a classical picture of the world. In the quantum picture,
+things aren&#8217;t quite as simple. We have wavefunctions, which form a probability
+density function when we take the square of the norm: <span class="math">\(\psi^*(x)\psi(x)\)</span>.
+And when we apply operators, we can no longer simply multiply them. In this case,
+the expected value is
+<span class="math">\(\langle{\hat{F}}\rangle=\int_{-\infty}^\infty\psi^*(x)\hat{F}\psi(x)dx\)</span>.
+The difference is that the operator <span class="math">\(\hat{F}\)</span> may have derivatives or other
+operations in it, such that <span class="math">\(\psi^*(x)\hat{F}\psi(x)\)</span> is not necessarily
+the same as <span class="math">\(\hat{F}\psi^*(x)\psi(x)\)</span>. PHY 373 teaches more about this
+concept, but the difference between classical and quantum computations
+here is worth noting.</p>
+</div>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+    </p>
+    <p>
+    <!--
+        &copy; Copyright 2013, University of Texas at Austin Society of Physics Students and Sigma Pi Sigma.-->
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    //$(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    //$(document).ready(getNumUsers);
+    //$(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  $("#mainbody").children().first().css("margin-top",
+    $("#navbar").css("height"))
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-small btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-small btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-small btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-small btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

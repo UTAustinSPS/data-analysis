@@ -43,7 +43,7 @@ This is well and good for quantities we measure directly. But what about if we
 then compute other quantities from those measurements? We need to be able to report our
 uncertainty in those values as well (for an example, see below). But how do we do that?
 
-Well, let's say that we have some function :math:`f` over N variables
+Well, let's say that we have some function :math:`f` over N *independent* variables
 :math:`x_1,~x_2,~...,~x_N` that is the quantity we want to compute. To compute the average,
 we just take
 
@@ -65,20 +65,6 @@ of one another, we can use the following equation:
 This says that we add the variances (square of the standard deviation) of each variable,
 multiplied by the square of the partial derivative of the function with respect to that
 variable, applying the average values of all variables as necessary.
-If the variables are not independent of one another, we must look at the covariance
-as well:
-
-.. math::
-
-	\sigma_f^2=\sum_{j=1}^N\sum_{i=1}^N
-	\sigma_{x_i}\sigma_{x_j}\left(
-	\frac{\partial f}{\partial x_i}\middle|_{
-	\langle{\overline{x}}\rangle}\right)\left(
-	\frac{\partial f}{\partial x_j}\middle|_{
-	\langle{\overline{x}}\rangle}\right)
-
-(yes, the covariances add twice). This is the error propagation equation, and is how we are able
-to report the error in a computed quantity.
 
 Example: Watermelon Drop
 ------------------------
