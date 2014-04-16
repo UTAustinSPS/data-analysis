@@ -211,6 +211,23 @@ Interactive lesson on BibTeX.
 Sample working BibTeX example: :download:`TeX file <Assignments/example.tex>` :download:`bibliography <Assignments/biblio.bib>`
 
 
+Week Thirteen (Apr. 17)
+=======================
+Z-Scores, P-Values, Confidence Intervals, Model Fits
+----------------------------------------------------
+
+**Reading**: 
+
+- `Combining Distributions <Analysis/gaussian.html#combining-distributions>`_
+- `Z-scores <Analysis/gaussian.html#z-scores-p-values-and-confidence-intervals-oh-my>`_
+- `Fitting Functions <Analysis/curve_fit.html#mathematica-fitting-functions>`_
+
+**PDF from last week:** :download:`Week 12 <Assignments/Week12.pdf>`
+
+**PDF for this week:** :download:`Week 13 <Assignments/Week13.pdf>`
+
+
+
 
 Final Project (May 2)
 =====================

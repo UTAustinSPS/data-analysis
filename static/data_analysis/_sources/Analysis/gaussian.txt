@@ -84,7 +84,7 @@ on all of them. **IFF** the variables are independent, we can adopt the followin
 
 For now, let's assume we have two independent random variables :math:`x` and :math:`y` (see
 the `Probability and Statistics <stats.html>`_ section) (we'll generalize in a moment).
-And let's say we have some function :math:`f(x,y)`. If we want to know the mean of
+And let's say we have some *linear* function :math:`f(x,y)`. If we want to know the mean of
 this function :math:`\mu_f`, we simply plug in the mean values for :math:`x` and :math:`y`:
 
 .. math::
@@ -120,12 +120,6 @@ That's all well and good, but we know that we should express some spread in our 
 	our measurements get more precise when we do mathematical operations on them.
 	That would be strange for a number of reasons, so it's good the math checks out.
 
-	For one more interesting example, let's look at :math:`f(x,~y)=x^2y`. First,
-	we consider the partial derivatives:
-	:math:`\frac{\partial f}{\partial x}=2xy` and :math:`\frac{\partial f}{\partial y}=x^2`.
-	So our variance is: :math:`\sigma_f^2=4\mu_x^2\mu_y^2\sigma_x^2+\mu_x^4\sigma_y^2`.
-	If we divide by :math:`\mu_f=\mu_x^2\mu_y`, we get:
-	:math:`\sigma_f^2/\mu_f=4\mu_y\sigma_x^2+\mu_x^2\sigma_y^2`.
 
 In general, if we have variables :math:`x_1,~x_2,~\cdots,~x_N`, then the variance in
 :math:`f(x_1,~x_2,~\cdots,~x_N)` is:
@@ -141,20 +135,90 @@ where :math:`|_{\mu_{\overline{x}}}` is shorthand for "evaluate at the average v
 
 	Assuming variables are independent, work out what the variance is for:
 
-	:math:`f(x,~y)=x\cdot y`
-
-	:math:`f(x,~y)=x/y`
-
-	:math:`f(x,~y)=x^2+e^y`
-
-	:math:`f(x,~y)=\sin(xy)`
-
 	:math:`f(x_1,~x_2,~\cdots,~x_N)=\Sigma_{i=1}^Nx_i/N` (assuming :math:`\forall{i}:\mu_i=\mu\wedge\sigma_i=\sigma`) This one is
 	critical -- it tells us about what we can expect about the mean
 	of taking many samples from one parent distribution.
 
-Just a reminder, if variables are not independent, then all this logic goes out the 
-window. Furthermore, we're assuming a Gaussian-like distribution here.
+With linear functions, it's actually quite easy to see how we get the equation above. Suppose
+we have :math:`f(x,y)=ax+by` with :math:`x` coming from :math:`\mathcal{N}_{\mu_x,\sigma_x}`
+and :math:`y` coming from :math:`\mathcal{N}_{\mu_y,\sigma_y}`. We know that
+:math:`\langle{x}\rangle=\mu_x` and :math:`\langle{y}\rangle=\mu_y`.
+Then, we have:
+
+.. math::
+
+	\langle{f}\rangle=\langle{ax+by}\rangle=a\langle x \rangle+b\langle{y}\rangle=a\mu_x+b\mu_y
+
+iff :math:`x` and :math:`y` are independent. This is indeed the same as if we had
+taken :math:`\mu_f=f(\mu_x,\mu_y)`. The variance is not so easy, but we can muster it.
+First, we need the second moment of :math:`f`.
+
+.. math::
+
+	\langle{f^2}\rangle&=\langle{(ax+by)^2}\rangle\\
+	&=\langle{a^2x^2+b^2y^2+2abxy}\rangle\\
+	&=a^2\langle{x^2}\rangle+b^2\langle{y^2}\rangle+2ab\langle{xy}\rangle
+
+Then we subtract the squared first moment from the second:
+
+.. math::
+
+	\sigma_f^2&=\langle{f^2}\rangle-\langle{f}\rangle^2\\
+	&=a^2\langle{x^2}\rangle+b^2\langle{y^2}\rangle+2ab\langle{xy}\rangle-\left(a\mu_x+b\mu_y\right)^2\\
+	&=a^2\langle{x^2}\rangle+b^2\langle{y^2}\rangle+2ab\langle{xy}\rangle-a^2\langle{x}\rangle^2-b^2\langle{y}\rangle^2-2ab\langle{x}\rangle\langle{y}\rangle\\
+	&=a^2\langle{x^2}\rangle-a^2\langle{x}\rangle^2+b^2\langle{y^2}\rangle-b^2\langle{y}\rangle^2+2ab\left(\langle{xy}\rangle-\langle{x}\rangle\langle{y}\rangle\right)\\
+	&=a^2\sigma_x^2+b^2\sigma_y^2+2ab\left(\langle{xy}\rangle-\langle{x}\rangle\langle{y}\rangle\right)
+
+The first two terms are familiar. The last is the *covariance*. If the variables
+are independent, then the covariance is 0 (if the probability
+distributions are independent, then the integrals are separable), so we recover
+:math:`\sigma_f^2=a^2\sigma_x^2+b^2\sigma_y^2`.
+
+.. admonition:: Non-linear Functions
+	:class: note
+
+	Just a reminder, if variables are not independent, then all this logic goes out the 
+	window. Furthermore, we're assuming a Gaussian-like distribution here. We can relax
+	the restriction to linear transformations, but then must note that the mean and
+	variance *will not necessarily* be as written above.
+
+	For example, let's take :math:`f(x)=\cos(x)` with :math:`x` coming
+	from the distribution :math:`\mathcal{N}_{0,1}`. Using the equations above, we get
+
+	.. math::
+
+		\mu_f&=\cos(\mu_x)=\cos(0)=1\\
+		\sigma_f^2&=\left(-\sin(x)|_{x=\mu_x}\right)^2\sigma_x^2\\
+		&=(-\sin(0))^21^2=0
+
+	We know not to expect a variance of 0! Why? If we go back to the original definition
+	of variance,
+
+	.. math::
+
+		\sigma_f^2=\langle f^2 \rangle-\left(\langle f \rangle\right)^2
+
+	then since the function is real-valued, the only way for the variance to be 0 is
+	for all data points to have the same value! But we know that cosine is not
+	a constant, so this invalidates our method.
+
+	To *actually* calculate the mean and standard deviation, we can use the probability
+	density function associated with the distribution for :math:`x`, and calculate
+	the first and second moment of cosine:
+
+	.. math::
+
+		\mu_f=\langle f \rangle&=\int_{-\infty}^\infty\cos(x)\frac{1}{\sqrt{2\pi}}e^{-x^2/2}dx\\
+		&=\frac{1}{\sqrt{e}}\approx0.6065\\
+		\langle f^2 \rangle&=\int_{-\infty}^\infty\cos^2(x)\frac{1}{\sqrt{2\pi}}e^{-x^2/2}dx\\
+		&=\frac{1}{2}(1+\frac{1}{2e^2})\approx0.5677\\
+		\sigma_f^2&=\langle f^2 \rangle-\left(\langle f \rangle\right)^2\\
+		&=\frac{(e-1)^2}{2e^2}=0.2000
+
+	Thus, :math:`f` (which is not necessarily Normal anymore) has a mean of 0.6065 and
+	standard deviation of 0.4470. This is obviously different from a mean of 1 and
+	standard deviation of 0. Often, we use the linear approximation anyway. If our data
+	covers a small enough region, we may be able to linearize it.
 
 Z-Scores, P-Values, and Confidence Intervals, Oh My!
 ====================================================

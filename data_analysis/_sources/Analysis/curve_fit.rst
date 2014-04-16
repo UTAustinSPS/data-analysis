@@ -408,4 +408,53 @@ we then apply the argument given to us then return the result.
 
 *Mathematica* Fitting Functions
 -------------------------------
-More info to come...
+The :code:`NonlinearModelFit` and :code:`LinearModelFit` functions are perhaps even
+more useful than the :code:`FindFit` function. Instead of just providing coefficients
+for the fit, these produce information about the fit itself. For example:
+
+::
+
+	data = Table[{i, 2 i^3 + Random[]*.02}, {i, 10}];
+	fit = NonlinearModelFit[data, a x^b, {a, b}, x]
+
+gives a fit for the coefficients. From this, we can get the functional form by
+using
+
+::
+
+	Normal[fit]
+
+which gives
+
+::
+
+	2.00009 x^2.99998
+
+But we can go far beyond that. For example, we can look at the parameter table:
+
+::
+
+	fit["ParameterTable"]
+
++---+----------+----------------+-------------+----------------+
+|   | Estimate | Standard Error | t-Statistic | P-Value        |
++===+==========+================+=============+================+
+| a | 2.00009  | 0.0000894033   | 22371.5     | 1.78507*10^-32 |
++---+----------+----------------+-------------+----------------+
+| b | 2.99998  | 0.000020244    | 148191      | 4.81551*10^-39 |
++---+----------+----------------+-------------+----------------+
+
+What does this mean? The estimate is the best-guess (by least-squares or other
+method), and the standard error is calculated by using this estimate as the mean
+in the data using a similar calculation to the standard deviation. The t-Statistic
+is how many standard errors away from 0 the estimate is (same concept as the
+z-score, but for the t distribution which is slightly different, but similar
+enough for our purposes). The p-value is then the p-value associated with this
+distribution with a mean of zero as the null hypothesis.
+
+There are many other properties of the model we can extract -- from the
+confidence intervals ("ParameterConfidenceIntervals") to the residuals
+(difference between actual and predicted responses -- "FitResiduals")
+to :math:`R^2` (the "coefficient of determination" that says what
+percent of variance in the data is explained by the fitted model -- "RSquared").
+For more, see the documentation for :code:`NonlinearModelFit`.

@@ -513,7 +513,68 @@ we then apply the argument given to us then return the result.</p>
 </div>
 <div class="section" id="mathematica-fitting-functions">
 <h2><em>Mathematica</em> Fitting Functions<a class="headerlink" href="#mathematica-fitting-functions" title="Permalink to this headline">¶</a></h2>
-<p>More info to come...</p>
+<p>The <tt class="code docutils literal"><span class="pre">NonlinearModelFit</span></tt> and <tt class="code docutils literal"><span class="pre">LinearModelFit</span></tt> functions are perhaps even
+more useful than the <tt class="code docutils literal"><span class="pre">FindFit</span></tt> function. Instead of just providing coefficients
+for the fit, these produce information about the fit itself. For example:</p>
+<div class="highlight-python"><pre>data = Table[{i, 2 i^3 + Random[]*.02}, {i, 10}];
+fit = NonlinearModelFit[data, a x^b, {a, b}, x]</pre>
+</div>
+<p>gives a fit for the coefficients. From this, we can get the functional form by
+using</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Normal</span><span class="p">[</span><span class="n">fit</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>which gives</p>
+<div class="highlight-python"><pre>2.00009 x^2.99998</pre>
+</div>
+<p>But we can go far beyond that. For example, we can look at the parameter table:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fit</span><span class="p">[</span><span class="s">&quot;ParameterTable&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="5%" />
+<col width="17%" />
+<col width="28%" />
+<col width="22%" />
+<col width="28%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&nbsp;</th>
+<th class="head">Estimate</th>
+<th class="head">Standard Error</th>
+<th class="head">t-Statistic</th>
+<th class="head">P-Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>a</td>
+<td>2.00009</td>
+<td>0.0000894033</td>
+<td>22371.5</td>
+<td>1.78507*10^-32</td>
+</tr>
+<tr class="row-odd"><td>b</td>
+<td>2.99998</td>
+<td>0.000020244</td>
+<td>148191</td>
+<td>4.81551*10^-39</td>
+</tr>
+</tbody>
+</table>
+<p>What does this mean? The estimate is the best-guess (by least-squares or other
+method), and the standard error is calculated by using this estimate as the mean
+in the data using a similar calculation to the standard deviation. The t-Statistic
+is how many standard errors away from 0 the estimate is (same concept as the
+z-score, but for the t distribution which is slightly different, but similar
+enough for our purposes). The p-value is then the p-value associated with this
+distribution with a mean of zero as the null hypothesis.</p>
+<p>There are many other properties of the model we can extract &#8211; from the
+confidence intervals (&#8220;ParameterConfidenceIntervals&#8221;) to the residuals
+(difference between actual and predicted responses &#8211; &#8220;FitResiduals&#8221;)
+to <span class="math">\(R^2\)</span> (the &#8220;coefficient of determination&#8221; that says what
+percent of variance in the data is explained by the fitted model &#8211; &#8220;RSquared&#8221;).
+For more, see the documentation for <tt class="code docutils literal"><span class="pre">NonlinearModelFit</span></tt>.</p>
 </div>
 </div>
 
