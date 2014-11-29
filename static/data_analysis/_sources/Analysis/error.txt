@@ -43,28 +43,84 @@ This is well and good for quantities we measure directly. But what about if we
 then compute other quantities from those measurements? We need to be able to report our
 uncertainty in those values as well (for an example, see below). But how do we do that?
 
-Well, let's say that we have some function :math:`f` over N *independent* variables
-:math:`x_1,~x_2,~...,~x_N` that is the quantity we want to compute. To compute the average,
-we just take
+Single Variable Functions
+-------------------------
+Let's first look at the simple case: a function of one variable, say :math:`f(x)`. If
+we have all the values of :math:`x`, we can compute :math:`\langle f\rangle` simply:
 
 .. math::
 
-	\langle{f}\rangle&=f(\langle{x_1}\rangle,~\langle{x_2}\rangle,~...,~\langle{x_N}\rangle)\\
-	&=f(\langle{\overline{x}}\rangle)
+	\langle f \rangle=\sum_{i=1}^Nf(x_i)
 
-Where :math:`\langle{\overline{x}}\rangle` represents the average of each variable applied
+We can even compute :math:`\sigma_f`:
+
+.. math::
+
+	\langle f^2\rangle=\sum_{i=1}^Nf^2(x_i)\\
+	\sigma_f^2=\langle f^2\rangle-\langle f\rangle^2
+
+But, if we don't have the particular values of :math:`x` and instead only have :math:`\mu_x,~\sigma_x`, we will need to make some approximations to find :math:`\mu_f,~\sigma_f`.
+Let's do a Taylor approximation of :math:`f(x)` around :math:`\mu_x=\mu`:
+
+.. math::
+
+	f(x)&\approx f(\mu)+\left.\frac{df}{dx}\right|_{\mu}(x-\mu)+\frac{1}{2!}\left.\frac{d^2f}{dx^2}\right|_{\mu}(x-\mu)^2\\
+	\langle f \rangle=\mu_f&\approx f(\mu)+\left.\frac{df}{dx}\right|_{\mu}\langle x-\mu\rangle+
+	\frac{1}{2!}\left.\frac{d^2f}{dx^2}\right|_{\mu}\langle(x-\mu)^2\rangle\\
+	&=f(\mu)+\frac{1}{2!}\left.\frac{d^2f}{dx^2}\right|_{\mu}\langle(x-\mu)^2\rangle\\
+	&=f(\mu)+\frac{1}{2!}\left.\frac{d^2f}{dx^2}\right|_{\mu}\sigma_x^2
+
+since :math:`\langle x-\mu\rangle=\langle x\rangle-\mu=0`.
+
+Keeping the second order approximation in :math:`x-\mu`, we get:
+
+.. math::
+
+	f^2(x)&\approx f^2(\mu)+2f(\mu)\left.\frac{df}{dx}\right|_{\mu}(x-\mu)+2f(\mu)
+	\left.\frac{d^2f}{dx^2}\right|_\mu\frac{(x-\mu)^2}{2!}+
+	\left(\frac{df}{dx}\middle|_\mu\right)^2(x-\mu)^2\\
+	\langle f^2\rangle&\approx f^2(\mu)+2f(\mu)
+	\left.\frac{d^2f}{dx^2}\right|_\mu\frac{\langle(x-\mu)^2\rangle}{2!}+
+	\left(\frac{df}{dx}\middle|_\mu\right)^2\langle(x-\mu)^2\rangle\\
+	\sigma_f^2&=\langle f^2\rangle-\langle f\rangle^2=\left(\frac{df}{dx}\middle|_\mu\right)^2\sigma_x^2
+
+Thus, we have the following description of the distribution of values for :math:`f`:
+
+.. math::
+
+	\mu_f&=f(\mu_x)+\frac{1}{2!}\left.\frac{d^2f}{dx^2}\right|_{\mu_x}\sigma_x^2\\
+	\sigma_f^2&=\left(\frac{df}{dx}\middle|_{\mu_x}\right)^2\sigma_x^2
+
+Multivariate Functions
+----------------------
+Let's say that we have some function :math:`f` over N *independent* variables
+:math:`x_1,~x_2,~...,~x_N` that is the quantity we want to compute. To compute the mean and
+standard deviation, we can use the same techniques above to arrive at:
+
+.. math::
+
+	\langle{f}\rangle&=f(\overline{\mu})+
+	\sum_{i=1}^N\frac{1}{2!}\left.
+	\frac{d^2f}{dx_i^2}\right|_{\overline{\mu}}\sigma_i^2
+
+Where :math:`\overline{\mu}` represents the average of each variable applied
 as an averaged vector (just shorthand).
 But what about the uncertainty? For that, if we can assume that the variables are independent
 of one another, we can use the following equation:
 
 .. math::
 
-	\sigma_f^2=\sum_{i=1}^N \sigma_{x_i}^2\left(\frac{\partial f}{\partial x_i}\middle|_{
-	\langle{\overline{x}}\rangle}\right)^2
+	\sigma_f^2=\sum_{i=1}^N \sigma_{x_i}^2\left(\frac{\partial f}{\partial i}\middle|_{
+	\overline{\mu}}\right)^2
 
 This says that we add the variances (square of the standard deviation) of each variable,
 multiplied by the square of the partial derivative of the function with respect to that
 variable, applying the average values of all variables as necessary.
+
+If the variables are not independent, then we have to include the covariance
+:math:`\sigma_{x,y}=\langle xy\rangle-\langle x\rangle\langle y\rangle` (so
+the variance is :math:`\sigma_{x,x}=\sigma_x^2`). But that topic is outside the scope of this
+course.
 
 Example: Watermelon Drop
 ------------------------

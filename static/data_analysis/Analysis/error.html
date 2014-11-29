@@ -135,6 +135,8 @@
   <ul class="dropdown-menu localtoc"><ul>
 <li><a class="reference internal" href="#">Error Analysis</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#single-variable-functions">Single Variable Functions</a></li>
+<li><a class="reference internal" href="#multivariate-functions">Multivariate Functions</a></li>
 <li><a class="reference internal" href="#example-watermelon-drop">Example: Watermelon Drop</a></li>
 </ul>
 </li>
@@ -215,22 +217,63 @@ squared distance from the mean), and can alternatively be defined by:</p>
 <p>This is well and good for quantities we measure directly. But what about if we
 then compute other quantities from those measurements? We need to be able to report our
 uncertainty in those values as well (for an example, see below). But how do we do that?</p>
-<p>Well, let&#8217;s say that we have some function <span class="math">\(f\)</span> over N <em>independent</em> variables
-<span class="math">\(x_1,~x_2,~...,~x_N\)</span> that is the quantity we want to compute. To compute the average,
-we just take</p>
+</div>
+<div class="section" id="single-variable-functions">
+<h2>Single Variable Functions<a class="headerlink" href="#single-variable-functions" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s first look at the simple case: a function of one variable, say <span class="math">\(f(x)\)</span>. If
+we have all the values of <span class="math">\(x\)</span>, we can compute <span class="math">\(\langle f\rangle\)</span> simply:</p>
 <div class="math">
-\[\begin{split}\langle{f}\rangle&amp;=f(\langle{x_1}\rangle,~\langle{x_2}\rangle,~...,~\langle{x_N}\rangle)\\
-&amp;=f(\langle{\overline{x}}\rangle)\end{split}\]</div>
-<p>Where <span class="math">\(\langle{\overline{x}}\rangle\)</span> represents the average of each variable applied
+\[\langle f \rangle=\sum_{i=1}^Nf(x_i)\]</div>
+<p>We can even compute <span class="math">\(\sigma_f\)</span>:</p>
+<div class="math">
+\[\begin{split}\langle f^2\rangle=\sum_{i=1}^Nf^2(x_i)\\
+\sigma_f^2=\langle f^2\rangle-\langle f\rangle^2\end{split}\]</div>
+<p>But, if we don&#8217;t have the particular values of <span class="math">\(x\)</span> and instead only have <span class="math">\(\mu_x,~\sigma_x\)</span>, we will need to make some approximations to find <span class="math">\(\mu_f,~\sigma_f\)</span>.
+Let&#8217;s do a Taylor approximation of <span class="math">\(f(x)\)</span> around <span class="math">\(\mu_x=\mu\)</span>:</p>
+<div class="math">
+\[\begin{split}f(x)&amp;\approx f(\mu)+\left.\frac{df}{dx}\right|_{\mu}(x-\mu)+\frac{1}{2!}\left.\frac{d^2f}{dx^2}\right|_{\mu}(x-\mu)^2\\
+\langle f \rangle=\mu_f&amp;\approx f(\mu)+\left.\frac{df}{dx}\right|_{\mu}\langle x-\mu\rangle+
+\frac{1}{2!}\left.\frac{d^2f}{dx^2}\right|_{\mu}\langle(x-\mu)^2\rangle\\
+&amp;=f(\mu)+\frac{1}{2!}\left.\frac{d^2f}{dx^2}\right|_{\mu}\langle(x-\mu)^2\rangle\\
+&amp;=f(\mu)+\frac{1}{2!}\left.\frac{d^2f}{dx^2}\right|_{\mu}\sigma_x^2\end{split}\]</div>
+<p>since <span class="math">\(\langle x-\mu\rangle=\langle x\rangle-\mu=0\)</span>.</p>
+<p>Keeping the second order approximation in <span class="math">\(x-\mu\)</span>, we get:</p>
+<div class="math">
+\[\begin{split}f^2(x)&amp;\approx f^2(\mu)+2f(\mu)\left.\frac{df}{dx}\right|_{\mu}(x-\mu)+2f(\mu)
+\left.\frac{d^2f}{dx^2}\right|_\mu\frac{(x-\mu)^2}{2!}+
+\left(\frac{df}{dx}\middle|_\mu\right)^2(x-\mu)^2\\
+\langle f^2\rangle&amp;\approx f^2(\mu)+2f(\mu)
+\left.\frac{d^2f}{dx^2}\right|_\mu\frac{\langle(x-\mu)^2\rangle}{2!}+
+\left(\frac{df}{dx}\middle|_\mu\right)^2\langle(x-\mu)^2\rangle\\
+\sigma_f^2&amp;=\langle f^2\rangle-\langle f\rangle^2=\left(\frac{df}{dx}\middle|_\mu\right)^2\sigma_x^2\end{split}\]</div>
+<p>Thus, we have the following description of the distribution of values for <span class="math">\(f\)</span>:</p>
+<div class="math">
+\[\begin{split}\mu_f&amp;=f(\mu_x)+\frac{1}{2!}\left.\frac{d^2f}{dx^2}\right|_{\mu_x}\sigma_x^2\\
+\sigma_f^2&amp;=\left(\frac{df}{dx}\middle|_{\mu_x}\right)^2\sigma_x^2\end{split}\]</div>
+</div>
+<div class="section" id="multivariate-functions">
+<h2>Multivariate Functions<a class="headerlink" href="#multivariate-functions" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s say that we have some function <span class="math">\(f\)</span> over N <em>independent</em> variables
+<span class="math">\(x_1,~x_2,~...,~x_N\)</span> that is the quantity we want to compute. To compute the mean and
+standard deviation, we can use the same techniques above to arrive at:</p>
+<div class="math">
+\[\begin{split}\langle{f}\rangle&amp;=f(\overline{\mu})+
+\sum_{i=1}^N\frac{1}{2!}\left.
+\frac{d^2f}{dx_i^2}\right|_{\overline{\mu}}\sigma_i^2\end{split}\]</div>
+<p>Where <span class="math">\(\overline{\mu}\)</span> represents the average of each variable applied
 as an averaged vector (just shorthand).
 But what about the uncertainty? For that, if we can assume that the variables are independent
 of one another, we can use the following equation:</p>
 <div class="math">
-\[\sigma_f^2=\sum_{i=1}^N \sigma_{x_i}^2\left(\frac{\partial f}{\partial x_i}\middle|_{
-\langle{\overline{x}}\rangle}\right)^2\]</div>
+\[\sigma_f^2=\sum_{i=1}^N \sigma_{x_i}^2\left(\frac{\partial f}{\partial i}\middle|_{
+\overline{\mu}}\right)^2\]</div>
 <p>This says that we add the variances (square of the standard deviation) of each variable,
 multiplied by the square of the partial derivative of the function with respect to that
 variable, applying the average values of all variables as necessary.</p>
+<p>If the variables are not independent, then we have to include the covariance
+<span class="math">\(\sigma_{x,y}=\langle xy\rangle-\langle x\rangle\langle y\rangle\)</span> (so
+the variance is <span class="math">\(\sigma_{x,x}=\sigma_x^2\)</span>). But that topic is outside the scope of this
+course.</p>
 </div>
 <div class="section" id="example-watermelon-drop">
 <h2>Example: Watermelon Drop<a class="headerlink" href="#example-watermelon-drop" title="Permalink to this headline">¶</a></h2>

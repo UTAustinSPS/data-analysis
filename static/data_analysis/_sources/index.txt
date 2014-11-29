@@ -11,6 +11,11 @@ Introduction to Data Analysis for Physics
 
    The original authors of this textbook are Evan Ott and Will Beason.
 
+.. sidebar:: Featured!
+
+   Our class was featured in a write-up by the Texas Interscholastic League
+   Foundation! See `TILF <http://tilf.uiltexas.org/news-and-events/blog/tilf-success-stories-meet-evan-ott/>`_
+
 
 .. Here is were you specify the content and order of your new book.
 
