@@ -18,21 +18,19 @@ Introduction to Data Analysis for Physics
 
 
 .. Here is were you specify the content and order of your new book.
+..
+   Introduction
+   ::::::::::::
+   .. toctree::
+      :maxdepth: 2
 
-Introduction
-::::::::::::
+      intro.rst
+   Assignments
+   :::::::::::
+   .. toctree::
+      :maxdepth: 2
 
-.. toctree::
-   :maxdepth: 2
-
-   intro.rst
-
-Assignments
-:::::::::::
-.. toctree::
-   :maxdepth: 2
-
-   assignments.rst
+      assignments.rst
 
 *Mathematica*
 :::::::::::::
