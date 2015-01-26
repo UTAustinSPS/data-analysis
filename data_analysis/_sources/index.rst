@@ -18,19 +18,7 @@ Introduction to Data Analysis for Physics
 
 
 .. Here is were you specify the content and order of your new book.
-..
-   Introduction
-   ::::::::::::
-   .. toctree::
-      :maxdepth: 2
 
-      intro.rst
-   Assignments
-   :::::::::::
-   .. toctree::
-      :maxdepth: 2
-
-      assignments.rst
 
 *Mathematica*
 :::::::::::::
@@ -75,7 +63,7 @@ Analysis
    Analysis/approximations.rst
    Analysis/error.rst
 
-Appendix
+Appendix A: Selected Topics
 ::::::::
 
 .. toctree::
@@ -85,6 +73,13 @@ Appendix
    Math/logic.rst
    Math/stats.rst
    Math/misc.rst
+
+Appendix B: Resources for Self-Guided Course
+:::::::::::
+.. toctree::
+   :maxdepth: 2
+
+   assignments.rst
 
 ..
    To Do for LaTeX (feel free to add):
